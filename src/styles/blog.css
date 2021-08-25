@@ -1,0 +1,21 @@
+.post h1 {
+    margin-bottom: 3rem;
+}
+
+.post h2 {
+    margin-bottom: 2rem;
+}
+
+.post h3,
+.post h4,
+.post h5,
+.post h6,
+.post p,
+.post button,
+.post pre,
+.post ol,
+.post ul,
+.post iframe,
+.post hr {
+    margin-bottom: 1.35rem;
+}

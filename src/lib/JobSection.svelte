@@ -1,0 +1,136 @@
+<script>
+  export let job;
+
+  let hovered = false;
+
+  let jobLong = {
+    tpl: "Texas Policy Lab",
+    socom: "USSOCOM",
+    axios: "Axios",
+    moksha: "Moksha Data",
+  };
+</script>
+
+<a
+  class="job-container {hovered ? 'hovered' : ''}"
+  on:mouseover={() => (hovered = true)}
+  on:mouseout={() => (hovered = false)}
+  sveltekit:prefetch
+  href="/experience/{job}"
+>
+  <div style="display: flex; place-items: center;">
+    <h2>{jobLong[job]}</h2>
+    <img
+      src="/images/jobs/{job}.svg"
+      class="job-image {hovered ? 'hovered' : ''}"
+      alt="logo"
+    />
+  </div>
+  <h3>&#8594;</h3>
+</a>
+
+<style>
+  .job-container {
+    padding: 2rem 0;
+    border-bottom: 1px dashed var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 300ms ease;
+  }
+
+  h3 {
+    font-size: 34px;
+  }
+
+  .job-image {
+    margin-left: 1rem;
+    width: 40px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .job-container {
+      padding: 1em 0;
+    }
+    .job-image {
+      margin-left: 0.5rem;
+      width: 25px;
+    }
+  }
+
+  .job-container.hovered {
+    cursor: pointer;
+    border-bottom: 1px solid var(--accent-color);
+  }
+
+  .job-container.hovered h2 {
+    color: var(--accent-color);
+    text-decoration: none !important;
+  }
+
+  .job-container.hovered h3 {
+    color: var(--accent-color);
+    animation: right 1s ease infinite;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  @keyframes right {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  @media (max-width: 860px) {
+    h2 {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: 1.5rem !important;
+    }
+  }
+  /* .logos {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+  }
+
+  .job-image {
+    margin-left: 1em;
+  }
+  .job-image {
+    filter: blur(2px) grayscale(0.8);
+    transition: filter 400ms ease;
+    cursor: pointer;
+  }
+
+  .job-image.hovered {
+    filter: blur(0) grayscale(0.8);
+  } */
+
+  /* .job-image {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .job-image.hovered {
+    transform: rotate(360deg);
+  } */
+</style>
