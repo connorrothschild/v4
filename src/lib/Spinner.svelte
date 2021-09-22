@@ -49,6 +49,7 @@
     display: inline;
     user-select: none;
     cursor: pointer;
+    transition: border-bottom 300ms linear;
   }
 
   img {

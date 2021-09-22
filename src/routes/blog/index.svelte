@@ -36,10 +36,9 @@
 </script>
 
 <main>
+  <h1 class="page-overline">Blog</h1>
   <h1 class="page-title">
-    What I've <span style="color: var(--accent-color); font-weight: 900;"
-      >written</span
-    >
+    What I've <span class="accented bolded">written</span>
   </h1>
   <div class="article-list">
     {#each paginatedItems as { metadata: { title, description, tags, outline, slug, image }, path }}

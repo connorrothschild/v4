@@ -5,8 +5,8 @@
 
 <main>
   <section>
-    <h1>
-      Hi, I'm <span style="font-weight: 900; color: var(--accent-color)"
+    <h1 style="font-weight: 200;">
+      Hi, I'm <span class="accented" style="font-weight: 600;"
         >Connor Rothschild</span
       >
     </h1>
@@ -35,7 +35,7 @@
       dolores qui!
     </p>
 
-    <a sveltekit:prefetch href="/blog" class="pulled-right"
+    <a sveltekit:prefetch href="/blog" class="pulled-right padding-bottom"
       >See my blog &#8594;</a
     >
   </section>
@@ -71,6 +71,7 @@
     font-size: 32px;
     line-height: 1.5;
     margin-bottom: 2rem;
+    font-weight: 300;
   }
 
   p {

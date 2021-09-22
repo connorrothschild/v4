@@ -40,9 +40,10 @@
 
   h2 {
     font-size: 44px;
+    font-weight: 200;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 300ms ease;
+    letter-spacing: 0.64px;
+    transition: all 300ms linear;
   }
 
   h3 {
@@ -50,18 +51,9 @@
   }
 
   .job-image {
-    margin-left: 1rem;
+    margin-left: 12px;
     width: 40px;
-  }
-
-  @media screen and (max-width: 600px) {
-    .job-container {
-      padding: 1em 0;
-    }
-    .job-image {
-      margin-left: 0.5rem;
-      width: 25px;
-    }
+    transition: width 300ms ease;
   }
 
   .job-container.hovered {
@@ -72,6 +64,7 @@
   .job-container.hovered h2 {
     color: var(--accent-color);
     text-decoration: none !important;
+    letter-spacing: 1px;
   }
 
   .job-container.hovered h3 {
@@ -96,15 +89,36 @@
     }
   }
 
+  /* TABLET */
   @media (max-width: 860px) {
     h2 {
       font-size: 2rem !important;
     }
+    .job-container {
+      padding: 0.5em 0;
+      height: 100px;
+    }
+    .job-image {
+      width: 32.5px;
+      margin-left: 8px;
+    }
   }
 
+  /* MOBILE */
   @media (max-width: 560px) {
+    .job-container {
+      padding: 0.5em 0;
+      height: 100px;
+    }
+  }
+
+  /* TINY */
+  @media (max-width: 400px) {
     h2 {
       font-size: 1.5rem !important;
+    }
+    .job-image {
+      width: 25px;
     }
   }
   /* .logos {

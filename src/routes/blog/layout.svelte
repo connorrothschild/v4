@@ -13,13 +13,14 @@
 </script>
 
 <main>
-  <h1 class="page-title accented">{title}</h1>
-  <div class="date">{date} | 1 minute read (if you're fast)</div>
+  <h1 class="page-title no-border">{title}</h1>
+  <div class="date border-bottom">{date} | 1 minute read (if you're fast)</div>
   <div class="post">
     <slot />
   </div>
-  <hr style="margin-bottom: 12px" />
-  <a sveltekit:prefetch href="/blog">&#8592; Back to all posts</a>
+  <a class="border-top block" sveltekit:prefetch href="/blog"
+    >&#8592; Back to all posts</a
+  >
 </main>
 
 <svelte:head>
@@ -44,11 +45,10 @@
   }
 
   .date {
-    font-weight: 300;
-    margin-top: -1rem;
+    font-weight: 200;
+    margin-top: -2rem;
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 1rem;
+    letter-spacing: 0.64px;
   }
 </style>
