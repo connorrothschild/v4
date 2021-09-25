@@ -1,6 +1,16 @@
+<script context="module">
+  export const load = async ({ page }) => ({
+    props: {
+      key: page.path,
+    },
+  });
+</script>
+
 <script>
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
+  import PageTransition from "$lib/PageTransition.svelte";
+  export let key;
 
   import "../styles/immutable.css";
   import "../styles/code.css";
@@ -26,7 +36,6 @@
 </script>
 
 <Seo />
-<Nav />
 <!-- <div class="header">
   🖱🍺❓
   <input type="range" bind:value={cursorDrunkenness} min="0" max="1000" />
@@ -39,7 +48,10 @@
   >
     {@html emoji}
   </div> -->
-<slot />
+<Nav />
+<PageTransition refresh={key} duration={1000}>
+  <slot />
+</PageTransition>
 
 <!-- </div> -->
 <style>

@@ -212,6 +212,7 @@ button:focus:not(:focus-visible) {
 .accented {
   /* color: var(--accent-color); */
   background: linear-gradient(to right, black 10%, var(--accent-color) 60%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

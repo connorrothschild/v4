@@ -1,6 +1,24 @@
+<script context="module">
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }) {
+    const res = await fetch(`/projects.json`);
+    const projects = await res.json();
+    return {
+      props: {
+        projects,
+      },
+    };
+  }
+</script>
+
 <script>
   import ProjectSection from "$lib/ProjectSection.svelte";
-  // let jobs = ["moksha", "axios", "socom", "tpl"];
+  export let projects;
+
+  // where .metadata has slug image name etc
+  console.log(projects);
 </script>
 
 <main>
@@ -9,9 +27,11 @@
     What I've <span class="accented bolded">done</span>
   </h1>
 
-  <!-- {#each jobs as job}
-    <JobSection {job} />
-  {/each} -->
+  <div class="projects-container">
+    {#each projects as project}
+      <ProjectSection project={project.metadata} />
+    {/each}
+  </div>
 </main>
 
 <style>
@@ -22,7 +42,10 @@
     padding: 1em;
   }
 
-  /* .page-title {
-    font-size: 2.5rem !important;
-  } */
+  .projects-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+  }
 </style>
