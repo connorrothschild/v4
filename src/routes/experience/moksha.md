@@ -1,6 +1,6 @@
 ---
 layout: experience
-job: "Moksha Data"
+name: "Moksha Data"
 imageUrl: moksha
 description: "Lorem"
 ---

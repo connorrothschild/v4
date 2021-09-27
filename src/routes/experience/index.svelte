@@ -1,6 +1,21 @@
+<script context="module">
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }) {
+    const res = await fetch(`/experience.json`);
+    const jobs = await res.json();
+    return {
+      props: {
+        jobs,
+      },
+    };
+  }
+</script>
+
 <script>
   import JobSection from "$lib/JobSection.svelte";
-  let jobs = ["moksha", "axios", "socom", "tpl"];
+  export let jobs;
 </script>
 
 <main>
@@ -10,7 +25,7 @@
   </h1>
 
   {#each jobs as job}
-    <JobSection {job} />
+    <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
   {/each}
 </main>
 

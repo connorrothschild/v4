@@ -1,6 +1,6 @@
 ---
 layout: experience
-job: "Moksha Data"
-imageUrl: moksha
+name: "Texas Policy Lab"
+imageUrl: tpl
 description: "Lorem"
 ---

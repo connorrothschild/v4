@@ -14,24 +14,48 @@
 </script>
 
 <script>
+  import { slide } from "svelte/transition";
   import ProjectSection from "$lib/ProjectSection.svelte";
   export let projects;
 
-  // where .metadata has slug image name etc
-  console.log(projects);
+  let featuredProjects = projects.filter((d) => d.metadata.featured == true);
+  let otherProjects = projects.filter((d) => !d.metadata.featured == true);
+
+  let showAll = false;
 </script>
 
 <main>
   <h1 class="page-overline">Projects</h1>
   <h1 class="page-title">
-    What I've <span class="accented bolded">done</span>
+    What I've <span class="accented bolded">built</span>
   </h1>
 
   <div class="projects-container">
-    {#each projects as project}
-      <ProjectSection project={project.metadata} />
+    {#each featuredProjects as project}
+      <ProjectSection
+        project={project.metadata}
+        slug={project.path.replace(/\.[^/.]+$/, "")}
+      />
     {/each}
   </div>
+  <button
+    class="button pulled-right block"
+    on:click={() => {
+      showAll = !showAll;
+    }}
+    >Show all <span style="font-size: .85rem; vertical-align: top;">↓</span
+    ></button
+  >
+  {#if showAll}
+    <div transition:slide class="projects-container">
+      {#each otherProjects as project}
+        <ProjectSection
+          project={project.metadata}
+          slug={project.path.replace(/\.[^/.]+$/, "")}
+        />
+      {/each}
+    </div>
+  {/if}
 </main>
 
 <style>
@@ -44,8 +68,18 @@
 
   .projects-container {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  .button {
+    margin: 12px 0 12px auto;
+  }
+
+  @media screen and (max-width: 660px) {
+    .projects-container {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(1, 1fr);
+    }
   }
 </style>

@@ -18,7 +18,7 @@
   <div class="post">
     <slot />
   </div>
-  <a class="border-top block" sveltekit:prefetch href="/blog"
+  <a class="border-top no-underline block" sveltekit:prefetch href="/blog"
     >&#8592; Back to all posts</a
   >
 </main>

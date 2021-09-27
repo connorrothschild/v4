@@ -1,6 +1,6 @@
 ---
 layout: experience
-job: "Moksha Data"
-imageUrl: moksha
+name: "Axios"
+imageUrl: axios
 description: "Lorem"
 ---

@@ -1,14 +1,8 @@
 <script>
   export let job;
+  export let slug;
 
   let hovered = false;
-
-  let jobLong = {
-    tpl: "Texas Policy Lab",
-    socom: "USSOCOM",
-    axios: "Axios",
-    moksha: "Moksha Data",
-  };
 </script>
 
 <a
@@ -16,12 +10,12 @@
   on:mouseover={() => (hovered = true)}
   on:mouseout={() => (hovered = false)}
   sveltekit:prefetch
-  href="/experience/{job}"
+  href={slug}
 >
   <div style="display: flex; place-items: center;">
-    <h2>{jobLong[job]}</h2>
+    <h2>{job.name}</h2>
     <img
-      src="/images/jobs/{job}.svg"
+      src="/images/jobs/{job.imageUrl}.svg"
       class="job-image {hovered ? 'hovered' : ''}"
       alt="logo"
     />

@@ -24,6 +24,7 @@ module.exports = {
   ],
   layout: {
     blog: "./src/routes/blog/layout.svelte",
-    experience: "./src/routes/experience/layout.svelte"
+    experience: "./src/routes/experience/layout.svelte",
+    project: "./src/routes/projects/layout.svelte"
   },
 };

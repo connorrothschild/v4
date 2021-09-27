@@ -2,21 +2,22 @@
   import { onMount } from "svelte";
   import { seo } from "$lib/store";
 
-  export let job;
+  export let name;
   export let description;
+  // export let imageUrl;
 
   $seo = {
-    title: job,
+    title: name,
     description: description,
   };
 </script>
 
 <main>
-  <h1 class="page-title">{job}</h1>
+  <h1 class="page-title">{name}</h1>
   <div class="post">
     <slot />
   </div>
-  <a class="border-top block" sveltekit:prefetch href="/experience"
+  <a class="border-top no-underline block" sveltekit:prefetch href="/experience"
     >&#8592; Back to all jobs</a
   >
 </main>

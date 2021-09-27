@@ -1,7 +1,6 @@
 ---
 layout: experience
-job: "Moksha"
+name: "USSOCOM"
+imageUrl: socom
 description: "Lorem"
 ---
-
-{job}

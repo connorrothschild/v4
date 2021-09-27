@@ -1,16 +1,15 @@
 <script>
   export let project;
+  export let slug;
 
   import { fly, fade } from "svelte/transition";
 
   let hovered = false;
 </script>
 
-<div class="project">
-  {#if hovered}<div
-      transition:fade={{ duration: 200 }}
-      class="hovered-gradient"
-    />{/if}
+<a class="project no-underline" href={slug} sveltekit:prefetch>
+  {#if hovered}
+    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />{/if}
   <img
     src="./images/projects/{project.imageUrl}.png"
     alt="Project image for {project.name}"
@@ -30,9 +29,9 @@
       class="project-text"
     >
       <h1>{project.name}</h1>
-      <h2>{project.description}</h2>
+      <h2 class="description">{project.description}</h2>
     </div>{/if}
-</div>
+</a>
 
 <style>
   .project {
@@ -44,7 +43,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 3px;
-    transition: filter 300ms ease;
+    box-shadow: 1px 1px 4px #b2b2b2;
+    /* transition: filter 300ms ease; */
   }
 
   .project-image.hovered {
@@ -66,21 +66,27 @@
 
   .project-text {
     position: absolute;
-    top: 60%;
-    /* transform: translateY(-50%); */
-    left: 2.5%;
+    bottom: 0;
+    left: 0;
     pointer-events: none;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 1rem 1rem;
   }
 
   h1,
   h2 {
     color: white;
+  }
+
+  h1 {
+    font-size: 1.5rem;
     text-shadow: 1px 1px 6px black;
   }
 
-  h2 {
+  .description {
     font-size: 1rem;
     margin-top: 12px;
+    font-weight: 200;
+    letter-spacing: 0.44px;
+    /* text-shadow: 1px 1px 1 0px black; */
   }
 </style>

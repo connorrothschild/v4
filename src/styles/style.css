@@ -154,9 +154,9 @@ pre {
 
 code:not(pre > code) {
   font-family: var(--font-mono);
-  background: var(--accent-color);
-  color: var(--works-on-accent-bg);
-  padding: 4px 6px;
+  background: var(--tertiary-color);
+  color: var(--accent-color);
+  padding: 3px 2px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -174,6 +174,49 @@ button {
 
 button:focus:not(:focus-visible) {
   outline: none;
+}
+
+.button {
+  border: 1px solid var(--secondary-color);
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 1px 1px 6px #cecece80;
+  padding: 2px 7px;
+  position: relative;
+  z-index: 1;
+  font-weight: 200;
+}
+
+.button:before {
+  	position: absolute;
+  	content: "";
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+  	background-image: linear-gradient(135deg,
+    var(--primary-color) -25%,
+    var(--accent-color) 125%);
+  	z-index: -1;
+  	opacity: 0;
+  	transition: opacity 250ms linear;
+  	-webkit-transition: opacity 250ms linear;
+  	-moz-transition: opacity 250ms linear;
+  	-ms-transition: opacity 250ms linear;
+  	-o-transition: opacity 250ms linear;
+}
+
+.button:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 860px) {
@@ -245,13 +288,13 @@ button:focus:not(:focus-visible) {
   display: block;
 }
 
-a:not(.block) {
+a:not(.no-underline) {
   /* display: inline-block; */
   position: relative;
   color: var(--accent-color);
 }
 
-a:not(.block):after {
+a:not(.no-underline):after {
   content: '';
   position: absolute;
   width: 100%;
@@ -264,7 +307,7 @@ a:not(.block):after {
   transition: transform 0.25s ease-out;
 }
 
-a:not(.block):hover:after {
+a:not(.no-underline):hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

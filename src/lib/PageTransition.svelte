@@ -21,10 +21,10 @@
   {#if isTransitioning == true}
     <style>
       body {
-        overflow: hidden !important;
+        overflow-x: hidden !important;
       }
       html {
-        overflow: hidden !important;
+        overflow-x: hidden !important;
       }
     </style>
   {/if}
