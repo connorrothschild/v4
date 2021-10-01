@@ -22,10 +22,10 @@
 
   export let posts;
 
-  let items = posts;
-  let currentPage = 1;
-  let pageSize = 5;
-  $: paginatedItems = paginate({ items, pageSize, currentPage });
+  // let items = posts;
+  // let currentPage = 1;
+  // let pageSize = 5;
+  // $: paginatedItems = paginate({ items, pageSize, currentPage });
 
   $seo = {
     title: "Connor Rothschild",
@@ -36,16 +36,17 @@
 <main>
   <h1 class="page-overline">Blog</h1>
   <h1 class="page-title">
-    What I've <span class="accented bolded">written</span>
+    What I've
+    <span class="accented bolded">written</span>​
   </h1>
-  <div class="article-list">
-    {#each paginatedItems as post}
+  <div class="post-grid">
+    {#each posts as post}
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}
       />
     {/each}
-    {#if items.length > pageSize}
+    <!-- {#if items.length > pageSize}
       <PaginationNav
         totalItems={items.length}
         {pageSize}
@@ -54,7 +55,7 @@
         showStepOptions={true}
         on:setPage={(e) => (currentPage = e.detail.page)}
       />
-    {/if}
+    {/if} -->
   </div>
 </main>
 
@@ -64,5 +65,11 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 1em;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
   }
 </style>
