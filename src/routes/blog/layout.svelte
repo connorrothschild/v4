@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { seo } from "$lib/store";
 
   export let title;
@@ -10,38 +9,52 @@
     title: title,
     description: description,
   };
-</script>
 
-<main>
-  <h1 class="page-title no-border">{title}</h1>
-  <div class="date border-bottom">{date} | 1 minute read (if you're fast)</div>
-  <div class="post">
-    <slot />
-  </div>
-  <a class="border-top no-underline block" sveltekit:prefetch href="/blog"
-    >&#8592; Back to all posts</a
-  >
-</main>
+  const dateFormat = (date) => {
+    const parsed = new Date(date);
+    const month = parsed.toLocaleString("default", { month: "long" });
+    const year = parsed.getUTCFullYear();
+
+    return `${month} ${year}`;
+  };
+</script>
 
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={description} />
 </svelte:head>
 
+<main>
+  <div class="post-container">
+    <h1 class="page-title no-border">{title}</h1>
+    <div class="date border-bottom">
+      {dateFormat(date)} | 1 minute read (if you're fast)
+    </div>
+    <div class="post">
+      <slot />
+    </div>
+    <a
+      class="footer border-top no-underline block"
+      sveltekit:prefetch
+      href="/blog">&#8592; Back to all posts</a
+    >
+  </div>
+</main>
+
 <style>
   main {
-    max-width: 860px;
+    background: var(--secondary-color);
+  }
+
+  .post-container {
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
     width: 90vw;
   }
 
-  /* .blog-container {
-    background: var(--secondary-color);
-  } */
-
   .post {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
 
   .date {
@@ -50,5 +63,9 @@
     font-size: 1.5rem;
     margin-bottom: 2rem;
     letter-spacing: 0.64px;
+  }
+
+  .footer {
+    padding: 1rem 0 2rem 0;
   }
 </style>

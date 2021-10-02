@@ -132,7 +132,7 @@ iframe {
   margin: 1rem 0 1.5rem 0;
 }
 
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 768px) {
   iframe {
     position: relative;
     left: calc(-35vw + 50%);
@@ -219,7 +219,7 @@ button:focus:not(:focus-visible) {
   opacity: 1;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
   } 

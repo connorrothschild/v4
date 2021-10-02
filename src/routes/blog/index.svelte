@@ -70,6 +70,12 @@
   .post-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
+    /* grid-gap: 15px; */
+  }
+
+  @media screen and (max-width: 668px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -33,7 +33,7 @@
 
 <style>
   /* nav {
-    max-width: 860px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
   } */

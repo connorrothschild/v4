@@ -84,7 +84,7 @@
   }
 
   /* TABLET */
-  @media (max-width: 860px) {
+  @media (max-width: 768px) {
     h2 {
       font-size: 2rem !important;
     }

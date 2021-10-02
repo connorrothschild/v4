@@ -1,9 +1,11 @@
 .post h1 {
-    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .post h2 {
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .post h3,
@@ -16,6 +18,43 @@
 .post ol,
 .post ul,
 .post iframe,
-.post hr {
-    margin-bottom: 1.35rem;
+.post hr,
+.post img,
+.post table {
+    margin-bottom: 1.15rem;
+}
+
+table {
+    background: var(--tertiary-color);
+    color: black;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    width: 100%;
+}
+
+thead {
+    font-weight: bold;
+}
+
+td, th {
+    border: solid rgb(164, 164, 164);
+    border-width: 0 0 1px;
+    padding: .5em .75em;
+    vertical-align: top;
+    letter-spacing: .64px;
+    text-align: left;
+}
+
+td:last-of-type,
+th:last-of-type {
+    text-align: right;
+}
+
+td:first-of-type,
+th:first-of-type {
+    text-align: left;
+}
+
+tr:hover {
+    background: var(--primary-color);
 }

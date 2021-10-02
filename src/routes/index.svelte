@@ -78,7 +78,7 @@
     margin-bottom: 1rem;
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 768px) {
     h1 {
       font-size: 3.5rem;
     }
