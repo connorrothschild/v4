@@ -38,14 +38,6 @@
       />
     {/each}
   </div>
-  <button
-    class="button pulled-right block"
-    on:click={() => {
-      showAll = !showAll;
-    }}
-    >Show all <span style="font-size: .85rem; vertical-align: top;">↓</span
-    ></button
-  >
   {#if showAll}
     <div transition:slide class="projects-container">
       {#each otherProjects as project}
@@ -56,6 +48,17 @@
       {/each}
     </div>
   {/if}
+  <button
+    class="button pulled-right block"
+    on:click={() => {
+      showAll = !showAll;
+    }}
+  >
+    {showAll ? "Hide others" : "Show all"}
+    <span style="font-size: .85rem; vertical-align: top;">
+      {showAll ? "↑" : "↓"}</span
+    >
+  </button>
 </main>
 
 <style>
@@ -70,6 +73,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    margin-bottom: 10px;
   }
 
   .button {

@@ -252,6 +252,14 @@ button:focus:not(:focus-visible) {
   /* line-height: 3.75rem; */
 }
 
+/* TABLET BREAKPOINT */
+@media screen and (max-width: 768px) {
+  .page-title {
+    font-size: 2.75rem !important;
+    letter-spacing: 1px;
+  }
+}
+
 .accented {
   /* color: var(--accent-color); */
   background: linear-gradient(to right, black 10%, var(--accent-color) 60%);

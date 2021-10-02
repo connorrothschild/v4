@@ -20,7 +20,7 @@ Here, I'll talk less *why* and more *how*. That is, I'll explain how to create *
 
 We'll be taking [this scatterplot](https://observablehq.com/@d3/scatterplot), from the team at Observable, and recreating it (sort of). Then, we'll make it (hopefully) better.
 
-<iframe width="100%" height="684" frameborder="0" style="background: white"
+<iframe title="An Observable chart of cars data" width="100%" height="684" frameborder="0" style="background: white"
   src="https://observablehq.com/embed/@d3/scatterplot?cells=chart"></iframe>
 
 In specific, we'll be doing the following:

@@ -38,7 +38,7 @@ The most essential step of a Flat Data project is *postprocessing*. This occurs 
 
 We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  Here's a sample of the final data output:
 
-<iframe src="https://flatgithub.com/connorrothschild/flat-demo-r-processing?filename=sample.csv&sha=585d7221d2712494195dea616bac68dc864025b1" loading="lazy" style="height: 90vh;" width="100%"></iframe>
+<iframe title="Flat GitHub data table" src="https://flatgithub.com/connorrothschild/flat-demo-r-processing?filename=sample.csv&sha=585d7221d2712494195dea616bac68dc864025b1" loading="lazy" style="height: 90vh;" width="100%"></iframe>
 
 ### 01. Setup `flat.yml`
 

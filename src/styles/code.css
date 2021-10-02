@@ -124,13 +124,13 @@ pre[class*="language-"] {
 .token.selector,
 .token.doctype {
     color: rgb(199, 146, 234);
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .token.attr-name,
 .token.inserted {
     color: rgb(173, 219, 103);
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .token.string,

@@ -21,12 +21,14 @@
   /* Once we have our `card` element, get the leftmost position and top position
 		 This will later enable the x- and y-position of our mouse relative to the card dimensions */
   $: getCardDimensions = function (card) {
+    console.log({ scrollYPosition, pageWidth });
     cardLeft = card ? card.getBoundingClientRect().left : 0;
     cardTop = card ? card.getBoundingClientRect().top + scrollYPosition : 0;
   };
 
   // On page resize, rerun get card dimensions
   $: pageWidth, getCardDimensions(card);
+  $: scrollYPosition, getCardDimensions(card);
 
   /* ! IMPORTANT !
     Wait for some time (at least duration of page transition) to get bounding client rect 
@@ -76,7 +78,7 @@
 <svelte:window
   bind:scrollY={scrollYPosition}
   bind:scrollX={scrollXPosition}
-  bind:outerWidth={pageWidth}
+  bind:innerWidth={pageWidth}
 />
 <div
   class="perspective-container"

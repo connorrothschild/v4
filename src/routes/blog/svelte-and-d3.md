@@ -7,8 +7,10 @@ date: "2021-04-02"
 ---
 
 <script>
-  import Counter from "$lib/Counter.svelte"
-  import Code from "$lib/Code.svelte"
+  // import Counter from "$lib/Counter.svelte"
+  // import Code from "$lib/global/Code.svelte"
+  import Image from "../../lib/global/Image.svelte"
+  import Info from "../../lib/global/Info.svelte"
 </script>
 
 <style>
@@ -45,15 +47,13 @@ Although D3 [claims](https://d3js.org/#selections) to be declarative, it still u
 
 In this post, I'll [1)](#what-d3-does-3%EF%B8%8F⃣) provide an overview of D3, and how it made the process of creating visualizations so much easier; [2)](#literal-programming-with-svelte-) explain why I'm moving away from D3 for DOM manipulation, and instead using Svelte "literally"; and [3)](#bringing-it-home-with-burgers-) provide a funky burger 🍔 example to explain my logic.
 
-<!-- <Info>
-   -->
+ <Info>
 
 This is not a comprehensive tutorial about **how to** use D3 and Svelte together. I'll cover that in the [future](https://twitter.com/CL_Rothschild). In the meantime, check out tutorials from [Matthias Stahl](https://www.youtube.com/watch?v=bnd64ZrHC0U), examples of Svelte and D3 in action on The Pudding's [GitHub](https://github.com/the-pudding/), and an example of similar framework-driven logic on Amelia Wattenberger's [blog](https://wattenberger.com/blog/react-and-d3). 
 
 Want an immediate example? Here's an (admittedly verbose) [Svelte component](https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte) I used in a recent project about Bob Ross.
 
-  <!-- 
-</Info> -->
+</Info> 
 
 ## What D3 does 3️⃣ 
 
@@ -183,13 +183,11 @@ let ingredients = [
 
 There are three ways to make this burger (at least, in our fantasy world where we make burgers via code).
 
-<!-- <Info>
-   -->
+<Info>
 
 Although I use the Svelte REPL to showcase these three examples, only the last one requires Svelte. The REPL is just a nice place to host (editable!) code 🙂
-
-  <!-- 
-</Info> -->
+  
+</Info>
 
 **The first option** (old school) is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is how burgers would have been made, painfully, before D3.
 
@@ -233,13 +231,11 @@ $: xScale = scaleLinear
 
 With some other component watching and responding to resize events (such as [Window.svelte](https://github.com/the-pudding/svelte-starter/blob/master/src/components/helpers/Window.svelte)), any SVG property depending on `xScale` will automatically update when your window resizes. You can also set the chart width itself to equal `$windowWidth` for a fully resizable, responsive chart.
 
-<!-- <Info>
-   -->
+<Info>
 
-Another way to achieve easy responsiveness is to [bind the SVG's parent container's div width](https://svelte.dev/tutorial/dimensions) to some variable (`width`) and set the SVG's width to match. 
-
-  <!-- 
-</Info> -->
+Another way to achieve easy responsiveness is to <a href="https://svelte.dev/tutorial/dimensions" target="_blank">bind the SVG's parent container's div width</a> to some variable (<code>width</code>) and set the SVG's width to match.
+  
+</Info>
 
 ### If/else blocks
 
