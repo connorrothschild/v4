@@ -4,6 +4,7 @@ title: "COVID-19 Posts: A Novel Dataset"
 description: Making hundreds of COVID-19 blog posts from the R community available for public use
 date: "2020-11-02"
 image: covid-posts/header.png
+archived: true
 ---
 
 <script>

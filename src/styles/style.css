@@ -253,9 +253,21 @@ button:focus:not(:focus-visible) {
 }
 
 /* TABLET BREAKPOINT */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 660px) {
   .page-title {
-    font-size: 2.75rem !important;
+    font-size: 3.5rem !important;
+    letter-spacing: 1px;
+  }
+
+  .page-overline {
+    font-size: .75rem;
+  }
+}
+
+/* MOBILE BREAKPOINT */
+@media screen and (max-width: 460px) {
+  .page-title {
+    font-size: 2.5rem !important;
     letter-spacing: 1px;
   }
 }

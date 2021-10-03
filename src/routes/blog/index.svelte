@@ -22,10 +22,11 @@
 
   export let posts;
 
-  // let items = posts;
-  // let currentPage = 1;
-  // let pageSize = 5;
-  // $: paginatedItems = paginate({ items, pageSize, currentPage });
+  console.log(posts);
+  let filteredPosts = posts
+    .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
+    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
+    .sort((a, b) => b.metadata.featured);
 
   $seo = {
     title: "Connor Rothschild",
@@ -40,7 +41,7 @@
     <span class="accented bolded">written</span>​
   </h1>
   <div class="post-grid">
-    {#each posts as post}
+    {#each filteredPosts as post}
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}

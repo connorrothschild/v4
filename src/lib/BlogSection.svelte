@@ -5,6 +5,8 @@
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
 
+  import Star from "$lib/icons/Star.svelte";
+
   /* Initialize variables which will bind to our DOM elements */
   let card,
     cardWidth,
@@ -21,7 +23,6 @@
   /* Once we have our `card` element, get the leftmost position and top position
 		 This will later enable the x- and y-position of our mouse relative to the card dimensions */
   $: getCardDimensions = function (card) {
-    console.log({ scrollYPosition, pageWidth });
     cardLeft = card ? card.getBoundingClientRect().left : 0;
     cardTop = card ? card.getBoundingClientRect().top + scrollYPosition : 0;
   };
@@ -95,10 +96,16 @@
     style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
 					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
-    class="post-container no-underline"
+    class="post-container no-underline {post.featured ? 'featured' : ''}"
     sveltekit:prefetch
     href={slug}
   >
+    {#if post.featured}
+      <div class="featured-star">
+        <!-- ⭐️ -->
+        <Star width="20" height="20" fill="var(--accent-color)" stroke="none" />
+      </div>
+    {/if}
     <div
       class="card-highlight"
       style="left: {circleXPosition}%; top: {circleYPosition}%"
@@ -116,14 +123,16 @@
     border-radius: 10px;
     background: white;
     padding: 30px 25px;
-    margin: 12px;
+    margin: 12px; /* Need this for perspective container overflow */
     overflow: hidden;
-    transition: all 100ms linear;
+    border: 1px solid white;
+    transition: all 100ms linear, border 300ms ease;
   }
 
   .perspective-container {
     display: flex;
     position: relative;
+    margin: -4px; /* Undoes some of the margin above while still allowing for hover events */
   }
 
   .card-highlight {
@@ -161,5 +170,20 @@
 
   .post-container:hover .post-card .post-title {
     border-bottom: 1px solid var(--accent-color);
+  }
+
+  .post-container:hover {
+    border: 1px solid var(--accent-color);
+  }
+
+  /* .featured {
+    border: 1px solid var(--accent-color);
+  } */
+
+  .featured-star {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px;
   }
 </style>

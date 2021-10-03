@@ -1,6 +1,25 @@
 <script>
+  export let src;
+  export let alt;
+  export let link;
 </script>
 
 <div>
-  <slot />
+  <img {src} {alt} width="100%" />
+  <a href={link} target="_blank" class="no-underline"
+    >The original, interactive table can be found here</a
+  >
 </div>
+
+<style>
+  div {
+    margin-bottom: 1.35rem;
+  }
+  a {
+    font-weight: 300;
+    font-family: var(--font-sans);
+    text-align: right;
+    letter-spacing: 0.64px;
+    width: 100%;
+  }
+</style>

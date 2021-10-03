@@ -4,6 +4,7 @@ title: "Trends in Refugee Acceptance, 2002 to 2019"
 description: Or, how a single line of code can create a beautiful small multiples US map.
 date: "2020-02-02"
 image: refugee-trends/header.png
+archived: true
 ---
 
 <script>

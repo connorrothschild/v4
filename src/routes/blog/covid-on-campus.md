@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "COVID on Campus"
+title: "An Analysis of COVID on Campus"
 date: "2020-10-02"
 description: Where university reopenings led to spikes in COVID-19 case counts
 image: covid-on-campus/header.png

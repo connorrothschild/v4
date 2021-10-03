@@ -4,6 +4,7 @@ title: Creating the ultimate scatterplot in Svelte
 description: Svelte + D3, in action
 date: "2021-07-09"
 image: svelte-and-d3/header.png
+draft: true
 ---
 
 <script>

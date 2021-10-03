@@ -3,7 +3,7 @@ layout: blog
 title: "Color in Data Visualization: Less How, More Why"
 description: An overview of the use of color in data visualization
 image: color-in-data-vis/header.png
-date: "01-01-2020"
+date: "2020-01-02"
 ---
 
 <script>

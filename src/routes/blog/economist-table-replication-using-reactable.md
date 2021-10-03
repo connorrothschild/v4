@@ -4,6 +4,7 @@ title: "Recreating a Table by The Economist Using Reactable"
 description: Recreating a table by The Economist entirely in R, using {reactable}
 date: "2020-05-02"
 image: economist-table-replication-using-reactable/header.png
+archived: true
 ---
 
 <script>

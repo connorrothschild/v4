@@ -3,7 +3,8 @@ layout: blog
 title: "Making visualizations literally using Svelte + D3"
 description: Why Svelte has replaced (and complemented) D3 as my go-to tool for powerful visualizations
 image: 'lorem'
-date: "2021-04-02"
+date: "2021-07-02"
+featured: true
 ---
 
 <script>

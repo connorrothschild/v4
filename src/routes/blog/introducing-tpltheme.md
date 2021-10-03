@@ -4,6 +4,7 @@ title: "My First Package! Introducing tpltheme"
 description: "Introducing {tpltheme}, a toolkit to create publication-ready plots in the style of the Texas Policy Lab."
 image: introducing-tpltheme/header.png
 date: "2019-07-02"
+archived: true
 ---
 
 <script>
