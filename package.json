@@ -20,6 +20,7 @@
     "rehype-slug": "^4.0.1",
     "remark-abbr": "^1.4.1",
     "remark-github": "^10.0.1",
+    "stream": "^0.0.2",
     "svelte": "^3.34.0",
     "svelte-highlight": "^3.2.0",
     "svelte-preprocess": "^4.7.1",
