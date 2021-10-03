@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish = "build"
-#   functions = "functions"
+  functions = "functions"
 
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
