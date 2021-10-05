@@ -9,9 +9,9 @@ featured: true
 
 <script>
   // import Counter from "$lib/Counter.svelte"
-  // import Code from "$lib/global/Code.svelte"
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Code from "$lib/global/Code.svelte"
+  import Image from "$lib/global/Image.svelte"
+  import Info from "$lib/global/Info.svelte"
 </script>
 
 <style>
@@ -71,19 +71,23 @@ D3 allows for intuitive transformations of the DOM by leveraging easy-to-underst
 
 In the traditional [HTML DOM model](https://www.w3schools.com/js/js_htmldom.asp), we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:
 
-```js
-var circles = document.getElementsByTagName("circle");
-for (var i = 0; i < circles.length; i++) {
-  var circle = circles.item(i);
-  circle.setAttribute("fill", "white", null);
-}
-```
+<Code language='js' showLineNumber={false} filename="File.js" highlightedLines="2-3, 1">
+
+  ```
+  var circles = document.getElementsByTagName("circle");
+  for (var i = 0; i < circles.length; i++) {
+    var circle = circles.item(i);
+    circle.setAttribute("fill", "white", null);
+  }
+  ```
+
+</Code>
 
 Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
 
-```js[fileWithD3.js]
+<Code language='js' showLineNumbers='{true}' filename="File.js">
 d3.selectAll("circle").style("fill", "white")
-```
+</Code>
 
 <svg>
   <rect width="100%" height="100%"/>

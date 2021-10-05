@@ -22,7 +22,6 @@
 
   export let posts;
 
-  console.log(posts);
   let filteredPosts = posts
     .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
@@ -32,6 +31,8 @@
     title: "Connor Rothschild",
     description: "Description",
   };
+
+  let anyHovered = false;
 </script>
 
 <main>
@@ -45,6 +46,7 @@
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}
+        bind:anyHovered
       />
     {/each}
     <!-- {#if items.length > pageSize}

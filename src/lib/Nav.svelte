@@ -1,15 +1,47 @@
 <script>
   import { page } from "$app/stores";
+
+  import { currentIcon } from "../stores/global.js";
+
+  const setCurrent = function (icon) {
+    currentIcon.set(icon);
+  };
 </script>
 
 <ul>
   <li>
-    <a sveltekit:prefetch href="/" class={$page.path == "/" ? "current" : ""}
-      >Home</a
+    <a
+      on:mouseover={() => {
+        setCurrent("home");
+      }}
+      on:focus={() => {
+        setCurrent("home");
+      }}
+      on:mouseout={() => {
+        setCurrent(null);
+      }}
+      on:blur={() => {
+        setCurrent(null);
+      }}
+      sveltekit:prefetch
+      href="/"
+      class={$page.path == "/" ? "current" : ""}>Home</a
     >
   </li>
   <li>
     <a
+      on:mouseover={() => {
+        setCurrent("experience");
+      }}
+      on:focus={() => {
+        setCurrent("experience");
+      }}
+      on:mouseout={() => {
+        setCurrent(null);
+      }}
+      on:blur={() => {
+        setCurrent(null);
+      }}
       sveltekit:prefetch
       href="/experience"
       class={$page.path == "/experience" ? "current" : ""}>Work</a
@@ -17,6 +49,18 @@
   </li>
   <li>
     <a
+      on:mouseover={() => {
+        setCurrent("projects");
+      }}
+      on:focus={() => {
+        setCurrent("projects");
+      }}
+      on:mouseout={() => {
+        setCurrent(null);
+      }}
+      on:blur={() => {
+        setCurrent(null);
+      }}
       sveltekit:prefetch
       href="/projects"
       class={$page.path == "/projects" ? "current" : ""}>Projects</a
@@ -24,6 +68,18 @@
   </li>
   <li>
     <a
+      on:mouseover={() => {
+        setCurrent("blog");
+      }}
+      on:focus={() => {
+        setCurrent("blog");
+      }}
+      on:mouseout={() => {
+        setCurrent(null);
+      }}
+      on:blur={() => {
+        setCurrent(null);
+      }}
       sveltekit:prefetch
       href="/blog"
       class={$page.path == "/blog" ? "current" : ""}>Blog</a
@@ -37,6 +93,7 @@
     margin: 0 auto;
     padding: 1em;
   } */
+
   ul {
     width: 90%;
     margin: 0 auto;

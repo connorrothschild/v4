@@ -1,6 +1,7 @@
 <script>
   export let post;
   export let slug;
+  export let anyHovered;
 
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
@@ -52,6 +53,9 @@
   const resetCoords = function () {
     xPos = null;
     yPos = null;
+
+    anyHovered = false;
+    hovered = false;
   };
 
   /* Rotation amount */
@@ -74,6 +78,8 @@
 
   /* 3d scaling */
   $: scale3dVal = xPos && yPos ? 1.02 : 1;
+
+  let hovered = false;
 </script>
 
 <svelte:window
@@ -84,6 +90,10 @@
 <div
   class="perspective-container"
   style="perspective: {cardWidth}px"
+  on:mouseover={() => {
+    anyHovered = true;
+    hovered = true;
+  }}
   on:mousemove={readyToHover ? setCoords : null}
   on:focus={null}
   on:mouseout={resetCoords}
@@ -96,7 +106,8 @@
     style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
 					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
-    class="post-container no-underline {post.featured ? 'featured' : ''}"
+    class="post-container no-underline {post.featured ? 'featured' : ''} 
+           {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     sveltekit:prefetch
     href={slug}
   >
@@ -168,22 +179,22 @@
     line-height: 1.25;
   }
 
-  .post-container:hover .post-card .post-title {
+  .hovered .post-card .post-title {
     border-bottom: 1px solid var(--accent-color);
   }
 
-  .post-container:hover {
+  .hovered {
     border: 1px solid var(--accent-color);
   }
-
-  /* .featured {
-    border: 1px solid var(--accent-color);
-  } */
 
   .featured-star {
     position: absolute;
     top: 0;
     right: 0;
     padding: 6px;
+  }
+
+  .unhovered {
+    filter: blur(1px) grayscale(1);
   }
 </style>

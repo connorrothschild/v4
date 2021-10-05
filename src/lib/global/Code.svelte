@@ -18,6 +18,8 @@
   // The code being used
   export let code = "";
 
+  export let filename = "";
+  export let highlightedLines = "";
   // link https://prismjs.com/#supported-languages
   // import from 'prismjs/components/prism-{lanugage-name}.js'
   // The language being rendered
@@ -58,7 +60,7 @@
 
   // creates the prism classes
   $: prismClasses = `language-${language} ${
-    showLineNumbers ? "line-numbers" : ""
+    showLineNumbers || highlightedLines.length > 0 ? "line-numbers" : ""
   } ${normalizeWhiteSpace === true ? "" : "no-whitespace-normalization"}`;
 
   onMount(() => {
@@ -81,20 +83,44 @@
     Prism.highlightAllUnder(preEl);
   });
 
-  // Only run if Prism is defined and we code
+  // Only run if Prism is defined and we provide code
   $: if (typeof Prism !== "undefined" && code) {
     formattedCode = Prism.highlight(code, Prism.languages[language], language);
   }
+  // $: console.log(code);
 </script>
 
+{#if filename.length > 0}
+  <div class="filename-container"><span class="filename">{filename}</span></div>
+{/if}
 <code style="display: none;" bind:this={fakeCodeEl}>
   <slot />
 </code>
 <pre
   class="{prismClasses} {classes}"
+  data-line={highlightedLines}
   bind:this={preEl}
   {...$$restProps}>
   <code class="language-{language}">
     {@html formattedCode}
   </code>
 </pre>
+
+<style>
+  .filename-container {
+    text-align: right;
+    width: 100%;
+    display: block;
+    height: 25px;
+    margin-bottom: -0.55em;
+    border-radius: 5px 5px 0 0;
+    background: var(--accent-color);
+  }
+
+  .filename {
+    color: white;
+    padding: 0.4rem;
+    vertical-align: middle;
+    vertical-align: -moz-middle-with-baseline;
+  }
+</style>

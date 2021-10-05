@@ -161,3 +161,21 @@ pre[class*="language-"] {
 .token.italic {
     font-style: italic;
 }
+
+/* LINE HIGHLIGHTING */
+pre[class*="language-"] > code{
+    /* Put code above highlight */
+    z-index: 2;
+}
+
+.line-highlight {
+    z-index: 1;
+    background: rgb(50, 69, 100) !important;
+    /* background: rgba(83, 83, 83, 0.75); */
+}
+
+/* Modify the ugly numbers that appear when numbers are OFF but highlighting is ON */
+.line-highlight::before,
+.line-highlight::after {
+    display: none;
+}
