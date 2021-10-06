@@ -6,7 +6,7 @@
   export let hovered;
   export let index;
 
-  import gsap from "gsap/dist/gsap";
+  import { gsap } from "gsap/dist/gsap";
   import { MorphSVGPlugin } from "gsap/dist/MorphSVGPlugin";
   import { onMount } from "svelte";
 
