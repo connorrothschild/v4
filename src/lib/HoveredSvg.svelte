@@ -23,39 +23,45 @@
   let container;
   onMount(() => {
     container = MorphSVGPlugin.convertToPath("#container");
+    changePath(paths[activePage]);
   });
 
   const changePath = function (path) {
     gsap.to(container, {
-      duration: 1,
+      duration: 0.3,
       morphSVG: path,
+      delay: 0.05,
     });
   };
 
-  $: $currentIcon,
-    changePath($currentIcon ? paths[$currentIcon] : paths[activePage]);
+  $: changePath($currentIcon ? paths[$currentIcon] : paths[activePage]);
 </script>
 
-<svg
-  height="60px"
-  width="60px"
-  fill="var(--accent-color)"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  x="0px"
-  y="0px"
-  ><path id="container" d={paths["home"]} />
-</svg>
+<a href="#nav" class="no-underline">
+  <svg
+    fill="var(--accent-color)"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    x="0px"
+    y="0px"
+    ><path id="container" d={paths[activePage]} />
+  </svg>
+</a>
 
 <style>
   svg {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    height: 60px;
+    width: 60px;
   }
-  /* Thins out SVG. but looks bad on animation */
-  /* #container {
-    stroke: white; 
-    stroke-width: 1px; 
-  } */
+
+  @media screen and (max-width: 560px) {
+    svg {
+      height: 40px;
+      width: 40px;
+      padding-top: 6px;
+    }
+  }
 </style>

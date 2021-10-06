@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const currentIcon = writable("home");
+export const currentIcon = writable("");

@@ -8,7 +8,7 @@
 <a
   class="job-container {hovered ? 'hovered' : ''}"
   on:mouseover={() => (hovered = true)}
-  on:mouseout={() => (hovered = false)}
+  on:mouseleave={() => (hovered = false)}
   sveltekit:prefetch
   href={slug}
 >

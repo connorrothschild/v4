@@ -42,10 +42,11 @@
     <span class="accented bolded">written</span>​
   </h1>
   <div class="post-grid">
-    {#each filteredPosts as post}
+    {#each filteredPosts as post, index}
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}
+        {index}
         bind:anyHovered
       />
     {/each}

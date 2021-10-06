@@ -2,6 +2,7 @@
   export let post;
   export let slug;
   export let anyHovered;
+  export let index;
 
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
@@ -94,10 +95,9 @@
     anyHovered = true;
     hovered = true;
   }}
-  on:mousemove={readyToHover ? setCoords : null}
   on:focus={null}
-  on:mouseout={resetCoords}
-  on:blur={resetCoords}
+  on:mousemove={readyToHover ? setCoords : null}
+  on:mouseleave={resetCoords}
   bind:this={card}
   bind:offsetWidth={cardWidth}
   bind:offsetHeight={cardHeight}
@@ -113,8 +113,14 @@
   >
     {#if post.featured}
       <div class="featured-star">
-        <!-- ⭐️ -->
-        <Star width="20" height="20" fill="var(--accent-color)" stroke="none" />
+        <Star
+          width="20"
+          height="20"
+          fill="var(--accent-color)"
+          stroke="none"
+          {hovered}
+          {index}
+        />
       </div>
     {/if}
     <div

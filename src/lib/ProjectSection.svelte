@@ -17,7 +17,10 @@
     on:mouseover={() => {
       hovered = true;
     }}
-    on:mouseout={() => {
+    on:focus={() => {
+      hovered = true;
+    }}
+    on:mouseleave={() => {
       hovered = false;
     }}
     class:hovered
