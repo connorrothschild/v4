@@ -5,8 +5,11 @@
   import { page } from "$app/stores";
   import { currentIcon } from "../stores/global.js";
 
+  let hoveredIcon;
   const setCurrent = function (icon) {
-    currentIcon.set(icon);
+    hoveredIcon = icon == "" ? "home" : icon;
+    currentIcon.set(hoveredIcon);
+    console.log(hoveredIcon);
   };
 </script>
 

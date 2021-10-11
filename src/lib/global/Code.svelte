@@ -14,6 +14,11 @@
   import "prismjs/plugins/file-highlight/prism-file-highlight.js";
 
   import "prism-svelte";
+  import "prismjs/components/prism-bash";
+  import "prismjs/components/prism-css";
+  import "prismjs/components/prism-r";
+  import "prismjs/components/prism-json";
+  import "prismjs/components/prism-yaml";
 
   // The code being used
   export let code = "";
@@ -24,6 +29,7 @@
   // import from 'prismjs/components/prism-{lanugage-name}.js'
   // The language being rendered
   export let language = "javascript";
+  export let showLanguage = true;
 
   // link https://prismjs.com/plugins/line-numbers/
   // Turns on and off line numbers
@@ -35,8 +41,8 @@
   //
   // The defualt config for cleanup white space
   export let normalizeWhiteSpaceConfig = {
-    // "remove-trailing": true,
-    // "remove-indent": true,
+    "remove-trailing": true,
+    "remove-indent": false,
     // "left-trim": true,
     // "right-trim": true,
     // "break-lines": 80,
@@ -83,11 +89,12 @@
     Prism.highlightAllUnder(preEl);
   });
 
+  $: console.log(Prism.languages);
+
   // Only run if Prism is defined and we provide code
   $: if (typeof Prism !== "undefined" && code) {
-    formattedCode = Prism.highlight(code, Prism.languages[language], language);
+    formattedCode = Prism.highlight(code, Prism.languages["r"], language);
   }
-  // $: console.log(code);
 </script>
 
 {#if filename.length > 0}
@@ -101,6 +108,9 @@
   data-line={highlightedLines}
   bind:this={preEl}
   {...$$restProps}>
+  {#if showLanguage && filename.length == 0}
+    <span class="language">{language}</span>
+  {/if}
   <code class="language-{language}">
     {@html formattedCode}
   </code>
@@ -110,17 +120,30 @@
   .filename-container {
     text-align: right;
     width: 100%;
-    display: block;
-    height: 25px;
+    height: 30px;
     margin-bottom: -0.55em;
     border-radius: 5px 5px 0 0;
-    background: var(--accent-color);
+    background: rgba(var(--accent-color-rgb), 0.9);
+    display: flex;
+    justify-content: flex-end;
+    place-items: center;
   }
 
   .filename {
     color: white;
     padding: 0.4rem;
-    vertical-align: middle;
-    vertical-align: -moz-middle-with-baseline;
+    letter-spacing: 1.4px;
+    font-weight: 100;
+  }
+
+  .language {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #cecece;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 3px 4px;
+    background: rgba(1, 22, 39, 0.79);
   }
 </style>

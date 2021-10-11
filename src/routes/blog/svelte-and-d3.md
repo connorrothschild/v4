@@ -8,9 +8,9 @@ featured: true
 ---
 
 <script>
-  // import Counter from "$lib/Counter.svelte"
   import Code from "$lib/global/Code.svelte"
-  import Image from "$lib/global/Image.svelte"
+  import CodeMirror from '$lib/global/CodeMirror.svelte';
+    import Image from "$lib/global/Image.svelte"
   import Info from "$lib/global/Info.svelte"
 </script>
 
@@ -71,7 +71,7 @@ D3 allows for intuitive transformations of the DOM by leveraging easy-to-underst
 
 In the traditional [HTML DOM model](https://www.w3schools.com/js/js_htmldom.asp), we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:
 
-<Code language='js' showLineNumber={false} filename="File.js" highlightedLines="2-3, 1">
+<Code language='js'>
 
   ```
   var circles = document.getElementsByTagName("circle");
@@ -85,7 +85,7 @@ In the traditional [HTML DOM model](https://www.w3schools.com/js/js_htmldom.asp)
 
 Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
 
-<Code language='js' showLineNumbers='{true}' filename="File.js">
+<Code language='js'>
 d3.selectAll("circle").style("fill", "white")
 </Code>
 
@@ -100,7 +100,9 @@ d3.selectAll("circle").style("fill", "white")
 
 Imagine if you also wanted to bind data to those circles. That is, you wanted to fill the circle according to some attribute, or size its radius according to some datapoint. In traditional JavaScript, that might look something like this:
 
-```js
+<Code language='js'>
+
+```
 let data = [5, 10, 15, 20, 25];
 
 var circles = document.getElementsByTagName("circle");
@@ -110,13 +112,19 @@ for (var i = 0; i < circles.length; i++) {
 }
 ```
 
+</Code>
+
 Not too hard—but also, not too easy. D3 simplifies this logic by removing the need for a loop and iterating on your selection for you:
+
+<Code language='js'>
 
 ```js
 let data = [5, 10, 15, 20, 25];
 
 d3.selectAll("circle").data(data).attr("r", d => d)
 ```
+
+</Code>
 
 <svg>
   <rect width="100%" height="100%" />
@@ -139,7 +147,9 @@ Going back to the above circles, imagine if we could simply bind our data to our
 
 **We can!** Svelte (and Vue, React and other frameworks) allow for seamless interactions between our app's logic, data, and markup, so that we can embed data directly into our SVG elements. In this new paradigm, we could replace the set of D3 instructions from earlier with the following Svelte code:
 
-```svelte
+<Code language='svelte'>
+
+```
 <script>
   let data = [{x: 10, r: 5 }, 
               {x: 30, r: 10}, 
@@ -151,14 +161,16 @@ Going back to the above circles, imagine if we could simply bind our data to our
 <p>{data.map(x => x)}</p>
 ```
 
-<svg>
+</Code>
+
+<!-- <svg>
   <rect width="100%" height="100%"/>
   <circle cx="10%" cy="50%" r="5"  fill="white"><title>Hello from the circle with a radius of 5!</title></circle>
   <circle cx="30%" cy="50%" r="10" fill="white"><title>Hello from the circle with a radius of 10!</title></circle>
   <circle cx="50%" cy="50%" r="15" fill="white"><title>Hello from the circle with a radius of 15!</title></circle>
   <circle cx="70%" cy="50%" r="20" fill="white"><title>Hello from the circle with a radius of 20!</title></circle>
   <circle cx="90%" cy="50%" r="25" fill="white"><title>Hello from the circle with a radius of 25!</title></circle>
-</svg>
+</svg> -->
 
 In my view, there are three benefits to writing our code this way:
 

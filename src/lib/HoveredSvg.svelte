@@ -22,6 +22,7 @@
   };
 
   let container;
+
   onMount(() => {
     container = MorphSVGPlugin.convertToPath("#container");
     changePath(paths[activePage]);
@@ -39,12 +40,7 @@
 </script>
 
 <a href="#nav" class="no-underline">
-  <svg
-    fill="var(--accent-color)"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
-    x="0px"
-    y="0px"
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" x="0px" y="0px"
     ><path id="container" d={paths[activePage]} />
   </svg>
 </a>
@@ -56,6 +52,9 @@
     right: 0;
     height: 60px;
     width: 60px;
+    stroke: var(--primary-color);
+    fill: rgba(var(--accent-color-rgb), 0.9);
+    stroke-width: 1px;
   }
 
   @media screen and (max-width: 560px) {

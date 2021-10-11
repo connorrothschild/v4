@@ -8,6 +8,7 @@ featured: true
 ---
 
 <script>
+  import Code from "$lib/global/Code.svelte"
   import Image from "../../lib/global/Image.svelte"
   import Info from "../../lib/global/Info.svelte"
 </script>
@@ -44,7 +45,9 @@ We'll be grabbing data from the [Mapping Police Violence](https://mappingpolicev
 
 The first step in any Flat Data pipeline is to create `.github/workflows/flat.yml`, which will include the configuration for your project. You can do so by using GitHub's [VSCode extension](https://marketplace.visualstudio.com/items?itemName=GitHubOCTO.flat), or by creating your own YAML file manually. The YAML file we use in this project is remarkably similar to the [boilerplate](https://github.com/marketplace/actions/flat-data) file, with a few differences:
 
-```yaml[flat.yml]
+<Code language='yaml' filename="flat.yml">
+
+```
 name: Update data
 on:
   schedule:
@@ -74,15 +77,21 @@ jobs:
           postprocess: ./postprocess.ts # Script to run upon download completion
 ```
 
+</Code>
+
 The tweaks you would make to this workflow are most likely in `http_url` and `schedule`. To confirm, visit GitHub's [documentation](https://github.com/marketplace/actions/flat-data). 
 
 ## 02. Postprocess
 
 We pick up at the last line of code in the previous chunk:
 
-```yaml[flat.yml]
+<Code language='yaml' filename="flat.yml">
+
+```yaml
 postprocess: ./postprocess.ts 
 ```
+
+</Code>
 
 Here, we reference a TypeScript file titled `postprocess.ts`. Upon completion of the data download, GitHub will run *this script* for any additional processing steps. This file must be a `.js` or `.ts` file.
 
@@ -90,7 +99,9 @@ Those who are skilled in data wrangling with JavaScript might be able to write t
 
 The `postprocess.ts` file I use in my workflow looks like this (it might help to see how [Deno works](https://deno.land/manual@v1.10.2/examples/subprocess)):
 
-```js[postprocess.ts]
+<Code language='javascript' filename="postprocess.ts">
+
+```js
 // 1. Install necessary packages
 const r_install = Deno.run({
     cmd: ['sudo', 'Rscript', '-e', "install.packages(c('dplyr', 'readxl', 'readr', 'lubridate', 'stringr'))"]
@@ -106,6 +117,8 @@ const r_run = Deno.run({
 await r_run.status();
 ```
 
+</Code>
+
 The above script is rather simple: it 1) installs packages, and 2) runs the processing script, titled `clean.R`.
 
 The first step is important.  **Package management was the biggest issue I ran into while setting up this workflow; if you're having issues, pay attention to this step.** You'll need to identify all the packages that are required in your R processing script, but you can't install those packages *in the script itself*, due to virtual machine permissions. You instead have to run them via the command line, using `sudo Rscript -e`, as I do above (in step 1). 
@@ -116,7 +129,9 @@ The command `sudo Rscript -e` precedes any regular function or command that you 
 
 My `clean.R` script, which I reference at the bottom of `postprocess.ts` looks like this:
 
-```r[clean.R]
+<Code language='r' filename="clean.R">
+
+```r
 # Load libraries
 library(dplyr)
 library(stringr)
@@ -144,6 +159,8 @@ clean_data <- raw_data %>%
 # Output data
 readr::write_csv(clean_data, "./output.csv")
 ```
+
+</Code>
 
 Obviously, the content in the above cleaning script is irrelevant. It functions as any other R script would: it reads in data (based on the data we downloaded in `postprocess.ts`), does some cleaning, and then outputs the new data. The [real script](https://github.com/connorrothschild/flat-demo-r-processing/blob/master/clean.R) is around 55 lines. Now you know why keeping the postprocessing in R was preferable!
 

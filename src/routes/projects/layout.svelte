@@ -1,18 +1,17 @@
 <script>
-  import { onMount } from "svelte";
   import { seo } from "$lib/store";
 
-  export let name;
+  export let title;
   export let description;
 
   $seo = {
-    title: name,
+    title: title,
     description: description,
   };
 </script>
 
 <main>
-  <h1 class="page-title">{name}</h1>
+  <h1 class="page-title">{title}</h1>
   <div class="post">
     <slot />
   </div>

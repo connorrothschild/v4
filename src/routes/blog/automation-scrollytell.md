@@ -20,16 +20,17 @@ Times](https://www.nytimes.com/), and
 
 Although most of these sites rely on the same high-powered visualization
 tools (such as [D3.js](https://d3js.org/)) to create their stories, the
-learning curve for those are a bit too steep for a full-time college
-student to pursue (although [I am
-trying](https://github.com/connorrothschild/D3.js)\!).
-
-Thankfully, I came across some examples of scrollytelling in my language
+learning curve for those are a bit steep! Thankfully, I came across some examples of scrollytelling in my language
 of choice, R.
 
-What follows is a scrollytelling recreation of the [very first
-visualization I ever
-made](https://connorrothschild.github.io/r/automation/).
+Today, I'll walk you through a tutorial of scrollytelling in R. It's a bit complicated, and the output isn't as powerful as a full-fledged D3 project, but its a rough sketch, and it works. Here's the output:
+
+<iframe title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px">
+</iframe>
+
+### Load libraries
+
+We begin by loading the libraries required for our project:
 
 ```r
 library(shiny)
@@ -46,7 +47,7 @@ theme_set(theme_minimal())
 Once the data ([which can be found
 here](https://github.com/connorrothschild/shiny-scrollytell/tree/master/data))
 is already [loaded and
-cleaned](https://connorrothschild.github.io/r/automation/#load-datasets),
+cleaned](https://github.com/connorrothschild/shiny-scrollytell/blob/master/scripts/merge_data.R),
 we construct a plot object that will update as the user scrolls. ([Other
 R users](https://github.com/scottyd22/dream_team) make multiple plots;
 either way is fine.)
@@ -64,11 +65,10 @@ plot <- data %>%
   scale_size(range = c(1, 20)) +
   xlab("\nMedian Income") +
   ylab("Probability of Automation") +
-  labs(size= "", col= "", alpha = "") +
+  labs(size = "", col = "", alpha = "") +
   scale_color_manual(values = cols, breaks = legend_ord) +
-  scale_x_continuous(labels=scales::dollar_format(prefix="$"), limits = c(25000,200000)) +
-  scale_y_continuous(labels=scales::number_format(suffix="%"), limits = c(0,100)) +
-  # cr::drop_axis(axis = "y") +
+  scale_x_continuous(labels = scales::dollar_format(prefix="$"), limits = c(25000,200000)) +
+  scale_y_continuous(labels = scales::number_format(suffix="%"), limits = c(0,100)) +
   theme(axis.line.x = ggplot2::element_line(colour = NULL,
                                             size = NULL, linetype = NULL, lineend = NULL),
         axis.line.y = ggplot2::element_blank(),
@@ -298,11 +298,9 @@ text <- function(num){
 }
 
 render_text <- function(num){
-
   div(
     text(num), class = "text"
   )
-
 }
 ```
 
@@ -317,11 +315,10 @@ Recall that above, in our ui section, we had the following:
 
 ```r
 scrolly_sections(
-                      HTML('<center>'),
-                      scrolly_section(id = 0, render_text(0)),
-                      scrolly_section(id = 1, render_text(1)),
-                      # ...
-
+  HTML('<center>'),
+  scrolly_section(id = 0, render_text(0)),
+  scrolly_section(id = 1, render_text(1)),
+  # ... continued
 )
 ```
 
@@ -346,7 +343,7 @@ include other plots (for my post, I have an introductory plot with a bit
 more context), which you will have to separately create and render in
 your server function.
 
-All in all, my code looks like this:
+All in all, my UI code looks like this:
 
 ```r
 ui <- fluidPage(
@@ -511,10 +508,7 @@ server <- function(input, output, session) {
 
 ## The output
 
-You can see the final output of my post
-[here](https://connorrothschild.shinyapps.io/automation/).
-
 You can look at the code and all of its context on GitHub
-[here](https://github.com/connorrothschild/shiny-scrollytell).
+[here](https://github.com/connorrothschild/shiny-scrollytell). Want to visit the live page? You can access it [here](https://connorrothschild.shinyapps.io/automation/), or embedded below!
 
-<iframe src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px">
+<iframe title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px"></iframe>

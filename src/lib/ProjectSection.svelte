@@ -11,8 +11,8 @@
   {#if hovered}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />{/if}
   <img
-    src="./images/projects/{project.imageUrl}.png"
-    alt="Project image for {project.name}"
+    src="/images/projects/{project.image}"
+    alt="Project image for {project.title}"
     class="project-image"
     on:mouseover={() => {
       hovered = true;
@@ -31,7 +31,7 @@
       out:fade={{ duration: 200 }}
       class="project-text"
     >
-      <h1>{project.name}</h1>
+      <h1>{project.title}</h1>
       <h2 class="description">{project.description}</h2>
     </div>{/if}
 </a>
@@ -39,19 +39,15 @@
 <style>
   .project {
     position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #b2b2b2;
   }
 
   .project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 3px;
-    box-shadow: 1px 1px 4px #b2b2b2;
-    /* transition: filter 300ms ease; */
-  }
-
-  .project-image.hovered {
-    /* filter: brightness(0.7); */
   }
 
   .hovered-gradient {
