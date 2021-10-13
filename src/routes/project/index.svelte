@@ -22,6 +22,10 @@
   let otherProjects = projects.filter((d) => !d.metadata.featured == true);
 
   let showAll = false;
+
+  let filteredProjects = projects
+    .filter((d) => d.metadata.featured != true && d.metadata.archived != true)
+    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 </script>
 
 <main>
@@ -40,7 +44,7 @@
   </div>
   {#if showAll}
     <div transition:slide class="projects-container">
-      {#each otherProjects as project}
+      {#each filteredProjects as project}
         <ProjectSection
           project={project.metadata}
           slug={project.path.replace(/\.[^/.]+$/, "")}

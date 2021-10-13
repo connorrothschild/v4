@@ -12,10 +12,10 @@
 
 <main>
   <h1 class="page-title">{title}</h1>
-  <div class="post">
+  <div class="project">
     <slot />
   </div>
-  <a class="border-top no-underline block" sveltekit:prefetch href="/projects"
+  <a class="border-top no-underline block" sveltekit:prefetch href="/project"
     >&#8592; Back to all projects</a
   >
 </main>
@@ -28,16 +28,16 @@
     width: 90vw;
   }
 
-  .post {
+  .project {
     margin-bottom: 4rem;
   }
 
-  .date {
+  /* .date {
     font-weight: 300;
     margin-top: -1rem;
     font-size: 1.5rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--accent-color);
     padding-bottom: 1rem;
-  }
+  } */
 </style>

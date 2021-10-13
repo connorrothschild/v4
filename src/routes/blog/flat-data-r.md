@@ -13,7 +13,7 @@ featured: true
   import Info from "../../lib/global/Info.svelte"
 </script>
 
-The [GitHub OCTO team](https://octo.github.com/) recently released their first project: [**Flat Data**](https://octo.github.com/projects/flat-data). The project aims to offer "a simple pattern for bringing working datasets into your repositories and versioning them." And it succeeds in doing so! I recently incorporated Flat Data into [one of my projects](https://github.com/connorrothschild/police-killings), allowing me to finally stop manually updating the data on a semiregular basis (yikes!). While working, I couldn't find any documentation on using R with Flat Data. Here, I'll explain the steps I took to incorporate R scripts into a Flat Data pipeline.
+The [GitHub OCTO team](https://octo.github.com/) recently released their first project: [**Flat Data**](https://octo.github.com/project/flat-data). The project aims to offer "a simple pattern for bringing working datasets into your repositories and versioning them." And it succeeds in doing so! I recently incorporated Flat Data into [one of my projects](https://github.com/connorrothschild/police-killings), allowing me to finally stop manually updating the data on a semiregular basis (yikes!). While working, I couldn't find any documentation on using R with Flat Data. Here, I'll explain the steps I took to incorporate R scripts into a Flat Data pipeline.
 
 <Info>
   
@@ -25,7 +25,7 @@ The [GitHub OCTO team](https://octo.github.com/) recently released their first p
 
 ## What's Flat Data?
 
-[Flat Data](https://octo.github.com/projects/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via [GitHub](https://octo.github.com/projects/flat-data)):
+[Flat Data](https://octo.github.com/project/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via [GitHub](https://octo.github.com/project/flat-data)):
 
 <Image src="../images/blog/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow"></Image>
 

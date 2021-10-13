@@ -5,6 +5,7 @@ description: Informing data-driven decisions about school reopenings.
 date: "2021-05-05"
 audience: "Texas policymakers, parents"
 featured: false
+archived: true
 image: tpl-schools-db/header.png
 img_alt: "TPL header image, includes an image of a MacBook with the application open."
 techstack: "R, Shiny"
@@ -16,7 +17,7 @@ url: "http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texa
 import Image from "$lib/global/Image.svelte"
 </script>
 
-[<Image style="box-shadow: none" :clickable=false src="/images/projects/tpl-schools-db/header.png" alt="Header"></Image>](http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/)
+<Image href="http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/" src="/images/project/tpl-schools-db/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -28,9 +29,9 @@ The app is built with R and is a Shiny web application. I was mostly responsible
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/tpl-schools-db/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>
-<Image style="box-shadow: none" src="/images/projects/tpl-schools-db/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>
+<Image style="box-shadow: none;" src="/images/project/tpl-schools-db/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>
+<Image style="box-shadow: none;" src="/images/project/tpl-schools-db/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/tpl-schools-db/iphone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>
-<Image style="box-shadow: none" src="/images/projects/tpl-schools-db/iphone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>
-<Image style="box-shadow: none" src="/images/projects/tpl-schools-db/iphone-3.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>
+<Image style="box-shadow: none;" src="/images/project/tpl-schools-db/iphone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>
+<Image style="box-shadow: none;" src="/images/project/tpl-schools-db/iphone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>
+<Image style="box-shadow: none;" src="/images/project/tpl-schools-db/iphone-3.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="31%"></Image>

@@ -5,6 +5,7 @@ description: A quick game to see if you are more intelligent than an algorithm u
 date: "2020-02-23"
 audience: "The world!"
 featured: false
+archived: true
 image: compas/header.png
 img_alt: "COMPAS header image, includes an image of a MacBook with the application open."
 techstack: "D3.js, Bulma, R"
@@ -16,7 +17,7 @@ url: "https://connorrothschild.github.io/compas/"
 import Image from "$lib/global/Image.svelte"
 </script>
 
-[<Image style="box-shadow: none" :clickable=false src="/images/projects/compas/header.png" alt="Header"></Image>](https://connorrothschild.github.io/compas/)
+<Image href="https://connorrothschild.github.io/compas/" style="box-shadow: none;" src="/images/project/compas/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -30,8 +31,8 @@ This project was built using vanilla JavaScript, and styling was done with assis
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
-<Image style="box-shadow: none" src="/images/projects/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/compas/phone-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
-<Image style="box-shadow: none" src="/images/projects/compas/mac-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/compas/phone-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/compas/mac-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>

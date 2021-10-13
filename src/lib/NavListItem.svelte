@@ -9,7 +9,6 @@
   const setCurrent = function (icon) {
     hoveredIcon = icon == "" ? "home" : icon;
     currentIcon.set(hoveredIcon);
-    console.log(hoveredIcon);
   };
 </script>
 

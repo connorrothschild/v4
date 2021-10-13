@@ -5,6 +5,7 @@ description: Using the American Time Use Survey to predict your daily activities
 date: "2020-02-23"
 audience: "The world!"
 featured: false
+archived: true
 image: atus/header.png
 img_alt: "ATUS header image, includes an image of a MacBook with the application open."
 techstack: "JavaScript, Bulma, R"
@@ -16,7 +17,7 @@ url: "https://connorrothschild.github.io/what-are-you-doing/"
 import Image from "$lib/global/Image.svelte"
 </script>
 
-<Image style="box-shadow: none" :clickable=false src="/images/projects/atus/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/what-are-you-doing/"  src="/images/project/atus/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -30,8 +31,8 @@ Methodologically, for each demographic profile (a combination of race, age, mari
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/atus/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
-<Image style="box-shadow: none" src="/images/projects/atus/phone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/phone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/atus/phone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
-<Image style="box-shadow: none" src="/images/projects/atus/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/phone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>

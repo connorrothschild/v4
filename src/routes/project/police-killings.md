@@ -16,7 +16,7 @@ url: "https://mappingpoliceviolence.org/"
 import Image from "$lib/global/Image.svelte"
 </script>
 
-[<Image style="box-shadow: none" :clickable=false src="/images/projects/police-killings/header.png" alt="Header"></Image>](https://connorrothschild.github.io/police-killings/)
+<Image href="https://connorrothschild.github.io/police-killings/" src="/images/project/police-killings/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -32,8 +32,8 @@ This was actually the second iteration of this visualization. [Version 1 can be 
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
-<Image style="box-shadow: none" src="/images/projects/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
-<Image style="box-shadow: none" src="/images/projects/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>

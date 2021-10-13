@@ -7,11 +7,12 @@
   let hovered = false;
 </script>
 
-<a class="project no-underline" href={slug} sveltekit:prefetch>
+<a class="project-card no-underline" href={slug} sveltekit:prefetch>
   {#if hovered}
-    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />{/if}
+    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
+  {/if}
   <img
-    src="/images/projects/{project.image}"
+    src="/images/project/{project.image}"
     alt="Project image for {project.title}"
     class="project-image"
     on:mouseover={() => {
@@ -33,21 +34,27 @@
     >
       <h1>{project.title}</h1>
       <h2 class="description">{project.description}</h2>
-    </div>{/if}
+    </div>
+  {/if}
 </a>
 
 <style>
-  .project {
+  .project-card {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 1px 1px 4px #b2b2b2;
+    transition: height 300ms ease;
+    height: 100%;
   }
 
   .project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: blur(0);
+    /* transition: filter 1000ms linear; */
+    z-index: 0;
   }
 
   .hovered-gradient {
@@ -55,12 +62,17 @@
     background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.52)
+      rgba(0, 0, 0, 0.75)
     );
     width: 100%;
     height: 100%;
     background-size: cover;
     pointer-events: none;
+    z-index: 1; /* Above image */
+  }
+
+  .hovered {
+    filter: blur(2px);
   }
 
   .project-text {
@@ -69,6 +81,7 @@
     left: 0;
     pointer-events: none;
     padding: 0.5rem 0.5rem 1rem 1rem;
+    z-index: 3;
   }
 
   h1,

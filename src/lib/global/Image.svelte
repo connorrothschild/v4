@@ -4,12 +4,16 @@
   export let width = "100%";
   export let centered = false;
   export let style = "";
+  export let href = null;
 
   import { fade } from "svelte/transition";
 
   let expanded = false;
 
   const toggleExpand = function () {
+    if (href) {
+      return;
+    }
     expanded = !expanded;
   };
 </script>
@@ -33,7 +37,17 @@
   />
   <img transition:fade class="expanded" {src} {alt} on:click={toggleExpand} />
 {/if}
-<img {src} {alt} {width} {style} on:click={toggleExpand} class:centered />
+<a {href} target="_blank" class="no-underline">
+  <img
+    {src}
+    {alt}
+    {width}
+    {style}
+    on:click={toggleExpand}
+    class:centered
+    class:href
+  />
+</a>
 
 <style>
   .centered {
@@ -58,15 +72,19 @@
     cursor: zoom-in;
   }
 
+  img.href {
+    cursor: pointer;
+  }
+
   .expanded {
     z-index: 100;
-    width: auto;
-    width: 90%;
+    max-height: 95%;
+    max-width: 95%;
     left: 50%;
     top: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
-    /* border: 1px solid white; */
+    border-radius: 5px;
     cursor: zoom-out;
   }
 </style>

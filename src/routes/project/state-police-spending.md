@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/state-police-spending/"
 import Image from "$lib/global/Image.svelte"
 </script>
 
-[<Image style="box-shadow: none" :clickable=false src="/images/projects/state-police-spending/header.png" alt="Header"></Image>](https://connorrothschild.github.io/state-police-spending/)
+<Image href="https://connorrothschild.github.io/state-police-spending/" src="/images/project/state-police-spending/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -28,5 +28,5 @@ I used [D3.js](https://d3js.org/) for the minor visualization that accompanies t
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></Image>
-<Image style="box-shadow: none" src="/images/projects/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></Image>

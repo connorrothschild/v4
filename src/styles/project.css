@@ -1,0 +1,70 @@
+.project h1 {
+    /* margin-top: 2.5rem; */
+    margin-bottom: 1.5rem;
+}
+
+.project h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project h3 {
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+}
+
+.project h3,
+.project h4,
+.project h5,
+.project h6,
+.project p,
+.project button,
+.project pre,
+.project ol,
+.project ul,
+.project iframe,
+.project hr,
+.project img,
+.project table {
+    margin-bottom: 1.15rem;
+}
+
+.project img:not(.expanded) {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .15);
+    border-radius: 5px;
+}
+
+table {
+    background: var(--tertiary-color);
+    color: black;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    width: 100%;
+}
+
+thead {
+    font-weight: bold;
+}
+
+td, th {
+    border: solid rgb(164, 164, 164);
+    border-width: 0 0 1px;
+    padding: .5em .75em;
+    vertical-align: top;
+    letter-spacing: .64px;
+    text-align: left;
+}
+
+td:last-of-type,
+th:last-of-type {
+    text-align: right;
+}
+
+td:first-of-type,
+th:first-of-type {
+    text-align: left;
+}
+
+tr:hover {
+    background: var(--primary-color);
+}

@@ -5,13 +5,14 @@
 <ul id="nav">
   <NavListItem code={""} title={"Home"} />
   <NavListItem code={"experience"} title={"Work"} />
-  <NavListItem code={"projects"} title={"Projects"} />
+  <NavListItem code={"project"} title={"Projects"} />
   <NavListItem code={"blog"} title={"Blog"} />
 </ul>
 
 <style>
   ul {
     width: 90%;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
     list-style-type: none;

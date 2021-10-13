@@ -14,4 +14,4 @@ archived: true
 
 Thanks for visiting this blog post, but it has moved! It can be found in its fully interactive form [here](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/).
 
-[<Image alt="A table depicting excess deaths by country during 2020." src="../images/blog/economist-table-replication-using-reactable/featured.png" :clickable=false></Image>](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/)
+[<Image alt="A table depicting excess deaths by country during 2020." src="../images/blog/economist-table-replication-using-reactable/featured.png" ></Image>](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/)

@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/map-missing-migrants"
 import Image from "$lib/global/Image.svelte"
 </script>
 
-[<Image style="box-shadow: none" :clickable=false src="/images/projects/map-missing-migrants/header.png" alt="Header"></Image>](https://connorrothschild.github.io/map-missing-migrants)
+<Image href="https://connorrothschild.github.io/map-missing-migrants" src="/images/project/map-missing-migrants/header.png" alt="Header"></Image>
 
 # What it is
 
@@ -32,14 +32,14 @@ To trigger scroll events, I used the Mapbox storytelling template. This was a si
 
 # Project images
 
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/mac-1.png" alt="Project image for 'Mapping Missing Migrants'" width="100%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-1.png" alt="Project image for 'Mapping Missing Migrants'" width="100%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/mac-2.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/mac-3.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-2.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-3.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/mac-4.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/mac-5.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-4.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-5.png" alt="Project image for 'Mapping Missing Migrants'" width="48%"></Image>
 
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/phone-1.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/phone-2.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>
-<Image style="box-shadow: none" src="/images/projects/map-missing-migrants/phone-3.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/phone-1.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/phone-2.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-missing-migrants/phone-3.png" alt="Project image for 'Mapping Missing Migrants'" width="32%"></Image>

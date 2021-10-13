@@ -17,6 +17,7 @@
   import "../styles/code.css";
   import "../styles/style.css";
   import "../styles/blog.css";
+  import "../styles/project.css";
 </script>
 
 <Seo />
