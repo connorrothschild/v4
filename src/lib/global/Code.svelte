@@ -14,11 +14,11 @@
   import "prismjs/plugins/file-highlight/prism-file-highlight.js";
 
   import "prism-svelte";
-  import "prismjs/components/prism-bash";
-  import "prismjs/components/prism-css";
-  import "prismjs/components/prism-r";
-  import "prismjs/components/prism-json";
-  import "prismjs/components/prism-yaml";
+  import "prismjs/components/prism-bash.js";
+  import "prismjs/components/prism-css.js";
+  import "prismjs/components/prism-r.js";
+  import "prismjs/components/prism-json.js";
+  import "prismjs/components/prism-yaml.js";
 
   // The code being used
   export let code = "";
