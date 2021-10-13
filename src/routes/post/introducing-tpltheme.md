@@ -95,7 +95,7 @@ ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
     labs(x="Species", y="Mean Sepal Width (cm)", fill="Species", title="Iris Dataset")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-3-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-3-1.png"></Image>
 
 ### Fonts
 
@@ -122,7 +122,7 @@ ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, siz
     labs(x="Sepal Width (cm)", y="Sepal Length (cm)", col="Species", size = "Petal Length", title="Iris Dataset")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-5-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-5-1.png"></Image>
 
 By specifying `style = "Texas"` within `set_tpl_theme`, the user may
 also create Texas-specific plots.
@@ -141,7 +141,7 @@ ggplot(data = tx_vac, mapping = aes(x = long, y = lat, group = group, fill = avg
        caption = "Source: Texas DSHS")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-6-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-6-1.png"></Image>
 
 And it also works for categorical variables:
 
@@ -161,7 +161,7 @@ tx_vac %>%
        caption = "Source: Texas DSHS")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-7-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-7-1.png"></Image>
 
 If the number of colors exceeds the number of colors in the TPL palette
 (9), the function `tpl_color_pal()` will drop the TPL color palette and
@@ -178,7 +178,7 @@ tx_vac %>%
   labs(title = "Texas Counties")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-8-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-8-1.png"></Image>
 
 ```r
 # default to print afterwards
@@ -208,7 +208,7 @@ plot <- ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
 add_tpl_logo(plot, position = "top right", scale = 1.5)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-9-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-9-1.png"></Image>
 
 #### Logo text
 
@@ -225,7 +225,7 @@ plot <- ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Spec
 add_tpl_logo_text(plot)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-10-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-10-1.png"></Image>
 
 The user may also need to specify `align`, which moves the plot
 horizontally across the bottom of the page.
@@ -238,7 +238,7 @@ plot <- ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
 add_tpl_logo_text(plot, align = 1)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-11-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-11-1.png"></Image>
 
 ### Additional functions
 
@@ -259,7 +259,7 @@ ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, siz
     drop_axis(axis = "y")
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-12-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-12-1.png"></Image>
 
 ### Colors
 
@@ -283,7 +283,7 @@ p3 <- view_palette(palette = palette_tpl_sequential) + ggtitle("Sequential")
 gridExtra::grid.arrange(p1, p2, p3, nrow = 1)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-13-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-13-1.png"></Image>
 
 These palettes were created using <http://colorbrewer2.org> and
 <http://coloors.co> and are colorblind friendly.
@@ -319,7 +319,7 @@ reversed <- normal +
 gridExtra::grid.arrange(normal, reversed)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-14-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-14-1.png"></Image>
 
 The user may specify the color palette in the `scale_fill_*` or
 `scale_color_*` functions in a ggplot call. Specifically, the user can
@@ -345,7 +345,7 @@ reversed <- normal +
 gridExtra::grid.arrange(normal, reversed, nrow = 1)
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-15-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-15-1.png"></Image>
 
 ```r
 data <- gapminder::gapminder %>%
@@ -364,7 +364,7 @@ ggplot(data = data, aes(x = year, y = gdpPercap, fill = country)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-16-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-16-1.png"></Image>
 
 ### Restore Defaults
 
@@ -382,7 +382,7 @@ ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, siz
 
 This results in the following plot:
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-17-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-17-1.png"></Image>
 
 To restore the TPL theme, simply call `set_tpl_theme()`:
 
@@ -391,4 +391,4 @@ set_tpl_theme()
 last_plot()
 ```
 
-<Image alt="An example of a plot in the TPL theme." src="../images/blog/introducing-tpltheme/unnamed-chunk-18-1.png"></Image>
+<Image alt="An example of a plot in the TPL theme." src="../images/post/introducing-tpltheme/unnamed-chunk-18-1.png"></Image>

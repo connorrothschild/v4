@@ -15,17 +15,22 @@
 
 <script>
   import { slide } from "svelte/transition";
+  import { linear } from "svelte/easing";
   import ProjectSection from "$lib/ProjectSection.svelte";
   export let projects;
 
-  let featuredProjects = projects.filter((d) => d.metadata.featured == true);
-  let otherProjects = projects.filter((d) => !d.metadata.featured == true);
+  let filteredProjects = projects
+    .filter((d) => d.metadata.archived != true)
+    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
+
+  let featuredProjects = filteredProjects.filter(
+    (d) => d.metadata.featured == true
+  );
+  let otherProjects = filteredProjects.filter(
+    (d) => !d.metadata.featured == true
+  );
 
   let showAll = false;
-
-  let filteredProjects = projects
-    .filter((d) => d.metadata.featured != true && d.metadata.archived != true)
-    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 </script>
 
 <main>
@@ -43,8 +48,11 @@
     {/each}
   </div>
   {#if showAll}
-    <div transition:slide class="projects-container">
-      {#each filteredProjects as project}
+    <div
+      transition:slide={{ duration: 300, easing: linear }}
+      class="projects-container"
+    >
+      {#each otherProjects as project}
         <ProjectSection
           project={project.metadata}
           slug={project.path.replace(/\.[^/.]+$/, "")}

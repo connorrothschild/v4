@@ -11,7 +11,7 @@ image: "images/jobs/moksha.svg"
   import Info from "../../lib/global/Info.svelte"
 </script>
 
-<Image src="../images/blog/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage."></Image>
+<Image src="../images/post/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage."></Image>
 
 The R package `blogdown` is an incredibly powerful tool—it allows R users with little to no familiarity in web development to build a fully functional, content-oriented, beautiful website using a language they’re already familiar with. It's built on top of [Hugo](https://gohugo.io/), the world’s (self-proclaimed) ‘fastest framework for building websites,’ which comes with a [variety of themes](https://themes.gohugo.io/) suitable for a variety of different uses.
 
@@ -35,11 +35,11 @@ If you’d like to skip this tutorial and just start a Hugo Academic site that�
 
 By default, the Hugo Academic theme’s first section is a grandiose self-introduction (I guess the creators of the theme do deserve such credit). Before we incorporate any of our animations, lets go ahead and make our ‘about’ page the landing page users first see when they visit our site. This requires us to find the files `hero.md` and `demo.md`, and in each of those files, set `active` equal to `false`. That takes our home page from this:
 
-<Image src="../images/blog/animate-hugo-academic/before-demo-hero-remove.png" alt="A GIF showcasing the initial version of my homepage, before any edits."></Image>
+<Image src="../images/post/animate-hugo-academic/before-demo-hero-remove.png" alt="A GIF showcasing the initial version of my homepage, before any edits."></Image>
 
 to this:
 
-<Image src="../images/blog/animate-hugo-academic/after-demo-hero-remove.png" alt="A GIF showcasing a version of my homepage where I replace ‘hero' with ‘about’."></Image>
+<Image src="../images/post/animate-hugo-academic/after-demo-hero-remove.png" alt="A GIF showcasing a version of my homepage where I replace ‘hero' with ‘about’."></Image>
 
 (As you progress, you might have to make additional small changes, such as removing ‘Demo’ from the navbar menu.)
 
@@ -69,7 +69,7 @@ With that newly created `about.html` living in `layouts/partials/widgets/`, you 
 
 Within `about.html`, you’ll notice all of your page’s elements in order of appearance, despite a lot of extra characters that don’t make much sense. It should look like this:
 
-<Image src="../images/blog/animate-hugo-academic/about.png" alt="A screenshot of complicated code that is initially used to render the homepage."></Image>
+<Image src="../images/post/animate-hugo-academic/about.png" alt="A screenshot of complicated code that is initially used to render the homepage."></Image>
 
 Throughout step 3, we’ll use each element’s ‘class’ to target it for animations. In the above screenshot (and in your `about.html` page!), you’ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found [here](https://www.w3schools.com/cssref/sel_class.asp).
 
@@ -208,7 +208,7 @@ To ensure that we’ve targeted the right section, we can go ahead and add the p
 
 As we expected, our section background is now an (unbelievably ugly shade of) red.
 
-<Image src="../images/blog/animate-hugo-academic/bg-red.png" alt="An example of turning the background color of the page red."></Image>
+<Image src="../images/post/animate-hugo-academic/bg-red.png" alt="An example of turning the background color of the page red."></Image>
 
 (Now remove that property immediately! This is not quite the welcome we want for our visitors.) We can also target elements _within_ the section by nesting new selectors inside of `#about`. For example, if we wanted to change the color of our ‘biography’ title text, we could do so with the following code. (This is because we created a class named `biography-title` in step 1):
 
@@ -220,7 +220,7 @@ As we expected, our section background is now an (unbelievably ugly shade of) re
 }
 ```
 
-<Image src="../images/blog/animate-hugo-academic/font-red.png" alt="An example of turning the font color  red."></Image>
+<Image src="../images/post/animate-hugo-academic/font-red.png" alt="An example of turning the font color  red."></Image>
 
 <Info>
   
@@ -282,7 +282,7 @@ Altogether, this code creates this output:
 }
 ```
 
-<Image src="../images/blog/animate-hugo-academic/red.gif" alt="An example transition, turning the font color to red over a 5 second duration."></Image>
+<Image src="../images/post/animate-hugo-academic/red.gif" alt="An example transition, turning the font color to red over a 5 second duration."></Image>
 
 Of course, we don’t want a 5 second animation, nor do we want our text to start off as red. A cleaner animation might leverage the power of CSS to modify an element’s _position_. In our case, we want an element to **slide in from the right side of the screen**, and so we make a few tweaks to the code above. Let’s make a new animation called `slide-from-right` which starts (at keyframe 0%) with our element 150% to the right of its original position (therefore off the screen) and ends (at keyframe 100%) with it at its original position. This involves the use of `translateX`, which you can read about [here](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX).
 
@@ -301,7 +301,7 @@ Of course, we don’t want a 5 second animation, nor do we want our text to star
 }
 ```
 
-<Image src="../images/blog/animate-hugo-academic/slide-from-right.gif" alt="A gif of the content sliding in from the right side of the page"></Image>
+<Image src="../images/post/animate-hugo-academic/slide-from-right.gif" alt="A gif of the content sliding in from the right side of the page"></Image>
 
 There is one slight improvement we can make on the above transition. Specifically, we can call an _easing function_ on our animation. [Easing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function) give a more natural feel to a transition’s flow—rather than our object flying in at a perfectly linear rate, we can add some personality by specifying its speed at different points in the transition. To find an easing function, visit [easings.net](https://easings.net/en#), which allows you to visualize all of the different ways to modify your transition’s ease. (For this tutorial, I chose a clean-looking “_easeInOutQuint_“ function, which looks like this: `cubic-bezier(0.83, 0, 0.17, 1)`.)
 
@@ -320,7 +320,7 @@ We want our homepage to have more than just one title animation. We might also w
 
 In combination with above, this creates a transition that looks like this:
 
-<Image src="../images/blog/animate-hugo-academic/double-slide.gif" alt="A gif of two pieces of content sliding in, one after another (with a 100ms delay)"></Image>
+<Image src="../images/post/animate-hugo-academic/double-slide.gif" alt="A gif of two pieces of content sliding in, one after another (with a 100ms delay)"></Image>
 
 Nice! That looks clean. It looks like those two text blocks are racing to greet your new site visitor :)
 
@@ -345,7 +345,7 @@ Let’s go ahead and replicate that ’slide in’ transition for our profile on
 }
 ```
 
-<Image src="../images/blog/animate-hugo-academic/left-and-right.gif" alt="Two paragraphs of content sliding in from opposite directions."></Image>
+<Image src="../images/post/animate-hugo-academic/left-and-right.gif" alt="Two paragraphs of content sliding in from opposite directions."></Image>
 
 ### Step 3D) Finally, the Fade
 
@@ -384,7 +384,7 @@ Now, we apply this `fade-in` rule to both our `interests-div` and our `education
 
 Now, we have a final homepage that looks like this:
 
-<Image src="../images/blog/animate-hugo-academic/final.gif" alt="A GIF showing the final iteration of a homepage, with animations."></Image>
+<Image src="../images/post/animate-hugo-academic/final.gif" alt="A GIF showing the final iteration of a homepage, with animations."></Image>
 
 To make our SCSS file more robust across different browsers, we can take our completed file and put it into the [CSS Autoprefixer](https://autoprefixer.github.io/). This adds additional lines of code to our CSS file so that all browsers render the same animations upon page load. Your completed SCSS file should look like [this](https://github.com/connorrothschild/animate-hugo-academic/blob/master/assets/scss/custom.scss).
 

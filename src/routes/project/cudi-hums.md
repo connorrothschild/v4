@@ -44,4 +44,4 @@ I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things v
 <responsive-video url="https://www.youtube.com/embed/sNCMiWoXGaQ"></responsive-video>
 
 To do: add code styling
-https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#adding-a-code-block-to-your-post -->
+https://nuxtjs.org/post/creating-blog-with-nuxt-content/#adding-a-code-block-to-your-post -->

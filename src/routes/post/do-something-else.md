@@ -12,7 +12,7 @@ draft: true
   import Info from "../../lib/global/Info.svelte"
 </script>
 
-https://angel.co/blog/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft
+https://angel.co/post/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft
 https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html
 https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally
 
@@ -28,7 +28,7 @@ I graduated college last week. I've been thinking about what it means for a new 
 1. Big tech (FAANG, etc.)
 3. Something else (startup, civic tech, etc.)
 
-Is it reductive to categorize *all jobs* into these four categories? Check my LinkedIn feed, and you'll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, [~40% of Harvard grads](https://medium.com/s/story/a-culture-of-prestige-98c8671ceade) and [~29% of Yale grads](https://yaledailynews.com/blog/2019/11/01/mckinsey-and-the-fig-tree/) go into finance or consulting after college.)
+Is it reductive to categorize *all jobs* into these four categories? Check my LinkedIn feed, and you'll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, [~40% of Harvard grads](https://medium.com/s/story/a-culture-of-prestige-98c8671ceade) and [~29% of Yale grads](https://yaledailynews.com/post/2019/11/01/mckinsey-and-the-fig-tree/) go into finance or consulting after college.)
 
 Of course, these sets of options mirror one another. Most students who aren't set on a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, "big" option after graduating, or something else. 
 

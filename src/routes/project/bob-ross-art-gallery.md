@@ -52,4 +52,4 @@ For the scroll-based interactions, I used Russell Goldenberg's [Scrollama](https
 <responsive-video url="https://www.youtube.com/embed/sNCMiWoXGaQ"></responsive-video>
 
 To do: add code styling
-https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#adding-a-code-block-to-your-post -->
+https://nuxtjs.org/post/creating-blog-with-nuxt-content/#adding-a-code-block-to-your-post -->

@@ -24732,7 +24732,7 @@ function init(settings = default_settings) {
 }
 var empty = () => ({});
 var manifest = {
-  assets: [{ "file": ".DS_Store", "size": 6148, "type": null }, { "file": "images/.DS_Store", "size": 10244, "type": null }, { "file": "images/blog/.DS_Store", "size": 16388, "type": null }, { "file": "images/blog/adding-a-chart-to-your-d3-tooltip/.DS_Store", "size": 6148, "type": null }, { "file": "images/blog/adding-a-chart-to-your-d3-tooltip/header.png", "size": 222355, "type": "image/png" }, { "file": "images/blog/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif", "size": 1394285, "type": "image/gif" }, { "file": "images/blog/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif", "size": 1828083, "type": "image/gif" }, { "file": "images/blog/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg", "size": 96852, "type": "image/jpeg" }, { "file": "images/blog/animate-hugo-academic/about.png", "size": 171201, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/after-demo-hero-remove.png", "size": 274988, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/before-demo-hero-remove.png", "size": 996449, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/bg-red.png", "size": 247553, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/double-slide.gif", "size": 4049647, "type": "image/gif" }, { "file": "images/blog/animate-hugo-academic/final.gif", "size": 4711318, "type": "image/gif" }, { "file": "images/blog/animate-hugo-academic/font-red.png", "size": 274418, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/header.jpg", "size": 272081, "type": "image/jpeg" }, { "file": "images/blog/animate-hugo-academic/header.png", "size": 502097, "type": "image/png" }, { "file": "images/blog/animate-hugo-academic/left-and-right.gif", "size": 7187557, "type": "image/gif" }, { "file": "images/blog/animate-hugo-academic/red.gif", "size": 6389199, "type": "image/gif" }, { "file": "images/blog/animate-hugo-academic/slide-from-right.gif", "size": 5650648, "type": "image/gif" }, { "file": "images/blog/automation-scrollytell/header.png", "size": 347231, "type": "image/png" }, { "file": "images/blog/bible-babies/boys.gif", "size": 3320504, "type": "image/gif" }, { "file": "images/blog/bible-babies/combined.gif", "size": 2500209, "type": "image/gif" }, { "file": "images/blog/bible-babies/girls.gif", "size": 3171023, "type": "image/gif" }, { "file": "images/blog/bible-babies/header.png", "size": 207384, "type": "image/png" }, { "file": "images/blog/bible-babies/line.png", "size": 88209, "type": "image/png" }, { "file": "images/blog/bible-babies/male-female-line.png", "size": 103538, "type": "image/png" }, { "file": "images/blog/color-in-data-vis/.DS_Store", "size": 8196, "type": null }, { "file": "images/blog/color-in-data-vis/all-color.jpg", "size": 48568, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/all-grey.jpg", "size": 25976, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/bad-and-better.jpg", "size": 41594, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/bad-chart.jpg", "size": 144491, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/bad-color-use-1.jpg", "size": 25638, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/bad-color-use-2.jpg", "size": 462044, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/better-chart1.png", "size": 102932, "type": "image/png" }, { "file": "images/blog/color-in-data-vis/betterchart-1.jpg", "size": 102932, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/choropleth-ex.jpg", "size": 116015, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/color-emotion-guide-lol.jpg", "size": 142938, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/color-emphasized.png", "size": 88831, "type": "image/png" }, { "file": "images/blog/color-in-data-vis/flipping-points-color-annotate1.jpg", "size": 388831, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/flipping-points-color-annotate2.jpg", "size": 292758, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/flipping-points-color.jpg", "size": 281680, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/header.png", "size": 1500611, "type": "image/png" }, { "file": "images/blog/color-in-data-vis/map-Texas-rainbow-1.jpg", "size": 125882, "type": "image/jpeg" }, { "file": "images/blog/color-in-data-vis/popgrowth-vs-popsize-bw-1.png", "size": 102932, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/featured.png", "size": 708910, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/header.png", "size": 960654, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/table-replacement.png", "size": 37277, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/unnamed-chunk-4-1.png", "size": 157047, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/unnamed-chunk-5-1.png", "size": 55822, "type": "image/png" }, { "file": "images/blog/covid-gun-spikes/unnamed-chunk-6-1.png", "size": 124650, "type": "image/png" }, { "file": "images/blog/covid-on-campus/featured.png", "size": 144039, "type": "image/png" }, { "file": "images/blog/covid-on-campus/geofacet_processed.png", "size": 233674, "type": "image/png" }, { "file": "images/blog/covid-on-campus/header.png", "size": 246566, "type": "image/png" }, { "file": "images/blog/covid-on-campus/table1.png", "size": 111521, "type": "image/png" }, { "file": "images/blog/covid-on-campus/table2.png", "size": 49261, "type": "image/png" }, { "file": "images/blog/covid-on-campus/table3.png", "size": 46864, "type": "image/png" }, { "file": "images/blog/covid-posts/authorVer2-1.png", "size": 66037, "type": "image/png" }, { "file": "images/blog/covid-posts/dataTable-1.png", "size": 123935, "type": "image/png" }, { "file": "images/blog/covid-posts/featured.png", "size": 142943, "type": "image/png" }, { "file": "images/blog/covid-posts/header.png", "size": 142943, "type": "image/png" }, { "file": "images/blog/covid-posts/prolificVer2-1.png", "size": 178507, "type": "image/png" }, { "file": "images/blog/covid-posts/topicsVer2-1.png", "size": 142943, "type": "image/png" }, { "file": "images/blog/covid-posts/weekly-1.png", "size": 66718, "type": "image/png" }, { "file": "images/blog/do-something-else/startup-faang-satisfaction.png", "size": 128566, "type": "image/png" }, { "file": "images/blog/dumbbell-plots/age-disrupt.jpg", "size": 127112, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/age-worry.jpg", "size": 133455, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/axios.jpg", "size": 94024, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/featured.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/header.png", "size": 211763, "type": "image/png" }, { "file": "images/blog/dumbbell-plots/partisan-disrupt.jpg", "size": 139913, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/partisan-worry.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/pew.jpg", "size": 83415, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-0.jpg", "size": 79993, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-1.jpg", "size": 86350, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-2.jpg", "size": 93592, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-3.jpg", "size": 101971, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-4.jpg", "size": 96114, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-5.jpg", "size": 160258, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-6.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/blog/dumbbell-plots/process-gif.gif", "size": 670401, "type": "image/gif" }, { "file": "images/blog/dumbbell-plots/table.jpg", "size": 27809, "type": "image/jpeg" }, { "file": "images/blog/economist-table-replication-using-reactable/featured.png", "size": 107802, "type": "image/png" }, { "file": "images/blog/economist-table-replication-using-reactable/header.png", "size": 207227, "type": "image/png" }, { "file": "images/blog/flat-data-r/.DS_Store", "size": 6148, "type": null }, { "file": "images/blog/flat-data-r/flat-diagram.png", "size": 739814, "type": "image/png" }, { "file": "images/blog/flat-data-r/header.png", "size": 1651665, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/featured.png", "size": 60896, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/header.png", "size": 82172, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-10-1.png", "size": 156710, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-11-1.png", "size": 69452, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-12-1.png", "size": 146481, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-13-1.png", "size": 155022, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-14-1.png", "size": 79963, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-15-1.png", "size": 76710, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-16-1.png", "size": 151633, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-17-1.png", "size": 168762, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-18-1.png", "size": 147878, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-3-1.png", "size": 44351, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-5-1.png", "size": 146995, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-6-1.png", "size": 259141, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-7-1.png", "size": 208134, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-8-1.png", "size": 262530, "type": "image/png" }, { "file": "images/blog/introducing-tpltheme/unnamed-chunk-9-1.png", "size": 60075, "type": "image/png" }, { "file": "images/blog/map-springfield/bw_map_springfield.png", "size": 374640, "type": "image/png" }, { "file": "images/blog/map-springfield/gold_map_springfield.png", "size": 673257, "type": "image/png" }, { "file": "images/blog/map-springfield/header.png", "size": 462454, "type": "image/png" }, { "file": "images/blog/media-mentions/header.png", "size": 311367, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-2-1.png", "size": 80891, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-3-1.png", "size": 192170, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-4-1.png", "size": 137279, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-5-1.png", "size": 86116, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-6-1.png", "size": 503911, "type": "image/png" }, { "file": "images/blog/media-mentions/unnamed-chunk-7-1.png", "size": 349985, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/blog-card.png", "size": 317721, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/dark.png", "size": 86381, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/header.png", "size": 160358, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/home-card.png", "size": 245943, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/light.png", "size": 88342, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/new-site-perf.png", "size": 729480, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/old-site-perf.png", "size": 891912, "type": "image/png" }, { "file": "images/blog/nuxt-blog-starter/transitions.gif", "size": 1269461, "type": "image/gif" }, { "file": "images/blog/refugee-trends/.DS_Store", "size": 6148, "type": null }, { "file": "images/blog/refugee-trends/featured.png", "size": 96723, "type": "image/png" }, { "file": "images/blog/refugee-trends/final.svg", "size": 339820, "type": "image/svg+xml" }, { "file": "images/blog/refugee-trends/firsttry.jpg", "size": 249381, "type": "image/jpeg" }, { "file": "images/blog/refugee-trends/header.png", "size": 209771, "type": "image/png" }, { "file": "images/blog/refugee-trends/macro.jpg", "size": 59219, "type": "image/jpeg" }, { "file": "images/blog/refugee-trends/policyviz.jpg", "size": 62077, "type": "image/jpeg" }, { "file": "images/blog/refugee-trends/ref.png", "size": 77965, "type": "image/png" }, { "file": "images/blog/refugee-trends/secondtry.jpg", "size": 220813, "type": "image/jpeg" }, { "file": "images/blog/refugee-trends/wapo.png", "size": 254826, "type": "image/png" }, { "file": "images/blog/svelte-and-d3/header.png", "size": 1916771, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-powerlifting/featured.png", "size": 395928, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-powerlifting/header.png", "size": 609028, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-powerlifting/table.png", "size": 39430, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif", "size": 2045058, "type": "image/gif" }, { "file": "images/blog/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif", "size": 3152748, "type": "image/gif" }, { "file": "images/blog/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png", "size": 80022, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif", "size": 1471396, "type": "image/gif" }, { "file": "images/blog/tidy-tuesday-replication/bloomberg.png", "size": 286679, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-replication/featured.png", "size": 220110, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-replication/header.png", "size": 391425, "type": "image/png" }, { "file": "images/blog/tidy-tuesday-replication/replication.png", "size": 220110, "type": "image/png" }, { "file": "images/icons/shuffle.svg", "size": 1574, "type": "image/svg+xml" }, { "file": "images/jobs/axios.svg", "size": 455, "type": "image/svg+xml" }, { "file": "images/jobs/moksha.svg", "size": 1261, "type": "image/svg+xml" }, { "file": "images/jobs/socom.svg", "size": 77530, "type": "image/svg+xml" }, { "file": "images/jobs/tpl.svg", "size": 709, "type": "image/svg+xml" }, { "file": "images/projects/bob-ross-virtual-art-gallery.png", "size": 109443, "type": "image/png" }, { "file": "images/projects/cudi-hums.png", "size": 396399, "type": "image/png" }, { "file": "images/projects/mapping-missing-migrants.png", "size": 109443, "type": "image/png" }, { "file": "images/projects/quarantunes.png", "size": 396399, "type": "image/png" }],
+  assets: [{ "file": ".DS_Store", "size": 6148, "type": null }, { "file": "images/.DS_Store", "size": 10244, "type": null }, { "file": "images/post/.DS_Store", "size": 16388, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/header.png", "size": 222355, "type": "image/png" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif", "size": 1394285, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif", "size": 1828083, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg", "size": 96852, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/about.png", "size": 171201, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/after-demo-hero-remove.png", "size": 274988, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/before-demo-hero-remove.png", "size": 996449, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/bg-red.png", "size": 247553, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/double-slide.gif", "size": 4049647, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/final.gif", "size": 4711318, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/font-red.png", "size": 274418, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/header.jpg", "size": 272081, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/header.png", "size": 502097, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/left-and-right.gif", "size": 7187557, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/red.gif", "size": 6389199, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/slide-from-right.gif", "size": 5650648, "type": "image/gif" }, { "file": "images/post/automation-scrollytell/header.png", "size": 347231, "type": "image/png" }, { "file": "images/post/bible-babies/boys.gif", "size": 3320504, "type": "image/gif" }, { "file": "images/post/bible-babies/combined.gif", "size": 2500209, "type": "image/gif" }, { "file": "images/post/bible-babies/girls.gif", "size": 3171023, "type": "image/gif" }, { "file": "images/post/bible-babies/header.png", "size": 207384, "type": "image/png" }, { "file": "images/post/bible-babies/line.png", "size": 88209, "type": "image/png" }, { "file": "images/post/bible-babies/male-female-line.png", "size": 103538, "type": "image/png" }, { "file": "images/post/color-in-data-vis/.DS_Store", "size": 8196, "type": null }, { "file": "images/post/color-in-data-vis/all-color.jpg", "size": 48568, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/all-grey.jpg", "size": 25976, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-and-better.jpg", "size": 41594, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-chart.jpg", "size": 144491, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-1.jpg", "size": 25638, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-2.jpg", "size": 462044, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/better-chart1.png", "size": 102932, "type": "image/png" }, { "file": "images/post/color-in-data-vis/betterchart-1.jpg", "size": 102932, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/choropleth-ex.jpg", "size": 116015, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emotion-guide-lol.jpg", "size": 142938, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emphasized.png", "size": 88831, "type": "image/png" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate1.jpg", "size": 388831, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate2.jpg", "size": 292758, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color.jpg", "size": 281680, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/header.png", "size": 1500611, "type": "image/png" }, { "file": "images/post/color-in-data-vis/map-Texas-rainbow-1.jpg", "size": 125882, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/popgrowth-vs-popsize-bw-1.png", "size": 102932, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/featured.png", "size": 708910, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/header.png", "size": 960654, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/table-replacement.png", "size": 37277, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-4-1.png", "size": 157047, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-5-1.png", "size": 55822, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-6-1.png", "size": 124650, "type": "image/png" }, { "file": "images/post/covid-on-campus/featured.png", "size": 144039, "type": "image/png" }, { "file": "images/post/covid-on-campus/geofacet_processed.png", "size": 233674, "type": "image/png" }, { "file": "images/post/covid-on-campus/header.png", "size": 246566, "type": "image/png" }, { "file": "images/post/covid-on-campus/table1.png", "size": 111521, "type": "image/png" }, { "file": "images/post/covid-on-campus/table2.png", "size": 49261, "type": "image/png" }, { "file": "images/post/covid-on-campus/table3.png", "size": 46864, "type": "image/png" }, { "file": "images/post/covid-posts/authorVer2-1.png", "size": 66037, "type": "image/png" }, { "file": "images/post/covid-posts/dataTable-1.png", "size": 123935, "type": "image/png" }, { "file": "images/post/covid-posts/featured.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/header.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/prolificVer2-1.png", "size": 178507, "type": "image/png" }, { "file": "images/post/covid-posts/topicsVer2-1.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/weekly-1.png", "size": 66718, "type": "image/png" }, { "file": "images/post/do-something-else/startup-faang-satisfaction.png", "size": 128566, "type": "image/png" }, { "file": "images/post/dumbbell-plots/age-disrupt.jpg", "size": 127112, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/age-worry.jpg", "size": 133455, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/axios.jpg", "size": 94024, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/featured.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/header.png", "size": 211763, "type": "image/png" }, { "file": "images/post/dumbbell-plots/partisan-disrupt.jpg", "size": 139913, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/partisan-worry.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/pew.jpg", "size": 83415, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-0.jpg", "size": 79993, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-1.jpg", "size": 86350, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-2.jpg", "size": 93592, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-3.jpg", "size": 101971, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-4.jpg", "size": 96114, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-5.jpg", "size": 160258, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-6.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-gif.gif", "size": 670401, "type": "image/gif" }, { "file": "images/post/dumbbell-plots/table.jpg", "size": 27809, "type": "image/jpeg" }, { "file": "images/post/economist-table-replication-using-reactable/featured.png", "size": 107802, "type": "image/png" }, { "file": "images/post/economist-table-replication-using-reactable/header.png", "size": 207227, "type": "image/png" }, { "file": "images/post/flat-data-r/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/flat-data-r/flat-diagram.png", "size": 739814, "type": "image/png" }, { "file": "images/post/flat-data-r/header.png", "size": 1651665, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/featured.png", "size": 60896, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/header.png", "size": 82172, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-10-1.png", "size": 156710, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-11-1.png", "size": 69452, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-12-1.png", "size": 146481, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-13-1.png", "size": 155022, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-14-1.png", "size": 79963, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-15-1.png", "size": 76710, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-16-1.png", "size": 151633, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-17-1.png", "size": 168762, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-18-1.png", "size": 147878, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-3-1.png", "size": 44351, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-5-1.png", "size": 146995, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-6-1.png", "size": 259141, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-7-1.png", "size": 208134, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-8-1.png", "size": 262530, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-9-1.png", "size": 60075, "type": "image/png" }, { "file": "images/post/map-springfield/bw_map_springfield.png", "size": 374640, "type": "image/png" }, { "file": "images/post/map-springfield/gold_map_springfield.png", "size": 673257, "type": "image/png" }, { "file": "images/post/map-springfield/header.png", "size": 462454, "type": "image/png" }, { "file": "images/post/media-mentions/header.png", "size": 311367, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-2-1.png", "size": 80891, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-3-1.png", "size": 192170, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-4-1.png", "size": 137279, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-5-1.png", "size": 86116, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-6-1.png", "size": 503911, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-7-1.png", "size": 349985, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/blog-card.png", "size": 317721, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/dark.png", "size": 86381, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/header.png", "size": 160358, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/home-card.png", "size": 245943, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/light.png", "size": 88342, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/new-site-perf.png", "size": 729480, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/old-site-perf.png", "size": 891912, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/transitions.gif", "size": 1269461, "type": "image/gif" }, { "file": "images/post/refugee-trends/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/refugee-trends/featured.png", "size": 96723, "type": "image/png" }, { "file": "images/post/refugee-trends/final.svg", "size": 339820, "type": "image/svg+xml" }, { "file": "images/post/refugee-trends/firsttry.jpg", "size": 249381, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/header.png", "size": 209771, "type": "image/png" }, { "file": "images/post/refugee-trends/macro.jpg", "size": 59219, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/policyviz.jpg", "size": 62077, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/ref.png", "size": 77965, "type": "image/png" }, { "file": "images/post/refugee-trends/secondtry.jpg", "size": 220813, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/wapo.png", "size": 254826, "type": "image/png" }, { "file": "images/post/svelte-and-d3/header.png", "size": 1916771, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/featured.png", "size": 395928, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/header.png", "size": 609028, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/table.png", "size": 39430, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif", "size": 2045058, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif", "size": 3152748, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png", "size": 80022, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif", "size": 1471396, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-replication/bloomberg.png", "size": 286679, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/featured.png", "size": 220110, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/header.png", "size": 391425, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/replication.png", "size": 220110, "type": "image/png" }, { "file": "images/icons/shuffle.svg", "size": 1574, "type": "image/svg+xml" }, { "file": "images/jobs/axios.svg", "size": 455, "type": "image/svg+xml" }, { "file": "images/jobs/moksha.svg", "size": 1261, "type": "image/svg+xml" }, { "file": "images/jobs/socom.svg", "size": 77530, "type": "image/svg+xml" }, { "file": "images/jobs/tpl.svg", "size": 709, "type": "image/svg+xml" }, { "file": "images/projects/bob-ross-virtual-art-gallery.png", "size": 109443, "type": "image/png" }, { "file": "images/projects/cudi-hums.png", "size": 396399, "type": "image/png" }, { "file": "images/projects/mapping-missing-migrants.png", "size": 109443, "type": "image/png" }, { "file": "images/projects/quarantunes.png", "size": 396399, "type": "image/png" }],
   layout: "src/routes/__layout.svelte",
   error: "src/routes/__error.svelte",
   routes: [
@@ -24855,147 +24855,147 @@ var manifest = {
       type: "page",
       pattern: /^\/blog\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/index.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/index.svelte"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/economist-table-replication-using-reactable\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/economist-table-replication-using-reactable.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/economist-table-replication-using-reactable.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/adding-a-chart-to-your-d3-tooltip\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/adding-a-chart-to-your-d3-tooltip.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/adding-a-chart-to-your-d3-tooltip.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/tidy-tuesday-powerlifting\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/tidy-tuesday-powerlifting.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/tidy-tuesday-powerlifting.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/tidy-tuesday-replication\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/tidy-tuesday-replication.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/tidy-tuesday-replication.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/automation-scrollytell\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/automation-scrollytell.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/automation-scrollytell.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/animate-hugo-academic\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/animate-hugo-academic.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/animate-hugo-academic.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/introducing-tpltheme\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/introducing-tpltheme.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/introducing-tpltheme.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/color-in-data-vis\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/color-in-data-vis.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/color-in-data-vis.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/do-something-else\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/do-something-else.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/do-something-else.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/nuxt-blog-starter\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/nuxt-blog-starter.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/nuxt-blog-starter.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/covid-gun-spikes\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/covid-gun-spikes.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/covid-gun-spikes.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/covid-on-campus\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/covid-on-campus.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/covid-on-campus.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/map-springfield\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/map-springfield.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/map-springfield.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/dumbbell-plots\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/dumbbell-plots.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/dumbbell-plots.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/refugee-trends\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/refugee-trends.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/refugee-trends.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/svelte-scatter\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/svelte-scatter.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/svelte-scatter.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/svelte-and-d3\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/svelte-and-d3.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/svelte-and-d3.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/covid-posts\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/covid-posts.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/covid-posts.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/flat-data-r\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/flat-data-r.md"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/flat-data-r.md"],
       b: ["src/routes/__error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/blog\/layout\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/blog/layout.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/post/layout.svelte"],
       b: ["src/routes/__error.svelte"]
     }
   ]
@@ -25052,71 +25052,71 @@ var module_lookup = {
   "src/routes/projects/layout.svelte": () => Promise.resolve().then(function() {
     return layout$1;
   }),
-  "src/routes/blog/index.svelte": () => Promise.resolve().then(function() {
+  "src/routes/post/index.svelte": () => Promise.resolve().then(function() {
     return index;
   }),
-  "src/routes/blog/economist-table-replication-using-reactable.md": () => Promise.resolve().then(function() {
+  "src/routes/post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(function() {
     return economistTableReplicationUsingReactable;
   }),
-  "src/routes/blog/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(function() {
+  "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(function() {
     return addingAChartToYourD3Tooltip;
   }),
-  "src/routes/blog/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(function() {
+  "src/routes/post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(function() {
     return tidyTuesdayPowerlifting;
   }),
-  "src/routes/blog/tidy-tuesday-replication.md": () => Promise.resolve().then(function() {
+  "src/routes/post/tidy-tuesday-replication.md": () => Promise.resolve().then(function() {
     return tidyTuesdayReplication;
   }),
-  "src/routes/blog/automation-scrollytell.md": () => Promise.resolve().then(function() {
+  "src/routes/post/automation-scrollytell.md": () => Promise.resolve().then(function() {
     return automationScrollytell;
   }),
-  "src/routes/blog/animate-hugo-academic.md": () => Promise.resolve().then(function() {
+  "src/routes/post/animate-hugo-academic.md": () => Promise.resolve().then(function() {
     return animateHugoAcademic;
   }),
-  "src/routes/blog/introducing-tpltheme.md": () => Promise.resolve().then(function() {
+  "src/routes/post/introducing-tpltheme.md": () => Promise.resolve().then(function() {
     return introducingTpltheme;
   }),
-  "src/routes/blog/color-in-data-vis.md": () => Promise.resolve().then(function() {
+  "src/routes/post/color-in-data-vis.md": () => Promise.resolve().then(function() {
     return colorInDataVis;
   }),
-  "src/routes/blog/do-something-else.md": () => Promise.resolve().then(function() {
+  "src/routes/post/do-something-else.md": () => Promise.resolve().then(function() {
     return doSomethingElse;
   }),
-  "src/routes/blog/nuxt-blog-starter.md": () => Promise.resolve().then(function() {
+  "src/routes/post/nuxt-blog-starter.md": () => Promise.resolve().then(function() {
     return nuxtBlogStarter;
   }),
-  "src/routes/blog/covid-gun-spikes.md": () => Promise.resolve().then(function() {
+  "src/routes/post/covid-gun-spikes.md": () => Promise.resolve().then(function() {
     return covidGunSpikes;
   }),
-  "src/routes/blog/covid-on-campus.md": () => Promise.resolve().then(function() {
+  "src/routes/post/covid-on-campus.md": () => Promise.resolve().then(function() {
     return covidOnCampus;
   }),
-  "src/routes/blog/map-springfield.md": () => Promise.resolve().then(function() {
+  "src/routes/post/map-springfield.md": () => Promise.resolve().then(function() {
     return mapSpringfield;
   }),
-  "src/routes/blog/dumbbell-plots.md": () => Promise.resolve().then(function() {
+  "src/routes/post/dumbbell-plots.md": () => Promise.resolve().then(function() {
     return dumbbellPlots;
   }),
-  "src/routes/blog/refugee-trends.md": () => Promise.resolve().then(function() {
+  "src/routes/post/refugee-trends.md": () => Promise.resolve().then(function() {
     return refugeeTrends;
   }),
-  "src/routes/blog/svelte-scatter.md": () => Promise.resolve().then(function() {
+  "src/routes/post/svelte-scatter.md": () => Promise.resolve().then(function() {
     return svelteScatter;
   }),
-  "src/routes/blog/svelte-and-d3.md": () => Promise.resolve().then(function() {
+  "src/routes/post/svelte-and-d3.md": () => Promise.resolve().then(function() {
     return svelteAndD3;
   }),
-  "src/routes/blog/covid-posts.md": () => Promise.resolve().then(function() {
+  "src/routes/post/covid-posts.md": () => Promise.resolve().then(function() {
     return covidPosts;
   }),
-  "src/routes/blog/flat-data-r.md": () => Promise.resolve().then(function() {
+  "src/routes/post/flat-data-r.md": () => Promise.resolve().then(function() {
     return flatDataR;
   }),
-  "src/routes/blog/layout.svelte": () => Promise.resolve().then(function() {
+  "src/routes/post/layout.svelte": () => Promise.resolve().then(function() {
     return layout;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-0572eff4.js", "css": ["assets/pages/__layout.svelte-047b2f53.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/__layout.svelte-0572eff4.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "pages/__error.svelte-1f8da8e0.js", "css": ["assets/vendor-e5bb3ecd.css"], "js": ["pages/__error.svelte-1f8da8e0.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-cb9bd63c.js", "css": ["assets/pages/index.svelte-6a3ab3fb.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/index.svelte-cb9bd63c.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/experience/index.svelte": { "entry": "pages/experience/index.svelte-7474e209.js", "css": ["assets/pages/experience/index.svelte-6d9ecd69.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/experience/index.svelte-7474e209.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/experience/layout.svelte": { "entry": "pages/experience/layout.svelte-94935357.js", "css": ["assets/pages/projects/layout.svelte-41bae2ad.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/experience/layout.svelte-94935357.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/moksha.md": { "entry": "pages/experience/moksha.md-c4584691.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/moksha.md-c4584691.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/axios.md": { "entry": "pages/experience/axios.md-4e92e25f.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/axios.md-4e92e25f.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/socom.md": { "entry": "pages/experience/socom.md-bbefb3d7.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/socom.md-bbefb3d7.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/tpl.md": { "entry": "pages/experience/tpl.md-0b9be70b.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/tpl.md-0b9be70b.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/index.svelte": { "entry": "pages/projects/index.svelte-3a6a134b.js", "css": ["assets/pages/projects/index.svelte-72ab9c64.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/projects/index.svelte-3a6a134b.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy-2.md": { "entry": "pages/projects/cudi-hums-copy-2.md-14163d62.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy-2.md-14163d62.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy-3.md": { "entry": "pages/projects/cudi-hums-copy-3.md-64a78e21.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy-3.md-64a78e21.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy.md": { "entry": "pages/projects/cudi-hums-copy.md-e5566eb6.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy.md-e5566eb6.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums.md": { "entry": "pages/projects/cudi-hums.md-9c24a88d.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums.md-9c24a88d.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/layout.svelte": { "entry": "pages/projects/layout.svelte-46a8583d.js", "css": ["assets/pages/projects/layout.svelte-41bae2ad.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/projects/layout.svelte-46a8583d.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/blog/index.svelte": { "entry": "pages/blog/index.svelte-2e81c89e.js", "css": ["assets/pages/blog/index.svelte-53bae120.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/blog/index.svelte-2e81c89e.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/blog/economist-table-replication-using-reactable.md": { "entry": "pages/blog/economist-table-replication-using-reactable.md-75e4a383.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/economist-table-replication-using-reactable.md-75e4a383.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/adding-a-chart-to-your-d3-tooltip.md": { "entry": "pages/blog/adding-a-chart-to-your-d3-tooltip.md-502ea3f6.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/adding-a-chart-to-your-d3-tooltip.md-502ea3f6.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/tidy-tuesday-powerlifting.md": { "entry": "pages/blog/tidy-tuesday-powerlifting.md-fdd3d359.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/tidy-tuesday-powerlifting.md-fdd3d359.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/tidy-tuesday-replication.md": { "entry": "pages/blog/tidy-tuesday-replication.md-0a7aa062.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/tidy-tuesday-replication.md-0a7aa062.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/automation-scrollytell.md": { "entry": "pages/blog/automation-scrollytell.md-b6390e9e.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/automation-scrollytell.md-b6390e9e.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/blog/animate-hugo-academic.md": { "entry": "pages/blog/animate-hugo-academic.md-15c540f9.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/animate-hugo-academic.md-15c540f9.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/introducing-tpltheme.md": { "entry": "pages/blog/introducing-tpltheme.md-faa13f53.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/introducing-tpltheme.md-faa13f53.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/color-in-data-vis.md": { "entry": "pages/blog/color-in-data-vis.md-a28b761c.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/color-in-data-vis.md-a28b761c.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/do-something-else.md": { "entry": "pages/blog/do-something-else.md-d1e9aaed.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/do-something-else.md-d1e9aaed.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/nuxt-blog-starter.md": { "entry": "pages/blog/nuxt-blog-starter.md-09aa20bf.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/nuxt-blog-starter.md-09aa20bf.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/covid-gun-spikes.md": { "entry": "pages/blog/covid-gun-spikes.md-1295fa12.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css", "assets/TableHandler-d632bac2.css", "assets/Code-3d735c0b.css"], "js": ["pages/blog/covid-gun-spikes.md-1295fa12.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/TableHandler-0a2a8062.js", "chunks/Code-b20a1db8.js"], "styles": [] }, "src/routes/blog/covid-on-campus.md": { "entry": "pages/blog/covid-on-campus.md-20ab92b1.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css", "assets/TableHandler-d632bac2.css"], "js": ["pages/blog/covid-on-campus.md-20ab92b1.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/TableHandler-0a2a8062.js"], "styles": [] }, "src/routes/blog/map-springfield.md": { "entry": "pages/blog/map-springfield.md-3503e57d.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/map-springfield.md-3503e57d.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/dumbbell-plots.md": { "entry": "pages/blog/dumbbell-plots.md-bc9d5917.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/dumbbell-plots.md-bc9d5917.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/refugee-trends.md": { "entry": "pages/blog/refugee-trends.md-8c6688b1.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/refugee-trends.md-8c6688b1.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/svelte-scatter.md": { "entry": "pages/blog/svelte-scatter.md-251179e4.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/svelte-scatter.md-251179e4.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/svelte-and-d3.md": { "entry": "pages/blog/svelte-and-d3.md-7a1a1dc8.js", "css": ["assets/pages/blog/svelte-and-d3.md-7e478bba.css", "assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css", "assets/Code-3d735c0b.css"], "js": ["pages/blog/svelte-and-d3.md-7a1a1dc8.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Code-b20a1db8.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/covid-posts.md": { "entry": "pages/blog/covid-posts.md-bc43992f.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/covid-posts.md-bc43992f.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/blog/flat-data-r.md": { "entry": "pages/blog/flat-data-r.md-3388a5bd.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/blog/layout.svelte-90305b41.css"], "js": ["pages/blog/flat-data-r.md-3388a5bd.js", "chunks/vendor-2b77bb05.js", "pages/blog/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/blog/layout.svelte": { "entry": "pages/blog/layout.svelte-d3d0c069.js", "css": ["assets/pages/blog/layout.svelte-90305b41.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/blog/layout.svelte-d3d0c069.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-0572eff4.js", "css": ["assets/pages/__layout.svelte-047b2f53.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/__layout.svelte-0572eff4.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "pages/__error.svelte-1f8da8e0.js", "css": ["assets/vendor-e5bb3ecd.css"], "js": ["pages/__error.svelte-1f8da8e0.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-cb9bd63c.js", "css": ["assets/pages/index.svelte-6a3ab3fb.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/index.svelte-cb9bd63c.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/experience/index.svelte": { "entry": "pages/experience/index.svelte-7474e209.js", "css": ["assets/pages/experience/index.svelte-6d9ecd69.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/experience/index.svelte-7474e209.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/experience/layout.svelte": { "entry": "pages/experience/layout.svelte-94935357.js", "css": ["assets/pages/projects/layout.svelte-41bae2ad.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/experience/layout.svelte-94935357.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/moksha.md": { "entry": "pages/experience/moksha.md-c4584691.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/moksha.md-c4584691.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/axios.md": { "entry": "pages/experience/axios.md-4e92e25f.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/axios.md-4e92e25f.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/socom.md": { "entry": "pages/experience/socom.md-bbefb3d7.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/socom.md-bbefb3d7.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/experience/tpl.md": { "entry": "pages/experience/tpl.md-0b9be70b.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/experience/tpl.md-0b9be70b.js", "chunks/vendor-2b77bb05.js", "pages/experience/layout.svelte-94935357.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/index.svelte": { "entry": "pages/projects/index.svelte-3a6a134b.js", "css": ["assets/pages/projects/index.svelte-72ab9c64.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/projects/index.svelte-3a6a134b.js", "chunks/vendor-2b77bb05.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy-2.md": { "entry": "pages/projects/cudi-hums-copy-2.md-14163d62.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy-2.md-14163d62.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy-3.md": { "entry": "pages/projects/cudi-hums-copy-3.md-64a78e21.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy-3.md-64a78e21.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums-copy.md": { "entry": "pages/projects/cudi-hums-copy.md-e5566eb6.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums-copy.md-e5566eb6.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/cudi-hums.md": { "entry": "pages/projects/cudi-hums.md-9c24a88d.js", "css": ["assets/vendor-e5bb3ecd.css", "assets/pages/projects/layout.svelte-41bae2ad.css"], "js": ["pages/projects/cudi-hums.md-9c24a88d.js", "chunks/vendor-2b77bb05.js", "pages/projects/layout.svelte-46a8583d.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/projects/layout.svelte": { "entry": "pages/projects/layout.svelte-46a8583d.js", "css": ["assets/pages/projects/layout.svelte-41bae2ad.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/projects/layout.svelte-46a8583d.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/post/index.svelte": { "entry": "pages/post/index.svelte-2e81c89e.js", "css": ["assets/pages/post/index.svelte-53bae120.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/post/index.svelte-2e81c89e.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/post/economist-table-replication-using-reactable.md": { "entry": "pages/post/economist-table-replication-using-reactable.md-75e4a383.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/economist-table-replication-using-reactable.md-75e4a383.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": { "entry": "pages/post/adding-a-chart-to-your-d3-tooltip.md-502ea3f6.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/adding-a-chart-to-your-d3-tooltip.md-502ea3f6.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/tidy-tuesday-powerlifting.md": { "entry": "pages/post/tidy-tuesday-powerlifting.md-fdd3d359.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/tidy-tuesday-powerlifting.md-fdd3d359.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/tidy-tuesday-replication.md": { "entry": "pages/post/tidy-tuesday-replication.md-0a7aa062.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/tidy-tuesday-replication.md-0a7aa062.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/automation-scrollytell.md": { "entry": "pages/post/automation-scrollytell.md-b6390e9e.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/automation-scrollytell.md-b6390e9e.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js"], "styles": [] }, "src/routes/post/animate-hugo-academic.md": { "entry": "pages/post/animate-hugo-academic.md-15c540f9.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/animate-hugo-academic.md-15c540f9.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/introducing-tpltheme.md": { "entry": "pages/post/introducing-tpltheme.md-faa13f53.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/introducing-tpltheme.md-faa13f53.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/color-in-data-vis.md": { "entry": "pages/post/color-in-data-vis.md-a28b761c.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/color-in-data-vis.md-a28b761c.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/do-something-else.md": { "entry": "pages/post/do-something-else.md-d1e9aaed.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/do-something-else.md-d1e9aaed.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/nuxt-blog-starter.md": { "entry": "pages/post/nuxt-blog-starter.md-09aa20bf.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/nuxt-blog-starter.md-09aa20bf.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/covid-gun-spikes.md": { "entry": "pages/post/covid-gun-spikes.md-1295fa12.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css", "assets/TableHandler-d632bac2.css", "assets/Code-3d735c0b.css"], "js": ["pages/post/covid-gun-spikes.md-1295fa12.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/TableHandler-0a2a8062.js", "chunks/Code-b20a1db8.js"], "styles": [] }, "src/routes/post/covid-on-campus.md": { "entry": "pages/post/covid-on-campus.md-20ab92b1.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css", "assets/TableHandler-d632bac2.css"], "js": ["pages/post/covid-on-campus.md-20ab92b1.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/TableHandler-0a2a8062.js"], "styles": [] }, "src/routes/post/map-springfield.md": { "entry": "pages/post/map-springfield.md-3503e57d.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/map-springfield.md-3503e57d.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/dumbbell-plots.md": { "entry": "pages/post/dumbbell-plots.md-bc9d5917.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/dumbbell-plots.md-bc9d5917.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/refugee-trends.md": { "entry": "pages/post/refugee-trends.md-8c6688b1.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/refugee-trends.md-8c6688b1.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/svelte-scatter.md": { "entry": "pages/post/svelte-scatter.md-251179e4.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/svelte-scatter.md-251179e4.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/svelte-and-d3.md": { "entry": "pages/post/svelte-and-d3.md-7a1a1dc8.js", "css": ["assets/pages/post/svelte-and-d3.md-7e478bba.css", "assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css", "assets/Code-3d735c0b.css"], "js": ["pages/post/svelte-and-d3.md-7a1a1dc8.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Code-b20a1db8.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/covid-posts.md": { "entry": "pages/post/covid-posts.md-bc43992f.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/covid-posts.md-bc43992f.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js"], "styles": [] }, "src/routes/post/flat-data-r.md": { "entry": "pages/post/flat-data-r.md-3388a5bd.js", "css": ["assets/Info.svelte_svelte&type=style&lang-5efaffaa.css", "assets/vendor-e5bb3ecd.css", "assets/pages/post/layout.svelte-90305b41.css"], "js": ["pages/post/flat-data-r.md-3388a5bd.js", "chunks/vendor-2b77bb05.js", "pages/post/layout.svelte-d3d0c069.js", "chunks/store-c93dee89.js", "chunks/Image-7104a9b1.js", "chunks/Info-85286459.js"], "styles": [] }, "src/routes/post/layout.svelte": { "entry": "pages/post/layout.svelte-d3d0c069.js", "css": ["assets/pages/post/layout.svelte-90305b41.css", "assets/vendor-e5bb3ecd.css"], "js": ["pages/post/layout.svelte-d3d0c069.js", "chunks/vendor-2b77bb05.js", "chunks/store-c93dee89.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -25192,43 +25192,43 @@ var projects_json = /* @__PURE__ */ Object.freeze({
   get: get$1
 });
 async function get() {
-  const imports = { "./blog/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(function() {
+  const imports = { "./post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(function() {
     return addingAChartToYourD3Tooltip;
-  }), "./blog/animate-hugo-academic.md": () => Promise.resolve().then(function() {
+  }), "./post/animate-hugo-academic.md": () => Promise.resolve().then(function() {
     return animateHugoAcademic;
-  }), "./blog/automation-scrollytell.md": () => Promise.resolve().then(function() {
+  }), "./post/automation-scrollytell.md": () => Promise.resolve().then(function() {
     return automationScrollytell;
-  }), "./blog/color-in-data-vis.md": () => Promise.resolve().then(function() {
+  }), "./post/color-in-data-vis.md": () => Promise.resolve().then(function() {
     return colorInDataVis;
-  }), "./blog/covid-gun-spikes.md": () => Promise.resolve().then(function() {
+  }), "./post/covid-gun-spikes.md": () => Promise.resolve().then(function() {
     return covidGunSpikes;
-  }), "./blog/covid-on-campus.md": () => Promise.resolve().then(function() {
+  }), "./post/covid-on-campus.md": () => Promise.resolve().then(function() {
     return covidOnCampus;
-  }), "./blog/covid-posts.md": () => Promise.resolve().then(function() {
+  }), "./post/covid-posts.md": () => Promise.resolve().then(function() {
     return covidPosts;
-  }), "./blog/do-something-else.md": () => Promise.resolve().then(function() {
+  }), "./post/do-something-else.md": () => Promise.resolve().then(function() {
     return doSomethingElse;
-  }), "./blog/dumbbell-plots.md": () => Promise.resolve().then(function() {
+  }), "./post/dumbbell-plots.md": () => Promise.resolve().then(function() {
     return dumbbellPlots;
-  }), "./blog/economist-table-replication-using-reactable.md": () => Promise.resolve().then(function() {
+  }), "./post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(function() {
     return economistTableReplicationUsingReactable;
-  }), "./blog/flat-data-r.md": () => Promise.resolve().then(function() {
+  }), "./post/flat-data-r.md": () => Promise.resolve().then(function() {
     return flatDataR;
-  }), "./blog/introducing-tpltheme.md": () => Promise.resolve().then(function() {
+  }), "./post/introducing-tpltheme.md": () => Promise.resolve().then(function() {
     return introducingTpltheme;
-  }), "./blog/map-springfield.md": () => Promise.resolve().then(function() {
+  }), "./post/map-springfield.md": () => Promise.resolve().then(function() {
     return mapSpringfield;
-  }), "./blog/nuxt-blog-starter.md": () => Promise.resolve().then(function() {
+  }), "./post/nuxt-blog-starter.md": () => Promise.resolve().then(function() {
     return nuxtBlogStarter;
-  }), "./blog/refugee-trends.md": () => Promise.resolve().then(function() {
+  }), "./post/refugee-trends.md": () => Promise.resolve().then(function() {
     return refugeeTrends;
-  }), "./blog/svelte-and-d3.md": () => Promise.resolve().then(function() {
+  }), "./post/svelte-and-d3.md": () => Promise.resolve().then(function() {
     return svelteAndD3;
-  }), "./blog/svelte-scatter.md": () => Promise.resolve().then(function() {
+  }), "./post/svelte-scatter.md": () => Promise.resolve().then(function() {
     return svelteScatter;
-  }), "./blog/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(function() {
+  }), "./post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(function() {
     return tidyTuesdayPowerlifting;
-  }), "./blog/tidy-tuesday-replication.md": () => Promise.resolve().then(function() {
+  }), "./post/tidy-tuesday-replication.md": () => Promise.resolve().then(function() {
     return tidyTuesdayReplication;
   }) };
   let body = [];
@@ -27044,7 +27044,7 @@ var Economist_table_replication_using_reactable = create_ssr_component(($$result
     default: () => `<p>Thanks for visiting this blog post, but it has moved! It can be found in its fully interactive form <a href="${"https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/"}" rel="${"nofollow"}">here</a>.</p>
 <p><a href="${"https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/"}" rel="${"nofollow"}">${validate_component(Image, "Image").$$render($$result, {
       alt: "A table depicting excess deaths by country during 2020.",
-      src: "../images/blog/economist-table-replication-using-reactable/featured.png",
+      src: "../images/post/economist-table-replication-using-reactable/featured.png",
       ":clickable": "false"
     }, {}, {})}</a></p>`
   })}`;
@@ -27069,12 +27069,12 @@ var Adding_a_chart_to_your_d3_tooltip = create_ssr_component(($$result, $$props,
 <p>Of course, there\u2019s nothing <em>wrong</em> with these kinds of tooltips. But they are truly doing the bare minimum, and, as a result, they\u2019re missing out on the full potential of tooltips. <strong>If users are actively seeking more information by hovering over data, we ought to reward them with the most helpful and interesting information we can.</strong></p>
 <p>That\u2019s why I recently updated one of my tooltips from a static presentation of textual information to a line chart depicting change over time. In other words, I went from this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif",
+      src: "../images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif",
       alt: "A GIF depicting the old tooltip, which contained static values in textual form"
     }, {}, {})}
 <p>to this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif",
+      src: "../images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif",
       alt: "A GIF depicting the old tooltip, which contained dynamic, temporal data over time for a given state upon hover"
     }, {}, {})}
 <h2 id="${"why-did-i-make-that-change"}"><a href="${"#why-did-i-make-that-change"}">Why did I make that change?</a></h2>
@@ -27083,7 +27083,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>The new tooltip shows a trend over time. It also shows the state name (just in case you skipped that day in US geography!), and also the most recent data on overdose deaths. Because this map is meant to show how the opioid crisis <em>has evolved</em>, showing a line chart for each state in my tooltip allows the user to explore state-by-state trends on hover! This is much easier than hovering on each state during each year and trying to keep track of the trends.</p>
 <p>For example, hovering on West Virginia, which in 2017 seemed to have the highest opioid-involved overdose death rate (as indicated by it having the darkest shade of red), reveals that its also experienced one of the largest over-time increase in this rate since 1999:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg",
+      src: "../images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg",
       alt: "A static image focusing on West Virginia, showcasing the tooltip which shows a line chart increasing over time."
     }, {}, {})}
 <h2 id="${"so-how-do-you-do-it"}"><a href="${"#so-how-do-you-do-it"}">So, how do you do it?</a></h2>
@@ -27321,7 +27321,7 @@ var Tidy_tuesday_powerlifting = create_ssr_component(($$result, $$props, $$bindi
 <p>In this example, I\u2019m using weightlifting data from the International Powerlifting Federation. For the purposes of this tutorial, we\u2019ll look at <em>differences in top lifts by sex</em>. A faceted, animated plot is a great option because we\u2019d like to observe <strong>the magnitude of these differences</strong> and <strong>how these differences have evolved over time</strong>.</p>
 <p>We\u2019ll be creating this GIF:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
+      src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
       alt: "A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."
     }, {}, {})}
 <h2 id="${"environment-setup"}"><a href="${"#environment-setup"}">Environment setup</a></h2>
@@ -27438,7 +27438,7 @@ max_lifts_final <span class="token operator">&lt;-</span> max_lifts <span class=
   geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">450</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"Difference"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             color<span class="token operator">=</span><span class="token string">"grey20"</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> vjust<span class="token operator">=</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png",
+      src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png",
       alt: "A static dumbbell plot which represents male and female \u2018top lifts' in 2019."
     }, {}, {})}
 <p>Finally, we animate, using Thomas Pedersen\u2019s wonderful <a href="${"https://github.com/thomasp85/gganimate"}" rel="${"nofollow"}">gganimate
@@ -27472,7 +27472,7 @@ a_gif <span class="token operator">&lt;-</span> animate<span class="token punctu
 
 a_gif</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif",
+      src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif",
       alt: "An animated dumbbell plot which represents male and female \u2018top lifts' over time. Each tick of the animation represents a new year."
     }, {}, {})}
 <p>But in our case, we\u2019d like to include another GIF: a line chart of differences over time.</p>
@@ -27503,7 +27503,7 @@ b_gif <span class="token operator">&lt;-</span> animate<span class="token punctu
 
 b_gif</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif",
+      src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif",
       alt: "An animated line chart that shows, year by year, the difference in male and female top lifts on the Y axis. Each tick of the chart shows a new year."
     }, {}, {})}
 <p>Finally, we\u2019ll combine them using <code>magick</code> (thanks to <a href="${"https://github.com/thomasp85/gganimate/wiki/Animation-Composition"}" rel="${"nofollow"}">this
@@ -27524,7 +27524,7 @@ new_gif <span class="token operator">&lt;-</span> image_append<span class="token
 <p>Here, we specify <code>stack = TRUE</code> so that one plot is <strong>above</strong> the other. If you\u2019d like to place them side-by-side, specify <code>stack = FALSE</code>.</p>
 <p>In combination, the process results in our final output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
+      src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
       alt: "A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."
     }, {}, {})}
 <p>In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), <em>and</em> we can see how these differences change over time (bottom chart). The power of an animated, combined chart!</p>`
@@ -27564,7 +27564,7 @@ Bloomberg graphics, I decided to set out on a journey to make that plot
 as close as possible to the real thing.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot by Bloomberg Graphics, showing automation risk compared to median income.",
-      src: "../images/blog/tidy-tuesday-replication/bloomberg.png"
+      src: "../images/post/tidy-tuesday-replication/bloomberg.png"
     }, {}, {})}
 <p>The real goal of this week\u2019s Tidy Tuesday is using <strong>the data that
 Rafael posted</strong> to create other cool visualizations; I took a slightly
@@ -27872,12 +27872,12 @@ code, uninterrupted and (hopefully) reproducible,
 <p>Here\u2019s the Bloomberg visualization:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot by Bloomberg Graphics, showing automation risk compared to median income.",
-      src: "../images/blog/tidy-tuesday-replication/bloomberg.png"
+      src: "../images/post/tidy-tuesday-replication/bloomberg.png"
     }, {}, {})}
 <p>And here\u2019s mine:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot recreation, showing automation risk compared to median income.",
-      src: "../images/blog/tidy-tuesday-replication/replication.png"
+      src: "../images/post/tidy-tuesday-replication/replication.png"
     }, {}, {})}
 `
   })}`;
@@ -28334,7 +28334,7 @@ var metadata$d = {
 var Animate_hugo_academic = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$d), {}, {
     default: () => `${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/final.gif",
+      src: "../images/post/animate-hugo-academic/final.gif",
       alt: "A GIF showcasing the final version of my animated homepage."
     }, {}, {})}
 <p>The R package <code>blogdown</code> is an incredibly powerful tool\u2014it allows R users with little to no familiarity in web development to build a fully functional, content-oriented, beautiful website using a language they\u2019re already familiar with. It\u2019s built on top of <a href="${"https://gohugo.io/"}" rel="${"nofollow"}">Hugo</a>, the world\u2019s (self-proclaimed) \u2018fastest framework for building websites,\u2019 which comes with a <a href="${"https://themes.gohugo.io/"}" rel="${"nofollow"}">variety of themes</a> suitable for a variety of different uses.</p>
@@ -28349,12 +28349,12 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <h2 id="${"step-0-make-your-about-page-your-actual-homepage"}"><a href="${"#step-0-make-your-about-page-your-actual-homepage"}">Step 0) Make your \u2018about\u2019 page your actual homepage</a></h2>
 <p>By default, the Hugo Academic theme\u2019s first section is a grandiose self-introduction (I guess the creators of the theme do deserve such credit). Before we incorporate any of our animations, lets go ahead and make our \u2018about\u2019 page the landing page users first see when they visit our site. This requires us to find the files <code>hero.md</code> and <code>demo.md</code>, and in each of those files, set <code>active</code> equal to <code>false</code>. That takes our home page from this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/before-demo-hero-remove.png",
+      src: "../images/post/animate-hugo-academic/before-demo-hero-remove.png",
       alt: "A GIF showcasing the initial version of my homepage, before any edits."
     }, {}, {})}
 <p>to this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/after-demo-hero-remove.png",
+      src: "../images/post/animate-hugo-academic/after-demo-hero-remove.png",
       alt: "A GIF showcasing a version of my homepage where I replace \u2018hero' with \u2018about\u2019."
     }, {}, {})}
 <p>(As you progress, you might have to make additional small changes, such as removing \u2018Demo\u2019 from the navbar menu.)</p>
@@ -28371,7 +28371,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <p>With that newly created <code>about.html</code> living in <code>layouts/partials/widgets/</code>, you may notice that your homepage looks the exact same. This is correct! In this step, we\u2019ll customize that html file so that it can be animated.</p>
 <p>Within <code>about.html</code>, you\u2019ll notice all of your page\u2019s elements in order of appearance, despite a lot of extra characters that don\u2019t make much sense. It should look like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/about.png",
+      src: "../images/post/animate-hugo-academic/about.png",
       alt: "A screenshot of complicated code that is initially used to render the homepage."
     }, {}, {})}
 <p>Throughout step 3, we\u2019ll use each element\u2019s \u2018class\u2019 to target it for animations. In the above screenshot (and in your <code>about.html</code> page!), you\u2019ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found <a href="${"https://www.w3schools.com/cssref/sel_class.asp"}" rel="${"nofollow"}">here</a>.</p>
@@ -28463,7 +28463,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 <p>As we expected, our section background is now an (unbelievably ugly shade of) red.</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/bg-red.png",
+      src: "../images/post/animate-hugo-academic/bg-red.png",
       alt: "An example of turning the background color of the page red."
     }, {}, {})}
 <p>(Now remove that property immediately! This is not quite the welcome we want for our visitors.) We can also target elements <em>within</em> the section by nesting new selectors inside of <code>#about</code>. For example, if we wanted to change the color of our \u2018biography\u2019 title text, we could do so with the following code. (This is because we created a class named <code>biography-title</code> in step 1):</p>
@@ -28473,7 +28473,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/font-red.png",
+      src: "../images/post/animate-hugo-academic/font-red.png",
       alt: "An example of turning the font color  red."
     }, {}, {})}
 ${validate_component(Info, "Info").$$render($$result, {}, {}, {
@@ -28516,7 +28516,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/red.gif",
+      src: "../images/post/animate-hugo-academic/red.gif",
       alt: "An example transition, turning the font color to red over a 5 second duration."
     }, {}, {})}
 <p>Of course, we don\u2019t want a 5 second animation, nor do we want our text to start off as red. A cleaner animation might leverage the power of CSS to modify an element\u2019s <em>position</em>. In our case, we want an element to <strong>slide in from the right side of the screen</strong>, and so we make a few tweaks to the code above. Let\u2019s make a new animation called <code>slide-from-right</code> which starts (at keyframe 0%) with our element 150% to the right of its original position (therefore off the screen) and ends (at keyframe 100%) with it at its original position. This involves the use of <code>translateX</code>, which you can read about <a href="${"https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX"}" rel="${"nofollow"}">here</a>.</p>
@@ -28533,7 +28533,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   <span class="token property">animation</span><span class="token punctuation">:</span> slide-from-right 1s forwards<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/slide-from-right.gif",
+      src: "../images/post/animate-hugo-academic/slide-from-right.gif",
       alt: "A gif of the content sliding in from the right side of the page"
     }, {}, {})}
 <p>There is one slight improvement we can make on the above transition. Specifically, we can call an <em>easing function</em> on our animation. <a href="${"https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function"}" rel="${"nofollow"}">Easing functions</a> give a more natural feel to a transition\u2019s flow\u2014rather than our object flying in at a perfectly linear rate, we can add some personality by specifying its speed at different points in the transition. To find an easing function, visit <a href="${"https://easings.net/en#"}" rel="${"nofollow"}">easings.net</a>, which allows you to visualize all of the different ways to modify your transition\u2019s ease. (For this tutorial, I chose a clean-looking \u201C<em>easeInOutQuint</em>\u201C function, which looks like this: <code>cubic-bezier(0.83, 0, 0.17, 1)</code>.)</p>
@@ -28546,7 +28546,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 <p>In combination with above, this creates a transition that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/double-slide.gif",
+      src: "../images/post/animate-hugo-academic/double-slide.gif",
       alt: "A gif of two pieces of content sliding in, one after another (with a 100ms delay)"
     }, {}, {})}
 <p>Nice! That looks clean. It looks like those two text blocks are racing to greet your new site visitor :)</p>
@@ -28566,7 +28566,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   <span class="token property">animation</span><span class="token punctuation">:</span> slide-from-left 1s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0.87<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.13<span class="token punctuation">,</span> 1<span class="token punctuation">)</span> forwards<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/left-and-right.gif",
+      src: "../images/post/animate-hugo-academic/left-and-right.gif",
       alt: "Two paragraphs of content sliding in from opposite directions."
     }, {}, {})}
 <h3 id="${"step-3d-finally-the-fade"}"><a href="${"#step-3d-finally-the-fade"}">Step 3D) Finally, the Fade</a></h3>
@@ -28595,7 +28595,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <span class="token punctuation">&#125;</span></code>`}<!-- HTML_TAG_END --></pre>
 <p>Now, we have a final homepage that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/animate-hugo-academic/final.gif",
+      src: "../images/post/animate-hugo-academic/final.gif",
       alt: "A GIF showing the final iteration of a homepage, with animations."
     }, {}, {})}
 <p>To make our SCSS file more robust across different browsers, we can take our completed file and put it into the <a href="${"https://autoprefixer.github.io/"}" rel="${"nofollow"}">CSS Autoprefixer</a>. This adds additional lines of code to our CSS file so that all browsers render the same animations upon page load. Your completed SCSS file should look like <a href="${"https://github.com/connorrothschild/animate-hugo-academic/blob/master/assets/scss/custom.scss"}" rel="${"nofollow"}">this</a>.</p>
@@ -28686,7 +28686,7 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
     labs<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"Mean Sepal Width (cm)"</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">"Iris Dataset"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-3-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-3-1.png"
     }, {}, {})}
 <h3 id="${"fonts"}"><a href="${"#fonts"}">Fonts</a></h3>
 <p>The user is able to specify whether they want to use <em>Lato</em> or <em>Adobe
@@ -28705,7 +28705,7 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
     labs<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"Sepal Width (cm)"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"Sepal Length (cm)"</span><span class="token punctuation">,</span> col<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token string">"Petal Length"</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">"Iris Dataset"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-5-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-5-1.png"
     }, {}, {})}
 <p>By specifying <code>style = &quot;Texas&quot;</code> within <code>set_tpl_theme</code>, the user may
 also create Texas-specific plots.</p>
@@ -28722,7 +28722,7 @@ ggplot<span class="token punctuation">(</span>data <span class="token operator">
        caption <span class="token operator">=</span> <span class="token string">"Source: Texas DSHS"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-6-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-6-1.png"
     }, {}, {})}
 <p>And it also works for categorical variables:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">set_tpl_theme<span class="token punctuation">(</span>style <span class="token operator">=</span> <span class="token string">"Texas"</span><span class="token punctuation">,</span> font <span class="token operator">=</span> <span class="token string">"lato"</span><span class="token punctuation">)</span>
@@ -28740,7 +28740,7 @@ tx_vac <span class="token percent-operator operator">%>%</span>
        caption <span class="token operator">=</span> <span class="token string">"Source: Texas DSHS"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-7-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-7-1.png"
     }, {}, {})}
 <p>If the number of colors exceeds the number of colors in the TPL palette
 (9), the function <code>tpl_color_pal()</code> will drop the TPL color palette and
@@ -28755,7 +28755,7 @@ chapter</a>).</p>
   labs<span class="token punctuation">(</span>title <span class="token operator">=</span> <span class="token string">"Texas Counties"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-8-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-8-1.png"
     }, {}, {})}
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r"><span class="token comment"># default to print afterwards</span>
 set_tpl_theme<span class="token punctuation">(</span>style <span class="token operator">=</span> <span class="token string">"print"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
@@ -28777,7 +28777,7 @@ The logo defaults to 1/7th of the size of the plot.</p>
 add_tpl_logo<span class="token punctuation">(</span>plot<span class="token punctuation">,</span> position <span class="token operator">=</span> <span class="token string">"top right"</span><span class="token punctuation">,</span> scale <span class="token operator">=</span> <span class="token number">1.5</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-9-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-9-1.png"
     }, {}, {})}
 <h4 id="${"logo-text"}"><a href="${"#logo-text"}">Logo text</a></h4>
 <p>There may be some instances when an all-out logo is not warranted or
@@ -28791,7 +28791,7 @@ to add text to an existing plot object:</p>
 add_tpl_logo_text<span class="token punctuation">(</span>plot<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-10-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-10-1.png"
     }, {}, {})}
 <p>The user may also need to specify <code>align</code>, which moves the plot
 horizontally across the bottom of the page.</p>
@@ -28802,7 +28802,7 @@ horizontally across the bottom of the page.</p>
 add_tpl_logo_text<span class="token punctuation">(</span>plot<span class="token punctuation">,</span> align <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-11-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-11-1.png"
     }, {}, {})}
 <h3 id="${"additional-functions"}"><a href="${"#additional-functions"}">Additional functions</a></h3>
 <h4 id="${"drop-axes"}"><a href="${"#drop-axes"}">Drop axes</a></h4>
@@ -28818,7 +28818,7 @@ plot object:</p>
     drop_axis<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-12-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-12-1.png"
     }, {}, {})}
 <h3 id="${"colors"}"><a href="${"#colors"}">Colors</a></h3>
 <p>I also put a lot of time into creating a color palette which was both
@@ -28838,7 +28838,7 @@ p3 <span class="token operator">&lt;-</span> view_palette<span class="token punc
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">,</span> nrow <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-13-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-13-1.png"
     }, {}, {})}
 <p>These palettes were created using <a href="${"http://colorbrewer2.org"}" rel="${"nofollow"}">http://colorbrewer2.org</a> and
 <a href="${"http://coloors.co"}" rel="${"nofollow"}">http://coloors.co</a> and are colorblind friendly.</p>
@@ -28870,7 +28870,7 @@ reversed <span class="token operator">&lt;-</span> normal <span class="token ope
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>normal<span class="token punctuation">,</span> reversed<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-14-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-14-1.png"
     }, {}, {})}
 <p>The user may specify the color palette in the <code>scale_fill_*</code> or
 <code>scale_color_*</code> functions in a ggplot call. Specifically, the user can
@@ -28894,7 +28894,7 @@ reversed <span class="token operator">&lt;-</span> normal <span class="token ope
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>normal<span class="token punctuation">,</span> reversed<span class="token punctuation">,</span> nrow <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-15-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-15-1.png"
     }, {}, {})}
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">data <span class="token operator">&lt;-</span> gapminder<span class="token operator">::</span>gapminder <span class="token percent-operator operator">%>%</span>
   dplyr<span class="token operator">::</span>filter<span class="token punctuation">(</span>gapminder<span class="token operator">::</span>gapminder<span class="token operator">$</span>country <span class="token percent-operator operator">%in%</span> c<span class="token punctuation">(</span><span class="token string">"France"</span><span class="token punctuation">,</span> <span class="token string">"Germany"</span><span class="token punctuation">,</span> <span class="token string">"Ireland"</span><span class="token punctuation">,</span> <span class="token string">"Italy"</span><span class="token punctuation">,</span> <span class="token string">"Japan"</span><span class="token punctuation">,</span> <span class="token string">"Norway"</span><span class="token punctuation">,</span> <span class="token string">"Mexico"</span><span class="token punctuation">,</span> <span class="token string">"United States"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
@@ -28912,7 +28912,7 @@ ggplot<span class="token punctuation">(</span>data <span class="token operator">
   theme<span class="token punctuation">(</span>axis.text.x <span class="token operator">=</span> element_text<span class="token punctuation">(</span>angle <span class="token operator">=</span> <span class="token number">45</span><span class="token punctuation">,</span> hjust <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-16-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-16-1.png"
     }, {}, {})}
 <h3 id="${"restore-defaults"}"><a href="${"#restore-defaults"}">Restore Defaults</a></h3>
 <p>By calling <code>undo_tpl_theme</code>, you are able to remove TPL-specific theme
@@ -28926,14 +28926,14 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
 <p>This results in the following plot:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-17-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-17-1.png"
     }, {}, {})}
 <p>To restore the TPL theme, simply call <code>set_tpl_theme()</code>:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">set_tpl_theme<span class="token punctuation">(</span><span class="token punctuation">)</span>
 last_plot<span class="token punctuation">(</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a plot in the TPL theme.",
-      src: "../images/blog/introducing-tpltheme/unnamed-chunk-18-1.png"
+      src: "../images/post/introducing-tpltheme/unnamed-chunk-18-1.png"
     }, {}, {})}`
   })}`;
 });
@@ -28953,20 +28953,20 @@ var metadata$b = {
 var Color_in_data_vis = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$b), {}, {
     default: () => `<p>If our use of color in visualizations follows the <a href="${"https://en.wikipedia.org/wiki/Five_Ws"}" rel="${"nofollow"}">Five Ws (and one H)</a>, we\u2019re spending too much time on <em>how</em>, and not enough time on <em>why</em>. Color is too often seen as a tool to make pretty pictures, when it should be used to inform our audiences.</p>
-<p>For one example, look at this \u201CColor Emotion Guide\u201D from marketing site <a href="${"https://www.tapclicks.com/resources/blog/the-influence-of-color-in-data-visualization/"}" rel="${"nofollow"}">TapClicks</a> (one of the top results when you Google \u201Ccolor in data visualization\u201D \u{1F9D0}).</p>
+<p>For one example, look at this \u201CColor Emotion Guide\u201D from marketing site <a href="${"https://www.tapclicks.com/resources/post/the-influence-of-color-in-data-visualization/"}" rel="${"nofollow"}">TapClicks</a> (one of the top results when you Google \u201Ccolor in data visualization\u201D \u{1F9D0}).</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Color guide that doesn\u2019t make any sense. Random emotions are assigned to different brand colors, with no apparent pattern.",
-      src: "../images/blog/color-in-data-vis/color-emotion-guide-lol.jpg"
+      src: "../images/post/color-in-data-vis/color-emotion-guide-lol.jpg"
     }, {}, {})}
 <p>The implicit suggestion here is that we should use color\u2014whenever and however we can\u2014to capture some form of emotion. Not only is this specific categorization rather odd (Monster energy drinks are peaceful, Virgin Mobile embodies \u201Cbold excitement\u201D, and Harley Davidson motorcycles just scream \u201Ccheerful friendliness\u201D \u{1F929}), it leads novice practitioners to believe that color should be used just for the sake of using color.</p>
 <p>Examples of gratuitous color use abound.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A pie chart with far too many colors.",
-      src: "../images/blog/color-in-data-vis/bad-color-use-1.jpg"
+      src: "../images/post/color-in-data-vis/bad-color-use-1.jpg"
     }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Multiple pie charts, all with poor color usage.",
-      src: "../images/blog/color-in-data-vis/bad-color-use-2.jpg"
+      src: "../images/post/color-in-data-vis/bad-color-use-2.jpg"
     }, {}, {})}
 <p>These examples illustrate my thesis: <strong>Too often, we ask <em>how</em> we can use color in our visualizations when we should be asking <em>why</em> we are using it.</strong></p>
 <p>Some combination of 1) default software settings, 2) an obsession with pretty color palettes, and 3) a lack of emphasis on careful color consideration has led to a sloppy use of color in some of our most popular data visualizations.</p>
@@ -28975,7 +28975,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>The reality is, however, that if you need more than a handful of colors in your chart, you can probably present your data in a different way. Take <a href="${"https://blog.datawrapper.de/colors/"}" rel="${"nofollow"}">this example</a> from Datawrapper:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "An example of a poor and better visualization. One has many colors sequentially, while the other breaks up each color into its own bar for clarity's sake.",
-      src: "../images/blog/color-in-data-vis/bad-and-better.jpg"
+      src: "../images/post/color-in-data-vis/bad-and-better.jpg"
     }, {}, {})}
 <p>The takeaway? When you emphasize <em>everything</em>, you end up emphasizing <em>nothing</em>. That\u2019s why its important that we stop uncritically asking <em>how</em> we can use color in our charts.</p>
 <p>A data visualization is nothing more than a pretty picture if it does not <em>inform</em> its viewer. And if your chart presents 14 different data points all mapped to different colors, what kind of story is it telling? I really like this from Apple\u2019s data visualization practitioner <a href="${"https://medium.com/@Elijah_Meeks/viz-palette-for-data-visualization-color-8e678d996077?"}" rel="${"nofollow"}">Elijah Meeks</a>:</p>
@@ -28989,34 +28989,34 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Here\u2019s a quick <a href="${"https://github.com/connorrothschild/bbdata"}" rel="${"nofollow"}">example</a> I made in R a while back:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A barplot showcasing vaccination by county in Texas. All bars are grey except the lowest bar, representing Terry County (78% vaccinated), which is highlighted in a royal blue.",
-      src: "../images/blog/color-in-data-vis/color-emphasized.png"
+      src: "../images/post/color-in-data-vis/color-emphasized.png"
     }, {}, {})}
 <p>The point of the visualization is not to show our audience the kindergarten vaccination rate of <em>every county</em> in Texas. It is instead to highlight the lowest rate\u2014Terry County. This visualization leverages the grey fill of every other bar to immediately draw the audiences\u2019 eyes to Terry County. Because we used only two colors, we can also highlight text in the subtitle to make the connection even clearer for our audience. Color\u2014if used prudently\u2014makes our visualizations more digestible and more informative.</p>
 <p>Now, imagine if I visualized that same data in the following way:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A barplot showcasing vaccination by county in Texas. All bars are grey.",
-      src: "../images/blog/color-in-data-vis/all-grey.jpg"
+      src: "../images/post/color-in-data-vis/all-grey.jpg"
     }, {}, {})}
 <p>Or, even worse:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A barplot showcasing vaccination by county in Texas. All bars are separate colors, with no pattern present.",
-      src: "../images/blog/color-in-data-vis/all-color.jpg"
+      src: "../images/post/color-in-data-vis/all-color.jpg"
     }, {}, {})}
 <p>After seeing those eyesores, aren\u2019t you thankful that we used color sparingly in the initial plot?</p>
 <p>Perhaps you\u2019re interested in a county-by-county overview of 2016 election results. Although you might be tempted to code all counties according to their Trump/Clinton split, that\u2019s prettier than it is insightful. What if, instead, we focused on those notable counties which flipped from one party to another between 2012 and 2016? From Kieran Healy\u2019s book <a href="${"https://socviz.co/refineplots.html#use-color-to-your-advantage"}" rel="${"nofollow"}">Data Visualization</a>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue.",
-      src: "../images/blog/color-in-data-vis/flipping-points-color.jpg"
+      src: "../images/post/color-in-data-vis/flipping-points-color.jpg"
     }, {}, {})}
 <p>As we can see here, more counties flipped from majority-Democratic in 2012 to majority-Republican in 2016 than vice-versa. Because we\u2019re focusing on only a fraction of all of the data points, we can also observe trends: The majority of counties that flipped had a small black population. No county that had over a ~53% black population flipped in either direction (annotation my own):</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation above 53% black to show that no counties with such a population flipped in either direction.",
-      src: "../images/blog/color-in-data-vis/flipping-points-color-annotate1.jpg"
+      src: "../images/post/color-in-data-vis/flipping-points-color-annotate1.jpg"
     }, {}, {})}
 <p>We also notice that flipping direction might be correlated with population size: nearly all of the flipping counties with a log population under 100,000 flipped to Republicans, while a greater proportion of all switching counties flipped toward the Democratic Party if their log population was greater than 100,000.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation past population 100,000 to show that more populous counties were more likely to flip Democratic.",
-      src: "../images/blog/color-in-data-vis/flipping-points-color-annotate2.jpg"
+      src: "../images/post/color-in-data-vis/flipping-points-color-annotate2.jpg"
     }, {}, {})}
 <p>Color can, and should, be used to focus on the key parts of your visualization that you want your audience to see. By using color strategically, we can reduce the cognitive load required to understand <em>what</em> a visualization is depicting. <a href="${"https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183884#pone.0183884.ref008"}" rel="${"nofollow"}">Kalyuga et al.</a> found that color-coding \u201Cameliorated split-attention effects, resulting in lower perceived difficulty.\u201D <a href="${"https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183884#pone.0183884.ref024"}" rel="${"nofollow"}">Other researchers</a> have reported reductions in cognitive load when experiment participants were provided color-coding.</p>
 <p>The overuse of colors can have the opposite effect. In one <a href="${"https://journals-sagepub-com.ezproxy.rice.edu/doi/full/10.1177/1747021818781425"}" rel="${"nofollow"}">2019 paper</a>, researchers found \u201Ctask-irrelevant digit colour information hampers the learning process only in instances where it triggers a conflict with the semantic properties of the base-code words.\u201D What does this mean? If color encoding conflicts with the objects it represents, it impedes learning and weakens understanding. You don\u2019t have to understand what all this means (I don\u2019t dully understand all of it). This point is simply to illustrate: <em>we should care about color</em>. Color can be confusing and complicated, which is why its use should be intentional and minimal. It should be used to draw attention to the important parts of our charts.</p>
@@ -29024,12 +29024,12 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Color does not have to be used in contrast to plain old grey. It can also be used as a tool to showcase a variety of data points all mapped to different colors. The important note is that this usage should be sparing. Given our prior examples, we definitely don\u2019t want a plot like this one (from <a href="${"https://serialmentor.com/dataviz/color-pitfalls.html"}" rel="${"nofollow"}">Chapter 19 of Claus Wilke\u2019s <em>Fundamentals of Data Visualization</em></a>):</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded to a separate color, with no pattern.",
-      src: "../images/blog/color-in-data-vis/bad-chart.jpg"
+      src: "../images/post/color-in-data-vis/bad-chart.jpg"
     }, {}, {})}
 <p>A more appropriate alternative may look something like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded according to its region.",
-      src: "../images/blog/color-in-data-vis/betterchart-1.jpg"
+      src: "../images/post/color-in-data-vis/betterchart-1.jpg"
     }, {}, {})}
 <p>This way, the audience can still see general patterns in the data, but they don\u2019t have to treat the fill legend like a lookup table! Most ideally, this chart would have some interactivity, so that a user could hover over a point to see its respective data.</p>
 <p>In examples like this, where we are <em>exploring</em> rather than <em>explaining</em>, we leave the exploration to our users; they can see what they want to see and we give them the information they need to do exactly that.</p>
@@ -29037,13 +29037,13 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>These examples are most commonly found in <a href="${"https://en.wikipedia.org/wiki/Choropleth_map"}" rel="${"nofollow"}">choropleth maps</a>, where the shade of color in a given state (or county, or region) corresponds to a value of interest. As an example, here\u2019s a <a href="${"https://connorrothschild.github.io/D3.js/map-overdoses/"}" rel="${"nofollow"}">choropleth map</a> I created using D3.js, which visualizes opioid-involved overdose deaths in the United States:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A choropleth chart wherein each state is shaded according to its opioid overdose rate.",
-      src: "../images/blog/color-in-data-vis/choropleth-ex.jpg"
+      src: "../images/post/color-in-data-vis/choropleth-ex.jpg"
     }, {}, {})}
 <p>As we can see from the map, \u201Crust belt\u201D states are suffering from the opioid crisis to a much greater degree than those in western states. Choropleth maps utilize color to show regional variation and illustrate the power of color <em>shading</em> to represent the severity or extent of a given variable.</p>
 <p>However, color in this context can also be misused. Data may be mapped according to a categorical color scale, or a rainbow scale which makes it difficult to see progression. This chart from <a href="${"https://serialmentor.com/dataviz/color-pitfalls.html"}" rel="${"nofollow"}">Claus O. Wilke</a> is a good (bad) example:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A map of Texas where each county is shaded according to its proportional white population. The color scale is rainbow, making it difficult to detect relative differences.",
-      src: "../images/blog/color-in-data-vis/map-Texas-rainbow-1.jpg"
+      src: "../images/post/color-in-data-vis/map-Texas-rainbow-1.jpg"
     }, {}, {})}
 <p>This chart is pretty! When rainbow scales are used in the media or elsewhere, it may be because their creator asked \u201CHow can I use color to make a pretty picture?\u201D But this use of a non-monotonic color scale means that the relative size of differences between data points are difficult to detect. As an illustration, see how long it takes you to answer this question: using the legend above, what is the percent difference between <span style="${"color:#FF6701;"}">this color </span>and <span style="${"color:#3736FF;"}">this color</span>? (The answer is ~70%.)</p>
 <p>In 2019, <a href="${"https://ieeexplore.ieee.org/document/8494817"}" rel="${"nofollow"}">a group of researchers</a> asked climate scientists to evaluate maps depicting changes in climate, where maps were either rainbow (similar to the Texas map above) or monotonic (such as the opioid map earlier). The researchers found that evaluations of magnitude difference in these maps were significantly more accurate when they were encoded with monotonic luminance scales rather than traditional rainbow scales. Other research consistently finds that rainbow color scales are both <a href="${"http://people.renci.org/~borland/pdfs/RainbowColorMap_VisViewpoints.pdf"}" rel="${"nofollow"}">harmful and popular</a>. All this to say: color matters.</p>
@@ -29068,7 +29068,7 @@ var metadata$a = {
 };
 var Do_something_else = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$a), {}, {
-    default: () => `<p><a href="${"https://angel.co/blog/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft"}" rel="${"nofollow"}">https://angel.co/blog/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft</a>
+    default: () => `<p><a href="${"https://angel.co/post/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft"}" rel="${"nofollow"}">https://angel.co/post/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft</a>
 <a href="${"https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html"}" rel="${"nofollow"}">https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html</a>
 <a href="${"https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally"}" rel="${"nofollow"}">https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally</a></p>
 <p>I graduated college last week. I\u2019ve been thinking about what it means for a new graduate to find a career that they find <em>fulfilling</em>. In my view of things, it seems as if new grads\u2019 plans fall into one of a few categories, which you can usually split up by degree focus.</p>
@@ -29078,7 +29078,7 @@ var Do_something_else = create_ssr_component(($$result, $$props, $$bindings, slo
 <p><strong>Technical graduates</strong>:</p>
 <ol><li>Big tech (FAANG, etc.)</li>
 <li>Something else (startup, civic tech, etc.)</li></ol>
-<p>Is it reductive to categorize <em>all jobs</em> into these four categories? Check my LinkedIn feed, and you\u2019ll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, <a href="${"https://medium.com/s/story/a-culture-of-prestige-98c8671ceade"}" rel="${"nofollow"}">~40% of Harvard grads</a> and <a href="${"https://yaledailynews.com/blog/2019/11/01/mckinsey-and-the-fig-tree/"}" rel="${"nofollow"}">~29% of Yale grads</a> go into finance or consulting after college.)</p>
+<p>Is it reductive to categorize <em>all jobs</em> into these four categories? Check my LinkedIn feed, and you\u2019ll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, <a href="${"https://medium.com/s/story/a-culture-of-prestige-98c8671ceade"}" rel="${"nofollow"}">~40% of Harvard grads</a> and <a href="${"https://yaledailynews.com/post/2019/11/01/mckinsey-and-the-fig-tree/"}" rel="${"nofollow"}">~29% of Yale grads</a> go into finance or consulting after college.)</p>
 <p>Of course, these sets of options mirror one another. Most students who aren\u2019t set on a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, \u201Cbig\u201D option after graduating, or something else. </p>
 <p>When they do choose, there\u2019s not much enthusiasm\u2014it\u2019s a tradeoff. These bigger companies offer alluring signing bonuses, prestige, and exorbitant salaries. In return, they ask you to put up with longer-than-usual hours and more monotonous work.</p>
 <p>I\u2019m writing about <em>taking the risk</em>\u2014doing the \u201Csomething else\u201D that isn\u2019t McKinsey or Microsoft. There\u2019s value in the something else, and I hope I can encourage you it\u2019s more than consolation, it\u2019s a career.</p>
@@ -29210,17 +29210,17 @@ var Nuxt_blog_starter = create_ssr_component(($$result, $$props, $$bindings, slo
 <h2 id="${"why-nuxt"}"><a href="${"#why-nuxt"}">Why Nuxt?</a></h2>
 <p>I\u2019ve went through my fair share of blogs. See <a href="${"https://connorrothschild.github.io/v1/"}" rel="${"nofollow"}">version 1</a> and <a href="${"https://connorrothschild.github.io/v2/"}" rel="${"nofollow"}">version 2</a>. I moved to a site using Nuxt for three reasons:</p>
 <h4 id="${"1-speed-and-user-experience"}"><a href="${"#1-speed-and-user-experience"}">1. Speed and user experience</a></h4>
-<p>Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the <a href="${"https://nuxtjs.org/blog/going-full-static/"}" rel="${"nofollow"}">Nuxt Blog</a>:</p>
+<p>Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the <a href="${"https://nuxtjs.org/post/going-full-static/"}" rel="${"nofollow"}">Nuxt Blog</a>:</p>
 <blockquote><p><code>nuxt generate</code> with <code>target: &#39;static&#39;</code> will pre-render all your pages to HTML and save a payload file in order to mock <code>asyncData</code> and <code>fetch</code> on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it (from the in the header) for optimal performance.</p></blockquote>
 <p>You can see the impact of SSR on performance by comparing my <a href="${"https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fconnorrothschild.github.io%2Fv2%2F&tab=desktop"}" rel="${"nofollow"}">last blog iteration</a> to <a href="${"https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop"}" rel="${"nofollow"}">this one</a>.</p>
 <p>The former, built using <a href="${"https://bookdown.org/yihui/blogdown/"}" rel="${"nofollow"}">R <code>blogdown</code></a> and <a href="${"https://themes.gohugo.io/academic/"}" rel="${"nofollow"}">Hugo Academic</a>, scored 72/100 on desktop performance, compared to a 100/100 on this version:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/old-site-perf.png",
+      src: "../images/post/nuxt-blog-starter/old-site-perf.png",
       alt: "Old site performance. 72/100",
       width: "48%"
     }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/new-site-perf.png",
+      src: "../images/post/nuxt-blog-starter/new-site-perf.png",
       alt: "New site performance. 100/100",
       width: "48%"
     }, {}, {})}
@@ -29240,12 +29240,12 @@ ${validate_component(Image, "Image").$$render($$result, {
 <h4 id="${"dark-modelight-mode"}"><a href="${"#dark-modelight-mode"}">Dark mode/light mode</a></h4>
 <p>An example of this can be seen below the Sass defaults that live within <code>assets/scss/colors.scss</code>. Simply uncomment those lines (preceded by the comment \u201CLIGHT MODE\u201D) to see your site with light mode defaults.</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/dark.png",
+      src: "../images/post/nuxt-blog-starter/dark.png",
       alt: "Dark mode",
       width: "49%"
     }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/light.png",
+      src: "../images/post/nuxt-blog-starter/light.png",
       alt: "Light mode",
       width: "49%"
     }, {}, {})}
@@ -29264,25 +29264,25 @@ ${validate_component(Image, "Image").$$render($$result, {
 <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code>`}<!-- HTML_TAG_END --></pre>
 <p>This creates some subtle yet attractive page transitions:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/transitions.gif",
+      src: "../images/post/nuxt-blog-starter/transitions.gif",
       alt: "GIF showcasing transitions of home page, to blog post pagfe, to a single blog post."
     }, {}, {})}
 <p>You can modify these transitions by adding and removing elements in the CSS selector parameters for each page\u2019s <code>enter()</code> property.</p>
 <h3 id="${"meta-tagsseo"}"><a href="${"#meta-tagsseo"}">Meta tags/SEO</a></h3>
 <p>The function <code>getSiteMeta()</code>, found in the <code>utils/</code> folder, allows for different meta tags for each page and for each blog post. The function allows the Twitter Cards for my home page and for a blog post to look different, like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/home-card.png",
+      src: "../images/post/nuxt-blog-starter/home-card.png",
       alt: "Twitter card of homepage",
       width: "47.2%"
     }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/nuxt-blog-starter/blog-card.png",
+      src: "../images/post/nuxt-blog-starter/blog-card.png",
       alt: "Twitter card of blog post page",
       width: "50%"
     }, {}, {})}
 <p>The site is set up so that your cards will appear this way automatically! All you will have to do is edit <a href="${"https://github.com/connorrothschild/nuxt-blog-starter/blob/master/utils/getSiteMeta.js"}" rel="${"nofollow"}"><code>utils/getSiteMeta.js</code></a> with your specific information. Page-specific meta tags are also helpful for search engine optimization; your site might attract a larger number of visitors if it covers a wider variety of keywords.</p>
 <h2 id="${"blog-features"}"><a href="${"#blog-features"}">Blog features</a></h2>
-<p>This site comes with all the same blog capabilities as a normal site, such as syntax highlighting, images, HTML support, and Vue components. Read <a href="${"https://nuxtjs.org/blog/creating-blog-with-nuxt-content/"}" rel="${"nofollow"}">this post</a> if you\u2019re curious about features.</p>
+<p>This site comes with all the same blog capabilities as a normal site, such as syntax highlighting, images, HTML support, and Vue components. Read <a href="${"https://nuxtjs.org/post/creating-blog-with-nuxt-content/"}" rel="${"nofollow"}">this post</a> if you\u2019re curious about features.</p>
 <p>You can also include a few custom components I\u2019ve made:</p>
 <h3 id="${"info-boxes"}"><a href="${"#info-boxes"}">Info boxes</a></h3>
 <p><strong><a href="${"https://github.com/connorrothschild/nuxt-blog-starter/blob/master/components/global/InfoBox.vue"}" rel="${"nofollow"}"><code>InfoBox.vue</code></a></strong> is a component that allows you to put notes/warnings/messages in your blog posts. Feel free to edit the component to adjust its styling.</p>
@@ -29531,7 +29531,7 @@ var metadata$8 = {
 var Covid_gun_spikes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$8), {}, {
     default: () => `${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/featured.png",
+      src: "../images/post/covid-gun-spikes/featured.png",
       alt: "A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"
     }, {}, {})}
 <p>So far in 2020, firearm background checks are happening <strong>significantly</strong> more frequently than they did during the first six months of the last 20 years. Some <a href="${"https://www.nytimes.com/interactive/2020/04/01/business/coronavirus-gun-sales.html"}" rel="${"nofollow"}">media reports</a> captured the gun-buying frenzy during its apparent peak in March, but according to data from the <a href="${"https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view"}" rel="${"nofollow"}">FBI NICS</a>, <em>the month of June saw the largest single month count of firearm background checks in the last 20 years.</em></p>
@@ -29577,7 +29577,7 @@ data <span class="token percent-operator operator">%>%</span>
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
     })}
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/table-replacement.png",
+      src: "../images/post/covid-gun-spikes/table-replacement.png",
       alt: "A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest.",
       link: "http://connorrothschild.github.io/v2/post/covid-gun-spikes/"
     }, {}, {})}
@@ -29603,7 +29603,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r", showLineN
   drop_axis(&quot;y&quot;)</code>`}<!-- HTML_TAG_END --></pre>`
     })}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/unnamed-chunk-4-1.png",
+      src: "../images/post/covid-gun-spikes/unnamed-chunk-4-1.png",
       alt: "An area chart showing background checks over time. Despite some seasonaility, the trend is increasing over time, and is at its highest point at the end of the chart in 2020."
     }, {}, {})}
 <p>And we can better understand the magnitude of these shifts by visualizing year-to-year changes:</p>
@@ -29627,7 +29627,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
        subtitle <span class="token operator">=</span> <span class="token string">"January through June"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
     })}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/unnamed-chunk-5-1.png",
+      src: "../images/post/covid-gun-spikes/unnamed-chunk-5-1.png",
       alt: "A barchart showing the temporal year-on-year change in background checks for firearms over time. The last year, 2020, is the highest, meaning background checks have seen the greatest year on year growth this year."
     }, {}, {})}
 <p>Visualized another way, we can explore the temporal change <strong>within each year</strong> for every year between 1999 and 2020, with 2020 <span style="${"color:red"}">highlighted in red.</span></p>
@@ -29652,7 +29652,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
   theme<span class="token punctuation">(</span>plot.title <span class="token operator">=</span> ggtext<span class="token operator">::</span>element_markdown<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
     })}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/unnamed-chunk-6-1.png",
+      src: "../images/post/covid-gun-spikes/unnamed-chunk-6-1.png",
       alt: "A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."
     }, {}, {})}
 <p>The FBI database also includes background check data for each U.S. state. This data allows us to compare trends <em>across</em> states and over time (using <code>geofacet</code>):</p>
@@ -29688,7 +29688,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
 <span class="token comment">## With additional styling changes made in Illustrator!</span></code>`}<!-- HTML_TAG_END --></pre>`
     })}
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-gun-spikes/featured.png",
+      src: "../images/post/covid-gun-spikes/featured.png",
       alt: "A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"
     }, {}, {})}
 <h2 id="${"the-impact"}"><a href="${"#the-impact"}">The Impact</a></h2>
@@ -29747,7 +29747,7 @@ within just a few weeks.</p>
 broken down by college (from the <a href="${"https://github.com/nytimes/covid-19-data/tree/master/colleges"}" rel="${"nofollow"}">New York
 Times</a>):</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-      src: "../images/blog/covid-on-campus/table1.png",
+      src: "../images/post/covid-on-campus/table1.png",
       alt: "A table showcasing universities that have the greatest number of COVID-19 cases. University of Georgia leads the pack at 3888 cases. Last updated October 11, 2020",
       link: "http://connorrothschild.github.io/v2/post/covid-on-campus/"
     }, {}, {})}
@@ -29768,7 +29768,7 @@ problems much larger than students throwing fraternity parties.</p>
 <p>Below, you can explore your county\u2019s case count relative to its
 university-affiliated case counts.</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-      src: "../images/blog/covid-on-campus/table2.png",
+      src: "../images/post/covid-on-campus/table2.png",
       alt: "A table showcasing counties that have the greatest number of COVID-19 cases attributable to colleges. Pickens, South Carolina is expanded, showcasing two universities which account for 105% of the county's total cases. Last updated October 11, 2020",
       link: "http://connorrothschild.github.io/v2/post/covid-on-campus/"
     }, {}, {})}
@@ -29793,14 +29793,14 @@ share of cases in the state overall.</p>
 <p>Geographically, the data looks like this (note the x-axis runs from 0 to
 10%):</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/covid-on-campus/geofacet_processed.png",
+      src: "../images/post/covid-on-campus/geofacet_processed.png",
       alt: "A geofaceted map that shows percent of COVID cases attributable to colleges, by US state. Each state ranges between 0 and 10% of total cases attributable to colleges."
     }, {}, {})}
 <p>In the table below, you can search for your state and drill down on
 which counties within your state make up the greatest share of COVID-19
 cases.</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-      src: "../images/blog/covid-on-campus/table3.png",
+      src: "../images/post/covid-on-campus/table3.png",
       alt: "A table showcasing states that have the greatest number of COVID-19 cases attributable to colleges. Wyoming (number 1) is expanded, showcasing three universities which account for 7% of the state's total cases. Last updated October 11, 2020",
       link: "http://connorrothschild.github.io/v2/post/covid-on-campus/"
     }, {}, {})}
@@ -29983,7 +29983,7 @@ as borders using <code>geom_rect</code>).</p>
 map_bw</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A black and white map of Springfield, Missouri.",
-      src: "../images/blog/map-springfield/bw_map_springfield.png",
+      src: "../images/post/map-springfield/bw_map_springfield.png",
       width: "50%",
       centered: true
     }, {}, {})}
@@ -30095,7 +30095,7 @@ map_gold <span class="token operator">&lt;-</span> plot_gold <span class="token 
 map_gold</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A gold map of Springfield, Missouri.",
-      src: "../images/blog/map-springfield/gold_map_springfield.png",
+      src: "../images/post/map-springfield/gold_map_springfield.png",
       width: "50%",
       centered: true
     }, {}, {})}`
@@ -30119,7 +30119,7 @@ var Dumbbell_plots = create_ssr_component(($$result, $$props, $$bindings, slots)
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$5), {}, {
     default: () => `${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-      src: "../images/blog/dumbbell-plots/featured.jpg"
+      src: "../images/post/dumbbell-plots/featured.jpg"
     }, {}, {})}
 <p>As of this writing, nearly <a href="${"https://www.worldometers.info/coronavirus/coronavirus-death-toll/"}" rel="${"nofollow"}">6000</a> people have died of COVID-19 and another <a href="${"https://www.worldometers.info/coronavirus/coronavirus-death-toll/"}" rel="${"nofollow"}">150,000</a> have been infected. All signs seem to show that the virus is only growing.</p>
 <p>But some groups are less worried about COVID-19 than others. Recent <a href="${"https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter"}" rel="${"nofollow"}">polling</a> from Quinnipiac University suggests that worries about the coronavirus are related to one\u2019s partisan identity, age, and race.</p>
@@ -30128,12 +30128,12 @@ var Dumbbell_plots = create_ssr_component(($$result, $$props, $$bindings, slots)
 <p>Republicans tend to be significantly less worried about coronavirus than Democrats. This is true in two regards. First, with respect to <em>concern for becoming infected</em>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-      src: "../images/blog/dumbbell-plots/partisan-worry.jpg"
+      src: "../images/post/dumbbell-plots/partisan-worry.jpg"
     }, {}, {})}
 <p>It\u2019s also true when we look at concern than COVID-19 will <em>disrupt an individual\u2019s life</em>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that the coronavirus will disrupt your daily life?'",
-      src: "../images/blog/dumbbell-plots/partisan-disrupt.jpg"
+      src: "../images/post/dumbbell-plots/partisan-disrupt.jpg"
     }, {}, {})}
 <p>Looking at the first plot, we notice that Republicans are <strong>3x more likely</strong> than Democrats to say that they are \u2019not concerned at all\u2019 by the prospect of coronavirus infecting them or someone they know. By contrast, Democrats are nearly <strong>3x as likely</strong> as Republicans to say that they are \u2018very concerned\u2019 by the same risk.</p>
 <p>The second plot shows us similar trends for fears of disruption: 3 in 4 Democrats are concerned (very or somewhat) that COVID-19 will disrupt their daily lives, compared to only 38% of Republicans. While 26% of Democrats are not worried about disruption, the same is true for 61% of Republicans.</p>
@@ -30141,24 +30141,24 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>There is also a relationship between age and fears related to the coronavirus.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between different age groups' worry about the Coronavirus. It shows that older respondents are more concerned than younger ones. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-      src: "../images/blog/dumbbell-plots/age-disrupt.jpg"
+      src: "../images/post/dumbbell-plots/age-disrupt.jpg"
     }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between different age groups' worry about the Coronavirus. It shows that older respondents are more concerned than younger ones. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-      src: "../images/blog/dumbbell-plots/age-worry.jpg"
+      src: "../images/post/dumbbell-plots/age-worry.jpg"
     }, {}, {})}
 <p>These plots show that there are significant differences in worry by age, but that fears of disruption are felt more universally than fears of infection. The first plot shows that <em>every age group</em> fears that COVID-19 will disrupt their daily lives; although younger people express this sentiment less frequently. The second plot <strong>the majority of people under age 50 are unconcerned by the prospect of COVID-19 infection</strong>. The opposite is true for older respondents; those aged 65 years and old are <strong>significantly</strong> more likely to be concerned by the risk of infection (62% vs 37%).</p>
 <h2 id="${"why-dumbbell-plots"}"><a href="${"#why-dumbbell-plots"}">Why dumbbell plots?</a></h2>
 <p>Dumbbell plots are an alternative to grouped barcharts. Like barcharts, they show differences between populations and they more powerfully represent the <em>distances between two groups</em>. They are frequently used by survey research firms such as the Pew Research Center, as seen in this <a href="${"https://twitter.com/pewresearch/status/1238345807348334593/photo/1"}" rel="${"nofollow"}">example</a>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot from the Pew Research Center, showcasing perceived importance of US military bases by the age of the respondent; older folks think overseas bases are more important.",
-      src: "../images/blog/dumbbell-plots/pew.jpg"
+      src: "../images/post/dumbbell-plots/pew.jpg"
     }, {}, {})}
 <p>While a barchart would require eight bars to visualize each datapoint above, a dumbbell dot plot shows eight dots <em>on four lines</em>, reducing clutter and emphasizing the differences <em>between groups</em>.</p>
 <p>Here\u2019s another example, this time from <a href="${"https://www.axios.com/trumps-disapproval-rate-is-up-in-every-state-2495232720.html?utm_source=twitter&utm_medium=social&utm_campaign=organic&utm_content=infographic&utm_term=politics"}" rel="${"nofollow"}">Axios</a> (visualizing changes in presidential disapproval between January and October 2017):</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot from Axios, which showcases changes in approval ratings between January and October 2017, by state. Most states have become more disapproving of the President.",
-      src: "../images/blog/dumbbell-plots/axios.jpg"
+      src: "../images/post/dumbbell-plots/axios.jpg"
     }, {}, {})}
 <p>This pseudo-dumbbell plot (dumbbells with weird endpoints; don\u2019t pick up that side!) has 50 \u2018groups\u2019 (US states), but only two <em>outcomes</em> (January and October). A dumbbell plot is <em>far</em> superior to a grouped bar chart in this case because it emphasizes the difference is between two periods of time, and it does so with fewer objects (50 lines rather than 100 bars) than a barchart would use.</p>
 <p>One key lesson from the examples above: If the <em>comparison</em> of interest is between two groups (e.g. Republicans and Democrats), or if the <em>outcome</em> of interest is two-fold (e.g. \u2018concerned\u2019 and \u2018not concerned\u2019), dot plots are a superior way to visualize your data.</p>
@@ -30166,12 +30166,12 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Now it\u2019s time to make your own dumbbell dot plot. We\u2019ll be creating this viz:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-      src: "../images/blog/dumbbell-plots/partisan-worry.jpg"
+      src: "../images/post/dumbbell-plots/partisan-worry.jpg"
     }, {}, {})}
 <p>For reference, the data I\u2019m using looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that the coronavirus will disrupt your daily life?'",
-      src: "../images/blog/dumbbell-plots/partisan-disrupt.jpg"
+      src: "../images/post/dumbbell-plots/partisan-disrupt.jpg"
     }, {}, {})}
 <p>Pretty simple, right? <a href="${"https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter"}" rel="${"nofollow"}">It comes from here, by the way.</a></p>
 <p>The process relies on Bob Rudis\u2019s <code>ggalt</code> package and the <code>geom_dumbbell</code> function, which does most of the heavy lifting. This tutorial is mostly a step-by-step recreation of Rudis\u2019s code <a href="${"https://rud.is/b/2016/04/17/ggplot2-exercising-with-ggalt-dumbbells/"}" rel="${"nofollow"}">found here</a>.</p>
@@ -30196,7 +30196,7 @@ ggplot<span class="token punctuation">(</span><span class="token punctuation">)<
 <p>Here, <code>geom_segment</code> creates grey lines with a size of 0.15. The lines span from 0 to 0.5. This changes according to your data; because the largest number we are dealing with is .43 (representing 43% of Democrats), our bound on the right side can be 0.5; this also leaves room for the difference column which we create later.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A blank canvas with only plot bounds.",
-      src: "../images/blog/dumbbell-plots/process-0.jpg"
+      src: "../images/post/dumbbell-plots/process-0.jpg"
     }, {}, {})}
 <p>Then, <code>geom_dumbbell</code> reads in our data and creates the dumbbells: we specify the <em>beginning</em> (<code>x</code>) of each dumbbell to represent Republicans and the <em>end</em> (<code>xend</code>) to correspond to Democrats. Other specifications affect the accompanying line and points.</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">geom_dumbbell<span class="token punctuation">(</span>data<span class="token operator">=</span>infected<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>y<span class="token operator">=</span>concerned<span class="token punctuation">,</span> x<span class="token operator">=</span>rep<span class="token punctuation">,</span> xend<span class="token operator">=</span>dem<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -30205,7 +30205,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>That code creates the following plot:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Four lines appear, each corresponding to the level of concern. The end of each line (signified with a blue or red dot) represents Democrats' and Republicans' level of concern. The x axis is percentage of respondents.",
-      src: "../images/blog/dumbbell-plots/process-1.jpg"
+      src: "../images/post/dumbbell-plots/process-1.jpg"
     }, {}, {})}
 <p>Already, we can begin to see the barebones for the finished version: each dumbbell represents a level of concern, and visualizes Republicans and Democrats\u2019 proportions for that level.</p>
 <h3 id="${"step-2-labels"}"><a href="${"#step-2-labels"}">Step 2: Labels</a></h3>
@@ -30221,7 +30221,7 @@ geom_text<span class="token punctuation">(</span>data<span class="token operator
 <p>We label each point at its respective political affiliation, and we specify color according to the point color. The rest is just minor beautification for the text.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "In addition to the prior plot, there are now labels appended for each party.",
-      src: "../images/blog/dumbbell-plots/process-2.jpg"
+      src: "../images/post/dumbbell-plots/process-2.jpg"
     }, {}, {})}
 <p>We also have to add direct labels for values, so that the exact percentages for each group are clear:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">geom_text<span class="token punctuation">(</span>data<span class="token operator">=</span>infected<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x<span class="token operator">=</span>rep<span class="token punctuation">,</span> y<span class="token operator">=</span>concerned<span class="token punctuation">,</span> label<span class="token operator">=</span>percent_first<span class="token punctuation">(</span>rep<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -30231,7 +30231,7 @@ geom_text<span class="token punctuation">(</span>data<span class="token operator
 <p>Here, we utilize the function <code>percent_first</code> we defined earlier, because we only want percentages to appear on the first numbers (to reduce clutter). The rest of the labels are just numbers which represent percentages. The syntax here is simple syntax that should be familiar to <code>ggplot</code> users. It creates this output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "In addition to the prior plot, there are now direct labels for the percent of respondents represented by each point.",
-      src: "../images/blog/dumbbell-plots/process-3.jpg"
+      src: "../images/post/dumbbell-plots/process-3.jpg"
     }, {}, {})}
 <h3 id="${"step-3-a-differences-column"}"><a href="${"#step-3-a-differences-column"}">Step 3: A differences column</a></h3>
 <p>Finally, we want to help our viewers see <em>how stark</em> the differences between Democrats and Republicans really is. We do so with a differences column.</p>
@@ -30245,7 +30245,7 @@ scale_y_discrete<span class="token punctuation">(</span>expand<span class="token
 <p>Here, we first create a grey rectangle with <code>geom_rect</code>. It spans the entire chart vertically, hence why <code>ymin</code> and <code>ymax</code> range from negative to positive infinity. Next, we create labels according to the differences column. We position each of them according to the degree of concern (our y-axis). Finally, we expand the bounds of the chart so its a bit prettier:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "In addition to the prior plot, there is now a 'differences' column which has the difference between Republican and Democrat proportions added as a percent.",
-      src: "../images/blog/dumbbell-plots/process-4.jpg"
+      src: "../images/post/dumbbell-plots/process-4.jpg"
     }, {}, {})}
 <h3 id="${"step-4-titles-labels--captions"}"><a href="${"#step-4-titles-labels--captions"}">Step 4: Titles, labels &amp; captions</a></h3>
 <p>Finally, let\u2019s add our title, subtitle, caption, and axis labels:</p>
@@ -30256,7 +30256,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 								&#92;n&#92;nDesign<span class="token operator">:</span> Connor Rothschild"<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "In addition to the prior plot, there are now axis labels and a title.",
-      src: "../images/blog/dumbbell-plots/process-5.jpg"
+      src: "../images/post/dumbbell-plots/process-5.jpg"
     }, {}, {})}
 <p>That\u2019s our plot! Too bad its kinda ugly. Let\u2019s fix that in our final step.</p>
 <h3 id="${"step-5-beautification"}"><a href="${"#step-5-beautification"}">Step 5: Beautification</a></h3>
@@ -30282,13 +30282,13 @@ theme<span class="token punctuation">(</span>
 <p>Our final output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Stylization is added to the chart. There is now a white background, Lato font, and better typography rules are followed.",
-      src: "../images/blog/dumbbell-plots/process-6.jpg"
+      src: "../images/post/dumbbell-plots/process-6.jpg"
     }, {}, {})}
 <h2 id="${"to-summarize"}"><a href="${"#to-summarize"}">To summarize</a></h2>
 <p>Our process looked like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A GIF showcasing the prior six steps outlined in this blog post; the GIF shows the chart going from a blank canvas to a full visual.",
-      src: "../images/blog/dumbbell-plots/process-gif.gif"
+      src: "../images/post/dumbbell-plots/process-gif.gif"
     }, {}, {})}
 <p>The code for the above visualizations, as well as the underlying datasets and outputs, can be found <a href="${"https://github.com/connorrothschild/R/tree/master/covid"}" rel="${"nofollow"}">here</a>.</p>
 <p>Thanks for reading!</p>`
@@ -30312,7 +30312,7 @@ var Refugee_trends = create_ssr_component(($$result, $$props, $$bindings, slots)
   return `${validate_component(Layout, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata$4), {}, {
     default: () => `${validate_component(Image, "Image").$$render($$result, {
       alt: "A small multiples map of refugee acceptance over time, across states",
-      src: "../images/blog/refugee-trends/featured.png"
+      src: "../images/post/refugee-trends/featured.png"
     }, {}, {})}
 <p>In <a href="${"https://connorrothschild.github.io/map-missing-migrants/"}" rel="${"nofollow"}">previous projects</a>, I\u2019ve explored how migration has unfolded across <em>places</em>: where migrants travel, where they go missing, and where their journeys come to a fatal end.</p>
 <p>Next, I wanted to see how <em>host countries</em> have approached the migrant and refugee crisis, with a particular focus on the United States. In my mind, an effective visualization of the U.S.\u2019s response to an increasing number of refugees needs to present two things: how refugee acceptance has changed <em>over time</em> and how refugee acceptance differs <em>across states.</em></p>
@@ -30320,12 +30320,12 @@ var Refugee_trends = create_ssr_component(($$result, $$props, $$bindings, slots)
 <p>There are examples of these types of small multiple maps across the internet. The Washington Post\u2019s <a href="${"https://www.washingtonpost.com/graphics/politics/how-fair-is-the-electoral-college/"}" rel="${"nofollow"}">overview of the electoral college</a> was visualized in the following way:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Washington Post small multiples map of electoral college data",
-      src: "../images/blog/refugee-trends/wapo.png"
+      src: "../images/post/refugee-trends/wapo.png"
     }, {}, {})}
 <p>You can also find an overview of <em>why</em> they work, and some additional examples, on the <a href="${"https://policyviz.com/2016/05/19/small-multiple-tile-grid-map/"}" rel="${"nofollow"}">PolicyViz</a> blog:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "Policy Viz's small multiples of overall voting results over time",
-      src: "../images/blog/refugee-trends/policyviz.jpg"
+      src: "../images/post/refugee-trends/policyviz.jpg"
     }, {}, {})}
 <h2 id="${"making-it-in-r"}"><a href="${"#making-it-in-r"}">Making it in R</a></h2>
 <p>The process of creating a small multiple tile grid map is relatively easy in R (like most things done in R). It is considerably more difficult in D3.js; if you\u2019re interested in that type of thing, you can take a look at <a href="${"https://bl.ocks.org/jinniluo/a95b27b1f4ea65ae94ab6ca3fcfb5934#index.html"}" rel="${"nofollow"}">this code</a> for inspiration.</p>
@@ -30344,7 +30344,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   scale_x_continuous<span class="token punctuation">(</span>breaks <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">2002</span><span class="token punctuation">,</span> <span class="token number">2019</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A small multiples map of refugee acceptance over time, across states",
-      src: "../images/blog/refugee-trends/macro.jpg"
+      src: "../images/post/refugee-trends/macro.jpg"
     }, {}, {})}
 <p>Now we have the answer to our first question: <strong>how has refugee acceptance changed over time?</strong> The answer: pretty drastically. The US accepted nearly 100,000 refugees in 2016; 2 years later, that number was barely over 20,000.</p>
 <h4 id="${"step-2-make-small-multiples"}"><a href="${"#step-2-make-small-multiples"}">Step 2: Make small multiples</a></h4>
@@ -30354,7 +30354,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>This makes a plot that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "first try",
-      src: "../images/blog/refugee-trends/firsttry.jpg"
+      src: "../images/post/refugee-trends/firsttry.jpg"
     }, {}, {})}
 <p>It\u2019s alright, but not perfect! There are a few improvements we can definitely make.</p>
 <p>For one, the axis labels overlap. We already know the range of years is between 2002 and 2019 (its in our subtitle!). So we can remove our x axis labels.</p>
@@ -30395,7 +30395,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "secondtry",
-      src: "../images/blog/refugee-trends/secondtry.jpg"
+      src: "../images/post/refugee-trends/secondtry.jpg"
     }, {}, {})}
 <p>Pretty good! Much better. But we can add some elements to take our visualization to the next level.</p>
 <p>Because our data spans nearly 20 years (2002 to 2019), we can overlay our small multiples with other variables of interest, such as who was President during a given period.</p>
@@ -30429,12 +30429,12 @@ geom_rect<span class="token punctuation">(</span>mapping<span class="token opera
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "r version",
-      src: "../images/blog/refugee-trends/ref.png"
+      src: "../images/post/refugee-trends/ref.png"
     }, {}, {})}
 <p>I brought that plot to Illustrator and made it a lot prettier. Here\u2019s the final version:</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A small multiples map of refugee acceptance over time, across states",
-      src: "../images/blog/refugee-trends/featured.png"
+      src: "../images/post/refugee-trends/featured.png"
     }, {}, {})}
 <p>What do we notice? A few key states (Texas, California, Florida, and Michigan) make up the vast majority of refugee acceptance, while other accept almost <em>no</em> <em>refugees</em>. Nearly every state has reduced their refugee acceptance since 2017, but the bulk of this decline has come from these larger states.</p>
 <p>While you\u2019re here, take a look at my project <a href="${"https://connorrothschild.github.io/map-missing-migrants/"}" rel="${"nofollow"}"><em>Mapping Missing Migrants.</em></a></p>`
@@ -30578,7 +30578,7 @@ var CodeMirror_1 = create_ssr_component(($$result, $$props, $$bindings, slots) =
 });
 var css = {
   code: "svg.svelte-1ijjfyd{width:100%;margin:0.5rem 0 1.5rem 0;border-radius:6px}rect.svelte-1ijjfyd{width:100%;height:100%}circle.svelte-1ijjfyd{cursor:crosshair}",
-  map: `{"version":3,"file":"svelte-and-d3.md","sources":["svelte-and-d3.md"],"sourcesContent":["<script context=\\"module\\">\\n\\texport const metadata = {\\"layout\\":\\"blog\\",\\"title\\":\\"Making visualizations literally using Svelte + D3\\",\\"description\\":\\"Why Svelte has replaced (and complemented) D3 as my go-to tool for powerful visualizations\\",\\"image\\":\\"lorem\\",\\"date\\":\\"2021-07-02\\",\\"featured\\":true};\\n\\tconst { layout, title, description, image, date, featured } = metadata;\\n<\/script>\\n<script>\\n\\timport Layout_MDSVEX_DEFAULT from '/Users/connorrothschild/Desktop/Projects/Svelte/new-site/src/routes/blog/layout.svelte';\\n  import Code from \\"$lib/global/Code.svelte\\"\\n  import CodeMirror from \\"$lib/global/CodeMirror.svelte\\"\\n  import Image from \\"$lib/global/Image.svelte\\"\\n  import Info from \\"$lib/global/Info.svelte\\"\\n<\/script>\\n<style>\\nhtml {\\n    scroll-behavior: smooth;\\n}\\n\\nsvg {\\n  width: 100%;\\n  margin: 0.5rem 0 1.5rem 0;\\n  border-radius: 6px;\\n}\\n\\nrect {\\n  width: 100%; \\n  height: 100%;\\n  /* fill: rgb(var(--primary), .5); */\\n}\\n\\ncircle {\\n  cursor: crosshair;\\n}\\n</style>\\n<Layout_MDSVEX_DEFAULT {...$$props} {...metadata}>\\n\\n<CodeMirror initialValue=\\n\\"<script> let x = false;<\/script>\\">\\n</CodeMirror>\\n<p>When I started making data visualizations, I considered <a\\n  href=\\"https://d3js.org/\\"\\n  rel=\\"nofollow\\"\\n>D3</a>\u2014Data Driven Documents\u2014to be the gold standard programming language required to create beautiful graphics on the web.</p>\\n<p>As I progress in my career, I\u2019m realizing that D3 has a more particular (and smaller) role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I\u2019m learning that my most efficient and intuitive development comes when I <strong>program literally</strong>. </p>\\n<p>What does that mean? (To be honest, I\u2019m making up the term.) It means that I\u2019m moving away from <em>pseudo-declarative</em> data visualization in D3, and starting to make my visualizations <em>literally</em>, by simply writing markup in <a\\n  href=\\"https://svelte.dev/\\"\\n  rel=\\"nofollow\\"\\n>Svelte</a>. </p>\\n<p>Although D3 <a href=\\"https://d3js.org/#selections\\" rel=\\"nofollow\\">claims</a> to be declarative, it still uses <a\\n  href=\\"https://www.carlosrendon.me/unfinished_d3_book/d3_method_chaining.html\\"\\n  rel=\\"nofollow\\"\\n>method chaining</a> to provide instructions to render visuals. In Svelte, we don\u2019t provide instructions but instead render our SVG elements directly, using <code>&#123;#each&#125;</code> blocks. By writing my markup literally and appending data inline, my code makes more sense and causes fewer headaches.</p>\\n<h4 id=\\"what-youll-find-in-this-post\\"><a href=\\"#what-youll-find-in-this-post\\">What you\u2019ll find in this post</a></h4>\\n<p>In this post, I\u2019ll <a href=\\"#what-d3-does-3%EF%B8%8F%E2%83%A3\\">1)</a> provide an overview of D3, and how it made the process of creating visualizations so much easier; <a\\n  href=\\"#literal-programming-with-svelte-\\"\\n>2)</a> explain why I\u2019m moving away from D3 for DOM manipulation, and instead using Svelte \u201Cliterally\u201D; and <a\\n  href=\\"#bringing-it-home-with-burgers-\\"\\n>3)</a> provide a funky burger \u{1F354} example to explain my logic.</p>\\n <Info>\\n<p>This is not a comprehensive tutorial about <strong>how to</strong> use D3 and Svelte together. I\u2019ll cover that in the <a\\n  href=\\"https://twitter.com/CL_Rothschild\\"\\n  rel=\\"nofollow\\"\\n>future</a>. In the meantime, check out tutorials from <a\\n  href=\\"https://www.youtube.com/watch?v=bnd64ZrHC0U\\"\\n  rel=\\"nofollow\\"\\n>Matthias Stahl</a>, examples of Svelte and D3 in action on The Pudding\u2019s <a\\n  href=\\"https://github.com/the-pudding/\\"\\n  rel=\\"nofollow\\"\\n>GitHub</a>, and an example of similar framework-driven logic on Amelia Wattenberger\u2019s <a\\n  href=\\"https://wattenberger.com/blog/react-and-d3\\"\\n  rel=\\"nofollow\\"\\n>blog</a>. </p>\\n<p>Want an immediate example? Here\u2019s an (admittedly verbose) <a\\n  href=\\"https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte\\"\\n  rel=\\"nofollow\\"\\n>Svelte component</a> I used in a recent project about Bob Ross.</p>\\n</Info> \\n<h2 id=\\"what-d3-does-3\uFE0F\u20E3\\"><a href=\\"#what-d3-does-3\uFE0F\u20E3\\">What D3 does 3\uFE0F\u20E3</a></h2>\\n<p>D3 allows for intuitive transformations of the DOM by leveraging easy-to-understand selection syntax. Sound confusing? Let\u2019s learn through an example (adapted from the <a\\n  href=\\"https://d3js.org/#selections\\"\\n  rel=\\"nofollow\\"\\n>D3 homepage</a>). Imagine we had 5 circles and wanted to change the fill of each. </p>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"></rect>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>In the traditional <a\\n  href=\\"https://www.w3schools.com/js/js_htmldom.asp\\"\\n  rel=\\"nofollow\\"\\n>HTML DOM model</a>, we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:</p>\\n<Code language='js'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">var circles = document.getElementsByTagName(&quot;circle&quot;);\\nfor (var i = 0; i &lt; circles.length; i++) &#123;\\n  var circle = circles.item(i);\\n  circle.setAttribute(&quot;fill&quot;, &quot;white&quot;, null);\\n&#125;</code>\`}</pre>\\n</Code>\\n<p>Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that <em>just makes sense</em>. Here, we select every circle and change its fill.</p>\\n<Code language='js'>\\nd3.selectAll(\\"circle\\").style(\\"fill\\", \\"white\\")\\n</Code>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"/>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>Imagine if you also wanted to bind data to those circles. That is, you wanted to fill the circle according to some attribute, or size its radius according to some datapoint. In traditional JavaScript, that might look something like this:</p>\\n<Code language='js'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">let data = [5, 10, 15, 20, 25];\\n\\nvar circles = document.getElementsByTagName(&quot;circle&quot;);\\nfor (var i = 0; i &lt; circles.length; i++) &#123;\\n  var circle = circles.item(i);\\n  circle.style.setProperty(&quot;r&quot;, data[i], null);\\n&#125;</code>\`}</pre>\\n</Code>\\n<p>Not too hard\u2014but also, not too easy. D3 simplifies this logic by removing the need for a loop and iterating on your selection for you:</p>\\n<Code language='js'>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token keyword\\">let</span> data <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token number\\">5</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">10</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">15</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">20</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">25</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>\\n\\nd3<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">selectAll</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"circle\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">data</span><span class=\\"token punctuation\\">(</span>data<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">attr</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"r\\"</span><span class=\\"token punctuation\\">,</span> <span class=\\"token parameter\\">d</span> <span class=\\"token operator\\">=></span> d<span class=\\"token punctuation\\">)</span></code>\`}</pre>\\n</Code>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\" />\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"5\\"  fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"15\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"20\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"25\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>Again, we reduce the length of our code nearly 5x, and the code just <strong>makes sense</strong>.</p>\\n<p>All that to say, D3 is great. It works, and it works wonderfully. By removing the need to write highly imperative code that is unintuitive in nature, D3 saves developers time and allows for more powerful visualizations.</p>\\n<p>But I\u2019m hardly using it at all recently. Increasingly, I\u2019ve been using the JavaScript <del>framework</del> compiler <a href=\\"https://svelte.dev/\\" rel=\\"nofollow\\">Svelte</a> to <em>write SVG directly</em> rather than <em>tell JavaScript to write SVG</em>. How? Let\u2019s see below.</p>\\n<h2 id=\\"literal-programming-with-svelte-\\"><a href=\\"#literal-programming-with-svelte-\\">\u201CLiteral\u201D programming with Svelte \u{1F5E3}</a></h2>\\n<p>Going back to the above circles, imagine if we could simply bind our data to our app\u2019s markup <strong>directly</strong>, without any intermediate code serving as instructions.</p>\\n<p><strong>We can!</strong> Svelte (and Vue, React and other frameworks) allow for seamless interactions between our app\u2019s logic, data, and markup, so that we can embed data directly into our SVG elements. In this new paradigm, we could replace the set of D3 instructions from earlier with the following Svelte code:</p>\\n<Code language='svelte'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">&lt;script&gt;\\n  let data = [&#123;x: 10, r: 5 &#125;, \\n              &#123;x: 30, r: 10&#125;, \\n              &#123;x: 50, r: 15&#125;, \\n              &#123;x: 70, r: 20&#125;, \\n              &#123;x: 90, r: 25&#125;]\\n&lt;/script&gt;\\n\\n&lt;p&gt;&#123;data.map(x =&gt; x)&#125;&lt;/p&gt;</code>\`}</pre>\\n</Code>\\n<!-- <svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"/>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"5\\"  fill=\\"white\\"><title>Hello from the circle with a radius of 5!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle with a radius of 10!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"15\\" fill=\\"white\\"><title>Hello from the circle with a radius of 15!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"20\\" fill=\\"white\\"><title>Hello from the circle with a radius of 20!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"25\\" fill=\\"white\\"><title>Hello from the circle with a radius of 25!</title></circle>\\n</svg> -->\\n<p>In my view, there are three benefits to writing our code this way:</p>\\n<ol>\\n<li><strong>More intuitive authoring.</strong> It feels much more natural to write our SVG elements <em>directly</em> rather than provide D3 instructions on how to do so.</li>\\n<li><strong>Less friction in translating D3 to the DOM.</strong> By writing SVG directly, we could copy an SVG element from the <a\\n  href=\\"https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle\\"\\n  rel=\\"nofollow\\"\\n>MDN docs</a>, paste in our values, and see immediate results. Fewer handoffs results in fewer errors.</li>\\n<li><strong>Reusability.</strong> Creating a robust and flexible <code>&lt;Circle /&gt;</code>, <code>&lt;Bar /&gt;</code>, or <code>&lt;Axis /&gt;</code> component permits consistent reuse within and across projects. D3 code is usually written as a series of blocks which lacks a natural structure and becomes difficult to reuse effectively.</li>\\n</ol>\\n<p>The only downside (which is actually just an adjustment) is that this new approach requires you to learn how to <a\\n  href=\\"https://www.w3schools.com/graphics/svg_intro.asp\\"\\n  rel=\\"nofollow\\"\\n>write SVG</a>. But isn\u2019t it a good exercise to learn the anatomy of what we\u2019re actually creating? Having knowledge of SVG elements and attributes will benefit any developer who creates visuals, no matter how they eventually do so.</p>\\n<p>Not convinced? Let me explain the logic one more time, with a tastier example:</p>\\n<h2 id=\\"bringing-it-home-with-burgers-\\"><a href=\\"#bringing-it-home-with-burgers-\\">Bringing it home with burgers \u{1F354}</a></h2>\\n<p>Imagine we want to prepare a burger. We have an array of objects, each with an ingredient and ingredient-specfic instructions. We want to 1) create each item (insert it into the DOM), and 2) carry out its instructions (execute some function).</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token keyword\\">let</span> ingredients <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Top Bun\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Place at top of burger.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Pickles\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Three pickles, please.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cheese\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cheese is optional, but it makes the burger better.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Patty\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cook to your satisfaction. Optionally, add two patties.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Tomato\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Should be the same width as bun, and thinly sliced.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Lettuce\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Should be the same width as bun.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Bottom Bun\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Place at bottom of burger.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n<span class=\\"token punctuation\\">]</span></code>\`}</pre>\\n<p>There are three ways to make this burger (at least, in our fantasy world where we make burgers via code).</p>\\n<Info>\\n<p>Although I use the Svelte REPL to showcase these three examples, only the last one requires Svelte. The REPL is just a nice place to host (editable!) code \u{1F642}</p>\\n</Info>\\n<p><strong>The first option</strong> (old school) is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is how burgers would have been made, painfully, before D3.</p>\\n<iframe src=\\"https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3\\" width=\\"100%\\" height='600' title=\\"Old school burger building\\"></iframe>\\n<p><strong>The second option</strong> (new school) is to tell your app to read in each ingredient and instruction through D3 method chaining. We remove the need for our verbose <code>for</code> loop, and use the chain to give D3 a set of sequential instructions.</p>\\n<iframe src=\\"https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3\\" width=\\"100%\\" height='600' title=\\"New school burger building\\"></iframe>\\n<p><strong>Our final option</strong> (new new school), we can simply append our instructions directly to the ingredient, <em>literally</em>. Here, we skip <code>for</code> loops and we skip D3 method chaining; instead, we componentize our general \u201Cburger item\u201D and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:</p>\\n<iframe src=\\"https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3\\" width=\\"100%\\" height='600' title=\\"Literal burger building\\"></iframe>\\n<p>Which do you prefer? It\u2019s much easier to make a burger by <em>just making it</em>, rather than giving instructions, no matter what form they come in. Frameworks allow for the construction of burgers\u2014and visualizations\u2014<strong>literally</strong>. We write our ingredients (or DOM elements) directly, and include our instructions (or data) in our markup. Now that\u2019s a tasty burger.</p>\\n<h2 id=\\"the-big-picture-\\"><a href=\\"#the-big-picture-\\">The big picture \u{1F5BC}</a></h2>\\n<ol>\\n<li>Svelte allows visualization developers to <strong>write SVG directly</strong> (and avoid telling D3 what to do), while using Svelte syntax (<code>&#123;#each&#125;</code>, etc.) to avoid annoying and inefficient <code>for</code> loops. </li>\\n<li>Including logic directly in your markup (<code>&#123;#if&#125;</code>, etc.) removes the need for complex JavaScript/DOM interactions (more on that below). </li>\\n<li>Svelte works to <em>complement</em> D3, not replace it, by continuing to leverage the most powerful parts of its API: <code>d3-scale</code>, <code>d3-array</code>, <code>d3-shape</code>, etc.</li>\\n</ol>\\n<hr/>\\n<h2 id=\\"bonus-perks-\\"><a href=\\"#bonus-perks-\\">Bonus perks \u{1F3C6}</a></h2>\\n<p>Using Svelte to create visualizations has a few other perks:</p>\\n<h3 id=\\"responsiveness\\"><a href=\\"#responsiveness\\">Responsiveness</a></h3>\\n<p>By using Svelte\u2019s <a\\n  href=\\"https://svelte.dev/tutorial/reactive-declarations\\"\\n  rel=\\"nofollow\\"\\n>reactive declarations</a> (the dollar signs \u{1F4B0}), we can make certain variables  \u2018watch\u2019 for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.</p>\\n<pre class=\\"language-svelte\\">{@html \`<code class=\\"language-svelte\\">import  windowWidth from \\"../stores/store.js\\";\\nimport  scaleLinear from 'd3-scale';\\n\\n$: xScale = scaleLinear\\n            .domain(data.map(d => d.value))\\n            .range([0, $windowWidth])</code>\`}</pre>\\n<p>With some other component watching and responding to resize events (such as <a\\n  href=\\"https://github.com/the-pudding/svelte-starter/blob/master/src/components/helpers/Window.svelte\\"\\n  rel=\\"nofollow\\"\\n>Window.svelte</a>), any SVG property depending on <code>xScale</code> will automatically update when your window resizes. You can also set the chart width itself to equal <code>$windowWidth</code> for a fully resizable, responsive chart.</p>\\n<Info>\\n<p>Another way to achieve easy responsiveness is to <a href=\\"https://svelte.dev/tutorial/dimensions\\" target=\\"_blank\\">bind the SVG\u2019s parent container\u2019s div width</a> to some variable (<code>width</code>) and set the SVG\u2019s width to match.</p>\\n</Info>\\n<h3 id=\\"ifelse-blocks\\"><a href=\\"#ifelse-blocks\\">If/else blocks</a></h3>\\n<p>In regular D3, we often use the <a\\n  href=\\"https://en.wikipedia.org/wiki/%3F:\\"\\n  rel=\\"nofollow\\"\\n>ternary operator</a> to define condition-specific attributes, like this:</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token comment\\">// Circles are filled green if positive, red if negative</span>\\nd3<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">selectAll</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'circle'</span><span class=\\"token punctuation\\">)</span>\\n  <span class=\\"token punctuation\\">.</span><span class=\\"token function\\">style</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'fill'</span><span class=\\"token punctuation\\">,</span> <span class=\\"token parameter\\">d</span> <span class=\\"token operator\\">=></span> d<span class=\\"token punctuation\\">.</span>value <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">0</span> <span class=\\"token operator\\">?</span> <span class=\\"token string\\">'red'</span> <span class=\\"token operator\\">:</span> <span class=\\"token string\\">'green'</span><span class=\\"token punctuation\\">)</span></code>\`}</pre>\\n<p>This is great, but what if we want to make more significant changes based on app-wide state? For example, imagine we want to show three different types of the same visualization on different screen sizes: </p>\\n<ol>\\n<li>Desktop (over 1024px)</li>\\n<li>Tablet (520px to 1024px)</li>\\n<li>Mobile (under 520px)</li>\\n</ol>\\n<p>In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint.</p>\\n<p>One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for <a\\n  href=\\"https://svelte.dev/tutorial/if-blocks\\"\\n  rel=\\"nofollow\\"\\n>conditional rendering</a> <em>directly in our markup</em>, not just in our JavaScript logic. In other words, while vanilla JavaScript would approach our problem with the following:</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\">window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">addEventListener</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'resize'</span><span class=\\"token punctuation\\">,</span> <span class=\\"token keyword\\">function</span><span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">event</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span>\\n    <span class=\\"token keyword\\">let</span> newWidth <span class=\\"token operator\\">=</span> window<span class=\\"token punctuation\\">.</span>innerWidth<span class=\\"token punctuation\\">;</span>\\n\\n    <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span>newWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">520</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span> \\n      <span class=\\"token comment\\">// Hide tablet and desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show mobile</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span> <span class=\\"token keyword\\">else</span> <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span>newWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">1024</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span>\\n      <span class=\\"token comment\\">// Hide mobile and desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show tablet</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span> <span class=\\"token keyword\\">else</span> <span class=\\"token punctuation\\">&#123;</span>\\n      <span class=\\"token comment\\">// Hide mobile and tablet</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span>\\n<span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></code>\`}</pre>\\n<p>Svelte simplifies our logic to:</p>\\n<pre class=\\"language-svelte\\">{@html \`<code class=\\"language-svelte\\"><span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span>#<span class=\\"token keyword\\">if</span> $windowWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">520</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Mobile</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">:</span><span class=\\"token keyword\\">else</span> <span class=\\"token keyword\\">if</span> $windowWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">1024</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Tablet</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">:</span><span class=\\"token keyword\\">else</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Desktop</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">/</span><span class=\\"token keyword\\">if</span><span class=\\"token punctuation\\">&#125;</span></span></code>\`}</pre>\\n<p>Hey, thanks for reading. I appreciate you! In the event that you disagree with me or I got something wrong, please message me on <a\\n  href=\\"https://twitter.com/CL_Rothschild\\"\\n  rel=\\"nofollow\\"\\n>Twitter</a>.</p>\\n</Layout_MDSVEX_DEFAULT>"],"names":[],"mappings":"AAgBA,GAAG,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CACzB,aAAa,CAAE,GAAG,AACpB,CAAC,AAED,IAAI,eAAC,CAAC,AACJ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AAEd,CAAC,AAED,MAAM,eAAC,CAAC,AACN,MAAM,CAAE,SAAS,AACnB,CAAC"}`
+  map: `{"version":3,"file":"svelte-and-d3.md","sources":["svelte-and-d3.md"],"sourcesContent":["<script context=\\"module\\">\\n\\texport const metadata = {\\"layout\\":\\"blog\\",\\"title\\":\\"Making visualizations literally using Svelte + D3\\",\\"description\\":\\"Why Svelte has replaced (and complemented) D3 as my go-to tool for powerful visualizations\\",\\"image\\":\\"lorem\\",\\"date\\":\\"2021-07-02\\",\\"featured\\":true};\\n\\tconst { layout, title, description, image, date, featured } = metadata;\\n<\/script>\\n<script>\\n\\timport Layout_MDSVEX_DEFAULT from '/Users/connorrothschild/Desktop/Projects/Svelte/new-site/src/routes/post/layout.svelte';\\n  import Code from \\"$lib/global/Code.svelte\\"\\n  import CodeMirror from \\"$lib/global/CodeMirror.svelte\\"\\n  import Image from \\"$lib/global/Image.svelte\\"\\n  import Info from \\"$lib/global/Info.svelte\\"\\n<\/script>\\n<style>\\nhtml {\\n    scroll-behavior: smooth;\\n}\\n\\nsvg {\\n  width: 100%;\\n  margin: 0.5rem 0 1.5rem 0;\\n  border-radius: 6px;\\n}\\n\\nrect {\\n  width: 100%; \\n  height: 100%;\\n  /* fill: rgb(var(--primary), .5); */\\n}\\n\\ncircle {\\n  cursor: crosshair;\\n}\\n</style>\\n<Layout_MDSVEX_DEFAULT {...$$props} {...metadata}>\\n\\n<CodeMirror initialValue=\\n\\"<script> let x = false;<\/script>\\">\\n</CodeMirror>\\n<p>When I started making data visualizations, I considered <a\\n  href=\\"https://d3js.org/\\"\\n  rel=\\"nofollow\\"\\n>D3</a>\u2014Data Driven Documents\u2014to be the gold standard programming language required to create beautiful graphics on the web.</p>\\n<p>As I progress in my career, I\u2019m realizing that D3 has a more particular (and smaller) role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I\u2019m learning that my most efficient and intuitive development comes when I <strong>program literally</strong>. </p>\\n<p>What does that mean? (To be honest, I\u2019m making up the term.) It means that I\u2019m moving away from <em>pseudo-declarative</em> data visualization in D3, and starting to make my visualizations <em>literally</em>, by simply writing markup in <a\\n  href=\\"https://svelte.dev/\\"\\n  rel=\\"nofollow\\"\\n>Svelte</a>. </p>\\n<p>Although D3 <a href=\\"https://d3js.org/#selections\\" rel=\\"nofollow\\">claims</a> to be declarative, it still uses <a\\n  href=\\"https://www.carlosrendon.me/unfinished_d3_book/d3_method_chaining.html\\"\\n  rel=\\"nofollow\\"\\n>method chaining</a> to provide instructions to render visuals. In Svelte, we don\u2019t provide instructions but instead render our SVG elements directly, using <code>&#123;#each&#125;</code> blocks. By writing my markup literally and appending data inline, my code makes more sense and causes fewer headaches.</p>\\n<h4 id=\\"what-youll-find-in-this-post\\"><a href=\\"#what-youll-find-in-this-post\\">What you\u2019ll find in this post</a></h4>\\n<p>In this post, I\u2019ll <a href=\\"#what-d3-does-3%EF%B8%8F%E2%83%A3\\">1)</a> provide an overview of D3, and how it made the process of creating visualizations so much easier; <a\\n  href=\\"#literal-programming-with-svelte-\\"\\n>2)</a> explain why I\u2019m moving away from D3 for DOM manipulation, and instead using Svelte \u201Cliterally\u201D; and <a\\n  href=\\"#bringing-it-home-with-burgers-\\"\\n>3)</a> provide a funky burger \u{1F354} example to explain my logic.</p>\\n <Info>\\n<p>This is not a comprehensive tutorial about <strong>how to</strong> use D3 and Svelte together. I\u2019ll cover that in the <a\\n  href=\\"https://twitter.com/CL_Rothschild\\"\\n  rel=\\"nofollow\\"\\n>future</a>. In the meantime, check out tutorials from <a\\n  href=\\"https://www.youtube.com/watch?v=bnd64ZrHC0U\\"\\n  rel=\\"nofollow\\"\\n>Matthias Stahl</a>, examples of Svelte and D3 in action on The Pudding\u2019s <a\\n  href=\\"https://github.com/the-pudding/\\"\\n  rel=\\"nofollow\\"\\n>GitHub</a>, and an example of similar framework-driven logic on Amelia Wattenberger\u2019s <a\\n  href=\\"https://wattenberger.com/post/react-and-d3\\"\\n  rel=\\"nofollow\\"\\n>blog</a>. </p>\\n<p>Want an immediate example? Here\u2019s an (admittedly verbose) <a\\n  href=\\"https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte\\"\\n  rel=\\"nofollow\\"\\n>Svelte component</a> I used in a recent project about Bob Ross.</p>\\n</Info> \\n<h2 id=\\"what-d3-does-3\uFE0F\u20E3\\"><a href=\\"#what-d3-does-3\uFE0F\u20E3\\">What D3 does 3\uFE0F\u20E3</a></h2>\\n<p>D3 allows for intuitive transformations of the DOM by leveraging easy-to-understand selection syntax. Sound confusing? Let\u2019s learn through an example (adapted from the <a\\n  href=\\"https://d3js.org/#selections\\"\\n  rel=\\"nofollow\\"\\n>D3 homepage</a>). Imagine we had 5 circles and wanted to change the fill of each. </p>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"></rect>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"steelblue\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>In the traditional <a\\n  href=\\"https://www.w3schools.com/js/js_htmldom.asp\\"\\n  rel=\\"nofollow\\"\\n>HTML DOM model</a>, we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:</p>\\n<Code language='js'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">var circles = document.getElementsByTagName(&quot;circle&quot;);\\nfor (var i = 0; i &lt; circles.length; i++) &#123;\\n  var circle = circles.item(i);\\n  circle.setAttribute(&quot;fill&quot;, &quot;white&quot;, null);\\n&#125;</code>\`}</pre>\\n</Code>\\n<p>Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that <em>just makes sense</em>. Here, we select every circle and change its fill.</p>\\n<Code language='js'>\\nd3.selectAll(\\"circle\\").style(\\"fill\\", \\"white\\")\\n</Code>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"/>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>Imagine if you also wanted to bind data to those circles. That is, you wanted to fill the circle according to some attribute, or size its radius according to some datapoint. In traditional JavaScript, that might look something like this:</p>\\n<Code language='js'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">let data = [5, 10, 15, 20, 25];\\n\\nvar circles = document.getElementsByTagName(&quot;circle&quot;);\\nfor (var i = 0; i &lt; circles.length; i++) &#123;\\n  var circle = circles.item(i);\\n  circle.style.setProperty(&quot;r&quot;, data[i], null);\\n&#125;</code>\`}</pre>\\n</Code>\\n<p>Not too hard\u2014but also, not too easy. D3 simplifies this logic by removing the need for a loop and iterating on your selection for you:</p>\\n<Code language='js'>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token keyword\\">let</span> data <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token number\\">5</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">10</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">15</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">20</span><span class=\\"token punctuation\\">,</span> <span class=\\"token number\\">25</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>\\n\\nd3<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">selectAll</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"circle\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">data</span><span class=\\"token punctuation\\">(</span>data<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">attr</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"r\\"</span><span class=\\"token punctuation\\">,</span> <span class=\\"token parameter\\">d</span> <span class=\\"token operator\\">=></span> d<span class=\\"token punctuation\\">)</span></code>\`}</pre>\\n</Code>\\n<svg>\\n  <rect width=\\"100%\\" height=\\"100%\\" />\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"5\\"  fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"15\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"20\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"25\\" fill=\\"white\\"><title>Hello from the circle!</title></circle>\\n</svg>\\n<p>Again, we reduce the length of our code nearly 5x, and the code just <strong>makes sense</strong>.</p>\\n<p>All that to say, D3 is great. It works, and it works wonderfully. By removing the need to write highly imperative code that is unintuitive in nature, D3 saves developers time and allows for more powerful visualizations.</p>\\n<p>But I\u2019m hardly using it at all recently. Increasingly, I\u2019ve been using the JavaScript <del>framework</del> compiler <a href=\\"https://svelte.dev/\\" rel=\\"nofollow\\">Svelte</a> to <em>write SVG directly</em> rather than <em>tell JavaScript to write SVG</em>. How? Let\u2019s see below.</p>\\n<h2 id=\\"literal-programming-with-svelte-\\"><a href=\\"#literal-programming-with-svelte-\\">\u201CLiteral\u201D programming with Svelte \u{1F5E3}</a></h2>\\n<p>Going back to the above circles, imagine if we could simply bind our data to our app\u2019s markup <strong>directly</strong>, without any intermediate code serving as instructions.</p>\\n<p><strong>We can!</strong> Svelte (and Vue, React and other frameworks) allow for seamless interactions between our app\u2019s logic, data, and markup, so that we can embed data directly into our SVG elements. In this new paradigm, we could replace the set of D3 instructions from earlier with the following Svelte code:</p>\\n<Code language='svelte'>\\n<pre class=\\"language-undefined\\">{@html \`<code class=\\"language-undefined\\">&lt;script&gt;\\n  let data = [&#123;x: 10, r: 5 &#125;, \\n              &#123;x: 30, r: 10&#125;, \\n              &#123;x: 50, r: 15&#125;, \\n              &#123;x: 70, r: 20&#125;, \\n              &#123;x: 90, r: 25&#125;]\\n&lt;/script&gt;\\n\\n&lt;p&gt;&#123;data.map(x =&gt; x)&#125;&lt;/p&gt;</code>\`}</pre>\\n</Code>\\n<!-- <svg>\\n  <rect width=\\"100%\\" height=\\"100%\\"/>\\n  <circle cx=\\"10%\\" cy=\\"50%\\" r=\\"5\\"  fill=\\"white\\"><title>Hello from the circle with a radius of 5!</title></circle>\\n  <circle cx=\\"30%\\" cy=\\"50%\\" r=\\"10\\" fill=\\"white\\"><title>Hello from the circle with a radius of 10!</title></circle>\\n  <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"15\\" fill=\\"white\\"><title>Hello from the circle with a radius of 15!</title></circle>\\n  <circle cx=\\"70%\\" cy=\\"50%\\" r=\\"20\\" fill=\\"white\\"><title>Hello from the circle with a radius of 20!</title></circle>\\n  <circle cx=\\"90%\\" cy=\\"50%\\" r=\\"25\\" fill=\\"white\\"><title>Hello from the circle with a radius of 25!</title></circle>\\n</svg> -->\\n<p>In my view, there are three benefits to writing our code this way:</p>\\n<ol>\\n<li><strong>More intuitive authoring.</strong> It feels much more natural to write our SVG elements <em>directly</em> rather than provide D3 instructions on how to do so.</li>\\n<li><strong>Less friction in translating D3 to the DOM.</strong> By writing SVG directly, we could copy an SVG element from the <a\\n  href=\\"https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle\\"\\n  rel=\\"nofollow\\"\\n>MDN docs</a>, paste in our values, and see immediate results. Fewer handoffs results in fewer errors.</li>\\n<li><strong>Reusability.</strong> Creating a robust and flexible <code>&lt;Circle /&gt;</code>, <code>&lt;Bar /&gt;</code>, or <code>&lt;Axis /&gt;</code> component permits consistent reuse within and across projects. D3 code is usually written as a series of blocks which lacks a natural structure and becomes difficult to reuse effectively.</li>\\n</ol>\\n<p>The only downside (which is actually just an adjustment) is that this new approach requires you to learn how to <a\\n  href=\\"https://www.w3schools.com/graphics/svg_intro.asp\\"\\n  rel=\\"nofollow\\"\\n>write SVG</a>. But isn\u2019t it a good exercise to learn the anatomy of what we\u2019re actually creating? Having knowledge of SVG elements and attributes will benefit any developer who creates visuals, no matter how they eventually do so.</p>\\n<p>Not convinced? Let me explain the logic one more time, with a tastier example:</p>\\n<h2 id=\\"bringing-it-home-with-burgers-\\"><a href=\\"#bringing-it-home-with-burgers-\\">Bringing it home with burgers \u{1F354}</a></h2>\\n<p>Imagine we want to prepare a burger. We have an array of objects, each with an ingredient and ingredient-specfic instructions. We want to 1) create each item (insert it into the DOM), and 2) carry out its instructions (execute some function).</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token keyword\\">let</span> ingredients <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Top Bun\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Place at top of burger.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Pickles\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Three pickles, please.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cheese\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cheese is optional, but it makes the burger better.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Patty\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Cook to your satisfaction. Optionally, add two patties.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Tomato\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Should be the same width as bun, and thinly sliced.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Lettuce\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Should be the same width as bun.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n  <span class=\\"token punctuation\\">&#123;</span>item<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Bottom Bun\\"</span><span class=\\"token punctuation\\">,</span> instruction<span class=\\"token operator\\">:</span> <span class=\\"token string\\">\\"Place at bottom of burger.\\"</span><span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">,</span>\\n<span class=\\"token punctuation\\">]</span></code>\`}</pre>\\n<p>There are three ways to make this burger (at least, in our fantasy world where we make burgers via code).</p>\\n<Info>\\n<p>Although I use the Svelte REPL to showcase these three examples, only the last one requires Svelte. The REPL is just a nice place to host (editable!) code \u{1F642}</p>\\n</Info>\\n<p><strong>The first option</strong> (old school) is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is how burgers would have been made, painfully, before D3.</p>\\n<iframe src=\\"https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3\\" width=\\"100%\\" height='600' title=\\"Old school burger building\\"></iframe>\\n<p><strong>The second option</strong> (new school) is to tell your app to read in each ingredient and instruction through D3 method chaining. We remove the need for our verbose <code>for</code> loop, and use the chain to give D3 a set of sequential instructions.</p>\\n<iframe src=\\"https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3\\" width=\\"100%\\" height='600' title=\\"New school burger building\\"></iframe>\\n<p><strong>Our final option</strong> (new new school), we can simply append our instructions directly to the ingredient, <em>literally</em>. Here, we skip <code>for</code> loops and we skip D3 method chaining; instead, we componentize our general \u201Cburger item\u201D and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:</p>\\n<iframe src=\\"https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3\\" width=\\"100%\\" height='600' title=\\"Literal burger building\\"></iframe>\\n<p>Which do you prefer? It\u2019s much easier to make a burger by <em>just making it</em>, rather than giving instructions, no matter what form they come in. Frameworks allow for the construction of burgers\u2014and visualizations\u2014<strong>literally</strong>. We write our ingredients (or DOM elements) directly, and include our instructions (or data) in our markup. Now that\u2019s a tasty burger.</p>\\n<h2 id=\\"the-big-picture-\\"><a href=\\"#the-big-picture-\\">The big picture \u{1F5BC}</a></h2>\\n<ol>\\n<li>Svelte allows visualization developers to <strong>write SVG directly</strong> (and avoid telling D3 what to do), while using Svelte syntax (<code>&#123;#each&#125;</code>, etc.) to avoid annoying and inefficient <code>for</code> loops. </li>\\n<li>Including logic directly in your markup (<code>&#123;#if&#125;</code>, etc.) removes the need for complex JavaScript/DOM interactions (more on that below). </li>\\n<li>Svelte works to <em>complement</em> D3, not replace it, by continuing to leverage the most powerful parts of its API: <code>d3-scale</code>, <code>d3-array</code>, <code>d3-shape</code>, etc.</li>\\n</ol>\\n<hr/>\\n<h2 id=\\"bonus-perks-\\"><a href=\\"#bonus-perks-\\">Bonus perks \u{1F3C6}</a></h2>\\n<p>Using Svelte to create visualizations has a few other perks:</p>\\n<h3 id=\\"responsiveness\\"><a href=\\"#responsiveness\\">Responsiveness</a></h3>\\n<p>By using Svelte\u2019s <a\\n  href=\\"https://svelte.dev/tutorial/reactive-declarations\\"\\n  rel=\\"nofollow\\"\\n>reactive declarations</a> (the dollar signs \u{1F4B0}), we can make certain variables  \u2018watch\u2019 for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.</p>\\n<pre class=\\"language-svelte\\">{@html \`<code class=\\"language-svelte\\">import  windowWidth from \\"../stores/store.js\\";\\nimport  scaleLinear from 'd3-scale';\\n\\n$: xScale = scaleLinear\\n            .domain(data.map(d => d.value))\\n            .range([0, $windowWidth])</code>\`}</pre>\\n<p>With some other component watching and responding to resize events (such as <a\\n  href=\\"https://github.com/the-pudding/svelte-starter/blob/master/src/components/helpers/Window.svelte\\"\\n  rel=\\"nofollow\\"\\n>Window.svelte</a>), any SVG property depending on <code>xScale</code> will automatically update when your window resizes. You can also set the chart width itself to equal <code>$windowWidth</code> for a fully resizable, responsive chart.</p>\\n<Info>\\n<p>Another way to achieve easy responsiveness is to <a href=\\"https://svelte.dev/tutorial/dimensions\\" target=\\"_blank\\">bind the SVG\u2019s parent container\u2019s div width</a> to some variable (<code>width</code>) and set the SVG\u2019s width to match.</p>\\n</Info>\\n<h3 id=\\"ifelse-blocks\\"><a href=\\"#ifelse-blocks\\">If/else blocks</a></h3>\\n<p>In regular D3, we often use the <a\\n  href=\\"https://en.wikipedia.org/wiki/%3F:\\"\\n  rel=\\"nofollow\\"\\n>ternary operator</a> to define condition-specific attributes, like this:</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\"><span class=\\"token comment\\">// Circles are filled green if positive, red if negative</span>\\nd3<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">selectAll</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'circle'</span><span class=\\"token punctuation\\">)</span>\\n  <span class=\\"token punctuation\\">.</span><span class=\\"token function\\">style</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'fill'</span><span class=\\"token punctuation\\">,</span> <span class=\\"token parameter\\">d</span> <span class=\\"token operator\\">=></span> d<span class=\\"token punctuation\\">.</span>value <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">0</span> <span class=\\"token operator\\">?</span> <span class=\\"token string\\">'red'</span> <span class=\\"token operator\\">:</span> <span class=\\"token string\\">'green'</span><span class=\\"token punctuation\\">)</span></code>\`}</pre>\\n<p>This is great, but what if we want to make more significant changes based on app-wide state? For example, imagine we want to show three different types of the same visualization on different screen sizes: </p>\\n<ol>\\n<li>Desktop (over 1024px)</li>\\n<li>Tablet (520px to 1024px)</li>\\n<li>Mobile (under 520px)</li>\\n</ol>\\n<p>In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint.</p>\\n<p>One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for <a\\n  href=\\"https://svelte.dev/tutorial/if-blocks\\"\\n  rel=\\"nofollow\\"\\n>conditional rendering</a> <em>directly in our markup</em>, not just in our JavaScript logic. In other words, while vanilla JavaScript would approach our problem with the following:</p>\\n<pre class=\\"language-js\\">{@html \`<code class=\\"language-js\\">window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">addEventListener</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">'resize'</span><span class=\\"token punctuation\\">,</span> <span class=\\"token keyword\\">function</span><span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">event</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span>\\n    <span class=\\"token keyword\\">let</span> newWidth <span class=\\"token operator\\">=</span> window<span class=\\"token punctuation\\">.</span>innerWidth<span class=\\"token punctuation\\">;</span>\\n\\n    <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span>newWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">520</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span> \\n      <span class=\\"token comment\\">// Hide tablet and desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show mobile</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span> <span class=\\"token keyword\\">else</span> <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span>newWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">1024</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">&#123;</span>\\n      <span class=\\"token comment\\">// Hide mobile and desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show tablet</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span> <span class=\\"token keyword\\">else</span> <span class=\\"token punctuation\\">&#123;</span>\\n      <span class=\\"token comment\\">// Hide mobile and tablet</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"mobile\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"tablet\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"none\\"</span><span class=\\"token punctuation\\">;</span>\\n\\n      <span class=\\"token comment\\">// Show desktop</span>\\n      document<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">getElementById</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"desktop\\"</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">.</span>style<span class=\\"token punctuation\\">.</span>display <span class=\\"token operator\\">=</span> <span class=\\"token string\\">\\"block\\"</span><span class=\\"token punctuation\\">;</span>\\n    <span class=\\"token punctuation\\">&#125;</span>\\n<span class=\\"token punctuation\\">&#125;</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></code>\`}</pre>\\n<p>Svelte simplifies our logic to:</p>\\n<pre class=\\"language-svelte\\">{@html \`<code class=\\"language-svelte\\"><span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span>#<span class=\\"token keyword\\">if</span> $windowWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">520</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Mobile</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">:</span><span class=\\"token keyword\\">else</span> <span class=\\"token keyword\\">if</span> $windowWidth <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">1024</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Tablet</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">:</span><span class=\\"token keyword\\">else</span><span class=\\"token punctuation\\">&#125;</span></span>\\n  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Desktop</span> <span class=\\"token punctuation\\">/></span></span>\\n<span class=\\"token language-javascript\\"><span class=\\"token punctuation\\">&#123;</span><span class=\\"token operator\\">/</span><span class=\\"token keyword\\">if</span><span class=\\"token punctuation\\">&#125;</span></span></code>\`}</pre>\\n<p>Hey, thanks for reading. I appreciate you! In the event that you disagree with me or I got something wrong, please message me on <a\\n  href=\\"https://twitter.com/CL_Rothschild\\"\\n  rel=\\"nofollow\\"\\n>Twitter</a>.</p>\\n</Layout_MDSVEX_DEFAULT>"],"names":[],"mappings":"AAgBA,GAAG,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CACzB,aAAa,CAAE,GAAG,AACpB,CAAC,AAED,IAAI,eAAC,CAAC,AACJ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AAEd,CAAC,AAED,MAAM,eAAC,CAAC,AACN,MAAM,CAAE,SAAS,AACnB,CAAC"}`
 };
 var metadata$2 = {
   "layout": "blog",
@@ -30601,7 +30601,7 @@ var Svelte_and_d3 = create_ssr_component(($$result, $$props, $$bindings, slots) 
 <h4 id="${"what-youll-find-in-this-post"}"><a href="${"#what-youll-find-in-this-post"}">What you\u2019ll find in this post</a></h4>
 <p>In this post, I\u2019ll <a href="${"#what-d3-does-3%EF%B8%8F%E2%83%A3"}">1)</a> provide an overview of D3, and how it made the process of creating visualizations so much easier; <a href="${"#literal-programming-with-svelte-"}">2)</a> explain why I\u2019m moving away from D3 for DOM manipulation, and instead using Svelte \u201Cliterally\u201D; and <a href="${"#bringing-it-home-with-burgers-"}">3)</a> provide a funky burger \u{1F354} example to explain my logic.</p>
  ${validate_component(Info, "Info").$$render($$result, {}, {}, {
-      default: () => `<p>This is not a comprehensive tutorial about <strong>how to</strong> use D3 and Svelte together. I\u2019ll cover that in the <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">future</a>. In the meantime, check out tutorials from <a href="${"https://www.youtube.com/watch?v=bnd64ZrHC0U"}" rel="${"nofollow"}">Matthias Stahl</a>, examples of Svelte and D3 in action on The Pudding\u2019s <a href="${"https://github.com/the-pudding/"}" rel="${"nofollow"}">GitHub</a>, and an example of similar framework-driven logic on Amelia Wattenberger\u2019s <a href="${"https://wattenberger.com/blog/react-and-d3"}" rel="${"nofollow"}">blog</a>. </p>
+      default: () => `<p>This is not a comprehensive tutorial about <strong>how to</strong> use D3 and Svelte together. I\u2019ll cover that in the <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">future</a>. In the meantime, check out tutorials from <a href="${"https://www.youtube.com/watch?v=bnd64ZrHC0U"}" rel="${"nofollow"}">Matthias Stahl</a>, examples of Svelte and D3 in action on The Pudding\u2019s <a href="${"https://github.com/the-pudding/"}" rel="${"nofollow"}">GitHub</a>, and an example of similar framework-driven logic on Amelia Wattenberger\u2019s <a href="${"https://wattenberger.com/post/react-and-d3"}" rel="${"nofollow"}">blog</a>. </p>
 <p>Want an immediate example? Here\u2019s an (admittedly verbose) <a href="${"https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte"}" rel="${"nofollow"}">Svelte component</a> I used in a recent project about Bob Ross.</p>`
     })} 
 <h2 id="${"what-d3-does-3\uFE0F\u20E3"}"><a href="${"#what-d3-does-3\uFE0F\u20E3"}">What D3 does 3\uFE0F\u20E3</a></h2>
@@ -30795,7 +30795,7 @@ blog post, but rather an overview of the data <em>that we have found</em>.</p>
 COVID-related data, as we notice that blog posts peaked in March of 2020.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "COVID-19 blog posts by week. There is a peak in mid March (40 posts).",
-      src: "../images/blog/covid-posts/weekly-1.png"
+      src: "../images/post/covid-posts/weekly-1.png"
     }, {}, {})}
 <p>Some bloggers have been prolific; many more have been one and done. The
 plot below shows the names and posts of the 23 bloggers who have so far
@@ -30809,7 +30809,7 @@ bloggers. If you include the postgraduate students, universities writ
 large account for nearly all of the prolific bloggers.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A dumbbell chart showcasing the timing of posts among 'prolific authors' (4 or more total posts). It shows temporally when these individuals post. ",
-      src: "../images/blog/covid-posts/prolificVer2-1.png"
+      src: "../images/post/covid-posts/prolificVer2-1.png"
     }, {}, {})}
 <h3 id="${"roles-of-authors"}"><a href="${"#roles-of-authors"}">Roles of authors</a></h3>
 <p>The bloggers in our dataset describe their work-day roles in a variety
@@ -30823,7 +30823,7 @@ fall into one of five categories: <em>university</em>, <em>corporate</em>,
 are represented as columns in the following chart.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140).",
-      src: "../images/blog/covid-posts/authorVer2-1.png"
+      src: "../images/post/covid-posts/authorVer2-1.png"
     }, {}, {})}
 <h3 id="${"data-sources"}"><a href="${"#data-sources"}">Data sources</a></h3>
 <p>A greater number of data sources related to COVID-19 will yield richer
@@ -30839,7 +30839,7 @@ early, comprehensively and consistently has set the standard for
 COVID-19 data collection and dissemination to the public.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51.",
-      src: "../images/blog/covid-posts/dataTable-1.png"
+      src: "../images/post/covid-posts/dataTable-1.png"
     }, {}, {})}
 <p>Below, you can look at <em>all</em> data sources and how often they were
 referenced in COVID-19 blog posts.</p>
@@ -30884,7 +30884,7 @@ seem to use COVID data to showcase something else, or apply R in novel
 ways.</p>
 ${validate_component(Image, "Image").$$render($$result, {
       alt: "A balloon plot shows the number of posts by topic and employment category. The most common is university/epidemiology (107 posts).",
-      src: "../images/blog/covid-posts/topicsVer2-1.png"
+      src: "../images/post/covid-posts/topicsVer2-1.png"
     }, {}, {})}
 <h2 id="${"concluding-thoughts"}"><a href="${"#concluding-thoughts"}">Concluding thoughts</a></h2>
 <p>We encourage you to use our <a href="${"https://connorrothschild.shinyapps.io/covid-posts/"}" target="${"_blank"}">Shiny application</a>
@@ -30923,7 +30923,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <h2 id="${"whats-flat-data"}"><a href="${"#whats-flat-data"}">What\u2019s Flat Data?</a></h2>
 <p><a href="${"https://octo.github.com/projects/flat-data"}" rel="${"nofollow"}">Flat Data</a> solves the problem of carrying out the same repetitive tasks\u2014retrieving, cleaning, and then republishing data\u2014that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via <a href="${"https://octo.github.com/projects/flat-data"}" rel="${"nofollow"}">GitHub</a>):</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/flat-data-r/flat-diagram.png",
+      src: "../images/post/flat-data-r/flat-diagram.png",
       alt: "A diagram showcasing a common Flat Data workflow"
     }, {}, {})}
 <p>The idea, as seen above, is essentially to read in data (<em>data.json</em>), conduct some postprocessing (<em>process.js</em>), and output some better data (<em>processed-data.json</em>).</p>
@@ -31016,7 +31016,7 @@ readr::write_csv(clean_data, &quot;./output.csv&quot;)</code>`}<!-- HTML_TAG_END
 <h2 id="${"in-sum"}"><a href="${"#in-sum"}">In sum</a></h2>
 <p>Upon completing these steps and pushing the above to a repository, GitHub will automatically set up the action and run it on a daily basis. You can then examine the logs for each run in the <strong>Actions</strong> tab. This tab will be helpful for debugging, and you can force workflow executions manually here as well. In sum, the process of carrying out a GitHub Flat Data workflow, with the addition of an R postprocessing script, looks something like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-      src: "../images/blog/flat-data-r/header.png",
+      src: "../images/post/flat-data-r/header.png",
       alt: "Diagram of flat data processing in R"
     }, {}, {})}
 <p>Thanks for reading! You might learn more by perusing the <a href="${"https://github.com/connorrothschild/flat-demo-r-processing"}" rel="${"nofollow"}">GitHub repository</a> that accompanies this post; otherwise, please send any questions via <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">Twitter</a> \u{1F642}</p>`

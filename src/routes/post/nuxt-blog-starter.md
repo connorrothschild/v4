@@ -20,7 +20,7 @@ I've went through my fair share of blogs. See [version 1](https://connorrothschi
 
 #### 1. Speed and user experience
 
-Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the [Nuxt Blog](https://nuxtjs.org/blog/going-full-static/):
+Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the [Nuxt Blog](https://nuxtjs.org/post/going-full-static/):
 
 > `nuxt generate` with `target: 'static'` will pre-render all your pages to HTML and save a payload file in order to mock `asyncData` and `fetch` on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it (from the in the header) for optimal performance.
 
@@ -28,8 +28,8 @@ You can see the impact of SSR on performance by comparing my [last blog iteratio
 
 The former, built using [R `blogdown`](https://bookdown.org/yihui/blogdown/) and [Hugo Academic](https://themes.gohugo.io/academic/), scored 72/100 on desktop performance, compared to a 100/100 on this version:
 
-<Image src="../images/blog/nuxt-blog-starter/old-site-perf.png" alt="Old site performance. 72/100" width="48%"></Image>
-<Image src="../images/blog/nuxt-blog-starter/new-site-perf.png" alt="New site performance. 100/100" width="48%"></Image>
+<Image src="../images/post/nuxt-blog-starter/old-site-perf.png" alt="Old site performance. 72/100" width="48%"></Image>
+<Image src="../images/post/nuxt-blog-starter/new-site-perf.png" alt="New site performance. 100/100" width="48%"></Image>
 
 #### 2. Flexibility and power
 
@@ -61,8 +61,8 @@ The site relies on three colors: a primary (background), secondary (accent), and
 
 An example of this can be seen below the Sass defaults that live within `assets/scss/colors.scss`. Simply uncomment those lines (preceded by the comment "LIGHT MODE") to see your site with light mode defaults.
 
-<Image src="../images/blog/nuxt-blog-starter/dark.png" alt="Dark mode" width="49%"/>
-<Image src="../images/blog/nuxt-blog-starter/light.png" alt="Light mode" width="49%"/>
+<Image src="../images/post/nuxt-blog-starter/dark.png" alt="Dark mode" width="49%"/>
+<Image src="../images/post/nuxt-blog-starter/light.png" alt="Light mode" width="49%"/>
 
 ### Dope transitions
 
@@ -84,7 +84,7 @@ transition: {
 
 This creates some subtle yet attractive page transitions:
 
-<Image src="../images/blog/nuxt-blog-starter/transitions.gif" alt="GIF showcasing transitions of home page, to blog post pagfe, to a single blog post."/>
+<Image src="../images/post/nuxt-blog-starter/transitions.gif" alt="GIF showcasing transitions of home page, to blog post pagfe, to a single blog post."/>
 
 You can modify these transitions by adding and removing elements in the CSS selector parameters for each page's `enter()` property.
 
@@ -92,14 +92,14 @@ You can modify these transitions by adding and removing elements in the CSS sele
 
 The function `getSiteMeta()`, found in the `utils/` folder, allows for different meta tags for each page and for each blog post. The function allows the Twitter Cards for my home page and for a blog post to look different, like this:
 
-<Image src="../images/blog/nuxt-blog-starter/home-card.png" alt="Twitter card of homepage" width="47.2%"/>
-<Image src="../images/blog/nuxt-blog-starter/blog-card.png" alt="Twitter card of blog post page" width="50%"/>
+<Image src="../images/post/nuxt-blog-starter/home-card.png" alt="Twitter card of homepage" width="47.2%"/>
+<Image src="../images/post/nuxt-blog-starter/blog-card.png" alt="Twitter card of blog post page" width="50%"/>
 
 The site is set up so that your cards will appear this way automatically! All you will have to do is edit [`utils/getSiteMeta.js`](https://github.com/connorrothschild/nuxt-blog-starter/blob/master/utils/getSiteMeta.js) with your specific information. Page-specific meta tags are also helpful for search engine optimization; your site might attract a larger number of visitors if it covers a wider variety of keywords.
 
 ## Blog features
 
-This site comes with all the same blog capabilities as a normal site, such as syntax highlighting, images, HTML support, and Vue components. Read [this post](https://nuxtjs.org/blog/creating-blog-with-nuxt-content/) if you're curious about features.
+This site comes with all the same blog capabilities as a normal site, such as syntax highlighting, images, HTML support, and Vue components. Read [this post](https://nuxtjs.org/post/creating-blog-with-nuxt-content/) if you're curious about features.
 
 You can also include a few custom components I've made:
 

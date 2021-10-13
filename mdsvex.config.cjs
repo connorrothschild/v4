@@ -23,7 +23,7 @@ module.exports = {
     ],
   ],
   layout: {
-    blog: "./src/routes/blog/layout.svelte",
+    blog: "./src/routes/post/layout.svelte",
     experience: "./src/routes/experience/layout.svelte",
     project: "./src/routes/project/layout.svelte"
   },

@@ -41,10 +41,8 @@
 <style>
   .project-card {
     position: relative;
-    overflow: hidden;
     border-radius: 5px;
     box-shadow: 1px 1px 4px #b2b2b2;
-    transition: height 300ms ease;
     height: 100%;
   }
 
@@ -52,9 +50,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
     filter: blur(0);
-    /* transition: filter 1000ms linear; */
     z-index: 0;
+    /* transition: filter 1000ms linear; */
   }
 
   .hovered-gradient {
