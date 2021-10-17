@@ -60,4 +60,11 @@
       margin-right: 1.35rem;
     }
   }
+
+  @media screen and (max-width: 460px) {
+    li {
+      font-size: 0.7rem;
+      margin-right: 1rem;
+    }
+  }
 </style>

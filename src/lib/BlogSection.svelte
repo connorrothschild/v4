@@ -241,18 +241,21 @@
     }
   }
 
-  /* MOBILE BREAKPOINT */
+  /* MOBILE */
   @media screen and (max-width: 460px) {
+    .post-container {
+      padding: 15px 20px;
+    }
     .post-title {
       font-size: 1.2rem;
     }
 
     .post-description {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
 
     .post-tag {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 </style>

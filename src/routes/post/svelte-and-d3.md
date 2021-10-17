@@ -237,15 +237,21 @@ Using Svelte to create visualizations has a few other perks:
 
 By using Svelte's [reactive declarations](https://svelte.dev/tutorial/reactive-declarations) (the dollar signs 💰), we can make certain variables  'watch' for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.
 
+<Code language='svelte'>
 
-```svelte
+```
+<script>
 import  windowWidth from "../stores/store.js";
 import  scaleLinear from 'd3-scale';
 
 $: xScale = scaleLinear
             .domain(data.map(d => d.value))
             .range([0, $windowWidth])
-```       
+</script>
+```      
+
+</Code>
+
 
 With some other component watching and responding to resize events (such as [Window.svelte](https://github.com/the-pudding/svelte-starter/blob/master/src/components/helpers/Window.svelte)), any SVG property depending on `xScale` will automatically update when your window resizes. You can also set the chart width itself to equal `$windowWidth` for a fully resizable, responsive chart.
 

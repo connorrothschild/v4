@@ -4,7 +4,7 @@
 
   export let name;
   export let description;
-  // export let imageUrl;
+  export let imageUrl;
 
   $seo = {
     title: name,
@@ -13,7 +13,14 @@
 </script>
 
 <main>
-  <h1 class="page-title">{name}</h1>
+  <h1 class="page-title">
+    {name}
+    <img
+      src={`/images/jobs/${imageUrl}.svg`}
+      alt="Logo for {name}"
+      class="logo"
+    />
+  </h1>
   <div class="post">
     <slot />
   </div>
@@ -41,5 +48,14 @@
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--accent-color);
     padding-bottom: 1rem;
+  }
+
+  .logo {
+    height: 0.75em;
+    transition: transform 500ms ease;
+  }
+
+  .logo:hover {
+    transform: rotate(360deg);
   }
 </style>
