@@ -3,11 +3,13 @@ layout: blog
 title: "Animating Your Hugo Academic Site"
 description: Make your Hugo Academic homepage more engaging with a few lines of code
 date: "2020-07-02"
-image: "images/jobs/moksha.svg"
+image: animate-hugo-academic/header.png
+tags: ['html', 'r', 'tutorial']
 ---
 
 <script>
   import Image from "../../lib/global/Image.svelte"
+  import Code from "../../lib/global/Code.svelte"
   import Info from "../../lib/global/Info.svelte"
 </script>
 
@@ -43,7 +45,7 @@ to this:
 
 (As you progress, you might have to make additional small changes, such as removing ‘Demo’ from the navbar menu.)
 
-## Step 1) Create about.html
+## Step 1) Create `about.html`
 
 The first _real_ step in our process is modifying the default layout of our about page. More specifically, our animations will rely on CSS selectors which our about page currently doesn’t have. In order to animate certain elements, we will need unique identifiers, such as CSS classes and IDs, to target.
 
@@ -57,53 +59,69 @@ Now, create _a new file path_ in your root directory titled `layouts/partials/wi
 
 <Info>
   
+  Alternatively, you can copy the about.html file that I used for this project and paste it into <code>layouts/partials/widgets/</code>. <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" target="_blank">You can find my file here</a>. This will also allow you to skip step 2 and move on to <a href="#step-3-add-css">step 3</a>!
 
-Alternatively, you can copy the about.html file that I used for this project and paste it into `layouts/partials/widgets/`. [You can find my file here](https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html). This will also allow you to skip step 2 and move on to [step 3](#step-3-add-css)!
-
-  
 </Info>
 
 ## Step 2) Customize your file
 
 With that newly created `about.html` living in `layouts/partials/widgets/`, you may notice that your homepage looks the exact same. This is correct! In this step, we’ll customize that html file so that it can be animated.
 
-Within `about.html`, you’ll notice all of your page’s elements in order of appearance, despite a lot of extra characters that don’t make much sense. It should look like this:
+Within `about.html`, you’ll notice all of your page’s elements in order of appearance, despite a lot of extra characters that don’t make much sense. It should look like this (don't read into this code, just verify it looks the same):
 
 <Image src="../images/post/animate-hugo-academic/about.png" alt="A screenshot of complicated code that is initially used to render the homepage."></Image>
 
-Throughout step 3, we’ll use each element’s ‘class’ to target it for animations. In the above screenshot (and in your `about.html` page!), you’ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found [here](https://www.w3schools.com/cssref/sel_class.asp).
+Throughout step 3, we’ll use each element’s class to target it for animations. In the above screenshot (and in your `about.html` page), you’ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found [here](https://www.w3schools.com/cssref/sel_class.asp).
 
-In this step, we’ll add classes to the elements we want to animate. (Again, if this seems to be overwhelming, feel free to copy [my HTML file.](https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html)) Specifically, we’ll make three changes.
+In this step, we’ll add classes to the elements we want to animate. (Again, if this seems to be overwhelming, feel free to copy [my HTML file.](https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html)) Specifically, we’ll make three changes. (For each, feel free to just control-F the content and add the class right before.)
 
 First, we’ll add a class of `biography-title` to our h1 (header 1) element. Here, we will change
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 <h1>{{ $page.Title | markdownify | emojify }}</h1>
 {{ end }}
 ```
 
+</Code>
+
 to
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 <h1 class="biography-title">{{ $page.Title | markdownify | emojify }}</h1>
 {{ end }}
 ```
 
+</Code>
+
 Next, we need to wrap the main content, aka the big text blocks in the middle of the page, in their own class too. Here, we take
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 {{ $person_page.Content }}
 ```
 
+</Code>
+
 and wrap it in a `div`, so it looks like this:
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 <div class="main-content">{{ $person_page.Content }}</div>
 ```
 
+</Code>
+
 Finally, we’ll add a class to our interests and and education blocks. We can take this row:
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 <div class="row">
   {{ with $person.interests }}
   <div class="col-md-5">
@@ -133,9 +151,13 @@ Finally, we’ll add a class to our interests and and education blocks. We can t
 </div>
 ```
 
+</Code>
+
 and replace it with this:
 
-```html
+<Code language='html' filename='about.html'>
+
+```
 <div class="row">
   {{ with $person.interests }}
   <div class="interests-div col-md-5">
@@ -165,6 +187,8 @@ and replace it with this:
 </div>
 ```
 
+</Code>
+
 <Info>
   
 
@@ -191,20 +215,28 @@ An SCSS file is essentially a CSS file but extended with Sass, which describes [
 
 Within `custom.scss`, we’re going to target everything _within our about section_. In order to do so, we create a selector that targets everything within the ID of `about`.
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 #about {
-  /* Some CSS will go here soon! :) */
+  /* Some CSS will go here soon! */
   /* This is a comment, by the way. */
 }
 ```
 
+</Code>
+
 To ensure that we’ve targeted the right section, we can go ahead and add the property `background-color: red` to that element. As the name implies, this will make the section ✨ red. ✨
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 #about {
   background-color: red;
 }
 ```
+
+</Code>
 
 As we expected, our section background is now an (unbelievably ugly shade of) red.
 
@@ -212,13 +244,17 @@ As we expected, our section background is now an (unbelievably ugly shade of) re
 
 (Now remove that property immediately! This is not quite the welcome we want for our visitors.) We can also target elements _within_ the section by nesting new selectors inside of `#about`. For example, if we wanted to change the color of our ‘biography’ title text, we could do so with the following code. (This is because we created a class named `biography-title` in step 1):
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 #about {
   .biography-title {
     color: red;
   }
 }
 ```
+
+</Code>
 
 <Image src="../images/post/animate-hugo-academic/font-red.png" alt="An example of turning the font color  red."></Image>
 
@@ -238,7 +274,9 @@ Creating your first animation is as simple as a few lines of code. To illustrate
 
 1. Create an animation with `@keyframes`
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 @keyframes yourfirstanimation {
   from {
     opacity: 0;
@@ -251,19 +289,27 @@ Creating your first animation is as simple as a few lines of code. To illustrate
 }
 ```
 
+</Code>
+
 2. Bind the animation to an element
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 .biography-title {
   animation: yourfirstanimation 5s forwards;
 }
 ```
 
+</Code>
+
 To break down the above code, we create an animation that has a _start point_ (`0%`) and an _end point_ (`100%`). At both of these points, we define CSS properties, such as color and opacity, seen above. When we bind the animation to an element, which is as simple as `animation: <animation_name> <duration> <fill_mode>`, CSS deals with all the inbetween and automatically creates a smooth transition! (Fill mode is the most complicated of these three properties, but for our purposes we will always be using `forwards`. For more information, visit [this page](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode).)
 
 Altogether, this code creates this output:
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 #about {
   @keyframes yourfirstanimation {
     0% {
@@ -282,11 +328,15 @@ Altogether, this code creates this output:
 }
 ```
 
+</Code>
+
 <Image src="../images/post/animate-hugo-academic/red.gif" alt="An example transition, turning the font color to red over a 5 second duration."></Image>
 
 Of course, we don’t want a 5 second animation, nor do we want our text to start off as red. A cleaner animation might leverage the power of CSS to modify an element’s _position_. In our case, we want an element to **slide in from the right side of the screen**, and so we make a few tweaks to the code above. Let’s make a new animation called `slide-from-right` which starts (at keyframe 0%) with our element 150% to the right of its original position (therefore off the screen) and ends (at keyframe 100%) with it at its original position. This involves the use of `translateX`, which you can read about [here](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX).
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 @keyframes slide-from-right {
   0% {
     transform: translateX(150%);
@@ -301,6 +351,8 @@ Of course, we don’t want a 5 second animation, nor do we want our text to star
 }
 ```
 
+</Code>
+
 <Image src="../images/post/animate-hugo-academic/slide-from-right.gif" alt="A gif of the content sliding in from the right side of the page"></Image>
 
 There is one slight improvement we can make on the above transition. Specifically, we can call an _easing function_ on our animation. [Easing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function) give a more natural feel to a transition’s flow—rather than our object flying in at a perfectly linear rate, we can add some personality by specifying its speed at different points in the transition. To find an easing function, visit [easings.net](https://easings.net/en#), which allows you to visualize all of the different ways to modify your transition’s ease. (For this tutorial, I chose a clean-looking “_easeInOutQuint_“ function, which looks like this: `cubic-bezier(0.83, 0, 0.17, 1)`.)
@@ -311,12 +363,16 @@ There is one slight improvement we can make on the above transition. Specificall
 
 We want our homepage to have more than just one title animation. We might also want to **animate the paragraphs below it**, with the same ’slide from right’ transition we defined earlier. While doing this, we can add one property to our element to make the overall transition seem more fluid: `animation-delay`. As the name suggests, this property defines how long the browser should wait before it _begins_ the transition you’ve specified. Animating our `main-content` div is as simple as copying the above code and adding a 100 millisecond animation delay.
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 .main-content {
   animation: slide-from-right 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
   animation-delay: 100ms;
 }
 ```
+
+</Code>
 
 In combination with above, this creates a transition that looks like this:
 
@@ -330,7 +386,9 @@ Nice! That looks clean. It looks like those two text blocks are racing to greet 
 
 Let’s go ahead and replicate that ’slide in’ transition for our profile on the left side of our webpage. As you could probably gather, this is as simple as copying the above code and changing the value in `translateX` from 150% to -150% (from just outside the right side of our webpage [to the left!](https://www.youtube.com/watch?v=2EwViQxSJJQ&feature=youtu.be&t=25)). As above, we’ll define this transition in a `@keyframes` rule and apply it to our CSS transition afterward.
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 @keyframes slide-from-left {
   0% {
     transform: translateX(-150%);
@@ -345,6 +403,8 @@ Let’s go ahead and replicate that ’slide in’ transition for our profile on
 }
 ```
 
+</Code>
+
 <Image src="../images/post/animate-hugo-academic/left-and-right.gif" alt="Two paragraphs of content sliding in from opposite directions."></Image>
 
 ### Step 3D) Finally, the Fade
@@ -353,7 +413,9 @@ The only thing not yet animated on our page are the ‘interests’ and ‘educa
 
 If you’ve been paying attention to the prior `@keyframes` rules, you might have guessed that the code would look like this:
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -364,11 +426,15 @@ If you’ve been paying attention to the prior `@keyframes` rules, you might hav
 }
 ```
 
+</Code>
+
 ... and you would be correct!
 
 Now, we apply this `fade-in` rule to both our `interests-div` and our `education-div`, which we created in step 1. But notably, we want to wait to fade in each of these divs until _after our content has slid in from either side of the webpage._ And so, we’ll once again use the `animation-delay` property. Because our slide-in animations take one second to complete, we can begin our fade-in animations after a one-second delay. To make the transition a little more visually appealling, we can also stagger them, so the `education-div` fades in half a second _after_ `interests-div`.
 
-```scss
+<Code language='css' filename="custom.scss">
+
+```
 .interests-div {
   opacity: 0;
   animation: fade-in 1s forwards;
@@ -381,6 +447,8 @@ Now, we apply this `fade-in` rule to both our `interests-div` and our `education
   animation-delay: 1.5s;
 }
 ```
+
+</Code>
 
 Now, we have a final homepage that looks like this:
 

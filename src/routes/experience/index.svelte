@@ -16,6 +16,12 @@
 <script>
   import JobSection from "$lib/JobSection.svelte";
   export let jobs;
+
+  import { seo } from "$lib/store.js";
+  $seo = {
+    title: "Experience | Connor Rothschild",
+    description: "Some of my work experience.",
+  };
 </script>
 
 <main>

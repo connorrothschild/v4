@@ -145,5 +145,6 @@
     text-transform: uppercase;
     padding: 3px 4px;
     background: rgba(1, 22, 39, 0.79);
+    user-select: none;
   }
 </style>

@@ -5,6 +5,7 @@ description: Making hundreds of COVID-19 blog posts from the R community availab
 date: "2020-11-02"
 image: covid-posts/header.png
 archived: true
+tags: ['analysis', 'r']
 ---
 
 <script>

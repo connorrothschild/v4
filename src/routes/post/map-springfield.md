@@ -5,6 +5,7 @@ description: Creating a beautiful streetmap of my hometown, exclusively in R
 date: "2019-11-21"
 image: map-springfield/header.png
 archived: true
+tags: ['r']
 ---
 
 <script>

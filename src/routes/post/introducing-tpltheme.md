@@ -5,6 +5,7 @@ description: "Introducing {tpltheme}, a toolkit to create publication-ready plot
 image: introducing-tpltheme/header.png
 date: "2019-07-02"
 archived: true
+tags: ['r']
 ---
 
 <script>

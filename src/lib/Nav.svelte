@@ -6,7 +6,8 @@
   <NavListItem code={""} title={"Home"} />
   <NavListItem code={"experience"} title={"Work"} />
   <NavListItem code={"project"} title={"Projects"} />
-  <NavListItem code={"blog"} title={"Blog"} />
+  <NavListItem code={"award"} title={"Awards"} />
+  <NavListItem code={"post"} title={"Blog"} />
 </ul>
 
 <style>

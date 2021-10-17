@@ -7,6 +7,7 @@
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
 
+  import { dateFormat } from "../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
 
   /* Initialize variables which will bind to our DOM elements */
@@ -129,7 +130,14 @@
     />
     <div class="post-card">
       <h1 class="post-title">{post.title}</h1>
-      <p class="post-description">{post.description}</p>
+      <div class="post-description-container">
+        <p class="post-description">{dateFormat(post.date)}</p>
+        <div class="post-tags-container">
+          {#each post.tags as tag}
+            <span class="post-tag">{tag}</span>
+          {/each}
+        </div>
+      </div>
     </div>
   </a>
 </div>
@@ -139,7 +147,7 @@
     width: 100%;
     border-radius: 10px;
     background: white;
-    padding: 30px 25px;
+    padding: 30px;
     margin: 12px; /* Need this for perspective container overflow */
     overflow: hidden;
     border: 1px solid white;
@@ -166,27 +174,48 @@
   .post-card {
     display: flex;
     flex-direction: column;
-    place-content: center; /* space-around; */
+    place-content: center;
     height: 100%;
     pointer-events: none;
   }
 
   .post-title {
-    font-size: 1.5rem;
-    line-height: 1.1;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
-    border-bottom: 1px solid var(--secondary-color);
-    transition: border-bottom 300ms ease;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    padding-bottom: 1rem;
+    max-width: 17ch;
   }
 
-  .post-description {
+  .post-description-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post-description,
+  .post-tag {
     font-size: 1.1rem;
     line-height: 1.25;
+    text-transform: uppercase;
+    font-family: var(--font-serif);
+    color: #494949;
+    font-weight: 200;
   }
 
-  .hovered .post-card .post-title {
-    border-bottom: 1px solid var(--accent-color);
+  .post-description,
+  .post-tags-container {
+    display: inline-block;
+  }
+
+  .post-tag {
+    padding: 2px 6px;
+    background: rgba(var(--accent-color-rgb), 0.1);
+    margin: 1px 3px;
+    border-radius: 3px;
+    color: rgba(var(--accent-color-rgb), 1);
+    font-size: 0.9rem;
+    font-weight: 100;
+    letter-spacing: 0.64px;
+    float: right;
   }
 
   .hovered {
@@ -201,6 +230,29 @@
   }
 
   .unhovered {
-    filter: blur(1px) grayscale(1);
+    filter: grayscale(1) brightness(0.975);
+  }
+
+  /* TABLET BREAKPOINT */
+  @media screen and (max-width: 768px) {
+    .post-title {
+      font-size: 1.5rem;
+      max-width: 100%;
+    }
+  }
+
+  /* MOBILE BREAKPOINT */
+  @media screen and (max-width: 460px) {
+    .post-title {
+      font-size: 1.2rem;
+    }
+
+    .post-description {
+      font-size: 0.8rem;
+    }
+
+    .post-tag {
+      font-size: 0.7rem;
+    }
   }
 </style>

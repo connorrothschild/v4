@@ -1,8 +1,14 @@
 <script>
+  // import SvelteMarkdown from "svelte-markdown";
 </script>
 
 <div class="info">
-  <div class="text"><slot /></div>
+  <div class="text">
+    <p>
+      <slot />
+      <!-- <SvelteMarkdown source={$$slots.content} /> -->
+    </p>
+  </div>
 </div>
 
 <style>

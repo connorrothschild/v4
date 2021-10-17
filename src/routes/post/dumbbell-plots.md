@@ -5,6 +5,7 @@ description: How to create dumbbell plots in R, using {ggalt}
 date: "2020-03-02"
 image: dumbbell-plots/header.png
 archived: true
+tags: ['r', 'tutorial']
 ---
 
 <script>

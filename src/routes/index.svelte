@@ -35,7 +35,7 @@
       dolores qui!
     </p>
 
-    <a sveltekit:prefetch href="/blog" class="pulled-right padding-bottom"
+    <a sveltekit:prefetch href="/post" class="pulled-right padding-bottom"
       >See my blog &#8594;</a
     >
   </section>

@@ -5,6 +5,7 @@ description: Why Svelte has replaced (and complemented) D3 as my go-to tool for 
 image: 'lorem'
 date: "2021-07-02"
 featured: true
+tags: ['svelte', 'd3', 'tutorial']
 ---
 
 <script>

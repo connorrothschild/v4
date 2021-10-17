@@ -5,11 +5,13 @@ date: "2021-02-10"
 description: A minimal, content-focused blog site built with NuxtJS and Bulma.
 image: nuxt-blog-starter/header.png
 featured: true
+tags: ['vue', 'nuxt', 'package']
 ---
 
 <script>
   import Image from "../../lib/global/Image.svelte"
   import Info from "../../lib/global/Info.svelte"
+  import Code from "../../lib/global/Code.svelte"
 </script>
 
 I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own site](https://www.connorrothschild.com/).
@@ -68,19 +70,24 @@ An example of this can be seen below the Sass defaults that live within `assets/
 
 Nuxt makes transitions easy. This template expands upon Nuxt's powerful page transitions by using [Greensock's GSAP](https://greensock.com/gsap/). In particular, I define elements that should fade in nicely for each page, like this:
 
+<Code language="js">
+
 ```js
 transition: {
     mode: 'out-in',
     css: false,
     enter () {
-        TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
+        TweenMax.fromTo(".title", 
+            {x: "10%"}, {x: "0%" , duration: 0.1});
         TweenMax.fromTo(".subtitle, .card, .img",
-                            {x: "10%", autoAlpha: 0},
-                            {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut}
-                        );
+            {x: "10%", autoAlpha: 0},
+            {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut}
+        );
     },
 },
 ```
+
+</Code>
 
 This creates some subtle yet attractive page transitions:
 

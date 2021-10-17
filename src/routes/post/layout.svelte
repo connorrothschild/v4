@@ -1,5 +1,6 @@
 <script>
   import { seo } from "$lib/store";
+  import { dateFormat } from "../../scripts/utils.js";
 
   export let title;
   export let description;
@@ -8,14 +9,6 @@
   $seo = {
     title: title,
     description: description,
-  };
-
-  const dateFormat = (date) => {
-    const parsed = new Date(date);
-    const month = parsed.toLocaleString("default", { month: "long" });
-    const year = parsed.getUTCFullYear();
-
-    return `${month} ${year}`;
   };
 </script>
 
@@ -36,7 +29,7 @@
     <a
       class="footer border-top no-underline block"
       sveltekit:prefetch
-      href="/blog">&#8592; Back to all posts</a
+      href="/post">&#8592; Back to all posts</a
     >
   </div>
 </main>

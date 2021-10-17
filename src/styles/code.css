@@ -34,11 +34,6 @@ pre[class*="language-"][data-line] {
     padding: 1em;
 }
 
-pre[class*="language-"].line-numbers[data-line] {
-    position: relative;
-    padding: 1em 0 1em 3.5em;
-}
-
 pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,

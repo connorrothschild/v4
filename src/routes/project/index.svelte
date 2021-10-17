@@ -31,6 +31,12 @@
   );
 
   let showAll = false;
+
+  import { seo } from "$lib/store.js";
+  $seo = {
+    title: "Projects | Connor Rothschild",
+    description: "Some of my projects.",
+  };
 </script>
 
 <main>

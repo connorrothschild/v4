@@ -16,9 +16,6 @@
 
 <script>
   import BlogSection from "$lib/BlogSection.svelte";
-  import { paginate, PaginationNav } from "svelte-paginate";
-  import { seo } from "$lib/store.js";
-  //https://www.npmjs.com/package/svelte-paginate
 
   export let posts;
 
@@ -27,9 +24,10 @@
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
     .sort((a, b) => b.metadata.featured);
 
+  import { seo } from "$lib/store.js";
   $seo = {
-    title: "Connor Rothschild",
-    description: "Description",
+    title: "Blog | Connor Rothschild",
+    description: "Some of my writing.",
   };
 
   let anyHovered = false;

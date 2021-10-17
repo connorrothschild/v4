@@ -5,6 +5,7 @@ description: Visualizing the precipitous rise in gun sales during COVID-19
 date: "2020-07-02"
 image: covid-gun-spikes/header.png
 featured: true
+tags: ['analysis', 'r']
 ---
 
 <script>
@@ -65,7 +66,7 @@ data %>%
 
 </Code>
 
-<TableHandler src="../images/post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/"></TableHandler>
+<TableHandler src="../images/post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/" width="70%"></TableHandler>
 
 As the table shows, the last 5 months have seen some of the greatest numbers of firearm background checks since the FBI has collected such data. It seems as if the only non-2020 entrants to the top 7 are from December 2015, and December 2019, which are (perhaps coincidentally) both the final months before new presidents took office.
 
@@ -195,7 +196,7 @@ data %>%
 
 <Image src="../images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>
 
-## The Impact
+## The impact
 
 Most obviously, background checks are a proxy for gun purchases and gun ownership; as such, this data informs us that more and more people are grabbing for guns during COVID-19, perhaps in anticipation of some post-COVID apocalypse or perceived government overreach during.
 

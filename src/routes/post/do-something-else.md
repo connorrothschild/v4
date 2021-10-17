@@ -5,6 +5,7 @@ description: Finding meaningful work
 image: adding-a-chart-to-your-d3-tooltip/header.png
 date: "2021-05-02"
 draft: true
+tags: ['personal']
 ---
 
 <script>

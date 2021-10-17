@@ -5,6 +5,7 @@ description: Or, how a single line of code can create a beautiful small multiple
 date: "2020-02-02"
 image: refugee-trends/header.png
 archived: true
+tags: ['analysis', 'r']
 ---
 
 <script>

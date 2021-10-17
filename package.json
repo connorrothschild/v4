@@ -37,6 +37,7 @@
     "highlight.js": "^11.2.0",
     "node-fetch": "^2.6.5",
     "prismjs": "^1.25.0",
+    "svelte-markdown": "^0.1.12",
     "svelte-paginate": "^0.0.1"
   }
 }

@@ -336,3 +336,19 @@ a:not(.no-underline):hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+blockquote {
+  border-left: 10px solid var(--accent-color);
+  padding: 1rem;
+  margin-left: .5rem;
+  background: rgba(var(--accent-color-rgb), .125);
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+/* TWEET EMBED */
+.twitter-tweet {
+  margin: 10px auto;
+}

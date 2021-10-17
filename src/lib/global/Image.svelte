@@ -87,4 +87,10 @@
     border-radius: 5px;
     cursor: zoom-out;
   }
+
+  @media screen and (max-width: 768px) {
+    img {
+      width: 100% !important;
+    }
+  }
 </style>

@@ -5,6 +5,7 @@ description: Leveraging the power of {gganimate} and {magick} to combine animate
 date: "2019-10-09"
 image: tidy-tuesday-powerlifting/header.png
 archived: true
+tags: ['r', 'tutorial']
 ---
 
 <script>
