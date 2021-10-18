@@ -27,17 +27,5 @@
   <slot />
 </PageTransition>
 
-<!-- </div> -->
 <style>
-  .cursor-follow {
-    position: fixed;
-    user-select: none;
-    font-size: 50px;
-    z-index: 9999;
-  }
-
-  .header {
-    display: flex;
-    place-items: center;
-  }
 </style>

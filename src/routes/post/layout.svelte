@@ -53,8 +53,4 @@
     margin-bottom: 2rem;
     letter-spacing: 0.64px;
   }
-
-  .footer {
-    padding: 1rem 0 2rem 0;
-  }
 </style>

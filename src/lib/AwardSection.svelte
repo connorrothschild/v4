@@ -1,7 +1,7 @@
 <script>
   export let award;
-  export let slug;
   export let index;
+  //   export let slug;
 
   import { dateFormat } from "../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
