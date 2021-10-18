@@ -3,7 +3,7 @@ title: 1st Place (Houston Track), 2020 Rice Datathon
 organization: Rice DataSci Club
 date: "2020-01-09"
 featured: false
-# media_url: ''
+media_url: 'https://connorrothschild.github.io/datathon-2020/source/'
 project_url: "https://connorrothschild.github.io/datathon-2020/source/"
 ---
 

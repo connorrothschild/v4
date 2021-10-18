@@ -1,4 +1,6 @@
 <script>
+  import BackTo from "$lib/text/BackTo.svelte";
+
   import { seo } from "$lib/store";
   import { dateFormat } from "../../scripts/utils.js";
 
@@ -18,36 +20,30 @@
 </svelte:head>
 
 <main>
-  <div class="post-container">
-    <h1 class="page-title no-border">{title}</h1>
-    <div class="date border-bottom">
-      {dateFormat(date)} | 1 minute read (if you're fast)
-    </div>
-    <div class="post">
-      <slot />
-    </div>
-    <a
-      class="footer border-top no-underline block"
-      sveltekit:prefetch
-      href="/post">&#8592; Back to all posts</a
-    >
+  <!-- <div class="post-container"> -->
+  <BackTo href="/post" text="Blog" classes="page-overline" />
+  <h1 class="page-title no-border">{title}</h1>
+  <div class="date border-bottom">
+    {dateFormat(date)} | 1 minute read (if you're fast)
   </div>
+  <div class="post">
+    <slot />
+    <BackTo href="/post" text="Back to all posts" classes="border-top" />
+  </div>
+  <!-- </div> -->
 </main>
 
 <style>
   main {
-    background: var(--secondary-color);
-  }
-
-  .post-container {
+    /* background: var(--secondary-color); */
     max-width: 768px;
     margin: 0 auto;
     padding: 1em;
-    width: 90vw;
+    /* width: 90vw; */
   }
 
   .post {
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
   }
 
   .date {

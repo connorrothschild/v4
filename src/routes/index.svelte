@@ -6,7 +6,7 @@
 <main>
   <section>
     <h1 style="font-weight: 200;">
-      Hi, I'm <span class="accented" style="font-weight: 600;"
+      Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
         >Connor Rothschild</span
       >
     </h1>
@@ -58,11 +58,8 @@
   }
 
   h1 {
-    /* border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 0.3em; */
     margin: 3rem 0 2rem;
     font-size: 64px;
-    /* width: 100%; */
     text-align: left;
     letter-spacing: -1px;
   }

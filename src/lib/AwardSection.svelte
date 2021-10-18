@@ -1,20 +1,41 @@
 <script>
   export let award;
   export let slug;
+  export let index;
 
   import { dateFormat } from "../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
+
+  let hovered = false;
 </script>
 
-<a class="award-container no-underline" href={award.media_url} target="_blank">
-  <!-- {#if award.featured == true}
-    <div class="featured-star"><Star /></div>
-  {/if} -->
+<a
+  class="award-container no-underline"
+  href={award.media_url}
+  target="_blank"
+  on:mouseover={() => {
+    hovered = true;
+  }}
+  on:focus={() => {
+    hovered = true;
+  }}
+  on:mouseleave={() => {
+    hovered = false;
+  }}
+>
+  {#if award.featured == true}
+    <div class="star-container">
+      <Star
+        {hovered}
+        {index}
+        fill={"var(--accent-color)"}
+        width="18"
+        height="18"
+      />
+    </div>
+  {/if}
   <h1 class="award-title">
     {award.title}
-    {#if award.featured == true}
-      <Star fill="#131A20" width="20" height="20" />
-    {/if}
   </h1>
   <h2 class="award-description">
     {award.organization} | {dateFormat(award.date)}
@@ -28,19 +49,38 @@
     padding: 1.5rem 1rem;
     margin: 0.5rem 0;
     background: rgba(255, 255, 255, 0.8);
-    /* background: linear-gradient(
-      to right,
-      rgba(var(--accent-color-rgb), 0.15) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 90%
-    ); */
-    /* border-radius: 5px; */
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-color: var(--accent-color);
-    border-image-slice: 1;
-    box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 500ms ease;
+    background-image: linear-gradient(to right, white 0%, white 100%);
+
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cecece;
+    /* border-image-slice: 1; */
+    box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 500ms ease, background-image 500ms ease;
+    position: relative;
+    z-index: 0;
+  }
+
+  .award-container:before {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 30%,
+      rgba(var(--accent-color-rgb), 0.45) 100%
+    );
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms linear;
   }
 
   .award-title {
@@ -54,13 +94,14 @@
     letter-spacing: 0.64px;
     text-transform: uppercase;
   }
-
-  .award-container:hover {
-    transform: translateY(-5px);
+  .award-container:hover::before {
+    opacity: 1;
   }
-  /* .featured-star {
+
+  .star-container {
     position: absolute;
     top: 0;
     right: 0;
-  } */
+    padding: 6px;
+  }
 </style>

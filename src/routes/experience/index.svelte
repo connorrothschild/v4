@@ -28,7 +28,7 @@
   <h1 class="page-overline">Experience</h1>
   <h1 class="page-title">
     Where I've
-    <span class="accented bolded ">worked</span>
+    <span class="gradient-accented bolded ">worked</span>
   </h1>
 
   {#each jobs as job}

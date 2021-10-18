@@ -37,7 +37,7 @@
   <h1 class="page-overline">Blog</h1>
   <h1 class="page-title">
     What I've
-    <span class="accented bolded">written</span>​
+    <span class="gradient-accented bolded">written</span>​
   </h1>
   <div class="post-grid">
     {#each filteredPosts as post, index}

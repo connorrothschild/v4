@@ -48,10 +48,9 @@ body::before {
 }
 
 ::selection {
-  background: var(--accent-color);
-  color: white;
-  -webkit-text-fill-color: white;
-  height: 80%;
+  background: rgba(var(--accent-color-rgb), .2);
+  color: black;
+  -webkit-text-fill-color: black;
 }
 
 #svelte {
@@ -251,9 +250,10 @@ button:focus:not(:focus-visible) {
 .page-title {
   font-size: 5rem;
   font-weight: 200;
-  margin: 3rem 0 2rem;
+  margin: 3rem 0 1rem;
   padding-bottom: 2rem;
   border-bottom: .5px solid var(--accent-color);
+  pointer-events: none;
   /* line-height: 3.75rem; */
 }
 
@@ -277,12 +277,15 @@ button:focus:not(:focus-visible) {
   }
 }
 
-.accented {
-  /* color: var(--accent-color); */
+.gradient-accented {
   background: linear-gradient(to right, black 10%, var(--accent-color) 60%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.accented {
+    color: var(--accent-color);
 }
 
 .bolded {

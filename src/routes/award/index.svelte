@@ -32,14 +32,15 @@
   <h1 class="page-overline">Awards</h1>
   <h1 class="page-title">
     What I've
-    <span class="accented bolded ">won</span>
+    <span class="gradient-accented bolded ">won</span>
   </h1>
 
   <div class="awards-grid">
-    {#each awards as award}
+    {#each awards as award, index}
       <AwardSection
         award={award.metadata}
         slug={award.path.replace(/\.[^/.]+$/, "")}
+        {index}
       />
     {/each}
   </div>
@@ -48,12 +49,8 @@
 <style>
   main {
     width: 90vw;
-    max-width: 860px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 1em;
   }
-
-  /* .page-title {
-    font-size: 2.5rem !important;
-  } */
 </style>

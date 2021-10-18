@@ -1,4 +1,5 @@
 <script>
+  import BackTo from "$lib/text/BackTo.svelte";
   import { seo } from "$lib/store";
 
   export let title;
@@ -11,13 +12,12 @@
 </script>
 
 <main>
+  <BackTo href="/project" text="Projects" classes="page-overline" />
   <h1 class="page-title">{title}</h1>
   <div class="project">
     <slot />
+    <BackTo href="/project" text="Back to all projects" classes="border-top" />
   </div>
-  <a class="border-top no-underline block" sveltekit:prefetch href="/project"
-    >&#8592; Back to all projects</a
-  >
 </main>
 
 <style>

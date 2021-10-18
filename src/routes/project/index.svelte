@@ -42,7 +42,7 @@
 <main>
   <h1 class="page-overline">Projects</h1>
   <h1 class="page-title">
-    What I've <span class="accented bolded">built</span>
+    What I've <span class="gradient-accented bolded">built</span>
   </h1>
 
   <div class="projects-container">

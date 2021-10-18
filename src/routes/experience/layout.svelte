@@ -1,5 +1,6 @@
 <script>
-  import { onMount } from "svelte";
+  import BackTo from "$lib/text/BackTo.svelte";
+
   import { seo } from "$lib/store";
 
   export let name;
@@ -13,6 +14,8 @@
 </script>
 
 <main>
+  <BackTo href="/experience" text="Experience" classes="page-overline" />
+
   <h1 class="page-title">
     {name}
     <img
@@ -23,10 +26,8 @@
   </h1>
   <div class="post">
     <slot />
+    <BackTo href="/experience" text="Back to all jobs" classes="border-top" />
   </div>
-  <a class="border-top no-underline block" sveltekit:prefetch href="/experience"
-    >&#8592; Back to all jobs</a
-  >
 </main>
 
 <style>

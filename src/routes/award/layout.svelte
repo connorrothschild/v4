@@ -1,4 +1,5 @@
 <script>
+  import BackTo from "$lib/text/BackTo.svelte";
   import { seo } from "$lib/store";
 
   export let title;
@@ -11,13 +12,13 @@
 </script>
 
 <main>
+  <BackTo href="/award" text="Awards" classes="page-overline" />
+
   <h1 class="page-title">{title}</h1>
   <div class="post">
     <slot />
+    <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>
-  <a class="border-top no-underline block" sveltekit:prefetch href="/award"
-    >&#8592; Back to all awards</a
-  >
 </main>
 
 <style>
@@ -30,14 +31,5 @@
 
   .post {
     margin-bottom: 4rem;
-  }
-
-  .date {
-    font-weight: 300;
-    margin-top: -1rem;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 1rem;
   }
 </style>
