@@ -71,7 +71,7 @@
   }
 
   .hovered {
-    filter: blur(2px);
+    filter: blur(1px);
   }
 
   .project-text {
@@ -79,7 +79,7 @@
     bottom: 0;
     left: 0;
     pointer-events: none;
-    padding: 0.5rem 0.5rem 1rem 1rem;
+    padding: 1.5rem;
     z-index: 3;
   }
 
@@ -90,14 +90,17 @@
 
   h1 {
     font-size: 1.5rem;
+    line-height: 1.15;
     text-shadow: 1px 1px 6px black;
   }
 
   .description {
+    font-family: var(--font-sans);
     font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
     margin-top: 12px;
-    font-weight: 200;
-    letter-spacing: 0.44px;
-    /* text-shadow: 1px 1px 1 0px black; */
+    letter-spacing: 0.64px;
+    text-shadow: 1px 1px 6px black;
   }
 </style>

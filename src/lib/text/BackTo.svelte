@@ -10,8 +10,7 @@
 
 <style>
   a {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-sans);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0;

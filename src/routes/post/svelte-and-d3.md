@@ -11,7 +11,7 @@ tags: ['svelte', 'd3', 'tutorial']
 <script>
   import Code from "$lib/global/Code.svelte"
   import CodeMirror from '$lib/global/CodeMirror.svelte';
-    import Image from "$lib/global/Image.svelte"
+  import Image from "$lib/global/Image.svelte"
   import Info from "$lib/global/Info.svelte"
 </script>
 
@@ -45,7 +45,7 @@ What does that mean? (To be honest, I'm making up the term.) It means that I'm m
 
 Although D3 [claims](https://d3js.org/#selections) to be declarative, it still uses [method chaining](https://www.carlosrendon.me/unfinished_d3_book/d3_method_chaining.html) to provide instructions to render visuals. In Svelte, we don't provide instructions but instead render our SVG elements directly, using `{#each}` blocks. By writing my markup literally and appending data inline, my code makes more sense and causes fewer headaches.
 
-#### What you'll find in this post 
+### What you'll find in this post 
 
 In this post, I'll [1)](#what-d3-does-3%EF%B8%8F⃣) provide an overview of D3, and how it made the process of creating visualizations so much easier; [2)](#literal-programming-with-svelte-) explain why I'm moving away from D3 for DOM manipulation, and instead using Svelte "literally"; and [3)](#bringing-it-home-with-burgers-) provide a funky burger 🍔 example to explain my logic.
 
@@ -187,17 +187,21 @@ Not convinced? Let me explain the logic one more time, with a tastier example:
 
 Imagine we want to prepare a burger. We have an array of objects, each with an ingredient and ingredient-specfic instructions. We want to 1) create each item (insert it into the DOM), and 2) carry out its instructions (execute some function).
 
-```js
-let ingredients = [
-  {item: "Top Bun", instruction: "Place at top of burger."},
-  {item: "Pickles", instruction: "Three pickles, please."},
-  {item: "Cheese", instruction: "Cheese is optional, but it makes the burger better."},
-  {item: "Patty", instruction: "Cook to your satisfaction. Optionally, add two patties."},
-  {item: "Tomato", instruction: "Should be the same width as bun, and thinly sliced."},
-  {item: "Lettuce", instruction: "Should be the same width as bun."},
-  {item: "Bottom Bun", instruction: "Place at bottom of burger."},
-]
-```
+<Code language='js'>
+
+  ```
+  let ingredients = [
+    {item: "Top Bun", instruction: "Place at top of burger."},
+    {item: "Pickles", instruction: "Three pickles, please."},
+    {item: "Cheese", instruction: "Cheese is optional, but it makes the burger better."},
+    {item: "Patty", instruction: "Cook to your satisfaction. Optionally, add two patties."},
+    {item: "Tomato", instruction: "Should be the same width as bun, and thinly sliced."},
+    {item: "Lettuce", instruction: "Should be the same width as bun."},
+    {item: "Bottom Bun", instruction: "Place at bottom of burger."},
+  ]
+  ```
+
+</Code>
 
 There are three ways to make this burger (at least, in our fantasy world where we make burgers via code).
 
@@ -215,7 +219,7 @@ Although I use the Svelte REPL to showcase these three examples, only the last o
 
 <iframe src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="New school burger building"></iframe>
 
-**Our final option** (new new school), we can simply append our instructions directly to the ingredient, *literally*. Here, we skip `for` loops and we skip D3 method chaining; instead, we componentize our general "burger item" and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:
+In **our final option** (new new school), we can simply append our instructions directly to the ingredient, *literally*. Here, we skip `for` loops and we skip D3 method chaining; instead, we componentize our general "burger item" and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:
 
 <iframe src="https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3" width="100%" height='600' title="Literal burger building"></iframe>
 
@@ -265,11 +269,16 @@ Another way to achieve easy responsiveness is to <a href="https://svelte.dev/tut
 
 In regular D3, we often use the [ternary operator](https://en.wikipedia.org/wiki/%3F:) to define condition-specific attributes, like this:
 
+
+<Code language='js'>
+
 ```js
 // Circles are filled green if positive, red if negative
 d3.selectAll('circle')
   .style('fill', d => d.value < 0 ? 'red' : 'green')
 ```
+
+</Code>
 
 This is great, but what if we want to make more significant changes based on app-wide state? For example, imagine we want to show three different types of the same visualization on different screen sizes: 
 
@@ -280,6 +289,9 @@ This is great, but what if we want to make more significant changes based on app
 In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint.
 
 One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for [conditional rendering](https://svelte.dev/tutorial/if-blocks) *directly in our markup*, not just in our JavaScript logic. In other words, while vanilla JavaScript would approach our problem with the following:
+
+
+<Code language='js'>
 
 ```js
 window.addEventListener('resize', function(event) {
@@ -310,7 +322,11 @@ window.addEventListener('resize', function(event) {
 });
 ```
 
+</Code>
+
 Svelte simplifies our logic to:
+
+<Code language='svelte'>
 
 ```svelte
 {#if $windowWidth < 520}
@@ -321,5 +337,7 @@ Svelte simplifies our logic to:
   <Desktop />
 {/if}
 ```
+
+</Code>
 
 Hey, thanks for reading. I appreciate you! In the event that you disagree with me or I got something wrong, please message me on [Twitter](https://twitter.com/CL_Rothschild).

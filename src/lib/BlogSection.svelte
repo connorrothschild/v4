@@ -196,9 +196,10 @@
     font-size: 1.1rem;
     line-height: 1.25;
     text-transform: uppercase;
-    font-family: var(--font-serif);
-    color: #494949;
+    font-family: var(--font-sans);
+    color: rgb(55, 55, 55);
     font-weight: 200;
+    letter-spacing: 0.64px;
   }
 
   .post-description,
@@ -212,9 +213,9 @@
     margin: 1px 3px;
     border-radius: 3px;
     color: rgba(var(--accent-color-rgb), 1);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 100;
-    letter-spacing: 0.64px;
+    /* letter-spacing: 1px; */
     float: right;
   }
 
@@ -230,7 +231,7 @@
   }
 
   .unhovered {
-    filter: grayscale(1) brightness(0.975);
+    filter: grayscale(1);
   }
 
   /* TABLET BREAKPOINT */

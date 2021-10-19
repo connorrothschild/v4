@@ -1,9 +1,9 @@
 :root {
-  --font-serif: ivypresto-display;
-  --font-sans: neue-haas-grotesk-display, -apple-system, sans-serif;
+  --font-serif: ivypresto-display, Georgia, serif;
+  --font-sans: halyard-display, neue-haas-grotesk-display, -apple-system, sans-serif;
   --font-mono: 'Fira Mono', monospace;
     font-family: var(--font-serif);
-  --pure-white: #ffffff;
+  --pure-background-color: #ffffff;
   --primary-color:  #ccdbe9;
   --secondary-color: #d0dde9; 
   --tertiary-color: #edf0f8;
@@ -12,10 +12,11 @@
   --heading-color: rgba(0, 0, 0, 0.7);
   --text-color: #1f1f1f;
   --off-black: #3a3a3a;
+  --pure-text-color: #000000;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
   --column-width: 42rem;
   --column-margin-top: 4rem;
-  --works-on-accent-bg: var(--pure-white);
+  --works-on-accent-bg: var(--pure-background-color);
 }
 
 html {
@@ -42,15 +43,15 @@ body::before {
   left: 10vw;
   z-index: -1;
   background: radial-gradient(50% 50% at 50% 50%,
-      var(--pure-white) 0%,
+      var(--pure-background-color) 0%,
       rgba(255, 255, 255, 0) 100%);
   opacity: 0.05;
 }
 
 ::selection {
   background: rgba(var(--accent-color-rgb), .2);
-  color: black;
-  -webkit-text-fill-color: black;
+  color: var(--pure-text-color);
+  -webkit-text-fill-color: var(--pure-text-color);
 }
 
 #svelte {
@@ -60,18 +61,18 @@ body::before {
 }
 
 h1,
-h2,
-p {
+h2 {
   font-weight: 400;
   color: var(--text-color)
 }
 
 p, li {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
-  font-weight: 400;
+  color: var(--text-color);
+  font-family:  var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  letter-spacing: 0.22px;
+  font-weight: 300;
 }
 
 li {
@@ -85,6 +86,8 @@ li {
 strong {
   font-weight: 700;
   font-weight: 600;
+  font-weight: 500;
+  color: var(--pure-text-color);
 }
 
 em {
@@ -181,6 +184,7 @@ button:focus:not(:focus-visible) {
 }
 
 .button {
+  font-family: var(--font-sans);
   border: 1px solid var(--secondary-color);
   cursor: pointer;
   border-radius: 3px;
@@ -189,7 +193,7 @@ button:focus:not(:focus-visible) {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   box-shadow: 1px 1px 6px #cecece80;
-  padding: 2px 7px;
+  padding: 6px 10px;
   position: relative;
   z-index: 1;
   font-weight: 200;
@@ -207,9 +211,7 @@ button:focus:not(:focus-visible) {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-  	background-image: linear-gradient(135deg,
-    var(--primary-color) -25%,
-    var(--accent-color) 125%);
+  	background-image: linear-gradient(135deg, var(--primary-color) 10%, white 50%, rgba(var(--accent-color-rgb), .4) 160%);
   	z-index: -1;
   	opacity: 0;
   	transition: opacity 250ms linear;
@@ -238,7 +240,7 @@ button:focus:not(:focus-visible) {
 }
 
 .page-overline {
-  font-family: -apple-system, sans-serif;
+  font-family: var(--font-sans);
   font-size: .88rem;
   margin-top: 2rem;
   margin-bottom: -2.5rem;

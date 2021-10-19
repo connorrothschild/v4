@@ -5,7 +5,7 @@ imageUrl: axios
 description: "Lorem"
 ---
 
-I worked as a visual journalist at Axios in the summer after graduating. While there, I created a variety of visualizations for journalists and wrote my own stories.
+I worked as a visual journalist at Axios in the summer after graduating. While there, I created a variety of visualizations for journalists and even had the opportunity to write a few of my own stories!
 
 Here are some of my favorite visuals I created in my tenure there:
 

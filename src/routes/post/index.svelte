@@ -15,6 +15,9 @@
 </script>
 
 <script>
+  import { slide } from "svelte/transition";
+  import { linear } from "svelte/easing";
+
   import BlogSection from "$lib/BlogSection.svelte";
 
   export let posts;
@@ -24,6 +27,10 @@
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
     .sort((a, b) => b.metadata.featured);
 
+  let otherPosts = posts
+    .filter((d) => d.metadata.archived == true)
+    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
+
   import { seo } from "$lib/store.js";
   $seo = {
     title: "Blog | Connor Rothschild",
@@ -31,6 +38,7 @@
   };
 
   let anyHovered = false;
+  let showAll = false;
 </script>
 
 <main>
@@ -48,17 +56,28 @@
         bind:anyHovered
       />
     {/each}
-    <!-- {#if items.length > pageSize}
-      <PaginationNav
-        totalItems={items.length}
-        {pageSize}
-        {currentPage}
-        limit={1}
-        showStepOptions={true}
-        on:setPage={(e) => (currentPage = e.detail.page)}
-      />
-    {/if} -->
   </div>
+  {#if showAll}
+    <h1 class="archives-title">😬 The archives 😬</h1>
+    <div class="post-grid">
+      {#each otherPosts as post, index}
+        <BlogSection
+          post={post.metadata}
+          slug={post.path.replace(/\.[^/.]+$/, "")}
+          {index}
+          bind:anyHovered
+        />
+      {/each}
+    </div>
+  {/if}
+  <button
+    class="button pulled-right block"
+    on:click={() => {
+      showAll = !showAll;
+    }}
+  >
+    {showAll ? "Hide the archives 👍" : "Show the archives 😬"}
+  </button>
 </main>
 
 <style>
@@ -79,5 +98,16 @@
     .post-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  .archives-title {
+    font-size: 3rem;
+    margin: 1.5rem 1rem 1rem 1rem;
+    border-top: 1px solid rgba(var(--accent-color-rgb), 0.5);
+    padding: 2rem 0 0.5rem 0;
+    font-weight: 100;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
   }
 </style>

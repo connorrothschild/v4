@@ -72,10 +72,7 @@
       showAll = !showAll;
     }}
   >
-    {showAll ? "Hide others" : "Show all"}
-    <span style="font-size: .85rem; vertical-align: top;">
-      {showAll ? "↑" : "↓"}</span
-    >
+    {showAll ? "Hide others ↑" : "Show all ↓"}
   </button>
 </main>
 
