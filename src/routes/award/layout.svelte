@@ -1,5 +1,7 @@
 <script>
+  import Transition from "$lib/Transitions/Content.svelte";
   import BackTo from "$lib/Text/BackTo.svelte";
+
   import { seo } from "$lib/store";
 
   export let title;
@@ -11,6 +13,7 @@
   };
 </script>
 
+<Transition />
 <main>
   <BackTo href="/award" text="Awards" classes="page-overline" />
 

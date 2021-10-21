@@ -1,6 +1,7 @@
 <script>
-  import BackTo from "$lib/Text/BackTo.svelte";
   import Transition from "$lib/Transitions/Content.svelte";
+  import BackTo from "$lib/Text/BackTo.svelte";
+
   import { seo } from "$lib/store";
 
   export let title;
