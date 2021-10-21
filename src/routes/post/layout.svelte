@@ -1,6 +1,6 @@
 <script>
   import Transition from "$lib/Transitions/Content.svelte";
-  import BackTo from "$lib/Text/BackTo.svelte";
+  import BackTo from "$lib/Back.svelte";
 
   import { seo } from "$lib/store";
   import { dateFormat } from "../../scripts/utils.js";
