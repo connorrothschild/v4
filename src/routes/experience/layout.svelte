@@ -1,6 +1,6 @@
 <script>
   import Transition from "$lib/Transitions/Content.svelte";
-  import BackTo from "$lib/Back.svelte";
+  import BackTo from "$lib/BackTo.svelte";
 
   import { seo } from "$lib/store";
 
