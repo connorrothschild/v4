@@ -28,7 +28,9 @@
     }}
     sveltekit:prefetch
     href="/{code}"
-    class={$page.path == `/${code}` ? "current" : ""}>{title}</a
+    class={$page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}`
+      ? "current"
+      : ""}>{title}</a
   >
 </li>
 
@@ -56,15 +58,15 @@
 
   @media screen and (max-width: 560px) {
     li {
-      font-size: 0.9rem;
-      margin-right: 1.35rem;
+      font-size: 2.5vw;
+      margin-right: 2vw;
     }
   }
 
   @media screen and (max-width: 460px) {
     li {
-      font-size: 0.7rem;
-      margin-right: 1rem;
+      font-size: 3.5vw;
+      margin-right: 3vw;
     }
   }
 </style>

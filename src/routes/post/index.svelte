@@ -19,6 +19,7 @@
   import { linear } from "svelte/easing";
 
   import BlogSection from "$lib/BlogSection.svelte";
+  import Transition from "$lib/Transitions/Main.svelte";
 
   export let posts;
 
@@ -41,13 +42,14 @@
   let showAll = false;
 </script>
 
+<Transition />
 <main>
   <h1 class="page-overline">Blog</h1>
   <h1 class="page-title">
     What I've
     <span class="gradient-accented bolded">written</span>​
   </h1>
-  <div class="post-grid">
+  <div class="transition-container post-grid">
     {#each filteredPosts as post, index}
       <BlogSection
         post={post.metadata}
@@ -58,16 +60,18 @@
     {/each}
   </div>
   {#if showAll}
-    <h1 class="archives-title">😬 The archives 😬</h1>
-    <div class="post-grid">
-      {#each otherPosts as post, index}
-        <BlogSection
-          post={post.metadata}
-          slug={post.path.replace(/\.[^/.]+$/, "")}
-          {index}
-          bind:anyHovered
-        />
-      {/each}
+    <div transition:slide={{ duration: 300, easing: linear }}>
+      <h1 class="archives-title">😬 The archives 😬</h1>
+      <div class="transition-container post-grid">
+        {#each otherPosts as post, index}
+          <BlogSection
+            post={post.metadata}
+            slug={post.path.replace(/\.[^/.]+$/, "")}
+            {index}
+            bind:anyHovered
+          />
+        {/each}
+      </div>
     </div>
   {/if}
   <button

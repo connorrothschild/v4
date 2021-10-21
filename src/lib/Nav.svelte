@@ -23,7 +23,12 @@
 
   @media screen and (max-width: 560px) {
     ul {
-      justify-content: flex-start;
+      width: 85%;
+      margin: auto 0;
+      padding: 1em;
+      list-style-type: none;
+      display: flex;
+      margin-right: auto;
     }
   }
 </style>

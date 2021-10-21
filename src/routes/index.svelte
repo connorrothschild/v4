@@ -1,16 +1,19 @@
 <script>
   import Spinner from "$lib/Spinner.svelte";
+  import Transition from "$lib/Transitions/Home.svelte";
   let options = ["Axios", "Texas Policy Lab", "USSOCOM"];
 </script>
 
+<Transition />
 <main>
   <section>
-    <h1 style="font-weight: 200;">
-      Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
-        >Connor Rothschild</span
+    <h1 class="title">
+      Hi, I'm <span
+        class="gradient-accented block-if-mobile"
+        style="font-weight: 600;">Connor Rothschild</span
       >
     </h1>
-    <h2>
+    <h2 class="subtitle">
       I'm a data scientist who specializes in telling visual stories on the web.
       Right now, I'm doing that at <a
         href="https://www.mokshadata.com/"
@@ -57,14 +60,15 @@
     flex: 1;
   }
 
-  h1 {
+  .title {
     margin: 3rem 0 2rem;
     font-size: 64px;
     text-align: left;
     letter-spacing: -1px;
+    font-weight: 200;
   }
 
-  h2 {
+  .subtitle {
     font-size: 32px;
     line-height: 1.5;
     margin-bottom: 2rem;
@@ -81,6 +85,19 @@
     }
     h2 {
       font-size: 1.75rem;
+    }
+    .block-if-mobile {
+      display: block;
+    }
+  }
+
+  @media (max-width: 568px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.25;
     }
   }
 </style>

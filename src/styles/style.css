@@ -256,7 +256,7 @@ button:focus:not(:focus-visible) {
   padding-bottom: 2rem;
   border-bottom: .5px solid var(--accent-color);
   pointer-events: none;
-  /* line-height: 3.75rem; */
+  user-select: none;
 }
 
 /* TABLET BREAKPOINT */

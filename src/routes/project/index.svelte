@@ -14,9 +14,12 @@
 </script>
 
 <script>
-  import { slide } from "svelte/transition";
-  import { linear } from "svelte/easing";
+  import Transition from "$lib/Transitions/Main.svelte";
   import ProjectSection from "$lib/ProjectSection.svelte";
+
+  import { linear } from "svelte/easing";
+  import { slide } from "svelte/transition";
+
   export let projects;
 
   let filteredProjects = projects
@@ -39,41 +42,44 @@
   };
 </script>
 
+<Transition />
 <main>
   <h1 class="page-overline">Projects</h1>
   <h1 class="page-title">
     What I've <span class="gradient-accented bolded">built</span>
   </h1>
 
-  <div class="projects-container">
-    {#each featuredProjects as project}
-      <ProjectSection
-        project={project.metadata}
-        slug={project.path.replace(/\.[^/.]+$/, "")}
-      />
-    {/each}
-  </div>
-  {#if showAll}
-    <div
-      transition:slide={{ duration: 300, easing: linear }}
-      class="projects-container"
-    >
-      {#each otherProjects as project}
+  <div class="transition-container">
+    <div class="projects-container">
+      {#each featuredProjects as project}
         <ProjectSection
           project={project.metadata}
           slug={project.path.replace(/\.[^/.]+$/, "")}
         />
       {/each}
     </div>
-  {/if}
-  <button
-    class="button pulled-right block"
-    on:click={() => {
-      showAll = !showAll;
-    }}
-  >
-    {showAll ? "Hide others ↑" : "Show all ↓"}
-  </button>
+    {#if showAll}
+      <div
+        transition:slide={{ duration: 300, easing: linear }}
+        class="projects-container"
+      >
+        {#each otherProjects as project}
+          <ProjectSection
+            project={project.metadata}
+            slug={project.path.replace(/\.[^/.]+$/, "")}
+          />
+        {/each}
+      </div>
+    {/if}
+    <button
+      class="button pulled-right block"
+      on:click={() => {
+        showAll = !showAll;
+      }}
+    >
+      {showAll ? "Hide others ↑" : "Show all ↓"}
+    </button>
+  </div>
 </main>
 
 <style>

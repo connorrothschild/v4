@@ -8,7 +8,7 @@
   import { onMount } from "svelte";
 
   import { dateFormat } from "../scripts/utils.js";
-  import Star from "$lib/icons/Star.svelte";
+  import Star from "$lib/Icons/Star.svelte";
 
   /* Initialize variables which will bind to our DOM elements */
   let card,

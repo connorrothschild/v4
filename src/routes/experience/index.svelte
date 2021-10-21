@@ -14,8 +14,11 @@
 </script>
 
 <script>
+  import Transition from "$lib/Transitions/Main.svelte";
   import JobSection from "$lib/JobSection.svelte";
   export let jobs;
+
+  const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
 
   import { seo } from "$lib/store.js";
   $seo = {
@@ -24,6 +27,7 @@
   };
 </script>
 
+<Transition />
 <main>
   <h1 class="page-overline">Experience</h1>
   <h1 class="page-title">
@@ -31,9 +35,11 @@
     <span class="gradient-accented bolded ">worked</span>
   </h1>
 
-  {#each jobs as job}
-    <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
-  {/each}
+  <div class="transition-container">
+    {#each sortedJobs as job}
+      <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
+    {/each}
+  </div>
 </main>
 
 <style>

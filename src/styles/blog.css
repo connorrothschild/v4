@@ -1,32 +1,32 @@
-.post h1 {
+.content h1 {
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.post h2 {
+.content h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
-.post h3 {
+.content h3 {
     margin-top: 1.5rem;
     margin-bottom: .75rem;
 }
 
-.post h3,
-.post h4,
-.post h5,
-.post h6,
-.post p,
-.post button,
-.post pre,
-.post ol,
-.post ul,
-.post iframe,
-.post hr,
-.post img,
-.post table,
-.post blockquote {
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p,
+.content button,
+.content pre,
+.content ol,
+.content ul,
+.content iframe,
+.content hr,
+.content img,
+.content table,
+.content blockquote {
     margin-bottom: 1.15rem;
 }
 
@@ -35,7 +35,7 @@ blockquote p:last-of-type {
 }
 
 
-.post img:not(.expanded) {
+.content img:not(.expanded) {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .15);
     border-radius: 5px;
 }
