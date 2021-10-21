@@ -29,7 +29,7 @@
     width: 90vw;
   }
 
-  .post {
+  .content {
     margin-bottom: 4rem;
   }
 </style>
