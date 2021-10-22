@@ -46,7 +46,8 @@
 <main>
   <h1 class="page-overline">Projects</h1>
   <h1 class="page-title">
-    What I've <span class="gradient-accented bolded">built</span>
+    What I've
+    <span class="gradient-accented bolded">built</span>
   </h1>
 
   <div class="transition-container">
@@ -84,10 +85,10 @@
 
 <style>
   main {
-    width: 90vw;
     max-width: 860px;
     margin: 0 auto;
     padding: 1em;
+    width: 90%;
   }
 
   .projects-container {

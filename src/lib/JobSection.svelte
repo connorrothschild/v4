@@ -46,7 +46,7 @@
   }
 
   .job-image {
-    margin-left: 12px;
+    margin-left: 16px;
     width: 40px;
     transition: width 300ms ease;
   }
@@ -87,59 +87,25 @@
   /* TABLET */
   @media (max-width: 768px) {
     h2 {
-      font-size: 2rem !important;
+      font-size: 1.75rem !important;
     }
     .job-container {
-      padding: 0.5em 0;
-      height: 100px;
+      padding: 1.5rem 0;
     }
     .job-image {
-      width: 32.5px;
-      margin-left: 8px;
+      width: 28px;
+      margin-left: 10px;
     }
   }
 
   /* MOBILE */
-  @media (max-width: 560px) {
-    .job-container {
-      padding: 0.5em 0;
-      height: 100px;
-    }
-  }
-
   /* TINY */
   @media (max-width: 400px) {
     h2 {
       font-size: 1.5rem !important;
     }
     .job-image {
-      width: 25px;
+      width: 22px;
     }
   }
-  /* .logos {
-    display: flex;
-    flex-direction: row;
-    place-items: center;
-  }
-
-  .job-image {
-    margin-left: 1em;
-  }
-  .job-image {
-    filter: blur(2px) grayscale(0.8);
-    transition: filter 400ms ease;
-    cursor: pointer;
-  }
-
-  .job-image.hovered {
-    filter: blur(0) grayscale(0.8);
-  } */
-
-  /* .job-image {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .job-image.hovered {
-    transform: rotate(360deg);
-  } */
 </style>

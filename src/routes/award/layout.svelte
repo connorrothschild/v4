@@ -6,6 +6,7 @@
 
   export let title;
   export let description;
+  export let media_url;
 
   $seo = {
     title: title,
@@ -20,6 +21,10 @@
   <h1 class="page-title">{title}</h1>
   <div class="content">
     <slot />
+
+    <p class="media-link">
+      <a href={media_url} target="_blank"> 🏆 See the media 🏆 </a>
+    </p>
     <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>
 </main>
@@ -29,10 +34,17 @@
     max-width: 768px;
     margin: 0 auto;
     padding: 1em;
-    width: 90vw;
+    width: 90%;
   }
 
   .content {
     margin-bottom: 4rem;
+  }
+
+  .media-link {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: var(--font-serif);
   }
 </style>

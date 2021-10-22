@@ -14,7 +14,9 @@ tags: ['analysis', 'r']
 </script>
 
 <svelte:head>
-	  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </svelte:head>
 
 On July 17, Rice University announced [its

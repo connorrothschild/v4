@@ -482,7 +482,6 @@ server <- function(input, output, session) {
       scale_color_manual(values = cols, breaks = legend_ord) +
       scale_x_continuous(labels=scales::dollar_format(prefix="$"), limits = c(25000,200000)) +
       scale_y_continuous(labels=scales::number_format(suffix="%"), limits = c(0,100)) +
-      # cr::drop_axis(axis = "y") +
       theme(axis.line.x = ggplot2::element_line(colour = NULL,
                                                 size = NULL, linetype = NULL, lineend = NULL),
             axis.line.y = ggplot2::element_blank(),

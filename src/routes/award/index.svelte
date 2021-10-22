@@ -19,9 +19,12 @@
 
   export let awards;
 
-  awards
-    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
-    .sort((a, b) => b.metadata.featured);
+  awards.sort((a, b) => {
+    if (b.metadata.featured) return 1;
+    if (!b.metadata.featured) return -1;
+    if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return 1;
+    if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return -1;
+  });
 
   import { seo } from "$lib/store.js";
   $seo = {
@@ -55,5 +58,6 @@
     max-width: 760px;
     margin: 0 auto;
     padding: 1em;
+    width: 90%;
   }
 </style>

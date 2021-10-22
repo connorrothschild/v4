@@ -28,9 +28,8 @@ library(reactable)
 library(tidyverse)
 library(geofacet)
 library(scales)
-library(cr)
 
-set_cr_theme(font = "IBM Plex Sans")
+theme_set(theme_minimal())
 
 data <- readr::read_csv('data/data.csv')
 
@@ -90,8 +89,7 @@ data %>%
                        scale = 1e-6,
                        sep = "",
                        accuracy = 1
-                     )) +
-  drop_axis("y")
+                     ))
 ```
 
 </Code>
@@ -117,7 +115,6 @@ data %>%
   geom_hline(yintercept = 0) +
   scale_x_continuous(expand = expansion(c(0, 0.001))) +
   scale_y_continuous(labels = percent_format(accuracy = 1)) +
-  drop_axis() +
   labs(x = element_blank(), y = element_blank(),
        title = "Year-on-year changes in firearm background checks, 1999-2020",
        subtitle = "January through June")
@@ -148,7 +145,6 @@ Visualized another way, we can explore the temporal change **within each year** 
         title = "Firearm background checks in <span style = 'color: red;'>2020</span>
         compared to <span style = 'color: #343434'>1999 - 2019</span>",
         subtitle = "January to June") +
-    drop_axis() +
     theme(plot.title = ggtext::element_markdown())
   ```
 
@@ -173,7 +169,6 @@ data %>%
   scale_color_manual(values = c("gray", "red")) +
   scale_alpha_manual(values = c(.5, 1)) +
   facet_geo(~ state, scales = 'free_y', grid = "us_state_grid1") +
-  drop_axis() +
   theme(text = element_text(color = "white",
                             family = "IBM Plex Sans"),
         axis.title=element_blank(),

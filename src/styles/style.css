@@ -85,8 +85,7 @@ li {
 
 strong {
   font-weight: 700;
-  font-weight: 600;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--pure-text-color);
 }
 
@@ -257,6 +256,12 @@ button:focus:not(:focus-visible) {
   border-bottom: .5px solid var(--accent-color);
   pointer-events: none;
   user-select: none;
+}
+
+.page-title,
+.page-overline, 
+.transition-container {
+  opacity: 0;
 }
 
 /* TABLET BREAKPOINT */

@@ -14,7 +14,6 @@
   ul {
     width: 90%;
     max-width: 768px;
-    margin: 0 auto;
     padding: 1em;
     list-style-type: none;
     display: flex;
@@ -24,7 +23,7 @@
   @media screen and (max-width: 560px) {
     ul {
       width: 85%;
-      margin: auto 0;
+      margin-right: auto;
       padding: 1em;
       list-style-type: none;
       display: flex;

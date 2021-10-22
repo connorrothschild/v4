@@ -89,7 +89,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    img {
+    img:not(.project img) {
       width: 100% !important;
     }
   }

@@ -50,6 +50,7 @@
     margin: 0 auto;
     padding: 1em;
     margin-bottom: 2rem;
+    width: 90%;
   }
 
   section {

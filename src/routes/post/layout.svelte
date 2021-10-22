@@ -41,7 +41,7 @@
     max-width: 768px;
     margin: 0 auto;
     padding: 1em;
-    /* width: 90vw; */
+    width: 90%;
   }
 
   .content {

@@ -31,10 +31,8 @@ library(tidyverse)
 library(ggtext)
 library(gifski)
 library(gganimate)
-library(cr)
 
-set_cr_theme(font = "Proxima Nova")
-# theme_set(theme_minimal())
+theme_set(theme_minimal())
 ```
 
 ## Load and clean data
@@ -137,7 +135,6 @@ max_lifts_final %>%
   theme(plot.title = element_markdown(lineheight = 1.1, size = 20),
         plot.subtitle = element_text(size = 15)) +
   scale_y_discrete(labels = c("Bench", "Deadlift", "Squat")) +
-  drop_axis(axis = "y") +
   geom_text(aes(x = female, y = lift, label = paste(female, "kg")),
             color = "#D6604C", size = 4, vjust = -2) +
   geom_text(aes(x = male, y = lift, label = paste(male, "kg")),
@@ -167,7 +164,6 @@ animation <- max_lifts_final %>%
   theme(plot.title = element_markdown(lineheight = 1.1, size = 25, margin=margin(0,0,0,0)),
         plot.subtitle = element_text(size = 15, margin=margin(8,0,-30,0))) +
   scale_y_discrete(labels = c("Bench", "Deadlift", "Squat")) +
-  drop_axis(axis = "y") +
   geom_text(aes(x = female, y = lift, label = paste(female, "kg")),
             color = "#D6604C", size = 4, vjust = -2) +
   geom_text(aes(x = male, y = lift, label = paste(male, "kg")),
@@ -199,7 +195,6 @@ animation2 <- max_lifts_final %>%
   geom_segment(aes(xend = 2019.1, yend = diff), linetype = 2, colour = 'grey', show.legend = FALSE) +
   geom_point(size = 2, show.legend = FALSE) +
   geom_text(aes(x = 2019.1, label = lift, color = "#000000"), hjust = 0, show.legend = FALSE) +
-  drop_axis(axis = "y") +
   transition_reveal(year) +
   coord_cartesian(clip = 'off') +
   theme(plot.title = element_text(size = 20)) +

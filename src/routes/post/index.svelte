@@ -25,8 +25,12 @@
 
   let filteredPosts = posts
     .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
-    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
-    .sort((a, b) => b.metadata.featured);
+    .sort((a, b) => {
+      if (b.metadata.featured) return 1;
+      if (!b.metadata.featured) return -1;
+      if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return 1;
+      if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return -1;
+    });
 
   let otherPosts = posts
     .filter((d) => d.metadata.archived == true)
@@ -62,7 +66,7 @@
   {#if showAll}
     <div transition:slide={{ duration: 300, easing: linear }}>
       <h1 class="archives-title">😬 The archives 😬</h1>
-      <div class="transition-container post-grid">
+      <div class="post-grid">
         {#each otherPosts as post, index}
           <BlogSection
             post={post.metadata}
@@ -86,10 +90,10 @@
 
 <style>
   main {
-    /* width: 100%; */
     max-width: 860px;
     margin: 0 auto;
     padding: 1em;
+    width: 90%;
   }
 
   .post-grid {

@@ -1,7 +1,7 @@
 <script>
   export let award;
   export let index;
-  //   export let slug;
+  export let slug;
 
   import { dateFormat } from "../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
@@ -11,8 +11,7 @@
 
 <a
   class="award-container no-underline"
-  href={award.media_url}
-  target="_blank"
+  href={slug}
   on:mouseover={() => {
     hovered = true;
   }}

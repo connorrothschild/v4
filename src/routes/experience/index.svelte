@@ -48,6 +48,7 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 1em;
+    width: 90%;
   }
 
   /* .page-title {
