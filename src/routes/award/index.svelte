@@ -2,7 +2,7 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ fetch }) {
+  export async function load({ page, fetch, session }) {
     const res = await fetch(`/awards.json`);
     const awards = await res.json();
     return {
@@ -19,11 +19,12 @@
 
   export let awards;
 
+  // Sort by featured first, and if featured is the same (both false), then sort by date
   awards.sort((a, b) => {
-    if (b.metadata.featured) return 1;
-    if (!b.metadata.featured) return -1;
-    if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return 1;
-    if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return -1;
+    if (b.metadata.featured && !a.metadata.featured) return 1;
+    if (!b.metadata.featured && a.metadata.featured) return -1;
+    if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
+    if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
   });
 
   import { seo } from "$lib/store.js";
@@ -31,6 +32,8 @@
     title: "Awards | Connor Rothschild",
     description: "Some of my awards.",
   };
+
+  console.log(awards);
 </script>
 
 <Transition />

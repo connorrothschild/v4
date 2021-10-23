@@ -7,11 +7,26 @@
   import Star from "$lib/icons/Star.svelte";
 
   let hovered = false;
+
+  // Prevent double clicking messing up routing
+  import { goto } from "$app/navigation";
+
+  let linkClicked = false;
+  function navigate(slug) {
+    if (linkClicked) return;
+    linkClicked = true;
+    setTimeout(() => {
+      linkClicked = false;
+    }, 500);
+
+    goto(slug);
+  }
 </script>
 
-<a
+<div
   class="award-container no-underline"
-  href={slug}
+  sveltekit:prefetch
+  on:click={navigate(slug)}
   on:mouseover={() => {
     hovered = true;
   }}
@@ -39,7 +54,7 @@
   <h2 class="award-description">
     {award.organization} | {dateFormat(award.date)}
   </h2>
-</a>
+</div>
 
 <style>
   .award-container {
@@ -48,6 +63,7 @@
     padding: 1.5rem 1rem;
     margin: 0.75rem 0;
     background: white;
+    cursor: pointer;
     /* background-image: linear-gradient(
       to right,
       white 0%,

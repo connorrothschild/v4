@@ -8,9 +8,8 @@
 <main>
   <section>
     <h1 class="title">
-      Hi, I'm <span
-        class="gradient-accented block-if-mobile"
-        style="font-weight: 600;">Connor Rothschild</span
+      Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
+        >Connor Rothschild</span
       >
     </h1>
     <h2 class="subtitle">
@@ -81,24 +80,21 @@
   }
 
   @media (max-width: 768px) {
-    h1 {
+    .title {
       font-size: 3.5rem;
     }
-    h2 {
+    .subtitle {
       font-size: 1.75rem;
-    }
-    .block-if-mobile {
-      display: block;
     }
   }
 
   @media (max-width: 568px) {
-    h1 {
+    .title {
       font-size: 3.5rem;
     }
-    h2 {
+    .subtitle {
       font-size: 1.5rem;
-      line-height: 1.25;
+      /* line-height: 1.25; */
     }
   }
 </style>

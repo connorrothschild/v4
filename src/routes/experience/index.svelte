@@ -2,7 +2,7 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ fetch }) {
+  export async function load({ page, fetch, session }) {
     const res = await fetch(`/experience.json`);
     const jobs = await res.json();
     return {

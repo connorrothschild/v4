@@ -10,9 +10,9 @@ export async function get() {
                     path,
                 };
             })
-        );
-    }
-
+            );
+        }
+        
     const projects = await Promise.all(body);
     
     return {

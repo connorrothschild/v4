@@ -23,7 +23,7 @@
     <slot />
 
     <p class="media-link">
-      <a href={media_url} target="_blank"> 🏆 See the media 🏆 </a>
+      <a href={media_url} target="_blank"> 🏆 See media 🏆 </a>
     </p>
     <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>

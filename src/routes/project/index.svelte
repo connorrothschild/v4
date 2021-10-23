@@ -2,9 +2,10 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ fetch }) {
+  export async function load({ page, fetch, session }) {
     const res = await fetch(`/projects.json`);
     const projects = await res.json();
+
     return {
       props: {
         projects,
@@ -50,37 +51,35 @@
     <span class="gradient-accented bolded">built</span>
   </h1>
 
-  <div class="transition-container">
-    <div class="projects-container">
-      {#each featuredProjects as project}
+  <div class="transition-container projects-container">
+    {#each featuredProjects as project}
+      <ProjectSection
+        project={project.metadata}
+        slug={project.path.replace(/\.[^/.]+$/, "").replace("./", "")}
+      />
+    {/each}
+  </div>
+  {#if showAll}
+    <div
+      transition:slide={{ duration: 300, easing: linear }}
+      class="projects-container"
+    >
+      {#each otherProjects as project}
         <ProjectSection
           project={project.metadata}
           slug={project.path.replace(/\.[^/.]+$/, "")}
         />
       {/each}
     </div>
-    {#if showAll}
-      <div
-        transition:slide={{ duration: 300, easing: linear }}
-        class="projects-container"
-      >
-        {#each otherProjects as project}
-          <ProjectSection
-            project={project.metadata}
-            slug={project.path.replace(/\.[^/.]+$/, "")}
-          />
-        {/each}
-      </div>
-    {/if}
-    <button
-      class="button pulled-right block"
-      on:click={() => {
-        showAll = !showAll;
-      }}
-    >
-      {showAll ? "Hide others ↑" : "Show all ↓"}
-    </button>
-  </div>
+  {/if}
+  <button
+    class="button pulled-right block"
+    on:click={() => {
+      showAll = !showAll;
+    }}
+  >
+    {showAll ? "Hide others ↑" : "Show all ↓"}
+  </button>
 </main>
 
 <style>
@@ -102,7 +101,7 @@
     margin: 12px 0 12px auto;
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 700px) {
     .projects-container {
       grid-template-columns: auto;
       grid-template-rows: repeat(1, 1fr);

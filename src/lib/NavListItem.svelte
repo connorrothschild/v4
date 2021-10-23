@@ -58,15 +58,19 @@
 
   @media screen and (max-width: 560px) {
     li {
-      font-size: 2.5vw;
-      margin-right: 2vw;
+      font-size: 3vw;
+      margin-right: 1.5vw;
     }
   }
 
   @media screen and (max-width: 460px) {
     li {
       font-size: 3.5vw;
-      margin-right: 3vw;
+      margin-right: 0;
+    }
+
+    .current {
+      border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.5);
     }
   }
 </style>

@@ -18,16 +18,16 @@
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    margin: 0 auto;
   }
 
   @media screen and (max-width: 560px) {
     ul {
-      width: 85%;
-      margin-right: auto;
-      padding: 1em;
+      width: 88%;
+      padding: 1.1em 0;
       list-style-type: none;
       display: flex;
-      margin-right: auto;
+      margin: 0 auto 0 0;
     }
   }
 </style>

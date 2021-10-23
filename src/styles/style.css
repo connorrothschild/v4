@@ -27,11 +27,11 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: var(--primary-color);
-  background: linear-gradient(180deg,
+  background-color: var(--tertiary-color);
+  /* background: linear-gradient(180deg,
       var(--primary-color) 0%,
       var(--secondary-color) 10.45%,
-      var(--tertiary-color) 41.35%);
+      var(--tertiary-color) 41.35%); */
 }
 
 body::before {
@@ -252,7 +252,7 @@ button:focus:not(:focus-visible) {
   font-size: 5rem;
   font-weight: 200;
   margin: 3rem 0 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: .5px solid var(--accent-color);
   pointer-events: none;
   user-select: none;
@@ -268,7 +268,8 @@ button:focus:not(:focus-visible) {
 @media screen and (max-width: 660px) {
   .page-title {
     font-size: 3.5rem !important;
-    letter-spacing: 1px;
+    padding-bottom: 1rem;
+    /* letter-spacing: 1px; */
   }
 
   .page-overline {
@@ -289,6 +290,8 @@ button:focus:not(:focus-visible) {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone; /* Fixes Safari https://discourse.webflow.com/t/multi-line-gradient-text-safari-ios-fix-i-e-prevent-disappearing-text/135029*/
 }
 
 .accented {

@@ -5,9 +5,23 @@
   import { fly, fade } from "svelte/transition";
 
   let hovered = false;
+
+  // Prevent double clicking messing up routing
+  import { goto } from "$app/navigation";
+
+  let linkClicked = false;
+  function navigate(slug) {
+    if (linkClicked) return;
+    linkClicked = true;
+    setTimeout(() => {
+      linkClicked = false;
+    }, 500);
+
+    goto(slug);
+  }
 </script>
 
-<a class="project-card no-underline" href={slug} sveltekit:prefetch>
+<div class="project-card no-underline" on:click={navigate(slug)}>
   {#if hovered}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
@@ -32,11 +46,11 @@
       out:fade={{ duration: 200 }}
       class="project-text"
     >
-      <h1>{project.title}</h1>
+      <h1 class="title">{project.title}</h1>
       <h2 class="description">{project.description}</h2>
     </div>
   {/if}
-</a>
+</div>
 
 <style>
   .project-card {
@@ -44,6 +58,7 @@
     border-radius: 5px;
     box-shadow: 1px 1px 4px #b2b2b2;
     height: 100%;
+    cursor: pointer;
   }
 
   .project-image {
@@ -61,7 +76,7 @@
     background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 1)
     );
     width: 100%;
     height: 100%;
@@ -83,12 +98,12 @@
     z-index: 3;
   }
 
-  h1,
-  h2 {
+  .title,
+  .description {
     color: white;
   }
 
-  h1 {
+  .title {
     font-size: 1.5rem;
     line-height: 1.15;
     text-shadow: 1px 1px 6px black;
@@ -102,5 +117,29 @@
     margin-top: 12px;
     letter-spacing: 0.64px;
     text-shadow: 1px 1px 6px black;
+  }
+
+  @media screen and (max-width: 600px) {
+    .hovered-gradient {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgb(0, 0, 0)
+      );
+    }
+
+    .project-text {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+    }
   }
 </style>

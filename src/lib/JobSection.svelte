@@ -3,15 +3,29 @@
   export let slug;
 
   let hovered = false;
+
+  // Prevent double clicking messing up routing
+  import { goto } from "$app/navigation";
+
+  let linkClicked = false;
+  function navigate(slug) {
+    if (linkClicked) return;
+    linkClicked = true;
+    setTimeout(() => {
+      linkClicked = false;
+    }, 500);
+
+    goto(slug);
+  }
 </script>
 
-<a
+<div
   class="job-container {hovered ? 'hovered' : ''}"
   on:mouseover={() => (hovered = true)}
   on:focus={() => (hovered = true)}
   on:mouseleave={() => (hovered = false)}
   sveltekit:prefetch
-  href={slug}
+  on:click={navigate(slug)}
 >
   <div style="display: flex; place-items: center;">
     <h2>{job.name}</h2>
@@ -22,7 +36,7 @@
     />
   </div>
   <h3>&#8594;</h3>
-</a>
+</div>
 
 <style>
   .job-container {
@@ -31,6 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   h2 {

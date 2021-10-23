@@ -82,6 +82,20 @@
   $: scale3dVal = xPos && yPos ? 1.02 : 1;
 
   let hovered = false;
+
+  // Prevent double clicking messing up routing
+  import { goto } from "$app/navigation";
+
+  let linkClicked = false;
+  function navigate(slug) {
+    if (linkClicked) return;
+    linkClicked = true;
+    setTimeout(() => {
+      linkClicked = false;
+    }, 500);
+
+    goto(slug);
+  }
 </script>
 
 <svelte:window
@@ -103,14 +117,14 @@
   bind:offsetWidth={cardWidth}
   bind:offsetHeight={cardHeight}
 >
-  <a
+  <div
     style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
 					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
     class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     sveltekit:prefetch
-    href={slug}
+    on:click={navigate(slug)}
   >
     {#if post.featured}
       <div class="featured-star">
@@ -139,7 +153,7 @@
         </div>
       </div>
     </div>
-  </a>
+  </div>
 </div>
 
 <style>
@@ -152,6 +166,7 @@
     overflow: hidden;
     border: 1px solid white;
     transition: all 100ms linear, border 300ms ease;
+    cursor: pointer;
   }
 
   .perspective-container {
@@ -202,20 +217,27 @@
     letter-spacing: 0.64px;
   }
 
+  .post-description {
+    margin-right: 6px;
+  }
+
+  .post-tags-container {
+    margin-left: 6px;
+  }
+
   .post-description,
   .post-tags-container {
     display: inline-block;
   }
 
   .post-tag {
-    padding: 2px 6px;
+    padding: 2px 5px;
     background: rgba(var(--accent-color-rgb), 0.1);
-    margin: 1px 3px;
+    margin: 2px;
     border-radius: 3px;
     color: rgba(var(--accent-color-rgb), 1);
     font-size: 0.85rem;
     font-weight: 100;
-    /* letter-spacing: 1px; */
     float: right;
   }
 
@@ -245,7 +267,7 @@
   /* MOBILE */
   @media screen and (max-width: 460px) {
     .post-container {
-      padding: 15px 20px;
+      padding: 20px 25px;
     }
     .post-title {
       font-size: 1.2rem;

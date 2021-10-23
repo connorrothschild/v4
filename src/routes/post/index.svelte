@@ -2,7 +2,7 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ fetch }) {
+  export async function load({ page, fetch, session }) {
     const res = await fetch(`/posts.json`);
     const posts = await res.json();
 
@@ -25,11 +25,12 @@
 
   let filteredPosts = posts
     .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
+    // Sort by featured first, and if featured is the same (both false), then sort by date
     .sort((a, b) => {
-      if (b.metadata.featured) return 1;
-      if (!b.metadata.featured) return -1;
-      if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return 1;
-      if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return -1;
+      if (b.metadata.featured && !a.metadata.featured) return 1;
+      if (!b.metadata.featured && a.metadata.featured) return -1;
+      if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
+      if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
   let otherPosts = posts
@@ -102,12 +103,6 @@
     /* grid-gap: 15px; */
   }
 
-  @media screen and (max-width: 668px) {
-    .post-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
   .archives-title {
     font-size: 3rem;
     margin: 1.5rem 1rem 1rem 1rem;
@@ -117,5 +112,15 @@
     color: black;
     text-transform: uppercase;
     text-align: center;
+  }
+
+  @media screen and (max-width: 668px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .archives-title {
+      font-size: 9vw;
+    }
   }
 </style>
