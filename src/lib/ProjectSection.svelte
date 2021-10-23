@@ -131,7 +131,7 @@
     .hovered-gradient {
       background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 0),
         rgb(0, 0, 0)
       );
     }
