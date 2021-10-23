@@ -3,6 +3,7 @@
   export let slug;
 
   import { fly, fade } from "svelte/transition";
+  import { detectTouchscreen } from "../scripts/utils.js";
 
   let hovered = false;
 
@@ -21,15 +22,8 @@
   }
 </script>
 
-<div
-  class="project-card no-underline"
-  on:touchstart|preventDefault={() => {
-    hovered = true;
-  }}
-  on:touchend|preventDefault={() => (hovered = false)}
-  on:click={navigate(slug)}
->
-  {#if hovered}
+<div class="project-card no-underline" on:click={navigate(slug)}>
+  {#if hovered || detectTouchscreen()}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
   <img
@@ -47,7 +41,7 @@
     }}
     class:hovered
   />
-  {#if hovered}
+  {#if hovered || detectTouchscreen()}
     <div
       in:fly={{ y: 50, duration: 200 }}
       out:fade={{ duration: 200 }}

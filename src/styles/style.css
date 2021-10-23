@@ -21,7 +21,8 @@
 
 html {
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;  
+  touch-action: manipulation;
 }
 
 body {

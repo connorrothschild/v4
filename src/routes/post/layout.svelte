@@ -50,7 +50,7 @@
 
   .date {
     font-weight: 200;
-    margin-top: -2rem;
+    margin-top: -1.75rem;
     font-size: 1.5rem;
     margin-bottom: 2rem;
     letter-spacing: 0.64px;
