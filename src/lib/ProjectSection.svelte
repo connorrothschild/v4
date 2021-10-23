@@ -21,6 +21,7 @@
   }
 
   // Show titles by default on touch devices
+  import { onMount } from "svelte";
   import { detectTouchscreen } from "../scripts/utils.js";
   let isTouchscreen = false;
   onMount(() => {
