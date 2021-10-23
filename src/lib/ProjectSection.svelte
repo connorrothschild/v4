@@ -21,7 +21,14 @@
   }
 </script>
 
-<div class="project-card no-underline" on:click={navigate(slug)}>
+<div
+  class="project-card no-underline"
+  on:touchstart|preventDefault={() => {
+    hovered = true;
+  }}
+  on:touchend|preventDefault={() => (hovered = false)}
+  on:click={navigate(slug)}
+>
   {#if hovered}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
