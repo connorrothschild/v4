@@ -64,21 +64,21 @@
 <style>
   svg {
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
-    height: 60px;
-    width: 60px;
-    stroke: var(--primary-color);
+    height: 50px;
+    width: 50px;
     fill: rgba(var(--accent-color-rgb), 0.9);
-    stroke-width: 1px;
     z-index: 100;
   }
 
   @media screen and (max-width: 560px) {
+    /* svg {
+      visibility: hidden;
+    } */
     svg {
       height: 40px;
       width: 40px;
-      padding-top: 6px;
     }
   }
 </style>

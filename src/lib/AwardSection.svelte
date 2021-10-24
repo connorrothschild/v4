@@ -9,7 +9,7 @@
   let hovered = false;
 
   // Prevent double clicking messing up routing
-  import { goto } from "$app/navigation";
+  import { goto, prefetch } from "$app/navigation";
 
   let linkClicked = false;
   function navigate(slug) {
@@ -29,6 +29,7 @@
   on:click={navigate(slug)}
   on:mouseover={() => {
     hovered = true;
+    prefetch(slug);
   }}
   on:focus={() => {
     hovered = true;

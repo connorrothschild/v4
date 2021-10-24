@@ -28,9 +28,10 @@
     }}
     sveltekit:prefetch
     href="/{code}"
-    class={$page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}`
-      ? "current"
-      : ""}>{title}</a
+    class="link no-underline {$page.path.replace(/^\/([^\/]*).*$/, '$1') ==
+    `${code}`
+      ? 'current'
+      : ''}">{title}</a
   >
 </li>
 
@@ -39,17 +40,24 @@
     display: inline-block;
     padding: 0;
     margin: 0;
+    margin-left: 2rem;
   }
 
-  a {
-    color: var(--text-color);
+  .link {
+    /* color: var(--text-color); */
+    color: black;
     font-family: var(--font-serif);
     text-transform: uppercase;
+    transition: color 400ms ease;
+  }
+
+  .link:hover {
+    color: var(--accent-color);
   }
 
   .current {
     color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    /* border-bottom: 1px solid var(--accent-color); */
   }
 
   .current:hover {
@@ -59,14 +67,14 @@
   @media screen and (max-width: 560px) {
     li {
       font-size: 3vw;
-      margin-right: 1.5vw;
+      /* margin-right: 1.5vw; */
     }
   }
 
   @media screen and (max-width: 460px) {
     li {
       font-size: 3.5vw;
-      margin-right: 0;
+      margin-left: 1rem;
     }
 
     .current {

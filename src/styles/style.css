@@ -237,6 +237,7 @@ button:focus:not(:focus-visible) {
 .pulled-right { 
   margin-left: auto;
   text-align: right;
+  width: 100%;
 }
 
 .page-overline {

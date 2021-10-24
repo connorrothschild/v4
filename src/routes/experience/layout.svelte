@@ -40,14 +40,11 @@
 
 <style>
   main {
-    max-width: 768px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 1em;
     width: 90%;
-  }
-
-  .content {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .logo {

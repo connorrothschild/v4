@@ -7,7 +7,7 @@
   let hovered = false;
 
   // Prevent double clicking messing up routing
-  import { goto } from "$app/navigation";
+  import { goto, prefetch } from "$app/navigation";
 
   let linkClicked = false;
   function navigate(slug) {
@@ -39,9 +39,11 @@
     class="project-image"
     on:mouseover={() => {
       hovered = true;
+      prefetch(slug);
     }}
     on:focus={() => {
       hovered = true;
+      prefetch(slug);
     }}
     on:mouseleave={() => {
       hovered = false;
@@ -129,11 +131,7 @@
 
   @media screen and (max-width: 600px) {
     .hovered-gradient {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0),
-        rgb(0, 0, 0)
-      );
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
     }
 
     .project-text {

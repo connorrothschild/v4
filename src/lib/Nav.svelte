@@ -2,32 +2,70 @@
   import NavListItem from "./NavListItem.svelte";
 </script>
 
-<ul id="nav">
-  <NavListItem code={""} title={"Home"} />
-  <NavListItem code={"experience"} title={"Work"} />
-  <NavListItem code={"project"} title={"Projects"} />
-  <NavListItem code={"award"} title={"Awards"} />
-  <NavListItem code={"post"} title={"Blog"} />
-</ul>
+<div id="nav">
+  <ul class="left">
+    <NavListItem code="" title="CR" />
+  </ul>
+  <ul class="right">
+    <NavListItem code={"experience"} title={"Work"} />
+    <NavListItem code={"project"} title={"Projects"} />
+    <NavListItem code={"award"} title={"Awards"} />
+    <NavListItem code={"post"} title={"Blog"} />
+  </ul>
+</div>
 
 <style>
+  #nav {
+    display: flex;
+    max-width: 860px;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    place-items: center;
+  }
+
   ul {
-    width: 90%;
-    max-width: 768px;
-    padding: 1em;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
   }
 
+  .left {
+    /* width: 30px; */
+  }
+
+  :global(.left li) {
+    margin-left: 0;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 2rem;
+  }
+
+  .right {
+    flex: 1;
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  /* When nav and icon would overlap, apply padding */
+  @media screen and (max-width: 960px) {
+    .right {
+      margin-right: 80px;
+    }
+  }
   @media screen and (max-width: 560px) {
-    ul {
-      width: 88%;
-      padding: 1.1em 0;
-      list-style-type: none;
-      display: flex;
-      margin: 0 auto 0 0;
+    #nav {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      width: auto;
+    }
+
+    .right {
+      margin: auto;
+    }
+
+    :global(.left li) {
+      font-size: 1.5rem;
     }
   }
 </style>

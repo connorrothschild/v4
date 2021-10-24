@@ -9,47 +9,48 @@
   <section>
     <h1 class="title transition-title">
       Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
-        >Connor Rothschild</span
+        >Connor Rothschild.</span
       >
     </h1>
-    <h2 class="subtitle  transition-subtitle">
-      I'm a data scientist who specializes in telling visual stories on the web.
-      Right now, I'm doing that at <a
+    <h2 class="subtitle transition-subtitle">
+      I tell visual stories on the web. Right now, I lead the interactives and
+      visualization team at <a
         href="https://www.mokshadata.com/"
         target="_blank">Moksha Data</a
-      >. Previously, I did similar work at <Spinner {options} />
+      >.
+      <!-- Previously, I did similar work at <Spinner {options} /> -->
     </h2>
   </section>
 
-  <section class="content  transition-content">
+  <section class="content transition-content">
     <p>
-      During my time at Rice University, I found that nothing motivates me like <em
-        >impact</em
-      >. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo,
-      explicabo? Blanditiis, laborum aliquid odit magni possimus numquam
-      necessitatibus cumque vel. Impedit animi possimus culpa explicabo mollitia
-      fugit delectus dolores qui!
+      I make data make sense for people in the government and nonprofit space.
+      At Moksha, I lead the development of interactives, web applications, and
+      visual essays for our partners in the social impact space.
     </p>
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, explicabo?
-      Blanditiis, laborum aliquid odit magni possimus numquam necessitatibus
-      cumque vel. Impedit animi possimus culpa explicabo mollitia fugit delectus
-      dolores qui!
+      We make it easier for you to talk about the impact you're making in your
+      community, through data-driven research and engaging visual stories.
     </p>
-
-    <a sveltekit:prefetch href="/post" class="pulled-right padding-bottom"
-      >See my blog &#8594;</a
-    >
+    <p>
+      Interested in working with us? <a
+        href="mailto:connor@mokshadata.com?subject=Project%20Inquiry"
+        >Reach out.</a
+      >
+    </p>
   </section>
+  <div class="link-container block pulled-right">
+    <a sveltekit:prefetch href="/experience">More about me &#8594;</a>
+  </div>
 </main>
 
 <style>
   main {
-    max-width: 780px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 1em;
-    margin-bottom: 2rem;
     width: 90%;
+    margin-bottom: 2rem;
   }
 
   section {
@@ -62,7 +63,7 @@
 
   .title {
     margin: 3rem 0 2rem;
-    font-size: 64px;
+    font-size: 76px;
     text-align: left;
     letter-spacing: -1px;
     font-weight: 200;
@@ -70,21 +71,37 @@
 
   .subtitle {
     font-size: 32px;
-    line-height: 1.5;
+    line-height: 1.3;
     margin-bottom: 2rem;
     font-weight: 300;
   }
 
+  .subtitle,
+  .content {
+    width: 75%;
+  }
+
   p {
     margin-bottom: 1rem;
+    letter-spacing: 0.12px;
+  }
+
+  @media (max-width: 868px) {
+    .title {
+      font-size: 64px;
+    }
   }
 
   @media (max-width: 768px) {
     .title {
-      font-size: 3.5rem;
+      font-size: 8vw; /* 3.5rem; */
     }
     .subtitle {
-      font-size: 1.75rem;
+      font-size: 4.5vw; /* 1.75rem; */
+    }
+    .subtitle,
+    .content {
+      width: auto;
     }
   }
 
@@ -94,7 +111,15 @@
     }
     .subtitle {
       font-size: 1.5rem;
-      /* line-height: 1.25; */
+    }
+  }
+
+  @media (max-width: 468px) {
+    .title {
+      font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 1.35rem;
     }
   }
 </style>

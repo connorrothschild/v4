@@ -58,9 +58,10 @@
 <style>
   main {
     width: 90vw;
-    max-width: 760px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 1em;
     width: 90%;
+    margin-bottom: 2rem;
   }
 </style>

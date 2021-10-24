@@ -84,7 +84,7 @@
   let hovered = false;
 
   // Prevent double clicking messing up routing
-  import { goto } from "$app/navigation";
+  import { goto, prefetch } from "$app/navigation";
 
   let linkClicked = false;
   function navigate(slug) {
@@ -109,8 +109,11 @@
   on:mouseover={() => {
     anyHovered = true;
     hovered = true;
+    prefetch(slug);
   }}
-  on:focus={null}
+  on:focus={() => {
+    prefetch(slug);
+  }}
   on:mousemove={readyToHover ? setCoords : null}
   on:mouseleave={resetCoords}
   bind:this={card}
@@ -123,7 +126,6 @@
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
     class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-    sveltekit:prefetch
     on:click={navigate(slug)}
   >
     {#if post.featured}
@@ -181,6 +183,7 @@
     height: 100%;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.01);
+    /* background: rgba(var(--accent-color-rgb), 0.025); */
     filter: blur(20px);
     z-index: 1;
     pointer-events: none;
@@ -267,18 +270,20 @@
   /* MOBILE */
   @media screen and (max-width: 460px) {
     .post-container {
-      padding: 20px 25px;
+      padding: 15px;
     }
+
     .post-title {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      width: 85%;
     }
 
     .post-description {
-      font-size: 0.9rem;
+      font-size: 0.65rem;
     }
 
     .post-tag {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
     }
   }
 </style>
