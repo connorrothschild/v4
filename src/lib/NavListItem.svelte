@@ -45,19 +45,22 @@
 
   .link {
     /* color: var(--text-color); */
-    color: black;
+    color: rgb(65, 65, 65);
     font-family: var(--font-serif);
     text-transform: uppercase;
     transition: color 400ms ease;
   }
 
+  :global(.left .link) {
+    color: black;
+  }
+
   .link:hover {
-    color: var(--accent-color);
+    color: var(--text-color);
   }
 
   .current {
     color: var(--accent-color);
-    /* border-bottom: 1px solid var(--accent-color); */
   }
 
   .current:hover {
@@ -67,7 +70,6 @@
   @media screen and (max-width: 560px) {
     li {
       font-size: 3vw;
-      /* margin-right: 1.5vw; */
     }
   }
 
@@ -75,10 +77,6 @@
     li {
       font-size: 3.5vw;
       margin-left: 1rem;
-    }
-
-    .current {
-      border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.5);
     }
   }
 </style>

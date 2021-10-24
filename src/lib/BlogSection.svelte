@@ -268,9 +268,10 @@
   }
 
   /* MOBILE */
-  @media screen and (max-width: 460px) {
+  @media screen and (max-width: 420px) {
     .post-container {
       padding: 15px;
+      margin: 10px 6px;
     }
 
     .post-title {

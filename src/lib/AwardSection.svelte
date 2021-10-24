@@ -53,7 +53,9 @@
     {award.title}
   </h1>
   <h2 class="award-description">
-    {award.organization} | {dateFormat(award.date)}
+    <span class="organization">{award.organization}</span>
+    <span class="divider">|</span>
+    <span class="date">{dateFormat(award.date)}</span>
   </h2>
 </div>
 
@@ -130,5 +132,29 @@
     top: 0;
     right: 0;
     padding: 6px;
+  }
+
+  @media screen and (max-width: 400px) {
+    .award-title {
+      font-size: 1.35rem;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    .organization,
+    .date {
+      display: block;
+    }
+
+    .organization {
+      font-weight: 300;
+    }
+
+    .date {
+      margin-top: 6px;
+      font-size: 0.8rem;
+    }
   }
 </style>

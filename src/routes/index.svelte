@@ -30,7 +30,7 @@
     </p>
     <p>
       We make it easier for you to talk about the impact you're making in your
-      community, through data-driven research and engaging visual stories.
+      community, through data-driven and engaging visual stories.
     </p>
     <p>
       Interested in working with us? <a

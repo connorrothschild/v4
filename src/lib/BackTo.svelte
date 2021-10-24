@@ -5,23 +5,25 @@
 </script>
 
 <div class={classes}>
-  <a class="block no-underline" {href} sveltekit:prefetch
-    >&#8592; {@html text}
-  </a>
+  <a class="padding-bottom" {href} sveltekit:prefetch>&#8592; {@html text} </a>
 </div>
 
 <style>
+  div {
+    width: 100%;
+  }
+
   a {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0;
     font-weight: 300;
-    transition: transform 300ms ease;
+    /* transition: transform 300ms ease; */
   }
 
-  a:hover {
+  /* a:hover {
     transform: translateX(-10px);
-  }
+  } */
 
   @media screen and (max-width: 660px) {
     a {

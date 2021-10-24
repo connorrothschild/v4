@@ -81,7 +81,7 @@ li {
   list-style-position: outside;
   font-weight: 300;
   line-height: 1.5;
-  margin-bottom: 0.5rem
+  /* margin-bottom: 0.5rem; */
 }
 
 strong {
@@ -237,7 +237,6 @@ button:focus:not(:focus-visible) {
 .pulled-right { 
   margin-left: auto;
   text-align: right;
-  width: 100%;
 }
 
 .page-overline {
@@ -269,7 +268,7 @@ button:focus:not(:focus-visible) {
 /* TABLET BREAKPOINT */
 @media screen and (max-width: 660px) {
   .page-title {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
     padding-bottom: 1rem;
     /* letter-spacing: 1px; */
   }
@@ -282,8 +281,14 @@ button:focus:not(:focus-visible) {
 /* MOBILE BREAKPOINT */
 @media screen and (max-width: 460px) {
   .page-title {
-    font-size: 2.5rem !important;
-    letter-spacing: 1px;
+    font-size: 2.5rem;
+    /* letter-spacing: 1px; */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .page-title {
+    font-size: 2rem;
   }
 }
 
@@ -305,7 +310,7 @@ button:focus:not(:focus-visible) {
 }
 
 .padding-bottom { 
-  padding-bottom: 4px;
+  padding-bottom: .1rem;
 }
 
 .border-top {
@@ -329,12 +334,22 @@ button:focus:not(:focus-visible) {
 }
 
 a:not(.no-underline) {
-  /* display: inline-block; */
   position: relative;
   color: var(--accent-color);
+  background:linear-gradient(var(--accent-color), var(--accent-color)) left bottom no-repeat;
+  background-size: 0% 1px;
+  transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
 }
 
-a:not(.no-underline):after {
+a:not(.no-underline):hover {
+  background-size: 100% 1px;
+}
+
+/* a:not(.no-underline):after {
   content: '';
   position: absolute;
   width: 100%;
@@ -345,12 +360,16 @@ a:not(.no-underline):after {
   background-color: var(--accent-color);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
+  -webkit-transition: transform 0.25s ease-out;
+  -moz-transition: transform 0.25s ease-out;
+  -ms-transition: transform 0.25s ease-out;
+  -o-transition: transform 0.25s ease-out;
 }
 
 a:not(.no-underline):hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
+} */
 
 blockquote {
   border-left: 10px solid var(--accent-color);
