@@ -172,8 +172,9 @@ pre[class*="language-"] > code{
 
 .line-highlight {
     z-index: 1;
-    background: rgb(50, 69, 100) !important;
-    /* background: rgba(83, 83, 83, 0.75); */
+    margin-top: .85em !important;
+    background: rgba(var(--accent-color-rgb), 0.5) !important;
+    /* background: rgb(50, 69, 100) !important; */
 }
 
 /* Modify the ugly numbers that appear when numbers are OFF but highlighting is ON */

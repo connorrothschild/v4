@@ -85,7 +85,7 @@
     position: absolute;
     background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1)
     );
     width: 100%;

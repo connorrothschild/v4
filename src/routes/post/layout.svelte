@@ -50,10 +50,11 @@
   }
 
   .date {
-    font-weight: 200;
-    margin-top: -1.75rem;
+    font-weight: 100;
+    margin-top: -1.25rem;
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     letter-spacing: 0.64px;
+    color: rgb(70, 70, 70);
   }
 </style>

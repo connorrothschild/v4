@@ -20,7 +20,7 @@
     max-width: 860px;
     padding: 1rem;
     margin: 0 auto;
-    width: 100%;
+    width: 95%;
     place-items: center;
   }
 
@@ -48,11 +48,6 @@
   }
 
   /* When nav and icon would overlap, apply padding */
-  @media screen and (max-width: 960px) {
-    .right {
-      margin-right: 80px;
-    }
-  }
   @media screen and (max-width: 560px) {
     #nav {
       padding: 1rem 0;

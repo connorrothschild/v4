@@ -55,7 +55,7 @@
     color: black;
   }
 
-  .link:hover {
+  .link:not(.current):hover {
     color: var(--text-color);
   }
 

@@ -63,7 +63,7 @@
 
   .title {
     margin: 3rem 0 2rem;
-    font-size: 76px;
+    font-size: 74px;
     text-align: left;
     letter-spacing: -1px;
     font-weight: 200;
@@ -76,19 +76,32 @@
     font-weight: 300;
   }
 
-  .subtitle,
+  .subtitle {
+    width: 80%;
+  }
+
   .content {
     width: 75%;
   }
 
   p {
     margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: rgb(70, 70, 70);
     letter-spacing: 0.12px;
   }
 
-  @media (max-width: 868px) {
+  @media (max-width: 900px) {
     .title {
-      font-size: 64px;
+      font-size: 8vw;
+    }
+
+    .subtitle {
+      font-size: 3vw;
+    }
+
+    p {
+      font-size: 1.1rem;
     }
   }
 
@@ -97,20 +110,34 @@
       font-size: 8vw; /* 3.5rem; */
     }
     .subtitle {
-      font-size: 4.5vw; /* 1.75rem; */
+      font-size: 4vw; /* 1.75rem; */
     }
-    .subtitle,
-    .content {
+    .subtitle {
       width: auto;
+    }
+
+    .content {
+      width: 90%;
+    }
+
+    p {
+      font-size: 1.15rem;
     }
   }
 
   @media (max-width: 568px) {
     .title {
       font-size: 3.5rem;
+      margin: 1rem 0 1.5rem 0;
     }
+
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
 
@@ -118,8 +145,13 @@
     .title {
       font-size: 3rem;
     }
+
     .subtitle {
       font-size: 1.35rem;
+    }
+
+    .content {
+      width: auto;
     }
   }
 </style>

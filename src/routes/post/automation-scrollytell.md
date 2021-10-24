@@ -10,6 +10,11 @@ tags: ['r', 'tutorial']
 <script>
   import Image from "../../lib/global/Image.svelte"
   import Info from "../../lib/global/Info.svelte"
+  import Code from "../../lib/global/Code.svelte"
+  import HighlightFromProp from "../../lib/global/HighlightFromProp.svelte"
+
+  let hoveredId;
+  let highlightedLines;
 </script>
 
 I’ve always been interested in data visualization, and my most recent
@@ -53,6 +58,10 @@ we construct a plot object that will update as the user scrolls. ([Other
 R users](https://github.com/scottyd22/dream_team) make multiple plots;
 either way is fine.)
 
+<Code language='r' 
+      showLineNumbers={true} 
+      highlightedLines={hoveredId == 'create-plot' ? highlightedLines : null}>
+
 ```r
 plot <- data %>%
   filter(if (add != 8) add >= reveal else reveal %in% c(1:8)) %>%
@@ -76,11 +85,16 @@ plot <- data %>%
         panel.grid.major.x = element_blank())
 ```
 
-But wait, what’s that second line of code?
+</Code>
 
-```r
-filter(if (add != 8) add >= reveal else reveal %in% c(1:8))
-```
+<p>
+But wait, what’s that <HighlightFromProp 
+  hoveredIdProp={'create-plot'} 
+  highlightedLinesProp={'2'} 
+  bind:hoveredId 
+  bind:highlightedLines
+>second line of code</HighlightFromProp>?
+</p>
 
 This may make _0 sense_ right now, but here’s why we have it.
 

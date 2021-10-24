@@ -10,7 +10,7 @@
   --accent-color: rgb(197, 81, 108); /* rgb(108, 108, 255); */
   --accent-color-rgb: 197, 81, 108; /* For transparent purposes */
   --heading-color: rgba(0, 0, 0, 0.7);
-  --text-color: #1f1f1f;
+  --text-color: #3a3a3a;
   --off-black: #3a3a3a;
   --pure-text-color: #000000;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -69,10 +69,10 @@ h2 {
 
 p, li {
   color: var(--text-color);
-  font-family:  var(--font-sans);
-  font-size: 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
   line-height: 1.35;
-  letter-spacing: 0.22px;
+  letter-spacing: 0.15px;
   font-weight: 300;
 }
 
@@ -197,6 +197,12 @@ button:focus:not(:focus-visible) {
   position: relative;
   z-index: 1;
   font-weight: 200;
+  background:white;
+}
+
+.button:focus,
+.button:active {
+  color: black;
 }
 
 .button:before {
@@ -338,11 +344,11 @@ a:not(.no-underline) {
   color: var(--accent-color);
   background:linear-gradient(var(--accent-color), var(--accent-color)) left bottom no-repeat;
   background-size: 0% 1px;
-  transition: all 0.25s ease-out;
-  -webkit-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  -ms-transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
+  transition: background-size 0.25s ease-out;
+  -webkit-transition: background-size 0.25s ease-out;
+  -moz-transition: background-size 0.25s ease-out;
+  -ms-transition: background-size 0.25s ease-out;
+  -o-transition: background-size 0.25s ease-out;
 }
 
 a:not(.no-underline):hover {
