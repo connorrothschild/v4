@@ -58,12 +58,15 @@
 
   h3 {
     font-size: 34px;
+    margin-bottom: 6px;
+    transition: all 300ms ease;
   }
 
   .job-image {
     margin-left: 16px;
     width: 40px;
     transition: width 300ms ease;
+    /* filter: grayscale(1); */
   }
 
   .job-container.hovered {
@@ -79,13 +82,14 @@
 
   .job-container.hovered h3 {
     color: var(--accent-color);
-    animation: right 1s ease infinite;
+    /* animation: right 1s ease infinite; */
     text-decoration: none;
+    transform: translateX(5px);
   }
 
-  a:hover {
-    text-decoration: none;
-  }
+  /* .job-container.hovered img {
+    filter: grayscale(0);
+  } */
 
   @keyframes right {
     0% {

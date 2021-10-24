@@ -14,7 +14,7 @@
 </script>
 
 <script>
-  import Transition from "$lib/Transitions/Main.svelte";
+  import Transition from "$lib/Transition.svelte";
   import JobSection from "$lib/JobSection.svelte";
   export let jobs;
 
@@ -29,13 +29,13 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline">Experience</h1>
-  <h1 class="page-title">
+  <h1 class="page-overline transition-subtitle">Experience</h1>
+  <h1 class="page-title transition-title">
     Where I've
     <span class="gradient-accented bolded ">worked</span>
   </h1>
 
-  <div class="transition-container">
+  <div class="transition-content">
     {#each sortedJobs as job}
       <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
     {/each}
@@ -50,8 +50,4 @@
     padding: 1em;
     width: 90%;
   }
-
-  /* .page-title {
-    font-size: 2.5rem !important;
-  } */
 </style>

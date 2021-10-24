@@ -19,7 +19,7 @@
   import { linear } from "svelte/easing";
 
   import BlogSection from "$lib/BlogSection.svelte";
-  import Transition from "$lib/Transitions/Main.svelte";
+  import Transition from "$lib/Transition.svelte";
 
   export let posts;
 
@@ -49,12 +49,12 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline">Blog</h1>
-  <h1 class="page-title">
+  <h1 class="page-overline transition-subtitle">Blog</h1>
+  <h1 class="page-title transition-title">
     What I've
     <span class="gradient-accented bolded">written</span>​
   </h1>
-  <div class="transition-container post-grid">
+  <div class="transition-content post-grid">
     {#each filteredPosts as post, index}
       <BlogSection
         post={post.metadata}

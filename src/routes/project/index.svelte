@@ -15,7 +15,7 @@
 </script>
 
 <script>
-  import Transition from "$lib/Transitions/Main.svelte";
+  import Transition from "$lib/Transition.svelte";
   import ProjectSection from "$lib/ProjectSection.svelte";
 
   import { linear } from "svelte/easing";
@@ -45,13 +45,13 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline">Projects</h1>
-  <h1 class="page-title">
+  <h1 class="page-overline transition-subtitle">Projects</h1>
+  <h1 class="page-title transition-title">
     What I've
     <span class="gradient-accented bolded">built</span>
   </h1>
 
-  <div class="transition-container projects-container">
+  <div class="projects-container transition-content">
     {#each featuredProjects as project}
       <ProjectSection
         project={project.metadata}

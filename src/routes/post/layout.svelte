@@ -1,5 +1,5 @@
 <script>
-  import Transition from "$lib/Transitions/Content.svelte";
+  import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
   import { seo } from "$lib/store";
@@ -22,12 +22,16 @@
 
 <Transition />
 <main>
-  <BackTo href="/post" text="Blog" classes="page-overline" />
-  <h1 class="page-title no-border">{title}</h1>
-  <div class="date border-bottom transition-container">
+  <BackTo
+    href="/post"
+    text="Blog"
+    classes="page-overline transition-subtitle"
+  />
+  <h1 class="page-title no-border transition-title">{title}</h1>
+  <div class="date border-bottom transition-content">
     {dateFormat(date)} | 1 minute read (if you're fast)
   </div>
-  <div class="transition-container">
+  <div class="transition-content">
     <div class="content">
       <slot />
       <BackTo href="/post" text="Back to all posts" classes="border-top" />

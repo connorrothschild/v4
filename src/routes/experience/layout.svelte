@@ -1,5 +1,5 @@
 <script>
-  import Transition from "$lib/Transitions/Content.svelte";
+  import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
   import { seo } from "$lib/store";
@@ -16,9 +16,13 @@
 
 <Transition />
 <main>
-  <BackTo href="/experience" text="Experience" classes="page-overline" />
+  <BackTo
+    href="/experience"
+    text="Experience"
+    classes="page-overline transition-subtitle"
+  />
 
-  <h1 class="page-title">
+  <h1 class="page-title transition-title">
     {name}
     <img
       src={`/images/jobs/${imageUrl}.svg`}
@@ -26,7 +30,7 @@
       class="logo"
     />
   </h1>
-  <div class="transition-container">
+  <div class="transition-content">
     <div class="content">
       <slot />
       <BackTo href="/experience" text="Back to all jobs" classes="border-top" />

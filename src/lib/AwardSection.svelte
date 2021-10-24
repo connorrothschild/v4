@@ -70,11 +70,11 @@
       white 100%
     ); */
     border-radius: 5px;
-    border-width: 1px;
+    /* border-width: 1px;
     border-style: solid;
     border-color: white;
-    border-image-slice: 1;
-    box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.1);
+    border-image-slice: 1; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 500ms ease;
     position: relative;
     z-index: 0;
@@ -97,6 +97,7 @@
     bottom: 0;
     left: 0;
     opacity: 0;
+    border-radius: 5px;
     transition: opacity 500ms linear;
   }
 
@@ -115,8 +116,8 @@
   }
 
   .award-container:hover {
-    border-color: rgba(var(--accent-color-rgb), 0.45);
-    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1); /* none */
+    /* border-color: rgba(var(--accent-color-rgb), 0.45); */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* none */
   }
 
   .award-container:hover::before {

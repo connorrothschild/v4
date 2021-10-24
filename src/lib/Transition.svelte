@@ -4,19 +4,19 @@
 
   function transition() {
     gsap.fromTo(
-      ".page-title",
+      ".transition-title",
       { x: -10, opacity: 0 },
       { x: 0, opacity: 1, duration: 0.5 }
     );
 
     gsap.fromTo(
-      ".page-overline",
+      ".transition-subtitle",
       { x: -10, opacity: 0 },
       { x: 0, opacity: 1, duration: 0.5 }
     );
 
     gsap.fromTo(
-      ".transition-container",
+      ".transition-content",
       { x: -10, opacity: 0 },
       { x: 0, opacity: 1, duration: 0.5, delay: 0.5, clearProps: "x" }
     );

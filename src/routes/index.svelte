@@ -1,18 +1,18 @@
 <script>
   import Spinner from "$lib/Spinner.svelte";
-  import Transition from "$lib/Transitions/Home.svelte";
+  import Transition from "$lib/Transition.svelte";
   let options = ["Axios", "Texas Policy Lab", "USSOCOM"];
 </script>
 
 <Transition />
 <main>
   <section>
-    <h1 class="title">
+    <h1 class="title transition-title">
       Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
         >Connor Rothschild</span
       >
     </h1>
-    <h2 class="subtitle">
+    <h2 class="subtitle  transition-subtitle">
       I'm a data scientist who specializes in telling visual stories on the web.
       Right now, I'm doing that at <a
         href="https://www.mokshadata.com/"
@@ -21,7 +21,7 @@
     </h2>
   </section>
 
-  <section class="content">
+  <section class="content  transition-content">
     <p>
       During my time at Rice University, I found that nothing motivates me like <em
         >impact</em

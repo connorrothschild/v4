@@ -1,5 +1,5 @@
 <script>
-  import Transition from "$lib/Transitions/Content.svelte";
+  import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
   import { seo } from "$lib/store";
@@ -15,9 +15,13 @@
 
 <Transition />
 <main>
-  <BackTo href="/project" text="Projects" classes="page-overline" />
-  <h1 class="page-title">{title}</h1>
-  <div class="project transition-container">
+  <BackTo
+    href="/project"
+    text="Projects"
+    classes="page-overline transition-subtitle"
+  />
+  <h1 class="page-title transition-title">{title}</h1>
+  <div class="project transition-content">
     <slot />
     <BackTo href="/project" text="Back to all projects" classes="border-top" />
   </div>

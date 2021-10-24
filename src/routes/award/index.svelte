@@ -15,7 +15,7 @@
 
 <script>
   import AwardSection from "$lib/AwardSection.svelte";
-  import Transition from "$lib/Transitions/Main.svelte";
+  import Transition from "$lib/Transition.svelte";
 
   export let awards;
 
@@ -38,13 +38,13 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline">Awards</h1>
-  <h1 class="page-title">
+  <h1 class="page-overline transition-subtitle">Awards</h1>
+  <h1 class="page-title transition-title">
     What I've
     <span class="gradient-accented bolded ">won</span>
   </h1>
 
-  <div class="awards-grid transition-container">
+  <div class="awards-grid transition-content">
     {#each awards as award, index}
       <AwardSection
         award={award.metadata}
