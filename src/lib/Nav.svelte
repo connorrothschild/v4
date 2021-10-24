@@ -30,10 +30,6 @@
     justify-content: space-evenly;
   }
 
-  .left {
-    /* width: 30px; */
-  }
-
   :global(.left li) {
     margin-left: 0;
     font-weight: 100;

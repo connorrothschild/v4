@@ -73,7 +73,7 @@
     </div>
   {/if}
   <button
-    class="button pulled-right block"
+    class="button pulled-right block transition-content"
     on:click={() => {
       showAll = !showAll;
     }}

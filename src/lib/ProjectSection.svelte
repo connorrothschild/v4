@@ -74,6 +74,7 @@
   .project-image {
     width: 100%;
     height: 100%;
+    min-height: 200px;  
     object-fit: cover;
     border-radius: 5px;
     filter: blur(0);

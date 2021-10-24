@@ -275,16 +275,16 @@
     }
 
     .post-title {
-      font-size: 1rem;
+      font-size: 1.2rem;
       width: 85%;
     }
 
     .post-description {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
     }
 
     .post-tag {
-      font-size: 0.6rem;
+      font-size: 0.7rem;
     }
   }
 </style>

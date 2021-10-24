@@ -39,7 +39,7 @@
       >
     </p>
   </section>
-  <div class="link-container block pulled-right">
+  <div class="link-container block pulled-right transition-content">
     <a sveltekit:prefetch href="/experience">More about me &#8594;</a>
   </div>
 </main>
@@ -81,7 +81,8 @@
   }
 
   .content {
-    width: 75%;
+    width: 70%;
+    text-align: justify;
   }
 
   p {
@@ -91,13 +92,17 @@
     letter-spacing: 0.12px;
   }
 
+  .link-container {
+    margin-top: 1rem;
+  }
+
   @media (max-width: 900px) {
     .title {
       font-size: 8vw;
     }
 
     .subtitle {
-      font-size: 3vw;
+      font-size: 3.5vw;
     }
 
     p {
@@ -111,13 +116,11 @@
     }
     .subtitle {
       font-size: 4vw; /* 1.75rem; */
-    }
-    .subtitle {
       width: auto;
     }
-
     .content {
       width: 90%;
+      text-align: left;
     }
 
     p {
