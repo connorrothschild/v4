@@ -64,21 +64,22 @@
     display: block;
     position: relative;
     padding: 1.5rem 1rem;
-    margin: 0.75rem 0;
-    background: white;
+    background: transparent;
     cursor: pointer;
     /* background-image: linear-gradient(
       to right,
       white 0%,
       white 100%
-    ); */
-    border-radius: 5px;
+      ); */
+    /* border-radius: 5px; */
     /* border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-image-slice: 1; */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 500ms ease;
+      border-style: solid;
+      border-color: white;
+      border-image-slice: 1; */
+    /* margin: 0.75rem 0; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    transition: all 200ms linear;
     position: relative;
     z-index: 0;
   }
@@ -88,20 +89,22 @@
     height: 100%;
     z-index: -1;
     position: absolute;
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 1) 30%,
-      rgba(var(--accent-color-rgb), 0.45) 100%
-    );
+      rgba(var(--accent-color-rgb), 0.2) 100%
+    ); */
+    background: rgba(var(--accent-color-rgb), 0.15);
     content: "";
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     opacity: 0;
-    border-radius: 5px;
-    transition: opacity 500ms linear;
+    /* border-radius: 5px 5px 0 0; */
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    transition: opacity 200ms linear;
   }
 
   .award-title {
@@ -120,7 +123,7 @@
 
   .award-container:hover {
     /* border-color: rgba(var(--accent-color-rgb), 0.45); */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* none */
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); */
   }
 
   .award-container:hover::before {

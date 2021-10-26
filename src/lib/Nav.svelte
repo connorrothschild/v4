@@ -8,9 +8,9 @@
   </ul>
   <ul class="right">
     <NavListItem code={"experience"} title={"Work"} />
+    <NavListItem code={"post"} title={"Blog"} />
     <NavListItem code={"project"} title={"Projects"} />
     <NavListItem code={"award"} title={"Awards"} />
-    <NavListItem code={"post"} title={"Blog"} />
   </ul>
 </div>
 

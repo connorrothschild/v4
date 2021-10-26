@@ -192,7 +192,7 @@
   .post-card {
     display: flex;
     flex-direction: column;
-    place-content: center;
+    justify-content: space-between;
     height: 100%;
     pointer-events: none;
   }
@@ -261,6 +261,10 @@
 
   /* TABLET BREAKPOINT */
   @media screen and (max-width: 768px) {
+    .post-container {
+      padding: 20px;
+    }
+
     .post-title {
       font-size: 1.5rem;
       max-width: 100%;
