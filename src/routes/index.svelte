@@ -24,13 +24,14 @@
 
   <section class="content transition-content">
     <p>
-      I make data make sense for people in the government and nonprofit space.
-      At Moksha, I lead the development of interactives, web applications, and
-      visual essays for our partners in the social impact space.
+      I make data make sense for people in the <strong>government</strong> and
+      <strong>nonprofit</strong> space. At Moksha, I lead the development of interactives,
+      web applications, and visual essays for our partners in the social impact space.
     </p>
     <p>
       We make it easier for you to talk about the impact you're making in your
-      community, through data-driven and engaging visual stories.
+      community, through <strong>data-driven</strong> and
+      <strong>engaging</strong> visual stories.
     </p>
     <p>
       Interested in working with us? <a

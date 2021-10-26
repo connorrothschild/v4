@@ -74,12 +74,11 @@
   .project-image {
     width: 100%;
     height: 100%;
-    min-height: 200px;  
+    min-height: 200px;
     object-fit: cover;
     border-radius: 5px;
     filter: blur(0);
     z-index: 0;
-    /* transition: filter 1000ms linear; */
   }
 
   .hovered-gradient {
@@ -93,6 +92,7 @@
     height: 100%;
     background-size: cover;
     pointer-events: none;
+    border-radius: 5px;
     z-index: 1; /* Above image */
   }
 
