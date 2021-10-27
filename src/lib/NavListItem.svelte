@@ -44,15 +44,14 @@
   }
 
   .link {
-    /* color: var(--text-color); */
-    color: rgb(65, 65, 65);
+    color: var(--text-color);
     font-family: var(--font-serif);
     text-transform: uppercase;
     transition: color 400ms ease;
   }
 
   :global(.left .link) {
-    color: black;
+    color: var(--pure-text-color);
   }
 
   .link:not(.current):hover {

@@ -1,7 +1,28 @@
 <script>
-  import Spinner from "$lib/Spinner.svelte";
+  import { onMount } from "svelte";
   import Transition from "$lib/Transition.svelte";
-  let options = ["Axios", "Texas Policy Lab", "USSOCOM"];
+  import { currentColorMode } from "../stores/global.js";
+  // import { userMode } from "../scripts/getColorScheme.js";
+
+  // onMount(() => {
+  //   console.log(currentColorMode);
+  //   currentColorMode.set(userMode);
+  // });
+
+  let currentMode = "light";
+  const updateSystemPreferenceDarkTheme = () => {
+    currentMode = matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  onMount(() => {
+    updateSystemPreferenceDarkTheme();
+    currentColorMode.set(currentMode);
+  });
+
+  // import Spinner from "$lib/Spinner.svelte";
+  // let options = ["Axios", "Texas Policy Lab", "USSOCOM"];
 </script>
 
 <Transition />
@@ -89,7 +110,7 @@
   p {
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    color: rgb(70, 70, 70);
+    color: var(--text-color);
     letter-spacing: 0.12px;
   }
 

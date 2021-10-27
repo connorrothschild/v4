@@ -96,7 +96,8 @@
       rgba(var(--accent-color-rgb), 0.2) 100%
     ); */
     /* border-radius: 5px 5px 0 0; */
-    background: rgba(var(--accent-color-rgb), 0.125);
+    /* background: rgba(var(--accent-color-rgb), 0.125); */
+    background: var(--semitransparent-bg);
     content: "";
     top: 0;
     right: 0;
@@ -118,7 +119,7 @@
     letter-spacing: 0.64px;
     text-transform: uppercase;
     font-family: var(--font-sans);
-    color: rgb(55, 55, 55);
+    color: var(--text-color);
   }
 
   /* .award-container:hover {

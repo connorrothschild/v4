@@ -65,6 +65,7 @@
   }
 
   h3 {
+    color: var(--text-color);
     font-size: 34px;
     margin-bottom: 6px;
     transition: all 300ms ease;

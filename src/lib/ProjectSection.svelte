@@ -66,7 +66,7 @@
   .project-card {
     position: relative;
     border-radius: 5px;
-    box-shadow: 1px 1px 4px #b2b2b2;
+    box-shadow: 1px 1px 4px var(--box-shadow-color);
     height: 100%;
     cursor: pointer;
   }
@@ -96,9 +96,9 @@
     z-index: 1; /* Above image */
   }
 
-  .hovered {
+  /* .hovered {
     filter: blur(1px);
-  }
+  } */
 
   .project-text {
     position: absolute;

@@ -14,6 +14,8 @@
 </script>
 
 <script>
+  import SvelteMarkdown from "svelte-markdown";
+
   import Transition from "$lib/Transition.svelte";
   import JobSection from "$lib/JobSection.svelte";
   export let jobs;
@@ -25,6 +27,7 @@
     title: "Experience | Connor Rothschild",
     description: "Some of my work experience.",
   };
+  console.log(jobs);
 </script>
 
 <Transition />
@@ -38,6 +41,7 @@
   <div class="transition-content">
     {#each sortedJobs as job}
       <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
+      <p><SvelteMarkdown source={job.metadata.content} /></p>
     {/each}
   </div>
 </main>

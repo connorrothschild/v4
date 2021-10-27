@@ -110,7 +110,7 @@
     border-top: 1px solid rgba(var(--accent-color-rgb), 0.5);
     padding: 2rem 0 0.5rem 0;
     font-weight: 100;
-    color: black;
+    color: var(--pure-text-color);
     text-transform: uppercase;
     text-align: center;
   }

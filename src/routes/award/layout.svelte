@@ -27,7 +27,7 @@
     <slot />
 
     <p class="media-link">
-      <a href={media_url} target="_blank"> 🏆 See media 🏆 </a>
+      <a href={media_url} target="_blank">🏆 See media 🏆</a>
     </p>
     <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>
@@ -44,8 +44,8 @@
 
   .media-link {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     text-align: center;
-    font-family: var(--font-serif);
+    /* font-family: var(--font-serif); */
   }
 </style>

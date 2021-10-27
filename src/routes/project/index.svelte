@@ -47,7 +47,7 @@
 <main>
   <h1 class="page-overline transition-subtitle">Projects</h1>
   <h1 class="page-title transition-title">
-    What I've
+    Projects I've
     <span class="gradient-accented bolded">built</span>
   </h1>
 

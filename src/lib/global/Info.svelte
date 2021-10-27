@@ -1,12 +1,10 @@
 <script>
-  // import SvelteMarkdown from "svelte-markdown";
 </script>
 
 <div class="info">
   <div class="text">
     <p>
       <slot />
-      <!-- <SvelteMarkdown source={$$slots.content} /> -->
     </p>
   </div>
 </div>
@@ -23,8 +21,8 @@
     place-items: center;
     border-radius: 10px;
     font-weight: normal;
-    background: white;
-    box-shadow: 2px 2px 5px 1px #cecece80;
+    background: var(--semitransparent-bg);
+    box-shadow: 2px 2px 5px 1px var(--box-shadow-color);
     padding: 1rem;
     margin: 1.75rem 0;
   }

@@ -50,7 +50,7 @@
 
 <style>
   button.active {
-    background: black;
-    color: white;
+    background: var(--pure-text-color);
+    color: var(--primary-color);
   }
 </style>

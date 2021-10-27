@@ -162,11 +162,11 @@
   .post-container {
     width: 100%;
     border-radius: 10px;
-    background: white;
+    background: var(--semitransparent-bg);
     padding: 30px;
     margin: 12px; /* Need this for perspective container overflow */
     overflow: hidden;
-    border: 1px solid white;
+    border: 1px solid var(--secondary-color);
     transition: all 100ms linear, border 300ms ease;
     cursor: pointer;
   }
@@ -215,7 +215,7 @@
     line-height: 1.25;
     text-transform: uppercase;
     font-family: var(--font-sans);
-    color: rgb(55, 55, 55);
+    color: var(--off-text-color);
     font-weight: 200;
     letter-spacing: 0.64px;
   }

@@ -1,5 +1,6 @@
 <script>
   import NavListItem from "./NavListItem.svelte";
+  import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 </script>
 
 <div id="nav">
@@ -11,6 +12,7 @@
     <NavListItem code={"post"} title={"Blog"} />
     <NavListItem code={"project"} title={"Projects"} />
     <NavListItem code={"award"} title={"Awards"} />
+    <li><ColorSwitcher /></li>
   </ul>
 </div>
 
@@ -28,6 +30,11 @@
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+  }
+
+  .left {
+    display: flex;
+    place-items: center;
   }
 
   :global(.left li) {

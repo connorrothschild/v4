@@ -55,6 +55,6 @@
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     letter-spacing: 0.64px;
-    color: rgb(70, 70, 70);
+    color: var(--text-color);
   }
 </style>
