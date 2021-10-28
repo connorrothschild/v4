@@ -1,27 +1,11 @@
-<script context="module">
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./projects.json`);
-    const projects = await res.json();
-
-    return {
-      props: {
-        projects,
-      },
-    };
-  }
-</script>
-
 <script>
+  export let projects;
+
   import Transition from "$lib/Transition.svelte";
   import ProjectSection from "$lib/Content/Project.svelte";
 
   import { linear } from "svelte/easing";
   import { slide } from "svelte/transition";
-
-  export let projects;
 
   let filteredProjects = projects
     .filter((d) => d.metadata.archived != true)
@@ -35,21 +19,17 @@
   );
 
   let showAll = false;
-
-  import { seo } from "$lib/store.js";
-  $seo = {
-    title: "Projects | Connor Rothschild",
-    description: "Some of my projects.",
-  };
 </script>
 
 <Transition />
-<main>
-  <h1 class="page-overline transition-subtitle">Projects</h1>
-  <h1 class="page-title transition-title">
-    Projects I've
-    <span class="gradient-accented bolded">built</span>
-  </h1>
+<section>
+  <div class="sticky-top">
+    <h1 class="page-overline">Projects</h1>
+    <h1 class="page-title">
+      Projects I've
+      <span class="gradient-accented bolded">built</span>
+    </h1>
+  </div>
 
   <div class="projects-container transition-content">
     {#each featuredProjects as project}
@@ -80,15 +60,11 @@
   >
     {showAll ? "Hide others ↑" : "Show all ↓"}
   </button>
-</main>
+</section>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 2rem;
+  section {
+    min-height: 70vh;
   }
 
   .projects-container {

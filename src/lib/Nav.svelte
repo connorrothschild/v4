@@ -19,11 +19,14 @@
 <style>
   #nav {
     display: flex;
-    max-width: 860px;
-    padding: 1rem;
-    margin: 0 auto;
-    width: 95%;
     place-items: center;
+    position: fixed;
+    z-index: 1000;
+    background: var(--tertiary-color);
+    height: var(--nav-height);
+    padding: 0 1rem;
+    margin: 0;
+    width: calc(100vw - 2rem);
   }
 
   ul {
@@ -52,16 +55,6 @@
 
   /* When nav and icon would overlap, apply padding */
   @media screen and (max-width: 560px) {
-    #nav {
-      padding: 1rem 0;
-      margin: 0 1rem;
-      width: auto;
-    }
-
-    .right {
-      margin: auto;
-    }
-
     :global(.left li) {
       font-size: 1.5rem;
     }

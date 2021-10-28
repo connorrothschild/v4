@@ -1,19 +1,3 @@
-<script context="module">
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./posts.json`);
-    const posts = await res.json();
-
-    return {
-      props: {
-        posts,
-      },
-    };
-  }
-</script>
-
 <script>
   import { slide } from "svelte/transition";
   import { linear } from "svelte/easing";
@@ -37,24 +21,20 @@
     .filter((d) => d.metadata.archived == true)
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
-  import { seo } from "$lib/store.js";
-  $seo = {
-    title: "Blog | Connor Rothschild",
-    description: "Some of my writing.",
-  };
-
   let anyHovered = false;
   let showAll = false;
 </script>
 
 <Transition />
-<main>
-  <h1 class="page-overline transition-subtitle">Blog</h1>
-  <h1 class="page-title transition-title">
-    What I've
-    <span class="gradient-accented bolded">written</span>​
-  </h1>
-  <div class="transition-content post-grid">
+<section>
+  <div class="sticky-top">
+    <h1 class="page-overline">Blog</h1>
+    <h1 class="page-title">
+      What I've
+      <span class="gradient-accented bolded">written</span>​
+    </h1>
+  </div>
+  <div class="post-grid">
     {#each filteredPosts as post, index}
       <BlogSection
         post={post.metadata}
@@ -87,15 +67,11 @@
   >
     {showAll ? "Hide the archives 👍" : "Show the archives 😬"}
   </button>
-</main>
+</section>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 2rem;
+  section {
+    min-height: 70vh;
   }
 
   .post-grid {

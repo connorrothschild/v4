@@ -3,7 +3,7 @@
    * @type {import('@sveltejs/kit').Load}
    */
   export async function load({ page, fetch, session }) {
-    const res = await fetch(`/experience.json`);
+    const res = await fetch(`./experience.json`);
     const jobs = await res.json();
     return {
       props: {
@@ -17,7 +17,7 @@
   import SvelteMarkdown from "svelte-markdown";
 
   import Transition from "$lib/Transition.svelte";
-  import JobSection from "$lib/JobSection.svelte";
+  import JobSection from "$lib/Content/Job.svelte";
   export let jobs;
 
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);

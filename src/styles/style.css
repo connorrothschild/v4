@@ -3,6 +3,9 @@
   --font-sans: halyard-display, -apple-system, sans-serif;
   --font-mono: 'Fira Mono', monospace;
   font-family: var(--font-serif);
+
+  --nav-height: 60px;
+
   --pure-background-color: #ffffff;
   --primary-color:  #ccdbe9;
   --secondary-color: #d0dde9; 
@@ -83,6 +86,10 @@ body::before {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.visible {
+  opacity: 1 !important;
 }
 
 h1,
@@ -418,4 +425,16 @@ blockquote p:last-of-type {
 /* TWEET EMBED */
 .twitter-tweet {
   margin: 10px auto;
+}
+
+.sticky-top {
+  position: sticky;
+  top: var(--nav-height);
+  padding: 1px 1rem 0 1rem;
+  z-index: 100;
+  background: var(--tertiary-color);
+}
+
+main {
+  margin-top: var(--nav-height) !important;
 }

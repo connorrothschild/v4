@@ -3,7 +3,7 @@
   export let index;
   export let slug;
 
-  import { dateFormat } from "../scripts/utils.js";
+  import { dateFormat } from "../../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
 
   let hovered = false;

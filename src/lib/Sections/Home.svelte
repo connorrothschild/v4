@@ -1,13 +1,13 @@
 <script>
   import Transition from "$lib/Transition.svelte";
-
-  // import Spinner from "$lib/Spinner.svelte";
-  // let options = ["Axios", "Texas Policy Lab", "USSOCOM"];
+  import ScrollIntro from "./ScrollIntro.svelte";
 </script>
 
 <Transition />
-<main>
-  <section>
+<section>
+  <ScrollIntro />
+
+  <!-- <div>
     <h1 class="title transition-title">
       Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
         >Connor Rothschild.</span
@@ -19,11 +19,10 @@
         href="https://www.mokshadata.com/"
         target="_blank">Moksha Data</a
       >.
-      <!-- Previously, I did similar work at <Spinner {options} /> -->
     </h2>
-  </section>
+  </div>
 
-  <section class="content transition-content">
+  <div class="content transition-content">
     <p>
       I make data make sense for people in the <strong>government</strong> and
       <strong>nonprofit</strong> space. At Moksha, I lead the development of interactives,
@@ -40,27 +39,12 @@
         >Reach out.</a
       >
     </p>
-  </section>
-  <div class="link-container block pulled-right transition-content">
-    <a sveltekit:prefetch href="/experience">More about me &#8594;</a>
-  </div>
-</main>
+  </div> -->
+</section>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 2rem;
-  }
-
   section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
+    min-height: 60vh;
   }
 
   .title {

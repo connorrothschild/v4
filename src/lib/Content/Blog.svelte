@@ -7,7 +7,7 @@
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
 
-  import { dateFormat } from "../scripts/utils.js";
+  import { dateFormat } from "../../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
 
   /* Initialize variables which will bind to our DOM elements */
