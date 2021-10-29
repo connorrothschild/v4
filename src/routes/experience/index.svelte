@@ -34,7 +34,7 @@
 <main>
   <h1 class="page-overline transition-subtitle">Experience</h1>
   <h1 class="page-title transition-title">
-    Where I've
+    Places I've
     <span class="gradient-accented bolded ">worked</span>
   </h1>
 

@@ -1,10 +1,8 @@
 <script>
-  export let award;
+  export let post;
   export let slug;
   export let anyHovered;
   export let index;
-
-  console.log(award);
 
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
@@ -126,11 +124,11 @@
     style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
 					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
-    class="award-container no-underline {award.featured ? 'featured' : ''} 
+    class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     on:click={navigate(slug)}
   >
-    {#if award.featured}
+    {#if post.featured}
       <div class="featured-star">
         <Star
           width="20"
@@ -146,15 +144,14 @@
       class="card-highlight"
       style="left: {circleXPosition}%; top: {circleYPosition}%"
     />
-    <div class="award-card">
-      <div>
-        <h1 class="award-title">{award.award}</h1>
-        <h1 class="award-place">{award.place}</h1>
-      </div>
-      <div class="award-description-container">
-        <p class="award-description">{dateFormat(award.date)}</p>
-        <div class="award-tag">
-          {award.organization}
+    <div class="post-card">
+      <h1 class="post-title">{post.title}</h1>
+      <div class="post-description-container">
+        <p class="post-description">{dateFormat(post.date)}</p>
+        <div class="post-tags-container">
+          {#each post.tags as tag}
+            <span class="post-tag">{tag}</span>
+          {/each}
         </div>
       </div>
     </div>
@@ -162,12 +159,12 @@
 </div>
 
 <style>
-  .award-container {
+  .post-container {
     width: 100%;
     border-radius: 10px;
     background: var(--semitransparent-bg);
-    padding: 20px;
-    margin: 6px; /* Need this for perspective container overflow */
+    padding: 30px;
+    margin: 12px; /* Need this for perspective container overflow */
     overflow: hidden;
     border: 1px solid var(--secondary-color);
     transition: all 100ms linear, border 300ms ease;
@@ -192,7 +189,7 @@
     pointer-events: none;
   }
 
-  .award-card {
+  .post-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -200,29 +197,20 @@
     pointer-events: none;
   }
 
-  .award-title {
+  .post-title {
     font-size: 1.8rem;
     line-height: 1.2;
-    padding-bottom: 0.5rem;
-    /* max-width: 17ch; */
-  }
-
-  .award-place {
-    font-size: 1.3rem;
-    line-height: 1.1;
     padding-bottom: 1rem;
-    color: var(--off-text-color);
-    font-weight: 300;
-    /* max-width: 17ch; */
+    max-width: 17ch;
   }
 
-  .award-description-container {
+  .post-description-container {
     display: flex;
     justify-content: space-between;
   }
 
-  .award-description,
-  .award-tag {
+  .post-description,
+  .post-tag {
     font-size: 1.1rem;
     line-height: 1.25;
     text-transform: uppercase;
@@ -232,20 +220,20 @@
     letter-spacing: 0.64px;
   }
 
-  .award-description {
+  .post-description {
     margin-right: 6px;
   }
 
-  .award-tags-container {
+  .post-tags-container {
     margin-left: 6px;
   }
 
-  .award-description,
-  .award-tags-container {
+  .post-description,
+  .post-tags-container {
     display: inline-block;
   }
 
-  .award-tag {
+  .post-tag {
     padding: 2px 5px;
     background: rgba(var(--accent-color-rgb), 0.1);
     margin: 2px;
@@ -273,38 +261,34 @@
 
   /* TABLET BREAKPOINT */
   @media screen and (max-width: 768px) {
-    .award-container {
+    .post-container {
       padding: 20px;
     }
 
-    .award-title {
+    .post-title {
       font-size: 1.5rem;
       max-width: 100%;
-    }
-
-    .award-place {
-      font-size: 1.1rem;
     }
   }
 
   /* MOBILE */
   @media screen and (max-width: 420px) {
-    .award-container {
+    .post-container {
       padding: 15px;
-      margin: 5px 3px;
+      margin: 10px 6px;
     }
 
-    .award-title {
+    .post-title {
       font-size: 1.2rem;
       width: 85%;
     }
 
-    .award-place {
-      font-size: 1rem;
+    .post-description {
+      font-size: 0.75rem;
     }
 
-    .award-description {
-      font-size: 0.75rem;
+    .post-tag {
+      font-size: 0.7rem;
     }
   }
 </style>

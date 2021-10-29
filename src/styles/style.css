@@ -265,25 +265,16 @@ button:focus:not(:focus-visible) {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  } 
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
 .pulled-right { 
   margin-left: auto;
   text-align: right;
 }
 
 .page-overline {
-  font-family: var(--font-sans);
-  font-size: .88rem;
   margin-top: 2rem;
   margin-bottom: -2.5rem;
+  font-family: var(--font-sans);
+  font-size: .88rem;
   text-transform: uppercase;
   letter-spacing: .64px;
   font-weight: 300;
@@ -322,13 +313,12 @@ button:focus:not(:focus-visible) {
 @media screen and (max-width: 460px) {
   .page-title {
     font-size: 2.5rem;
-    /* letter-spacing: 1px; */
   }
 }
 
 @media screen and (max-width: 400px) {
   .page-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -350,7 +340,7 @@ button:focus:not(:focus-visible) {
 }
 
 .padding-bottom { 
-  padding-bottom: .1rem;
+  padding-bottom: .2rem;
 }
 
 .border-top {
@@ -430,11 +420,16 @@ blockquote p:last-of-type {
 .sticky-top {
   position: sticky;
   top: var(--nav-height);
-  padding: 1px 1rem 0 1rem;
-  z-index: 100;
+  padding-top: 1px;
+  z-index: 10;
   background: var(--tertiary-color);
 }
 
 main {
   margin-top: var(--nav-height) !important;
+}
+
+.see-all-flex {
+  display: flex;
+  justify-content: space-between;
 }

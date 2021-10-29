@@ -49,10 +49,10 @@
 <style>
   main {
     /* max-width: 860px; */
+    width: 100%;
     margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 2rem;
+    /* padding: 1em; */
+    /* margin-bottom: 2rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;

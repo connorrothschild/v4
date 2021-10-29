@@ -1,85 +1,8 @@
 <script>
   export let post;
   export let slug;
-  export let anyHovered;
-  export let index;
 
-  import { scaleLinear } from "d3-scale";
-  import { onMount } from "svelte";
-
-  import { dateFormat } from "../../scripts/utils.js";
-  import Star from "$lib/icons/Star.svelte";
-
-  /* Initialize variables which will bind to our DOM elements */
-  let card,
-    cardWidth,
-    cardHeight,
-    cardLeft,
-    cardTop,
-    xPos,
-    yPos,
-    scrollXPosition,
-    scrollYPosition,
-    pageWidth,
-    readyToHover = false;
-
-  /* Once we have our `card` element, get the leftmost position and top position
-		 This will later enable the x- and y-position of our mouse relative to the card dimensions */
-  $: getCardDimensions = function (card) {
-    cardLeft = card ? card.getBoundingClientRect().left : 0;
-    cardTop = card ? card.getBoundingClientRect().top + scrollYPosition : 0;
-  };
-
-  // On page resize, rerun get card dimensions
-  $: pageWidth, getCardDimensions(card);
-  $: scrollYPosition, getCardDimensions(card);
-
-  /* ! IMPORTANT !
-    Wait for some time (at least duration of page transition) to get bounding client rect 
-    There is currently a conflict with reading getBoudingClientRect().top when page transitions 
-  */
-  onMount(() => {
-    setTimeout(() => {
-      getCardDimensions(card);
-      readyToHover = true;
-    }, 1000);
-  });
-
-  /* Called on hover, this sets our x- and y-position to equal the cursor position *within* the card */
-  const setCoords = function (event) {
-    xPos = event.clientX - cardLeft;
-    yPos = event.pageY - cardTop;
-  };
-
-  /* Resets */
-  const resetCoords = function () {
-    xPos = null;
-    yPos = null;
-
-    anyHovered = false;
-    hovered = false;
-  };
-
-  /* Rotation amount */
-  $: xScale = scaleLinear().domain([0, cardWidth]).range([-4, 4]);
-  $: yScale = scaleLinear().domain([cardHeight, 0]).range([-4, 4]);
-
-  $: rotationX = xPos ? xScale(xPos) : 0;
-  $: rotationY = yPos ? yScale(yPos) : 0;
-
-  /* Highlighted circle */
-  $: circleXScale = scaleLinear().domain([0, cardWidth]).range([-50, 50]);
-  $: circleYScale = scaleLinear().domain([0, cardHeight]).range([-50, 50]);
-
-  $: circleXPosition = xPos ? circleXScale(xPos) : 0;
-  $: circleYPosition = yPos ? circleYScale(yPos) : 0;
-
-  /* Box shadow */
-  $: shadowX = xPos ? circleXScale(xPos) / 5 : 0;
-  $: shadowY = yPos ? circleYScale(yPos) / 5 : 0;
-
-  /* 3d scaling */
-  $: scale3dVal = xPos && yPos ? 1.02 : 1;
+  import { fly, fade } from "svelte/transition";
 
   let hovered = false;
 
@@ -96,199 +19,146 @@
 
     goto(slug);
   }
+
+  // Show titles by default on touch devices
+  import { onMount } from "svelte";
+  import { detectTouchscreen } from "../../scripts/utils.js";
+  let isTouchscreen = false;
+  onMount(() => {
+    isTouchscreen = detectTouchscreen();
+  });
 </script>
 
-<svelte:window
-  bind:scrollY={scrollYPosition}
-  bind:scrollX={scrollXPosition}
-  bind:innerWidth={pageWidth}
-/>
-<div
-  class="perspective-container"
-  style="perspective: {cardWidth}px"
-  on:mouseover={() => {
-    anyHovered = true;
-    hovered = true;
-    prefetch(slug);
-  }}
-  on:focus={() => {
-    prefetch(slug);
-  }}
-  on:mousemove={readyToHover ? setCoords : null}
-  on:mouseleave={resetCoords}
-  bind:this={card}
-  bind:offsetWidth={cardWidth}
-  bind:offsetHeight={cardHeight}
->
-  <div
-    style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
-					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
-					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
-    class="post-container no-underline {post.featured ? 'featured' : ''} 
-           {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-    on:click={navigate(slug)}
-  >
-    {#if post.featured}
-      <div class="featured-star">
-        <Star
-          width="20"
-          height="20"
-          fill="var(--accent-color)"
-          stroke="none"
-          {hovered}
-          {index}
-        />
-      </div>
-    {/if}
+<div class="post-card no-underline" on:click={navigate(slug)}>
+  {#if hovered || isTouchscreen}
+    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
+  {/if}
+  <img
+    src="/images/post/{post.image}"
+    alt="Post image for {post.title}"
+    class="post-image"
+    on:mouseover={() => {
+      hovered = true;
+      prefetch(slug);
+    }}
+    on:focus={() => {
+      hovered = true;
+      prefetch(slug);
+    }}
+    on:mouseleave={() => {
+      hovered = false;
+    }}
+    class:hovered
+  />
+  {#if hovered || isTouchscreen}
     <div
-      class="card-highlight"
-      style="left: {circleXPosition}%; top: {circleYPosition}%"
-    />
-    <div class="post-card">
-      <h1 class="post-title">{post.title}</h1>
-      <div class="post-description-container">
-        <p class="post-description">{dateFormat(post.date)}</p>
-        <div class="post-tags-container">
-          {#each post.tags as tag}
-            <span class="post-tag">{tag}</span>
-          {/each}
-        </div>
-      </div>
+      in:fly={{ y: 50, duration: 200 }}
+      out:fade={{ duration: 200 }}
+      class="post-text"
+    >
+      <h1 class="title">{post.title}</h1>
+      <h2 class="description">{post.description}</h2>
     </div>
-  </div>
+  {/if}
 </div>
 
 <style>
-  .post-container {
-    width: 100%;
-    border-radius: 10px;
-    background: var(--semitransparent-bg);
-    padding: 30px;
-    margin: 12px; /* Need this for perspective container overflow */
-    overflow: hidden;
-    border: 1px solid var(--secondary-color);
-    transition: all 100ms linear, border 300ms ease;
+  .post-card {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px var(--box-shadow-color);
+    height: 100%;
     cursor: pointer;
   }
 
-  .perspective-container {
-    display: flex;
-    position: relative;
-    margin: -4px; /* Undoes some of the margin above while still allowing for hover events */
-  }
-
-  .card-highlight {
-    position: absolute;
+  .post-image {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.01);
-    /* background: rgba(var(--accent-color-rgb), 0.025); */
-    filter: blur(20px);
-    z-index: 1;
-    pointer-events: none;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: blur(0);
+    z-index: 0;
   }
 
-  .post-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .post-title {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    padding-bottom: 1rem;
-    max-width: 17ch;
-  }
-
-  .post-description-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .post-description,
-  .post-tag {
-    font-size: 1.1rem;
-    line-height: 1.25;
-    text-transform: uppercase;
-    font-family: var(--font-sans);
-    color: var(--off-text-color);
-    font-weight: 200;
-    letter-spacing: 0.64px;
-  }
-
-  .post-description {
-    margin-right: 6px;
-  }
-
-  .post-tags-container {
-    margin-left: 6px;
-  }
-
-  .post-description,
-  .post-tags-container {
-    display: inline-block;
-  }
-
-  .post-tag {
-    padding: 2px 5px;
-    background: rgba(var(--accent-color-rgb), 0.1);
-    margin: 2px;
-    border-radius: 3px;
-    color: rgba(var(--accent-color-rgb), 1);
-    font-size: 0.85rem;
-    font-weight: 100;
-    float: right;
-  }
-
-  .hovered {
-    border: 1px solid var(--accent-color);
-  }
-
-  .featured-star {
+  .hovered-gradient {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 6px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1)
+    );
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    pointer-events: none;
+    border-radius: 5px;
+    z-index: 1; /* Above image */
   }
 
-  .unhovered {
-    filter: grayscale(1);
+  /* .hovered {
+    filter: blur(1px);
+  } */
+
+  .post-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    padding: 1.5rem;
+    z-index: 3;
   }
 
-  /* TABLET BREAKPOINT */
-  @media screen and (max-width: 768px) {
-    .post-container {
-      padding: 20px;
+  .title,
+  .description {
+    color: white;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    text-shadow: 1px 1px 6px black;
+  }
+
+  .description {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
+    margin-top: 12px;
+    letter-spacing: 0.64px;
+    text-shadow: 1px 1px 6px black;
+  }
+
+  @media screen and (max-width: 600px) {
+    .hovered-gradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
     }
 
-    .post-title {
+    .post-text {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .title {
       font-size: 1.5rem;
-      max-width: 100%;
-    }
-  }
-
-  /* MOBILE */
-  @media screen and (max-width: 420px) {
-    .post-container {
-      padding: 15px;
-      margin: 10px 6px;
     }
 
-    .post-title {
-      font-size: 1.2rem;
-      width: 85%;
-    }
-
-    .post-description {
-      font-size: 0.75rem;
-    }
-
-    .post-tag {
-      font-size: 0.7rem;
+    .description {
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
     }
   }
 </style>

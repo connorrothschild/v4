@@ -39,6 +39,7 @@
     "node-fetch": "^2.6.5",
     "prismjs": "^1.25.0",
     "svelte-markdown": "^0.1.12",
-    "svelte-paginate": "^0.0.1"
+    "svelte-paginate": "^0.0.1",
+    "swiper": "^7.2.0"
   }
 }

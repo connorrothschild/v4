@@ -90,7 +90,7 @@
   }
 
   h1 {
-    font-size: 7vw;
+    font-size: 5rem;
     line-height: 0.9;
     font-weight: 900;
     letter-spacing: -2px;
@@ -101,24 +101,26 @@
   }
 
   h2 {
-    font-size: 3vw;
-    line-height: 1;
+    font-size: 3rem;
+    line-height: 1.1;
     font-weight: 200;
     font-family: var(--font-serif);
-    line-height: 1.3;
     margin-bottom: 2rem;
     font-weight: 300;
+    margin-right: auto;
   }
 
   h3 {
-    font-size: 2vw;
-    line-height: 1;
+    font-size: 2rem;
+    line-height: 1.1;
     font-weight: 200;
     font-family: var(--font-sans);
+    margin-right: auto;
+    color: var(--pure-text-color);
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .wrapper {
@@ -157,46 +159,51 @@
     position: sticky;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1068px) {
     h2 {
-      font-size: 4vw;
+      font-size: 2.1rem;
     }
 
     h3 {
-      font-size: 3vw;
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2.1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
     }
   }
 
   @media (max-width: 568px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+
     h2 {
-      font-size: 6vw;
+      font-size: 1.8rem;
     }
 
     h3 {
-      font-size: 5vw;
+      font-size: 1.5rem;
     }
   }
 
-  @media screen and (max-width: 668px) {
-    .wrapper {
-      /* display: block; */
-      flex-direction: column;
-    }
-    .right {
-      width: 100%;
-      padding: 0;
-    }
-
+  @media (max-width: 468px) {
     h1 {
-      font-size: 8vw;
+      font-size: 3.15rem;
     }
 
     h2 {
-      font-size: 5vw;
+      font-size: 1.5rem;
     }
 
     h3 {
-      font-size: 4vw;
+      font-size: 1.2rem;
     }
   }
 </style>

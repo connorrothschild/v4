@@ -20,9 +20,14 @@
   <!-- <div transition:fly={{ duration: 1000, x: -200 }}> -->
   <div>
     <div class="sticky-top">
-      <h1 class="page-overline">Experience</h1>
+      <div class="see-all-flex">
+        <h1 class="page-overline">Experience</h1>
+        <a class="page-overline padding-bottom" href="/experience"
+          >See all work experience &#8599;</a
+        >
+      </div>
       <h1 class="page-title">
-        Where I've
+        Places I've
         <span class="gradient-accented bolded ">worked</span>
       </h1>
     </div>
@@ -57,6 +62,8 @@
 <style>
   section {
     min-height: 80vh;
+    padding: 1rem;
+    /* max-width: 1068px; */
   }
 
   .flex {

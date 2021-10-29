@@ -51,7 +51,7 @@
 <main>
   <h1 class="page-overline transition-subtitle">Blog</h1>
   <h1 class="page-title transition-title">
-    What I've
+    Posts I've
     <span class="gradient-accented bolded">written</span>​
   </h1>
   <div class="transition-content post-grid">
@@ -101,7 +101,12 @@
   .post-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-gap: 15px; */
+    grid-gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin: 12px 0 12px auto;
   }
 
   .archives-title {
@@ -117,7 +122,8 @@
 
   @media screen and (max-width: 668px) {
     .post-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(1, 1fr);
     }
 
     .archives-title {

@@ -1,5 +1,7 @@
 ---
 title: Honorable Mention, RStudio Table Contest
+place: Honorable Mention
+award: RStudio Table Contest
 organization: RStudio, Inc.
 date: "2021-01-06"
 featured: false

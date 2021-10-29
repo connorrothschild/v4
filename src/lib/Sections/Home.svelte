@@ -45,6 +45,8 @@
 <style>
   section {
     min-height: 60vh;
+    max-width: 1068px;
+    padding: 1rem;
   }
 
   .title {
