@@ -17,15 +17,11 @@
     { setting: "mode", value: "light" },
     { setting: "color", value: "C5516C" },
     { setting: "pattern", value: "diagonal_lines" },
-    // { setting: "image", value: "92b91df8" },
+    { setting: "image", value: "92b91df8" },
     { setting: "hide_watermark", value: "true" },
     { setting: "url", value: "https://connorrothschild.com" },
   ];
 
-  console.log(
-    "https://mugshotbot.com/m?" +
-      options.map((o) => o.setting + "=" + o.value).join("&")
-  );
   let image =
     "https://mugshotbot.com/m?" +
     options.map((o) => o.setting + "=" + o.value).join("&") +
@@ -42,10 +38,10 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
   <meta name="description" content={description} />
   <meta property="og:image" content={image} />
   <meta property="twitter:image" content={image} />
-  <meta name="twitter:title" content={title} />
   <meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
 
