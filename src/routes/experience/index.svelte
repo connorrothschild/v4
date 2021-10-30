@@ -27,7 +27,6 @@
     title: "Experience | Connor Rothschild",
     description: "Some of my work experience.",
   };
-  console.log(jobs);
 </script>
 
 <Transition />
@@ -40,7 +39,12 @@
 
   <div class="transition-content">
     {#each sortedJobs as job}
-      <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
+      <JobSection
+        job={job.metadata}
+        slug={job.path.replace(/\.[^/.]+$/, "")}
+        preview={false}
+        hoveredFromChild={null}
+      />
       <p><SvelteMarkdown source={job.metadata.content} /></p>
     {/each}
   </div>

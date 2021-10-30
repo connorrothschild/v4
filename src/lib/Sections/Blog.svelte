@@ -1,14 +1,13 @@
 <script>
-  import { slide } from "svelte/transition";
-  import { linear } from "svelte/easing";
+  import { fly, fade } from "svelte/transition";
+  import IntersectionObserver from "svelte-intersection-observer";
 
   import BlogSection from "$lib/Content/Blog.svelte";
-  import Transition from "$lib/Transition.svelte";
 
   export let posts;
 
   let filteredPosts = posts
-    .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
+    .filter((d) => !d.metadata.draft && !d.metadata.archived)
     // Sort by featured first, and if featured is the same (both false), then sort by date
     .sort((a, b) => {
       if (b.metadata.featured && !a.metadata.featured) return 1;
@@ -17,79 +16,43 @@
       if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
-  let otherPosts = posts
-    .filter((d) => d.metadata.archived == true)
-    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
+  let element;
+  let intersecting;
 </script>
 
-<Transition />
-<section>
-  <div class="sticky-top">
-    <div class="see-all-flex">
-      <h1 class="page-overline">Blog</h1>
-      <a class="page-overline padding-bottom" href="/post"
-        >See all posts &#8599;</a
-      >
-    </div>
-    <h1 class="page-title">
-      Posts I've
-      <span class="gradient-accented bolded">written</span>​
-    </h1>
-  </div>
-  <div class="posts-grid">
-    {#each filteredPosts as post, index}
-      <BlogSection
-        post={post.metadata}
-        slug={post.path.replace(/\.[^/.]+$/, "")}
-      />
-    {/each}
-  </div>
-  <!-- {#if showAll}
-    <div transition:slide={{ duration: 300, easing: linear }}>
-      <h1 class="archives-title">😬 The archives 😬</h1>
-      <div class="post-grid">
-        {#each otherPosts as post, index}
+<IntersectionObserver {element} bind:intersecting>
+  <section bind:this={element}>
+    <!-- {#if intersecting} -->
+    <div transition:fly={{ x: -50 }}>
+      <!-- <div transition:fade> -->
+      <div class="sticky-top">
+        <div class="see-all-flex">
+          <h1 class="page-overline">Blog</h1>
+          <a class="page-overline padding-bottom" href="/post"
+            >See all posts &#8599;</a
+          >
+        </div>
+        <h1 class="page-title home">
+          Posts I've
+          <span class="gradient-accented bolded">written</span>​
+        </h1>
+      </div>
+      <div class="posts-grid">
+        {#each filteredPosts as post, index}
           <BlogSection
             post={post.metadata}
             slug={post.path.replace(/\.[^/.]+$/, "")}
-            {index}
-            bind:anyHovered
           />
         {/each}
       </div>
     </div>
-  {/if}
-  <button
-    class="button pulled-right block transition-content"
-    on:click={() => {
-      showAll = !showAll;
-    }}
-  >
-    {showAll ? "Hide the archives 👍" : "Show the archives 😬"}
-  </button> -->
-</section>
+    <!-- {/if} -->
+  </section>
+</IntersectionObserver>
 
 <style>
   section {
     padding: 1rem;
-  }
-
-  :global(.swiper-button-prev::after, .swiper-button-next::after) {
-    font-size: 24px !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  :global(.swiper) {
-    width: 100%;
-    height: 100%;
-  }
-
-  :global(.swiper-slide) {
-    width: 33vw;
-    flex-shrink: 0;
-    position: relative;
-    transition: transform 300ms ease;
-    overflow: hidden;
   }
 
   .posts-grid {

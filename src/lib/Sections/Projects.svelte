@@ -1,4 +1,10 @@
 <script>
+  import { fly, fade } from "svelte/transition";
+  import IntersectionObserver from "svelte-intersection-observer";
+
+  let element;
+  let intersecting;
+
   export let projects;
 
   let filteredProjects = projects
@@ -11,7 +17,7 @@
     });
 
   // Import Swiper Svelte components
-  import { Mousewheel, Navigation } from "swiper";
+  import { Mousewheel, Navigation, FreeMode } from "swiper";
   import { Swiper, SwiperSlide } from "swiper/svelte";
 
   // Import Swiper styles
@@ -19,63 +25,70 @@
   import "swiper/css";
 </script>
 
-<section>
-  <div class="sticky-top not-full-width-content">
-    <div class="see-all-flex">
-      <h1 class="page-overline">Projects</h1>
-      <a class="page-overline padding-bottom" href="/project"
-        >See all projects &#8599;</a
-      >
-    </div>
-    <h1 class="page-title">
-      Projects I've
-      <span class="gradient-accented bolded">built</span>
-    </h1>
-  </div>
-
-  <div class="projects-container">
-    <Swiper
-      modules={[Mousewheel, Navigation]}
-      spaceBetween={0}
-      slidesPerView={1.05}
-      navigation={true}
-      mousewheel={false}
-      centeredSlides={true}
-      initialSlide={2}
-      loop={true}
-      direction={"horizontal"}
-      breakpoints={{
-        "568": {
-          slidesPerView: 1.2,
-        },
-        "768": {
-          slidesPerView: 1.2,
-        },
-      }}
-    >
-      {#each filteredProjects as project, index}
-        <SwiperSlide>
-          <!-- <div class="project"> -->
-          <a
-            href={project.path.replace(/\.[^/.]+$/, "")}
-            target="_blank"
-            class="project-link"
-            ><div class="gradient-overlay" />
-            <img
-              src={`/images/project/${project.metadata.image}`}
-              alt=""
-              class="project-image"
-            />
-            <div class="project-text">
-              <h1>{project.metadata.title}</h1>
-              <h2>{project.metadata.description}</h2>
-            </div>
+<IntersectionObserver {element} bind:intersecting>
+  <section bind:this={element}>
+    <!-- {#if intersecting} -->
+    <div transition:fly={{ x: -50 }}>
+      <!-- <div transition:fade> -->
+      <div class="sticky-top not-full-width-content">
+        <div class="see-all-flex">
+          <h1 class="page-overline">Projects</h1>
+          <a class="page-overline padding-bottom" href="/project">
+            See all projects &#8599;
           </a>
-        </SwiperSlide>
-      {/each}
-    </Swiper>
-  </div>
-</section>
+        </div>
+        <h1 class="page-title home">
+          Projects I've
+          <span class="gradient-accented bolded">built</span>
+        </h1>
+      </div>
+
+      <div class="projects-container">
+        <Swiper
+          modules={[Mousewheel, Navigation, FreeMode]}
+          freeMode={true}
+          spaceBetween={-1}
+          slidesPerView={1.05}
+          navigation={true}
+          mousewheel={{ forceToAxis: true }}
+          centeredSlides={true}
+          initialSlide={2}
+          loop={true}
+          direction={"horizontal"}
+          breakpoints={{
+            "568": {
+              slidesPerView: 1.2,
+            },
+            "768": {
+              slidesPerView: 1.2,
+            },
+          }}
+        >
+          {#each filteredProjects as project, index}
+            <SwiperSlide>
+              <a
+                href={project.path.replace(/\.[^/.]+$/, "")}
+                target="_blank"
+                class="project-link"
+                ><div class="gradient-overlay" />
+                <img
+                  src={`/images/project/${project.metadata.image}`}
+                  alt=""
+                  class="project-image"
+                />
+                <div class="project-text">
+                  <h1>{project.metadata.title}</h1>
+                  <h2>{project.metadata.description}</h2>
+                </div>
+              </a>
+            </SwiperSlide>
+          {/each}
+        </Swiper>
+      </div>
+    </div>
+    <!-- {/if} -->
+  </section>
+</IntersectionObserver>
 
 <style>
   section {
@@ -100,8 +113,15 @@
     width: 50vw;
     flex-shrink: 0;
     position: relative;
-    transition: transform 300ms ease;
     overflow: hidden;
+    transition: filter 500ms ease;
+  }
+  :global(.swiper-slide-active) {
+    filter: none;
+  }
+
+  :global(.swiper-slide:not(.swiper-slide-active)) {
+    filter: grayscale(1);
   }
 
   .projects-container {

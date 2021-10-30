@@ -1,6 +1,11 @@
 <script>
+  import { fly, fade } from "svelte/transition";
+  import IntersectionObserver from "svelte-intersection-observer";
+
   import AwardSection from "$lib/Content/Award.svelte";
-  import Transition from "$lib/Transition.svelte";
+
+  let element;
+  let intersecting;
 
   export let awards;
 
@@ -15,32 +20,38 @@
   let anyHovered;
 </script>
 
-<Transition />
-<section>
-  <div class="sticky-top">
-    <div class="see-all-flex">
-      <h1 class="page-overline">Awards</h1>
-      <a class="page-overline padding-bottom" href="/awards"
-        >See all awards &#8599;</a
-      >
-    </div>
-    <h1 class="page-title">
-      Awards I've
-      <span class="gradient-accented bolded ">won</span>
-    </h1>
-  </div>
+<IntersectionObserver {element} bind:intersecting>
+  <section bind:this={element}>
+    <!-- {#if intersecting} -->
+    <div transition:fly={{ x: -50 }}>
+      <!-- <div transition:fade> -->
+      <div class="sticky-top">
+        <div class="see-all-flex">
+          <h1 class="page-overline">Awards</h1>
+          <a class="page-overline padding-bottom" href="/awards"
+            >See all awards &#8599;</a
+          >
+        </div>
+        <h1 class="page-title home">
+          Awards I've
+          <span class="gradient-accented bolded ">won</span>
+        </h1>
+      </div>
 
-  <div class="awards-grid transition-content">
-    {#each awards as award, index}
-      <AwardSection
-        award={award.metadata}
-        slug={award.path.replace(/\.[^/.]+$/, "")}
-        bind:anyHovered
-        {index}
-      />
-    {/each}
-  </div>
-</section>
+      <div class="awards-grid">
+        {#each awards as award, index}
+          <AwardSection
+            award={award.metadata}
+            slug={award.path.replace(/\.[^/.]+$/, "")}
+            bind:anyHovered
+            {index}
+          />
+        {/each}
+      </div>
+    </div>
+    <!-- {/if} -->
+  </section>
+</IntersectionObserver>
 
 <style>
   section {
@@ -51,7 +62,6 @@
   .awards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-auto-rows: 1fr; */
     grid-gap: 10px;
     margin-bottom: 10px;
     width: 99%;

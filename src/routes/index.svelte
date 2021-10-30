@@ -36,6 +36,7 @@
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
+  import Footer from "$lib/Sections/Footer.svelte";
 </script>
 
 <main>
@@ -44,6 +45,7 @@
   <Projects {projects} />
   <Blog {posts} />
   <Awards {awards} />
+  <Footer />
 </main>
 
 <style>

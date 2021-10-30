@@ -290,6 +290,10 @@ button:focus:not(:focus-visible) {
   user-select: none;
 }
 
+.page-title.home {
+  font-size: 3.5rem;
+}
+
 .transition-title,
 .transition-subtitle, 
 .transition-content {
@@ -304,6 +308,10 @@ button:focus:not(:focus-visible) {
     /* letter-spacing: 1px; */
   }
 
+  .home {
+    font-size: 2.75rem;
+  }
+
   .page-overline {
     font-size: .75rem;
   }
@@ -314,11 +322,18 @@ button:focus:not(:focus-visible) {
   .page-title {
     font-size: 2.5rem;
   }
+
+  .home {
+    font-size: 2.25rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .page-title {
     font-size: 2.25rem;
+  }
+  .home {
+    font-size: 2rem;
   }
 }
 
@@ -419,7 +434,8 @@ blockquote p:last-of-type {
 
 .sticky-top {
   position: sticky;
-  top: var(--nav-height);
+  top: 0;
+  /* top: var(--nav-height); */
   padding-top: 1px;
   z-index: 10;
   background: var(--tertiary-color);

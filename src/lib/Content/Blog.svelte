@@ -34,7 +34,10 @@
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
   <img
-    src="/images/post/{post.image}"
+    src="https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/{slug.replace(
+      './',
+      ''
+    )}"
     alt="Post image for {post.title}"
     class="post-image"
     on:mouseover={() => {
@@ -105,7 +108,7 @@
     bottom: 0;
     left: 0;
     pointer-events: none;
-    padding: 1.5rem;
+    padding: 1rem;
     z-index: 3;
   }
 

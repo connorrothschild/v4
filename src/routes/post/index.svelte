@@ -24,7 +24,7 @@
   export let posts;
 
   let filteredPosts = posts
-    .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
+    .filter((d) => !d.metadata.draft && !d.metadata.archived)
     // Sort by featured first, and if featured is the same (both false), then sort by date
     .sort((a, b) => {
       if (b.metadata.featured && !a.metadata.featured) return 1;
@@ -101,6 +101,7 @@
   .post-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     grid-gap: 10px;
     margin-bottom: 10px;
   }

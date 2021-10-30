@@ -2,8 +2,8 @@
 layout: experience
 name: "Axios"
 imageUrl: axios
-description: "Lorem"
 order: 2
+description: '<p>I worked as a visual journalist at Axios in the summer after graduating. While there, I created a variety of visualizations for journalists and even had the opportunity to write a few of my own stories!</p> <p><a href="https://muckrack.com/connor-rothschild-1">Find all my stories here.</a></p>'
 ---
 
 I worked as a visual journalist at Axios in the summer after graduating. While there, I created a variety of visualizations for journalists and even had the opportunity to write a few of my own stories!

@@ -9,6 +9,7 @@
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
     "@sveltejs/kit": "^1.0.0-next.110",
+    "@sveltejs/svelte-repl": "^0.3.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.1",
     "d3": "^7.0.4",
@@ -25,6 +26,7 @@
     "svelte-highlight": "^3.2.0",
     "svelte-intersection-observer": "^0.9.1",
     "svelte-preprocess": "^4.7.1",
+    "svelte-simple-repl": "github:novacbn/svelte-simple-repl",
     "tailwindcss": "^2.1.1"
   },
   "type": "module",

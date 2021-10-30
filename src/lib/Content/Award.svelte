@@ -4,8 +4,6 @@
   export let anyHovered;
   export let index;
 
-  console.log(award);
-
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
 
@@ -152,10 +150,13 @@
         <h1 class="award-place">{award.place}</h1>
       </div>
       <div class="award-description-container">
-        <p class="award-description">{dateFormat(award.date)}</p>
-        <div class="award-tag">
+        <!-- <p class="award-description">{dateFormat(award.date)}</p> -->
+        <!-- <div class="award-tags"> -->
+        <p class="award-tag full-width">{dateFormat(award.date)}</p>
+        <p class="award-tag">
           {award.organization}
-        </div>
+        </p>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -220,8 +221,13 @@
     display: flex;
     justify-content: space-between;
   }
+  /* 
+  .award-tags {
+    flex: 4;
+    display: flex;
+    justify-content: flex-end;
+  } */
 
-  .award-description,
   .award-tag {
     font-size: 1.1rem;
     line-height: 1.25;
@@ -230,19 +236,14 @@
     color: var(--off-text-color);
     font-weight: 200;
     letter-spacing: 0.64px;
-  }
-
-  .award-description {
-    margin-right: 6px;
-  }
-
-  .award-tags-container {
-    margin-left: 6px;
-  }
-
-  .award-description,
-  .award-tags-container {
+    text-align: center;
     display: inline-block;
+    place-items: center;
+    display: flex;
+  }
+
+  .full-width {
+    flex-shrink: 0;
   }
 
   .award-tag {
@@ -253,7 +254,6 @@
     color: rgba(var(--accent-color-rgb), 1);
     font-size: 0.85rem;
     font-weight: 100;
-    float: right;
   }
 
   .hovered {
@@ -301,10 +301,6 @@
 
     .award-place {
       font-size: 1rem;
-    }
-
-    .award-description {
-      font-size: 0.75rem;
     }
   }
 </style>

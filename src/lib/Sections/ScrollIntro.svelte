@@ -7,7 +7,6 @@
   function handleStuck(e) {
     isStuck = e.detail.isStuck;
   }
-  $: console.log(isStuck);
 
   $: isStuck, runTransition();
 
@@ -51,12 +50,15 @@
       <h3>
         We make it easier for you to talk about the impact you're making in your
         community, through <strong>data-driven</strong> and
-        <strong>engaging</strong> visual stories.
+        <strong>engaging</strong> visual stories. Interested in working with us?
+        <a href="mailto:connor@mokshadata.com?subject=Project%20Inquiry"
+          >Reach out.</a
+        >
       </h3>
     </div>
     <div
       class="buffer"
-      use:sticky={{ stickToTop: true, rootMargin: "20%" }}
+      use:sticky={{ stickToTop: true, rootMargin: "10%" }}
       on:stuck={handleStuck}
     />
   </div>
@@ -111,7 +113,7 @@
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 1.1;
     font-weight: 200;
     font-family: var(--font-sans);
@@ -203,7 +205,7 @@
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 </style>

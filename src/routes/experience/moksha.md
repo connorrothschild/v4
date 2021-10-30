@@ -2,8 +2,8 @@
 layout: experience
 name: "Moksha Data"
 imageUrl: moksha
-description: "Lorem"
 order: 1
+description: '<p>I currently work as an Associate and Data Scientist at <a href="https://www.mokshadata.com/">Moksha Data</a>. I&#39;m currently building <strong>Moksha Interactive</strong>, a subsidiary of Moksha Data which specializes in telling visual stories on the web. </p> <p>Learn more about <a href="https://www.mokshadata.com/">what we&#39;re doing</a>, or <a href="mailto:connor@mokshadata.com?subject=Project%20Inquiry">get in touch</a>.</p>'
 ---
 
 I currently work as an Associate and Data Scientist at [Moksha Data](https://www.mokshadata.com/). I'm currently building **Moksha Interactive**, a subsidiary of Moksha Data which specializes in telling visual stories on the web. 

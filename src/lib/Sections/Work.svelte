@@ -1,7 +1,6 @@
 <script>
-  import { fly } from "svelte/transition";
+  import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
-  import Transition from "$lib/Transition.svelte";
   import JobSection from "$lib/Content/Job.svelte";
   export let jobs;
 
@@ -9,56 +8,64 @@
 
   let element;
   let intersecting;
+
+  let hoveredFromChild;
+  $: hoveredData = jobs.find((d) => d.metadata.name == hoveredFromChild);
 </script>
 
-<!-- <Transition /> -->
-
-<!-- <IntersectionObserver {element} bind:intersecting> -->
-<!-- <section bind:this={element}> -->
-<section>
-  <!-- {#if intersecting} -->
-  <!-- <div transition:fly={{ duration: 1000, x: -200 }}> -->
-  <div>
-    <div class="sticky-top">
-      <div class="see-all-flex">
-        <h1 class="page-overline">Experience</h1>
-        <a class="page-overline padding-bottom" href="/experience"
-          >See all work experience &#8599;</a
-        >
+<IntersectionObserver {element} bind:intersecting>
+  <section bind:this={element}>
+    <!-- {#if intersecting} -->
+    <div transition:fly={{ x: -50 }}>
+      <!-- <div transition:fade> -->
+      <div class="sticky-top">
+        <div class="see-all-flex">
+          <h1 class="page-overline">Experience</h1>
+          <a class="page-overline padding-bottom" href="/experience"
+            >See all work experience &#8599;</a
+          >
+        </div>
+        <h1 class="page-title home">
+          Places I've
+          <span class="gradient-accented bolded ">worked</span>
+        </h1>
       </div>
-      <h1 class="page-title">
-        Places I've
-        <span class="gradient-accented bolded ">worked</span>
-      </h1>
-    </div>
-
-    <!-- <div class="transition-content"> -->
-
-    <div class="flex">
-      <div class="sticky">
-        {#each sortedJobs as job, index}
-          <!-- <JobSection
-          job={job.metadata}
-          slug={job.path.replace(/\.[^/.]+$/, "")}
-        /> -->
-          <div class="job">
-            {job.metadata.name}
+      <div class="flex">
+        <div class="jobs-container">
+          {#each sortedJobs as job, index}
+            <div class="job">
+              <JobSection
+                job={job.metadata}
+                slug={job.path.replace(/\.[^/.]+$/, "")}
+                preview={true}
+                bind:hoveredFromChild
+              />
+            </div>
+          {/each}
+        </div>
+        {#key hoveredData}
+          <div in:fly={{ x: -20, uration: 100 }} class="hovered-job">
+            {#if hoveredData}
+              <h1 class="hovered-job-title">
+                {hoveredData.metadata.name}
+                <img
+                  class="job-image"
+                  src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
+                  alt="Logo for {hoveredData.metadata.name}"
+                />
+              </h1>
+              <p class="hovered-job-description">
+                {@html hoveredData.metadata.description}
+              </p>
+            {/if}
           </div>
-        {/each}
-      </div>
-      <div class="fixed">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
+        {/key}
       </div>
     </div>
-    <!-- </div> -->
-  </div>
-  <!-- {/if} -->
-</section>
+    <!-- {/if} -->
+  </section>
+</IntersectionObserver>
 
-<!-- </IntersectionObserver> -->
 <style>
   section {
     min-height: 80vh;
@@ -68,24 +75,71 @@
 
   .flex {
     display: flex;
+    flex-direction: row;
   }
 
-  .fixed,
-  .sticky {
-    flex: 1 1 50%;
-  }
-
-  .fixed p {
-    height: 50vh;
-  }
-
-  .sticky {
+  .jobs-container {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+  }
+
+  .job {
+    flex: 1;
+    height: 15%;
+  }
+
+  .jobs-container,
+  .hovered-job {
+    flex: 1;
+  }
+
+  .hovered-job {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    place-items: center;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    height: 100vh;
+    padding: 1rem 1rem 1rem 3rem;
+  }
+
+  .hovered-job-title {
+    margin-bottom: 1rem;
+  }
+
+  .hovered-job-description {
+    font-weight: 300;
+    line-height: 1.1;
+  }
+
+  :global(.hovered-job-description p, .hovered-job-description ul) {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .flex {
+      flex-direction: column;
+    }
+
+    .hovered-job {
+      padding: 2rem 0 1rem 0;
+    }
+  }
+
+  .job-image {
+    max-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 568px) {
+    .hovered-job-title {
+      font-size: 1.5rem;
+    }
+
+    :global(.hovered-job-description p) {
+      font-size: 1rem;
+    }
+
+    .job-image {
+      max-height: 1.25rem;
+    }
   }
 </style>

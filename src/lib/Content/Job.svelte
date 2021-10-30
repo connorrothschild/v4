@@ -1,6 +1,8 @@
 <script>
   export let job;
   export let slug;
+  export let preview = false;
+  export let hoveredFromChild = "Moksha Data";
 
   let hovered = false;
 
@@ -9,6 +11,10 @@
 
   let linkClicked = false;
   function navigate(slug) {
+    if (preview) {
+      hoveredFromChild = job.name;
+      return;
+    }
     if (linkClicked) return;
     linkClicked = true;
     setTimeout(() => {
@@ -20,7 +26,9 @@
 </script>
 
 <div
-  class="job-container {hovered ? 'hovered' : ''}"
+  class="job-container {hovered || hoveredFromChild == job.name
+    ? 'hovered'
+    : ''}"
   on:mouseover={() => {
     hovered = true;
     prefetch(slug);
@@ -43,7 +51,7 @@
       alt="logo"
     />
   </div>
-  <h3>&#8594;</h3>
+  {#if !preview} <h3>&#8594;</h3> {/if}
 </div>
 
 <style>
