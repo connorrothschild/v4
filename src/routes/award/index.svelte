@@ -28,9 +28,13 @@
   });
 
   import { seo } from "$lib/store.js";
+  let title = "Awards | Connor Rothschild";
+  let description = "Some of my awards.";
+
   $seo = {
-    title: "Awards | Connor Rothschild",
-    description: "Some of my awards.",
+    title: title,
+    description: description,
+    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
   };
 </script>
 

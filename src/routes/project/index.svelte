@@ -37,9 +37,13 @@
   let showAll = false;
 
   import { seo } from "$lib/store.js";
+  let title = "Projects | Connor Rothschild";
+  let description = "Some of my projects.";
+
   $seo = {
-    title: "Projects | Connor Rothschild",
-    description: "Some of my projects.",
+    title: title,
+    description: description,
+    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
   };
 </script>
 

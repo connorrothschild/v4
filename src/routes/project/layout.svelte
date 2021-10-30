@@ -7,9 +7,13 @@
   export let title;
   export let description;
 
+  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
+
+  // META TAGS
   $seo = {
     title: title,
     description: description,
+    image: image,
   };
 </script>
 

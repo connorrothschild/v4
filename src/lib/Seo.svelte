@@ -4,11 +4,21 @@
 
 <svelte:head>
   <title>{$seo.title}</title>
-  <meta name="og:title" content={$seo.title} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@CL_Rothschild" />
+  <meta name="twitter:creator" content="@CL_Rothschild" />
+  <meta name="twitter:image" content={$seo.image} />
   <meta name="twitter:title" content={$seo.title} />
+  <meta name="og:title" content={$seo.title} />
   <meta name="description" content={$seo.description} />
   <meta name="twitter:description" content={$seo.description} />
-  <meta property="og:image" content={$seo.image} />
-  <meta property="twitter:image" content={$seo.image} />
-  <meta property="twitter:card" content="summary_large_image" />
+  <meta name="og:image" content={$seo.image} />
+  <meta name="keywords" content={$seo.keywords} />
+  <meta name="topic" content={$seo.keywords} />
+  <meta name="language" content="EN" />
+  <meta name="robots" content="index, follow" />
+  <meta name="abstract" content={$seo.description} />
+  <meta name="summary" content={$seo.description} />
+  <meta name="author" content="Connor Rothschild" />
+  <meta name="url" content="http://www.connorrothschild.com" />
 </svelte:head>

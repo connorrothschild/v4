@@ -19,17 +19,6 @@
   };
 </script>
 
-<!-- <svelte:head>
-  <title>{title}</title>
-  <meta name="og:title" content={title} />
-  <meta name="twitter:title" content={title} />
-  <meta name="description" content={description} />
-  <meta name="twitter:description" content={description} />
-  <meta property="og:image" content={image} />
-  <meta property="twitter:image" content={image} />
-  <meta property="twitter:card" content="summary_large_image" />
-</svelte:head> -->
-
 <Transition />
 <main>
   <BackTo

@@ -23,9 +23,13 @@
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
 
   import { seo } from "$lib/store.js";
+  let title = "Experience | Connor Rothschild";
+  let description = "Some of my work experience.";
+
   $seo = {
-    title: "Experience | Connor Rothschild",
-    description: "Some of my work experience.",
+    title: title,
+    description: description,
+    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
   };
 </script>
 

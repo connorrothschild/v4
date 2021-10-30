@@ -68,7 +68,6 @@
 
 <style>
   section {
-    min-height: 80vh;
     padding: 1rem;
     /* max-width: 1068px; */
   }

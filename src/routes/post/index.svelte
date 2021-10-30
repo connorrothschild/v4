@@ -38,9 +38,13 @@
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
   import { seo } from "$lib/store.js";
+  let title = "Blog | Connor Rothschild";
+  let description = "Some of my writing.";
+
   $seo = {
-    title: "Blog | Connor Rothschild",
-    description: "Some of my writing.",
+    title: title,
+    description: description,
+    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
   };
 
   let anyHovered = false;

@@ -1,8 +1,21 @@
 <footer>
   <h1>Built by Connor Rothschild, using Sveltekit</h1>
-  <a class="no-underline" href="#">Follow me on Twitter</a>
-  <a class="no-underline" href="#">Get in touch</a>
-  <a class="no-underline" href="#">Browse source code</a>
+  <a
+    class="no-underline"
+    target="_blank"
+    href="https://twitter.com/CL_Rothschild">Follow me on Twitter</a
+  >
+  <a
+    class="no-underline"
+    target="_blank"
+    href="mailto:connor@connorrothschild.com">Get in touch</a
+  >
+  <a
+    class="no-underline"
+    target="_blank"
+    href="github.com/connorrothschild/connorrothschild.com"
+    >Browse source code</a
+  >
 </footer>
 
 <style>
@@ -10,7 +23,7 @@
     background: rgba(var(--accent-color-rgb), 0.1);
     background: linear-gradient(
       to bottom,
-      var(--tertiary-color) 0,
+      rgba(var(--accent-color-rgb), 0) 0%,
       rgba(var(--accent-color-rgb), 0.2) 50%
     );
     margin-top: 6rem;
