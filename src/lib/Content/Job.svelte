@@ -29,6 +29,7 @@
   class="job-container {hovered || hoveredFromChild == job.name
     ? 'hovered'
     : ''}"
+  class:preview
   on:mouseover={() => {
     hovered = true;
     prefetch(slug);
@@ -43,7 +44,10 @@
   sveltekit:prefetch
   on:click={navigate(slug)}
 >
-  <div style="display: flex; place-items: center;">
+  <div
+    style="display: flex; place-items: center;"
+    class={preview ? "flex-container" : ""}
+  >
     <h2>{job.name}</h2>
     <img
       src="/images/jobs/{job.imageUrl}.svg"
@@ -70,6 +74,12 @@
     text-transform: uppercase;
     letter-spacing: 0.64px;
     transition: all 300ms linear;
+  }
+
+  @media screen and (max-width: 1268px) {
+    .preview h2 {
+      font-size: 2.85vw;
+    }
   }
 
   h3 {
@@ -102,6 +112,12 @@
     /* animation: right 1s ease infinite; */
     text-decoration: none;
     transform: translateX(5px);
+  }
+
+  .flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
   /* .job-container.hovered img {

@@ -85,17 +85,12 @@
     height: 60%;
   }
 
-  .job {
-    flex: 1;
-    height: 15%;
-  }
-
-  .jobs-container,
-  .hovered-job {
-    flex: 1;
+  .jobs-container {
+    flex: 2;
   }
 
   .hovered-job {
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,6 +99,8 @@
 
   .hovered-job-title {
     margin-bottom: 1rem;
+    display: flex;
+    place-items: center;
   }
 
   .hovered-job-description {
@@ -115,6 +112,11 @@
     margin-bottom: 1rem;
   }
 
+  .job-image {
+    max-height: 1.5rem;
+    margin-left: 0.35rem;
+  }
+
   @media screen and (max-width: 768px) {
     .flex {
       flex-direction: column;
@@ -123,10 +125,6 @@
     .hovered-job {
       padding: 2rem 0 1rem 0;
     }
-  }
-
-  .job-image {
-    max-height: 1.5rem;
   }
 
   @media screen and (max-width: 568px) {

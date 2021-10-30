@@ -46,23 +46,18 @@
       <div class="projects-container">
         <Swiper
           modules={[Mousewheel, Navigation, FreeMode]}
-          freeMode={true}
+          freeMode={{ enabled: false, sticky: true }}
+          speed={500}
           spaceBetween={-1}
-          slidesPerView={1.05}
+          slidesPerView={"auto"}
           navigation={true}
           mousewheel={{ forceToAxis: true }}
           centeredSlides={true}
           initialSlide={2}
           loop={true}
           direction={"horizontal"}
-          breakpoints={{
-            "568": {
-              slidesPerView: 1.2,
-            },
-            "768": {
-              slidesPerView: 1.2,
-            },
-          }}
+          observer={true}
+          observeParents={true}
         >
           {#each filteredProjects as project, index}
             <SwiperSlide>
@@ -91,10 +86,6 @@
 </IntersectionObserver>
 
 <style>
-  section {
-    min-height: 70vh;
-  }
-
   .not-full-width-content {
     padding: 1px 1rem 0 1rem;
   }
@@ -110,7 +101,7 @@
   }
 
   :global(.swiper-slide) {
-    width: 50vw;
+    /* width: 50vw; */
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -122,10 +113,6 @@
 
   :global(.swiper-slide:not(.swiper-slide-active)) {
     filter: grayscale(1);
-  }
-
-  .projects-container {
-    height: 500px;
   }
 
   .project-link {
@@ -182,9 +169,19 @@
     font-weight: 200;
   }
 
+  .projects-container {
+    height: 700px;
+  }
+
   @media screen and (max-width: 768px) {
-    .project-text h1 {
-      /* font-size: 2rem; */
+    .projects-container {
+      height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    .projects-container {
+      height: 250px;
     }
   }
 </style>

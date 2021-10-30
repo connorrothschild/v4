@@ -2,7 +2,6 @@
   export let post;
   export let slug;
 
-  import { fly, fade } from "svelte/transition";
   import { currentColorMode } from "../../stores/global.js";
 
   let hovered = false;
@@ -21,14 +20,6 @@
     goto(slug);
   }
 
-  // Show titles by default on touch devices
-  import { onMount } from "svelte";
-  import { detectTouchscreen } from "../../scripts/utils.js";
-  let isTouchscreen = false;
-  onMount(() => {
-    isTouchscreen = detectTouchscreen();
-  });
-
   let lightImage =
     "https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/" +
     slug.replace("./", "");
@@ -39,9 +30,6 @@
 </script>
 
 <div class="post-card no-underline" on:click={navigate(slug)}>
-  <!-- {#if hovered || isTouchscreen}
-    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
-  {/if} -->
   <img
     src={lightImage}
     alt="Post image for {post.title}"
@@ -104,11 +92,13 @@
   .post-image {
     width: 100%;
     height: 100%;
-    min-height: 200px;
     object-fit: cover;
     border-radius: 5px;
     filter: blur(0);
     z-index: 0;
+    height: 180px;
+    -o-object-fit: center top;
+    object-position: center top;
   }
 
   .invisible {

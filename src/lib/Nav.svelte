@@ -9,7 +9,7 @@ Since #nav is fixed, the user can never scroll to it -->
 <div id="home" />
 <div id="nav">
   <ul class="left">
-    <NavListItem code={"#home"} title={"CR"} />
+    <NavListItem code={""} title={"CR"} />
   </ul>
   <ul class="right">
     <NavListItem code={"experience"} title={"Work"} />

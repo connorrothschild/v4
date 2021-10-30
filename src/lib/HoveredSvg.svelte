@@ -44,7 +44,7 @@
 </script>
 
 <a
-  href="/#home"
+  href="#home"
   class="no-underline"
   on:mouseover={() => {
     currentIcon.set("arrow");

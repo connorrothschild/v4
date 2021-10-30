@@ -58,7 +58,7 @@
     </div>
     <div
       class="buffer"
-      use:sticky={{ stickToTop: true, rootMargin: "10%" }}
+      use:sticky={{ stickToTop: true, rootMargin: "0%" }}
       on:stuck={handleStuck}
     />
   </div>
@@ -83,7 +83,7 @@
   }
 
   .fixed-step {
-    min-height: 50vh;
+    min-height: 400px;
     display: flex;
     place-items: center;
     justify-content: center;
@@ -136,7 +136,6 @@
 
   .sticky-stack .fixed-step {
     position: sticky;
-    /* min-height: 50vh; */
   }
 
   .sticky-stack .zero {
@@ -157,7 +156,7 @@
 
   .buffer {
     top: 60%;
-    height: 20vh;
+    height: 200px;
     position: sticky;
   }
 

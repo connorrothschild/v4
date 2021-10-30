@@ -55,7 +55,6 @@
 
 <style>
   section {
-    min-height: 70vh;
     padding: 1rem;
   }
 
