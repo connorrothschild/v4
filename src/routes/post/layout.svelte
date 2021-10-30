@@ -44,6 +44,7 @@
   <meta name="og:title" content={title} />
   <meta name="description" content={description} />
   <meta property="og:image" content={image} />
+  <meta property="twitter:image" content={image} />
   <meta name="twitter:title" content={title} />
   <meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
