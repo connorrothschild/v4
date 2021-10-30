@@ -3,6 +3,7 @@
   export let slug;
 
   import { fly, fade } from "svelte/transition";
+  import { currentColorMode } from "../../stores/global.js";
 
   let hovered = false;
 
@@ -27,19 +28,26 @@
   onMount(() => {
     isTouchscreen = detectTouchscreen();
   });
+
+  let lightImage =
+    "https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/" +
+    slug.replace("./", "");
+
+  let darkImage =
+    "https://mugshotbot.com/m?mode=dark&color=57DFD2&pattern=none&hide_watermark=true&url=https://connorrothschild.com/" +
+    slug.replace("./", "");
 </script>
 
 <div class="post-card no-underline" on:click={navigate(slug)}>
-  {#if hovered || isTouchscreen}
+  <!-- {#if hovered || isTouchscreen}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
-  {/if}
+  {/if} -->
   <img
-    src="https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/{slug.replace(
-      './',
-      ''
-    )}"
+    src={lightImage}
     alt="Post image for {post.title}"
-    class="post-image"
+    class="post-image light {$currentColorMode == 'light'
+      ? 'visible'
+      : 'invisible'}"
     on:mouseover={() => {
       hovered = true;
       prefetch(slug);
@@ -53,7 +61,26 @@
     }}
     class:hovered
   />
-  {#if hovered || isTouchscreen}
+  <img
+    src={darkImage}
+    alt="Post image for {post.title}"
+    class="post-image dark {$currentColorMode == 'dark'
+      ? 'visible'
+      : 'invisible'}"
+    on:mouseover={() => {
+      hovered = true;
+      prefetch(slug);
+    }}
+    on:focus={() => {
+      hovered = true;
+      prefetch(slug);
+    }}
+    on:mouseleave={() => {
+      hovered = false;
+    }}
+    class:hovered
+  />
+  <!-- {#if hovered || isTouchscreen}
     <div
       in:fly={{ y: 50, duration: 200 }}
       out:fade={{ duration: 200 }}
@@ -62,7 +89,7 @@
       <h1 class="title">{post.title}</h1>
       <h2 class="description">{post.description}</h2>
     </div>
-  {/if}
+  {/if} -->
 </div>
 
 <style>
@@ -84,7 +111,11 @@
     z-index: 0;
   }
 
-  .hovered-gradient {
+  .invisible {
+    display: none;
+  }
+
+  /* .hovered-gradient {
     position: absolute;
     background-image: linear-gradient(
       to bottom,
@@ -96,14 +127,14 @@
     background-size: cover;
     pointer-events: none;
     border-radius: 5px;
-    z-index: 1; /* Above image */
-  }
+    z-index: 1; 
+  } */
 
   /* .hovered {
     filter: blur(1px);
   } */
 
-  .post-text {
+  /* .post-text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -131,9 +162,9 @@
     margin-top: 12px;
     letter-spacing: 0.64px;
     text-shadow: 1px 1px 6px black;
-  }
+  } */
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     .hovered-gradient {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
     }
@@ -163,5 +194,5 @@
       letter-spacing: 0.3px;
       margin-top: 6px;
     }
-  }
+  } */
 </style>

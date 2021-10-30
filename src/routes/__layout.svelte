@@ -13,14 +13,14 @@
   import "../styles/project.css";
 
   let currentMode = "light";
-  const updateSystemPreferenceDarkTheme = () => {
-    currentMode = matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
+  // const updateSystemPreferenceDarkTheme = () => {
+  //   currentMode = matchMedia("(prefers-color-scheme: dark)").matches
+  //     ? "dark"
+  //     : "light";
+  // };
 
   onMount(() => {
-    updateSystemPreferenceDarkTheme();
+    // updateSystemPreferenceDarkTheme();
     currentColorMode.set(currentMode);
   });
 </script>

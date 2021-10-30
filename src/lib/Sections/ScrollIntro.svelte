@@ -140,23 +140,23 @@
   }
 
   .sticky-stack .zero {
-    top: 0vh;
+    top: 0%;
   }
 
   .sticky-stack .one {
-    top: 20vh;
+    top: 20%;
   }
 
   .sticky-stack .two {
-    top: 35vh;
+    top: 35%;
   }
 
   .sticky-stack .three {
-    top: 50vh;
+    top: 50%;
   }
 
   .buffer {
-    top: 60vh;
+    top: 60%;
     height: 20vh;
     position: sticky;
   }

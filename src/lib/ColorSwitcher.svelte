@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  // import { currentColorMode } from "../stores/global.js";
+  import { currentColorMode } from "../stores/global.js";
 
   const lightModeColors = [
     { var: `--pure-background-color`, value: `#ffffff` },
@@ -37,24 +37,26 @@
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.08)` },
   ];
 
-  let currentColorMode = "light";
+  let currentMode = "light";
   function setColors() {
-    if (currentColorMode == "dark") {
+    if (currentMode == "dark") {
       lightModeColors.forEach((color) => {
         document.documentElement.style.setProperty(color.var, color.value);
       });
-      currentColorMode = "light";
+      currentMode = "light";
     } else {
       darkModeColors.forEach((color) => {
         document.documentElement.style.setProperty(color.var, color.value);
       });
-      currentColorMode = "dark";
+      currentMode = "dark";
     }
   }
+
+  $: currentMode, currentColorMode.set(currentMode);
 </script>
 
 <p on:click={setColors}>
-  {currentColorMode == "dark" ? "🌕" : "☀️"}
+  {currentMode == "dark" ? "🌕" : "☀️"}
 </p>
 
 <style>
