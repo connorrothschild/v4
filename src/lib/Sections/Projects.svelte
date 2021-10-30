@@ -53,7 +53,7 @@
           navigation={true}
           mousewheel={{ forceToAxis: true }}
           centeredSlides={true}
-          initialSlide={2}
+          initialSlide={1}
           loop={true}
           direction={"horizontal"}
           observer={true}
@@ -181,7 +181,7 @@
 
   @media screen and (max-width: 568px) {
     .projects-container {
-      height: 250px;
+      height: 200px;
     }
   }
 </style>

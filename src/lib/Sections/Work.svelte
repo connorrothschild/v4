@@ -115,6 +115,7 @@
   .job-image {
     max-height: 1.5rem;
     margin-left: 0.35rem;
+    display: inline;
   }
 
   @media screen and (max-width: 768px) {

@@ -20,13 +20,9 @@
     goto(slug);
   }
 
-  let lightImage =
-    "https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/" +
-    slug.replace("./", "");
+  let lightImage = `https://og-image-eight-eta.vercel.app/${post.title}.png?subtitle=${post.description}&theme=light&md=true&hasImage=true`;
 
-  let darkImage =
-    "https://mugshotbot.com/m?mode=dark&color=57DFD2&pattern=none&hide_watermark=true&url=https://connorrothschild.com/" +
-    slug.replace("./", "");
+  let darkImage = `https://og-image-eight-eta.vercel.app/${post.title}.png?subtitle=${post.description}&theme=dark&md=true&hasImage=true`;
 </script>
 
 <div class="post-card no-underline" on:click={navigate(slug)}>
@@ -96,7 +92,6 @@
     border-radius: 5px;
     filter: blur(0);
     z-index: 0;
-    height: 180px;
     -o-object-fit: center top;
     object-position: center top;
   }

@@ -5,27 +5,11 @@
   import { seo } from "$lib/store";
   import { dateFormat } from "../../scripts/utils.js";
 
-  import { page } from "$app/stores";
   export let title;
   export let description;
   export let date;
 
-  let slug = $page.path;
-
-  const options = [
-    { setting: "theme", value: "two_up" },
-    { setting: "mode", value: "light" },
-    { setting: "color", value: "C5516C" },
-    { setting: "pattern", value: "diagonal_lines" },
-    { setting: "image", value: "92b91df8" },
-    { setting: "hide_watermark", value: "true" },
-    { setting: "url", value: "https://connorrothschild.com" },
-  ];
-
-  let image =
-    "https://mugshotbot.com/m?" +
-    options.map((o) => o.setting + "=" + o.value).join("&") +
-    slug;
+  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
 
   // META TAGS
   $seo = {
@@ -35,7 +19,7 @@
   };
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <title>{title}</title>
   <meta name="og:title" content={title} />
   <meta name="twitter:title" content={title} />
@@ -44,7 +28,7 @@
   <meta property="og:image" content={image} />
   <meta property="twitter:image" content={image} />
   <meta property="twitter:card" content="summary_large_image" />
-</svelte:head>
+</svelte:head> -->
 
 <Transition />
 <main>
