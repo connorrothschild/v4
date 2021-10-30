@@ -3,7 +3,7 @@
    * @type {import('@sveltejs/kit').Load}
    */
   export async function load({ page, fetch, session }) {
-    const res = await fetch(`/experience.json`);
+    const res = await fetch(`./experience.json`);
     const jobs = await res.json();
     return {
       props: {
@@ -17,7 +17,7 @@
   import SvelteMarkdown from "svelte-markdown";
 
   import Transition from "$lib/Transition.svelte";
-  import JobSection from "$lib/JobSection.svelte";
+  import JobSection from "$lib/Content/Job.svelte";
   export let jobs;
 
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
@@ -27,20 +27,24 @@
     title: "Experience | Connor Rothschild",
     description: "Some of my work experience.",
   };
-  console.log(jobs);
 </script>
 
 <Transition />
 <main>
   <h1 class="page-overline transition-subtitle">Experience</h1>
   <h1 class="page-title transition-title">
-    Where I've
+    Places I've
     <span class="gradient-accented bolded ">worked</span>
   </h1>
 
   <div class="transition-content">
     {#each sortedJobs as job}
-      <JobSection job={job.metadata} slug={job.path.replace(/\.[^/.]+$/, "")} />
+      <JobSection
+        job={job.metadata}
+        slug={job.path.replace(/\.[^/.]+$/, "")}
+        preview={false}
+        hoveredFromChild={null}
+      />
       <p><SvelteMarkdown source={job.metadata.content} /></p>
     {/each}
   </div>

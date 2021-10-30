@@ -1,5 +1,7 @@
 ---
 title: Student Winner, Computation + Journalism 2020 Conference
+place: Student Winner
+award: Computation + Journalism 2020 Conference
 organization: Northeastern University
 date: "2020-01-07"
 featured: true

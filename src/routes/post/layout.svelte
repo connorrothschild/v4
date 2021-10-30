@@ -5,19 +5,45 @@
   import { seo } from "$lib/store";
   import { dateFormat } from "../../scripts/utils.js";
 
+  import { page } from "$app/stores";
   export let title;
   export let description;
   export let date;
 
+  let slug = $page.path;
+
+  const options = [
+    { setting: "theme", value: "two_up" },
+    { setting: "mode", value: "light" },
+    { setting: "color", value: "C5516C" },
+    { setting: "pattern", value: "diagonal_lines" },
+    // { setting: "image", value: "92b91df8" },
+    { setting: "hide_watermark", value: "true" },
+    { setting: "url", value: "https://connorrothschild.com" },
+  ];
+
+  console.log(
+    "https://mugshotbot.com/m?" +
+      options.map((o) => o.setting + "=" + o.value).join("&")
+  );
+  let image =
+    "https://mugshotbot.com/m?" +
+    options.map((o) => o.setting + "=" + o.value).join("&") +
+    slug;
+
+  // META TAGS
   $seo = {
     title: title,
     description: description,
+    image: image,
   };
 </script>
 
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <Transition />

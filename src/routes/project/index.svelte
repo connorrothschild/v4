@@ -3,7 +3,7 @@
    * @type {import('@sveltejs/kit').Load}
    */
   export async function load({ page, fetch, session }) {
-    const res = await fetch(`/projects.json`);
+    const res = await fetch(`./projects.json`);
     const projects = await res.json();
 
     return {
@@ -16,7 +16,7 @@
 
 <script>
   import Transition from "$lib/Transition.svelte";
-  import ProjectSection from "$lib/ProjectSection.svelte";
+  import ProjectSection from "$lib/Content/Project.svelte";
 
   import { linear } from "svelte/easing";
   import { slide } from "svelte/transition";

@@ -1,5 +1,5 @@
 <script>
-  export let project;
+  export let post;
   export let slug;
 
   import { fly, fade } from "svelte/transition";
@@ -22,21 +22,24 @@
 
   // Show titles by default on touch devices
   import { onMount } from "svelte";
-  import { detectTouchscreen } from "../scripts/utils.js";
+  import { detectTouchscreen } from "../../scripts/utils.js";
   let isTouchscreen = false;
   onMount(() => {
     isTouchscreen = detectTouchscreen();
   });
 </script>
 
-<div class="project-card no-underline" on:click={navigate(slug)}>
+<div class="post-card no-underline" on:click={navigate(slug)}>
   {#if hovered || isTouchscreen}
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
   <img
-    src="/images/project/{project.image}"
-    alt="Project image for {project.title}"
-    class="project-image"
+    src="https://mugshotbot.com/m?mode=light&color=c5516c&pattern=none&hide_watermark=true&url=https://connorrothschild.com/{slug.replace(
+      './',
+      ''
+    )}"
+    alt="Post image for {post.title}"
+    class="post-image"
     on:mouseover={() => {
       hovered = true;
       prefetch(slug);
@@ -54,16 +57,16 @@
     <div
       in:fly={{ y: 50, duration: 200 }}
       out:fade={{ duration: 200 }}
-      class="project-text"
+      class="post-text"
     >
-      <h1 class="title">{project.title}</h1>
-      <h2 class="description">{project.description}</h2>
+      <h1 class="title">{post.title}</h1>
+      <h2 class="description">{post.description}</h2>
     </div>
   {/if}
 </div>
 
 <style>
-  .project-card {
+  .post-card {
     position: relative;
     border-radius: 5px;
     box-shadow: 1px 1px 4px var(--box-shadow-color);
@@ -71,7 +74,7 @@
     cursor: pointer;
   }
 
-  .project-image {
+  .post-image {
     width: 100%;
     height: 100%;
     min-height: 200px;
@@ -100,12 +103,12 @@
     filter: blur(1px);
   } */
 
-  .project-text {
+  .post-text {
     position: absolute;
     bottom: 0;
     left: 0;
     pointer-events: none;
-    padding: 1.5rem;
+    padding: 1rem;
     z-index: 3;
   }
 
@@ -135,16 +138,28 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
     }
 
-    .project-text {
+    .post-text {
       padding: 1rem;
     }
 
     .title {
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
 
     .description {
       font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
       letter-spacing: 0.3px;
       margin-top: 6px;
     }

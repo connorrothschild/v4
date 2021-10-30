@@ -3,7 +3,7 @@
    * @type {import('@sveltejs/kit').Load}
    */
   export async function load({ page, fetch, session }) {
-    const res = await fetch(`/posts.json`);
+    const res = await fetch(`./posts.json`);
     const posts = await res.json();
 
     return {
@@ -18,13 +18,13 @@
   import { slide } from "svelte/transition";
   import { linear } from "svelte/easing";
 
-  import BlogSection from "$lib/BlogSection.svelte";
+  import BlogSection from "$lib/Content/Blog.svelte";
   import Transition from "$lib/Transition.svelte";
 
   export let posts;
 
   let filteredPosts = posts
-    .filter((d) => d.metadata.draft != true && d.metadata.archived != true)
+    .filter((d) => !d.metadata.draft && !d.metadata.archived)
     // Sort by featured first, and if featured is the same (both false), then sort by date
     .sort((a, b) => {
       if (b.metadata.featured && !a.metadata.featured) return 1;
@@ -51,7 +51,7 @@
 <main>
   <h1 class="page-overline transition-subtitle">Blog</h1>
   <h1 class="page-title transition-title">
-    What I've
+    Posts I've
     <span class="gradient-accented bolded">written</span>​
   </h1>
   <div class="transition-content post-grid">
@@ -101,7 +101,13 @@
   .post-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-gap: 15px; */
+    grid-auto-rows: 1fr;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin: 12px 0 12px auto;
   }
 
   .archives-title {
@@ -117,7 +123,8 @@
 
   @media screen and (max-width: 668px) {
     .post-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(1, 1fr);
     }
 
     .archives-title {

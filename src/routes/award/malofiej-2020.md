@@ -1,5 +1,7 @@
 ---
 title: Bronze, 2020 Malofiej Awards
+place: Bronze
+award: 2020 Malofiej Awards
 organization: Malofiej
 date: "2020-08-07"
 featured: true

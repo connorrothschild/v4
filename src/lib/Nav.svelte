@@ -3,9 +3,13 @@
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 </script>
 
+<!-- The first nav stays at the top of the page so user can scroll to it 
+But it is invisible
+Since #nav is fixed, the user can never scroll to it -->
+<div id="home" />
 <div id="nav">
   <ul class="left">
-    <NavListItem code="" title="CR" />
+    <NavListItem code={"#home"} title={"CR"} />
   </ul>
   <ul class="right">
     <NavListItem code={"experience"} title={"Work"} />
@@ -17,13 +21,20 @@
 </div>
 
 <style>
+  /* #home {
+    display: none;
+  } */
+
   #nav {
     display: flex;
-    max-width: 860px;
-    padding: 1rem;
-    margin: 0 auto;
-    width: 95%;
     place-items: center;
+    position: fixed;
+    z-index: 99;
+    background: var(--tertiary-color);
+    height: var(--nav-height);
+    padding: 0 1rem;
+    margin: 0;
+    width: calc(100vw - 2rem);
   }
 
   ul {
@@ -48,20 +59,11 @@
     flex: 1;
     text-align: right;
     justify-content: flex-end;
+    place-items: center;
   }
 
   /* When nav and icon would overlap, apply padding */
   @media screen and (max-width: 560px) {
-    #nav {
-      padding: 1rem 0;
-      margin: 0 1rem;
-      width: auto;
-    }
-
-    .right {
-      margin: auto;
-    }
-
     :global(.left li) {
       font-size: 1.5rem;
     }

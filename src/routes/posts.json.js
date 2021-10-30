@@ -4,9 +4,10 @@ export async function get() {
 
     for (const path in imports) {
         body.push(
-            imports[path]().then(({ metadata }) => {
+            imports[path]().then(({ metadata, slug }) => {
                 return {
                     metadata,
+                    slug,
                     path,
                 };
             })

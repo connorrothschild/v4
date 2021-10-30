@@ -1,5 +1,7 @@
 ---
 title: Winner, The 2020 Pudding Cup
+place: Winner
+award: The 2020 Pudding Cup
 organization: The Pudding
 featured: true
 date: "2021-01-07"

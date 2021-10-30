@@ -1,5 +1,7 @@
 ---
 title: 1st Place (Houston Track), 2020 Rice Datathon
+place: 1st Place (Houston Track)
+award: 2020 Rice Datathon
 organization: Rice DataSci Club
 date: "2020-01-09"
 featured: false

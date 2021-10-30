@@ -62,7 +62,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 100;
     display: flex;
     place-items: center;
     justify-content: center;
