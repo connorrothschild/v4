@@ -2,9 +2,10 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./experience.json`);
+  export async function load({ fetch }) {
+    const res = await fetch(`/experience.json`);
     const jobs = await res.json();
+
     return {
       props: {
         jobs,
@@ -14,8 +15,6 @@
 </script>
 
 <script>
-  import SvelteMarkdown from "svelte-markdown";
-
   import Transition from "$lib/Transition.svelte";
   import JobSection from "$lib/Content/Job.svelte";
   export let jobs;
@@ -49,7 +48,6 @@
         preview={false}
         hoveredFromChild={null}
       />
-      <p><SvelteMarkdown source={job.metadata.content} /></p>
     {/each}
   </div>
 </main>

@@ -2,8 +2,8 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./posts.json`);
+  export async function load({ fetch }) {
+    const res = await fetch(`/posts.json`);
     const posts = await res.json();
 
     return {
@@ -63,8 +63,6 @@
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}
-        {index}
-        bind:anyHovered
       />
     {/each}
   </div>

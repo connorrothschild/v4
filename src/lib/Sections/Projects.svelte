@@ -171,7 +171,7 @@
   }
 
   .projects-container {
-    height: 700px;
+    height: 500px;
   }
 
   @media screen and (max-width: 768px) {

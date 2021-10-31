@@ -1,7 +1,7 @@
 <script>
   export let award;
   export let slug;
-  export let anyHovered;
+  export let anyHovered = false;
   export let index;
 
   import { scaleLinear } from "d3-scale";

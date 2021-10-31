@@ -2,18 +2,19 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ page, fetch, session }) {
-    const jobsJson = await fetch(`./experience.json`);
+  export async function load({ fetch }) {
+    const jobsJson = await fetch(`/experience.json`);
     const jobs = await jobsJson.json();
 
-    const projectsJson = await fetch(`./projects.json`);
+    const projectsJson = await fetch(`/projects.json`);
     const projects = await projectsJson.json();
 
-    const postsJson = await fetch(`./posts.json`);
+    const postsJson = await fetch(`/posts.json`);
     const posts = await postsJson.json();
 
-    const awardsJson = await fetch(`./awards.json`);
+    const awardsJson = await fetch(`/awards.json`);
     const awards = await awardsJson.json();
+
     return {
       props: {
         jobs,

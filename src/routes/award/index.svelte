@@ -2,9 +2,10 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./awards.json`);
+  export async function load({ fetch }) {
+    const res = await fetch(`/awards.json`);
     const awards = await res.json();
+
     return {
       props: {
         awards,
@@ -26,6 +27,8 @@
     if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
     if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
   });
+
+  let anyHovered;
 
   import { seo } from "$lib/store.js";
   let title = "Awards | Connor Rothschild";
@@ -51,6 +54,7 @@
       <AwardSection
         award={award.metadata}
         slug={award.path.replace(/\.[^/.]+$/, "")}
+        bind:anyHovered
         {index}
       />
     {/each}

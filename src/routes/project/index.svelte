@@ -2,8 +2,8 @@
   /**
    * @type {import('@sveltejs/kit').Load}
    */
-  export async function load({ page, fetch, session }) {
-    const res = await fetch(`./projects.json`);
+  export async function load({ fetch }) {
+    const res = await fetch(`/projects.json`);
     const projects = await res.json();
 
     return {

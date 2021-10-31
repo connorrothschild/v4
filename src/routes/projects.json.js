@@ -15,6 +15,7 @@ export async function get() {
         
     const projects = await Promise.all(body);
     
+    console.log(projects);
     return {
         body: JSON.stringify(projects)
     }

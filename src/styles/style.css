@@ -308,8 +308,8 @@ button:focus:not(:focus-visible) {
     /* letter-spacing: 1px; */
   }
 
-  .home {
-    font-size: 2.75rem;
+  .page-title.home {
+    font-size: 3rem;
   }
 
   .page-overline {
@@ -323,8 +323,8 @@ button:focus:not(:focus-visible) {
     font-size: 2.5rem;
   }
 
-  .home {
-    font-size: 2.25rem;
+  .page-title.home {
+    font-size: 2.75rem;
   }
 }
 
