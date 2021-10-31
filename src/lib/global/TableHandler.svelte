@@ -6,7 +6,7 @@
 </script>
 
 <div style="width: {width};">
-  <img {src} {alt} width="100%" />
+  <img loading="lazy" {src} {alt} width="100%" />
   <a href={link} target="_blank" class="no-underline"
     >The original, interactive table can be found here</a
   >

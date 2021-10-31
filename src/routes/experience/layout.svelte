@@ -29,6 +29,7 @@
   <h1 class="page-title transition-title">
     {name}
     <img
+      loading="lazy"
       src={`/images/jobs/${imageUrl}.svg`}
       alt="Logo for {name}"
       class="logo"

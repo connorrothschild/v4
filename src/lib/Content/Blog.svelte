@@ -27,6 +27,7 @@
 
 <div class="post-card no-underline" on:click={navigate(slug)}>
   <img
+    loading="lazy"
     src={lightImage}
     alt="Post image for {post.title}"
     class="post-image light {$currentColorMode == 'light'
@@ -46,6 +47,7 @@
     class:hovered
   />
   <img
+    loading="lazy"
     src={darkImage}
     alt="Post image for {post.title}"
     class="post-image dark {$currentColorMode == 'dark'

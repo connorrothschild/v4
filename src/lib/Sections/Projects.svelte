@@ -67,6 +67,7 @@
                 class="project-link"
                 ><div class="gradient-overlay" />
                 <img
+                  loading="lazy"
                   src={`/images/project/${project.metadata.image}`}
                   alt=""
                   class="project-image"
@@ -181,7 +182,7 @@
 
   @media screen and (max-width: 568px) {
     .projects-container {
-      height: 200px;
+      height: 250px;
     }
   }
 </style>

@@ -50,6 +50,7 @@
   >
     <h2>{job.name}</h2>
     <img
+      loading="lazy"
       src="/images/jobs/{job.imageUrl}.svg"
       class="job-image {hovered ? 'hovered' : ''}"
       alt="logo"

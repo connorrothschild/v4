@@ -34,6 +34,7 @@
     <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
   <img
+    loading="lazy"
     src="/images/project/{project.image}"
     alt="Project image for {project.title}"
     class="project-image"

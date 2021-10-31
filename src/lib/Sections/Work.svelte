@@ -49,6 +49,7 @@
               <h1 class="hovered-job-title">
                 {hoveredData.metadata.name}
                 <img
+                  loading="lazy"
                   class="job-image"
                   src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
                   alt="Logo for {hoveredData.metadata.name}"

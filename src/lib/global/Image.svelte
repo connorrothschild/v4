@@ -39,6 +39,7 @@
 {/if}
 <a {href} target="_blank" class="no-underline">
   <img
+    loading="lazy"
     {src}
     {alt}
     {width}
