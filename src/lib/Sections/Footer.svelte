@@ -35,13 +35,15 @@
   }
 
   h1 {
+    line-height: 1.25;
     font-size: 1.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
-  /* .buttons {
-    margin-top: 1rem;
-  } */
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   a {
     font-size: 1.2rem;
@@ -49,7 +51,7 @@
     font-family: var(--font-sans);
     background: rgba(var(--accent-color-rgb), 0.1);
     padding: 0.35rem 0.65rem;
-    margin-right: 0.2rem;
+    margin: 0.35rem 0.35rem 0 0;
     border-radius: 5px;
   }
 </style>
