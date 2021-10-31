@@ -1,9 +1,9 @@
 <script>
-  import Transition from "$lib/Transition.svelte";
+  // import Transition from "$lib/Transition.svelte";
   import ScrollIntro from "./ScrollIntro.svelte";
 </script>
 
-<Transition />
+<!-- <Transition /> -->
 <section>
   <ScrollIntro />
 

@@ -4,7 +4,7 @@
 
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
-  import HoveredSvg from "$lib/HoveredSvg.svelte";
+  // import HoveredSvg from "$lib/HoveredSvg.svelte";
 
   import "../styles/immutable.css";
   import "../styles/code.css";
@@ -27,7 +27,7 @@
 
 <Seo />
 <Nav />
-<HoveredSvg />
+<!-- <HoveredSvg /> -->
 <slot />
 
 <style>
