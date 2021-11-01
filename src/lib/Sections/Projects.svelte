@@ -30,7 +30,7 @@
     <!-- {#if intersecting} -->
     <!-- <div transition:fly={{ x: -50 }}> -->
     <!-- <div transition:fade> -->
-    <div class="sticky-top not-full-width-content">
+    <div class="sticky-top title-max-width-container">
       <div class="see-all-flex">
         <h1 class="page-overline">Projects</h1>
         <a class="page-overline padding-bottom" href="/project">
@@ -90,11 +90,17 @@
   section {
     width: 100%;
     margin: auto;
-    max-width: 1268px;
   }
 
-  .not-full-width-content {
-    padding: 1px 1rem 0 1rem;
+  .title-max-width-container {
+    width: 100%;
+  }
+
+  .see-all-flex,
+  .page-title {
+    max-width: 1268px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media screen and (max-width: 1468px) {
