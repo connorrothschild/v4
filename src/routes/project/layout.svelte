@@ -1,4 +1,5 @@
 <script>
+  import CornerTitle from "$lib/Text/CornerTitle.svelte";
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
@@ -6,6 +7,7 @@
 
   export let title;
   export let description;
+  export let date;
 
   let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
 
@@ -15,9 +17,12 @@
     description: description,
     image: image,
   };
+
+  import { dateFormat } from "../../scripts/utils.js";
 </script>
 
 <Transition />
+<CornerTitle {title} subtitle={dateFormat(date)} />
 <main>
   <BackTo
     href="/project"
@@ -33,7 +38,7 @@
 
 <style>
   main {
-    max-width: 860px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
     width: 90%;

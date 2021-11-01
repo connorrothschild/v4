@@ -1,5 +1,6 @@
 <script>
   import Transition from "$lib/Transition.svelte";
+  import CornerTitle from "$lib/Text/CornerTitle.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
   import { seo } from "$lib/store";
@@ -20,6 +21,7 @@
 </script>
 
 <Transition />
+<CornerTitle {title} subtitle={dateFormat(date)} />
 <main>
   <BackTo
     href="/post"
@@ -41,7 +43,7 @@
 <style>
   main {
     /* background: var(--secondary-color); */
-    max-width: 860px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
     width: 90%;
