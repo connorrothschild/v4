@@ -1,6 +1,184 @@
+/**
+ * @license
+ *
+ * Font Family: Satoshi
+ * Designed by: Deni Anggara
+ * URL: https://www.fontshare.com/fonts/satoshi
+ * © 2021 Indian Type Foundry
+ *
+ * Font Styles:
+ * Satoshi Variable(Variable font)
+ * Satoshi Variable Italic(Variable font)
+ * Satoshi Light
+ * Satoshi Light Italic
+ * Satoshi Regular
+ * Satoshi Italic
+ * Satoshi Medium
+ * Satoshi Medium Italic
+ * Satoshi Bold
+ * Satoshi Bold Italic
+ * Satoshi Black
+ * Satoshi Black Italic
+ *
+*/
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+    url('../fonts/Satoshi-Variable.woff') format('woff'),
+    url('../fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+    url('../fonts/Satoshi-VariableItalic.woff') format('woff'),
+    url('../fonts/Satoshi-VariableItalic.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Light.woff2') format('woff2'),
+    url('../fonts/Satoshi-Light.woff') format('woff'),
+    url('../fonts/Satoshi-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-LightItalic.woff2') format('woff2'),
+    url('../fonts/Satoshi-LightItalic.woff') format('woff'),
+    url('../fonts/Satoshi-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('../fonts/Satoshi-Regular.woff') format('woff'),
+    url('../fonts/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Italic.woff2') format('woff2'),
+    url('../fonts/Satoshi-Italic.woff') format('woff'),
+    url('../fonts/Satoshi-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Medium.woff2') format('woff2'),
+    url('../fonts/Satoshi-Medium.woff') format('woff'),
+    url('../fonts/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-MediumItalic.woff2') format('woff2'),
+    url('../fonts/Satoshi-MediumItalic.woff') format('woff'),
+    url('../fonts/Satoshi-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('../fonts/Satoshi-Bold.woff') format('woff'),
+    url('../fonts/Satoshi-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-BoldItalic.woff2') format('woff2'),
+    url('../fonts/Satoshi-BoldItalic.woff') format('woff'),
+    url('../fonts/Satoshi-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Black.woff2') format('woff2'),
+    url('../fonts/Satoshi-Black.woff') format('woff'),
+    url('../fonts/Satoshi-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-BlackItalic.woff2') format('woff2'),
+    url('../fonts/Satoshi-BlackItalic.woff') format('woff'),
+    url('../fonts/Satoshi-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+
 :root {
-  --font-serif: ivypresto-display, Georgia, serif;
-  --font-sans: halyard-display, -apple-system, sans-serif;
+  --font-serif:  ivypresto-display, Georgia, serif;
+  --font-sans:  Satoshi, halyard-display, -apple-system, sans-serif;
   --font-mono: 'Fira Mono', monospace;
   font-family: var(--font-serif);
 
@@ -13,7 +191,7 @@
   --accent-color: rgb(197, 81, 108);
   --accent-color-rgb: 197, 81, 108; 
   --heading-color: rgba(0, 0, 0, 0.7);
-  --text-color: #3a3a3a;
+  --text-color: #1c1c1c;
   --off-text-color: #3a3a3a;
   --pure-text-color: #000000;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -103,7 +281,7 @@ p, li {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   line-height: 1.35;
-  letter-spacing: 0.15px;
+  letter-spacing: -.01rem;
   font-weight: 300;
 }
 
@@ -118,7 +296,6 @@ li {
 strong {
   font-weight: 600;
   font-weight: 500;
-  font-weight: 400;
   color: var(--pure-text-color);
 }
 
@@ -250,8 +427,10 @@ button:focus:not(:focus-visible) {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-  	background-image: linear-gradient(135deg, var(--primary-color) 10%, 
-    rgba(var(--accent-color-rgb), .4) 160%);
+  	background-image: linear-gradient(135deg, 
+    var(--semitransparent-bg) 10%,
+    /* var(--pure-background-color) 30%, */
+    rgba(var(--accent-color-rgb), .4) 150%);
   	z-index: -1;
   	opacity: 0;
   	transition: opacity 250ms linear;
@@ -420,7 +599,7 @@ blockquote {
   border-left: 10px solid var(--accent-color);
   padding: 1rem;
   margin-left: .5rem;
-  background: rgba(var(--accent-color-rgb), .125);
+  background: rgba(var(--accent-color-rgb), .1);
 }
 
 blockquote p:last-of-type {

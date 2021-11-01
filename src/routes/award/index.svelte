@@ -50,12 +50,11 @@
   </h1>
 
   <div class="awards-grid transition-content">
-    {#each awards as award, index}
+    {#each awards as award}
       <AwardSection
         award={award.metadata}
         slug={award.path.replace(/\.[^/.]+$/, "")}
         bind:anyHovered
-        {index}
       />
     {/each}
   </div>
@@ -69,21 +68,5 @@
     padding: 1em;
     width: 90%;
     margin-bottom: 2rem;
-  }
-
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    margin-bottom: 10px;
-    width: 99%;
-    margin: auto;
-  }
-
-  @media screen and (max-width: 700px) {
-    .awards-grid {
-      grid-template-columns: auto;
-      grid-template-rows: repeat(1, 1fr);
-    }
   }
 </style>

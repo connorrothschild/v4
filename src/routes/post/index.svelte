@@ -63,6 +63,8 @@
       <BlogSection
         post={post.metadata}
         slug={post.path.replace(/\.[^/.]+$/, "")}
+        {index}
+        bind:anyHovered
       />
     {/each}
   </div>
@@ -105,7 +107,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 10px;
-    margin-bottom: 10px;
   }
 
   .button {

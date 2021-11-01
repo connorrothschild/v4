@@ -70,7 +70,9 @@
 <style>
   section {
     padding: 1rem;
-    /* max-width: 1068px; */
+    max-width: 1268px;
+    margin: auto;
+    padding: 1rem;
   }
 
   .flex {
@@ -90,7 +92,7 @@
   }
 
   .hovered-job {
-    flex: 3;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;

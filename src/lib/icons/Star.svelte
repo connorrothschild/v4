@@ -47,8 +47,10 @@
   {height}
   viewBox="0 0 24 24"
   {fill}
-  {stroke}><path id="star-{index}" d={starPath} /></svg
+  {stroke}
 >
+  <path id="star-{index}" d={starPath} />
+</svg>
 
 <style>
   svg {

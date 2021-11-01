@@ -28,67 +28,88 @@
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element}>
     <!-- {#if intersecting} -->
-    <div transition:fly={{ x: -50 }}>
-      <!-- <div transition:fade> -->
-      <div class="sticky-top not-full-width-content">
-        <div class="see-all-flex">
-          <h1 class="page-overline">Projects</h1>
-          <a class="page-overline padding-bottom" href="/project">
-            See all projects &#8599;
-          </a>
-        </div>
-        <h1 class="page-title home">
-          Projects I've
-          <span class="gradient-accented bolded">built</span>
-        </h1>
+    <!-- <div transition:fly={{ x: -50 }}> -->
+    <!-- <div transition:fade> -->
+    <div class="sticky-top not-full-width-content">
+      <div class="see-all-flex">
+        <h1 class="page-overline">Projects</h1>
+        <a class="page-overline padding-bottom" href="/project">
+          See all projects &#8599;
+        </a>
       </div>
-
-      <div class="projects-container">
-        <Swiper
-          modules={[Mousewheel, Navigation, FreeMode]}
-          freeMode={{ enabled: false, sticky: true }}
-          speed={500}
-          spaceBetween={-1}
-          slidesPerView={"auto"}
-          navigation={true}
-          mousewheel={{ forceToAxis: true }}
-          centeredSlides={true}
-          initialSlide={1}
-          loop={true}
-          direction={"horizontal"}
-          observer={true}
-          observeParents={true}
-        >
-          {#each filteredProjects as project, index}
-            <SwiperSlide>
-              <a
-                href={project.path.replace(/\.[^/.]+$/, "")}
-                target="_blank"
-                class="project-link"
-                ><div class="gradient-overlay" />
-                <img
-                  loading="lazy"
-                  src={`/images/project/${project.metadata.image}`}
-                  alt=""
-                  class="project-image"
-                />
-                <div class="project-text">
-                  <h1>{project.metadata.title}</h1>
-                  <h2>{project.metadata.description}</h2>
-                </div>
-              </a>
-            </SwiperSlide>
-          {/each}
-        </Swiper>
-      </div>
+      <h1 class="page-title home">
+        Projects I've
+        <span class="gradient-accented bolded">built</span>
+      </h1>
     </div>
+
+    <div class="projects-container">
+      <Swiper
+        modules={[Mousewheel, Navigation, FreeMode]}
+        freeMode={{ enabled: false, sticky: true }}
+        speed={800}
+        spaceBetween={-1}
+        slidesPerView={"auto"}
+        navigation={true}
+        mousewheel={{ forceToAxis: true }}
+        centeredSlides={true}
+        initialSlide={1}
+        loop={true}
+        direction={"horizontal"}
+        observer={true}
+        observeParents={true}
+      >
+        {#each filteredProjects as project, index}
+          <SwiperSlide>
+            <a
+              href={project.path.replace(/\.[^/.]+$/, "")}
+              target="_blank"
+              class="project-link"
+              ><div class="gradient-overlay" />
+              <img
+                loading="lazy"
+                src={`/images/project/${project.metadata.image}`}
+                alt=""
+                class="project-image"
+              />
+              <div class="project-text">
+                <h1>{project.metadata.title}</h1>
+                <h2>{project.metadata.description}</h2>
+              </div>
+            </a>
+          </SwiperSlide>
+        {/each}
+      </Swiper>
+    </div>
+    <!-- </div> -->
     <!-- {/if} -->
   </section>
 </IntersectionObserver>
 
 <style>
+  section {
+    width: 100%;
+    margin: auto;
+    max-width: 1268px;
+  }
+
   .not-full-width-content {
     padding: 1px 1rem 0 1rem;
+  }
+
+  @media screen and (max-width: 1468px) {
+    .projects-container {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+  }
+
+  :global(.swiper-wrapper) {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   :global(.swiper-button-prev::after, .swiper-button-next::after) {

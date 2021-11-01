@@ -32,7 +32,7 @@
   export let posts;
   export let awards;
 
-  import Home from "$lib/Sections/Home.svelte";
+  import Intro from "$lib/Sections/Intro.svelte";
   import Work from "$lib/Sections/Work.svelte";
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
@@ -41,7 +41,7 @@
 </script>
 
 <main>
-  <Home />
+  <Intro />
   <Work {jobs} />
   <Projects {projects} />
   <Blog {posts} />

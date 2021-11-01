@@ -39,12 +39,11 @@
       </div>
 
       <div class="awards-grid">
-        {#each awards as award, index}
+        {#each awards as award}
           <AwardSection
             award={award.metadata}
             slug={award.path.replace(/\.[^/.]+$/, "")}
             bind:anyHovered
-            {index}
           />
         {/each}
       </div>
@@ -55,28 +54,9 @@
 
 <style>
   section {
-    padding: 1rem;
-  }
-
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin-bottom: 10px;
-    width: 99%;
+    width: 95%;
+    max-width: 1268px;
     margin: auto;
-  }
-
-  @media screen and (max-width: 1000px) {
-    .awards-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media screen and (max-width: 700px) {
-    .awards-grid {
-      grid-template-columns: auto;
-      grid-template-rows: repeat(1, 1fr);
-    }
+    padding: 1rem;
   }
 </style>
