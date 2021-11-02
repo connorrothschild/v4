@@ -28,8 +28,10 @@
       <div class="sticky-top">
         <div class="see-all-flex">
           <h1 class="page-overline">Awards</h1>
-          <a class="page-overline padding-bottom" href="/awards"
-            >See all awards &#8599;</a
+          <a
+            class="page-overline padding-bottom"
+            sveltekit:prefetch
+            href="/award">See all awards &#8599;</a
           >
         </div>
         <h1 class="page-title home">
@@ -57,7 +59,6 @@
     width: 95%;
     max-width: 1268px;
     margin: auto;
-    margin-bottom: 5rem;
-    /* padding: 1rem; */
+    margin-bottom: var(--section-margin-bottom);
   }
 </style>

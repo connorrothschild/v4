@@ -76,7 +76,6 @@
     width: 95%;
     max-width: 1068px;
     margin: auto;
-    /* padding: 1rem; */
   }
 
   .transition-overlay {

@@ -99,4 +99,27 @@
   .active {
     border-bottom-color: var(--accent-color);
   }
+
+  /* SMALL SCREENS */
+  @media screen and (max-width: 700px) {
+    .container {
+      flex-direction: column;
+      padding: 1rem 0;
+      align-items: flex-start;
+    }
+
+    .title {
+      margin-bottom: 0.25rem;
+    }
+
+    .organization {
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    time {
+      visibility: hidden;
+      display: none;
+    }
+  }
 </style>

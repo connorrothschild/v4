@@ -184,6 +184,7 @@
 
   --nav-height: 60px;
   --footer-height: 90vh;
+  --section-margin-bottom: 5rem;
 
   --pure-background-color: #ffffff;
   --primary-color:  #ccdbe9;
@@ -205,8 +206,8 @@
   --primary-color: rgb(25, 25, 25);
   --secondary-color: rgb(25, 25, 25);
   --tertiary-color: rgb(25, 25, 25);
-  --accent-color: rgb(87, 223, 210); 
-  --accent-color-rgb: 87, 223, 210; 
+  --accent-color: rgb(49, 179, 167);
+  --accent-color-rgb: 49, 179, 167; 
   --heading-color: rgba(255, 255, 255, 0.7);
   --text-color: #f2f2f2;
   --off-text-color: #e3e3e3;
@@ -235,10 +236,6 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--tertiary-color);
-  /* background: linear-gradient(180deg,
-      var(--primary-color) 0%,
-      var(--secondary-color) 10.45%,
-      var(--tertiary-color) 41.35%); */
 }
 
 body::before {
@@ -256,9 +253,9 @@ body::before {
 }
 
 ::selection {
-  background: rgba(var(--accent-color-rgb), .2);
-  color: var(--pure-text-color);
   -webkit-text-fill-color: var(--pure-text-color);
+  color: rgba(var(--accent-color-rgb), .2);
+  background: var(--primary-color);
 }
 
 #svelte {

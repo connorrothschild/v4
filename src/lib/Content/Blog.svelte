@@ -212,7 +212,7 @@
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
     font-family: var(--font-sans);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
   }
 

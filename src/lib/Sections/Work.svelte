@@ -21,8 +21,10 @@
       <div class="sticky-top">
         <div class="see-all-flex">
           <h1 class="page-overline">Experience</h1>
-          <a class="page-overline padding-bottom" href="/experience"
-            >See all work experience &#8599;</a
+          <a
+            class="page-overline padding-bottom"
+            sveltekit:prefetch
+            href="/experience">See all work experience &#8599;</a
           >
         </div>
         <h1 class="page-title home">
@@ -72,7 +74,7 @@
     width: 95%;
     max-width: 1268px;
     margin: auto;
-    /* padding: 1rem; */
+    margin-bottom: var(--section-margin-bottom);
   }
 
   .flex {

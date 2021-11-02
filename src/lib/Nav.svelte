@@ -32,10 +32,8 @@ Since #nav is fixed, the user can never scroll to it -->
     z-index: 99;
     background: var(--tertiary-color);
     height: var(--nav-height);
-    padding: 0 1rem;
-    margin: 0;
-    /* width: calc(100vw - 2rem); */
-    width: 95%;
+    margin: 0 auto;
+    width: 100%;
   }
 
   ul {
@@ -47,6 +45,7 @@ Since #nav is fixed, the user can never scroll to it -->
   .left {
     display: flex;
     place-items: center;
+    padding-left: 1rem;
   }
 
   :global(.left li) {
@@ -61,6 +60,7 @@ Since #nav is fixed, the user can never scroll to it -->
     text-align: right;
     justify-content: flex-end;
     place-items: center;
+    padding-right: 1rem;
   }
 
   /* When nav and icon would overlap, apply padding */

@@ -1,35 +1,101 @@
+<script>
+  let hoveredEmoji = null;
+
+  let setEmoji = (emo) => {
+    hoveredEmoji = emo;
+  };
+  let nullEmoji = () => {
+    hoveredEmoji = null;
+  };
+</script>
+
 <footer>
-  <div class="me">
-    <h2 class="thanks">Thanks for visiting the personal site of</h2>
-    <h1 class="name">Connor Rothschild</h1>
-  </div>
-  <div class="you">
-    <h1 class="stay-in-touch">Let's stay in touch</h1>
-    <div class="links">
-      <a
-        class="link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://twitter.com/CL_Rothschild">Twitter</a
-      >
-      <a
-        class="link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
-      >
-      <a
-        class="link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="github.com/connorrothschild/">GitHub</a
-      >
-      <a
-        class="link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="mailto:connor@connorrothschild.com">Email</a
-      >
+  <span
+    on:mouseover={() => {
+      setEmoji("👋");
+    }}
+    on:focus={() => {
+      setEmoji("👋");
+    }}
+    on:mouseleave={() => {
+      nullEmoji();
+    }}
+    aria-hidden="true"
+    class="emoji bottom left">{hoveredEmoji ? hoveredEmoji : "👋"}</span
+  >
+  <span
+    on:mouseover={() => {
+      setEmoji("👀");
+    }}
+    on:focus={() => {
+      setEmoji("👀");
+    }}
+    on:mouseleave={() => {
+      nullEmoji();
+    }}
+    aria-hidden="true"
+    class="emoji bottom right">{hoveredEmoji ? hoveredEmoji : "👀"}</span
+  >
+  <span
+    on:mouseover={() => {
+      setEmoji("🔥");
+    }}
+    on:focus={() => {
+      setEmoji("🔥");
+    }}
+    on:mouseleave={() => {
+      nullEmoji();
+    }}
+    on:mouseleave={nullEmoji}
+    aria-hidden="true"
+    class="emoji top right">{hoveredEmoji ? hoveredEmoji : "🔥"}</span
+  >
+  <span
+    on:mouseover={() => {
+      setEmoji("🤠");
+    }}
+    on:focus={() => {
+      setEmoji("🤠");
+    }}
+    on:mouseleave={() => {
+      nullEmoji();
+    }}
+    aria-hidden="true"
+    class="emoji top left">{hoveredEmoji ? hoveredEmoji : "🤠"}</span
+  >
+  <div class="flex-container">
+    <div class="me">
+      <h2 class="thanks">Thanks for visiting the personal site of</h2>
+      <h1 class="name">Connor Rothschild</h1>
+    </div>
+    <div class="you">
+      <h1 class="stay-in-touch">Let's stay in touch {hoveredEmoji || ""}</h1>
+      <div class="links">
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/CL_Rothschild">Twitter</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="github.com/connorrothschild/">GitHub</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:connor@connorrothschild.com">Email</a
+        >
+      </div>
     </div>
   </div>
 </footer>
@@ -41,11 +107,23 @@
     left: 0;
     right: 0;
 
-    width: 100vw;
+    width: 100%;
     height: var(--footer-height);
 
     background: var(--text-color);
     color: var(--pure-background-color);
+
+    display: flex;
+    place-items: center;
+
+    padding: 0;
+  }
+
+  .flex-container {
+    max-width: 1268px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     place-items: center;
@@ -81,7 +159,6 @@
     margin-bottom: 1rem;
     font-weight: 200;
     font-size: 1.8rem;
-    /* color: var(--accent-color); */
   }
 
   .name {
@@ -95,21 +172,6 @@
     margin-bottom: 2rem;
     font-size: 3.5rem;
     font-weight: 200;
-  }
-
-  .buttons {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .btn-link {
-    font-size: 1.2rem;
-    font-weight: 200;
-    font-family: var(--font-sans);
-    background: rgba(var(--accent-color-rgb), 0.1);
-    padding: 0.35rem 0.65rem;
-    margin: 0.35rem 0.35rem 0 0;
-    border-radius: 5px;
   }
 
   .links {
@@ -148,7 +210,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    footer {
+    .flex-container {
       flex-direction: column;
     }
 
@@ -192,5 +254,28 @@
     .stay-in-touch {
       font-size: 11vw;
     }
+  }
+
+  /* RANDOM EMOJIS */
+  .emoji {
+    position: absolute;
+    font-size: 4rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .top {
+    top: 0;
+  }
+
+  .bottom {
+    bottom: 0;
+  }
+
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
   }
 </style>

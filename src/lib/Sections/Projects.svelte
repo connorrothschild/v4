@@ -33,7 +33,11 @@
     <div class="sticky-top title-max-width-container">
       <div class="see-all-flex">
         <h1 class="page-overline">Projects</h1>
-        <a class="page-overline padding-bottom" href="/project">
+        <a
+          class="page-overline padding-bottom"
+          sveltekit:prefetch
+          href="/project"
+        >
           See all projects &#8599;
         </a>
       </div>
@@ -92,6 +96,7 @@
   section {
     width: 100%;
     margin: auto;
+    margin-bottom: var(--section-margin-bottom);
   }
 
   .title-max-width-container {
@@ -109,7 +114,7 @@
 
   @media screen and (max-width: 1468px) {
     .projects-container {
-      width: 100vw;
+      width: 99vw;
       position: relative;
       left: 50%;
       right: 50%;

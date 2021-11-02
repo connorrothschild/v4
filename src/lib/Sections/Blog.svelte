@@ -29,8 +29,10 @@
       <div class="sticky-top">
         <div class="see-all-flex">
           <h1 class="page-overline">Blog</h1>
-          <a class="page-overline padding-bottom" href="/post"
-            >See all posts &#8599;</a
+          <a
+            class="page-overline padding-bottom"
+            sveltekit:prefetch
+            href="/post">See all posts &#8599;</a
           >
         </div>
         <h1 class="page-title home">
@@ -58,7 +60,7 @@
     width: 95%;
     max-width: 1268px;
     margin: auto;
-    /* padding: 1rem; */
+    margin-bottom: var(--section-margin-bottom);
   }
 
   .posts-grid {
@@ -68,6 +70,7 @@
     grid-gap: 10px;
     width: 99%;
     margin: auto;
+    margin-bottom: 1rem;
   }
 
   @media screen and (max-width: 1000px) {
