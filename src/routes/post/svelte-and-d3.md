@@ -261,7 +261,7 @@ With some other component watching and responding to resize events (such as [Win
 
 <Info>
 
-Another way to achieve easy responsiveness is to <a href="https://svelte.dev/tutorial/dimensions" target="_blank">bind the SVG's parent container's div width</a> to some variable (<code>width</code>) and set the SVG's width to match.
+Another way to achieve easy responsiveness is to <a href="https://svelte.dev/tutorial/dimensions" target="_blank" rel="noopener noreferrer">bind the SVG's parent container's div width</a> to some variable (<code>width</code>) and set the SVG's width to match.
   
 </Info>
 

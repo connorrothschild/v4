@@ -69,10 +69,10 @@
 
 <style>
   section {
-    padding: 1rem;
+    width: 95%;
     max-width: 1268px;
     margin: auto;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 
   .flex {
@@ -116,7 +116,7 @@
 
   .job-image {
     max-height: 1.5rem;
-    margin-left: 0.35rem;
+    margin-left: 0.5rem;
     display: inline;
   }
 

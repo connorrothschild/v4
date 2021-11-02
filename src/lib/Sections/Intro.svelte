@@ -37,7 +37,8 @@
           And I tell visual stories on the web. Right now, I lead the
           interactives and visualization team at <a
             href="https://www.mokshadata.com/"
-            target="_blank">Moksha Data</a
+            target="_blank"
+            rel="noopener noreferrer">Moksha Data</a
           >.
         </h2>
       </div>
@@ -63,7 +64,7 @@
       </div>
       <div
         class="buffer"
-        use:sticky={{ stickToTop: true, rootMargin: "0%" }}
+        use:sticky={{ stickToTop: true, rootMargin: "10%" }}
         on:stuck={handleStuck}
       />
     </div>
@@ -73,9 +74,9 @@
 <style>
   section {
     width: 95%;
-    max-width: 1268px;
+    max-width: 1068px;
     margin: auto;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 
   .transition-overlay {
@@ -98,7 +99,7 @@
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 0.9;
     font-weight: 900;
     letter-spacing: -2px;
@@ -119,8 +120,8 @@
   }
 
   h3 {
-    font-size: 1.75rem;
-    line-height: 1.1;
+    font-size: 1.65rem;
+    line-height: 1.2;
     font-weight: 200;
     font-family: var(--font-sans);
     margin-right: auto;
@@ -133,7 +134,7 @@
 
   .with-border {
     border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.7);
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.25rem;
   }
 
   .wrapper {
@@ -153,23 +154,23 @@
   }
 
   .sticky-stack .zero {
-    top: 0%;
+    top: -5%;
   }
 
   .sticky-stack .one {
-    top: 20%;
+    top: 17%;
   }
 
   .sticky-stack .two {
-    top: 35%;
+    top: 36%;
   }
 
   .sticky-stack .three {
-    top: 50%;
+    top: 53%;
   }
 
   .buffer {
-    top: 60%;
+    top: 65%;
     height: 200px;
     position: sticky;
   }
@@ -180,45 +181,55 @@
     }
 
     h3 {
-      font-size: 1.7rem;
+      font-size: 1.25rem;
     }
   }
 
   @media (max-width: 768px) {
+    h1 {
+      font-size: 3.25rem;
+    }
+
     h2 {
-      font-size: 2.1rem;
+      font-size: 2rem;
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .sticky-stack .two {
+      top: 35%;
+    }
+
+    .sticky-stack .three {
+      top: 50%;
     }
   }
 
   @media (max-width: 568px) {
     h1 {
-      font-size: 3.5rem;
+      font-size: 9vw;
     }
 
     h2 {
-      font-size: 1.8rem;
-    }
-
-    h3 {
       font-size: 1.25rem;
     }
-  }
-
-  @media (max-width: 468px) {
-    h1 {
-      font-size: 3.15rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
 
     h3 {
-      font-size: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .sticky-stack .one {
+      top: 12.5%;
+    }
+
+    .sticky-stack .two {
+      top: 28%;
+    }
+
+    .sticky-stack .three {
+      top: 45%;
     }
   }
 </style>

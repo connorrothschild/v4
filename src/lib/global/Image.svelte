@@ -37,7 +37,7 @@
   />
   <img transition:fade class="expanded" {src} {alt} on:click={toggleExpand} />
 {/if}
-<a {href} target="_blank" class="no-underline">
+<a {href} target="_blank" rel="noopener noreferrer" class="no-underline">
   <img
     loading="lazy"
     {src}

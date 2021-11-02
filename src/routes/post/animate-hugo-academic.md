@@ -59,7 +59,7 @@ Now, create _a new file path_ in your root directory titled `layouts/partials/wi
 
 <Info>
   
-  Alternatively, you can copy the about.html file that I used for this project and paste it into <code>layouts/partials/widgets/</code>. <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" target="_blank">You can find my file here</a>. This will also allow you to skip step 2 and move on to <a href="#step-3-add-css">step 3</a>!
+  Alternatively, you can copy the about.html file that I used for this project and paste it into <code>layouts/partials/widgets/</code>. <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" target="_blank" rel="noopener noreferrer">You can find my file here</a>. This will also allow you to skip step 2 and move on to <a href="#step-3-add-css">step 3</a>!
 
 </Info>
 

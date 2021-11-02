@@ -183,6 +183,7 @@
   font-family: var(--font-serif);
 
   --nav-height: 60px;
+  --footer-height: 90vh;
 
   --pure-background-color: #ffffff;
   --primary-color:  #ccdbe9;

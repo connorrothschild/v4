@@ -36,7 +36,9 @@
     <slot />
 
     <p class="media-link">
-      <a href={media_url} target="_blank">See media here.</a>
+      <a href={media_url} target="_blank" rel="noopener noreferrer"
+        >See media here.</a
+      >
     </p>
     <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>

@@ -107,7 +107,7 @@ Then, on
     highlightedLinesProp={'6'} 
     bind:hoveredId 
     bind:highlightedLines
-  >line 6</HighlightFromProp>, we provide the specified <code>offset</code>. In my example, I define my offset according to the <a href="https://stackoverflow.com/questions/28536367/in-d3-js-how-to-adjust-tooltip-up-and-down-based-on-the-screen-position" target="_blank">user's mouse position</a>. That way, if a user hovers over an eastern state, the tooltip doesn't disappear off the screen! (<code>current_position</code> is defined down below.)
+  >line 6</HighlightFromProp>, we provide the specified <code>offset</code>. In my example, I define my offset according to the <a href="https://stackoverflow.com/questions/28536367/in-d3-js-how-to-adjust-tooltip-up-and-down-based-on-the-screen-position" target="_blank" rel="noopener noreferrer">user's mouse position</a>. That way, if a user hovers over an eastern state, the tooltip doesn't disappear off the screen! (<code>current_position</code> is defined down below.)
 </p>
 
 <p>

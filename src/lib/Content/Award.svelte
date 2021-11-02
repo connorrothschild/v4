@@ -9,7 +9,7 @@
 </script>
 
 <a
-  class="container {anyHovered && !active
+  class="container no-underline {anyHovered && !active
     ? 'inactive'
     : active
     ? 'active'
@@ -40,10 +40,12 @@
   .container {
     display: flex;
     padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.4);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(var(--accent-color-rgb), 0.25);
     filter: none;
     justify-content: space-between;
-    transition: background-color 300ms ease;
+    transition: border-bottom-color 500ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }
 
   .container > * {
@@ -92,5 +94,9 @@
     color: transparent;
     opacity: 0.5;
     text-shadow: 0 0 2px var(--text-color);
+  }
+
+  .active {
+    border-bottom-color: var(--accent-color);
   }
 </style>

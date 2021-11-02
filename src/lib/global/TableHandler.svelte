@@ -7,7 +7,7 @@
 
 <div style="width: {width};">
   <img loading="lazy" {src} {alt} width="100%" />
-  <a href={link} target="_blank" class="no-underline"
+  <a href={link} target="_blank" rel="noopener noreferrer" class="no-underline"
     >The original, interactive table can be found here</a
   >
 </div>

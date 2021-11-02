@@ -20,18 +20,18 @@ unleashing R and the resources of its community by being able to
 research such posts.
 
 So far, we have found and recorded 423 COVID posts in English. In an
-effort to encourage others to explore such posts, we’ve published a <a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank">Shiny web app</a>
+effort to encourage others to explore such posts, we’ve published a <a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank" rel="noopener noreferrer">Shiny web app</a>
 which allow users to find the names of the 231 bloggers who wrote those
 posts, their roles, and their country of focus. The app also lets users
 interactively search the collection of posts by primary topic, post
 title, date, and whether the post uses a particular mathematical
 technique or data source. To learn more about the evolution of this
 dataset, one of the authors (Rees) has published nine articles on
-Medium, which you can find <a href="https://medium.com/@rees_32356" target="_blank">here</a>.
+Medium, which you can find <a href="https://medium.com/@rees_32356" target="_blank" rel="noopener noreferrer">here</a>.
 
 We encourage users to submit their own posts–or others’ posts–for
-inclusion, which can be done on this <a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank">Google Form</a>.
-Our dataset, as well as the code for the Shiny app, is available on <a href="https://github.com/connorrothschild/covid-posts" target="_blank">GitHub</a>.
+inclusion, which can be done on this <a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Google Form</a>.
+Our dataset, as well as the code for the Shiny app, is available on <a href="https://github.com/connorrothschild/covid-posts" target="_blank" rel="noopener noreferrer">GitHub</a>.
 If anyone has corrections to the dataset, please write Rees (at)
 ReesMorrison (dot) com.
 
@@ -136,9 +136,9 @@ ways.
 
 ## Concluding thoughts
 
-We encourage you to use our <a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank">Shiny application</a>
+We encourage you to use our <a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank" rel="noopener noreferrer">Shiny application</a>
 to explore the data for yourself. If you’d like to submit your post to
-be included, fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank">Google Form</a>.
+be included, fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Google Form</a>.
 
 As we note in the footer of the application, the R community is
 intelligent and produces interesting content, but not all of us are
@@ -146,6 +146,6 @@ experts when it comes to COVID-19. Engaging with these posts will allow
 you to better understand the application of R to our current moment, and
 perhaps provide feedback to post authors. We do not endorse the findings
 of any particular author and encourage you to find accurate, relevant,
-and recent information from reputable sources such as the <a href="https://www.cdc.gov/" target="_blank">CDC</a> and the <a href="https://www.who.int/" target="_blank">WHO</a>.
+and recent information from reputable sources such as the <a href="https://www.cdc.gov/" target="_blank" rel="noopener noreferrer">CDC</a> and the <a href="https://www.who.int/" target="_blank" rel="noopener noreferrer">WHO</a>.
 
 As always, thanks for reading.

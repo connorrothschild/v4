@@ -64,6 +64,7 @@
             <a
               href={project.path.replace(/\.[^/.]+$/, "")}
               target="_blank"
+              rel="noopener noreferrer"
               class="project-link"
               ><div class="gradient-overlay" />
               <img
@@ -87,6 +88,7 @@
 </IntersectionObserver>
 
 <style>
+  /* This section handled differently because we want project gallery fullbleed */
   section {
     width: 100%;
     margin: auto;
@@ -94,10 +96,12 @@
 
   .title-max-width-container {
     width: 100%;
+    margin: auto;
   }
 
   .see-all-flex,
   .page-title {
+    width: 95%;
     max-width: 1268px;
     margin-left: auto;
     margin-right: auto;

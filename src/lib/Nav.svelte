@@ -34,7 +34,8 @@ Since #nav is fixed, the user can never scroll to it -->
     height: var(--nav-height);
     padding: 0 1rem;
     margin: 0;
-    width: calc(100vw - 2rem);
+    /* width: calc(100vw - 2rem); */
+    width: 95%;
   }
 
   ul {

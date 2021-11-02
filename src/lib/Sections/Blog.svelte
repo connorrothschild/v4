@@ -58,7 +58,7 @@
     width: 95%;
     max-width: 1268px;
     margin: auto;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 
   .posts-grid {
