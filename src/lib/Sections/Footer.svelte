@@ -69,7 +69,11 @@
       <h1 class="name">Connor Rothschild</h1>
     </div>
     <div class="you">
-      <h1 class="stay-in-touch">Let's stay in touch {hoveredEmoji || ""}</h1>
+      <h1 class="stay-in-touch">
+        Let's stay in touch <span class="inline-emoji">
+          {hoveredEmoji || "👇"}</span
+        >
+      </h1>
       <div class="links">
         <a
           class="link"
@@ -87,7 +91,7 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="github.com/connorrothschild/">GitHub</a
+          href="https://github.com/connorrothschild/">GitHub</a
         >
         <a
           class="link"
@@ -172,6 +176,7 @@
     margin-bottom: 2rem;
     font-size: 3.5rem;
     font-weight: 200;
+    display: flex;
   }
 
   .links {
@@ -189,74 +194,7 @@
     font-weight: 200;
   }
 
-  @media screen and (max-width: 1068px) {
-    .thanks {
-      font-size: 1.55rem;
-    }
-    .name,
-    .stay-in-touch {
-      font-size: 3.5rem;
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    .thanks {
-      font-size: 1.25rem;
-    }
-    .name,
-    .stay-in-touch {
-      font-size: 2.825rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .flex-container {
-      flex-direction: column;
-    }
-
-    .me,
-    .you {
-      justify-content: center;
-      flex: 1;
-    }
-
-    .me {
-      align-self: flex-start;
-    }
-
-    .you {
-      align-self: flex-end;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .name,
-    .stay-in-touch {
-      font-size: 2rem;
-    }
-
-    .link {
-      font-size: 0.85rem;
-      margin-right: 0.5rem;
-    }
-
-    .you {
-      align-self: flex-start;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .thanks {
-      font-size: 1.1rem;
-    }
-
-    .name,
-    .stay-in-touch {
-      font-size: 11vw;
-    }
-  }
-
-  /* RANDOM EMOJIS */
+  /* RANDOM EMOJIS lol */
   .emoji {
     position: absolute;
     font-size: 4rem;
@@ -277,5 +215,101 @@
   }
   .right {
     right: 0;
+  }
+
+  .inline-emoji {
+    margin-left: 0.5rem;
+    /* font-size: 90%; */
+  }
+
+  @media screen and (max-width: 1068px) {
+    .thanks {
+      font-size: 1.55rem;
+    }
+    .name,
+    .stay-in-touch {
+      font-size: 3.25rem;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .thanks {
+      font-size: 1.25rem;
+    }
+    .name,
+    .stay-in-touch {
+      font-size: 2.825rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+
+    .me,
+    .you {
+      justify-content: center;
+      flex: 1;
+    }
+
+    .me {
+      align-self: flex-start;
+    }
+
+    .you {
+      align-self: flex-end;
+    }
+
+    .link {
+      margin-right: 0.85rem;
+    }
+
+    .inline-emoji {
+      margin-left: 0;
+      margin-right: 0.75rem;
+    }
+
+    .stay-in-touch {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .name,
+    .stay-in-touch {
+      font-size: 3rem;
+    }
+
+    .you {
+      align-self: flex-start;
+    }
+
+    .inline-emoji {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+
+    .stay-in-touch {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .thanks {
+      font-size: 1.1rem;
+    }
+
+    .name,
+    .stay-in-touch {
+      font-size: 11vw;
+    }
+
+    .link {
+      font-size: 0.85rem;
+    }
+    .emoji {
+      font-size: 3rem;
+    }
   }
 </style>

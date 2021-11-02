@@ -52,11 +52,4 @@
     width: 90%;
     margin-bottom: 2rem;
   }
-
-  .media-link {
-    /* font-size: 1.5rem; */
-    /* margin-bottom: 1rem; */
-    /* text-align: center; */
-    /* font-family: var(--font-serif); */
-  }
 </style>
