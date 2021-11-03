@@ -58,7 +58,7 @@
     Posts I've
     <span class="gradient-accented bolded">written</span>​
   </h1>
-  <div class="transition-content post-grid">
+  <div class="transition-content posts-grid">
     {#each filteredPosts as post, index}
       <BlogSection
         post={post.metadata}
@@ -71,7 +71,7 @@
   {#if showAll}
     <div transition:slide={{ duration: 300, easing: linear }}>
       <h1 class="archives-title">😬 The archives 😬</h1>
-      <div class="post-grid">
+      <div class="posts-grid">
         {#each otherPosts as post, index}
           <BlogSection
             post={post.metadata}
@@ -102,7 +102,7 @@
     margin-bottom: 2rem;
   }
 
-  .post-grid {
+  .posts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
@@ -125,9 +125,10 @@
   }
 
   @media screen and (max-width: 668px) {
-    .post-grid {
+    .posts-grid {
       grid-template-columns: auto;
       grid-template-rows: repeat(1, 1fr);
+      grid-auto-rows: auto;
     }
 
     .archives-title {

@@ -12,7 +12,7 @@ const config = {
 	// 	...image(), ...mdsvex(mdsvexConfig)
 	// }),
   preprocess: [
-    image(),
+    // image(),
     mdsvex(mdsvexConfig),
   ],
   kit: {

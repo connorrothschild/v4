@@ -236,6 +236,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--tertiary-color);
+  overscroll-behavior: none;
 }
 
 body::before {
@@ -344,13 +345,14 @@ iframe {
 }
 
 /* This breakpoint is intentionally higher than the regular mobile breakpoint */
-@media screen and (min-width: 1100px) {
+/* UNCOMMENT TO ALLOW IFRAMES TO BE FULLBLEED */
+/* @media screen and (min-width: 1100px) {
   iframe {
     position: relative;
     left: calc(-35vw + 50%);
     width: 70vw;
   }
-}
+} */
 
 pre {
   font-size: 0.9rem !important;

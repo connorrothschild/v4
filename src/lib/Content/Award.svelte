@@ -58,7 +58,7 @@
     flex: 1;
     font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.15;
     font-family: var(--font-sans);
     letter-spacing: -0.4px;
     color: var(--text-color);
@@ -67,7 +67,7 @@
   .organization {
     font-size: 1.25rem;
     padding: 0 1rem;
-    line-height: 1.25;
+    line-height: 1.15;
     font-family: var(--font-serif);
     display: flex;
     place-items: center;
@@ -109,7 +109,7 @@
     }
 
     .title {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
 
     .organization {

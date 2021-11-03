@@ -79,7 +79,7 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://twitter.com/CL_Rothschild">Twitter</a
+          href="mailto:connor@connorrothschild.com">Email</a
         >
         <a
           class="link"
@@ -97,7 +97,7 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="mailto:connor@connorrothschild.com">Email</a
+          href="https://twitter.com/CL_Rothschild">Twitter</a
         >
       </div>
     </div>
@@ -186,7 +186,7 @@
   .links {
     display: flex;
     justify-content: space-between;
-    max-width: 400px;
+    max-width: 450px;
   }
 
   .link {
