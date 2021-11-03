@@ -4,8 +4,6 @@
   export let anyHovered = false;
 
   let active = false;
-
-  import { dateFormat } from "../../scripts/utils.js";
 </script>
 
 <a
@@ -32,7 +30,6 @@
   <p class="organization">
     {award.organization}
   </p>
-  <!-- <time datetime={award.date}>{dateFormat(award.date)}</time> -->
   <time datetime={award.date}>{award.date.slice(0, 4)}</time>
 </a>
 
@@ -93,7 +90,7 @@
   .inactive > * {
     color: transparent;
     opacity: 0.5;
-    text-shadow: 0 0 2px var(--text-color);
+    text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
   }
 
   .active {

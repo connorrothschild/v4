@@ -194,6 +194,7 @@
   --accent-color-rgb: 197, 81, 108; 
   --heading-color: rgba(0, 0, 0, 0.7);
   --text-color: #1c1c1c;
+  --text-color-rgb: 28, 28, 28;
   --off-text-color: #3a3a3a;
   --pure-text-color: #000000;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -210,6 +211,7 @@
   --accent-color-rgb: 49, 179, 167; 
   --heading-color: rgba(255, 255, 255, 0.7);
   --text-color: #f2f2f2;
+  --text-color-rgb: 242, 242, 242;
   --off-text-color: #e3e3e3;
   --pure-text-color: #ffffff;
   --background-without-opacity: rgba(0, 0, 0, 0.7);

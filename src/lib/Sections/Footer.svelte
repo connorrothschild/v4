@@ -157,11 +157,6 @@
     flex-direction: column;
   }
 
-  .me {
-    display: flex;
-    flex-direction: column;
-  }
-
   .thanks {
     font-family: var(--font-sans);
     margin-bottom: 1rem;
@@ -181,21 +176,21 @@
     font-size: 3.5rem;
     font-weight: 200;
     display: flex;
+    align-items: flex-end;
   }
 
   .links {
     display: flex;
     justify-content: space-between;
-    max-width: 450px;
+    width: 450px;
   }
 
   .link {
-    margin-right: 0.35rem;
     font-family: var(--font-sans);
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
-    font-weight: 200;
+    font-weight: 300;
   }
 
   /* RANDOM EMOJIS lol */
@@ -244,6 +239,10 @@
     .stay-in-touch {
       font-size: 2.825rem;
     }
+
+    .links {
+      width: 350px;
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -263,10 +262,6 @@
 
     .you {
       align-self: flex-end;
-    }
-
-    .link {
-      margin-right: 0.85rem;
     }
 
     .inline-emoji {
@@ -314,6 +309,10 @@
     }
     .emoji {
       font-size: 3rem;
+    }
+
+    .links {
+      width: 100%;
     }
   }
 </style>
