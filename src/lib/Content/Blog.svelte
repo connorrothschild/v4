@@ -18,8 +18,8 @@
     cardTop,
     xPos,
     yPos,
-    scrollXPosition,
-    scrollYPosition,
+    scrollXPosition = 0,
+    scrollYPosition = 0,
     pageWidth,
     readyToHover = false;
 
@@ -96,13 +96,22 @@
 
     goto(slug);
   }
+
+  // On scroll, recalculate scrollYPosition
+  // Preferring this rather than binding because of scrollToTop issue
+  import { debounce } from "../../scripts/utils.js";
+
+  onMount(() => {
+    window.addEventListener(
+      "scroll",
+      debounce(function () {
+        scrollYPosition = window.scrollY;
+      }, 150)
+    );
+  });
 </script>
 
-<svelte:window
-  bind:scrollY={scrollYPosition}
-  bind:scrollX={scrollXPosition}
-  bind:innerWidth={pageWidth}
-/>
+<svelte:window bind:scrollX={scrollXPosition} bind:innerWidth={pageWidth} />
 <div
   class="perspective-container"
   style="perspective: {cardWidth}px"

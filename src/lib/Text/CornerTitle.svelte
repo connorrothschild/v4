@@ -1,18 +1,33 @@
 <script>
   export let title;
   export let subtitle;
-  let y;
+
+  // let y;
   let w;
   $: cornerTitleWidth = ((w - 768) / 2) * 0.85;
+
+  // Use IntersectionObserver to detect when the 300px div is no longer visible
+  import IntersectionObserver from "svelte-intersection-observer";
+
+  let element;
+  let intersecting = true;
 </script>
 
 <!-- Show the blog title in the top right corner of the page, when
     1. User has scrolled a certain amount and 
     2. The device is desktop -->
-<svelte:window bind:scrollY={y} bind:innerWidth={w} />
+<!-- Archived: using scrollY prevents scrollToTop because the binding redefines the Y position of the page -->
+<!-- <svelte:window bind:scrollY={y} bind:innerWidth={w} /> -->
+<svelte:window bind:innerWidth={w} />
+
+<!-- New solution is to show when the invisible scroll listener is no longer intersecting -->
+<IntersectionObserver {element} bind:intersecting>
+  <div class="invisible-scroll-listener" bind:this={element} />
+</IntersectionObserver>
+
 <div
   aria-hidden="true"
-  class="corner {y > 300 && w > 1168 ? 'visible' : 'invisible'}"
+  class="corner {!intersecting && w > 1168 ? 'visible' : 'invisible'}"
   style="max-width: {cornerTitleWidth}px"
 >
   <p class="corner-title">{title}</p>
@@ -51,5 +66,14 @@
     font-weight: 100;
     letter-spacing: 0.64px;
     color: var(--text-color);
+  }
+
+  .invisible-scroll-listener {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    z-index: -1;
   }
 </style>
