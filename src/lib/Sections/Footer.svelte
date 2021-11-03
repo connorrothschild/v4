@@ -106,7 +106,11 @@
 
 <style>
   footer {
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+
     bottom: 0;
     left: 0;
     right: 0;

@@ -477,6 +477,17 @@ button:focus:not(:focus-visible) {
   opacity: 0;
 }
 
+/* ONLY DESKTOP */
+@media screen and (min-width: 768px) {
+  .page-overline.see-all {
+    transform: translateY(5rem);
+    -webkit-transform: translateY(5rem);
+    -moz-transform: translateY(5rem);
+    -ms-transform: translateY(5rem);
+    -o-transform: translateY(5rem);
+}
+}
+
 /* TABLET BREAKPOINT */
 @media screen and (max-width: 660px) {
   .page-title {

@@ -1,4 +1,7 @@
 <script>
+  export let isMobile;
+  export let awards;
+
   import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
 
@@ -7,8 +10,6 @@
   let element;
   let intersecting;
 
-  export let awards;
-
   // Sort by featured first, and if featured is the same (both false), then sort by date
   awards.sort((a, b) => {
     if (b.metadata.featured && !a.metadata.featured) return 1;
@@ -16,6 +17,10 @@
     if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
     if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
   });
+
+  $: filteredAwards = isMobile
+    ? awards.filter((d) => d.metadata.featured)
+    : awards;
 
   let anyHovered;
 </script>
@@ -27,9 +32,11 @@
       <!-- <div transition:fade> -->
       <div class="sticky-top">
         <div class="see-all-flex">
-          <h1 class="page-overline">Awards</h1>
+          <h1 class="page-overline">
+            {isMobile ? "Selected awards" : "Awards"}
+          </h1>
           <a
-            class="page-overline padding-bottom"
+            class="page-overline padding-bottom see-all"
             sveltekit:prefetch
             href="/award">See all awards &#8599;</a
           >
@@ -41,7 +48,7 @@
       </div>
 
       <div class="awards-grid">
-        {#each awards as award}
+        {#each filteredAwards as award}
           <AwardSection
             award={award.metadata}
             slug={award.path.replace(/\.[^/.]+$/, "")}

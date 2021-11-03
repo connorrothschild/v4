@@ -38,14 +38,18 @@
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
   import Footer from "$lib/Sections/Footer.svelte";
+
+  let pageWidth;
+  $: isMobile = pageWidth < 768;
 </script>
 
+<svelte:window bind:innerWidth={pageWidth} />
 <main>
   <Intro />
   <Work {jobs} />
-  <Projects {projects} />
-  <Blog {posts} />
-  <Awards {awards} />
+  <Projects {projects} {isMobile} />
+  <Blog {posts} {isMobile} />
+  <Awards {awards} {isMobile} />
 </main>
 <Footer />
 
@@ -63,6 +67,6 @@
     /* This is for the footer reveal on scroll */
     position: relative;
     z-index: 1;
-    margin-bottom: var(--footer-height);
+    /* margin-bottom: var(--footer-height); */
   }
 </style>

@@ -1,11 +1,11 @@
 <script>
-  import { fly, fade } from "svelte/transition";
+  export let projects;
+  export let isMobile;
+
   import IntersectionObserver from "svelte-intersection-observer";
 
   let element;
   let intersecting;
-
-  export let projects;
 
   let filteredProjects = projects
     .filter((d) => d.metadata.archived != true)
@@ -17,24 +17,29 @@
     });
 
   // Import Swiper Svelte components
-  import { Mousewheel, Navigation, FreeMode } from "swiper";
+  import SwiperCore, { Mousewheel, Navigation, FreeMode, Lazy } from "swiper";
   import { Swiper, SwiperSlide } from "swiper/svelte";
+
+  SwiperCore.use([Lazy, Navigation]);
 
   // Import Swiper styles
   import "swiper/css/navigation";
+  import "swiper/css/lazy";
   import "swiper/css";
 </script>
 
 <IntersectionObserver {element} bind:intersecting>
-  <section bind:this={element}>
+  <section bind:this={element} id="projects">
     <!-- {#if intersecting} -->
     <!-- <div transition:fly={{ x: -50 }}> -->
     <!-- <div transition:fade> -->
     <div class="sticky-top title-max-width-container">
       <div class="see-all-flex">
-        <h1 class="page-overline">Projects</h1>
+        <h1 class="page-overline">
+          {isMobile ? "Selected projects" : "Projects"}
+        </h1>
         <a
-          class="page-overline padding-bottom"
+          class="page-overline padding-bottom see-all"
           sveltekit:prefetch
           href="/project"
         >
@@ -62,6 +67,12 @@
         direction={"horizontal"}
         observer={true}
         observeParents={true}
+        preloadImages={false}
+        lazy={{
+          loadPrevNext: true,
+          checkInView: false, // Make this true if really need performance optimization
+        }}
+        watchSlidesProgress={true}
       >
         {#each filteredProjects as project, index}
           <SwiperSlide>
@@ -72,11 +83,17 @@
               class="project-link"
               ><div class="gradient-overlay" />
               <img
+                data-src={`./images/project/${project.metadata.image}`}
+                class="swiper-lazy project-image"
+                alt=""
+              />
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+              <!-- <img
                 loading="lazy"
                 src={`/images/project/${project.metadata.image}`}
                 alt=""
                 class="project-image"
-              />
+              /> -->
               <div class="project-text">
                 <h1>{project.metadata.title}</h1>
                 <h2>{project.metadata.description}</h2>
@@ -218,7 +235,15 @@
 
   @media screen and (max-width: 568px) {
     .projects-container {
-      height: 250px;
+      height: 275px;
+    }
+
+    .project-text h1 {
+      font-size: 1.5rem;
+    }
+
+    .project-text h2 {
+      font-size: 1rem;
     }
   }
 </style>

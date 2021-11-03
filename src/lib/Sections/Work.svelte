@@ -22,7 +22,7 @@
         <div class="see-all-flex">
           <h1 class="page-overline">Experience</h1>
           <a
-            class="page-overline padding-bottom"
+            class="page-overline padding-bottom see-all"
             sveltekit:prefetch
             href="/experience">See all work experience &#8599;</a
           >

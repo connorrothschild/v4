@@ -13,21 +13,14 @@
   import "../styles/project.css";
 
   let currentMode = "light";
-  // const updateSystemPreferenceDarkTheme = () => {
-  //   currentMode = matchMedia("(prefers-color-scheme: dark)").matches
-  //     ? "dark"
-  //     : "light";
-  // };
 
   onMount(() => {
-    // updateSystemPreferenceDarkTheme();
     currentColorMode.set(currentMode);
   });
 </script>
 
 <Seo />
 <Nav />
-<!-- <HoveredSvg /> -->
 <slot />
 
 <style>

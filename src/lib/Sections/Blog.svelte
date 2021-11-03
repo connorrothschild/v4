@@ -1,10 +1,12 @@
 <script>
+  export let isMobile;
+  export let posts;
+
   import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
 
   import BlogSection from "$lib/Content/Blog.svelte";
 
-  export let posts;
   let anyHovered = false;
 
   let filteredPosts = posts
@@ -17,6 +19,10 @@
       if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
+  $: finalPosts = isMobile
+    ? filteredPosts.filter((d) => d.metadata.featured)
+    : filteredPosts;
+
   let element;
   let intersecting;
 </script>
@@ -28,9 +34,11 @@
       <!-- <div transition:fade> -->
       <div class="sticky-top">
         <div class="see-all-flex">
-          <h1 class="page-overline">Blog</h1>
+          <h1 class="page-overline">
+            {isMobile ? "Selected blog posts" : "Blog"}
+          </h1>
           <a
-            class="page-overline padding-bottom"
+            class="page-overline padding-bottom see-all"
             sveltekit:prefetch
             href="/post">See all posts &#8599;</a
           >
@@ -41,7 +49,7 @@
         </h1>
       </div>
       <div class="posts-grid">
-        {#each filteredPosts as post, index}
+        {#each finalPosts as post, index}
           <BlogSection
             post={post.metadata}
             slug={post.path.replace(/\.[^/.]+$/, "")}

@@ -277,4 +277,23 @@
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }
+
+  @media screen and (max-width: 400px) {
+    .post-date {
+      font-size: 0.85rem;
+    }
+
+    .post-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-description {
+      font-size: 1rem;
+    }
+
+    .post-tag {
+      font-size: 0.75rem;
+    }
+  }
 </style>
