@@ -3,10 +3,6 @@
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 </script>
 
-<!-- The first nav stays at the top of the page so user can scroll to it 
-But it is invisible
-Since #nav is fixed, the user can never scroll to it -->
-<div id="home" />
 <div id="nav">
   <ul class="left">
     <NavListItem code={""} title={"CR"} />
@@ -21,10 +17,6 @@ Since #nav is fixed, the user can never scroll to it -->
 </div>
 
 <style>
-  /* #home {
-    display: none;
-  } */
-
   #nav {
     display: flex;
     place-items: center;

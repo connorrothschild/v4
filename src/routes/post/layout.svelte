@@ -42,7 +42,6 @@
 
 <style>
   main {
-    /* background: var(--secondary-color); */
     max-width: 768px;
     margin: 0 auto;
     padding: 1em;

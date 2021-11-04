@@ -41,7 +41,7 @@
     left: 0;
     padding: 1rem;
     opacity: 0;
-    transition: opacity 700ms ease;
+    transition: opacity 500ms ease 250ms;
   }
 
   .corner.visible {

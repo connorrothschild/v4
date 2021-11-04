@@ -43,6 +43,7 @@
   $: changePath($currentIcon ? paths[$currentIcon] : paths[activePage]);
 </script>
 
+<!-- href to home doesn't exist anymore, but if we want it, add to top of nav in separate div -->
 <a
   href="#home"
   class="no-underline"
