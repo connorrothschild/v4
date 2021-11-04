@@ -1,6 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { gsap } from "gsap";
+  import { SplitText } from "gsap/dist/SplitText";
+
+  gsap.registerPlugin(SplitText);
 
   let prefersReducedMotion = false;
   onMount(() => {
@@ -17,17 +20,59 @@
 
   function transition() {
     if (prefersReducedMotion) return;
+
+    let titleSplit = new SplitText(
+      document.querySelector(".transition-title"),
+      {
+        type: "words,chars",
+      }
+    );
+    let titleChars = titleSplit.chars;
+
+    let subtitleSplit = new SplitText(
+      document.querySelector(".transition-subtitle"),
+      {
+        type: "words,chars",
+      }
+    );
+    let subtitleChars = subtitleSplit.chars;
+
     gsap.fromTo(
-      ".transition-title",
-      { x: -10, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.5 }
+      titleChars,
+      { y: 100, opacity: 0, rotation: -5 },
+      {
+        y: 0,
+        opacity: 1,
+        rotation: 0,
+        stagger: 0.02,
+        duration: 0.5,
+        ease: "power2.out",
+      }
     );
 
     gsap.fromTo(
-      ".transition-subtitle",
-      { x: -10, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.5 }
+      subtitleChars,
+      { x: 10, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.02,
+        duration: 0.5,
+        ease: "backwards",
+      }
     );
+
+    // gsap.fromTo(
+    //   ".transition-title",
+    //   { x: -10, opacity: 0 },
+    //   { x: 0, opacity: 1, duration: 0.5 }
+    // );
+
+    // gsap.fromTo(
+    //   ".transition-subtitle",
+    //   { x: -10, opacity: 0 },
+    //   { x: 0, opacity: 1, duration: 0.5 }
+    // );
 
     gsap.fromTo(
       ".transition-content",

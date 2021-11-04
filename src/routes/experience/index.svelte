@@ -35,7 +35,7 @@
 <Transition />
 <main>
   <h1 class="page-overline transition-subtitle">Experience</h1>
-  <h1 class="page-title transition-title">
+  <h1 class="page-title transition-title overflow-hidden">
     Places I've
     <span class="gradient-accented bolded ">worked</span>
   </h1>

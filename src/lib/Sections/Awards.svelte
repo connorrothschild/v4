@@ -6,6 +6,7 @@
   import IntersectionObserver from "svelte-intersection-observer";
 
   import AwardSection from "$lib/Content/Award.svelte";
+  import SectionTitle from "$lib/Text/SectionTitle.svelte";
 
   let element;
   let intersecting;
@@ -27,44 +28,41 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element}>
-    <!-- {#if intersecting} -->
-    <div transition:fly={{ x: -50 }}>
-      <!-- <div transition:fade> -->
-      <div class="sticky-top">
-        <div class="see-all-flex">
-          <h1 class="page-overline">
-            {isMobile ? "Selected awards" : "Awards"}
-          </h1>
-          <a
-            class="page-overline padding-bottom see-all"
-            sveltekit:prefetch
-            href="/award">See all awards &#8599;</a
-          >
-        </div>
-        <h1 class="page-title home">
+    <div class="sticky-top">
+      <div class="see-all-flex">
+        <h1 class="page-overline">
+          {isMobile ? "Selected awards" : "Awards"}
+        </h1>
+        <a
+          class="page-overline padding-bottom see-all"
+          sveltekit:prefetch
+          href="/award">See all awards &#8599;</a
+        >
+      </div>
+      <SectionTitle {intersecting} element="#awards-title">
+        <h1 id="awards-title" class="page-title home overflow-hidden">
           Awards I've
           <span class="gradient-accented bolded ">won</span>
         </h1>
-      </div>
-
-      <div class="awards-grid">
-        {#each filteredAwards as award}
-          <AwardSection
-            award={award.metadata}
-            slug={award.path.replace(/\.[^/.]+$/, "")}
-            bind:anyHovered
-          />
-        {/each}
-      </div>
+      </SectionTitle>
     </div>
-    <!-- {/if} -->
+
+    <div class="awards-grid">
+      {#each filteredAwards as award}
+        <AwardSection
+          award={award.metadata}
+          slug={award.path.replace(/\.[^/.]+$/, "")}
+          bind:anyHovered
+        />
+      {/each}
+    </div>
   </section>
 </IntersectionObserver>
 
 <style>
   section {
     width: 95%;
-    max-width: 1268px;
+    max-width: 1168px;
     margin: auto;
     margin-bottom: var(--section-margin-bottom);
   }

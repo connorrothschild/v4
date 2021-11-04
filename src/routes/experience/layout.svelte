@@ -26,7 +26,7 @@
     classes="page-overline transition-subtitle"
   />
 
-  <h1 class="page-title transition-title">
+  <h1 class="page-title transition-title overflow-hidden">
     {name}
     <img
       loading="lazy"

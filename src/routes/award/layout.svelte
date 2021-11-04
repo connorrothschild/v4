@@ -31,7 +31,7 @@
     classes="page-overline transition-subtitle"
   />
 
-  <h1 class="page-title transition-title">{title}</h1>
+  <h1 class="page-title transition-title overflow-hidden">{title}</h1>
   <div class="content transition-content">
     <slot />
 

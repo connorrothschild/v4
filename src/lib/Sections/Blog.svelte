@@ -6,6 +6,8 @@
   import IntersectionObserver from "svelte-intersection-observer";
 
   import BlogSection from "$lib/Content/Blog.svelte";
+  import Transition from "$lib/Transition.svelte";
+  import SectionTitle from "$lib/Text/SectionTitle.svelte";
 
   let anyHovered = false;
 
@@ -29,44 +31,41 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element}>
-    <!-- {#if intersecting} -->
-    <div transition:fly={{ x: -50 }}>
-      <!-- <div transition:fade> -->
-      <div class="sticky-top">
-        <div class="see-all-flex">
-          <h1 class="page-overline">
-            {isMobile ? "Selected blog posts" : "Blog"}
-          </h1>
-          <a
-            class="page-overline padding-bottom see-all"
-            sveltekit:prefetch
-            href="/post">See all posts &#8599;</a
-          >
-        </div>
-        <h1 class="page-title home">
+    <div class="sticky-top">
+      <div class="see-all-flex">
+        <h1 class="page-overline">
+          {isMobile ? "Selected blog posts" : "Blog"}
+        </h1>
+        <a
+          class="page-overline padding-bottom see-all"
+          sveltekit:prefetch
+          href="/post">See all posts &#8599;</a
+        >
+      </div>
+      <SectionTitle {intersecting} element="#posts-title">
+        <h1 id="posts-title" class="page-title home overflow-hidden">
           Posts I've
           <span class="gradient-accented bolded">written</span>​
         </h1>
-      </div>
-      <div class="posts-grid">
-        {#each finalPosts as post, index}
-          <BlogSection
-            post={post.metadata}
-            slug={post.path.replace(/\.[^/.]+$/, "")}
-            {index}
-            bind:anyHovered
-          />
-        {/each}
-      </div>
+      </SectionTitle>
     </div>
-    <!-- {/if} -->
+    <div class="posts-grid">
+      {#each finalPosts as post, index}
+        <BlogSection
+          post={post.metadata}
+          slug={post.path.replace(/\.[^/.]+$/, "")}
+          {index}
+          bind:anyHovered
+        />
+      {/each}
+    </div>
   </section>
 </IntersectionObserver>
 
 <style>
   section {
     width: 95%;
-    max-width: 1268px;
+    max-width: 1168px;
     margin: auto;
     margin-bottom: var(--section-margin-bottom);
   }

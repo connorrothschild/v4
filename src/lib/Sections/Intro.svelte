@@ -1,24 +1,98 @@
 <script>
-  import Transition from "$lib/Transition.svelte";
-  import { fade } from "svelte/transition";
-  import sticky from "../../actions/stickyDetector.js";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  import { SplitText } from "gsap/dist/SplitText";
 
-  let isStuck = false;
+  gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  function handleStuck(e) {
-    isStuck = e.detail.isStuck;
-  }
+  import { onMount } from "svelte";
 
-  $: isStuck, runTransition();
+  let connor, rothschild, subtitle, overline;
 
-  let active = false;
+  onMount(() => {
+    connor = document.querySelector(".connor");
+    rothschild = document.querySelector(".rothschild");
+    subtitle = document.querySelector(".subtitle");
+    overline = document.querySelector(".overline");
 
-  function runTransition() {
-    isStuck ? (active = true) : (active = false);
-  }
+    let connorSplit = new SplitText(connor, { type: "words,chars" });
+    let connorChars = connorSplit.chars;
+
+    let rothschildSplit = new SplitText(rothschild, { type: "words,chars" });
+    let rothschildChars = rothschildSplit.chars;
+
+    gsap.set(connor, { perspective: 400 });
+    gsap.set(rothschild, { perspective: 400 });
+    // let timeline = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: document.querySelector("#hero"),
+    //     start: "top top",
+    //     end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+    // timeline.to(connor, { x: "-5%", ease: "power2.out" }, 0);
+    // timeline.to(rothschild, { x: "5%", ease: "power2.out" }, 0);
+
+    gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 0.75 });
+
+    gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+    gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+
+    gsap.fromTo(
+      connorChars,
+      { y: "-15%", opacity: 0 },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.12,
+        ease: "ease",
+      }
+    );
+    gsap.fromTo(
+      rothschildChars,
+      { y: "15%", opacity: 0 },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        ease: "ease",
+      }
+    );
+
+    gsap.fromTo(
+      subtitle,
+      { opacity: 0, x: "-2.5%" },
+      { opacity: 1, x: 0, duration: 1, delay: 1.5 }
+    );
+  });
 </script>
 
-<Transition />
+<section id="hero">
+  <div class="hero-container">
+    <h1 class="overline begin-invisible">Hi, I'm</h1>
+    <div class="title">
+      <h1 class="connor begin-invisible gradient-accented">Connor</h1>
+      <h1 class="rothschild begin-invisible gradient-accented">Rothschild</h1>
+    </div>
+    <h2 class="subtitle begin-invisible">
+      And I tell visual stories on the web.
+    </h2>
+  </div>
+  <!-- <h2 class="content transition-content">
+      Right now, I lead the interactives and visualization team at <a
+        href="https://www.mokshadata.com/"
+        target="_blank"
+        rel="noopener noreferrer">Moksha Data</a
+      >.
+    </h2> -->
+</section>
+
+<!-- <Transition />
 <section>
   <div class="wrapper">
     {#if active}
@@ -69,166 +143,95 @@
       />
     </div>
   </div>
-</section>
-
+</section> -->
 <style>
   section {
     width: 95%;
-    max-width: 1068px;
+    /* max-width: 1068px; */
     margin: auto;
-  }
-
-  .transition-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: var(--tertiary-color);
-    z-index: 10;
-  }
-
-  .step {
-    min-height: 400px;
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    color: var(--heading-color);
-    text-align: left;
-  }
-
-  h1 {
-    font-size: 4rem;
-    line-height: 0.9;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-right: auto;
-    text-align: left;
-    letter-spacing: -1px;
-    font-weight: 200;
-  }
-
-  h2 {
-    font-size: 3rem;
-    line-height: 1.1;
-    font-weight: 200;
-    font-family: var(--font-serif);
-    margin-bottom: 2rem;
-    font-weight: 300;
-    margin-right: auto;
-  }
-
-  h3 {
-    font-size: 1.65rem;
-    line-height: 1.2;
-    font-weight: 200;
-    font-family: var(--font-sans);
-    margin-right: auto;
-    color: var(--pure-text-color);
-  }
-
-  strong {
-    font-weight: 500;
-  }
-
-  .with-border {
-    border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.7);
-    padding-bottom: 2.25rem;
-  }
-
-  .wrapper {
-    display: flex;
-    position: relative;
-  }
-
-  .sticky-stack {
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: visible;
+    place-items: center;
+    overflow-x: hidden;
   }
 
-  .sticky-stack .step {
-    position: sticky;
+  .hero-container {
+    text-align: center;
+    line-height: 0.85;
+    margin-bottom: 2rem;
+    user-select: none;
   }
 
-  .sticky-stack .zero {
-    top: -5%;
+  .overline {
+    font-weight: 200;
+    text-align: left;
+    margin-bottom: 0.5rem;
   }
 
-  .sticky-stack .one {
-    top: 17%;
+  .begin-invisible {
+    opacity: 0;
   }
 
-  .sticky-stack .two {
-    top: 36%;
+  .title {
+    margin-bottom: 1.25rem;
   }
 
-  .sticky-stack .three {
-    top: 53%;
+  .connor,
+  .rothschild {
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    text-transform: uppercase;
   }
 
-  .buffer {
-    top: 65%;
-    height: 200px;
-    position: sticky;
+  .connor {
+    font-size: 17.4vw;
   }
 
-  @media (max-width: 1100px) {
-    h2 {
-      font-size: 2.1rem;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
+  .rothschild {
+    font-size: 11.5vw;
+    margin-left: 1.5vw;
   }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3.25rem;
-    }
+  .subtitle {
+    font-size: 3vw;
+    max-width: 1068px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
 
-    h2 {
+  .content {
+    font-size: 1.5rem;
+    font-family: var(--font-sans);
+  }
+
+  .invisible {
+    /* opacity: 0; */
+    transition: opacity 500ms ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (max-width: 768px) {
+    .subtitle {
       font-size: 2rem;
     }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .sticky-stack .two {
-      top: 35%;
-    }
-
-    .sticky-stack .three {
-      top: 50%;
-    }
   }
 
-  @media (max-width: 568px) {
-    h1 {
-      font-size: 9vw;
+  @media screen and (max-width: 568px) {
+    .subtitle {
+      font-size: 1.5rem;
     }
-
-    h2 {
+  }
+  @media screen and (max-width: 468px) {
+    .subtitle {
       font-size: 1.25rem;
-    }
-
-    h3 {
-      font-size: 1.15rem;
-    }
-
-    .sticky-stack .one {
-      top: 12.5%;
-    }
-
-    .sticky-stack .two {
-      top: 28%;
-    }
-
-    .sticky-stack .three {
-      top: 45%;
     }
   }
 </style>

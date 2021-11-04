@@ -1,7 +1,10 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
+
   import JobSection from "$lib/Content/Job.svelte";
+  import SectionTitle from "$lib/Text/SectionTitle.svelte";
+
   export let jobs;
 
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
@@ -27,10 +30,12 @@
             href="/experience">See all work experience &#8599;</a
           >
         </div>
-        <h1 class="page-title home">
-          Places I've
-          <span class="gradient-accented bolded ">worked</span>
-        </h1>
+        <SectionTitle {intersecting} element="#work-title">
+          <h1 id="work-title" class="page-title home overflow-hidden">
+            Places I've
+            <span class="gradient-accented bolded ">worked</span>
+          </h1>
+        </SectionTitle>
       </div>
       <div class="flex">
         <div class="jobs-container">
@@ -72,7 +77,7 @@
 <style>
   section {
     width: 95%;
-    max-width: 1268px;
+    max-width: 1168px;
     margin: auto;
     margin-bottom: var(--section-margin-bottom);
   }

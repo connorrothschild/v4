@@ -44,7 +44,7 @@
 <Transition />
 <main>
   <h1 class="page-overline transition-subtitle">Awards</h1>
-  <h1 class="page-title transition-title">
+  <h1 class="page-title transition-title overflow-hidden">
     Awards I've
     <span class="gradient-accented bolded ">won</span>
   </h1>

@@ -77,7 +77,7 @@
     transition: all 300ms linear;
   }
 
-  @media screen and (max-width: 1268px) {
+  @media screen and (max-width: 1168px) {
     .preview h2 {
       font-size: 2.85vw;
     }

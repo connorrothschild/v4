@@ -38,6 +38,7 @@
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
   import Footer from "$lib/Sections/Footer.svelte";
+  import Circle from "$lib/CircleText.svelte";
 
   let pageWidth;
   $: isMobile = pageWidth < 768;
@@ -50,6 +51,7 @@
   <Projects {projects} {isMobile} />
   <Blog {posts} {isMobile} />
   <Awards {awards} {isMobile} />
+  <Circle />
 </main>
 <Footer />
 
