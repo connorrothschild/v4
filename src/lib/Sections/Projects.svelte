@@ -70,7 +70,7 @@
         preloadImages={false}
         lazy={{
           loadPrevNext: true,
-          checkInView: false, // Make this true if really need performance optimization
+          checkInView: true, // Make this true if really need performance optimization
         }}
         watchSlidesProgress={true}
       >
