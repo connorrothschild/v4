@@ -97,7 +97,8 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://twitter.com/CL_Rothschild">Twitter</a
+          href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
+          >Twitter</a
         >
       </div>
     </div>

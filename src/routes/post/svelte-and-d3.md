@@ -16,10 +16,6 @@ tags: ['svelte', 'd3', 'tutorial']
 </script>
 
 <style>
-html {
-    scroll-behavior: smooth;
-}
-
 svg {
   width: 100%;
   margin: 0.5rem 0 1.5rem 0;

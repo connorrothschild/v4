@@ -109,11 +109,9 @@ Here are some valid counterarguments to my thinking:
 
 ### Consultants/big tech employees are only there for a short period of time
 
-* Many recent graduates 
+Many recent graduates 
 
 ### "Something else" jobs aren't well-paying enough
-
-### 
 
 # Appendix
 
