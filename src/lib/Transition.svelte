@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { gsap } from "gsap";
 
   let prefersReducedMotion = false;
   onMount(() => {
