@@ -1,10 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import { currentColorMode } from "../stores/global.js";
+  import { currentColorMode, navigationState } from "../stores/global.js";
 
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
-  // import HoveredSvg from "$lib/HoveredSvg.svelte";
 
   import "../styles/immutable.css";
   import "../styles/code.css";
@@ -17,11 +16,24 @@
   onMount(() => {
     currentColorMode.set(currentMode);
   });
+
+  // PAGE LOADER
+  import Loading from "../lib/Loading.svelte";
+  import { fade } from "svelte/transition";
 </script>
 
+<svelte:window
+  on:sveltekit:navigation-start={() => {
+    navigationState.set("loading");
+  }}
+  on:sveltekit:navigation-end={() => {
+    navigationState.set("loaded");
+  }}
+/>
 <Seo />
 <Nav />
 <slot />
+<Loading />
 
 <style>
 </style>
