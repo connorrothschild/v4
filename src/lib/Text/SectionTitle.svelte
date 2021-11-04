@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { gsap } from "gsap";
-  import { SplitText } from "gsap/dist/SplitText";
+  import { SplitText } from "gsap/dist/SplitText.js";
 
   gsap.registerPlugin(SplitText);
 
