@@ -5,6 +5,7 @@
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
 
+  import "../styles/fonts.css";
   import "../styles/immutable.css";
   import "../styles/code.css";
   import "../styles/style.css";
