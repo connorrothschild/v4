@@ -223,7 +223,8 @@
     height: 100%;
   }
 
-  @media screen and (max-width: 768px) {
+  /* FIXME */
+  /* @media screen and (max-width: 768px) {
     video {
       width: auto;
       height: 90vh;
@@ -233,7 +234,7 @@
       min-width: 100%;
       transform: translateX(calc((100% - 100vw) / 2));
     }
-  }
+  } */
 
   /* This section handled differently because we want project gallery fullbleed */
   section {

@@ -360,13 +360,15 @@ But for users who prefer reduced motion, we don't want to apply this
   }
 }
 
+/* FIXME: Leads to bug on safari */
 .gradient-accented {
-  background: linear-gradient(to right, var(--pure-text-color) 10%, var(--accent-color) 60%);
+  /* background: linear-gradient(to right, var(--pure-text-color) 10%, var(--accent-color) 60%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   box-decoration-break: clone;
-  -webkit-box-decoration-break: clone; /* Fixes Safari https://discourse.webflow.com/t/multi-line-gradient-text-safari-ios-fix-i-e-prevent-disappearing-text/135029*/
+  -webkit-box-decoration-break: clone;  */
+  color: var(--accent-color);
 }
 
 .accented {
