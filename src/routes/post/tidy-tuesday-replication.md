@@ -457,5 +457,5 @@ And here’s mine:
 <Image alt="A scatterplot recreation, showing automation risk compared to median income." src="../images/post/tidy-tuesday-replication/replication.png"></Image>
 
 <!-- 
-  <iframe src="https://connorrothschild.shinyapps.io/2019-12-10/" width="100%" height="670px"> 
+  <iframe loading="lazy" src="https://connorrothschild.shinyapps.io/2019-12-10/" width="100%" height="670px"> 
 -->

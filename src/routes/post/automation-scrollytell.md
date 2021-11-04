@@ -31,7 +31,7 @@ of choice, R.
 
 Today, I'll walk you through a tutorial of scrollytelling in R. It's a bit complicated, and the output isn't as powerful as a full-fledged D3 project, but its a rough sketch, and it works. Here's the output:
 
-<iframe title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px">
+<iframe loading="lazy" title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px">
 </iframe>
 
 ### Load libraries
@@ -525,4 +525,4 @@ server <- function(input, output, session) {
 You can look at the code and all of its context on GitHub
 [here](https://github.com/connorrothschild/shiny-scrollytell). Want to visit the live page? You can access it [here](https://connorrothschild.shinyapps.io/automation/), or embedded below!
 
-<iframe title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px"></iframe>
+<iframe loading="lazy" title='Automation and Its Impact on Jobs' src="https://connorrothschild.shinyapps.io/automation/" width="100%" height="800px"></iframe>

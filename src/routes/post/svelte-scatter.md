@@ -22,7 +22,7 @@ Here, I'll talk less *why* and more *how*. That is, I'll explain how to create *
 
 We'll be taking [this scatterplot](https://observablehq.com/@d3/scatterplot), from the team at Observable, and recreating it (sort of). Then, we'll make it (hopefully) better.
 
-<iframe title="An Observable chart of cars data" width="100%" height="684" frameborder="0" style="background: white"
+<iframe loading="lazy" title="An Observable chart of cars data" width="100%" height="684" frameborder="0" style="background: white"
   src="https://observablehq.com/embed/@d3/scatterplot?cells=chart"></iframe>
 
 In specific, we'll be doing the following:
@@ -79,7 +79,7 @@ We're using the `$` notation here because `chartWidth` is *reactive*; that is, i
 
 To see our reactive chart dimensions in action, play around with the width of the playground below:
 
-<iframe src="https://svelte.dev/repl/060a2a7847bc479eb4e456c966f096e9?version=3.38.3" width="100%" height='600' title="Responsive chart container"></iframe>
+<iframe loading="lazy" src="https://svelte.dev/repl/060a2a7847bc479eb4e456c966f096e9?version=3.38.3" width="100%" height='600' title="Responsive chart container"></iframe>
 
 ## Create a `<Scatterplot />` component
 
@@ -147,7 +147,7 @@ For our data, we'll want to iterate over each *row* of our data, and pass each *
 
 Lets learn by doing. If we simply iterated on each row and wrote out our MPG and HP values, it would look like this:
 
-<iframe src="https://svelte.dev/repl/7e3ec27da41440e880a49f83068fd97a?version=3.42.1
+<iframe loading="lazy" src="https://svelte.dev/repl/7e3ec27da41440e880a49f83068fd97a?version=3.42.1
 " width="100%" height='600' title="Simple each block"></iframe>
 
 But we don't want to write out our values, we want to:

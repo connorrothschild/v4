@@ -50,6 +50,7 @@
 
   .corner.invisible {
     pointer-events: none;
+    transition: opacity 500ms linear 0ms; /* No delay if the user is scrolling back up */
   }
 
   .corner-title {

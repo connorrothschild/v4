@@ -209,15 +209,15 @@ Although I use the Svelte REPL to showcase these three examples, only the last o
 
 **The first option** (old school) is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is how burgers would have been made, painfully, before D3.
 
-<iframe src="https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3" width="100%" height='600' title="Old school burger building"></iframe>
+<iframe loading="lazy" src="https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3" width="100%" height='600' title="Old school burger building"></iframe>
 
 **The second option** (new school) is to tell your app to read in each ingredient and instruction through D3 method chaining. We remove the need for our verbose `for` loop, and use the chain to give D3 a set of sequential instructions.
 
-<iframe src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="New school burger building"></iframe>
+<iframe loading="lazy" src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="New school burger building"></iframe>
 
 In **our final option** (new new school), we can simply append our instructions directly to the ingredient, *literally*. Here, we skip `for` loops and we skip D3 method chaining; instead, we componentize our general "burger item" and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:
 
-<iframe src="https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3" width="100%" height='600' title="Literal burger building"></iframe>
+<iframe loading="lazy" src="https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3" width="100%" height='600' title="Literal burger building"></iframe>
 
 Which do you prefer? It's much easier to make a burger by *just making it*, rather than giving instructions, no matter what form they come in. Frameworks allow for the construction of burgers—and visualizations—**literally**. We write our ingredients (or DOM elements) directly, and include our instructions (or data) in our markup. Now that's a tasty burger.
 
