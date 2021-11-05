@@ -203,6 +203,7 @@
     font-weight: 300;
     margin-bottom: 1rem;
     text-align: right;
+    margin-left: auto;
   }
 
   .content {

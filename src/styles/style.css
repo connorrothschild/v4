@@ -12,6 +12,7 @@
   --primary-color:  #ccdbe9;
   --secondary-color: #d0dde9; 
   --tertiary-color: #edf0f8;
+  --tertiary-color-rgb: 237, 240, 248;
   --accent-color: rgb(197, 81, 108);
   --accent-color-rgb: 197, 81, 108; 
   --heading-color: rgba(0, 0, 0, 0.7);
@@ -29,6 +30,7 @@
   --primary-color: rgb(25, 25, 25);
   --secondary-color: rgb(25, 25, 25);
   --tertiary-color: rgb(25, 25, 25);
+  --tertiary-color-rgb: 25, 25, 25;
   --accent-color: rgb(49, 179, 167);
   --accent-color-rgb: 49, 179, 167; 
   --heading-color: rgba(255, 255, 255, 0.7);
@@ -54,16 +56,16 @@ html {
   overflow-y: scroll;
   scroll-behavior: smooth;  
   touch-action: manipulation;
+  overscroll-behavior: none;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--tertiary-color);
-  overscroll-behavior: none;
 }
 
-body::before {
+/* body::before {
   content: '';
   width: 80vw;
   height: 100vh;
@@ -75,7 +77,7 @@ body::before {
       var(--pure-background-color) 0%,
       rgba(255, 255, 255, 0) 100%);
   opacity: 0.05;
-}
+} */
 
 ::selection {
   -webkit-text-fill-color: var(--pure-text-color);

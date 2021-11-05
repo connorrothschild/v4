@@ -22,7 +22,7 @@
   {/if}
   <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
     <path
-      id="textcircle"
+      id="circle"
       fill="none"
       stroke="var(--text-color)"
       stroke-width="5"
@@ -31,7 +31,7 @@
     />
 
     <text dy="-25">
-      <textPath xlink:href="#textcircle">
+      <textPath xlink:href="#circle">
         👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild
       </textPath>
     </text>

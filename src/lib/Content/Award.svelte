@@ -27,13 +27,26 @@
   }}
 >
   <h3 class="title">{award.title}</h3>
-  <p class="organization">
+  <p class="organization hidden-mobile">
     {award.organization}
   </p>
-  <time datetime={award.date}>{award.date.slice(0, 4)}</time>
+  <time datetime={award.date} class="hidden-mobile"
+    >{award.date.slice(0, 4)}</time
+  >
+  <div class="flex-mobile">
+    <p class="organization">
+      {award.organization}
+    </p>
+    <time datetime={award.date}>{award.date.slice(0, 4)}</time>
+  </div>
 </a>
 
 <style>
+  .flex-mobile {
+    display: none;
+    visibility: hidden;
+  }
+
   .container {
     display: flex;
     padding: 1.5rem 0;
@@ -116,8 +129,19 @@
     }
 
     time {
-      visibility: hidden;
+      padding: 0;
+    }
+
+    .hidden-mobile {
       display: none;
+      visibility: hidden;
+    }
+
+    .flex-mobile {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      visibility: visible;
     }
   }
 </style>
