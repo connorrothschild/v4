@@ -8,38 +8,24 @@
   import Star from "$lib/icons/Star.svelte";
 
   let hovered = false;
-
-  // Prevent double clicking messing up routing
-  import { goto, prefetch } from "$app/navigation";
-
-  let linkClicked = false;
-  function navigate(slug) {
-    if (linkClicked) return;
-    linkClicked = true;
-    setTimeout(() => {
-      linkClicked = false;
-    }, 500);
-
-    goto(slug);
-  }
 </script>
 
-<div
+<a
   class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-  on:click={navigate(slug)}
+  href={slug}
   on:mouseover={() => {
     anyHovered = true;
     hovered = true;
-    prefetch(slug);
   }}
   on:focus={() => {
-    prefetch(slug);
+    null;
   }}
   on:mouseleave={() => {
     anyHovered = false;
     hovered = false;
   }}
+  sveltekit:prefetch
 >
   {#if post.featured}
     <div class="featured-star">
@@ -65,7 +51,7 @@
       {/each}
     </div>
   </div>
-</div>
+</a>
 
 <style>
   .post-container {

@@ -6,62 +6,47 @@
 
   let hovered = false;
 
-  // Prevent double clicking messing up routing
-  import { goto, prefetch } from "$app/navigation";
-
-  let linkClicked = false;
-  function navigate(slug) {
-    if (linkClicked) return;
-    linkClicked = true;
-    setTimeout(() => {
-      linkClicked = false;
-    }, 500);
-
-    goto(slug);
-  }
-
   // Show titles by default on touch devices
   import { onMount } from "svelte";
   import { detectTouchscreen } from "../../scripts/utils.js";
+
   let isTouchscreen = false;
   onMount(() => {
     isTouchscreen = detectTouchscreen();
   });
 </script>
 
-<div class="project-card no-underline" on:click={navigate(slug)}>
+<a
+  class="project-card no-underline"
+  href={slug}
+  sveltekit:prefetch
+  on:mouseover={() => {
+    hovered = true;
+  }}
+  on:focus={() => {
+    hovered = true;
+  }}
+  on:mouseleave={() => {
+    hovered = false;
+  }}
+>
   {#if hovered || isTouchscreen}
-    <div transition:fade={{ duration: 200 }} class="hovered-gradient" />
+    <div in:fade={{ duration: 200 }} class="hovered-gradient" />
   {/if}
   <img
     loading="lazy"
     src="/images/project/{project.image}"
     alt="Project image for {project.title}"
     class="project-image"
-    on:mouseover={() => {
-      hovered = true;
-      prefetch(slug);
-    }}
-    on:focus={() => {
-      hovered = true;
-      prefetch(slug);
-    }}
-    on:mouseleave={() => {
-      hovered = false;
-    }}
     class:hovered
   />
   {#if hovered || isTouchscreen}
-    <div
-      in:fly={{ y: 50, duration: 200 }}
-      out:fade={{ duration: 200 }}
-      class="project-text"
-    >
+    <div in:fly={{ y: 50, duration: 200 }} class="project-text">
       <h1 class="title">{project.title}</h1>
       <h2 class="description">{project.description}</h2>
     </div>
   {/if}
-</div>
+</a>
 
 <style>
   .project-card {

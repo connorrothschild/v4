@@ -83,20 +83,6 @@
 
   let hovered = false;
 
-  // Prevent double clicking messing up routing
-  import { goto, prefetch } from "$app/navigation";
-
-  let linkClicked = false;
-  function navigate(slug) {
-    if (linkClicked) return;
-    linkClicked = true;
-    setTimeout(() => {
-      linkClicked = false;
-    }, 500);
-
-    goto(slug);
-  }
-
   // On scroll, recalculate scrollYPosition
   // Preferring this rather than binding because of scrollToTop issue
   import { debounce } from "../../scripts/utils.js";
@@ -112,22 +98,24 @@
 </script>
 
 <svelte:window bind:scrollX={scrollXPosition} bind:innerWidth={pageWidth} />
-<div
-  class="perspective-container"
+<a
+  class="perspective-container no-underline"
   style="perspective: {cardWidth}px"
   on:mouseover={() => {
     anyHovered = true;
     hovered = true;
-    prefetch(slug);
   }}
   on:focus={() => {
-    prefetch(slug);
+    anyHovered = true;
+    hovered = true;
   }}
   on:mousemove={readyToHover ? setCoords : null}
   on:mouseleave={resetCoords}
   bind:this={card}
   bind:offsetWidth={cardWidth}
   bind:offsetHeight={cardHeight}
+  href={slug}
+  sveltekit:prefetch
 >
   <div
     style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
@@ -135,7 +123,6 @@
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
     class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-    on:click={navigate(slug)}
   >
     {#if post.featured}
       <div class="featured-star">
@@ -166,7 +153,7 @@
       </div>
     </div>
   </div>
-</div>
+</a>
 
 <style>
   .post-container {

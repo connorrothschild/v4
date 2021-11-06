@@ -6,7 +6,7 @@
   gsap.registerPlugin(SplitText);
 
   let prefersReducedMotion = false;
-  onMount(() => {
+  onMount(async () => {
     let listener = window.matchMedia("(prefers-reduced-motion: reduce)");
     prefersReducedMotion = listener.matches;
 
@@ -15,10 +15,10 @@
       transition();
     });
 
-    transition();
+    await transition();
   });
 
-  function transition() {
+  async function transition() {
     if (prefersReducedMotion) return;
 
     let titleSplit = new SplitText(
@@ -61,18 +61,6 @@
         ease: "backwards",
       }
     );
-
-    // gsap.fromTo(
-    //   ".transition-title",
-    //   { x: -10, opacity: 0 },
-    //   { x: 0, opacity: 1, duration: 0.5 }
-    // );
-
-    // gsap.fromTo(
-    //   ".transition-subtitle",
-    //   { x: -10, opacity: 0 },
-    //   { x: 0, opacity: 1, duration: 0.5 }
-    // );
 
     gsap.fromTo(
       ".transition-content",

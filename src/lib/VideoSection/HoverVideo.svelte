@@ -175,9 +175,17 @@
     text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
   }
 
+  .title-0 {
+    margin-top: 1rem;
+  }
+
+  .title-3 {
+    transform: scaleY(0.95);
+  }
+
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(54vw);
+      transform: translateX(57vw);
     }
 
     .title-0 {
@@ -194,12 +202,11 @@
 
     .title-3 {
       font-size: 9.1rem;
-      transform: scaleY(0.95);
     }
   }
   @media screen and (max-width: 1268px) {
     .absolute-container {
-      transform: translateX(54vw);
+      transform: translateX(51vw);
     }
 
     .title-0 {
@@ -217,6 +224,11 @@
     .title-3 {
       font-size: 11vw;
       transform: scaleY(0.95);
+    }
+  }
+  @media screen and (max-width: 1068px) {
+    .absolute-container {
+      transform: translateX(45vw);
     }
   }
 

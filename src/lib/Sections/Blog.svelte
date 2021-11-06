@@ -51,7 +51,7 @@
         </SectionTitle>
       </div>
     </div>
-    <div class="posts-grid">
+    <div class="posts-grid width-container">
       {#each finalPosts as post, index}
         <BlogSection
           post={post.metadata}
@@ -66,19 +66,15 @@
 
 <style>
   section {
+    width: 100%;
     margin-bottom: var(--section-margin-bottom);
-    width: 100%;
-    max-width: 1168px;
-    margin: auto;
-  }
-
-  .sticky-top {
-    width: 100%;
   }
 
   .width-container {
+    width: 95%;
     max-width: 1168px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .posts-grid {
@@ -86,8 +82,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 3rem;
     justify-items: center;
-    width: 95%;
-    margin: auto;
     grid-row-gap: 1rem;
   }
 

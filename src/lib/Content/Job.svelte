@@ -5,44 +5,32 @@
   export let hoveredFromChild = "Moksha Data";
 
   let hovered = false;
-
-  // Prevent double clicking messing up routing
-  import { goto, prefetch } from "$app/navigation";
-
-  let linkClicked = false;
-  function navigate(slug) {
-    if (preview) {
-      hoveredFromChild = job.name;
-      return;
-    }
-    if (linkClicked) return;
-    linkClicked = true;
-    setTimeout(() => {
-      linkClicked = false;
-    }, 500);
-
-    goto(slug);
-  }
 </script>
 
-<div
+<a
   class="job-container {hovered || hoveredFromChild == job.name
     ? 'hovered'
     : ''}"
   class:preview
+  sveltekit:prefetch
+  href={slug}
   on:mouseover={() => {
+    if (preview) {
+      hoveredFromChild = job.name;
+      return;
+    }
     hovered = true;
-    prefetch(slug);
   }}
   on:focus={() => {
+    if (preview) {
+      hoveredFromChild = job.name;
+      return;
+    }
     hovered = true;
-    prefetch(slug);
   }}
   on:mouseleave={() => {
     hovered = false;
   }}
-  sveltekit:prefetch
-  on:click={navigate(slug)}
 >
   <div
     style="display: flex; place-items: center;"
@@ -57,7 +45,7 @@
     />
   </div>
   {#if !preview} <h3>&#8594;</h3> {/if}
-</div>
+</a>
 
 <style>
   .job-container {
