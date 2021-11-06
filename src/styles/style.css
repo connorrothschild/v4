@@ -56,13 +56,13 @@ html {
   overflow-y: scroll;
   scroll-behavior: smooth;  
   touch-action: manipulation;
-  overscroll-behavior: none;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--tertiary-color);
+  overscroll-behavior-y: contain;
 }
 
 /* body::before {
