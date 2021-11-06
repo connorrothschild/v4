@@ -221,6 +221,10 @@
   }
 
   @media screen and (max-width: 868px) {
+    .section-container {
+      overflow: visible;
+    }
+
     .inactive {
       border-bottom: 1px solid transparent;
       border-top: 1px solid transparent;

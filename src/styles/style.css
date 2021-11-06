@@ -295,7 +295,6 @@ button:focus:not(:focus-visible) {
   user-select: none;
 }
 
-
 .page-title.home {
   font-size: 8vw;
   text-align: center;
