@@ -297,7 +297,7 @@ button:focus:not(:focus-visible) {
 
 .page-title.home {
   font-size: 8vw;
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media screen and (min-width: 1268px) {
@@ -467,9 +467,9 @@ blockquote p:last-of-type {
 }
 
 .sticky-top {
-  position: sticky;
-  top: 0;
   /* top: var(--nav-height); */
+  top: 0;
+  position: sticky;
   padding-top: 1px;
   z-index: 10;
   background: var(--tertiary-color);

@@ -50,9 +50,9 @@
   .container {
     display: flex;
     padding: 1.5rem 0;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: rgba(var(--accent-color-rgb), 0.25);
+    border-bottom-color: rgba(var(--text-color-rgb), 0.2);
     filter: none;
     justify-content: space-between;
     transition: border-bottom-color 500ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
@@ -106,6 +106,10 @@
     text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
   }
 
+  .inactive {
+    border-bottom-color: rgba(var(--text-color-rgb), 0.2);
+  }
+
   .active {
     border-bottom-color: var(--accent-color);
   }
@@ -125,7 +129,7 @@
     .organization {
       padding: 0;
       font-size: 1.1rem;
-      font-weight: 300;
+      font-weight: 200;
     }
 
     time {
