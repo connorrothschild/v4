@@ -65,7 +65,7 @@
   </div>
   {#if showAll}
     <div
-      transition:slide={{ duration: 300, easing: linear }}
+      in:slide={{ duration: 300, easing: linear }}
       class="projects-container"
     >
       {#each otherProjects as project}

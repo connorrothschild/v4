@@ -15,6 +15,9 @@
     subtitle = document.querySelector(".subtitle");
     overline = document.querySelector(".overline");
 
+    let overlineSplit = new SplitText(overline, { type: "words,chars" });
+    let overlineChars = overlineSplit.chars;
+
     let connorSplit = new SplitText(connor, { type: "words,chars" });
     let connorChars = connorSplit.chars;
 
@@ -23,21 +26,23 @@
 
     gsap.set(connor, { perspective: 400 });
     gsap.set(rothschild, { perspective: 400 });
-    // let timeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: document.querySelector("#hero"),
-    //     start: "top top",
-    //     end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-    // timeline.to(connor, { x: "-5%", ease: "power2.out" }, 0);
-    // timeline.to(rothschild, { x: "5%", ease: "power2.out" }, 0);
+    gsap.set(overline, { perspective: 400 });
 
-    gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 0.75 });
-
+    gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.5 });
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.5 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+
+    gsap.fromTo(
+      overlineChars,
+      { x: -20, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.02,
+        duration: 0.5,
+        ease: "backwards",
+      }
+    );
 
     gsap.fromTo(
       connorChars,
@@ -206,24 +211,11 @@
     margin-left: auto;
   }
 
-  .content {
-    font-size: 1.5rem;
-    font-family: var(--font-sans);
-  }
-
-  .invisible {
-    /* opacity: 0; */
-    transition: opacity 500ms ease;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media screen and (max-width: 1068px) {
+  /* @media screen and (max-width: 1068px) {
     section {
       min-height: 70vh;
     }
-  }
+  } */
 
   @media screen and (max-width: 768px) {
     .subtitle {

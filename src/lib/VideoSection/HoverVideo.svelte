@@ -3,18 +3,17 @@
 
   export let projects;
 
-  import { currentColorMode } from "../../stores/global.js";
-
   let value = 0;
-  let video, source;
+  let video, webmSource, movSource;
   let videoTransitioning = false;
 
   const updateVideo = function (url) {
-    if (video && source) {
+    if (video && (webmSource || movSource)) {
       videoTransitioning = true;
 
       setTimeout(() => {
-        source.src = url;
+        movSource.src = `${url}.mov`;
+        webmSource.src = `${url}.webm`;
         video.load();
         video.play();
         videoTransitioning = false;
@@ -24,13 +23,10 @@
 
   $: currentProject = value ? projects[value] : projects[0];
 
-  $: value || $currentColorMode,
-    typeof value == "number"
-      ? updateVideo(`./videos/${$currentColorMode}/${value}.mp4`)
-      : null;
+  $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
 
   onMount(() => {
-    updateVideo(`./videos/${$currentColorMode}/${value}.mp4`);
+    updateVideo(`./videos/${value}`);
   });
 </script>
 
@@ -39,7 +35,8 @@
     {#each projects as project, i}
       <a
         href={currentProject.path.replace(/\.[^/.]+$/, "")}
-        class="project-card no-underline {value === i ? 'active' : 'inactive'}"
+        class="project-card no-underline 
+        {value === i ? 'active' : 'inactive'}"
       >
         <h1
           class="title-{i}"
@@ -52,12 +49,12 @@
         >
           {project.metadata.title}
         </h1>
-        <!-- <h2>{project.metadata.description}</h2> -->
       </a>
     {/each}
   </div>
+  <!-- {#key movSource} -->
   <div class="absolute-container">
-    <div class="transition-overlay" class:videoTransitioning />
+    <!-- <div class="transition-overlay" class:videoTransitioning /> -->
     <video
       preload="metadata"
       autoplay
@@ -66,9 +63,12 @@
       id="video"
       bind:this={video}
     >
-      <source bind:this={source} type="video/mp4" />
+      <!-- Safari uses .mov, Chrome and FF use .webm -->
+      <source bind:this={movSource} type="video/mp4" />
+      <source bind:this={webmSource} type="video/webm" />
     </video>
   </div>
+  <!-- {/key} -->
 </div>
 
 <style>
@@ -89,7 +89,6 @@
     height: 100%;
     text-align: left;
     position: relative;
-    z-index: 5;
     max-width: 1168px;
     margin: auto;
   }
@@ -120,11 +119,28 @@
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }
 
+  .inactive {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .inactive h1 {
+    /* border-bottom: 1px dashed rgba(var(--text-color-rgb), 0.6); */
+    /* border-bottom: 1px dashed transparent; */
+    color: transparent;
+    opacity: 0.5;
+    text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
+  }
+
+  .active {
+    z-index: 5;
+  }
+
   .active h1 {
     color: var(--accent-color);
   }
 
-  .transition-overlay {
+  /* .transition-overlay {
     background: var(--tertiary-color);
     width: 100%;
     height: 100%;
@@ -136,7 +152,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 4;
+    z-index: 3;
     pointer-events: none;
     opacity: 0;
     transition: opacity 200ms ease;
@@ -144,6 +160,11 @@
 
   .videoTransitioning {
     opacity: 1;
+  } */
+
+  .absolute-container {
+    z-index: 2;
+    pointer-events: none;
   }
 
   video {
@@ -155,24 +176,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
   }
 
   /* You can make this true on all desktop sizes for an overlay effect */
   .section-container {
     flex-direction: column-reverse;
-  }
-
-  .inactive {
-    opacity: 0.3;
-  }
-
-  .inactive h1 {
-    /* border-bottom: 1px dashed rgba(var(--text-color-rgb), 0.6); */
-    /* border-bottom: 1px dashed transparent; */
-    color: transparent;
-    opacity: 0.5;
-    text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
   }
 
   .title-0 {
@@ -185,7 +193,7 @@
 
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(57vw);
+      transform: translateX(55vw);
     }
 
     .title-0 {

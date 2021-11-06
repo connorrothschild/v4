@@ -3,34 +3,30 @@
 
   export let projects;
 
-  import { currentColorMode } from "../../stores/global.js";
-
   let value = 0;
-  let video, source;
+  let video, webmSource, movSource;
   let videoTransitioning = false;
 
   const updateVideo = function (url) {
-    if (video && source) {
-      // videoTransitioning = true;
+    if (video && (webmSource || movSource)) {
+      videoTransitioning = true;
 
-      // setTimeout(() => {
-      source.src = url;
-      video.load();
-      video.play();
-      videoTransitioning = false;
-      // }, 1000);
+      setTimeout(() => {
+        movSource.src = `${url}.mov`;
+        webmSource.src = `${url}.webm`;
+        video.load();
+        video.play();
+        videoTransitioning = false;
+      }, 200);
     }
   };
 
   $: currentProject = value ? projects[value] : projects[0];
 
-  $: value || $currentColorMode,
-    typeof value == "number"
-      ? updateVideo(`./videos/${$currentColorMode}/${value}.mp4`)
-      : null;
+  $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
 
   onMount(() => {
-    updateVideo(`./videos/${$currentColorMode}/${value}.mp4`);
+    updateVideo(`./videos/${value}`);
   });
 </script>
 
@@ -61,7 +57,9 @@
       id="video"
       bind:this={video}
     >
-      <source bind:this={source} type="video/mp4" />
+      <!-- Safari uses .mov, Chrome and FF use .webm -->
+      <source bind:this={movSource} type="video/mp4" />
+      <source bind:this={webmSource} type="video/webm" />
     </video>
   </div>
 </div>

@@ -97,5 +97,9 @@
       grid-template-rows: repeat(1, 1fr);
       grid-auto-rows: auto;
     }
+
+    .width-container {
+      width: 90%;
+    }
   }
 </style>

@@ -39,7 +39,7 @@
       />
     </div>
   {/if}
-  <div class="post-card no-underline" on:click={navigate(slug)}>
+  <div class="post-card">
     <div class="post-info">
       <h3 class="post-date">{dateFormat(post.date)}</h3>
       <h1 class="post-title">{post.title}</h1>
@@ -105,7 +105,7 @@
   .post-tag {
     font-family: var(--font-sans);
     padding: 3px 8px;
-    background: rgba(var(--accent-color-rgb), 0.1);
+    background: rgba(var(--accent-color-rgb), 0.05);
     margin: 2px;
     margin-right: 2px;
     border-radius: 3px;
@@ -130,7 +130,7 @@
 
   .unhovered {
     filter: grayscale(0.7);
-    border-bottom: 1px solid rgba(var(--text-color-rgb), 0.1);
+    border-bottom: 1px solid rgba(var(--text-color-rgb), 0.05);
   }
 
   .unhovered .post-date,

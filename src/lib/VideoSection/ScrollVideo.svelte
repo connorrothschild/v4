@@ -4,29 +4,25 @@
   export let projects;
   import Scroll from "$lib/Scroll.svelte";
 
-  import { currentColorMode } from "../../stores/global.js";
-
   let value = 0;
-  let video, source;
+  let video, webmSource, movSource;
   let videoTransitioning = false;
 
   const updateVideo = function (url) {
-    if (video && source) {
+    if (video && (webmSource || movSource)) {
       videoTransitioning = true;
 
       setTimeout(() => {
-        source.src = url;
+        movSource.src = `${url}.mov`;
+        webmSource.src = `${url}.webm`;
         video.load();
         video.play();
         videoTransitioning = false;
-      }, 1000);
+      }, 200);
     }
   };
 
-  $: value || $currentColorMode,
-    typeof value == "number"
-      ? updateVideo(`./videos/${$currentColorMode}/${value}.mp4`)
-      : null;
+  $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
 
   $: currentProject = value ? projects[value] : projects[0];
 </script>
@@ -60,7 +56,9 @@
       id="video"
       bind:this={video}
     >
-      <source bind:this={source} src="" type="video/mp4" />
+      <!-- Safari uses .mov, Chrome and FF use .webm -->
+      <source bind:this={movSource} type="video/mp4" />
+      <source bind:this={webmSource} type="video/webm" />
     </video>
   </div>
 </div>
@@ -86,17 +84,20 @@
     padding: 0 1rem;
   }
 
+  .step:last-of-type {
+    margin-bottom: 20vh;
+  }
+
   .step-content {
     font-size: 1rem;
     background: transparent;
     border-radius: 5px;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: background 500ms ease;
     box-shadow: 1px 1px 6px var(--box-shadow-color);
-    border-left: 5px solid transparent;
 
     text-align: left;
     margin: auto;
@@ -117,11 +118,6 @@
   .step-content h1,
   .step-content h2 {
     color: rgba(var(--text-color-rgb), 0.4);
-  }
-
-  .step.active .step-content {
-    border-left: 5px solid var(--accent-color);
-    background: var(--semitransparent-bg);
   }
 
   .step.active .step-content h1,

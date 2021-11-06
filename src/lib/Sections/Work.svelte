@@ -1,5 +1,5 @@
 <script>
-  import { fly, fade } from "svelte/transition";
+  import { fly } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
 
   import JobSection from "$lib/Content/Job.svelte";
@@ -18,59 +18,54 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element}>
-    <!-- {#if intersecting} -->
-    <div transition:fly={{ x: -50 }}>
-      <!-- <div transition:fade> -->
-      <div class="sticky-top">
-        <div class="see-all-flex">
-          <h1 class="page-overline">Experience</h1>
-          <a
-            class="page-overline padding-bottom see-all"
-            sveltekit:prefetch
-            href="/experience">See all work experience &#8599;</a
-          >
-        </div>
-        <SectionTitle {intersecting} element="#work-title">
-          <h1 id="work-title" class="page-title home overflow-hidden">
-            Places I've
-            <span class="gradient-accented bolded ">worked</span>
-          </h1>
-        </SectionTitle>
+    <div class="sticky-top">
+      <div class="see-all-flex">
+        <h1 class="page-overline">Experience</h1>
+        <a
+          class="page-overline padding-bottom see-all"
+          sveltekit:prefetch
+          href="/experience">See all work experience &#8599;</a
+        >
       </div>
-      <div class="flex">
-        <div class="jobs-container">
-          {#each sortedJobs as job, index}
-            <div class="job">
-              <JobSection
-                job={job.metadata}
-                slug={job.path.replace(/\.[^/.]+$/, "")}
-                preview={true}
-                bind:hoveredFromChild
-              />
-            </div>
-          {/each}
-        </div>
-        {#key hoveredData}
-          <div in:fly={{ x: -20, uration: 100 }} class="hovered-job">
-            {#if hoveredData}
-              <h1 class="hovered-job-title">
-                {hoveredData.metadata.name}
-                <img
-                  loading="lazy"
-                  class="job-image"
-                  src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
-                  alt="Logo for {hoveredData.metadata.name}"
-                />
-              </h1>
-              <p class="hovered-job-description">
-                {@html hoveredData.metadata.description}
-              </p>
-            {/if}
-          </div>
-        {/key}
-      </div>
+      <SectionTitle {intersecting} element="#work-title">
+        <h1 id="work-title" class="page-title home overflow-hidden">
+          Places I've
+          <span class="gradient-accented bolded ">worked</span>
+        </h1>
+      </SectionTitle>
     </div>
-    <!-- {/if} -->
+    <div class="flex">
+      <div class="jobs-container">
+        {#each sortedJobs as job, index}
+          <div class="job">
+            <JobSection
+              job={job.metadata}
+              slug={job.path.replace(/\.[^/.]+$/, "")}
+              preview={true}
+              bind:hoveredFromChild
+            />
+          </div>
+        {/each}
+      </div>
+      {#key hoveredData}
+        <div in:fly={{ x: -20, uration: 100 }} class="hovered-job">
+          {#if hoveredData}
+            <h1 class="hovered-job-title">
+              {hoveredData.metadata.name}
+              <img
+                loading="lazy"
+                class="job-image"
+                src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
+                alt="Logo for {hoveredData.metadata.name}"
+              />
+            </h1>
+            <p class="hovered-job-description">
+              {@html hoveredData.metadata.description}
+            </p>
+          {/if}
+        </div>
+      {/key}
+    </div>
   </section>
 </IntersectionObserver>
 

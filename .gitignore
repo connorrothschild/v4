@@ -3,3 +3,6 @@ node_modules
 /.svelte-kit
 /build
 /functions
+
+# Big videos from Rotato
+/static/videos/raw/*

@@ -85,19 +85,23 @@
 
   // On scroll, recalculate scrollYPosition
   // Preferring this rather than binding because of scrollToTop issue
-  import { debounce } from "../../scripts/utils.js";
+  // import { debounce } from "../../scripts/utils.js";
 
-  onMount(() => {
-    window.addEventListener(
-      "scroll",
-      debounce(function () {
-        scrollYPosition = window.scrollY;
-      }, 150)
-    );
-  });
+  // onMount(() => {
+  //   window.addEventListener(
+  //     "scroll",
+  //     debounce(function () {
+  //       scrollYPosition = window.scrollY;
+  //     }, 150)
+  //   );
+  // });
 </script>
 
-<svelte:window bind:scrollX={scrollXPosition} bind:innerWidth={pageWidth} />
+<svelte:window
+  bind:scrollX={scrollXPosition}
+  bind:scrollY={scrollYPosition}
+  bind:innerWidth={pageWidth}
+/>
 <a
   class="perspective-container no-underline"
   style="perspective: {cardWidth}px"
@@ -140,7 +144,7 @@
       class="card-highlight"
       style="left: {circleXPosition}%; top: {circleYPosition}%"
     />
-    <div class="post-card no-underline" on:click={navigate(slug)}>
+    <div class="post-card">
       <div class="post-info">
         <h3 class="post-date">{dateFormat(post.date)}</h3>
         <h1 class="post-title">{post.title}</h1>
