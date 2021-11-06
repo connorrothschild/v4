@@ -149,7 +149,7 @@
     width: 95%;
     /* max-width: 1068px; */
     margin: auto;
-    height: 95vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,18 +219,27 @@
     transform: translateX(-50%);
   }
 
-  @media screen and (max-width: 768px) {
-    .subtitle {
-      font-size: 2rem;
+  @media screen and (max-width: 1068px) {
+    section {
+      min-height: 70vh;
     }
   }
 
-  @media screen and (max-width: 568px) {
+  @media screen and (max-width: 768px) {
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 4vw;
     }
   }
+
   @media screen and (max-width: 468px) {
+    .overline,
+    .subtitle {
+      text-align: center;
+    }
+    .overline {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
     .subtitle {
       font-size: 1.25rem;
     }

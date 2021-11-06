@@ -27,13 +27,13 @@
 </script>
 
 <script>
-  export let jobs;
+  // export let jobs;
   export let projects;
   export let posts;
   export let awards;
 
   import Intro from "$lib/Sections/Intro.svelte";
-  import Work from "$lib/Sections/Work.svelte";
+  // import Work from "$lib/Sections/Work.svelte";
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
@@ -47,7 +47,7 @@
 <svelte:window bind:innerWidth={pageWidth} />
 <main>
   <Intro />
-  <Work {jobs} />
+  <!-- <Work {jobs} /> -->
   <Projects {projects} {isMobile} />
   <Blog {posts} {isMobile} />
   <Awards {awards} {isMobile} />

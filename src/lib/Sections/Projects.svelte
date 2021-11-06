@@ -56,8 +56,8 @@
   section {
     margin: auto;
     margin-bottom: var(--section-margin-bottom);
-
     width: 100%;
+    overflow: hidden;
   }
 
   .see-all-flex,

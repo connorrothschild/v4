@@ -295,8 +295,16 @@ button:focus:not(:focus-visible) {
   user-select: none;
 }
 
+
 .page-title.home {
-  font-size: 3.5rem;
+  font-size: 8vw;
+  text-align: center;
+}
+
+@media screen and (min-width: 1268px) {
+  .page-title.home {
+    font-size: 6rem;
+  }
 }
 
 /* We set opacity of transitioning elements to 0 to prevent brief paint before opacity transitions 
@@ -315,15 +323,15 @@ But for users who prefer reduced motion, we don't want to apply this
 }
 
 /* ONLY DESKTOP */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .page-overline.see-all {
     transform: translateY(5rem);
     -webkit-transform: translateY(5rem);
     -moz-transform: translateY(5rem);
     -ms-transform: translateY(5rem);
     -o-transform: translateY(5rem);
-}
-}
+  }
+} */
 
 /* TABLET BREAKPOINT */
 @media screen and (max-width: 660px) {

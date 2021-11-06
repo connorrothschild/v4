@@ -64,7 +64,7 @@
     fill: var(--text-color);
     font-family: var(--font-serif);
     font-weight: 200;
-    font-size: 66px;
+    font-size: 63px;
     letter-spacing: -1px;
     text-shadow: 1px 0px 0px var(--pure-background-color);
     user-select: none;

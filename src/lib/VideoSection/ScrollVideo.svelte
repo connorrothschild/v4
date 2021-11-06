@@ -68,7 +68,7 @@
 <style>
   .sticky {
     position: sticky;
-    top: calc(var(--nav-height) + 10vh);
+    top: calc(var(--nav-height) + 3rem);
   }
 
   .section-container {
@@ -177,10 +177,10 @@
 
     video {
       width: auto;
-      height: 90vh;
+      height: 80vh;
       display: block;
       margin: 0 auto;
-      max-width: 90vw;
+      max-width: 100vw;
       object-fit: cover;
     }
 
