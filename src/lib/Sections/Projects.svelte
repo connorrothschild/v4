@@ -73,9 +73,9 @@
     margin-bottom: 0; /* This allows for section content to be flush with border bottom on page title */
   }
 
-  @media screen and (max-width: 768px) {
-    section {
-      overflow: visible;
-    }
+  /* @media screen and (max-width: 768px) { */
+  section {
+    overflow: visible;
   }
+  /* } */
 </style>

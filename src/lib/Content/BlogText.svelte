@@ -4,6 +4,8 @@
   export let anyHovered;
   export let index;
 
+  import { fly, fade } from "svelte/transition";
+
   import { dateFormat } from "../../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
 
@@ -45,10 +47,23 @@
       <h1 class="post-title">{post.title}</h1>
       <h2 class="post-description">{post.description}</h2>
     </div>
-    <div class="post-tags">
-      {#each post.tags as tag}
-        <span class="post-tag">{tag}</span>
-      {/each}
+    <div class="post-misc">
+      {#if hovered}
+        <p
+          in:fly={{ x: -50, duration: 500 }}
+          out:fade={{ duration: 100 }}
+          class="read-more"
+        >
+          Read more &#8594;
+        </p>
+      {:else}
+        <p class="placeholder">​​</p>
+      {/if}
+      <div class="post-tags">
+        {#each post.tags as tag}
+          <span class="post-tag">{tag}</span>
+        {/each}
+      </div>
     </div>
   </div>
 </a>
@@ -97,8 +112,19 @@
     line-height: 1.15;
   }
 
-  .post-tags {
+  .post-misc {
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    place-items: flex-end;
+  }
+
+  .read-more {
+    text-align: left;
+    color: var(--accent-color);
+  }
+
+  .post-tags {
     text-align: right;
   }
 

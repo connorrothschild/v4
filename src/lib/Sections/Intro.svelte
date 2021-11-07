@@ -88,73 +88,13 @@
       And I tell visual stories on the web.
     </h2>
   </div>
-  <!-- <h2 class="content transition-content">
-      Right now, I lead the interactives and visualization team at <a
-        href="https://www.mokshadata.com/"
-        target="_blank"
-        rel="noopener noreferrer">Moksha Data</a
-      >.
-    </h2> -->
 </section>
 
-<!-- <Transition />
-<section>
-  <div class="wrapper">
-    {#if active}
-      <div transition:fade={{ duration: 200 }} class="transition-overlay" />
-    {/if}
-    <div class="sticky-stack transition-content">
-      <div class="step zero">
-        <h1 class="title">
-          Hi, I'm <span class="gradient-accented" style="font-weight: 600;"
-            >Connor Rothschild.</span
-          >
-        </h1>
-      </div>
-      <div class="step one">
-        <h2 class="subtitle with-border">
-          And I tell visual stories on the web. Right now, I lead the
-          interactives and visualization team at <a
-            href="https://www.mokshadata.com/"
-            target="_blank"
-            rel="noopener noreferrer">Moksha Data</a
-          >.
-        </h2>
-      </div>
-      <div class="step two">
-        <h3>
-          I make data make sense for people in the <strong>government</strong>
-          and
-          <strong>nonprofit</strong> space. At Moksha, I lead the development of
-          interactives, web applications, and visual essays for our partners in the
-          social impact space.
-        </h3>
-      </div>
-      <div class="step three">
-        <h3>
-          We make it easier for you to talk about the impact you're making in
-          your community, through <strong>data-driven</strong> and
-          <strong>engaging</strong> visual stories. Interested in working with
-          us?
-          <a href="mailto:connor@mokshadata.com?subject=Project%20Inquiry"
-            >Reach out.</a
-          >
-        </h3>
-      </div>
-      <div
-        class="buffer"
-        use:sticky={{ stickToTop: true, rootMargin: "10%" }}
-        on:stuck={handleStuck}
-      />
-    </div>
-  </div>
-</section> -->
 <style>
   section {
     width: 95%;
-    /* max-width: 1068px; */
     margin: auto;
-    min-height: 95vh;
+    min-height: calc(100vh - var(--nav-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,7 +105,6 @@
   .hero-container {
     text-align: center;
     line-height: 0.85;
-    margin-bottom: 2rem;
     user-select: none;
   }
 
@@ -188,9 +127,10 @@
     display: block;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     text-align: center;
     text-transform: uppercase;
+    /* text-shadow: 1px 1px 2px black; */
   }
 
   .connor {
@@ -221,6 +161,10 @@
     .subtitle {
       font-size: 4vw;
     }
+
+    .hero-container {
+      margin-bottom: 15vh;
+    }
   }
 
   @media screen and (max-width: 468px) {
@@ -229,11 +173,11 @@
       text-align: center;
     }
     .overline {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       margin-bottom: 0.75rem;
     }
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 </style>

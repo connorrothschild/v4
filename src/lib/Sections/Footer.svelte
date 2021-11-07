@@ -107,25 +107,34 @@
 
 <style>
   footer {
-    position: sticky;
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -o-sticky;
-
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    width: 100%;
-    height: var(--footer-height);
-
-    background: var(--text-color);
-    color: var(--pure-background-color);
-
     display: flex;
     place-items: center;
-
     padding: 0;
+    width: 100%;
+    background: var(--text-color);
+    color: var(--pure-background-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+      position: sticky;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -o-sticky;
+
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      height: var(--footer-height);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    footer {
+      height: 600px;
+      position: relative;
+    }
   }
 
   .flex-container {

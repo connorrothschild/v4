@@ -131,13 +131,6 @@
       text-shadow 800ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }
 
-  h2 {
-    font-family: var(--font-sans);
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.25;
-  }
-
   .transition-overlay {
     background: var(--tertiary-color);
     width: 100%;

@@ -3,8 +3,8 @@
    * @type {import('@sveltejs/kit').Load}
    */
   export async function load({ fetch }) {
-    const jobsJson = await fetch(`/experience.json`);
-    const jobs = await jobsJson.json();
+    // const jobsJson = await fetch(`/experience.json`);
+    // const jobs = await jobsJson.json();
 
     const projectsJson = await fetch(`/projects.json`);
     const projects = await projectsJson.json();
@@ -17,7 +17,7 @@
 
     return {
       props: {
-        jobs,
+        // jobs,
         projects,
         posts,
         awards,
@@ -65,10 +65,13 @@
     justify-content: center;
 
     background-color: var(--tertiary-color);
+  }
 
-    /* This is for the footer reveal on scroll */
-    position: relative;
-    z-index: 1;
-    /* margin-bottom: var(--footer-height); */
+  /* On desktop, do the cool sticky footer that reveals on scroll */
+  @media screen and (min-width: 768px) {
+    main {
+      position: relative;
+      z-index: 1;
+    }
   }
 </style>

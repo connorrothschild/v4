@@ -45,7 +45,6 @@
 
   .link {
     color: var(--text-color);
-    font-family: var(--font-serif);
     text-transform: uppercase;
     transition: color 400ms ease;
   }
@@ -64,18 +63,5 @@
 
   .current:hover {
     text-decoration: none;
-  }
-
-  @media screen and (max-width: 560px) {
-    li {
-      font-size: 3vw;
-    }
-  }
-
-  @media screen and (max-width: 460px) {
-    li {
-      font-size: 3.5vw;
-      margin-left: 1rem;
-    }
   }
 </style>

@@ -1,53 +1,78 @@
 <script>
-  import { fade } from "svelte/transition";
-
   export let projects;
+
   import Scroll from "$lib/Scroll.svelte";
 
-  let value = 0;
-  let video, webmSource, movSource;
-  let videoTransitioning = false;
+  import { onMount } from "svelte";
+  import { supportsHEVCAlpha } from "../../scripts/utils.js";
+
+  let currentUrl = "./videos/0",
+    playedOnce = false,
+    video,
+    webmSource,
+    movSource,
+    isHEVC = false,
+    videoTransitioning = false,
+    value = 0;
+
+  onMount(() => {
+    isHEVC = supportsHEVCAlpha();
+    updateVideo(`./videos/${value}`);
+  });
 
   const updateVideo = function (url) {
+    // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
+    if (playedOnce && url === currentUrl) return;
+
     if (video && (webmSource || movSource)) {
+      console.log(`${url}.mov`);
       videoTransitioning = true;
 
       setTimeout(() => {
+        // video.src = isHEVC ? `${url}.mov` : `${url}.webm`;
         movSource.src = `${url}.mov`;
         webmSource.src = `${url}.webm`;
+
         video.load();
-        video.play();
+
         videoTransitioning = false;
+
+        currentUrl = url;
+        playedOnce = true;
       }, 200);
     }
   };
 
+  $: currentProject = value ? projects[value] : projects[0];
   $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
 
-  $: currentProject = value ? projects[value] : projects[0];
+  // vh calculations
+  let windowHeight;
 </script>
 
+<svelte:window bind:outerHeight={windowHeight} />
 <div class="section-container">
   <div class="steps-container">
     <Scroll bind:value>
       {#each projects as project, i}
-        <div class="step" class:active={value === i}>
-          <div class="step-content">
+        <div
+          class="step"
+          class:active={value === i}
+          style="height: {windowHeight * 0.7}px;"
+        >
+          <a
+            class="step-content no-underline"
+            href={currentProject.path.replace(/\.[^/.]+$/, "")}
+            sveltekit:prefetch
+          >
             <h1>{project.metadata.title}</h1>
             <h2>{project.metadata.description}</h2>
-          </div>
+          </a>
         </div>
       {/each}
     </Scroll>
   </div>
   <div class="sticky">
-    <!-- {#if videoTransitioning} -->
-    <a
-      class="transition-overlay"
-      href={currentProject.path.replace(/\.[^/.]+$/, "")}
-      class:videoTransitioning
-    />
-    <!-- {/if} -->
     <video
       preload="metadata"
       autoplay
@@ -55,8 +80,9 @@
       playsinline
       id="video"
       bind:this={video}
+      class:videoTransitioning
+      style="height: {0.7 * windowHeight}px;"
     >
-      <!-- Safari uses .mov, Chrome and FF use .webm -->
       <source bind:this={movSource} type="video/mp4" />
       <source bind:this={webmSource} type="video/webm" />
     </video>
@@ -66,18 +92,17 @@
 <style>
   .sticky {
     position: sticky;
-    top: calc(var(--nav-height) + 3rem);
+    top: calc(var(--nav-height) + 6rem); /* Based on desktop sizing */
   }
 
   .section-container {
-    margin-top: 1em;
+    /* margin-top: 1em; */
     text-align: center;
-    transition: background 100ms;
     display: flex;
   }
 
   .step {
-    height: 80vh;
+    /* height: 80vh; */
     display: flex;
     place-items: center;
     justify-content: center;
@@ -85,14 +110,15 @@
   }
 
   .step:last-of-type {
-    margin-bottom: 20vh;
+    /* margin-bottom: 20vh; */
+    margin-bottom: 200px;
   }
 
   .step-content {
     font-size: 1rem;
     background: transparent;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,53 +161,37 @@
     z-index: 9;
   }
 
-  .transition-overlay {
-    background: var(--tertiary-color);
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin: auto;
-    max-width: 100vw;
-    -o-object-fit: cover;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 200ms ease;
-  }
-
   .videoTransitioning {
     opacity: 1;
   }
 
   video {
     width: 100%;
-    height: 80vh;
+    /* height: 80vh; */
     display: block;
     object-fit: cover;
     margin: auto;
-    /* position: absolute; */
+    z-index: 5;
+  }
+
+  .step.active .step-content {
+    background: var(--pure-background-color);
   }
 
   @media screen and (max-width: 868px) {
     /* You can make this true on all desktop sizes for an overlay effect */
+    .sticky {
+      top: calc(var(--nav-height) + 3rem); /* Based on mobile sizing */
+    }
+
     .section-container {
       flex-direction: column-reverse;
     }
 
     video {
       width: auto;
-      height: 80vh;
-      display: block;
       margin: 0 auto;
       max-width: 100vw;
-      object-fit: cover;
-    }
-
-    .step.active .step-content {
-      background: var(--pure-background-color);
     }
   }
 </style>

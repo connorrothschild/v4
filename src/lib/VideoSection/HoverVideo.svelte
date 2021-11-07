@@ -1,40 +1,49 @@
 <script>
-  import { onMount } from "svelte";
-
   export let projects;
 
-  let value = 0;
-  let video, webmSource, movSource;
-  let videoTransitioning = false;
+  import { onMount } from "svelte";
+  import { supportsHEVCAlpha } from "../../scripts/utils.js";
+
+  let currentUrl,
+    playedOnce = false,
+    video,
+    webmSource,
+    movSource,
+    isHEVC = false,
+    videoTransitioning = false,
+    value = 0;
 
   const updateVideo = function (url) {
     if (video && (webmSource || movSource)) {
+      console.log(`${url}.mov`);
       videoTransitioning = true;
 
       setTimeout(() => {
+        // video.src = isHEVC ? `${url}.mov` : `${url}.webm`;
         movSource.src = `${url}.mov`;
         webmSource.src = `${url}.webm`;
+
         video.load();
-        video.play();
+
         videoTransitioning = false;
       }, 200);
     }
   };
 
-  $: currentProject = value ? projects[value] : projects[0];
+  onMount(() => {
+    isHEVC = supportsHEVCAlpha();
+    updateVideo(`./videos/0`);
+  });
 
   $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
-
-  onMount(() => {
-    updateVideo(`./videos/${value}`);
-  });
 </script>
 
 <div class="section-container">
   <div class="projects">
     {#each projects as project, i}
       <a
-        href={currentProject.path.replace(/\.[^/.]+$/, "")}
+        href={project.path.replace(/\.[^/.]+$/, "")}
+        sveltekit:prefetch
         class="project-card no-underline 
         {value === i ? 'active' : 'inactive'}"
       >
@@ -52,9 +61,7 @@
       </a>
     {/each}
   </div>
-  <!-- {#key movSource} -->
   <div class="absolute-container">
-    <!-- <div class="transition-overlay" class:videoTransitioning /> -->
     <video
       preload="metadata"
       autoplay
@@ -62,13 +69,12 @@
       playsinline
       id="video"
       bind:this={video}
+      class:videoTransitioning
     >
-      <!-- Safari uses .mov, Chrome and FF use .webm -->
       <source bind:this={movSource} type="video/mp4" />
       <source bind:this={webmSource} type="video/webm" />
     </video>
   </div>
-  <!-- {/key} -->
 </div>
 
 <style>
@@ -105,12 +111,12 @@
   .section-container {
     position: relative;
     height: 60vh;
-    overflow: visible;
-    /* overflow-x: hidden; */
+    min-height: 400px;
+    overflow: hidden;
   }
 
   h1 {
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
     font-size: 3rem;
     text-transform: uppercase;
     font-weight: 200;
@@ -140,28 +146,6 @@
     color: var(--accent-color);
   }
 
-  /* .transition-overlay {
-    background: var(--tertiary-color);
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin: auto;
-    max-width: 100vw;
-    -o-object-fit: cover;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 200ms ease;
-  }
-
-  .videoTransitioning {
-    opacity: 1;
-  } */
-
   .absolute-container {
     z-index: 2;
     pointer-events: none;
@@ -176,6 +160,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 200ms linear;
+  }
+
+  .videoTransitioning {
+    opacity: 0;
   }
 
   /* You can make this true on all desktop sizes for an overlay effect */
