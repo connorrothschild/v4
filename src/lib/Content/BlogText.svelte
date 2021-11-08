@@ -15,6 +15,7 @@
 <a
   class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
+  sveltekit:prefetch
   href={slug}
   on:mouseover={() => {
     anyHovered = true;
@@ -27,7 +28,6 @@
     anyHovered = false;
     hovered = false;
   }}
-  sveltekit:prefetch
 >
   {#if post.featured}
     <div class="featured-star">
@@ -49,11 +49,7 @@
     </div>
     <div class="post-misc">
       {#if hovered}
-        <p
-          in:fly={{ x: -50, duration: 500 }}
-          out:fade={{ duration: 100 }}
-          class="read-more"
-        >
+        <p in:fly={{ x: -50, duration: 500 }} class="read-more">
           Read more &#8594;
         </p>
       {:else}

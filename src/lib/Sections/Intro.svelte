@@ -7,33 +7,32 @@
 
   import { onMount } from "svelte";
 
-  let connor, rothschild, subtitle, overline;
+  let connor, rothschild, subtitle, overline, bigWords;
 
   onMount(() => {
     connor = document.querySelector(".connor");
     rothschild = document.querySelector(".rothschild");
     subtitle = document.querySelector(".subtitle");
     overline = document.querySelector(".overline");
+    bigWords = document.querySelector(".big-word");
 
     let overlineSplit = new SplitText(overline, { type: "words,chars" });
-    let overlineChars = overlineSplit.chars;
-
     let connorSplit = new SplitText(connor, { type: "words,chars" });
-    let connorChars = connorSplit.chars;
-
     let rothschildSplit = new SplitText(rothschild, { type: "words,chars" });
-    let rothschildChars = rothschildSplit.chars;
+    let bigSplit = new SplitText(bigWords, { type: "lines" });
 
-    gsap.set(connor, { perspective: 400 });
-    gsap.set(rothschild, { perspective: 400 });
-    gsap.set(overline, { perspective: 400 });
+    gsap.set(connor, { perspective: 400, opacity: 0 });
+    gsap.set(rothschild, { perspective: 400, opacity: 0 });
+    gsap.set(overline, { perspective: 400, opacity: 0 });
+    gsap.set(bigWords, { perspective: 400, opacity: 0 });
 
     gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.5 });
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.5 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+    gsap.fromTo(bigWords, { opacity: 0 }, { opacity: 1, duration: 1.5 });
 
     gsap.fromTo(
-      overlineChars,
+      overlineSplit.chars,
       { x: -20, opacity: 0 },
       {
         x: 0,
@@ -45,7 +44,7 @@
     );
 
     gsap.fromTo(
-      connorChars,
+      connorSplit.chars,
       { y: "-15%", opacity: 0 },
       {
         x: 0,
@@ -56,8 +55,9 @@
         ease: "ease",
       }
     );
+
     gsap.fromTo(
-      rothschildChars,
+      rothschildSplit.chars,
       { y: "15%", opacity: 0 },
       {
         x: 0,
@@ -74,10 +74,37 @@
       { opacity: 0, x: "-2.5%" },
       { opacity: 1, x: 0, duration: 1, delay: 1.5 }
     );
+
+    // gsap.fromTo(
+    //   bigSplit.lines,
+    //   {
+    // y: -200,
+    //     // color: "rgba(0, 0, 0, .5)",
+    //     opacity: 1,
+    //   },
+    //   {
+    // y: 0,
+    //     // color: "rgba(var(--accent-color-rgb), .1)",
+    //     opacity: 1,
+    //     stagger: -0.5,
+    //     duration: 0.5,
+    //     ease: "ease",
+    //   }
+    // );
   });
 </script>
 
 <section id="hero">
+  <!-- <div class="background">
+    <h1 class="fonts-homeTitle" style="opacity: 1;">ty for visiting</h1>
+  </div> -->
+  <div class="big-words-container">
+    <h1 class="big-word">Development<br />Design<br />Data</h1>
+    <!-- <h1 class="big-word">Development</h1>
+    <h1 class="big-word">Design</h1>
+    <h1 class="big-word">Data</h1> -->
+  </div>
+  <!-- <a class="scroll-down" href="#projects">Learn more</a> -->
   <div class="hero-container">
     <h1 class="overline begin-invisible">Hi, I'm</h1>
     <div class="title">
@@ -88,6 +115,7 @@
       And I tell visual stories on the web.
     </h2>
   </div>
+  <h1 class="year">Portfolio 2021</h1>
 </section>
 
 <style>
@@ -99,11 +127,77 @@
     flex-direction: column;
     justify-content: center;
     place-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .big-words-container {
+    position: absolute;
+    left: unset;
+    right: 0;
+    top: 5%;
+    height: 100%;
+    line-height: 0.8;
+    user-select: none;
+  }
+
+  .big-word {
+    text-align: right;
+    font-family: var(--font-sans);
+    color: rgba(var(--accent-color-rgb), 0.075);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    font-size: 4rem;
+    word-spacing: 100vw;
+  }
+
+  /* .big-word:nth-of-type(1) {
+    font-size: 3.9rem;
+  }
+
+  .big-word:nth-of-type(2) {
+    font-size: 7.68rem;
+  }
+
+  .big-word:nth-of-type(3) {
+    font-size: 11.429rem;
+  } */
+
+  .year {
+    position: absolute;
+    bottom: 3.5%;
+    left: 0;
+    color: rgba(var(--text-color-rgb), 0.35);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1.75rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .scroll-down {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid var(--accent-color);
+    background: rgba(var(--accent-color-rgb), 0.1);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 0.9;
+    font-weight: 200;
+    display: flex;
+    text-align: center;
+    place-items: center;
   }
 
   .hero-container {
-    text-align: center;
+    /* text-align: center; */
     line-height: 0.85;
     user-select: none;
   }
@@ -114,10 +208,6 @@
     margin-bottom: 0.5rem;
   }
 
-  .begin-invisible {
-    opacity: 0;
-  }
-
   .title {
     margin-bottom: 1.25rem;
   }
@@ -125,10 +215,8 @@
   .connor,
   .rothschild {
     display: block;
-    font-weight: 600;
-    text-transform: uppercase;
-    /* letter-spacing: 0.1rem; */
-    text-align: center;
+    font-weight: 300;
+    letter-spacing: -0.1rem;
     text-transform: uppercase;
     /* text-shadow: 1px 1px 2px black; */
   }
@@ -138,8 +226,8 @@
   }
 
   .rothschild {
-    font-size: 11.5vw;
-    margin-left: 1.5vw;
+    font-size: 12.15vw;
+    /* margin-left: 1.5vw; */
   }
 
   .subtitle {
@@ -149,6 +237,7 @@
     margin-bottom: 1rem;
     text-align: right;
     margin-left: auto;
+    color: rgba(var(--text-color-rgb), 0.9);
   }
 
   /* @media screen and (max-width: 1068px) {
@@ -162,14 +251,19 @@
       font-size: 4vw;
     }
 
-    .hero-container {
-      margin-bottom: 15vh;
+    .big-word {
+      font-size: 2rem;
     }
   }
 
   @media screen and (max-width: 468px) {
+    section {
+      place-items: center;
+    }
+
     .overline,
-    .subtitle {
+    .subtitle,
+    .hero-container {
       text-align: center;
     }
     .overline {
