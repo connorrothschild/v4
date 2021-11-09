@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/datathon-2020/source/" src="/images/project/map-houston-homicides/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Mapping Houston Homicides**](https://connorrothschild.github.io/datathon-2020/source/) is a visual storytelling piece focused on homicides in Houston. It was recognized as the winner of the Houston/Trends track at the [2020 Rice Datathon](http://news.rice.edu/2020/02/10/rice-students-sweep-second-datathon/).
 

@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://quarantune.netlify.app" src="/images/project/quarantunes/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Quarantunes**](https://quarantune.netlify.app) is an application for Spotify users to explore their listening history during the COVID-19 pandemic. It has been used by over 4,000 visitors.
 There are three tabs within the application.

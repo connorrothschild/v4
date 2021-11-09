@@ -42,15 +42,6 @@
     margin: 0 auto;
     padding: 1em;
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
-
-  /* .date {
-    font-weight: 300;
-    margin-top: -1rem;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 1rem;
-  } */
 </style>

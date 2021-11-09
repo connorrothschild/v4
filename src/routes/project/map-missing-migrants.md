@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/map-missing-migrants" src="/images/project/map-missing-migrants/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Mapping Missing Migrants**](https://connorrothschild.github.io/map-missing-migrants/) is a visual storytelling piece focused on migrants and refugees who have lost their lives while traveling to another country. It was awarded the Student Bronze in the [28th Malofiej Awards](https://www.malofiejgraphics.com/general/students-have-won-awards-too/2020/08).
 

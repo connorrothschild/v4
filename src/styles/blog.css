@@ -41,7 +41,7 @@ blockquote p:last-of-type {
 }
 
 table {
-    background: var(--tertiary-color);
+    background: var(--primary-color);
     color: black;
     font-family: var(--font-sans);
     line-height: 1.5;

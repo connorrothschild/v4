@@ -4,8 +4,9 @@
   let imageIndex = 1;
 </script>
 
-<div
-  class="container"
+<a
+  class="circle no-underline"
+  href="/about"
   on:mouseover={() => {
     hovered = true;
   }}
@@ -36,10 +37,10 @@
       </textPath>
     </text>
   </svg>
-</div>
+</a>
 
 <style>
-  .container {
+  .circle {
     position: sticky;
     right: 0;
     bottom: 0;
@@ -56,7 +57,7 @@
     width: 100px;
     height: 100px;
     object-fit: contain;
-    transform: scale(0.79);
+    transform: scale(0.795);
     z-index: 100;
   }
 

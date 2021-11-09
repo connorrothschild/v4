@@ -92,6 +92,7 @@
 <style>
   .sticky {
     position: sticky;
+    z-index: 1;
     top: calc(var(--nav-height) + 6rem); /* Based on desktop sizing */
   }
 
@@ -107,6 +108,7 @@
     place-items: center;
     justify-content: center;
     padding: 0 1rem;
+    z-index: 10;
   }
 
   .step:last-of-type {
@@ -161,10 +163,6 @@
     z-index: 9;
   }
 
-  .videoTransitioning {
-    opacity: 1;
-  }
-
   video {
     width: 100%;
     /* height: 80vh; */
@@ -172,6 +170,12 @@
     object-fit: cover;
     margin: auto;
     z-index: 5;
+    opacity: 1;
+    transition: opacity 200ms linear;
+  }
+
+  .videoTransitioning {
+    opacity: 0;
   }
 
   .step.active .step-content {

@@ -5,6 +5,24 @@
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
+  let subtitleIndex = 0;
+  let subtitleOptions = [
+    "on the web.",
+    "with data.",
+    "like these <span style='vertical-align: top; font-size: .8em;'>&darr;</span>",
+  ];
+  $: subtitleString = subtitleOptions[subtitleIndex];
+
+  import { goto } from "$app/navigation";
+
+  const switchSub = () => {
+    const nav = () => {
+      goto("#projects", { replaceState: true });
+      window.location.hash = "";
+    };
+    subtitleIndex == subtitleOptions.length - 1 ? nav() : subtitleIndex++;
+  };
+
   import { onMount } from "svelte";
 
   let connor, rothschild, subtitle, overline, bigWords;
@@ -45,12 +63,14 @@
 
     gsap.fromTo(
       connorSplit.chars,
-      { y: "-15%", opacity: 0 },
+      // { y: "100%", scaleY: "100%", opacity: 0 },
+      { y: "-30%", opacity: 0 },
       {
         x: 0,
         y: 0,
+        // scaleY: "100%",
         opacity: 1,
-        duration: 1,
+        duration: 0.85,
         stagger: 0.12,
         ease: "ease",
       }
@@ -58,12 +78,14 @@
 
     gsap.fromTo(
       rothschildSplit.chars,
-      { y: "15%", opacity: 0 },
+      // { y: "-100%", scaleY: "100%", opacity: 0 },
+      { y: "30%", opacity: 0 },
       {
         x: 0,
         y: 0,
+        // scaleY: "100%",
         opacity: 1,
-        duration: 1,
+        duration: 0.85,
         stagger: 0.1,
         ease: "ease",
       }
@@ -72,7 +94,7 @@
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.5 }
+      { opacity: 1, x: 0, duration: 1, delay: 1.25 }
     );
 
     // gsap.fromTo(
@@ -91,6 +113,26 @@
     //     ease: "ease",
     //   }
     // );
+
+    gsap.to(".big-words-container", {
+      scrollTrigger: {
+        trigger: "#projects",
+        end: 200,
+        scrub: true,
+        once: false,
+      },
+      opacity: 0,
+    });
+
+    gsap.to(".year", {
+      scrollTrigger: {
+        trigger: "#projects",
+        end: 200,
+        scrub: true,
+        once: false,
+      },
+      opacity: 0,
+    });
   });
 </script>
 
@@ -99,7 +141,7 @@
     <h1 class="fonts-homeTitle" style="opacity: 1;">ty for visiting</h1>
   </div> -->
   <div class="big-words-container">
-    <h1 class="big-word">Development<br />Design<br />Data</h1>
+    <h1 class="big-word begin-invisible">Development<br />Design<br />Data</h1>
     <!-- <h1 class="big-word">Development</h1>
     <h1 class="big-word">Design</h1>
     <h1 class="big-word">Data</h1> -->
@@ -112,7 +154,9 @@
       <h1 class="rothschild begin-invisible gradient-accented">Rothschild</h1>
     </div>
     <h2 class="subtitle begin-invisible">
-      And I tell visual stories on the web.
+      And I tell visual stories <span class="switch" on:click={switchSub}
+        >{@html subtitleString}</span
+      >
     </h2>
   </div>
   <h1 class="year">Portfolio 2021</h1>
@@ -139,15 +183,19 @@
     height: 100%;
     line-height: 0.8;
     user-select: none;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: right top;
+    text-align: left;
   }
 
   .big-word {
-    text-align: right;
+    /* text-align: right; */
+    text-align: left;
     font-family: var(--font-sans);
-    color: rgba(var(--accent-color-rgb), 0.075);
+    color: rgba(var(--text-color-rgb), 0.075);
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
+    font-weight: 900;
+    letter-spacing: -0.1rem;
     font-size: 4rem;
     word-spacing: 100vw;
   }
@@ -166,16 +214,22 @@
 
   .year {
     position: absolute;
-    bottom: 3.5%;
-    left: 0;
+    bottom: 4%;
+    left: 2.5%;
+    padding-left: 1rem;
     color: rgba(var(--text-color-rgb), 0.35);
     font-family: var(--font-sans);
     font-weight: 300;
     font-size: 1.75rem;
     letter-spacing: -0.05rem;
+    user-select: none;
   }
 
-  .scroll-down {
+  .begin-invisible {
+    opacity: 0;
+  }
+
+  /* .scroll-down {
     position: absolute;
     right: 0;
     top: 50%;
@@ -194,7 +248,7 @@
     display: flex;
     text-align: center;
     place-items: center;
-  }
+  } */
 
   .hero-container {
     /* text-align: center; */
@@ -218,6 +272,7 @@
     font-weight: 300;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
+    overflow: hidden;
     /* text-shadow: 1px 1px 2px black; */
   }
 
@@ -240,6 +295,16 @@
     color: rgba(var(--text-color-rgb), 0.9);
   }
 
+  .switch {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(var(--text-color-rgb), 0.2);
+    transition: border-bottom-color 200ms ease;
+  }
+
+  .switch:hover {
+    border-bottom-color: rgba(var(--accent-color-rgb), 0.6);
+  }
+
   /* @media screen and (max-width: 1068px) {
     section {
       min-height: 70vh;
@@ -252,7 +317,7 @@
     }
 
     .big-word {
-      font-size: 2rem;
+      font-size: 4rem;
     }
   }
 
@@ -272,6 +337,13 @@
     }
     .subtitle {
       font-size: 1.5rem;
+    }
+    .big-word {
+      font-size: 3rem;
+    }
+    .year {
+      font-size: 1.5rem;
+      left: 4%;
     }
   }
 </style>

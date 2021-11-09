@@ -19,7 +19,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/what-are-you-doing/"  src="/images/project/atus/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**What Are You Doing Right Now?**](https://connorrothschild.github.io/what-are-you-doing/) is an application that leverages data from the American Time Use Survey to guess your current activities.
 

@@ -2,7 +2,7 @@
 layout: blog
 title: "Announcing the Nuxt Blog Starter"
 date: "2021-02-10"
-description: A minimal, content-focused blog site built with NuxtJS and Bulma.
+description: A minimal, content-focused blog site built with NuxtJS and Bulma
 image: nuxt-blog-starter/header.png
 featured: true
 tags: ['vue', 'nuxt', 'package']

@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/bob-ross-art-gallery/"  src="/images/project/bob-ross-art-gallery/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**The Bob Ross Virtual Art Gallery**](https://connorrothschild.github.io/bob-ross-art-gallery/) is a visual storytelling piece analyzing Bob Ross' series _The Joy of Painting_. 
 

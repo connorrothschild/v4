@@ -39,6 +39,7 @@
   import Awards from "$lib/Sections/Awards.svelte";
   import Footer from "$lib/Sections/Footer.svelte";
   import Circle from "$lib/CircleText.svelte";
+  import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 
   let pageWidth;
   $: isMobile = pageWidth < 768;
@@ -64,7 +65,7 @@
     flex-direction: column;
     justify-content: center;
 
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
   }
 
   /* On desktop, do the cool sticky footer that reveals on scroll */

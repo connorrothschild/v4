@@ -10,7 +10,7 @@
 </script>
 
 <footer>
-  <span
+  <!-- <span
     on:mouseover={() => {
       setEmoji("👋");
     }}
@@ -22,7 +22,7 @@
     }}
     aria-hidden="true"
     class="emoji bottom left">{hoveredEmoji ? hoveredEmoji : "👋"}</span
-  >
+  > -->
   <span
     on:mouseover={() => {
       setEmoji("👀");

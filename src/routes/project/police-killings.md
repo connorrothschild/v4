@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/police-killings/" src="/images/project/police-killings/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Mapping Police Killings**](https://connorrothschild.github.io/police-killings/) is an application that allows for user exploration of officer-involved deaths across any US city or state. It leverages data from [Mapping Police Violence](https://mappingpoliceviolence.org/) and visualizes shootings in a geographic area using a [force-directed graph](https://observablehq.com/@d3/force-directed-graph) built in D3. Users are able to filter by city or state, and upon initail selection, they are able to group by a variety of victim characteristics, such as age, race, armed status, or cause of death.
 

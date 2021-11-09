@@ -28,7 +28,7 @@
     }}
     sveltekit:prefetch
     href="/{code}"
-    class="link no-underline {$page.path.replace(/^\/([^\/]*).*$/, '$1') ==
+    class="link padding-bottom {$page.path.replace(/^\/([^\/]*).*$/, '$1') ==
     `${code}`
       ? 'current'
       : ''}">{title}</a
@@ -46,7 +46,11 @@
   .link {
     color: var(--text-color);
     text-transform: uppercase;
-    transition: color 400ms ease;
+    /* transition: color 400ms ease; */
+  }
+
+  .link:hover {
+    text-decoration: none;
   }
 
   :global(.left .link) {
@@ -59,9 +63,11 @@
 
   .current {
     color: var(--accent-color);
+    /* background-size: 100% 1px; */
   }
 
   .current:hover {
     text-decoration: none;
+    background-size: 0 1px;
   }
 </style>

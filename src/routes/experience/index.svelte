@@ -59,6 +59,6 @@
     margin: 0 auto;
     padding: 1em;
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 </style>

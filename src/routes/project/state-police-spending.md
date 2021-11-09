@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/state-police-spending/" src="/images/project/state-police-spending/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**How Much Does Your State Spend on Police?**](https://connorrothschild.github.io/state-police-spending/) allows users to compare their state's police spending to a variety of equivalent costing programs, such as residential drug treatment programs or additional SNAP recipients. The goal is to contextualize police spending in numbers that everyone can understand, in particular by comparing it to other known programs.
 

@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/cudi-hums/" src="/images/project/cudi-hums/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**How Much Does Kid Cudi Hum?**](https://connorrothschild.github.io/cudi-hums/) is a visual storytelling piece centered around analyzing music's most famous hum. It was recognized as a winner of the [2020 Pudding Cup](https://pudding.cool/process/pudding-cup-2020/) out of 130+ entries.
 

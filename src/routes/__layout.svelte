@@ -4,6 +4,7 @@
 
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
+  import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 
   import "../styles/fonts.css";
   import "../styles/immutable.css";
@@ -35,6 +36,7 @@
 <Nav />
 <slot />
 <Loading />
+<ColorSwitcher />
 
 <style>
 </style>

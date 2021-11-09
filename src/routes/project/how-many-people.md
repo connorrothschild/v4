@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/how-many-people" src="/images/project/how-many-people/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [How Many People Have Had COVID-19?](https://connorrothschild.github.io/how-many-people) is a small web application that visualizes COVID-19 case counts in a novel way: via state populations. The application's user can see cases either in the US or globally. The goal is to capture case counts with some comparison that everyone can understand.
 

@@ -18,7 +18,7 @@ url: "https://connorrothschild.github.io/one-line-hacks/"
 
 <Image href="https://connorrothschild.github.io/one-line-hacks/" src="/images/project/one-line-hacks/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**One Line Hacks**](https://connorrothschild.github.io/one-line-hacks/) is a collection of random utilities and functions that I find myself Googling too often.
 

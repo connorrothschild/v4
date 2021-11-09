@@ -107,7 +107,7 @@
   .project-card.active h1 {
     /* letter-spacing: 0.64px; */
     color: var(--accent-color);
-    /* background: rgba(var(--tertiary-color-rgb), 0.85); */
+    /* background: rgba(var(--primary-color-rgb), 0.85); */
     border-radius: 5px;
   }
 
@@ -132,7 +132,7 @@
   }
 
   .transition-overlay {
-    background: var(--tertiary-color);
+    background: var(--primary-color);
     width: 100%;
     height: 100%;
     display: block;
@@ -184,7 +184,7 @@
   }
 
   .active {
-    background: rgba(var(--tertiary-color-rgb), 0.95);
+    background: rgba(var(--primary-color-rgb), 0.95);
     border-bottom: 1px solid var(--accent-color);
     border-top: 1px solid var(--accent-color);
   }

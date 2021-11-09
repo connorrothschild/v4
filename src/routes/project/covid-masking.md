@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"  src="/images/project/covid-masking/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Mask Wearing in Your County**](https://observablehq.com/@connorrothschild/mask-wearing-in-your-county) is an Observable notebook that allows users to explore mask wearing in their county, compared to COVID-19 case counts and mask wearing in other counties.
 

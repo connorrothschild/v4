@@ -15,7 +15,6 @@
 
   const updateVideo = function (url) {
     if (video && (webmSource || movSource)) {
-      console.log(`${url}.mov`);
       videoTransitioning = true;
 
       setTimeout(() => {
@@ -110,13 +109,13 @@
 
   .section-container {
     position: relative;
-    height: 60vh;
-    min-height: 400px;
+    height: 45vh;
+    max-height: 60vh;
     overflow: hidden;
+    /* min-height: 400px; */
   }
 
   h1 {
-    margin-bottom: 1rem;
     font-size: 3rem;
     text-transform: uppercase;
     font-weight: 200;
@@ -149,6 +148,7 @@
   .absolute-container {
     z-index: 2;
     pointer-events: none;
+    transition: transform 500ms ease;
   }
 
   video {
@@ -169,11 +169,6 @@
     opacity: 0;
   }
 
-  /* You can make this true on all desktop sizes for an overlay effect */
-  .section-container {
-    flex-direction: column-reverse;
-  }
-
   .title-0 {
     margin-top: 1rem;
   }
@@ -184,7 +179,7 @@
 
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(55vw);
+      transform: translateX(57.5%);
     }
 
     .title-0 {
@@ -205,35 +200,26 @@
   }
   @media screen and (max-width: 1268px) {
     .absolute-container {
-      transform: translateX(51vw);
+      transform: none;
     }
 
-    .title-0 {
-      font-size: 4.5vw;
+    video {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .title-1 {
-      font-size: 4.8vw;
+    .projects {
+      text-align: center;
+      width: 100%;
     }
 
-    .title-2 {
-      font-size: 5.78vw;
+    .project-card {
+      padding: 1rem;
     }
 
-    .title-3 {
-      font-size: 11vw;
-      transform: scaleY(0.95);
-    }
-  }
-  @media screen and (max-width: 1068px) {
-    .absolute-container {
-      transform: translateX(45vw);
-    }
-  }
-
-  @media screen and (max-width: 868px) {
     .section-container {
-      overflow: visible;
+      height: auto;
+      overflow-y: hidden;
     }
 
     .inactive {
@@ -242,25 +228,15 @@
     }
 
     .active {
-      background: rgba(var(--tertiary-color-rgb), 0.8);
+      background: rgba(var(--primary-color-rgb), 0.8);
       border-bottom: 1px solid var(--accent-color);
       border-top: 1px solid var(--accent-color);
     }
 
-    .absolute-container {
-      transform: none;
-    }
-
-    video {
-      width: 100%;
-    }
-
-    .projects {
-      width: 100%;
-    }
-
     .project-card {
-      padding: 1rem;
+      display: flex;
+      place-items: center;
+      justify-content: center;
     }
 
     .title-0 {

@@ -19,7 +19,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://connorrothschild.github.io/compas/" style="box-shadow: none;" src="/images/project/compas/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**Are You Smarter Than COMPAS?**](https://connorrothschild.github.io/compas/) is an application that allows users to explore how accurately they can predict recidivism, compared to a popular criminal justice sentencing algorithm known as COMPAS.
 

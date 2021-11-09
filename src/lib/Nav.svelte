@@ -12,7 +12,7 @@
     <NavListItem code={"post"} title={"Blog"} />
     <NavListItem code={"project"} title={"Projects"} />
     <NavListItem code={"award"} title={"Awards"} />
-    <li><ColorSwitcher /></li>
+    <!-- <li><ColorSwitcher /></li> -->
   </ul>
 </div>
 
@@ -20,9 +20,9 @@
   #nav {
     display: flex;
     place-items: center;
-    position: fixed;
+    /* position: fixed; */
     z-index: 99;
-    background: var(--tertiary-color);
+    background: var(--primary-color);
     height: var(--nav-height);
     margin: 0 auto;
     width: 100%;

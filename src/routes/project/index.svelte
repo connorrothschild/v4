@@ -25,16 +25,22 @@
 
   let filteredProjects = projects
     .filter((d) => d.metadata.archived != true)
-    .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
+    // Sort by featured first, and if featured is the same (both false), then sort by date
+    .sort((a, b) => {
+      if (b.metadata.featured && !a.metadata.featured) return 1;
+      if (!b.metadata.featured && a.metadata.featured) return -1;
+      if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
+      if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
+    });
 
-  let featuredProjects = filteredProjects.filter(
-    (d) => d.metadata.featured == true
-  );
-  let otherProjects = filteredProjects.filter(
-    (d) => !d.metadata.featured == true
-  );
+  // let featuredProjects = filteredProjects.filter(
+  //   (d) => d.metadata.featured == true
+  // );
+  // let otherProjects = filteredProjects.filter(
+  //   (d) => !d.metadata.featured == true
+  // );
 
-  let showAll = false;
+  // let showAll = true;
 
   import { seo } from "$lib/store.js";
   let title = "Projects | Connor Rothschild";
@@ -56,14 +62,14 @@
   </h1>
 
   <div class="projects-container transition-content">
-    {#each featuredProjects as project}
+    {#each filteredProjects as project}
       <ProjectSection
         project={project.metadata}
         slug={project.path.replace(/\.[^/.]+$/, "")}
       />
     {/each}
   </div>
-  {#if showAll}
+  <!-- {#if showAll}
     <div
       in:slide={{ duration: 300, easing: linear }}
       class="projects-container"
@@ -83,7 +89,7 @@
     }}
   >
     {showAll ? "Hide others ↑" : "Show all ↓"}
-  </button>
+  </button> -->
 </main>
 
 <style>
@@ -92,7 +98,7 @@
     margin: 0 auto;
     padding: 1em;
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   .projects-container {

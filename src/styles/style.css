@@ -9,10 +9,8 @@
   --section-margin-bottom: 5rem;
 
   --pure-background-color: #ffffff;
-  --primary-color:  #ccdbe9;
-  --secondary-color: #d0dde9; 
-  --tertiary-color: #edf0f8;
-  --tertiary-color-rgb: 237, 240, 248;
+  --primary-color: #edf0f8;
+  --primary-color-rgb: 237, 240, 248;
   --accent-color: rgb(235, 96, 128);
   --accent-color-rgb: 235, 96, 128; 
   --heading-color: rgba(0, 0, 0, 0.7);
@@ -28,9 +26,7 @@
   /* DARK MODE */
   /* --pure-background-color: #000000;
   --primary-color: rgb(25, 25, 25);
-  --secondary-color: rgb(25, 25, 25);
-  --tertiary-color: rgb(25, 25, 25);
-  --tertiary-color-rgb: 25, 25, 25;
+  --primary-color-rgb: 25, 25, 25;
   --accent-color: rgb(49, 179, 167);
   --accent-color-rgb: 49, 179, 167; 
   --heading-color: rgba(255, 255, 255, 0.7);
@@ -62,7 +58,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
   overscroll-behavior-y: contain;
 }
 
@@ -81,9 +77,7 @@ body {
 } */
 
 ::selection {
-  -webkit-text-fill-color: var(--pure-text-color);
-  color: rgba(var(--accent-color-rgb), .2);
-  background: var(--primary-color);
+  background: rgba(var(--accent-color-rgb), .2);
 }
 
 #svelte {
@@ -195,7 +189,7 @@ pre {
 
 code:not(pre > code) {
   font-family: var(--font-mono);
-  /* background: var(--tertiary-color); */
+  /* background: var(--primary-color); */
   background: rgba(var(--accent-color-rgb), .1);
   color: var(--accent-color);
   padding: 2px 4px;
@@ -221,7 +215,8 @@ button:focus:not(:focus-visible) {
 
 .button {
   font-family: var(--font-sans);
-  border: 1px solid var(--secondary-color);
+  /* border: 1px solid var(--primary-color); */
+  border: none;
   cursor: pointer;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -294,6 +289,7 @@ button:focus:not(:focus-visible) {
   border-bottom: .5px solid var(--accent-color);
   pointer-events: none;
   user-select: none;
+  overflow: hidden;
 }
 
 .page-title.home {
@@ -323,13 +319,13 @@ But for users who prefer reduced motion, we don't want to apply this
 }
 
 /* ONLY DESKTOP */
-/* @media screen and (min-width: 768px) {
+/* @media screen and (min-width: 1068px) {
   .page-overline.see-all {
-    transform: translateY(5rem);
-    -webkit-transform: translateY(5rem);
-    -moz-transform: translateY(5rem);
-    -ms-transform: translateY(5rem);
-    -o-transform: translateY(5rem);
+    transform: translateY(8vw);
+    -webkit-transform: translateY(8vw);
+    -moz-transform: translateY(8vw);
+    -ms-transform: translateY(8vw);
+    -o-transform: translateY(8vw);
   }
 } */
 
@@ -472,18 +468,19 @@ blockquote p:last-of-type {
   margin: 10px auto;
 }
 
+/* IF FIXED NAV, UNCOMMENT BELOW AND THE MAIN TAG */
 .sticky-top {
   /* top: var(--nav-height); */
+  /* padding-top: 1px; */
   top: 0;
   position: sticky;
-  padding-top: 1px;
   z-index: 10;
-  background: var(--tertiary-color);
+  background: var(--primary-color);
 }
 
-main {
+/* main {
   margin-top: var(--nav-height) !important;
-}
+} */
 
 .see-all-flex {
   display: flex;

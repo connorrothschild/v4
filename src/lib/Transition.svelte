@@ -39,7 +39,7 @@
 
     gsap.fromTo(
       titleChars,
-      { y: 100, opacity: 0, rotation: -5 },
+      { y: 100, opacity: 0, rotation: 0 },
       {
         y: 0,
         opacity: 1,

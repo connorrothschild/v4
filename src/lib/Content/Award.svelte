@@ -1,6 +1,6 @@
 <script>
   export let award;
-  export let slug;
+  // export let slug;
   export let anyHovered = false;
 
   let active = false;
@@ -12,7 +12,9 @@
     : active
     ? 'active'
     : ''}"
-  href={slug}
+  href={award.media_url}
+  target="_blank"
+  rel="noopener noreferrer"
   on:mouseover={() => {
     active = true;
     anyHovered = true;
@@ -49,7 +51,7 @@
 
   .container {
     display: flex;
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgba(var(--text-color-rgb), 0.2);
@@ -107,7 +109,7 @@
   }
 
   .inactive {
-    border-bottom-color: rgba(var(--text-color-rgb), 0.2);
+    border-bottom-color: rgba(var(--text-color-rgb), 0.05);
   }
 
   .active {

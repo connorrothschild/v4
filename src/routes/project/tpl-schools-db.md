@@ -19,7 +19,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/" src="/images/project/tpl-schools-db/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**The Texas School District COVID-19 Monitoring Dashboard**](http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/) was a dashboard built by my team at the Texas Policy Lab for Texas policymakers (and any other interested parties) to survey the landscape of COVID-19 in their school districts.
 

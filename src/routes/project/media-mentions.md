@@ -18,7 +18,7 @@ import Image from "$lib/global/Image.svelte"
 
 <Image href="https://observablehq.com/@connorrothschild/bar-chart-race/" src="/images/project/media-mentions/header.png" alt="Header"></Image>
 
-# What it is
+
 
 [**The Race for Media Attention?**](https://observablehq.com/@connorrothschild/bar-chart-race) is an animated bar chart race depicting media mentions of Democratic presidential candidates during the 2020 presidential election. I made it before animated bar chart races were cool (and then [uncool](https://www.newsbreak.com/news/1465770194170/reddits-dataisbeautiful-is-sick-of-bar-chart-races-so-its-banning-them)).
 

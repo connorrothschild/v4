@@ -167,7 +167,7 @@
     padding: 20px;
     margin: 6px; /* Need this for perspective container overflow */
     overflow: hidden;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--primary-color);
     transition: all 100ms linear, border 300ms ease;
     cursor: pointer;
   }
