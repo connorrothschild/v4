@@ -28,11 +28,11 @@
         var vid = URL.createObjectURL(videoBlob); // IE10+
         // Video is now downloaded  and we can set it as source on the video element
         // video.src = vid;
-        console.log("Loaded " + vid);
+        // console.log("Loaded " + vid);
       }
     };
     req.onerror = function () {
-      console.log("Could not load video");
+      // console.log("Could not load video");
     };
     req.send();
   };
