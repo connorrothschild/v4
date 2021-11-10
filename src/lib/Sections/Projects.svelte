@@ -54,6 +54,7 @@
   }
 
   $: if (intersecting) {
+    console.log(intersecting);
     for (let i = 0; i < filteredProjects.length; i++) {
       preload(i);
     }

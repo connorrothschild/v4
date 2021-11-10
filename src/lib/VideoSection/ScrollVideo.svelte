@@ -79,7 +79,7 @@
   </div>
   <div class="sticky">
     <video
-      preload="auto"
+      preload="metadata"
       autoplay
       muted
       playsinline

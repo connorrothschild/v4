@@ -166,7 +166,8 @@
   section {
     width: 95%;
     margin: auto;
-    min-height: calc(100vh - var(--nav-height));
+    /* Weird but we _need_ the hero to take up full height, otherwise project section will be interpreted as intersecting and run transitions, load videos, etc. */
+    min-height: calc(101vh - var(--nav-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
