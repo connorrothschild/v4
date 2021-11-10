@@ -13,7 +13,7 @@
     videoTransitioning = false,
     value = 0;
 
-  const updateVideo = function (url) {
+  const updateVideo = function (url, index) {
     if (video && (webmSource || movSource)) {
       videoTransitioning = true;
 
@@ -27,14 +27,20 @@
         videoTransitioning = false;
       }, 200);
     }
+
+    let nextVideo = index == 3 ? 0 : index + 1;
+
+    fetch(`./videos/${nextVideo}.mov`);
+    fetch(`./videos/${nextVideo}.webm`);
   };
 
   onMount(() => {
     isHEVC = supportsHEVCAlpha();
-    updateVideo(`./videos/0`);
+    updateVideo(`./videos/0`, 0);
   });
 
-  $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
+  $: value,
+    typeof value == "number" ? updateVideo(`./videos/${value}`, value) : null;
 </script>
 
 <div class="section-container">

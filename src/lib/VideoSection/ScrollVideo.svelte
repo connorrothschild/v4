@@ -17,15 +17,14 @@
 
   onMount(() => {
     isHEVC = supportsHEVCAlpha();
-    updateVideo(`./videos/${value}`);
+    updateVideo(`./videos/${value}`, 0);
   });
 
-  const updateVideo = function (url) {
+  const updateVideo = function (url, index) {
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
     if (playedOnce && url === currentUrl) return;
 
     if (video && (webmSource || movSource)) {
-      console.log(`${url}.mov`);
       videoTransitioning = true;
 
       setTimeout(() => {
@@ -41,10 +40,16 @@
         playedOnce = true;
       }, 200);
     }
+
+    let nextVideo = index == 3 ? 0 : index + 1;
+
+    fetch(`./videos/${nextVideo}.mov`);
+    fetch(`./videos/${nextVideo}.webm`);
   };
 
   $: currentProject = value ? projects[value] : projects[0];
-  $: value, typeof value == "number" ? updateVideo(`./videos/${value}`) : null;
+  $: value,
+    typeof value == "number" ? updateVideo(`./videos/${value}`, value) : null;
 
   // vh calculations
   let windowHeight;
