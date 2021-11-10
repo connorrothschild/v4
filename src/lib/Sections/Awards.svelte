@@ -13,8 +13,8 @@
 
   // Sort by featured first, and if featured is the same (both false), then sort by date
   awards.sort((a, b) => {
-    if (b.metadata.featured && !a.metadata.featured) return 1;
-    if (!b.metadata.featured && a.metadata.featured) return -1;
+    // if (b.metadata.featured && !a.metadata.featured) return 1;
+    // if (!b.metadata.featured && a.metadata.featured) return -1;
     if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date)) return 1;
     if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
   });

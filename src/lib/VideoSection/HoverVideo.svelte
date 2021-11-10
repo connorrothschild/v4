@@ -62,7 +62,7 @@
   </div>
   <div class="absolute-container">
     <video
-      preload="metadata"
+      preload="auto"
       autoplay
       muted
       playsinline
