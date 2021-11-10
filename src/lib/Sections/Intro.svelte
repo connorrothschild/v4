@@ -215,7 +215,7 @@
 
   .year {
     position: absolute;
-    bottom: 4%;
+    bottom: 5.5%;
     left: 2.5%;
     padding-left: 1rem;
     color: rgba(var(--text-color-rgb), 0.35);
@@ -344,7 +344,7 @@
     }
     .year {
       font-size: 1.5rem;
-      left: 4%;
+      left: 4.5%;
     }
   }
 </style>

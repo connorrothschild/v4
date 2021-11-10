@@ -38,7 +38,6 @@
   };
 
   function preload(i) {
-    console.log(i);
     let req = new XMLHttpRequest();
     req.open("GET", `./videos/${i}.mov`, true);
     req.responseType = "blob";
