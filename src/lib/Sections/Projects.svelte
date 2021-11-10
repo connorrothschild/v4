@@ -16,11 +16,8 @@
   let isTouchscreen = false;
   import { detectTouchscreen } from "../../scripts/utils.js";
 
-  let mounted = false;
-
   onMount(() => {
     isTouchscreen = detectTouchscreen();
-    mounted = true;
   });
 
   let handleResponse = function (req) {
