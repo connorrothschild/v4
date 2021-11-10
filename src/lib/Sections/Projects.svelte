@@ -16,9 +16,51 @@
   let isTouchscreen = false;
   import { detectTouchscreen } from "../../scripts/utils.js";
 
+  let mounted = false;
+
   onMount(() => {
     isTouchscreen = detectTouchscreen();
+    mounted = true;
   });
+
+  let handleResponse = function (req) {
+    req.onload = function () {
+      // Onload is triggered even on 404 so we need to check the status code
+      if (this.status === 200) {
+        var videoBlob = this.response;
+        var vid = URL.createObjectURL(videoBlob); // IE10+
+        // Video is now downloaded  and we can set it as source on the video element
+        // video.src = vid;
+        console.log("Loaded " + vid);
+      }
+    };
+    req.onerror = function () {
+      console.log("Could not load video");
+    };
+    req.send();
+  };
+
+  function preload(i) {
+    console.log(i);
+    let req = new XMLHttpRequest();
+    req.open("GET", `./videos/${i}.mov`, true);
+    req.responseType = "blob";
+
+    handleResponse(req);
+
+    let req2 = new XMLHttpRequest();
+    req2.open("GET", `./videos/${i}.mov`, true);
+    req2.open("GET", `./videos/${i}.webm`, true);
+    req2.responseType = "blob";
+
+    handleResponse(req2);
+  }
+
+  $: if (intersecting) {
+    for (let i = 0; i < filteredProjects.length; i++) {
+      preload(i);
+    }
+  }
 </script>
 
 <IntersectionObserver {element} bind:intersecting>
