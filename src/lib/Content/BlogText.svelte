@@ -48,7 +48,7 @@
       <h2 class="post-description">{post.description}</h2>
     </div>
     <div class="post-misc">
-      {#if hovered}
+      {#if hovered && !post.featured}
         <p in:fly={{ x: -50, duration: 500 }} class="read-more">
           Read more &#8594;
         </p>

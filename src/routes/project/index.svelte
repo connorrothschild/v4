@@ -107,9 +107,9 @@
     grid-gap: 10px;
   }
 
-  .button {
+  /* .button {
     margin: 12px 0 12px auto;
-  }
+  } */
 
   @media screen and (max-width: 700px) {
     .projects-container {

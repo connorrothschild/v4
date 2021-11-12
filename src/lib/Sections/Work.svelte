@@ -28,7 +28,7 @@
         >
       </div>
       <SectionTitle {intersecting} element="#work-title">
-        <h1 id="work-title" class="page-title home overflow-hidden">
+        <h1 id="work-title" class="page-title overflow-hidden">
           Places I've
           <span class="gradient-accented bolded ">worked</span>
         </h1>

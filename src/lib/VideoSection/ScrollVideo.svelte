@@ -114,6 +114,7 @@
     justify-content: center;
     padding: 0 1rem;
     z-index: 10;
+    position: relative;
   }
 
   .step:last-of-type {

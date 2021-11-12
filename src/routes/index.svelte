@@ -32,26 +32,24 @@
   export let posts;
   export let awards;
 
-  import Intro from "$lib/Sections/Intro.svelte";
-  // import Work from "$lib/Sections/Work.svelte";
+  import Hero from "$lib/Sections/Hero.svelte";
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
-  import Footer from "$lib/Sections/Footer.svelte";
+  import Footer from "$lib/Footer.svelte";
   import Circle from "$lib/CircleText.svelte";
-  import ColorSwitcher from "$lib/ColorSwitcher.svelte";
 
   let pageWidth;
   $: isMobile = pageWidth < 768;
 </script>
 
 <svelte:window bind:innerWidth={pageWidth} />
-<main>
-  <Intro />
+<main id="home">
+  <Hero />
   <!-- <Work {jobs} /> -->
   <Projects {projects} {isMobile} />
-  <Blog {posts} {isMobile} />
   <Awards {awards} {isMobile} />
+  <Blog {posts} {isMobile} />
   <Circle />
 </main>
 <Footer />
@@ -66,13 +64,14 @@
     justify-content: center;
 
     background-color: var(--primary-color);
+    z-index: 100; /* This is over the nav */
   }
 
   /* On desktop, do the cool sticky footer that reveals on scroll */
   @media screen and (min-width: 768px) {
     main {
       position: relative;
-      z-index: 1;
+      /* z-index: 1; */
     }
   }
 </style>

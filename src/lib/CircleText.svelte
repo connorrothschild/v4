@@ -42,13 +42,20 @@
 <style>
   .circle {
     position: sticky;
-    right: 0;
-    bottom: 0;
+    right: 6px;
+    bottom: 6px;
     padding: 1rem;
     z-index: 99;
     overflow: hidden;
     width: min-content;
     margin-left: auto;
+    margin-right: 6px;
+    transform: translateZ(0);
+    transition: all 600ms ease;
+  }
+
+  .circle:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
   }
 
   img {

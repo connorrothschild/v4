@@ -21,10 +21,10 @@
 
   const darkModeColors = [
     { var: `--pure-background-color`, value: `#000000` },
-    { var: `--primary-color`, value: `rgb(25, 25, 25)` },
-    { var: `--primary-color-rgb`, value: `25, 25, 25` },
-    { var: `--accent-color`, value: `rgb(49, 179, 167)` },
-    { var: `--accent-color-rgb`, value: `49, 179, 167` },
+    { var: `--primary-color`, value: `rgb(22, 25, 26)` },
+    { var: `--primary-color-rgb`, value: `22, 25, 26` },
+    { var: `--accent-color`, value: `rgb(76, 159, 247)` },
+    { var: `--accent-color-rgb`, value: `76, 159, 247` },
     { var: `--heading-color`, value: `rgba(255, 255, 255, 0.7)` },
     { var: `--text-color`, value: `#f2f2f2` },
     { var: `--text-color-rgb`, value: `242, 242, 242` },
@@ -66,7 +66,7 @@
     cursor: pointer;
     position: fixed;
     bottom: 3.5%;
-    left: 3.5%;
+    left: 2%;
     font-family: var(--font-sans);
     font-weight: 300;
     font-size: 1.5rem;

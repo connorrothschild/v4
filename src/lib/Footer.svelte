@@ -10,19 +10,6 @@
 </script>
 
 <footer>
-  <!-- <span
-    on:mouseover={() => {
-      setEmoji("👋");
-    }}
-    on:focus={() => {
-      setEmoji("👋");
-    }}
-    on:mouseleave={() => {
-      nullEmoji();
-    }}
-    aria-hidden="true"
-    class="emoji bottom left">{hoveredEmoji ? hoveredEmoji : "👋"}</span
-  > -->
   <span
     on:mouseover={() => {
       setEmoji("👀");
@@ -197,10 +184,10 @@
 
   .link {
     font-family: var(--font-sans);
-    text-transform: uppercase;
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
     font-weight: 300;
+    /* text-transform: uppercase; */
   }
 
   /* RANDOM EMOJIS lol */

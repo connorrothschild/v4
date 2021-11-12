@@ -53,7 +53,6 @@
   }
 
   $: if (intersecting) {
-    console.log(intersecting);
     for (let i = 0; i < filteredProjects.length; i++) {
       preload(i);
     }
@@ -65,7 +64,8 @@
     <div class="sticky-top">
       <div class="see-all-flex">
         <h1 class="page-overline">
-          {isMobile ? "Selected projects" : "Selected projects"}
+          <!-- {isMobile ? "Selected projects" : "Selected projects"} -->
+          01. Selected projects
         </h1>
         <a
           class="page-overline padding-bottom see-all"
@@ -76,7 +76,7 @@
         </a>
       </div>
       <SectionTitle {intersecting} element="#projects-title">
-        <h1 id="projects-title" class="page-title home overflow-hidden">
+        <h1 id="projects-title" class="page-title overflow-hidden">
           Projects I've
           <span class="gradient-accented bolded">built</span>
         </h1>

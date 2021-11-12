@@ -30,12 +30,13 @@
 </script>
 
 <IntersectionObserver {element} bind:intersecting>
-  <section bind:this={element}>
+  <section bind:this={element} id="blog">
     <div class="sticky-top">
       <div class="width-container">
         <div class="see-all-flex">
           <h1 class="page-overline">
-            {isMobile ? "Selected blog posts" : "Blog"}
+            <!-- {isMobile ? "Selected blog posts" : "Blog"} -->
+            03. Selected blog posts
           </h1>
           <a
             class="page-overline padding-bottom see-all"
@@ -44,7 +45,7 @@
           >
         </div>
         <SectionTitle {intersecting} element="#posts-title">
-          <h1 id="posts-title" class="page-title home overflow-hidden">
+          <h1 id="posts-title" class="page-title overflow-hidden">
             Posts I've
             <span class="gradient-accented bolded">written</span>​
           </h1>

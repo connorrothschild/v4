@@ -25,10 +25,10 @@
 
   /* DARK MODE */
   /* --pure-background-color: #000000;
-  --primary-color: rgb(25, 25, 25);
-  --primary-color-rgb: 25, 25, 25;
-  --accent-color: rgb(49, 179, 167);
-  --accent-color-rgb: 49, 179, 167; 
+  --primary-color: rgb(22, 25, 26);
+  --primary-color-rgb: 22, 25, 26;
+  --accent-color: rgb(76, 159, 247);
+  --accent-color-rgb: 76, 159, 247;
   --heading-color: rgba(255, 255, 255, 0.7);
   --text-color: #f2f2f2;
   --text-color-rgb: 242, 242, 242;
@@ -292,27 +292,34 @@ button:focus:not(:focus-visible) {
   overflow: hidden;
 }
 
-.page-title.home {
-  font-size: 8vw;
-  /* text-align: center; */
+#home .page-overline {
+  margin-top: 1.25rem;
+  margin-bottom: -2.5rem;
+}
+#home .page-title {
+  text-align: left;
+  margin-top: 2.5rem;
+  padding-bottom: .75rem;
+  /* width: fit-content;
+  border-bottom: none; */
 }
 
 @media screen and (min-width: 1268px) {
-  .page-title.home {
-    font-size: 6rem;
+  #home .page-title {
+    font-size: 5rem;
   }
 }
 
 /* We set opacity of transitioning elements to 0 to prevent brief paint before opacity transitions 
 But for users who prefer reduced motion, we don't want to apply this 
 (they would never become visible because transitions never trigger) */
-/* @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .transition-title,
   .transition-subtitle,
   .transition-content {
     opacity: 0;
   }
-} */
+}
 
 .overflow-hidden {
   overflow: hidden;
@@ -337,7 +344,7 @@ But for users who prefer reduced motion, we don't want to apply this
     /* letter-spacing: 1px; */
   }
 
-  .page-title.home {
+  #home .page-title {
     font-size: 3rem;
   }
 
@@ -352,7 +359,7 @@ But for users who prefer reduced motion, we don't want to apply this
     font-size: 2.5rem;
   }
 
-  .page-title.home {
+  #home .page-title {
     font-size: 2.75rem;
   }
 }
@@ -361,7 +368,7 @@ But for users who prefer reduced motion, we don't want to apply this
   .page-title {
     font-size: 2.25rem;
   }
-  .home {
+  #home .page-title {
     font-size: 2rem;
   }
 }

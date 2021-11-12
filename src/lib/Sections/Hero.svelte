@@ -1,4 +1,5 @@
 <script>
+  // GSAP
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
   import { SplitText } from "gsap/dist/SplitText.js";
@@ -18,7 +19,7 @@
   const switchSub = () => {
     const nav = () => {
       goto("#projects", { replaceState: true });
-      window.location.hash = "";
+      // window.location.hash = "";
     };
     subtitleIndex == subtitleOptions.length - 1 ? nav() : subtitleIndex++;
   };
@@ -140,13 +141,12 @@
   <!-- <div class="background">
     <h1 class="fonts-homeTitle" style="opacity: 1;">ty for visiting</h1>
   </div> -->
-  <div class="big-words-container">
-    <h1 class="big-word begin-invisible">Development<br />Design<br />Data</h1>
-    <!-- <h1 class="big-word">Development</h1>
-    <h1 class="big-word">Design</h1>
-    <h1 class="big-word">Data</h1> -->
-  </div>
-  <!-- <a class="scroll-down" href="#projects">Learn more</a> -->
+  <!-- <div class="big-words-container">
+    <h1 class="big-word begin-invisible">
+      01. Projects<br />02. Awards<br />03. About<br />04. Blog
+    </h1>
+  </div> -->
+  <a class="scroll-down no-underline" href="#projects">Projects &rarr;</a>
   <div class="hero-container">
     <h1 class="overline begin-invisible">Hi, I'm</h1>
     <div class="title">
@@ -170,8 +170,8 @@
     min-height: calc(101vh - var(--nav-height));
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    place-items: center;
+    justify-content: center; /* center */
+    place-items: center; /* center */
     overflow: hidden;
     position: relative;
   }
@@ -180,48 +180,56 @@
     position: absolute;
     left: unset;
     right: 0;
-    top: 5%;
+    top: 2.5%;
     height: 100%;
     line-height: 0.8;
     user-select: none;
-    transform: rotate(90deg) translateX(100%);
+    /* transform: rotate(90deg) translateX(100%);
     transform-origin: right top;
-    text-align: left;
+    text-align: left; */
   }
 
   .big-word {
-    /* text-align: right; */
-    text-align: left;
+    text-align: right;
+    /* text-align: left; */
     font-family: var(--font-sans);
     color: rgba(var(--text-color-rgb), 0.075);
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -0.1rem;
-    font-size: 4rem;
-    word-spacing: 100vw;
+    font-size: 3.5rem;
+    /* word-spacing: 100vw; */
   }
 
-  /* .big-word:nth-of-type(1) {
+  :global(.big-word div:hover) {
+    color: rgba(var(--accent-color-rgb), 0.5);
+  }
+
+  /* :global(.big-word div:nth-of-type(1)) {
     font-size: 3.9rem;
   }
 
-  .big-word:nth-of-type(2) {
-    font-size: 7.68rem;
+  :global(.big-word div:nth-of-type(2)) {
+    font-size: 4.33rem;
   }
 
-  .big-word:nth-of-type(3) {
-    font-size: 11.429rem;
+  :global(.big-word div:nth-of-type(3)) {
+    font-size: 5.025rem;
+  }
+
+  :global(.big-word div:nth-of-type(4)) {
+    font-size: 5.75rem;
   } */
 
   .year {
     position: absolute;
-    bottom: 5.5%;
-    left: 2.5%;
-    padding-left: 1rem;
+    bottom: 5.35%;
+    left: 0.75%;
+    margin-left: 1rem;
     color: rgba(var(--text-color-rgb), 0.35);
     font-family: var(--font-sans);
     font-weight: 300;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     letter-spacing: -0.05rem;
     user-select: none;
   }
@@ -230,31 +238,23 @@
     opacity: 0;
   }
 
-  /* .scroll-down {
+  .scroll-down {
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 1px solid var(--accent-color);
-    background: rgba(var(--accent-color-rgb), 0.1);
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    line-height: 0.9;
-    font-weight: 200;
-    display: flex;
-    text-align: center;
-    place-items: center;
-  } */
+    top: 30%;
+    transform: rotate(90deg) translateX(50%);
+    transform-origin: 100% 0;
+    /* font-family: var(--font-sans); */
+    text-transform: uppercase;
+    color: rgba(var(--text-color-rgb), 0.1);
+    font-size: 2rem;
+  }
 
   .hero-container {
     /* text-align: center; */
     line-height: 0.85;
     user-select: none;
+    margin-top: calc(0px - var(--nav-height));
   }
 
   .overline {
@@ -270,15 +270,15 @@
   .connor,
   .rothschild {
     display: block;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
-    overflow: hidden;
+    overflow-y: hidden;
     /* text-shadow: 1px 1px 2px black; */
   }
 
   .connor {
-    font-size: 17.4vw;
+    font-size: 17.55vw;
   }
 
   .rothschild {
@@ -316,10 +316,6 @@
     .subtitle {
       font-size: 4vw;
     }
-
-    .big-word {
-      font-size: 4rem;
-    }
   }
 
   @media screen and (max-width: 468px) {
@@ -330,21 +326,22 @@
     .overline,
     .subtitle,
     .hero-container {
-      text-align: center;
+      /* text-align: center; */
+      text-align: left;
     }
     .overline {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       margin-bottom: 0.75rem;
     }
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
     .big-word {
       font-size: 3rem;
     }
     .year {
       font-size: 1.5rem;
-      left: 4.5%;
+      left: 2.5%;
     }
   }
 </style>

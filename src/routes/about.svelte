@@ -202,7 +202,8 @@
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
     border-radius: 5px;
-    background: var(--pure-background-color);
+    background: var(--pure-text-color);
+    color: var(--pure-background-color);
     content: attr(desc);
     width: 320px;
     line-height: 1.25;
