@@ -1,6 +1,5 @@
 <script>
   export let projects;
-  export let isMobile;
 
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
   import HoverVideo from "$lib/VideoSection/HoverVideo.svelte";

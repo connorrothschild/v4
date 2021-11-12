@@ -98,7 +98,8 @@
   .sticky {
     position: sticky;
     z-index: 1;
-    top: calc(var(--nav-height) + 6rem); /* Based on desktop sizing */
+    /* top: calc(var(--nav-height) + 6rem);  */
+    top: 8rem;
   }
 
   .section-container {
@@ -191,7 +192,8 @@
   @media screen and (max-width: 868px) {
     /* You can make this true on all desktop sizes for an overlay effect */
     .sticky {
-      top: calc(var(--nav-height) + 3rem); /* Based on mobile sizing */
+      /* top: calc(var(--nav-height) + 3rem);  */
+      top: 6rem;
     }
 
     .section-container {

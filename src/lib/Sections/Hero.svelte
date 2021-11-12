@@ -176,7 +176,7 @@
     position: relative;
   }
 
-  .big-words-container {
+  /* .big-words-container {
     position: absolute;
     left: unset;
     right: 0;
@@ -184,26 +184,21 @@
     height: 100%;
     line-height: 0.8;
     user-select: none;
-    /* transform: rotate(90deg) translateX(100%);
-    transform-origin: right top;
-    text-align: left; */
   }
 
   .big-word {
     text-align: right;
-    /* text-align: left; */
     font-family: var(--font-sans);
     color: rgba(var(--text-color-rgb), 0.075);
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -0.1rem;
     font-size: 3.5rem;
-    /* word-spacing: 100vw; */
   }
 
   :global(.big-word div:hover) {
     color: rgba(var(--accent-color-rgb), 0.5);
-  }
+  } */
 
   /* :global(.big-word div:nth-of-type(1)) {
     font-size: 3.9rem;
@@ -336,9 +331,9 @@
     .subtitle {
       font-size: 1.4rem;
     }
-    .big-word {
+    /* .big-word {
       font-size: 3rem;
-    }
+    } */
     .year {
       font-size: 1.5rem;
       left: 2.5%;

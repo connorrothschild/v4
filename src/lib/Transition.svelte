@@ -21,6 +21,8 @@
   async function transition() {
     if (prefersReducedMotion) return;
 
+    gsap.set(".transition-title", { opacity: 1 });
+
     let titleSplit = new SplitText(
       document.querySelector(".transition-title"),
       {

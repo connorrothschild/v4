@@ -75,8 +75,7 @@
     /* color: rgba(var(--text-color-rgb), 0.35); */
   }
 
-  .active {
-    /* text-decoration: underline; */
+  /* .active {
     color: var(--pure-text-color);
-  }
+  } */
 </style>
