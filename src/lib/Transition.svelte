@@ -25,6 +25,7 @@
 
     gsap.set(".transition-title", { opacity: 1 });
     gsap.set(".transition-subtitle", { opacity: 1 });
+    gsap.set(".transition-content", { opacity: 1 });
 
     let titleSplit = new SplitText(
       document.querySelector(".transition-title"),
