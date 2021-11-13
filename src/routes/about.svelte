@@ -1,11 +1,19 @@
 <script>
   import { slide } from "svelte/transition";
+
   import Transition from "../lib/Transition.svelte";
+  import BackTo from "../lib/BackTo.svelte";
+
   let showMore = false;
 </script>
 
 <Transition />
 <main>
+  <BackTo
+    href="/"
+    text="Home"
+    classes="page-overline transition-subtitle centered"
+  />
   <h1 class="page-title transition-title overflow-hidden">About</h1>
   <p>
     Hi! I'm Connor. <span class="else" class:showMore

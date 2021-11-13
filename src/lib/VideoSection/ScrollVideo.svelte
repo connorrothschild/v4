@@ -173,21 +173,21 @@
     background: var(--pure-background-color);
   }
 
-  @media screen and (max-width: 868px) {
-    /* You can make this true on all desktop sizes for an overlay effect */
-    .sticky {
-      /* top: calc(var(--nav-height) + 3rem);  */
-      top: 6rem;
-    }
-
-    .section-container {
-      flex-direction: column-reverse;
-    }
-
-    video {
-      width: auto;
-      margin: 0 auto;
-      max-width: 100vw;
-    }
+  /* @media screen and (max-width: 868px) { */
+  /* You can make this true on all desktop sizes for an overlay effect */
+  .sticky {
+    /* top: calc(var(--nav-height) + 3rem);  */
+    top: 6rem;
   }
+
+  .section-container {
+    flex-direction: column-reverse;
+  }
+
+  video {
+    width: auto;
+    margin: 0 auto;
+    max-width: 100vw;
+  }
+  /* } */
 </style>
