@@ -1,5 +1,6 @@
 <script>
   export let projects;
+  export let videos;
 
   import { onMount } from "svelte";
   import { supportsHEVCAlpha } from "../../scripts/utils.js";
@@ -14,14 +15,15 @@
     value = 0;
 
   const updateVideo = function (url, index) {
-    if (video && (webmSource || movSource)) {
+    if (video) {
       videoTransitioning = true;
 
       setTimeout(() => {
         // video.src = isHEVC ? `${url}.mov` : `${url}.webm`;
-        movSource.src = `${url}.mov`;
-        webmSource.src = `${url}.webm`;
+        // movSource.src = `${url}.mov`;
+        // webmSource.src = `${url}.webm`;
 
+        video.src = window.URL.createObjectURL(videos[value]);
         video.load();
 
         videoTransitioning = false;
@@ -75,10 +77,7 @@
       id="video"
       bind:this={video}
       class:videoTransitioning
-    >
-      <source bind:this={movSource} type="video/mp4" />
-      <source bind:this={webmSource} type="video/webm" />
-    </video>
+    />
   </div>
 </div>
 

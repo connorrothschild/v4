@@ -36,6 +36,7 @@
     "@sveltejs/adapter-node": "^1.0.0-next.0",
     "@tiptap/core": "^2.0.0-beta.120",
     "@tiptap/starter-kit": "^2.0.0-beta.119",
+    "bowser": "^2.11.0",
     "codemirror": "^5.63.1",
     "gsap": "file:gsap-bonus.tgz",
     "highlight.js": "^11.2.0",

@@ -12,43 +12,28 @@
 
   let filteredProjects = projects.filter((d) => d.metadata.featured == true);
 
-  let isTouchscreen = false;
-  import { detectTouchscreen } from "../../scripts/utils.js";
+  let isTouchscreen = false,
+    isHEVC = false;
+
+  import Bowser from "bowser";
+
+  import { detectTouchscreen, supportsHEVCAlpha } from "../../scripts/utils.js";
 
   onMount(() => {
     isTouchscreen = detectTouchscreen();
+    isHEVC = supportsHEVCAlpha();
+    console.log(isHEVC);
   });
 
-  let handleResponse = function (req) {
-    req.onload = function () {
-      // Onload is triggered even on 404 so we need to check the status code
-      if (this.status === 200) {
-        var videoBlob = this.response;
-        var vid = URL.createObjectURL(videoBlob); // IE10+
-        // Video is now downloaded  and we can set it as source on the video element
-        // video.src = vid;
-        // console.log("Loaded " + vid);
-      }
-    };
-    req.onerror = function () {
-      // console.log("Could not load video");
-    };
-    req.send();
-  };
+  let videos = [];
 
   function preload(i) {
-    let req = new XMLHttpRequest();
-    req.open("GET", `./videos/${i}.mov`, true);
-    req.responseType = "blob";
+    let videoUrl = isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`;
+    let req = fetch(videoUrl).then((response) => response.blob());
 
-    handleResponse(req);
-
-    let req2 = new XMLHttpRequest();
-    req2.open("GET", `./videos/${i}.mov`, true);
-    req2.open("GET", `./videos/${i}.webm`, true);
-    req2.responseType = "blob";
-
-    handleResponse(req2);
+    req.then((blob) => {
+      videos.push(blob);
+    });
   }
 
   $: if (intersecting) {
@@ -58,7 +43,7 @@
   }
 </script>
 
-<IntersectionObserver {element} bind:intersecting>
+<IntersectionObserver {element} bind:intersecting once>
   <section bind:this={element} id="projects">
     <div class="sticky-top">
       <div class="see-all-flex">
@@ -82,9 +67,9 @@
       </SectionTitle>
     </div>
     {#if isTouchscreen}
-      <ScrollVideo projects={filteredProjects} />
+      <ScrollVideo projects={filteredProjects} {videos} />
     {:else}
-      <HoverVideo projects={filteredProjects} />
+      <HoverVideo projects={filteredProjects} {videos} />
     {/if}
   </section>
 </IntersectionObserver>

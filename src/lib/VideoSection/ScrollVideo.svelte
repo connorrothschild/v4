@@ -1,5 +1,6 @@
 <script>
   export let projects;
+  export let videos;
 
   import Scroll from "$lib/Scroll.svelte";
 
@@ -11,6 +12,7 @@
     video,
     webmSource,
     movSource,
+    source,
     isHEVC = false,
     videoTransitioning = false,
     value = 0;
@@ -24,14 +26,11 @@
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
     if (playedOnce && url === currentUrl) return;
 
-    if (video && (webmSource || movSource)) {
+    if (video) {
       videoTransitioning = true;
 
       setTimeout(() => {
-        // video.src = isHEVC ? `${url}.mov` : `${url}.webm`;
-        movSource.src = `${url}.mov`;
-        webmSource.src = `${url}.webm`;
-
+        video.src = window.URL.createObjectURL(videos[value]);
         video.load();
 
         videoTransitioning = false;
@@ -39,11 +38,6 @@
         currentUrl = url;
         playedOnce = true;
       }, 200);
-
-      let nextVideo = index == 3 ? 0 : index + 1;
-
-      // fetch(`./videos/${nextVideo}.mov`);
-      // fetch(`./videos/${nextVideo}.webm`);
     }
   };
 
@@ -87,10 +81,7 @@
       bind:this={video}
       class:videoTransitioning
       style="height: {0.7 * windowHeight}px;"
-    >
-      <source bind:this={movSource} type="video/mp4" />
-      <source bind:this={webmSource} type="video/webm" />
-    </video>
+    />
   </div>
 </div>
 
