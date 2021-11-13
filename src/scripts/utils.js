@@ -51,20 +51,16 @@ export function supportsHEVCAlpha() {
   const os = Bowser.getParser(window.navigator.userAgent).getOS();
 
   const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo)
-  
-  // const ua = navigator.userAgent.toLowerCase();
-  // const isSafari = (ua.indexOf('safari') != -1) &&
-  //   (!(ua.indexOf('chrome') != -1) &&
-  //   (!(ua.indexOf('firefox') != -1)) &&
-  //   (ua.indexOf('version/') != -1));
 
   const isSafari = browser.name === "Safari";
-  // Use regex to replace anything in the os.version that is trailing the second decimal point
-  // with a blank string.
+  const isMac = os.name === "macOS";
+  const isIOS = os.name === "iOS";
+  const version = {major: os.version.split('.')[0], minor: os.version.split('.')[1]};
+  const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
 
-  const osVersion = os.version.replace(/\.([\s\S]*)$/, '');
-  console.log(osVersion) //FIXME: osVersion currently only returns the first major version number (10), we need it to show the first two (10.15)
+  if (isMac && isSafari && isPast1015) return true;
+  if (isSafari && hasMediaCapabilities) return true;
+  if (isIOS) return true;
 
-  const safariSupportsHEVC = isSafari && osVersion < 10.15;
-  return isSafari && hasMediaCapabilities && safariSupportsHEVC;
+  return false;
 }

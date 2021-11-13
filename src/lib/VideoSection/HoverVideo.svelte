@@ -3,46 +3,29 @@
   export let videos;
 
   import { onMount } from "svelte";
-  import { supportsHEVCAlpha } from "../../scripts/utils.js";
 
-  let currentUrl,
-    playedOnce = false,
-    video,
-    webmSource,
-    movSource,
-    isHEVC = false,
+  let video,
     videoTransitioning = false,
     value = 0;
 
-  const updateVideo = function (url, index) {
+  const updateVideo = function (index) {
     if (video) {
       videoTransitioning = true;
 
       setTimeout(() => {
-        // video.src = isHEVC ? `${url}.mov` : `${url}.webm`;
-        // movSource.src = `${url}.mov`;
-        // webmSource.src = `${url}.webm`;
-
-        video.src = window.URL.createObjectURL(videos[value]);
+        video.src = window.URL.createObjectURL(videos[index]);
         video.load();
 
         videoTransitioning = false;
       }, 200);
-
-      let nextVideo = index == 3 ? 0 : index + 1;
-
-      // fetch(`./videos/${nextVideo}.mov`);
-      // fetch(`./videos/${nextVideo}.webm`);
     }
   };
 
   onMount(() => {
-    isHEVC = supportsHEVCAlpha();
-    updateVideo(`./videos/0`, 0);
+    updateVideo(0);
   });
 
-  $: value,
-    typeof value == "number" ? updateVideo(`./videos/${value}`, value) : null;
+  $: value, typeof value == "number" ? updateVideo(value) : null;
 </script>
 
 <div class="section-container">

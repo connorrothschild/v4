@@ -5,26 +5,20 @@
   import Scroll from "$lib/Scroll.svelte";
 
   import { onMount } from "svelte";
-  import { supportsHEVCAlpha } from "../../scripts/utils.js";
 
-  let currentUrl = "./videos/0",
-    playedOnce = false,
+  let playedOnce = false,
     video,
-    webmSource,
-    movSource,
-    source,
-    isHEVC = false,
+    currentIndex = 0,
     videoTransitioning = false,
     value = 0;
 
   onMount(() => {
-    isHEVC = supportsHEVCAlpha();
-    updateVideo(`./videos/${value}`, 0);
+    updateVideo(0);
   });
 
-  const updateVideo = function (url, index) {
+  const updateVideo = function (index) {
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
-    if (playedOnce && url === currentUrl) return;
+    if (playedOnce && index === currentIndex) return;
 
     if (video) {
       videoTransitioning = true;
@@ -35,15 +29,14 @@
 
         videoTransitioning = false;
 
-        currentUrl = url;
+        currentIndex = index;
         playedOnce = true;
       }, 200);
     }
   };
 
   $: currentProject = value ? projects[value] : projects[0];
-  $: value,
-    typeof value == "number" ? updateVideo(`./videos/${value}`, value) : null;
+  $: value, typeof value == "number" ? updateVideo(value) : null;
 
   // vh calculations
   let windowHeight;
