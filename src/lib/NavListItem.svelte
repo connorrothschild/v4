@@ -1,34 +1,26 @@
 <script>
   export let code;
   export let title;
-  export let anyHovered;
+  export let anyHovered = false;
 
   import { page } from "$app/stores";
-  import { currentIcon } from "../stores/global.js";
 
-  let hoveredIcon, hovered;
-  const setCurrent = function (icon) {
-    // hoveredIcon = icon == "" ? "home" : icon;
-    // currentIcon.set(hoveredIcon);
-    hovered = true;
-  };
+  let hovered;
 </script>
 
 <li>
   <a
     on:mouseover={() => {
-      setCurrent(code);
       anyHovered = true;
     }}
     on:focus={() => {
-      setCurrent(code);
+      hovered = true;
       anyHovered = true;
     }}
     on:click={() => {
-      setCurrent(code);
+      hovered = true;
     }}
     on:mouseleave={() => {
-      setCurrent(null);
       anyHovered = false;
       hovered = false;
     }}

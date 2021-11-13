@@ -138,7 +138,8 @@
     z-index: 99;
   }
 
-  @media screen and (min-width: 768px) {
+  /* Uncomment to do cool sticky footer reveal, but it errors out on a lot of browsers */
+  /* @media screen and (min-width: 768px) {
     footer {
       position: sticky;
       position: -webkit-sticky;
@@ -151,14 +152,14 @@
 
       height: var(--footer-height);
     }
-  }
+  } */
 
-  @media screen and (max-width: 767px) {
-    footer {
-      height: 600px;
-      position: relative;
-    }
+  /* @media screen and (max-width: 767px) { */
+  footer {
+    height: 600px;
+    position: relative;
   }
+  /* } */
 
   .flex-container {
     max-width: 1268px;

@@ -99,8 +99,8 @@
 
   .section-container {
     position: relative;
-    min-height: 45vh;
-    height: 60vh;
+    /* min-height: 45vh; */
+    height: 65vh;
     overflow: hidden;
     /* min-height: 400px; */
   }
@@ -120,8 +120,6 @@
   }
 
   .inactive h1 {
-    /* border-bottom: 1px dashed rgba(var(--text-color-rgb), 0.6); */
-    /* border-bottom: 1px dashed transparent; */
     color: transparent;
     opacity: 0.5;
     text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
@@ -175,7 +173,7 @@
   }
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(55%);
+      transform: translateX(53.5%);
       position: absolute;
       right: 0;
       left: unset;

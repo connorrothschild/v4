@@ -47,7 +47,7 @@
 <main id="home">
   <Hero />
   <!-- <Work {jobs} /> -->
-  <Projects {projects} {isMobile} />
+  <Projects {projects} />
   <Awards {awards} {isMobile} />
   <Blog {posts} {isMobile} />
   <Circle />
@@ -68,10 +68,9 @@
   }
 
   /* On desktop, do the cool sticky footer that reveals on scroll */
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     main {
       position: relative;
-      /* z-index: 1; */
     }
-  }
+  } */
 </style>

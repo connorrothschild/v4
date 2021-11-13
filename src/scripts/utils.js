@@ -57,10 +57,13 @@ export function supportsHEVCAlpha() {
   const isIOS = os.name === "iOS";
   const version = {major: os.version.split('.')[0], minor: os.version.split('.')[1]};
   const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
-
+  
   if (isMac && isSafari && isPast1015) return true;
   if (isSafari && hasMediaCapabilities) return true;
   if (isIOS) return true;
+
+  // FIXME: These ~10% of Mac users, cannot use HEVC w/alpha and so no video appears
+  const cannotRenderTransparentVideo = isMac && !isPast1015;
 
   return false;
 }

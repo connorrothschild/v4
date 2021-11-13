@@ -8,14 +8,10 @@
   gsap.registerPlugin(SplitText);
 
   let prefersReducedMotion = false;
+
   onMount(async () => {
     let listener = window.matchMedia("(prefers-reduced-motion: reduce)");
     prefersReducedMotion = listener.matches;
-
-    listener.addEventListener("change", () => {
-      prefersReducedMotion = listener.matches;
-      transition();
-    });
 
     await transition();
   });
