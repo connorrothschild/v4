@@ -18,6 +18,7 @@ const config = {
   kit: {
     adapter: adapter(),
     target: "#svelte",
+    ssr: true
   },
 };
 

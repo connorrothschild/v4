@@ -43,7 +43,7 @@
   {/if}
   <div class="post-card">
     <div class="post-info">
-      <h3 class="post-date">{dateFormat(post.date)}</h3>
+      <h2 class="post-date">{dateFormat(post.date)}</h2>
       <h1 class="post-title">{post.title}</h1>
       <h2 class="post-description">{post.description}</h2>
     </div>
@@ -146,13 +146,30 @@
     padding: 6px;
   }
 
-  .hovered {
+  /* .hovered {
     border-bottom: 1px solid var(--accent-color);
-  }
+  } */
 
   .unhovered {
     filter: grayscale(0.7);
     border-bottom: 1px solid rgba(var(--text-color-rgb), 0.05);
+  }
+
+  .post-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transform-origin: bottom left;
+    transition: transform 500ms ease;
+  }
+
+  .post-container:hover::after {
+    transform: scaleX(1);
   }
 
   .unhovered .post-date,

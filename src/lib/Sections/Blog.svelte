@@ -45,8 +45,8 @@
           >
         </div>
         <SectionTitle {intersecting} element="#posts-title">
-          <h1 id="posts-title" class="page-title overflow-hidden">
-            Posts I've
+          <h1 id="posts-title" class="section-title overflow-hidden">
+            Posts I’ve
             <span class="gradient-accented bolded">written</span>​
           </h1>
         </SectionTitle>

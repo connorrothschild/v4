@@ -20,19 +20,33 @@
   };
 
   import { dateFormat } from "../../scripts/utils.js";
+
+  import IntersectionObserver from "svelte-intersection-observer";
+  let element, intersecting;
 </script>
 
-<Transition />
-<CornerTitle {title} subtitle={dateFormat(date)} />
+<Transition split={"words"} />
+<CornerTitle
+  {title}
+  subtitle={dateFormat(date)}
+  {intersecting}
+  rootMargin="-60px"
+/>
 <main>
-  <BackTo
-    href="/award"
-    text="Awards"
-    classes="page-overline transition-subtitle"
-  />
+  <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
+    <div class="top-level" bind:this={element}>
+      <BackTo
+        href="/award"
+        text="Awards"
+        classes="page-overline transition-subtitle"
+      />
 
-  <h1 class="page-title transition-title overflow-hidden">{title}</h1>
-  <div class="content transition-content">
+      <h1 class="content-title uppercase transition-title overflow-hidden">
+        {title}
+      </h1>
+    </div>
+  </IntersectionObserver>
+  <div class="content main-content transition-content">
     <slot />
 
     <p class="media-link">
@@ -45,11 +59,4 @@
 </main>
 
 <style>
-  main {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 4rem;
-  }
 </style>

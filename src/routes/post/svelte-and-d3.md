@@ -136,7 +136,7 @@ Again, we reduce the length of our code nearly 5x, and the code just **makes sen
 
 All that to say, D3 is great. It works, and it works wonderfully. By removing the need to write highly imperative code that is unintuitive in nature, D3 saves developers time and allows for more powerful visualizations.
 
-But I'm hardly using it at all recently. Increasingly, I've been using the JavaScript ~~framework~~ compiler [Svelte](https://svelte.dev/) to *write SVG directly* rather than *tell JavaScript to write SVG*. How? Let's see below.
+But I'm hardly using it at all recently. Increasingly, I’ve been using the JavaScript ~~framework~~ compiler [Svelte](https://svelte.dev/) to *write SVG directly* rather than *tell JavaScript to write SVG*. How? Let's see below.
 
 ## "Literal" programming with Svelte 🗣
 

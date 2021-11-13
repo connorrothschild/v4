@@ -21,7 +21,10 @@
 
   // PAGE LOADER
   import Loading from "../lib/Loading.svelte";
-  import { fade } from "svelte/transition";
+
+  // Get current page path
+  import { page } from "$app/stores";
+  $: path = $page.path;
 </script>
 
 <svelte:window
@@ -33,7 +36,7 @@
   }}
 />
 <Seo />
-<Nav />
+<Nav styles={path !== "/" ? "position: fixed;" : ""} />
 <slot />
 <Loading />
 <ColorSwitcher />

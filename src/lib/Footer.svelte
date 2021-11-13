@@ -66,26 +66,61 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
+          on:mouseover={() => {
+            setEmoji("✉️");
+          }}
+          on:focus={() => {
+            setEmoji("✉️");
+          }}
+          on:mouseleave={() => {
+            nullEmoji();
+          }}
           href="mailto:connor@connorrothschild.com">Email</a
         >
         <a
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
+          href="https://www.linkedin.com/in/connor-rothschild/"
+          on:mouseover={() => {
+            setEmoji("🔗");
+          }}
+          on:focus={() => {
+            setEmoji("🔗");
+          }}
+          on:mouseleave={() => {
+            nullEmoji();
+          }}>LinkedIn</a
         >
         <a
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/connorrothschild/">GitHub</a
+          href="https://github.com/connorrothschild/"
+          on:mouseover={() => {
+            setEmoji("💻");
+          }}
+          on:focus={() => {
+            setEmoji("💻");
+          }}
+          on:mouseleave={() => {
+            nullEmoji();
+          }}>GitHub</a
         >
         <a
           class="link"
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
-          >Twitter</a
+          on:mouseover={() => {
+            setEmoji("🐦");
+          }}
+          on:focus={() => {
+            setEmoji("🐦");
+          }}
+          on:mouseleave={() => {
+            nullEmoji();
+          }}>Twitter</a
         >
       </div>
     </div>
@@ -100,6 +135,7 @@
     width: 100%;
     background: var(--text-color);
     color: var(--pure-background-color);
+    z-index: 99;
   }
 
   @media screen and (min-width: 768px) {

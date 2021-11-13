@@ -5,7 +5,7 @@ award: 2020 Malofiej Awards
 organization: Malofiej
 date: "2020-08-07"
 featured: true
-media_url: "https://www.malofiejgraphics.com/general/students-have-won-awards-too/2020/08"
+media_url: "https://web.archive.org/web/20210121150713/https://www.malofiejgraphics.com/general/students-have-won-awards-too/2020/08"
 project_url: "https://connorrothschild.github.io/map-missing-migrants/"
 ---
 

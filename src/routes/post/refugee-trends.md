@@ -15,7 +15,7 @@ tags: ['analysis', 'r']
 
 <Image alt="A small multiples map of refugee acceptance over time, across states" src="../images/post/refugee-trends/featured.png"></Image>
 
-In [previous projects](https://connorrothschild.github.io/map-missing-migrants/), I've explored how migration has unfolded across _places_: where migrants travel, where they go missing, and where their journeys come to a fatal end.
+In [previous projects](https://connorrothschild.github.io/map-missing-migrants/), I’ve explored how migration has unfolded across _places_: where migrants travel, where they go missing, and where their journeys come to a fatal end.
 
 Next, I wanted to see how _host countries_ have approached the migrant and refugee crisis, with a particular focus on the United States. In my mind, an effective visualization of the U.S.'s response to an increasing number of refugees needs to present two things: how refugee acceptance has changed _over time_ and how refugee acceptance differs _across states._
 

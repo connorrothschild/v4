@@ -41,8 +41,8 @@
         >
       </div>
       <SectionTitle {intersecting} element="#awards-title">
-        <h1 id="awards-title" class="page-title overflow-hidden">
-          Awards I've
+        <h1 id="awards-title" class="section-title overflow-hidden">
+          Awards I’ve
           <span class="gradient-accented bolded ">won</span>
         </h1>
       </SectionTitle>

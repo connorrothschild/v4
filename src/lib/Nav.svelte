@@ -1,12 +1,13 @@
 <script>
+  export let styles = "";
   import NavListItem from "./NavListItem.svelte";
 
   let anyHovered;
 </script>
 
-<div id="nav">
+<div id="nav" style={styles}>
   <ul class="left">
-    <NavListItem code={""} title={"CR"} />
+    <NavListItem anyHovered={false} code={""} title={"CR"} />
   </ul>
   <ul class="right">
     <NavListItem bind:anyHovered code={"experience"} title={"Work"} />

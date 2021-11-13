@@ -18,7 +18,7 @@ I'm happy to share a [new starter template](https://github.com/connorrothschild/
 
 ## Why Nuxt?
 
-I've went through my fair share of blogs. See [version 1](https://connorrothschild.github.io/v1/) and [version 2](https://connorrothschild.github.io/v2/). I moved to a site using Nuxt for three reasons:
+I’ve went through my fair share of blogs. See [version 1](https://connorrothschild.github.io/v1/) and [version 2](https://connorrothschild.github.io/v2/). I moved to a site using Nuxt for three reasons:
 
 #### 1. Speed and user experience
 
@@ -39,7 +39,7 @@ Too often, making 'fast' websites comes at the cost of flexibility and power. Fo
 
 I built this template because it is as performant as my V1 site (both receive over 95/100 on [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)), but with much more flexibility. In my experience, modifying the appearance of this site—whether thats through its constituent components in the `components/` folder, or globally in the `assets/scss/colors.scss` file—is seamless while also allowing greater power than modifying the defaults in other, simpler blog templates.
 
-Moreover, this kind of flexibility scales up with your knowledge of Vue and Nuxt. If you are already familiar with the technologies, this template should be ready for total transformation through whatever modifications you find necessary. Otherwise, all you need to do is follow the simple instructions in the template's [README](https://github.com/connorrothschild/nuxt-blog-starter). To test this, I've helped a non-technical friend build out his [own website](https://dyllonschmehl.netlify.app/) from this theme, and seen firsthand how intuitive getting started can really be.
+Moreover, this kind of flexibility scales up with your knowledge of Vue and Nuxt. If you are already familiar with the technologies, this template should be ready for total transformation through whatever modifications you find necessary. Otherwise, all you need to do is follow the simple instructions in the template's [README](https://github.com/connorrothschild/nuxt-blog-starter). To test this, I’ve helped a non-technical friend build out his [own website](https://dyllonschmehl.netlify.app/) from this theme, and seen firsthand how intuitive getting started can really be.
 
 #### 3. Learning new tech
 
@@ -51,7 +51,7 @@ A final reason to make this jump is to get familiar with [JavaScript](https://ww
 
 I didn't invent Nuxt, nor the portfolio site. There are a few other options for powerful, pretty starter templates using NuxtJS. In particular, I like [Marina Aisa's](https://github.com/marinaaisa/nuxt-markdown-blog-starter) and [Daniel Kelly's](https://templates.netlify.com/template/awake-blog-template-nuxt/).
 
-That being said, I think my site is pretty cool. In creating the template, I've aimed for a mix of **out-of-the-box features that "just work"**, with the **ability to customize as necessary.** I want to allow new users, who have little to no experience with web development, to create a blog, and allow advanced users, who probably know this stuff better than me, to get started with a powerful and customizable template.
+That being said, I think my site is pretty cool. In creating the template, I’ve aimed for a mix of **out-of-the-box features that "just work"**, with the **ability to customize as necessary.** I want to allow new users, who have little to no experience with web development, to create a blog, and allow advanced users, who probably know this stuff better than me, to get started with a powerful and customizable template.
 
 There are a few features I think make this starter template unique:
 
@@ -108,7 +108,7 @@ The site is set up so that your cards will appear this way automatically! All yo
 
 This site comes with all the same blog capabilities as a normal site, such as syntax highlighting, images, HTML support, and Vue components. Read [this post](https://nuxtjs.org/post/creating-blog-with-nuxt-content/) if you're curious about features.
 
-You can also include a few custom components I've made:
+You can also include a few custom components I’ve made:
 
 ### Info boxes
 

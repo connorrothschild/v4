@@ -17,7 +17,7 @@ https://angel.co/post/over-60-of-employees-are-happy-at-startups-far-outpacing-f
 https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html
 https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally
 
-I graduated college last week. I've been thinking about what it means for a new graduate to find a career that they find *fulfilling*. In my view of things, it seems as if new grads' plans fall into one of a few categories, which you can usually split up by degree focus.
+I graduated college last week. I’ve been thinking about what it means for a new graduate to find a career that they find *fulfilling*. In my view of things, it seems as if new grads' plans fall into one of a few categories, which you can usually split up by degree focus.
 
 **Non-technical graduates**:
 

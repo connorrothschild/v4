@@ -16,26 +16,33 @@
     description: description,
     image: image,
   };
+
+  import IntersectionObserver from "svelte-intersection-observer";
+  let element, intersecting;
 </script>
 
-<Transition />
+<Transition split={"words"} />
 <main>
-  <BackTo
-    href="/experience"
-    text="Experience"
-    classes="page-overline transition-subtitle"
-  />
+  <IntersectionObserver {element} bind:intersecting>
+    <div class="top-level" bind:this={element}>
+      <BackTo
+        href="/experience"
+        text="Experience"
+        classes="page-overline transition-subtitle"
+      />
 
-  <h1 class="page-title transition-title overflow-hidden">
-    {name}
-    <img
-      loading="lazy"
-      src={`/images/jobs/${imageUrl}.svg`}
-      alt="Logo for {name}"
-      class="logo"
-    />
-  </h1>
-  <div class="transition-content">
+      <h1 class="content-title uppercase transition-title overflow-hidden">
+        {name}
+        <img
+          loading="lazy"
+          src={`/images/jobs/${imageUrl}.svg`}
+          alt="Logo for {name}"
+          class="logo"
+        />
+      </h1>
+    </div>
+  </IntersectionObserver>
+  <div class="main-content transition-content">
     <div class="content">
       <slot />
       <BackTo href="/experience" text="Back to all jobs" classes="border-top" />
@@ -44,14 +51,6 @@
 </main>
 
 <style>
-  main {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 1em;
-    width: 90%;
-    margin-bottom: 4rem;
-  }
-
   .logo {
     height: 0.75em;
     transition: transform 500ms ease;

@@ -17,6 +17,8 @@
 <script>
   import Transition from "$lib/Transition.svelte";
   import JobSection from "$lib/Content/Job.svelte";
+  import BackTo from "$lib/BackTo.svelte";
+
   export let jobs;
 
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
@@ -34,10 +36,16 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline transition-subtitle">Experience</h1>
+  <!-- <h1 class="page-overline transition-subtitle">Places I’ve worked</h1> -->
+  <BackTo
+    href="/"
+    text="Home"
+    classes="page-overline transition-subtitle centered"
+  />
   <h1 class="page-title transition-title overflow-hidden">
-    Places I've
-    <span class="gradient-accented bolded ">worked</span>
+    Work
+    <!-- Places I’ve
+    <span class="gradient-accented bolded ">worked</span> -->
   </h1>
 
   <div class="transition-content">
@@ -54,11 +62,11 @@
 
 <style>
   main {
-    width: 90vw;
     max-width: 860px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 1rem;
     width: 90%;
+    margin-top: var(--nav-height);
     margin-bottom: 4rem;
   }
 </style>

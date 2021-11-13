@@ -16,11 +16,13 @@
 
   import { goto } from "$app/navigation";
 
+  let unclicked = true;
   const switchSub = () => {
     const nav = () => {
-      goto("#projects", { replaceState: true });
+      goto("#projects", { replaceState: false });
       // window.location.hash = "";
     };
+    unclicked = false;
     subtitleIndex == subtitleOptions.length - 1 ? nav() : subtitleIndex++;
   };
 
@@ -65,13 +67,13 @@
     gsap.fromTo(
       connorSplit.chars,
       // { y: "100%", scaleY: "100%", opacity: 0 },
-      { y: "-30%", opacity: 0 },
+      { y: "-50%", opacity: 0 },
       {
         x: 0,
         y: 0,
         // scaleY: "100%",
         opacity: 1,
-        duration: 0.85,
+        duration: 0.95,
         stagger: 0.12,
         ease: "ease",
       }
@@ -80,14 +82,14 @@
     gsap.fromTo(
       rothschildSplit.chars,
       // { y: "-100%", scaleY: "100%", opacity: 0 },
-      { y: "30%", opacity: 0 },
+      { y: "50%", opacity: 0 },
       {
         x: 0,
         y: 0,
         // scaleY: "100%",
         opacity: 1,
-        duration: 0.85,
-        stagger: 0.1,
+        duration: 0.95,
+        stagger: 0.08,
         ease: "ease",
       }
     );
@@ -95,7 +97,7 @@
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.25 }
+      { opacity: 1, x: 0, duration: 1, delay: 1.3 }
     );
 
     // gsap.fromTo(
@@ -154,8 +156,10 @@
       <h1 class="rothschild begin-invisible gradient-accented">Rothschild</h1>
     </div>
     <h2 class="subtitle begin-invisible">
-      And I tell visual stories <span class="switch" on:click={switchSub}
-        >{@html subtitleString}</span
+      And I tell visual stories <span
+        class="switch"
+        class:unclicked
+        on:click={switchSub}>{@html subtitleString}</span
       >
     </h2>
   </div>
@@ -295,6 +299,29 @@
     cursor: pointer;
     border-bottom: 1px solid rgba(var(--text-color-rgb), 0.2);
     transition: border-bottom-color 200ms ease;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+  }
+
+  .switch.unclicked {
+    animation: wiggle 3000ms infinite;
+  }
+  @keyframes wiggle {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(-2deg);
+    }
+    75% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 
   .switch:hover {

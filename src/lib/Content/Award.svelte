@@ -1,6 +1,6 @@
 <script>
   export let award;
-  // export let slug;
+  export let slug;
   export let anyHovered = false;
 
   let active = false;
@@ -12,9 +12,8 @@
     : active
     ? 'active'
     : ''}"
-  href={award.media_url}
-  target="_blank"
-  rel="noopener noreferrer"
+  sveltekit:prefetch
+  href={slug}
   on:mouseover={() => {
     active = true;
     anyHovered = true;
@@ -28,7 +27,7 @@
     anyHovered = false;
   }}
 >
-  <h3 class="title">{award.title}</h3>
+  <h2 class="title">{award.title}</h2>
   <p class="organization hidden-mobile">
     {award.organization}
   </p>
@@ -52,12 +51,29 @@
   .container {
     display: flex;
     padding: 1.25rem 0;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgba(var(--text-color-rgb), 0.2);
     filter: none;
     justify-content: space-between;
-    transition: border-bottom-color 500ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
+    position: relative;
+    border-bottom-color: rgba(var(--text-color-rgb), 0.05);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform-origin: bottom left;
+    transition: transform 500ms ease;
+  }
+
+  .container:hover::after {
+    transform: scaleX(1);
   }
 
   .container > * {
@@ -110,10 +126,6 @@
 
   .inactive {
     border-bottom-color: rgba(var(--text-color-rgb), 0.05);
-  }
-
-  .active {
-    border-bottom-color: var(--accent-color);
   }
 
   /* SMALL SCREENS */

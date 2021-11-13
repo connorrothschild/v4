@@ -1,4 +1,6 @@
 <script>
+  export let split = "chars";
+
   import { onMount } from "svelte";
   import { gsap } from "gsap";
   import { SplitText } from "gsap/dist/SplitText.js";
@@ -22,6 +24,7 @@
     if (prefersReducedMotion) return;
 
     gsap.set(".transition-title", { opacity: 1 });
+    gsap.set(".transition-subtitle", { opacity: 1 });
 
     let titleSplit = new SplitText(
       document.querySelector(".transition-title"),
@@ -29,7 +32,7 @@
         type: "words,chars",
       }
     );
-    let titleChars = titleSplit.chars;
+    let titleChars = titleSplit[split];
 
     let subtitleSplit = new SplitText(
       document.querySelector(".transition-subtitle"),

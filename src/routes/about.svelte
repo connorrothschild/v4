@@ -6,8 +6,7 @@
 
 <Transition />
 <main>
-  <h1 class="page-title transition-title overflow-hidden">About me</h1>
-
+  <h1 class="page-title transition-title overflow-hidden">About</h1>
   <p>
     Hi! I'm Connor. <span class="else" class:showMore
       >I'll spare you the personal details about my life, unless</span
@@ -127,6 +126,7 @@
     width: 95%;
     margin: 0 auto;
     margin-bottom: 4rem;
+    margin-top: var(--nav-height);
   }
 
   p {

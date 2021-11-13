@@ -9,10 +9,6 @@
 </div>
 
 <style>
-  div {
-    width: 100%;
-  }
-
   a {
     font-size: 1rem;
     text-transform: uppercase;

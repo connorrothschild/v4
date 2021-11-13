@@ -5,7 +5,7 @@ award: 2021 Malofiej Awards
 organization: Malofiej
 date: "2021-06-18"
 featured: false
-media_url: "https://www.malofiejgraphics.com/awards/students-have-won-awards-too-2/2021/06"
+media_url: "https://web.archive.org/web/20210618094613/https://www.malofiejgraphics.com/awards/students-have-won-awards-too-2/2021/06"
 project_url: "https://www.connorrothschild.com/project/bob-ross-art-gallery"
 ---
 

@@ -15,11 +15,12 @@
 </script>
 
 <script>
-  import { slide } from "svelte/transition";
-  import { linear } from "svelte/easing";
-
   import BlogSection from "$lib/Content/Blog.svelte";
   import Transition from "$lib/Transition.svelte";
+  import BackTo from "$lib/BackTo.svelte";
+
+  import { slide } from "svelte/transition";
+  import { linear } from "svelte/easing";
 
   export let posts;
 
@@ -53,10 +54,16 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline transition-subtitle">Blog</h1>
+  <!-- <h1 class="page-overline transition-subtitle">Posts I’ve written</h1> -->
+  <BackTo
+    href="/"
+    text="Home"
+    classes="page-overline transition-subtitle centered"
+  />
   <h1 class="page-title transition-title overflow-hidden">
-    Posts I've
-    <span class="gradient-accented bolded">written</span>​
+    Writing
+    <!-- Posts I’ve
+    <span class="gradient-accented bolded">written</span>​ -->
   </h1>
   <div class="transition-content posts-grid">
     {#each filteredPosts as post, index}
@@ -97,9 +104,10 @@
   main {
     max-width: 860px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 1rem;
     width: 90%;
     margin-bottom: 4rem;
+    margin-top: var(--nav-height);
   }
 
   .posts-grid {

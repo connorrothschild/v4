@@ -118,9 +118,6 @@ data <- data %>%
   ))
 ```
 
-What this means is that every time the post observes an event (a
-scroll), it will update according to the number in the `reveal` column.
-
 So, when my plot object has a line of code which says:
 
 ```r
@@ -169,7 +166,7 @@ things:
 
 First, we’re creating the plot object. Because we have the command `add <- input$scr` **inside** the function `renderPlotly`, our plot object will be dynamically updated along with `input$scr`.
 
-This makes more sense when you connect it to the ui. In our ui function,
+This makes more sense when you connect it to the UI. In our `ui` function,
 we include a `scrolly_container` from the scrollytell package. Within
 that, we make our `outputId` correspond to the name of our updating
 input (in this case, _scr_).
@@ -293,8 +290,7 @@ text2 <- HTML("<H2> High school diplomas </H2>
 # ...
 ```
 
-Then, we create a function `render_text` which beautifies that HTML with
-CSS:
+Then, we create a function `render_text` which simply parses that HTML, adds it into a div, and appends a class of 'text.'
 
 ```r
 text <- function(num){

@@ -17,9 +17,7 @@
 <script>
   import Transition from "$lib/Transition.svelte";
   import ProjectSection from "$lib/Content/Project.svelte";
-
-  import { linear } from "svelte/easing";
-  import { slide } from "svelte/transition";
+  import BackTo from "$lib/BackTo.svelte";
 
   export let projects;
 
@@ -55,10 +53,16 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline transition-subtitle">Projects</h1>
+  <!-- <h1 class="page-overline transition-subtitle">Projects I’ve built</h1> -->
+  <BackTo
+    href="/"
+    text="Home"
+    classes="page-overline transition-subtitle centered"
+  />
   <h1 class="page-title transition-title overflow-hidden">
-    Projects I've
-    <span class="gradient-accented bolded">built</span>
+    Projects
+    <!-- I’ve
+    <span class="gradient-accented bolded">built</span> -->
   </h1>
 
   <div class="projects-container transition-content">
@@ -69,36 +73,16 @@
       />
     {/each}
   </div>
-  <!-- {#if showAll}
-    <div
-      in:slide={{ duration: 300, easing: linear }}
-      class="projects-container"
-    >
-      {#each otherProjects as project}
-        <ProjectSection
-          project={project.metadata}
-          slug={project.path.replace(/\.[^/.]+$/, "")}
-        />
-      {/each}
-    </div>
-  {/if}
-  <button
-    class="button pulled-right block transition-content"
-    on:click={() => {
-      showAll = !showAll;
-    }}
-  >
-    {showAll ? "Hide others ↑" : "Show all ↓"}
-  </button> -->
 </main>
 
 <style>
   main {
     max-width: 860px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 1rem;
     width: 90%;
     margin-bottom: 4rem;
+    margin-top: var(--nav-height);
   }
 
   .projects-container {

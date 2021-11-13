@@ -209,6 +209,14 @@ button {
   font-family: inherit;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.centered {
+  text-align: center;
+}
+
 button:focus:not(:focus-visible) {
   outline: none;
 }
@@ -282,9 +290,22 @@ button:focus:not(:focus-visible) {
 }
 
 .page-title {
-  font-size: 5rem;
+  font-size: 8rem;
   font-weight: 200;
-  margin: 3rem 0 1rem;
+  margin: 2rem 0 3rem 0;;
+  padding-bottom: 1.5rem;
+  border-bottom: .5px solid var(--accent-color);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 200;
+  margin: 2rem 0 1rem;
   padding-bottom: 1.5rem;
   border-bottom: .5px solid var(--accent-color);
   pointer-events: none;
@@ -292,20 +313,13 @@ button:focus:not(:focus-visible) {
   overflow: hidden;
 }
 
-#home .page-overline {
+.page-overline {
   margin-top: 1.25rem;
-  margin-bottom: -2.5rem;
-}
-#home .page-title {
-  text-align: left;
-  margin-top: 2.5rem;
-  padding-bottom: .75rem;
-  /* width: fit-content;
-  border-bottom: none; */
+  margin-bottom: -1.5rem;
 }
 
 @media screen and (min-width: 1268px) {
-  #home .page-title {
+  .section-title {
     font-size: 5rem;
   }
 }
@@ -341,10 +355,9 @@ But for users who prefer reduced motion, we don't want to apply this
   .page-title {
     font-size: 3.5rem;
     padding-bottom: 1rem;
-    /* letter-spacing: 1px; */
   }
 
-  #home .page-title {
+  .section-title {
     font-size: 3rem;
   }
 
@@ -359,7 +372,7 @@ But for users who prefer reduced motion, we don't want to apply this
     font-size: 2.5rem;
   }
 
-  #home .page-title {
+  .section-title {
     font-size: 2.75rem;
   }
 }
@@ -368,7 +381,7 @@ But for users who prefer reduced motion, we don't want to apply this
   .page-title {
     font-size: 2.25rem;
   }
-  #home .page-title {
+  .section-title {
     font-size: 2rem;
   }
 }
@@ -492,4 +505,78 @@ blockquote p:last-of-type {
 .see-all-flex {
   display: flex;
   justify-content: space-between;
+}
+
+/* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
+.top-level {
+  max-width: 1068px;
+  margin: 10vh auto 5vh auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--accent-color);
+  width: 90%;
+}
+
+.content-title {
+  font-size: 6rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.content-description {
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.main-content {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 90%;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .content-title {
+    font-size: 4rem;
+  }
+  .content-description {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .top-level {
+    margin: 10vh auto 2.5vh auto;
+  }
+
+  .content-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-description {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .content-title {
+    font-size: 2rem;
+  }
+
+  .content-description {
+    font-size: 1rem;
+  }
 }

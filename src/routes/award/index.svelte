@@ -17,6 +17,7 @@
 <script>
   import AwardSection from "$lib/Content/Award.svelte";
   import Transition from "$lib/Transition.svelte";
+  import BackTo from "$lib/BackTo.svelte";
 
   export let awards;
 
@@ -43,10 +44,16 @@
 
 <Transition />
 <main>
-  <h1 class="page-overline transition-subtitle">Awards</h1>
+  <!-- <h1 class="page-overline transition-subtitle">Awards I’ve won</h1> -->
+  <BackTo
+    href="/"
+    text="Home"
+    classes="page-overline transition-subtitle centered"
+  />
   <h1 class="page-title transition-title overflow-hidden">
-    Awards I've
-    <span class="gradient-accented bolded ">won</span>
+    Awards
+    <!-- I’ve
+    <span class="gradient-accented bolded ">won</span> -->
   </h1>
 
   <div class="awards-grid transition-content">
@@ -62,11 +69,11 @@
 
 <style>
   main {
-    width: 90vw;
     max-width: 860px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 1rem;
     width: 90%;
     margin-bottom: 4rem;
+    margin-top: var(--nav-height);
   }
 </style>

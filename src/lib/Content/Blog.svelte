@@ -146,7 +146,7 @@
     />
     <div class="post-card">
       <div class="post-info">
-        <h3 class="post-date">{dateFormat(post.date)}</h3>
+        <h2 class="post-date">{dateFormat(post.date)}</h2>
         <h1 class="post-title">{post.title}</h1>
         <h2 class="post-description">{post.description}</h2>
       </div>

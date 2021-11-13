@@ -75,8 +75,8 @@
         </a>
       </div>
       <SectionTitle {intersecting} element="#projects-title">
-        <h1 id="projects-title" class="page-title overflow-hidden">
-          Projects I've
+        <h1 id="projects-title" class="section-title overflow-hidden">
+          Projects I’ve
           <span class="gradient-accented bolded">built</span>
         </h1>
       </SectionTitle>

@@ -23,7 +23,7 @@ We'll be creating this GIF:
 
 ## Environment setup
 
-These are the packages we'll need to get started. In my case, I use a [custom theme](https://github.com/connorrothschild/cr) I've developed for stylistic purposes. Feel free to instead run `theme_set(theme_minimal())` rather than use my theme!
+These are the packages we'll need to get started. In my case, I use a [custom theme](https://github.com/connorrothschild/cr) I’ve developed for stylistic purposes. Feel free to instead run `theme_set(theme_minimal())` rather than use my theme!
 
 ```r
 library(ggplot2)
@@ -37,7 +37,7 @@ theme_set(theme_minimal())
 
 ## Load and clean data
 
-I've already done a lot of the data cleaning for you. If you'd like to follow along, here's the process (or, skip ahead!).
+I’ve already done a lot of the data cleaning for you. If you'd like to follow along, here's the process (or, skip ahead!).
 
 Here, we'll do some minor cleaning and then reshape the three lifts into one column:
 
