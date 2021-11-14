@@ -29,24 +29,23 @@
 <main>
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>
-      <!-- <div class="see-all-flex"> -->
       <BackTo
         href="/post"
         text="Blog"
         classes="page-overline transition-subtitle"
       />
-      <!-- <h1 class="page-overline">{dateFormat(date)}</h1> -->
-      <!-- </div> -->
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
       </h1>
       <div class="content-flex">
         <h2
-          class="description content-description transition-title overflow-hidden"
+          class="description transition-content content-description overflow-hidden"
         >
           {description}
         </h2>
-        <div class="misc content-description transition-title overflow-hidden">
+        <div
+          class="misc transition-content content-description overflow-hidden"
+        >
           <h2 class="date">{dateFormat(date)}</h2>
           <div class="tags">
             {#each tags as tag}

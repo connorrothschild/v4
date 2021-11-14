@@ -15,114 +15,118 @@
     classes="page-overline transition-subtitle centered"
   />
   <h1 class="page-title transition-title overflow-hidden">About</h1>
-  <p>
-    Hi! I'm Connor. <span class="else" class:showMore
-      >I'll spare you the personal details about my life, unless</span
-    >
-    <span
-      class="interested"
-      on:click={() => {
-        showMore = !showMore;
-      }}
-      >{showMore ? "You're" : "you're"} really interested{showMore
-        ? "!"
-        : "."}</span
-    >
-  </p>
-
-  {#if showMore}
-    <div class="more" transition:slide>
-      <p>
-        I live in Houston, Texas and work at Moksha Data. There, I lead our data
-        visualization and storytelling team and make microsites, interactives,
-        and visualizations for clients working in the social impact space.
-      </p>
-      <p>
-        I'm originally from Springfield, Missouri. I moved to Houston to attend
-        Rice University, where I majored in the quantitative social sciences. I
-        taught myself the stuff on this site in my free time.
-      </p>
-      <p>
-        I'm passionate about accessibility and disability advocacy; my mother is
-        fully blind (<a
-          href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          and really cool</a
-        >).
-      </p>
-      <p>
-        I enjoy meeting new people, lifting weights, and visiting coffee shops
-        in Houston.
-      </p>
-    </div>
-  {/if}
-  <div class="else" class:showMore>
+  <div class="transition-content">
     <p>
-      <!-- I'll spare you the details of my current whereabouts, skills, etc. -->
-      Let me use your brief time on my website to say: I love learning from and teaching
-      passionate people, and hope that this site can be an outlet for that.
-    </p>
-
-    <p>
+      Hi! I'm Connor. <span class="else" class:showMore
+        >I'll spare you the personal details about my life, unless</span
+      >
       <span
-        class="abbr"
-        desc="I know everyone says “please reach out” on their website, but I actually want you to 🙂"
-        >Please reach out</span
-      > if you're interested in talking about design, business strategy, data visualization,
-      or anything else you think I would be interested in. Need a conversation starter?
-      👇
+        class="interested"
+        on:click={() => {
+          showMore = !showMore;
+        }}
+        >{showMore ? "You're" : "you're"} really interested{showMore
+          ? "!"
+          : "."}</span
+      >
     </p>
 
-    <div class="conversation-container">
-      <div class="topic">
-        <h1 class="topic-title">Things I'm good at</h1>
-        <ul>
-          <li>R</li>
-          <li>Vue</li>
-          <li>D3.js</li>
-          <li>Svelte</li>
-        </ul>
+    {#if showMore}
+      <div class="more" transition:slide>
+        <p>
+          I live in Houston, Texas and work at Moksha Data. There, I lead our
+          data visualization and storytelling team and make microsites,
+          interactives, and visualizations for clients working in the social
+          impact space.
+        </p>
+        <p>
+          I'm originally from Springfield, Missouri. I moved to Houston to
+          attend Rice University, where I majored in the quantitative social
+          sciences. I taught myself the stuff on this site in my free time.
+        </p>
+        <p>
+          I'm passionate about accessibility and disability advocacy; my mother
+          is fully blind (<a
+            href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            and really cool</a
+          >).
+        </p>
+        <p>
+          I enjoy meeting new people, lifting weights, and visiting coffee shops
+          in Houston.
+        </p>
       </div>
-      <div class="topic">
-        <h1 class="topic-title">Things I'm learning</h1>
-        <ul>
-          <li>Three.js</li>
-          <li>Canvas</li>
-          <li>Figma</li>
-          <li>Web3</li>
-        </ul>
-      </div>
-      <div class="topic">
-        <h1 class="topic-title">Ways I can help</h1>
-        <ul>
-          <li>Early career advice (journalism, government)</li>
-          <li>Starting your first personal website</li>
-          <li>Technical book recommendations</li>
-          <li>Feedback on dataviz</li>
-        </ul>
-      </div>
-      <div class="topic">
-        <h1 class="topic-title">Miscellaneous</h1>
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"
-              >Music</a
-            >
-          </li>
-          <li>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.are.na/connor-rothschild">Anything here</a
-            >
-          </li>
-          <li>Married at First Sight</li>
-        </ul>
+    {/if}
+    <div class="else" class:showMore>
+      <p>
+        <!-- I'll spare you the details of my current whereabouts, skills, etc. -->
+        Let me use your brief time on my website to say: I love learning from and
+        teaching passionate people, and hope that this site can be an outlet for
+        that.
+      </p>
+
+      <p>
+        <span
+          class="abbr"
+          desc="I know everyone says “please reach out” on their website, but I actually want you to 🙂"
+          >Please reach out</span
+        > if you're interested in talking about design, business strategy, data visualization,
+        or anything else you think I would be interested in. Need a conversation
+        starter? 👇
+      </p>
+
+      <div class="conversation-container">
+        <div class="topic">
+          <h1 class="topic-title">Things I'm good at</h1>
+          <ul>
+            <li>R</li>
+            <li>Vue</li>
+            <li>D3.js</li>
+            <li>Svelte</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Things I'm learning</h1>
+          <ul>
+            <li>Three.js</li>
+            <li>Canvas</li>
+            <li>Figma</li>
+            <li>Web3</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Ways I can help</h1>
+          <ul>
+            <li>Early career advice (journalism, government)</li>
+            <li>Starting your first personal website</li>
+            <li>Technical book recommendations</li>
+            <li>Feedback on dataviz</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Miscellaneous</h1>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"
+                >Music</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.are.na/connor-rothschild">Anything here</a
+              >
+            </li>
+            <li>Married at First Sight</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -109,4 +109,10 @@
       transform: rotate(360deg);
     }
   }
+
+  @media screen and (max-width: 560px) {
+    .circle {
+      display: none;
+    }
+  }
 </style>

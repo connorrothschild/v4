@@ -280,13 +280,13 @@ button:focus:not(:focus-visible) {
 }
 
 .page-overline {
-  margin-top: 2rem;
-  margin-bottom: -2.5rem;
   font-family: var(--font-sans);
   font-size: .88rem;
   text-transform: uppercase;
   letter-spacing: .64px;
   font-weight: 300;
+  margin-top: 1.25rem;
+  margin-bottom: -1.5rem;
 }
 
 .page-title {
@@ -313,11 +313,7 @@ button:focus:not(:focus-visible) {
   overflow: hidden;
 }
 
-.page-overline {
-  margin-top: 1.25rem;
-  margin-bottom: -1.5rem;
-}
-
+/* On large screens, larger */
 @media screen and (min-width: 1268px) {
   .section-title {
     font-size: 5rem;
@@ -337,53 +333,6 @@ But for users who prefer reduced motion, we don't want to apply this
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-/* ONLY DESKTOP */
-/* @media screen and (min-width: 1068px) {
-  .page-overline.see-all {
-    transform: translateY(8vw);
-    -webkit-transform: translateY(8vw);
-    -moz-transform: translateY(8vw);
-    -ms-transform: translateY(8vw);
-    -o-transform: translateY(8vw);
-  }
-} */
-
-/* TABLET BREAKPOINT */
-@media screen and (max-width: 660px) {
-  .page-title {
-    font-size: 3.5rem;
-    padding-bottom: 1rem;
-  }
-
-  .section-title {
-    font-size: 3rem;
-  }
-
-  .page-overline {
-    font-size: .75rem;
-  }
-}
-
-/* MOBILE BREAKPOINT */
-@media screen and (max-width: 460px) {
-  .page-title {
-    font-size: 2.5rem;
-  }
-
-  .section-title {
-    font-size: 2.75rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .page-title {
-    font-size: 2.25rem;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
 }
 
 /* FIXME: Leads to bug on safari */
@@ -546,10 +495,25 @@ blockquote p:last-of-type {
   margin-bottom: 4rem;
 }
 
+/* TABLET BREAKPOINT */
 @media screen and (max-width: 768px) {
+  .page-title {
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .page-overline {
+    font-size: .75rem;
+  }
+
   .content-title {
     font-size: 4rem;
   }
+
   .content-description {
     font-size: 1.5rem;
   }
@@ -571,12 +535,21 @@ blockquote p:last-of-type {
   }
 }
 
-@media screen and (max-width: 468px) {
+/* MOBILE BREAKPOINT */
+@media screen and (max-width: 460px) {
+  .page-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
   .content-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .content-description {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }

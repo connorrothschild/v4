@@ -22,12 +22,12 @@
   #nav {
     display: flex;
     place-items: center;
-    /* position: fixed; */
-    z-index: 99;
     background: var(--primary-color);
     margin: 0 auto;
     width: 100%;
     height: var(--nav-height);
+    z-index: 99;
+    /* position: fixed; */
   }
 
   ul {

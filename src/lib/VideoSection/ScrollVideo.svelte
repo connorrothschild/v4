@@ -45,7 +45,7 @@
         <div
           class="step"
           class:active={value === i}
-          style="height: {$windowHeight * 0.7}px;"
+          style="height: {$windowHeight * 0.85}px;"
         >
           <a
             class="step-content no-underline"
@@ -151,11 +151,11 @@
 
   video {
     width: 100%;
-    /* height: 80vh; */
     display: block;
     object-fit: cover;
     margin: auto;
     z-index: 5;
+    position: relative;
     opacity: 1;
     transition: opacity 200ms linear;
   }

@@ -6,15 +6,16 @@
   export let debounceDur = 300;
   const onResize = () => {
     $windowWidth = window.innerWidth;
-    // Only redefine window height if it is significantly changed ( > .10)
+    // Only redefine window height if it is significantly changed (> 20%)
     // This prevents jankiness on mobile with URL bar
-    if (Math.abs($windowHeight - window.innerHeight) > $windowHeight * 0.1) {
+    if (Math.abs($windowHeight - window.innerHeight) > $windowHeight * 0.2) {
       $windowHeight = window.innerHeight;
       console.log("height changed");
     }
   };
   onMount(() => {
     onResize();
+    $windowHeight = window.innerHeight;
   });
 </script>
 

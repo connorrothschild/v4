@@ -20,10 +20,4 @@
   /* a:hover {
     transform: translateX(-10px);
   } */
-
-  @media screen and (max-width: 660px) {
-    a {
-      font-size: 0.75rem;
-    }
-  }
 </style>

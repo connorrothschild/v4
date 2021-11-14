@@ -19,7 +19,6 @@
   const switchSub = () => {
     const nav = () => {
       goto("#projects", { replaceState: false });
-      // window.location.hash = "";
     };
     unclicked = false;
     subtitleIndex == subtitleOptions.length - 1 ? nav() : subtitleIndex++;
@@ -47,10 +46,10 @@
     gsap.set(overline, { perspective: 400, opacity: 0 });
     gsap.set(bigWords, { perspective: 400, opacity: 0 });
 
-    gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.5 });
-    gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.5 });
-    gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.5 });
-    gsap.fromTo(bigWords, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+    gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.25 });
+    gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.25 });
+    gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.25 });
+    gsap.fromTo(bigWords, { opacity: 0 }, { opacity: 1, duration: 1.25 });
 
     gsap.fromTo(
       overlineSplit.chars,
@@ -59,7 +58,7 @@
         x: 0,
         opacity: 1,
         stagger: 0.02,
-        duration: 0.5,
+        duration: 0.35,
         ease: "backwards",
       }
     );
@@ -73,7 +72,7 @@
         y: 0,
         // scaleY: "100%",
         opacity: 1,
-        duration: 0.95,
+        duration: 0.85,
         stagger: 0.12,
         ease: "ease",
       }
@@ -88,7 +87,7 @@
         y: 0,
         // scaleY: "100%",
         opacity: 1,
-        duration: 0.95,
+        duration: 0.85,
         stagger: 0.08,
         ease: "ease",
       }
@@ -97,35 +96,8 @@
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.3 }
+      { opacity: 1, x: 0, duration: 1, delay: 1.1 }
     );
-
-    // gsap.fromTo(
-    //   bigSplit.lines,
-    //   {
-    // y: -200,
-    //     // color: "rgba(0, 0, 0, .5)",
-    //     opacity: 1,
-    //   },
-    //   {
-    // y: 0,
-    //     // color: "rgba(var(--accent-color-rgb), .1)",
-    //     opacity: 1,
-    //     stagger: -0.5,
-    //     duration: 0.5,
-    //     ease: "ease",
-    //   }
-    // );
-
-    gsap.to(".big-words-container", {
-      scrollTrigger: {
-        trigger: "#projects",
-        end: 200,
-        scrub: true,
-        once: false,
-      },
-      opacity: 0,
-    });
 
     gsap.to(".year", {
       scrollTrigger: {
@@ -141,7 +113,9 @@
 
 <section
   id="hero"
-  style="min-height: calc({$windowHeight * 1.01}px - var(--nav-height));"
+  style="min-height: {$windowHeight
+    ? `calc(${$windowHeight * 1.01}px - var(--nav-height))`
+    : '101vh'};"
 >
   <a class="scroll-down no-underline" href="#projects">Projects &rarr;</a>
   <div class="hero-container">
@@ -171,47 +145,8 @@
     place-items: center; /* center */
     overflow: hidden;
     position: relative;
+    transition: height 100ms ease; /* Height is initially 101vh UNTIL windowHeight is set */
   }
-
-  /* .big-words-container {
-    position: absolute;
-    left: unset;
-    right: 0;
-    top: 2.5%;
-    height: 100%;
-    line-height: 0.8;
-    user-select: none;
-  }
-
-  .big-word {
-    text-align: right;
-    font-family: var(--font-sans);
-    color: rgba(var(--text-color-rgb), 0.075);
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: -0.1rem;
-    font-size: 3.5rem;
-  }
-
-  :global(.big-word div:hover) {
-    color: rgba(var(--accent-color-rgb), 0.5);
-  } */
-
-  /* :global(.big-word div:nth-of-type(1)) {
-    font-size: 3.9rem;
-  }
-
-  :global(.big-word div:nth-of-type(2)) {
-    font-size: 4.33rem;
-  }
-
-  :global(.big-word div:nth-of-type(3)) {
-    font-size: 5.025rem;
-  }
-
-  :global(.big-word div:nth-of-type(4)) {
-    font-size: 5.75rem;
-  } */
 
   .year {
     position: absolute;
