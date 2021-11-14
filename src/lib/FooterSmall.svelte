@@ -14,12 +14,6 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="mailto:connor@connorrothschild.com">Email</a
-        >
-        <a
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
           href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
         >
         <a
@@ -34,6 +28,12 @@
           rel="noopener noreferrer"
           href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
           >Twitter</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:connor@connorrothschild.com">Email</a
         >
       </div>
     </div>
@@ -85,7 +85,7 @@
     font-size: 4rem;
     font-weight: 100;
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .copyright {
@@ -109,7 +109,6 @@
     color: var(--pure-background-color);
     /* text-transform: uppercase; */
     font-size: 1.5rem;
-    width: min-content;
   }
 
   @media screen and (max-width: 800px) {

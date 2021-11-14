@@ -2,12 +2,16 @@
   import { fade } from "svelte/transition";
   let hovered = false;
   let imageIndex = 1;
+
+  $: text = hovered
+    ? "👆 Scroll to top 👆 Scroll to top 👆 Scroll to top"
+    : "👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild";
 </script>
 
 <a
   class="circle no-underline"
   sveltekit:prefetch
-  href="/about"
+  href="#home"
   on:mouseover={() => {
     hovered = true;
   }}
@@ -34,7 +38,7 @@
 
     <text dy="-25">
       <textPath xlink:href="#circle">
-        👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild
+        {text}
       </textPath>
     </text>
   </svg>
@@ -73,10 +77,14 @@
     fill: var(--text-color);
     font-family: var(--font-serif);
     font-weight: 200;
-    font-size: 63px;
+    font-size: 65px;
     letter-spacing: -1px;
     text-shadow: 1px 0px 0px var(--pure-background-color);
     user-select: none;
+  }
+
+  .circle:hover text {
+    font-size: 72px;
   }
 
   path {
