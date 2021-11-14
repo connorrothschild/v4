@@ -1,8 +1,8 @@
 <script>
   import { slide } from "svelte/transition";
 
-  import Transition from "../lib/Transition.svelte";
-  import BackTo from "../lib/BackTo.svelte";
+  import Transition from "$lib/Transition.svelte";
+  import BackTo from "$lib/BackTo.svelte";
 
   let showMore = false;
 </script>

@@ -1,5 +1,4 @@
 <script>
-  // GSAP
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
   import { SplitText } from "gsap/dist/SplitText.js";
@@ -27,6 +26,7 @@
   };
 
   import { onMount } from "svelte";
+  import { windowHeight } from "../../stores/global.js";
 
   let connor, rothschild, subtitle, overline, bigWords;
 
@@ -139,15 +139,10 @@
   });
 </script>
 
-<section id="hero">
-  <!-- <div class="background">
-    <h1 class="fonts-homeTitle" style="opacity: 1;">ty for visiting</h1>
-  </div> -->
-  <!-- <div class="big-words-container">
-    <h1 class="big-word begin-invisible">
-      01. Projects<br />02. Awards<br />03. About<br />04. Blog
-    </h1>
-  </div> -->
+<section
+  id="hero"
+  style="min-height: calc({$windowHeight * 1.01}px - var(--nav-height));"
+>
   <a class="scroll-down no-underline" href="#projects">Projects &rarr;</a>
   <div class="hero-container">
     <h1 class="overline begin-invisible">Hi, I'm</h1>
@@ -170,8 +165,6 @@
   section {
     width: 95%;
     margin: auto;
-    /* Weird but we _need_ the hero to take up full height, otherwise project section will be interpreted as intersecting and run transitions, load videos, etc. */
-    min-height: calc(101vh - var(--nav-height));
     display: flex;
     flex-direction: column;
     justify-content: center; /* center */
@@ -327,12 +320,6 @@
   .switch:hover {
     border-bottom-color: rgba(var(--accent-color-rgb), 0.6);
   }
-
-  /* @media screen and (max-width: 1068px) {
-    section {
-      min-height: 70vh;
-    }
-  } */
 
   @media screen and (max-width: 768px) {
     .subtitle {

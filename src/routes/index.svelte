@@ -52,7 +52,6 @@
   <Blog {posts} {isMobile} />
   <Circle />
 </main>
-<Footer />
 
 <style>
   main {

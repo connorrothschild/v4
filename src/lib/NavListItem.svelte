@@ -11,6 +11,7 @@
 <li>
   <a
     on:mouseover={() => {
+      hovered = true;
       anyHovered = true;
     }}
     on:focus={() => {
@@ -21,8 +22,8 @@
       hovered = true;
     }}
     on:mouseleave={() => {
-      anyHovered = false;
       hovered = false;
+      anyHovered = false;
     }}
     sveltekit:prefetch
     href="/{code}"

@@ -15,14 +15,11 @@
   let isTouchscreen = false,
     isHEVC = false;
 
-  import Bowser from "bowser";
-
   import { detectTouchscreen, supportsHEVCAlpha } from "../../scripts/utils.js";
 
   onMount(() => {
     isTouchscreen = detectTouchscreen();
     isHEVC = supportsHEVCAlpha();
-    console.log(isHEVC);
   });
 
   let videos = [];
@@ -32,13 +29,15 @@
     let req = fetch(videoUrl).then((response) => response.blob());
 
     req.then((blob) => {
-      videos.push(blob);
+      videos[i] = blob;
     });
   }
 
+  let videosLoaded = false;
   $: if (intersecting) {
     for (let i = 0; i < filteredProjects.length; i++) {
       preload(i);
+      if (i == filteredProjects.length - 1) videosLoaded = true;
     }
   }
 </script>
@@ -67,9 +66,9 @@
       </SectionTitle>
     </div>
     {#if isTouchscreen}
-      <ScrollVideo projects={filteredProjects} {videos} />
+      <ScrollVideo projects={filteredProjects} {videos} {videosLoaded} />
     {:else}
-      <HoverVideo projects={filteredProjects} {videos} />
+      <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
     {/if}
   </section>
 </IntersectionObserver>

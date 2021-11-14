@@ -2,9 +2,12 @@
   import { onMount } from "svelte";
   import { currentColorMode, navigationState } from "../stores/global.js";
 
+  import Window from "$lib/Window.svelte";
   import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav.svelte";
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
+  import Footer from "$lib/Footer.svelte";
+  import SmallFooter from "$lib/FooterSmall.svelte";
 
   import "../styles/fonts.css";
   import "../styles/immutable.css";
@@ -35,11 +38,18 @@
     navigationState.set("loaded");
   }}
 />
+
+<Window />
 <Seo />
 <Nav styles={path !== "/" ? "position: fixed;" : ""} />
 <slot />
 <Loading />
 <ColorSwitcher />
+{#if path === "/"}
+  <Footer />
+{:else}
+  <SmallFooter />
+{/if}
 
 <style>
 </style>

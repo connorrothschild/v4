@@ -10,7 +10,7 @@
     <NavListItem anyHovered={false} code={""} title={"CR"} />
   </ul>
   <ul class="right">
-    <NavListItem bind:anyHovered code={"experience"} title={"Work"} />
+    <NavListItem bind:anyHovered code={"about"} title={"About"} />
     <NavListItem bind:anyHovered code={"post"} title={"Blog"} />
     <NavListItem bind:anyHovered code={"project"} title={"Projects"} />
     <NavListItem bind:anyHovered code={"award"} title={"Awards"} />
@@ -25,9 +25,9 @@
     /* position: fixed; */
     z-index: 99;
     background: var(--primary-color);
-    height: var(--nav-height);
     margin: 0 auto;
     width: 100%;
+    height: var(--nav-height);
   }
 
   ul {

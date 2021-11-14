@@ -6,6 +6,7 @@
 
 <a
   class="circle no-underline"
+  sveltekit:prefetch
   href="/about"
   on:mouseover={() => {
     hovered = true;
@@ -55,7 +56,7 @@
   }
 
   .circle:hover {
-    transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.05, 1.05, 1.05);
   }
 
   img {

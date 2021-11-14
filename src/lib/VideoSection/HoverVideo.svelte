@@ -1,15 +1,14 @@
 <script>
   export let projects;
   export let videos;
-
-  import { onMount } from "svelte";
+  export let videosLoaded;
 
   let video,
     videoTransitioning = false,
     value = 0;
 
   const updateVideo = function (index) {
-    if (video) {
+    if (video && videos) {
       videoTransitioning = true;
 
       setTimeout(() => {
@@ -21,14 +20,16 @@
     }
   };
 
-  onMount(() => {
-    updateVideo(0);
-  });
-
+  $: videosLoaded, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
+
+  import { windowHeight } from "../../stores/global.js";
 </script>
 
-<div class="section-container">
+<div
+  class="section-container"
+  style="height: {Math.max($windowHeight * 0.6, 400)}px"
+>
   <div class="projects">
     {#each projects as project, i}
       <a
@@ -100,7 +101,7 @@
   .section-container {
     position: relative;
     /* min-height: 45vh; */
-    height: 65vh;
+    /* height: 65vh; */
     overflow: hidden;
     /* min-height: 400px; */
   }
@@ -173,7 +174,7 @@
   }
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(53.5%);
+      transform: translateX(55%);
       position: absolute;
       right: 0;
       left: unset;

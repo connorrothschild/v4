@@ -1,20 +1,15 @@
 <script>
   export let projects;
   export let videos;
+  export let videosLoaded;
 
   import Scroll from "$lib/Scroll.svelte";
-
-  import { onMount } from "svelte";
 
   let playedOnce = false,
     video,
     currentIndex = 0,
     videoTransitioning = false,
     value = 0;
-
-  onMount(() => {
-    updateVideo(0);
-  });
 
   const updateVideo = function (index) {
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
@@ -35,14 +30,14 @@
     }
   };
 
+  $: videosLoaded, updateVideo(0);
+
   $: currentProject = value ? projects[value] : projects[0];
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
-  // vh calculations
-  let windowHeight;
+  import { windowHeight } from "../../stores/global.js";
 </script>
 
-<svelte:window bind:outerHeight={windowHeight} />
 <div class="section-container">
   <div class="steps-container">
     <Scroll bind:value>
@@ -50,7 +45,7 @@
         <div
           class="step"
           class:active={value === i}
-          style="height: {windowHeight * 0.7}px;"
+          style="height: {$windowHeight * 0.7}px;"
         >
           <a
             class="step-content no-underline"
@@ -73,7 +68,7 @@
       id="video"
       bind:this={video}
       class:videoTransitioning
-      style="height: {0.7 * windowHeight}px;"
+      style="height: {$windowHeight * 0.7}px;"
     />
   </div>
 </div>

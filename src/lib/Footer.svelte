@@ -133,8 +133,13 @@
     place-items: center;
     padding: 0;
     width: 100%;
-    background: var(--text-color);
     color: var(--pure-background-color);
+    background: var(--text-color);
+    background: linear-gradient(
+      to bottom right,
+      var(--text-color) 0%,
+      var(--accent-color) 150%
+    );
     z-index: 99;
   }
 
@@ -178,7 +183,8 @@
 
   footer h1::selection,
   footer h2::selection,
-  footer a::selection {
+  footer a::selection,
+  footer *::selection {
     background: var(--pure-background-color);
     color: var(--pure-text-color);
   }
@@ -224,6 +230,7 @@
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
     font-weight: 300;
+    color: var(--pure-background-color);
     /* text-transform: uppercase; */
   }
 

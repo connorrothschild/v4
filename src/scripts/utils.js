@@ -46,7 +46,6 @@ import Bowser from "bowser"; // TypeScript
 export function supportsHEVCAlpha() {
   const navigator = window.navigator;
 
-  console.log(Bowser.getParser(window.navigator.userAgent))
   const browser = Bowser.getParser(window.navigator.userAgent).getBrowser();
   const os = Bowser.getParser(window.navigator.userAgent).getOS();
 

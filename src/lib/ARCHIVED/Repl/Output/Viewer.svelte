@@ -163,6 +163,32 @@
   }
 </script>
 
+<div class="iframe-container">
+  <div style="height: 100%">
+    <iframe
+      title="Result"
+      class:inited
+      bind:this={iframe}
+      sandbox="allow-popups-to-escape-sandbox allow-scripts allow-popups
+      allow-forms allow-pointer-lock allow-top-navigation allow-modals {relaxed
+        ? 'allow-same-origin'
+        : ''}"
+      class={error || pending || pending_imports ? "greyed-out" : ""}
+      {srcdoc}
+    />
+  </div>
+
+  <div class="overlay">
+    {#if error}
+      <Message kind="error" details={error} />
+    {:else if status || !$bundle}
+      <Message kind="info" truncate>
+        {status || "loading Svelte compiler..."}
+      </Message>
+    {/if}
+  </div>
+</div>
+
 <style>
   .iframe-container {
     position: absolute;
@@ -197,26 +223,3 @@
     width: 100%;
   }
 </style>
-
-<div class="iframe-container">
-  <div style="height: 100%">
-    <iframe
-      title="Result"
-      class:inited
-      bind:this={iframe}
-      sandbox="allow-popups-to-escape-sandbox allow-scripts allow-popups
-      allow-forms allow-pointer-lock allow-top-navigation allow-modals {relaxed ? 'allow-same-origin' : ''}"
-      class={error || pending || pending_imports ? 'greyed-out' : ''}
-      {srcdoc} />
-  </div>
-
-  <div class="overlay">
-    {#if error}
-      <Message kind="error" details={error} />
-    {:else if status || !$bundle}
-      <Message kind="info" truncate>
-        {status || 'loading Svelte compiler...'}
-      </Message>
-    {/if}
-  </div>
-</div>

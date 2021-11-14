@@ -10,6 +10,8 @@
   import { dateFormat } from "../../scripts/utils.js";
   import Star from "$lib/icons/Star.svelte";
 
+  import { windowWidth } from "../../stores/global.js";
+
   /* Initialize variables which will bind to our DOM elements */
   let card,
     cardWidth,
@@ -20,7 +22,6 @@
     yPos,
     scrollXPosition = 0,
     scrollYPosition = 0,
-    pageWidth,
     readyToHover = false;
 
   /* Once we have our `card` element, get the leftmost position and top position
@@ -31,7 +32,7 @@
   };
 
   // On page resize, rerun get card dimensions
-  $: pageWidth, getCardDimensions(card);
+  $: $windowWidth, getCardDimensions(card);
   $: scrollYPosition, getCardDimensions(card);
 
   /* ! IMPORTANT !
@@ -97,11 +98,7 @@
   // });
 </script>
 
-<svelte:window
-  bind:scrollX={scrollXPosition}
-  bind:scrollY={scrollYPosition}
-  bind:innerWidth={pageWidth}
-/>
+<svelte:window bind:scrollX={scrollXPosition} bind:scrollY={scrollYPosition} />
 <a
   class="perspective-container no-underline"
   style="perspective: {cardWidth}px"
