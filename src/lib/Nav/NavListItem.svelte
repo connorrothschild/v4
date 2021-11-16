@@ -4,6 +4,7 @@
   export let anyHovered = false;
   export let expanded = true;
   export let hovered = null;
+  export let closedViaX = false;
 
   import { page } from "$app/stores";
   import { fade } from "svelte/transition";
@@ -23,6 +24,7 @@
       hovered = title;
       anyHovered = false;
       expanded = false;
+      closedViaX = false;
     }}
     on:mouseleave={() => {
       hovered = null;

@@ -7,6 +7,8 @@
     hovered = null;
 
   let expanded = false;
+  let closedViaX = false;
+
   const toggle = function () {
     expanded = !expanded;
   };
@@ -22,7 +24,13 @@
       expanded = false;
     }}>CR</a
   >
-  <h2 class="toggle-button" on:click={toggle}>
+  <h2
+    class="toggle-button"
+    on:click={() => {
+      toggle();
+      closedViaX = true;
+    }}
+  >
     <OpenToClose {expanded} />
   </h2>
 </div>
@@ -30,7 +38,7 @@
   <div
     class="fullpage-nav"
     in:slide={{ duration: 1000 }}
-    out:fade={{ duration: 400 }}
+    out:slide={{ duration: closedViaX ? 1000 : 0 }}
     style={styles}
   >
     {#key hovered}
@@ -49,6 +57,7 @@
         bind:expanded
         bind:anyHovered
         bind:hovered
+        bind:closedViaX
         code={"about"}
         title={"About"}
       />
@@ -56,6 +65,7 @@
         bind:expanded
         bind:anyHovered
         bind:hovered
+        bind:closedViaX
         code={"post"}
         title={"Blog"}
       />
@@ -63,6 +73,7 @@
         bind:expanded
         bind:anyHovered
         bind:hovered
+        bind:closedViaX
         code={"project"}
         title={"Projects"}
       />
@@ -70,6 +81,7 @@
         bind:expanded
         bind:anyHovered
         bind:hovered
+        bind:closedViaX
         code={"award"}
         title={"Awards"}
       />
