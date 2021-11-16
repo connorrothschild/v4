@@ -4,7 +4,7 @@
 
   import Window from "$lib/Window.svelte";
   import Seo from "$lib/Seo.svelte";
-  import Nav from "$lib/Nav.svelte";
+  import Nav from "$lib/Nav/Nav.svelte";
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
   import SmallFooter from "$lib/FooterSmall.svelte";
@@ -41,7 +41,7 @@
 
 <Window />
 <Seo />
-<Nav styles={path !== "/" ? "position: fixed;" : ""} />
+<Nav />
 <slot />
 <Loading />
 <ColorSwitcher />
