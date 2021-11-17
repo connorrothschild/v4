@@ -96,69 +96,76 @@
   //     }, 150)
   //   );
   // });
+
+  import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
 <svelte:window bind:scrollX={scrollXPosition} bind:scrollY={scrollYPosition} />
-<a
-  class="perspective-container no-underline"
-  style="perspective: {cardWidth}px"
-  on:mouseover={() => {
-    anyHovered = true;
-    hovered = true;
-  }}
-  on:focus={() => {
-    anyHovered = true;
-    hovered = true;
-  }}
-  on:mousemove={readyToHover ? setCoords : null}
-  on:mouseleave={resetCoords}
-  bind:this={card}
-  bind:offsetWidth={cardWidth}
-  bind:offsetHeight={cardHeight}
-  href={slug}
-  sveltekit:prefetch
->
-  <div
-    style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
+
+<TransitionInView>
+  <a
+    class="perspective-container no-underline"
+    style="perspective: {cardWidth}px"
+    on:mouseover={() => {
+      anyHovered = true;
+      hovered = true;
+    }}
+    on:focus={() => {
+      anyHovered = true;
+      hovered = true;
+    }}
+    on:mousemove={readyToHover ? setCoords : null}
+    on:mouseleave={resetCoords}
+    bind:this={card}
+    bind:offsetWidth={cardWidth}
+    bind:offsetHeight={cardHeight}
+    href={slug}
+    sveltekit:prefetch
+  >
+    <div
+      style="transform: rotateY({rotationX}deg) rotateX({rotationY}deg) 
 					 scale3d({scale3dVal}, {scale3dVal}, {scale3dVal});
 					 box-shadow: {shadowX}px {shadowY}px 15px rgba(0, 0, 0, 0.1);"
-    class="post-container no-underline {post.featured ? 'featured' : ''} 
+      class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-  >
-    {#if post.featured}
-      <div class="featured-star">
-        <Star
-          width="20"
-          height="20"
-          fill="var(--accent-color)"
-          stroke="none"
-          {hovered}
-          {index}
-        />
-      </div>
-    {/if}
-    <div
-      class="card-highlight"
-      style="left: {circleXPosition}%; top: {circleYPosition}%"
-    />
-    <div class="post-card">
-      <div class="post-info">
-        <h2 class="post-date">{dateFormat(post.date)}</h2>
-        <h1 class="post-title">{post.title}</h1>
-        <h2 class="post-description">{post.description}</h2>
-      </div>
-      <div class="post-tags">
-        {#each post.tags as tag}
-          <span class="post-tag">{tag}</span>
-        {/each}
+    >
+      {#if post.featured}
+        <div class="featured-star">
+          <Star
+            width="20"
+            height="20"
+            fill="var(--accent-color)"
+            stroke="none"
+            {hovered}
+            {index}
+          />
+        </div>
+      {/if}
+      <div
+        class="card-highlight"
+        style="left: {circleXPosition}%; top: {circleYPosition}%"
+      />
+      <div class="post-card">
+        <div class="post-info">
+          <h2 class="post-date">{dateFormat(post.date)}</h2>
+          <h1 class="post-title">{post.title}</h1>
+          <h2 class="post-description">{post.description}</h2>
+        </div>
+        <div class="post-tags">
+          {#each post.tags as tag}
+            <span class="post-tag">{tag}</span>
+          {/each}
+        </div>
       </div>
     </div>
-  </div>
-</a>
+  </a>
+</TransitionInView>
 
 <style>
   .post-container {
+    display: block;
     width: 100%;
+    height: 100%;
     border-radius: 10px;
     background: var(--semitransparent-bg);
     padding: 20px;
@@ -170,6 +177,8 @@
   }
 
   .perspective-container {
+    display: block;
+    height: 100%;
     display: flex;
     position: relative;
     margin: -4px; /* Undoes some of the margin above while still allowing for hover events */

@@ -10,63 +10,69 @@
   import Star from "$lib/icons/Star.svelte";
 
   let hovered = false;
+
+  import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
-<a
-  class="post-container no-underline {post.featured ? 'featured' : ''} 
+<TransitionInView>
+  <a
+    class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
-  sveltekit:prefetch
-  href={slug}
-  on:mouseover={() => {
-    anyHovered = true;
-    hovered = true;
-  }}
-  on:focus={() => {
-    null;
-  }}
-  on:mouseleave={() => {
-    anyHovered = false;
-    hovered = false;
-  }}
->
-  {#if post.featured}
-    <div class="featured-star">
-      <Star
-        width="20"
-        height="20"
-        fill="var(--accent-color)"
-        stroke="none"
-        {hovered}
-        {index}
-      />
-    </div>
-  {/if}
-  <div class="post-card">
-    <div class="post-info">
-      <h2 class="post-date">{dateFormat(post.date)}</h2>
-      <h1 class="post-title">{post.title}</h1>
-      <h2 class="post-description">{post.description}</h2>
-    </div>
-    <div class="post-misc">
-      {#if hovered && !post.featured}
-        <p in:fly={{ x: -50, duration: 500 }} class="read-more">
-          Read more &#8594;
-        </p>
-      {:else}
-        <p class="placeholder">​​</p>
-      {/if}
-      <div class="post-tags">
-        {#each post.tags as tag}
-          <span class="post-tag">{tag}</span>
-        {/each}
+    sveltekit:prefetch
+    href={slug}
+    on:mouseover={() => {
+      anyHovered = true;
+      hovered = true;
+    }}
+    on:focus={() => {
+      null;
+    }}
+    on:mouseleave={() => {
+      anyHovered = false;
+      hovered = false;
+    }}
+  >
+    {#if post.featured}
+      <div class="featured-star">
+        <Star
+          width="20"
+          height="20"
+          fill="var(--accent-color)"
+          stroke="none"
+          {hovered}
+          {index}
+        />
+      </div>
+    {/if}
+    <div class="post-card">
+      <div class="post-info">
+        <h2 class="post-date">{dateFormat(post.date)}</h2>
+        <h1 class="post-title">{post.title}</h1>
+        <h2 class="post-description">{post.description}</h2>
+      </div>
+      <div class="post-misc">
+        {#if hovered && !post.featured}
+          <p in:fly={{ x: -50, duration: 500 }} class="read-more">
+            Read more &#8594;
+          </p>
+        {:else}
+          <p class="placeholder">​​</p>
+        {/if}
+        <div class="post-tags">
+          {#each post.tags as tag}
+            <span class="post-tag">{tag}</span>
+          {/each}
+        </div>
       </div>
     </div>
-  </div>
-</a>
+  </a>
+</TransitionInView>
 
 <style>
   .post-container {
+    display: block;
     width: 100%;
+    height: 100%;
     padding: 1rem 1rem 2rem 1rem;
     overflow: hidden;
     transition: all 100ms linear, border 300ms ease;

@@ -49,7 +49,7 @@
     </div>
 
     <div class="awards-grid">
-      {#each filteredAwards as award}
+      {#each filteredAwards as award, index}
         <AwardSection
           award={award.metadata}
           slug={award.path.replace(/\.[^/.]+$/, "")}

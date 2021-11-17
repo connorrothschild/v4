@@ -41,7 +41,7 @@
 
 <Window />
 <Seo />
-<Nav />
+<Nav styles={path === "/" ? "" : "position: fixed;"} />
 <slot />
 <Loading />
 <ColorSwitcher />

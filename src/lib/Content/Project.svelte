@@ -14,39 +14,43 @@
   onMount(() => {
     isTouchscreen = detectTouchscreen();
   });
+
+  import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
-<a
-  class="project-card no-underline"
-  href={slug}
-  sveltekit:prefetch
-  on:mouseover={() => {
-    hovered = true;
-  }}
-  on:focus={() => {
-    hovered = true;
-  }}
-  on:mouseleave={() => {
-    hovered = false;
-  }}
->
-  {#if hovered || isTouchscreen}
-    <div in:fade={{ duration: 200 }} class="hovered-gradient" />
-  {/if}
-  <img
-    loading="lazy"
-    src="/images/project/{project.image}"
-    alt="Project image for {project.title}"
-    class="project-image"
-    class:hovered
-  />
-  {#if hovered || isTouchscreen}
-    <div in:fly={{ y: 50, duration: 200 }} class="project-text">
-      <h1 class="title">{project.title}</h1>
-      <h2 class="description">{project.description}</h2>
-    </div>
-  {/if}
-</a>
+<TransitionInView>
+  <a
+    class="project-card no-underline"
+    href={slug}
+    sveltekit:prefetch
+    on:mouseover={() => {
+      hovered = true;
+    }}
+    on:focus={() => {
+      hovered = true;
+    }}
+    on:mouseleave={() => {
+      hovered = false;
+    }}
+  >
+    {#if hovered || isTouchscreen}
+      <div in:fade={{ duration: 200 }} class="hovered-gradient" />
+    {/if}
+    <img
+      loading="lazy"
+      src="/images/project/{project.image}"
+      alt="Project image for {project.title}"
+      class="project-image"
+      class:hovered
+    />
+    {#if hovered || isTouchscreen}
+      <div in:fly={{ y: 50, duration: 200 }} class="project-text">
+        <h1 class="title">{project.title}</h1>
+        <h2 class="description">{project.description}</h2>
+      </div>
+    {/if}
+  </a>
+</TransitionInView>
 
 <style>
   .project-card {
@@ -54,7 +58,9 @@
     border-radius: 5px;
     box-shadow: 1px 1px 4px var(--box-shadow-color);
     height: 100%;
+    height: 100%;
     cursor: pointer;
+    display: block;
   }
 
   .project-image {

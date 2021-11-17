@@ -52,7 +52,7 @@
     display: inline-block;
     padding: 0;
     margin: 0;
-    font-size: 9rem;
+    font-size: 9vw;
     font-family: var(--font-serif);
     line-height: 1;
     width: 100%;

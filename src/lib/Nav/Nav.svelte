@@ -4,24 +4,36 @@
   import OpenToClose from "./OpenToClose.svelte";
 
   let anyHovered,
-    hovered = null;
-
-  let expanded = false;
-  let closedViaX = false;
+    hovered = null,
+    expanded = false,
+    closedViaX = false,
+    mounted = false;
 
   const toggle = function () {
     expanded = !expanded;
   };
 
   import { slide, fade } from "svelte/transition";
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    mounted = true;
+  });
+
+  $: if (mounted) {
+    expanded
+      ? document.documentElement.classList.add("disable-scroll")
+      : document.documentElement.classList.remove("disable-scroll");
+  }
 </script>
 
-<div id="nav">
+<div id="nav" style={styles}>
   <a
     class="home-button no-underline"
     href="/"
     on:click={() => {
       expanded = false;
+      // closedViaX = false;
     }}>CR</a
   >
   <h2
@@ -37,38 +49,20 @@
 {#if expanded}
   <div
     class="fullpage-nav"
-    in:slide={{ duration: 1000 }}
-    out:slide={{ duration: closedViaX ? 1000 : 0 }}
+    in:slide={{ duration: 800 }}
+    out:slide={{ duration: closedViaX ? 800 : 0 }}
     style={styles}
   >
     {#key hovered}
-      {#if hovered != null}
-        <h1
-          in:fade={{ delay: 300, duration: 300 }}
-          out:fade={{ duration: 300 }}
-          class="massive-word"
-        >
-          {hovered}
-        </h1>
-      {/if}
+      <h1
+        in:fade={{ delay: 100, duration: 300 }}
+        out:fade={{ duration: 300 }}
+        class="massive-word"
+      >
+        {hovered != null ? hovered : ""}
+      </h1>
     {/key}
     <ul class="nav-items">
-      <NavListItem
-        bind:expanded
-        bind:anyHovered
-        bind:hovered
-        bind:closedViaX
-        code={"about"}
-        title={"About"}
-      />
-      <NavListItem
-        bind:expanded
-        bind:anyHovered
-        bind:hovered
-        bind:closedViaX
-        code={"post"}
-        title={"Blog"}
-      />
       <NavListItem
         bind:expanded
         bind:anyHovered
@@ -77,6 +71,7 @@
         code={"project"}
         title={"Projects"}
       />
+
       <NavListItem
         bind:expanded
         bind:anyHovered
@@ -84,6 +79,21 @@
         bind:closedViaX
         code={"award"}
         title={"Awards"}
+      />
+      <NavListItem
+        bind:expanded
+        bind:anyHovered
+        bind:hovered
+        bind:closedViaX
+        code={"about"}
+        title={"About"}
+      /><NavListItem
+        bind:expanded
+        bind:anyHovered
+        bind:hovered
+        bind:closedViaX
+        code={"post"}
+        title={"Blog"}
       />
     </ul>
   </div>
@@ -111,8 +121,8 @@
 
   .massive-word {
     position: absolute;
-    font-size: 30vw;
-    right: 5vw;
+    font-size: 20vw;
+    right: 2.5vw;
     bottom: 0;
     opacity: 0.15;
     user-select: none;
@@ -154,8 +164,7 @@
     background: var(--primary-color);
     margin: 0 auto;
     width: 100vw;
-    padding-bottom: 10vh;
-    height: 90vh;
+    height: 100vh;
     z-index: 101;
     position: fixed;
   }
@@ -164,5 +173,24 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  /* FIXME: Disable scroll when nav is open */
+  :global(html.disable-scroll) {
+    overflow-y: hidden;
+    /* position: absolute; */
+  }
+
+  @media screen and (max-width: 868px) {
+    .fullpage-nav {
+      padding-left: 0;
+    }
+    ul {
+      text-align: center;
+    }
+    .massive-word {
+      font-size: 30vw;
+      right: 4vw;
+    }
   }
 </style>

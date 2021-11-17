@@ -3,44 +3,48 @@
   export let slug;
   export let anyHovered = false;
 
+  import TransitionInView from "$lib/TransitionInView.svelte";
+
   let active = false;
 </script>
 
-<a
-  class="container no-underline {anyHovered && !active
-    ? 'inactive'
-    : active
-    ? 'active'
-    : ''}"
-  sveltekit:prefetch
-  href={slug}
-  on:mouseover={() => {
-    active = true;
-    anyHovered = true;
-  }}
-  on:focus={() => {
-    active = true;
-    anyHovered = true;
-  }}
-  on:mouseleave={() => {
-    active = false;
-    anyHovered = false;
-  }}
->
-  <h2 class="title">{award.title}</h2>
-  <p class="organization hidden-mobile">
-    {award.organization}
-  </p>
-  <time datetime={award.date} class="hidden-mobile"
-    >{award.date.slice(0, 4)}</time
+<TransitionInView>
+  <a
+    class="container no-underline {anyHovered && !active
+      ? 'inactive'
+      : active
+      ? 'active'
+      : ''}"
+    sveltekit:prefetch
+    href={slug}
+    on:mouseover={() => {
+      active = true;
+      anyHovered = true;
+    }}
+    on:focus={() => {
+      active = true;
+      anyHovered = true;
+    }}
+    on:mouseleave={() => {
+      active = false;
+      anyHovered = false;
+    }}
   >
-  <div class="flex-mobile">
-    <p class="organization">
+    <h2 class="title">{award.title}</h2>
+    <p class="organization hidden-mobile">
       {award.organization}
     </p>
-    <time datetime={award.date}>{award.date.slice(0, 4)}</time>
-  </div>
-</a>
+    <time datetime={award.date} class="hidden-mobile"
+      >{award.date.slice(0, 4)}</time
+    >
+    <div class="flex-mobile">
+      <p class="organization">
+        {award.organization}
+      </p>
+      <time datetime={award.date}>{award.date.slice(0, 4)}</time>
+    </div>
+  </a>
+</TransitionInView>
 
 <style>
   .flex-mobile {

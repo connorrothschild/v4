@@ -46,6 +46,7 @@
    -moz-transition: color 300ms linear, background 300ms linear;
    -ms-transition: color 300ms linear, background 300ms linear;
    -o-transition: color 300ms linear, background 300ms linear;
+   box-sizing: border-box;
 }
 
 html {
@@ -161,7 +162,7 @@ hr {
 iframe {
   width: 100%;
   left: 0;
-  box-shadow: 1px 1px 6px 1px #cecece80;
+  box-shadow: 1px 1px 6px 1px var(--box-shadow-color);
   margin: 1rem 0 1.5rem 0;
 }
 
@@ -189,10 +190,10 @@ pre {
 
 code:not(pre > code) {
   font-family: var(--font-mono);
-  /* background: var(--primary-color); */
+  background: var(--primary-color);
   background: rgba(var(--accent-color-rgb), .1);
   color: var(--accent-color);
-  padding: 2px 4px;
+  padding: 3px 5px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

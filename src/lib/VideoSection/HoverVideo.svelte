@@ -24,46 +24,49 @@
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
   import { windowHeight } from "../../stores/global.js";
+  import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
-<div
-  class="section-container"
-  style="height: {Math.max($windowHeight * 0.6, 500)}px"
->
-  <div class="projects">
-    {#each projects as project, i}
-      <a
-        href={project.path.replace(/\.[^/.]+$/, "")}
-        sveltekit:prefetch
-        class="project-card no-underline 
+<TransitionInView>
+  <div
+    class="section-container"
+    style="height: {Math.max($windowHeight * 0.6, 500)}px"
+  >
+    <div class="projects">
+      {#each projects as project, i}
+        <a
+          href={project.path.replace(/\.[^/.]+$/, "")}
+          sveltekit:prefetch
+          class="project-card no-underline 
         {value === i ? 'active' : 'inactive'}"
-      >
-        <h1
-          class="title-{i}"
-          on:mouseover={() => {
-            value = i;
-          }}
-          on:focus={() => {
-            value = i;
-          }}
         >
-          {project.metadata.title}
-        </h1>
-      </a>
-    {/each}
+          <h1
+            class="title-{i}"
+            on:mouseover={() => {
+              value = i;
+            }}
+            on:focus={() => {
+              value = i;
+            }}
+          >
+            {project.metadata.title}
+          </h1>
+        </a>
+      {/each}
+    </div>
+    <div class="absolute-container">
+      <video
+        preload="metadata"
+        autoplay
+        muted
+        playsinline
+        id="video"
+        bind:this={video}
+        class:videoTransitioning
+      />
+    </div>
   </div>
-  <div class="absolute-container">
-    <video
-      preload="metadata"
-      autoplay
-      muted
-      playsinline
-      id="video"
-      bind:this={video}
-      class:videoTransitioning
-    />
-  </div>
-</div>
+</TransitionInView>
 
 <style>
   .absolute-container {

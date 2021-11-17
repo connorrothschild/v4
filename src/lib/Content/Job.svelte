@@ -5,47 +5,51 @@
   export let hoveredFromChild = "Moksha Data";
 
   let hovered = false;
+
+  import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
-<a
-  class="job-container {hovered || hoveredFromChild == job.name
-    ? 'hovered'
-    : ''}"
-  class:preview
-  sveltekit:prefetch
-  href={slug}
-  on:mouseover={() => {
-    if (preview) {
-      hoveredFromChild = job.name;
-      return;
-    }
-    hovered = true;
-  }}
-  on:focus={() => {
-    if (preview) {
-      hoveredFromChild = job.name;
-      return;
-    }
-    hovered = true;
-  }}
-  on:mouseleave={() => {
-    hovered = false;
-  }}
->
-  <div
-    style="display: flex; place-items: center;"
-    class={preview ? "flex-container" : ""}
+<TransitionInView>
+  <a
+    class="job-container {hovered || hoveredFromChild == job.name
+      ? 'hovered'
+      : ''}"
+    class:preview
+    sveltekit:prefetch
+    href={slug}
+    on:mouseover={() => {
+      if (preview) {
+        hoveredFromChild = job.name;
+        return;
+      }
+      hovered = true;
+    }}
+    on:focus={() => {
+      if (preview) {
+        hoveredFromChild = job.name;
+        return;
+      }
+      hovered = true;
+    }}
+    on:mouseleave={() => {
+      hovered = false;
+    }}
   >
-    <h2>{job.name}</h2>
-    <img
-      loading="lazy"
-      src="/images/jobs/{job.imageUrl}.svg"
-      class="job-image {hovered ? 'hovered' : ''}"
-      alt="logo"
-    />
-  </div>
-  {#if !preview} <h3>&#8594;</h3> {/if}
-</a>
+    <div
+      style="display: flex; place-items: center;"
+      class={preview ? "flex-container" : ""}
+    >
+      <h2>{job.name}</h2>
+      <img
+        loading="lazy"
+        src="/images/jobs/{job.imageUrl}.svg"
+        class="job-image {hovered ? 'hovered' : ''}"
+        alt="logo"
+      />
+    </div>
+    {#if !preview} <h3>&#8594;</h3> {/if}
+  </a>
+</TransitionInView>
 
 <style>
   .job-container {
