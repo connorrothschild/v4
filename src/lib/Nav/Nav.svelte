@@ -33,7 +33,6 @@
     href="/"
     on:click={() => {
       expanded = false;
-      // closedViaX = false;
     }}>CR</a
   >
   <h2

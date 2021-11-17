@@ -77,14 +77,14 @@
     fill: var(--text-color);
     font-family: var(--font-serif);
     font-weight: 200;
-    font-size: 65px;
+    font-size: 63px;
     letter-spacing: -1px;
     text-shadow: 1px 0px 0px var(--pure-background-color);
     user-select: none;
   }
 
   .circle:hover text {
-    font-size: 72px;
+    font-size: 69px;
   }
 
   path {

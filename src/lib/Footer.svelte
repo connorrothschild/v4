@@ -55,7 +55,12 @@
       <h2 class="thanks">Thanks for visiting the personal site of</h2>
       <h1 class="name">Connor Rothschild</h1>
     </div>
-    <div class="you">
+    <div
+      class="you"
+      on:mouseleave={() => {
+        nullEmoji();
+      }}
+    >
       <h1 class="stay-in-touch">
         Let's stay in touch <span class="inline-emoji">
           {hoveredEmoji || "👇"}</span
@@ -63,7 +68,7 @@
       </h1>
       <div class="links">
         <a
-          class="link"
+          class="link no-underline"
           target="_blank"
           rel="noopener noreferrer"
           on:mouseover={() => {
@@ -72,13 +77,10 @@
           on:focus={() => {
             setEmoji("✉️");
           }}
-          on:mouseleave={() => {
-            nullEmoji();
-          }}
           href="mailto:connor@connorrothschild.com">Email</a
         >
         <a
-          class="link"
+          class="link no-underline"
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/connor-rothschild/"
@@ -87,13 +89,10 @@
           }}
           on:focus={() => {
             setEmoji("🔗");
-          }}
-          on:mouseleave={() => {
-            nullEmoji();
           }}>LinkedIn</a
         >
         <a
-          class="link"
+          class="link no-underline"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/connorrothschild/"
@@ -102,13 +101,10 @@
           }}
           on:focus={() => {
             setEmoji("💻");
-          }}
-          on:mouseleave={() => {
-            nullEmoji();
           }}>GitHub</a
         >
         <a
-          class="link"
+          class="link no-underline"
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
@@ -117,9 +113,6 @@
           }}
           on:focus={() => {
             setEmoji("🐦");
-          }}
-          on:mouseleave={() => {
-            nullEmoji();
           }}>Twitter</a
         >
       </div>
@@ -229,9 +222,14 @@
     font-family: var(--font-sans);
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
-    font-weight: 300;
+    font-weight: 500;
+    color: rgba(var(--primary-color-rgb), 0.8);
+    transition: color 500ms ease;
+    text-transform: uppercase;
+  }
+
+  .link:hover {
     color: var(--pure-background-color);
-    /* text-transform: uppercase; */
   }
 
   /* RANDOM EMOJIS lol */

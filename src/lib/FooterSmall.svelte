@@ -5,36 +5,58 @@
   <div class="flex-container">
     <div class="left">
       <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
-      <h1 class="name">Connor Rothschild</h1>
-      <h2 class="copyright">© 2021</h2>
+      <h1 class="name">Thanks for visiting 👋</h1>
+      <h2 class="copyright">
+        © Connor Rothschild / 2021 / All rights reserved
+      </h2>
     </div>
     <div class="right">
-      <div class="links">
-        <a
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
-        >
-        <a
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/connorrothschild/">GitHub</a
-        >
-        <a
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
-          >Twitter</a
-        >
-        <a
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="mailto:connor@connorrothschild.com">Email</a
-        >
+      <div class="column">
+        <h5 class="column-header">Connect</h5>
+        <div class="column-content">
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/connorrothschild/">GitHub</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
+            >Twitter</a
+          >
+        </div>
+      </div>
+      <div class="column">
+        <h5 class="column-header">Contact</h5>
+        <div class="column-content">
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:connor@connorrothschild.com">Personal</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:connor@mokshadata.com">Work</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://calendly.com/connorrothschild/meeting">Meet</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -44,14 +66,14 @@
   footer {
     display: flex;
     place-items: center;
-    background: var(--text-color);
-    height: 200px;
+    height: 300px;
     padding: 3rem 1rem;
-    background: linear-gradient(
+    background: var(--text-color);
+    /* background: linear-gradient(
       to bottom right,
       var(--text-color) 0%,
       var(--accent-color) 150%
-    );
+    ); */
     color: var(--pure-background-color);
   }
 
@@ -77,64 +99,73 @@
     color: var(--pure-text-color);
   }
 
+  .right {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+  }
+
   .left {
     text-align: left;
   }
 
   .name {
-    font-size: 4rem;
-    font-weight: 100;
+    font-size: 2.5rem;
+    font-weight: 500;
     line-height: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.025rem;
   }
 
   .copyright {
-    font-size: 1.5rem;
-    font-weight: 100;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgba(var(--primary-color-rgb), 0.7);
+    font-family: var(--font-sans);
   }
 
-  .links {
+  .column-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .column-content {
     display: flex;
     flex-direction: column;
-    place-items: flex-end;
-    text-align: right;
   }
 
   .link {
+    color: rgba(var(--primary-color-rgb), 0.7);
     font-family: var(--font-sans);
-    /* letter-spacing: 0.05rem; */
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.25rem;
-    font-weight: 300;
+    margin-bottom: 0.15rem;
+    padding-bottom: 0.15rem;
+    font-weight: 200;
     color: var(--pure-background-color);
-    /* text-transform: uppercase; */
-    font-size: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    width: min-content;
   }
 
-  @media screen and (max-width: 800px) {
-    .left,
-    .right {
-      justify-content: center;
+  @media screen and (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
     }
-
     .left {
-      align-self: flex-start;
-      flex: 5;
+      width: 100%;
     }
-
     .right {
-      align-self: flex-end;
-      flex: 1;
+      width: 50%;
+      margin-left: auto;
     }
-  }
-
-  @media screen and (max-width: 600px) {
-    .name {
-      font-size: 3rem;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
     .name {
       font-size: 2.5rem;
     }
@@ -144,8 +175,21 @@
   }
 
   @media screen and (max-width: 400px) {
+    footer {
+      height: 330px;
+    }
+    .right {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .right .column:last-child .column-content {
+      align-items: flex-end;
+    }
     .name {
       font-size: 2rem;
+    }
+    .copyright {
+      font-size: 0.65rem;
     }
   }
 </style>

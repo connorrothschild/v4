@@ -5,6 +5,8 @@
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
+  let transitioned = false;
+
   let subtitleIndex = 0;
   let subtitleOptions = [
     "on the web.",
@@ -29,7 +31,7 @@
 
   let connor, rothschild, subtitle, overline, bigWords;
 
-  onMount(() => {
+  const transition = function () {
     connor = document.querySelector(".connor");
     rothschild = document.querySelector(".rothschild");
     subtitle = document.querySelector(".subtitle");
@@ -39,7 +41,6 @@
     let overlineSplit = new SplitText(overline, { type: "words,chars" });
     let connorSplit = new SplitText(connor, { type: "words,chars" });
     let rothschildSplit = new SplitText(rothschild, { type: "words,chars" });
-    let bigSplit = new SplitText(bigWords, { type: "lines" });
 
     gsap.set(connor, { perspective: 400, opacity: 0 });
     gsap.set(rothschild, { perspective: 400, opacity: 0 });
@@ -49,7 +50,6 @@
     gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.25 });
-    gsap.fromTo(bigWords, { opacity: 0 }, { opacity: 1, duration: 1.25 });
 
     gsap.fromTo(
       overlineSplit.chars,
@@ -60,6 +60,7 @@
         stagger: 0.02,
         duration: 0.35,
         ease: "backwards",
+        clearProps: "opacity",
       }
     );
 
@@ -75,6 +76,7 @@
         duration: 0.85,
         stagger: 0.12,
         ease: "ease",
+        clearProps: "opacity",
       }
     );
 
@@ -90,13 +92,14 @@
         duration: 0.85,
         stagger: 0.08,
         ease: "ease",
+        clearProps: "opacity",
       }
     );
 
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.1 }
+      { opacity: 1, x: 0, duration: 1, delay: 1.1, clearProps: "opacity" }
     );
 
     gsap.to(".year", {
@@ -108,6 +111,11 @@
       },
       opacity: 0,
     });
+  };
+
+  onMount(() => {
+    transition();
+    transitioned = true;
   });
 </script>
 
@@ -119,12 +127,19 @@
 >
   <a class="scroll-down no-underline" href="#projects">Projects &rarr;</a>
   <div class="hero-container">
-    <h1 class="overline begin-invisible">Hi, I'm</h1>
+    <h1 class="overline begin-invisible" class:transitioned>Hi, I'm</h1>
     <div class="title">
-      <h1 class="connor begin-invisible gradient-accented">Connor</h1>
-      <h1 class="rothschild begin-invisible gradient-accented">Rothschild</h1>
+      <h1 class="connor begin-invisible gradient-accented" class:transitioned>
+        Connor
+      </h1>
+      <h1
+        class="rothschild begin-invisible gradient-accented"
+        class:transitioned
+      >
+        Rothschild
+      </h1>
     </div>
-    <h2 class="subtitle begin-invisible">
+    <h2 class="subtitle begin-invisible " class:transitioned>
       And I tell visual stories <span
         class="switch"
         class:unclicked
@@ -161,7 +176,7 @@
     user-select: none;
   }
 
-  .begin-invisible {
+  .begin-invisible:not(.transitioned) {
     opacity: 0;
   }
 
