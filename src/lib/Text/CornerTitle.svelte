@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   export let title;
   export let subtitle;
   export let intersecting; /* This is false whenever the page title is no longer in view */
@@ -6,13 +8,20 @@
   import { fly } from "svelte/transition";
   let w;
   $: cornerTitleWidth = ((w - 768) / 2) * 0.85;
+
+  // Wait at least 1000ms before transitioning in the corner title
+  // This will prevent it from flashing on page navigation
+  // When the page starts low and scrolls back up rapidly
+  let pageHasLoaded = false;
+  onMount(() => {
+    setTimeout(() => {
+      pageHasLoaded = true;
+    }, 1500);
+  });
 </script>
 
-<!-- Archived: using scrollY prevents scrollToTop because the binding redefines the Y position of the page -->
-<!-- <svelte:window bind:scrollY={y} bind:innerWidth={w} /> -->
 <svelte:window bind:innerWidth={w} />
-
-{#if !intersecting && w > 1168}
+{#if !intersecting && w > 1168 && pageHasLoaded}
   <div
     transition:fly={{ x: -200 }}
     aria-hidden="true"
@@ -31,7 +40,7 @@
     left: 0;
     padding: 1rem;
     opacity: 1;
-    transition: opacity 500ms ease 250ms;
+    transition: opacity 500ms ease 500ms;
   }
 
   .corner-title {
