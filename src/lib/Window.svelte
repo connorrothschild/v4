@@ -10,7 +10,6 @@
     // This prevents jankiness on mobile with URL bar
     if (Math.abs($windowHeight - window.innerHeight) > $windowHeight * 0.2) {
       $windowHeight = window.innerHeight;
-      console.log("height changed");
     }
   };
   onMount(() => {

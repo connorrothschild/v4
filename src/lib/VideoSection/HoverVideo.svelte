@@ -8,6 +8,7 @@
     value = 0;
 
   const updateVideo = function (index) {
+    console.log("Loading video " + index);
     if (video && videos) {
       videoTransitioning = true;
 
