@@ -5,11 +5,11 @@
 
   let video,
     videoTransitioning = false,
-    value = 0;
+    value = 0,
+    videoHasSrc = false;
 
   const updateVideo = function (index) {
-    console.log("Loading video " + index);
-    if (video && videos) {
+    if (video && videosLoaded) {
       videoTransitioning = true;
 
       setTimeout(() => {
@@ -17,15 +17,23 @@
         video.load();
 
         videoTransitioning = false;
+        videoHasSrc = true;
       }, 200);
     }
   };
-
+  //
   $: videosLoaded, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
+  onMount(() => {
+    setTimeout(() => {
+      if (!videoHasSrc) updateVideo(value);
+    }, 1000);
+  });
+
   import { windowHeight } from "../../stores/global.js";
   import TransitionInView from "$lib/TransitionInView.svelte";
+  import { onMount } from "svelte";
 </script>
 
 <TransitionInView>
