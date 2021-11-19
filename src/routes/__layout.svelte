@@ -43,7 +43,7 @@
 <Seo />
 <Nav styles={path === "/" ? "" : "position: fixed;"} />
 <slot />
-<Loading />
+<!-- <Loading /> -->
 <ColorSwitcher />
 {#if path === "/"}
   <Footer />
