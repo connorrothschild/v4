@@ -23,9 +23,7 @@
     on:click={() => {
       hovered = title;
       anyHovered = false;
-      // expanded = false;
-      expanded =
-        $page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}` ? false : true;
+      expanded = false;
       // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.
       closedViaX =
         $page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}` ? true : false;

@@ -26,8 +26,11 @@
       : document.documentElement.classList.remove("disable-scroll");
   }
 
-  import { navigationState } from "../../stores/global.js";
-  $: $navigationState == "loaded", (expanded = false);
+  // import { navigationState } from "../../stores/global.js";
+  // $: $navigationState == "loaded",
+  //   setTimeout(() => {
+  //     expanded = false;
+  //   }, 3000);
 </script>
 
 <div id="nav" style={styles}>
@@ -49,10 +52,16 @@
   </h2>
 </div>
 {#if expanded}
-  <div
+  <!-- <div
     class="fullpage-nav"
     in:slide|local={{ duration: 800 }}
     out:slide|local={{ duration: closedViaX ? 800 : 0 }}
+    style={styles}
+  > -->
+  <div
+    class="fullpage-nav"
+    in:slide|local={{ duration: 800 }}
+    out:slide|local={{ duration: 600 }}
     style={styles}
   >
     {#key hovered}
