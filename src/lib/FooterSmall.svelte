@@ -74,7 +74,7 @@
       var(--text-color) 0%,
       var(--accent-color) 150%
     ); */
-    background: var(--semitransparent-bg);
+    background: var(--footer-bg);
     color: var(--pure-text-color);
   }
 

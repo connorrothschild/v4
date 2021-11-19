@@ -126,38 +126,21 @@
     place-items: center;
     padding: 0;
     width: 100%;
-    color: var(--pure-background-color);
-    background: var(--text-color);
+    /* background: var(--text-color);
     background: linear-gradient(
       to bottom right,
       var(--text-color) 0%,
       var(--accent-color) 150%
-    );
+      ); */
+    background: var(--footer-bg);
+    color: var(--pure-text-color);
     z-index: 99;
   }
 
-  /* Uncomment to do cool sticky footer reveal, but it errors out on a lot of browsers */
-  /* @media screen and (min-width: 768px) {
-    footer {
-      position: sticky;
-      position: -webkit-sticky;
-      position: -moz-sticky;
-      position: -o-sticky;
-
-      bottom: 0;
-      left: 0;
-      right: 0;
-
-      height: var(--footer-height);
-    }
-  } */
-
-  /* @media screen and (max-width: 767px) { */
   footer {
     height: 600px;
     position: relative;
   }
-  /* } */
 
   .flex-container {
     max-width: 1268px;
@@ -171,15 +154,15 @@
 
   footer h1,
   footer h2 {
-    color: var(--pure-background-color);
+    color: var(--pure-text-color);
   }
 
   footer h1::selection,
   footer h2::selection,
   footer a::selection,
   footer *::selection {
-    background: var(--pure-background-color);
-    color: var(--pure-text-color);
+    background: var(--pure-text-color);
+    color: var(--primary-color);
   }
 
   .me,
@@ -223,13 +206,13 @@
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
     font-weight: 500;
-    color: rgba(var(--primary-color-rgb), 0.8);
     transition: color 500ms ease;
     text-transform: uppercase;
+    color: rgba(var(--text-color-rgb), 0.7);
   }
 
   .link:hover {
-    color: var(--pure-background-color);
+    color: var(--pure-text-color);
   }
 
   /* RANDOM EMOJIS lol */
