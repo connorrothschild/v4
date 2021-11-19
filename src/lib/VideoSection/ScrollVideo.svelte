@@ -4,6 +4,7 @@
   export let videosLoaded;
 
   import Scroll from "$lib/Scroll.svelte";
+  import { onMount } from "svelte";
 
   let playedOnce = false,
     video,
@@ -34,6 +35,12 @@
 
   $: currentProject = value ? projects[value] : projects[0];
   $: value, typeof value == "number" ? updateVideo(value) : null;
+
+  onMount(() => {
+    setTimeout(() => {
+      if (!videoHasSrc) updateVideo(value);
+    }, 3000);
+  });
 
   import { windowHeight } from "../../stores/global.js";
 </script>
