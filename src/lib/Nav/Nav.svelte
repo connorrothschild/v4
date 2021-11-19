@@ -25,6 +25,9 @@
       ? document.documentElement.classList.add("disable-scroll")
       : document.documentElement.classList.remove("disable-scroll");
   }
+
+  import { navigationState } from "../../stores/global.js";
+  $: $navigationState == "loaded", (expanded = false);
 </script>
 
 <div id="nav" style={styles}>

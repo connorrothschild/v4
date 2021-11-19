@@ -28,7 +28,7 @@
   onMount(() => {
     setTimeout(() => {
       if (!videoHasSrc) updateVideo(value);
-    }, 1000);
+    }, 3000);
   });
 
   import { windowHeight } from "../../stores/global.js";
