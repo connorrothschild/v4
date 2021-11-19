@@ -68,13 +68,14 @@
     place-items: center;
     height: 300px;
     padding: 3rem 1rem;
-    background: var(--text-color);
+    /* background: var(--text-color); */
     /* background: linear-gradient(
       to bottom right,
       var(--text-color) 0%,
       var(--accent-color) 150%
     ); */
-    color: var(--pure-background-color);
+    background: var(--semitransparent-bg);
+    color: var(--pure-text-color);
   }
 
   .flex-container {
@@ -89,7 +90,7 @@
 
   footer h1,
   footer h2 {
-    color: var(--pure-background-color);
+    color: var(--pure-text-color);
   }
 
   footer h1::selection,
@@ -125,7 +126,7 @@
     font-size: 0.85rem;
     font-weight: 400;
     text-transform: uppercase;
-    color: rgba(var(--primary-color-rgb), 0.7);
+    color: var(--pure-text-color);
     font-family: var(--font-sans);
   }
 
@@ -136,6 +137,7 @@
     font-family: var(--font-sans);
     font-weight: 700;
     font-size: 1rem;
+    color: var(--accent-color);
   }
 
   .column-content {
@@ -144,12 +146,11 @@
   }
 
   .link {
-    color: rgba(var(--primary-color-rgb), 0.7);
+    color: var(--pure-text-color);
     font-family: var(--font-sans);
     margin-bottom: 0.15rem;
     padding-bottom: 0.15rem;
     font-weight: 200;
-    color: var(--pure-background-color);
     font-size: 1rem;
     letter-spacing: 0.01rem;
     width: min-content;

@@ -48,7 +48,7 @@
         {/each}
       </div>
       {#key hoveredData}
-        <div in:fly={{ x: -20, uration: 100 }} class="hovered-job">
+        <div in:fly|local={{ x: -20, uration: 100 }} class="hovered-job">
           {#if hoveredData}
             <h1 class="hovered-job-title">
               {hoveredData.metadata.name}

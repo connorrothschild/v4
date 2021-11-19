@@ -29,13 +29,19 @@
 
 {#if expanded}
   <div
-    transition:fade
+    transition:fade|local
     class="fullscreen-unscrollable"
     on:click={() => {
       expanded = false;
     }}
   />
-  <img transition:fade class="expanded" {src} {alt} on:click={toggleExpand} />
+  <img
+    transition:fade|local
+    class="expanded"
+    {src}
+    {alt}
+    on:click={toggleExpand}
+  />
 {/if}
 <a {href} target="_blank" rel="noopener noreferrer" class="no-underline">
   <img

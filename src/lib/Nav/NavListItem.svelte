@@ -10,7 +10,7 @@
   import { fade } from "svelte/transition";
 </script>
 
-<li transition:fade>
+<li transition:fade|local>
   <a
     on:mouseover={() => {
       hovered = title;

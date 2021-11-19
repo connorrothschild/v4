@@ -34,7 +34,7 @@
     }}
   >
     {#if hovered || isTouchscreen}
-      <div in:fade={{ duration: 200 }} class="hovered-gradient" />
+      <div in:fade|local={{ duration: 200 }} class="hovered-gradient" />
     {/if}
     <img
       loading="lazy"
@@ -44,7 +44,7 @@
       class:hovered
     />
     {#if hovered || isTouchscreen}
-      <div in:fly={{ y: 50, duration: 200 }} class="project-text">
+      <div in:fly|local={{ y: 50, duration: 200 }} class="project-text">
         <h1 class="title">{project.title}</h1>
         <h2 class="description">{project.description}</h2>
       </div>

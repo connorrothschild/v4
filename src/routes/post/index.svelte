@@ -76,7 +76,7 @@
     {/each}
   </div>
   {#if showAll}
-    <div in:slide={{ duration: 300, easing: linear }}>
+    <div in:slide|local={{ duration: 300, easing: linear }}>
       <h1 class="archives-title">😬 The archives 😬</h1>
       <div class="posts-grid">
         {#each otherPosts as post, index}

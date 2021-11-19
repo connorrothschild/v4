@@ -51,8 +51,8 @@
 {#if expanded}
   <div
     class="fullpage-nav"
-    in:slide={{ duration: 800 }}
-    out:slide={{ duration: closedViaX ? 800 : 0 }}
+    in:slide|local={{ duration: 800 }}
+    out:slide|local={{ duration: closedViaX ? 800 : 0 }}
     style={styles}
   >
     {#key hovered}

@@ -24,7 +24,7 @@
   }}
 >
   {#if hovered}
-    <img transition:fade src="/images/me/{imageIndex}.png" alt="Me" />
+    <img transition:fade|local src="/images/me/{imageIndex}.png" alt="Me" />
   {/if}
   <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
     <path

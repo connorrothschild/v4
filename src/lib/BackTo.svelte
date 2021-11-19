@@ -14,6 +14,7 @@
     text-transform: uppercase;
     letter-spacing: 0;
     font-weight: 300;
+    font-family: var(--font-sans);
     /* transition: transform 300ms ease; */
   }
 

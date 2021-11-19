@@ -32,7 +32,7 @@
     </p>
 
     {#if showMore}
-      <div class="more" transition:slide>
+      <div class="more" transition:slide|local>
         <p>
           I live in Houston, Texas and work at Moksha Data. There, I lead our
           data visualization and storytelling team and make microsites,

@@ -52,7 +52,7 @@
       </div>
       <div class="post-misc">
         {#if hovered && !post.featured}
-          <p in:fly={{ x: -50, duration: 500 }} class="read-more">
+          <p in:fly|local={{ x: -50, duration: 500 }} class="read-more">
             Read more &#8594;
           </p>
         {:else}
