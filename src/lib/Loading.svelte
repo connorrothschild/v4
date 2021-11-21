@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
-  import { navigationState } from "../stores/global.js";
+  import { navigationState, pageTransitionDelay } from "../stores/global.js";
 
   const progress = tweened(0, {
     duration: 2000,
@@ -21,7 +21,7 @@
     transitioning = true;
     setTimeout(() => {
       transitioning = false;
-    }, 700);
+    }, $pageTransitionDelay);
   };
 </script>
 

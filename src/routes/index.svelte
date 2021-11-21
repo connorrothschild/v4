@@ -36,7 +36,6 @@
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
-  import Footer from "$lib/Footer.svelte";
   import Circle from "$lib/CircleText.svelte";
 
   let pageWidth;

@@ -9,7 +9,7 @@
   --section-margin-bottom: 5rem;
 
   /* LIGHT MODE */
-  --pure-background-color: #ffffff;
+  /* --pure-background-color: #ffffff;
   --primary-color: #edf0f8;
   --primary-color-rgb: 237, 240, 248;
   --accent-color: rgb(235, 96, 128);
@@ -23,10 +23,10 @@
   --box-shadow-color: rgba(0, 0, 0, 0.1);
   --works-on-accent-bg: var(--pure-background-color);
   --semitransparent-bg: rgba(255, 255, 255, 0.5);
-  --footer-bg: rgba(220, 220, 220, .8);
+  --footer-bg: rgba(220, 220, 220, .8); */
 
   /* DARK MODE */
-  /* --pure-background-color: #000000;
+  --pure-background-color: #000000;
   --primary-color: rgb(22, 25, 26);
   --primary-color-rgb: 22, 25, 26;
   --accent-color: rgb(76, 159, 247);
@@ -41,7 +41,7 @@
   --works-on-accent-bg: var(--pure-background-color);
   --semitransparent-bg: rgba(255, 255, 255, 0.08); 
   --footer-bg: rgba(var(--text-color-rgb), 0.05);
-  */
+ 
 }
 
 * {

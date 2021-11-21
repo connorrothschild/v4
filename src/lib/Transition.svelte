@@ -4,6 +4,7 @@
   import { onMount } from "svelte";
   import { gsap } from "gsap";
   import { SplitText } from "gsap/dist/SplitText.js";
+  import { pageTransitionDelay } from "../stores/global.js";
 
   gsap.registerPlugin(SplitText);
 
@@ -72,15 +73,13 @@
     });
   }
 
-  const sleep = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  };
+  import { sleep } from "../scripts/utils.js";
 
   onMount(async () => {
     let listener = window.matchMedia("(prefers-reduced-motion: reduce)");
     prefersReducedMotion = listener.matches;
 
-    await sleep(700); // This should match the amount of time that intersecting is true in Loading.svelte
+    await sleep($pageTransitionDelay);
     await transition();
   });
 </script>

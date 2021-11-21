@@ -5,7 +5,8 @@
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  let transitioned = false;
+  import { onMount } from "svelte";
+  import { windowHeight, pageTransitionDelay } from "../../stores/global.js";
 
   let subtitleIndex = 0;
   let subtitleOptions = [
@@ -15,19 +16,14 @@
   ];
   $: subtitleString = subtitleOptions[subtitleIndex];
 
-  import { goto } from "$app/navigation";
-
   let unclicked = true;
   const switchSub = () => {
     const nav = () => {
-      goto("#projects", { replaceState: false });
+      window.scrollTo(0, $windowHeight);
     };
     unclicked = false;
     subtitleIndex == subtitleOptions.length - 1 ? nav() : subtitleIndex++;
   };
-
-  import { onMount } from "svelte";
-  import { windowHeight } from "../../stores/global.js";
 
   let connor, rothschild, subtitle, overline, bigWords;
 
@@ -113,8 +109,12 @@
     });
   };
 
-  onMount(() => {
-    transition();
+  let transitioned = false;
+
+  import { sleep } from "../../scripts/utils.js";
+  onMount(async () => {
+    await sleep($pageTransitionDelay);
+    await transition();
     transitioned = true;
   });
 </script>
@@ -263,7 +263,6 @@
   }
 
   .hero-container {
-    /* text-align: center; */
     line-height: 0.85;
     user-select: none;
     margin-top: calc(0px - var(--nav-height));

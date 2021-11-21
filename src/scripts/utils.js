@@ -6,6 +6,10 @@ export function dateFormat(date) {
     return `${month} ${year}`;
 };
 
+export function sleep (milliseconds) {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
+
 export function detectTouchscreen() {
   var result = false;
   if (window.PointerEvent && ('maxTouchPoints' in navigator)) {
