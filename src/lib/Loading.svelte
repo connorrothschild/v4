@@ -25,11 +25,11 @@
   };
 </script>
 
-{#if $navigationState === "loading"}
+<!-- {#if $navigationState === "loading"}
   <div class="progress-bar">
     <div class="progress-sliver" style={`--width: ${$progress * 100}%`} />
   </div>
-{/if}
+{/if} -->
 {#if transitioning}
   <div in:fade={{ duration: 300 }} out:fade class="fullscreen-loading" />
 {/if}
@@ -45,7 +45,7 @@
     z-index: 1000;
   }
 
-  .progress-bar {
+  /* .progress-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -59,5 +59,5 @@
     width: var(--width);
     background-color: var(--accent-color);
     height: 100%;
-  }
+  } */
 </style>

@@ -89,8 +89,6 @@
     Prism.highlightAllUnder(preEl);
   });
 
-  $: console.log(Prism.languages);
-
   // Only run if Prism is defined and we provide code
   $: if (typeof Prism !== "undefined" && code) {
     formattedCode = Prism.highlight(code, Prism.languages["r"], language);
