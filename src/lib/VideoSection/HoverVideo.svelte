@@ -26,7 +26,7 @@
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
   onMount(() => {
-    setTimeout(() => {
+    setInterval(() => {
       if (!videoHasSrc) updateVideo(value);
     }, 3000);
   });
@@ -184,6 +184,7 @@
       height: auto;
     }
   }
+
   @media screen and (min-width: 1269px) {
     .absolute-container {
       transform: translateX(55%);
@@ -208,6 +209,7 @@
       font-size: 9.1rem;
     }
   }
+
   @media screen and (max-width: 1268px) {
     .absolute-container {
       transform: none;
@@ -226,6 +228,7 @@
     .project-card {
       padding: 1rem;
       margin: auto;
+      width: 100%;
     }
 
     .section-container {

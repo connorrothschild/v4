@@ -80,7 +80,7 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 1rem;
-    width: 90%;
+    width: 95%;
     margin-bottom: 4rem;
     margin-top: var(--nav-height);
   }

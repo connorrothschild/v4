@@ -97,7 +97,7 @@
       grid-template-columns: auto;
       grid-template-rows: repeat(1, 1fr);
       grid-auto-rows: auto;
-      width: 90%;
+      width: 95%;
     }
   }
 </style>

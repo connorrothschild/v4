@@ -37,7 +37,7 @@
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
   onMount(() => {
-    setTimeout(() => {
+    setInterval(() => {
       if (!videoHasSrc) updateVideo(value);
     }, 3000);
   });
