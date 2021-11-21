@@ -8,10 +8,12 @@
     : "👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild";
 </script>
 
-<a
-  class="circle no-underline"
+<div
+  class="circle"
   sveltekit:prefetch
-  href="#home"
+  on:click={() => {
+    window.scrollTo(0, 0);
+  }}
   on:mouseover={() => {
     hovered = true;
   }}
@@ -42,7 +44,7 @@
       </textPath>
     </text>
   </svg>
-</a>
+</div>
 
 <style>
   .circle {
@@ -57,6 +59,7 @@
     margin-right: 6px;
     transform: translateZ(0);
     transition: all 600ms ease;
+    cursor: pointer;
   }
 
   .circle:hover {

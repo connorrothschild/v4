@@ -2,6 +2,15 @@
 </script>
 
 <footer>
+  <p
+    aria-hidden="true"
+    class="btt"
+    on:click={() => {
+      window.scrollTo(0, 0);
+    }}
+  >
+    &uarr; Back to top
+  </p>
   <div class="flex-container">
     <div class="left">
       <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
@@ -68,14 +77,19 @@
     place-items: center;
     height: 300px;
     padding: 3rem 1rem;
-    /* background: var(--text-color); */
-    /* background: linear-gradient(
-      to bottom right,
-      var(--text-color) 0%,
-      var(--accent-color) 150%
-    ); */
     background: var(--footer-bg);
     color: var(--pure-text-color);
+    position: relative;
+  }
+
+  .btt {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: unset;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
   }
 
   .flex-container {

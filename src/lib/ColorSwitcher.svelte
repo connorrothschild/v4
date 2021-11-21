@@ -58,9 +58,6 @@
 
 <p class="color-switcher" on:click={setColors}>
   {currentMode == "dark" ? "🌕" : "☀️"}
-  <!-- <span class={currentMode == "dark" ? "active" : ""}>☀️</span>
-  ⇆
-  <span class={currentMode == "light" ? "active" : ""}>🌕</span> -->
 </p>
 
 <style>
@@ -74,10 +71,12 @@
     font-size: 1.5rem;
     z-index: 300;
     user-select: none;
-    /* color: rgba(var(--text-color-rgb), 0.35); */
   }
 
-  /* .active {
-    color: var(--pure-text-color);
-  } */
+  @media screen and (max-width: 768px) {
+    p {
+      left: 20px;
+      bottom: 20px;
+    }
+  }
 </style>

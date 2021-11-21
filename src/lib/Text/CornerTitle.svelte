@@ -48,7 +48,7 @@
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: 0.64px;
-    color: var(--text-color);
+    color: var(--pure-text-color);
     margin-bottom: 0.5rem;
   }
 
