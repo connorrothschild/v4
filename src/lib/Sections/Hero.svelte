@@ -312,7 +312,7 @@
     border-bottom: 1px solid rgba(var(--text-color-rgb), 0.2);
     transition: border-bottom-color 200ms ease;
     display: inline-block;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.5rem;
   }
 
   .switch.unclicked {

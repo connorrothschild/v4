@@ -40,7 +40,7 @@
   --box-shadow-color: rgba(0, 0, 0, 0.1);
   --works-on-accent-bg: var(--pure-background-color);
   --semitransparent-bg: rgba(255, 255, 255, 0.08); 
-  --footer-bg: rgba(var(--text-color-rgb), 0.05);
+  --footer-bg: var(--semitransparent-bg);
  
 }
 

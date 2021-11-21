@@ -1,10 +1,10 @@
 <script>
-  import { fade } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   let hovered = false;
   let imageIndex = 1;
 
   $: text = hovered
-    ? "👆 Scroll to top 👆 Scroll to top 👆 Scroll to top"
+    ? "Scroll to the top 👆 "
     : "👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild";
 </script>
 
@@ -32,17 +32,20 @@
     <path
       id="circle"
       fill="none"
-      stroke="var(--text-color)"
-      stroke-width="5"
       data-duration="5"
       d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
     />
-
-    <text dy="-25">
-      <textPath xlink:href="#circle">
-        {text}
-      </textPath>
-    </text>
+    {#key text}
+      <text
+        dy="-25"
+        in:fade={{ duration: 300, delay: 300 }}
+        out:fade={{ duration: 300 }}
+      >
+        <textPath xlink:href="#circle">
+          {text}
+        </textPath>
+      </text>
+    {/key}
   </svg>
 </div>
 
@@ -84,10 +87,6 @@
     letter-spacing: -1px;
     text-shadow: 1px 0px 0px var(--pure-background-color);
     user-select: none;
-  }
-
-  .circle:hover text {
-    font-size: 69px;
   }
 
   path {

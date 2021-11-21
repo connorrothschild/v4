@@ -17,7 +17,7 @@
     { var: `--box-shadow-color`, value: `rgba(0, 0, 0, 0.1)` },
     { var: `--works-on-accent-bg`, value: `var(--pure-background-color)` },
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.5)` },
-    { var: `--footer-bg`, value: `rgba(220, 220, 200, 0.8)` },
+    { var: `--footer-bg`, value: `rgba(220, 220, 220, .8)` },
   ];
 
   const darkModeColors = [
@@ -38,7 +38,7 @@
     { var: `--footer-bg`, value: `var(--semitransparent-bg)` },
   ];
 
-  let currentMode = "light";
+  let currentMode = "dark";
   function setColors() {
     if (currentMode == "dark") {
       lightModeColors.forEach((color) => {
