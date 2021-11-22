@@ -30,6 +30,14 @@
   >
     <p class="corner-title">{title}</p>
     <p class="corner-subtitle">{subtitle}</p>
+    <p
+      class="scroll-to-top"
+      on:click={() => {
+        window.scrollTo(0, 0);
+      }}
+    >
+      Scroll to top &uarr;
+    </p>
   </div>
 {/if}
 
@@ -57,5 +65,13 @@
     font-weight: 100;
     letter-spacing: 0.64px;
     color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .scroll-to-top {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    cursor: pointer;
   }
 </style>
