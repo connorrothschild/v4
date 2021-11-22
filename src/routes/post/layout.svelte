@@ -48,9 +48,11 @@
         >
           <h2 class="date">{dateFormat(date)}</h2>
           <div class="tags">
-            {#each tags as tag}
-              <span class="tag">{tag}</span>
-            {/each}
+            {#if tags}
+              {#each tags as tag}
+                <span class="tag">{tag}</span>
+              {/each}
+            {/if}
           </div>
         </div>
       </div>

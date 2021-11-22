@@ -6,13 +6,13 @@ export async function get() {
         body.push(
             imports[path]().then(({ metadata }) => {
                 return {
-                    metadata,
-                    path,
+                    metadata: metadata,
+                    path: path,
                 };
             })
         );
     }
-
+    
     const posts = await Promise.all(body);
 
     return {

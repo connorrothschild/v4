@@ -1,7 +1,4 @@
 <script context="module">
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
   export async function load({ fetch }) {
     // const jobsJson = await fetch(`/experience.json`);
     // const jobs = await jobsJson.json();

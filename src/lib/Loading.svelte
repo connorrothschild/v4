@@ -30,7 +30,7 @@
     <div class="progress-sliver" style={`--width: ${$progress * 100}%`} />
   </div>
 {/if} -->
-{#if transitioning}
+{#if transitioning && $navigationState != "loading"}
   <div in:fade={{ duration: 300 }} out:fade class="fullscreen-loading" />
 {/if}
 

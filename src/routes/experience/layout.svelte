@@ -35,7 +35,7 @@
         {name}
         <img
           loading="lazy"
-          src={`/images/jobs/${imageUrl}.svg`}
+          src={imageUrl ? `/images/jobs/${imageUrl}.svg` : ""}
           alt="Logo for {name}"
           class="logo"
         />

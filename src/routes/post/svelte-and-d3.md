@@ -10,7 +10,6 @@ tags: ['svelte', 'd3', 'tutorial']
 
 <script>
   import Code from "$lib/global/Code.svelte"
-  import CodeMirror from '$lib/global/CodeMirror.svelte';
   import Image from "$lib/global/Image.svelte";
   import Info from "$lib/global/Info.svelte";
 </script>
