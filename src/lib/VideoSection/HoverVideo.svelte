@@ -28,12 +28,14 @@
   onMount(() => {
     setInterval(() => {
       if (!videoHasSrc) updateVideo(value);
-    }, 3000);
+    }, 2000);
   });
 
   import { windowHeight } from "../../stores/global.js";
   import TransitionInView from "$lib/TransitionInView.svelte";
   import { onMount } from "svelte";
+
+  let literallyHovered;
 </script>
 
 <TransitionInView>
@@ -47,15 +49,24 @@
           href={project.path.replace(/\.[^/.]+$/, "")}
           sveltekit:prefetch
           class="project-card no-underline 
-        {value === i ? 'active' : 'inactive'}"
+        {value === i ? 'active' : 'inactive'} {typeof literallyHovered ==
+          'number'
+            ? literallyHovered === i
+              ? ''
+              : 'blurred'
+            : ''}"
         >
           <h1
             class="title-{i}"
             on:mouseover={() => {
               value = i;
+              literallyHovered = i;
             }}
             on:focus={() => {
               value = i;
+            }}
+            on:mouseleave={() => {
+              literallyHovered = null;
             }}
           >
             {project.metadata.title}
@@ -136,6 +147,10 @@
     color: transparent;
     opacity: 0.5;
     text-shadow: 0 0 2px rgba(var(--text-color-rgb), 0.8);
+  }
+
+  .blurred h1 {
+    text-shadow: 0 0 5px rgba(var(--text-color-rgb), 0.5);
   }
 
   .active {

@@ -39,7 +39,7 @@
   onMount(() => {
     setInterval(() => {
       if (!videoHasSrc) updateVideo(value);
-    }, 3000);
+    }, 2000);
   });
 
   import { windowHeight } from "../../stores/global.js";

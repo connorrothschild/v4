@@ -38,10 +38,10 @@
     ? `calc(${$windowHeight * 1.01}px - var(--nav-height))`
     : '101vh'};"
 >
-  <div aria-hidden="true" class="scroll-down" on:click={scrollToProjects}>
+  <!-- <div aria-hidden="true" class="scroll-down" on:click={scrollToProjects}>
     <div class="line" />
     <div class="arrow" />
-  </div>
+  </div> -->
   <div class="hero-container">
     <h1 class="overline begin-invisible" class:transitioned>Hi, I'm</h1>
     <div class="title">
