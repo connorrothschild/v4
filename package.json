@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "scripts": {
 		"dev": "svelte-kit dev",
-		"build": "rm -rf build && svelte-kit build && touch .svelte-kit/static/build/.nojekyll",
+		"build": "svelte-kit build",
 		"start": "svelte-kit start",
-		"deploy": "npm run build && npx gh-pages -d .svelte-kit/static/build -t true"
+		"deploy": "node ./gh-pages.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
