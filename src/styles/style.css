@@ -505,6 +505,12 @@ blockquote p:last-of-type {
   margin-bottom: 4rem;
 }
 
+.main-content :not(h1,h2,h3)::selection {
+  color: var(--pure-background-color);
+  background: var(--pure-text-color);
+  text-shadow: none;
+}
+
 /* TABLET BREAKPOINT */
 @media screen and (max-width: 768px) {
   .page-title {
