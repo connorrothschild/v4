@@ -6,16 +6,15 @@
   import { seo } from "$lib/store";
 
   export let title;
-  export let description;
+  export let organization;
   export let media_url;
   export let date;
 
-  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
+  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${organization}, ${date}&theme=light&md=true&hasImage=true`;
 
   // META TAGS
   $seo = {
     title: title,
-    description: description,
     image: image,
   };
 
@@ -43,6 +42,9 @@
 
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
+      </h1>
+      <h1 class="content-description transition-subtitle overflow-hidden">
+        {organization}, {dateFormat(date)}
       </h1>
     </div>
   </IntersectionObserver>

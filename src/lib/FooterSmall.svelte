@@ -9,7 +9,7 @@
       window.scrollTo(0, 0);
     }}
   >
-    &uarr; Back to top
+    &uarr; Scroll to top
   </p>
   <div class="flex-container">
     <div class="left">

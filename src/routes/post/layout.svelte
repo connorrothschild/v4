@@ -37,15 +37,11 @@
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
       </h1>
-      <div class="content-flex">
-        <h2
-          class="description transition-content content-description overflow-hidden"
-        >
+      <div class="content-flex  transition-content content-description">
+        <h2 class="description  overflow-hidden">
           {description}
         </h2>
-        <div
-          class="misc transition-content content-description overflow-hidden"
-        >
+        <div class="misc overflow-hidden">
           <h2 class="date">{dateFormat(date)}</h2>
           <div class="tags">
             {#if tags}

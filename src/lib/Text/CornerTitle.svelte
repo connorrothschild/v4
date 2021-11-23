@@ -23,7 +23,7 @@
 <svelte:window bind:innerWidth={w} />
 {#if !intersecting && w > 1168 && pageHasLoaded}
   <div
-    transition:fly|local={{ x: -200 }}
+    transition:fly|local={{ y: -200 }}
     aria-hidden="true"
     class="corner"
     style="max-width: {cornerTitleWidth}px"

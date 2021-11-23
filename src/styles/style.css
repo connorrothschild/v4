@@ -473,7 +473,7 @@ blockquote p:last-of-type {
   text-align: center;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--accent-color);
+  /* border-bottom: 1px solid var(--accent-color); */
   width: 90%;
 }
 
@@ -490,9 +490,10 @@ blockquote p:last-of-type {
 .content-description {
   font-family: var(--font-sans);
   line-height: 1.2;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
   font-size: 1.75rem;
   font-weight: 300;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .main-content {
