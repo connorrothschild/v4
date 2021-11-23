@@ -69,7 +69,7 @@
     font-family: var(--font-sans);
     font-weight: 300;
     font-size: 1.5rem;
-    z-index: 300;
+    z-index: 101;
     user-select: none;
   }
 

@@ -80,6 +80,7 @@
     background: var(--footer-bg);
     color: var(--pure-text-color);
     position: relative;
+    z-index: 99;
   }
 
   .btt {

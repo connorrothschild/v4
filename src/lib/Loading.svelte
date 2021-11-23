@@ -17,6 +17,7 @@
   $: $navigationState == "loading", initTransition();
 
   let transitioning = false;
+
   let initTransition = function () {
     transitioning = true;
     setTimeout(() => {
@@ -30,8 +31,12 @@
     <div class="progress-sliver" style={`--width: ${$progress * 100}%`} />
   </div>
 {/if} -->
-{#if transitioning && $navigationState != "loading"}
-  <div in:fade={{ duration: 300 }} out:fade class="fullscreen-loading" />
+{#if transitioning}
+  <div
+    in:fade={{ duration: 600 }}
+    out:fade={{ duration: 600 }}
+    class="fullscreen-loading"
+  />
 {/if}
 
 <style>
@@ -42,7 +47,8 @@
     left: 0;
     top: 0;
     background: var(--primary-color);
-    z-index: 1000;
+    z-index: 100;
+    /* cursor: none; */
   }
 
   /* .progress-bar {

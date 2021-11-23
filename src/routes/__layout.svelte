@@ -8,6 +8,7 @@
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
   import SmallFooter from "$lib/FooterSmall.svelte";
+  import Circle from "$lib/CircleText.svelte";
 
   import "../styles/fonts.css";
   import "../styles/immutable.css";
@@ -40,9 +41,9 @@
   on:sveltekit:navigation-start={() => {
     navigationState.set("loading");
   }}
-  on:sveltekit:navigation-end={() => {
-    navigationState.set("loaded");
+  on:sveltekit:navigation-end={async () => {
     scrollTop();
+    navigationState.set("loaded");
   }}
 />
 
@@ -52,6 +53,7 @@
 <slot />
 <Loading />
 <ColorSwitcher />
+<Circle />
 {#if path === "/"}
   <Footer />
 {:else}

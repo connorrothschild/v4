@@ -46,7 +46,6 @@
   <Projects {projects} />
   <Awards {awards} {isMobile} />
   <Blog {posts} {isMobile} />
-  <Circle />
 </main>
 
 <style>

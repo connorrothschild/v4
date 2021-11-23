@@ -55,7 +55,7 @@
     right: 6px;
     bottom: 6px;
     padding: 1rem;
-    z-index: 99;
+    z-index: 101;
     overflow: hidden;
     width: min-content;
     margin-left: auto;
