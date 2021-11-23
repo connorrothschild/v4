@@ -36,8 +36,6 @@
   import { onMount } from "svelte";
 
   let literallyHovered;
-
-  console.log(projects);
 </script>
 
 <TransitionInView>

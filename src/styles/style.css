@@ -82,7 +82,16 @@ body {
 } */
 
 ::selection {
-  background: rgba(var(--accent-color-rgb), .2);
+  background: var(--pure-text-color);
+  color: var(--primary-color);
+}
+
+@supports (text-shadow: 0px 0px 2px var(--accent-color)) {
+  ::selection {
+    background: none;
+    color: var(--pure-background-color);
+    text-shadow: 0px 0px 2px var(--accent-color);
+  }
 }
 
 #svelte {
@@ -300,8 +309,6 @@ button:focus:not(:focus-visible) {
   margin: 2rem 0 3rem 0;;
   padding-bottom: 1.5rem;
   border-bottom: .5px solid var(--accent-color);
-  pointer-events: none;
-  user-select: none;
   overflow: hidden;
   text-transform: uppercase;
   text-align: center;
@@ -313,8 +320,6 @@ button:focus:not(:focus-visible) {
   margin: 2rem 0 1rem;
   padding-bottom: 1.5rem;
   border-bottom: .5px solid var(--accent-color);
-  pointer-events: none;
-  user-select: none;
   overflow: hidden;
 }
 
@@ -476,8 +481,6 @@ blockquote p:last-of-type {
   font-size: 6rem;
   font-weight: 200;
   margin-bottom: 2rem;
-  pointer-events: none;
-  user-select: none;
   overflow: hidden;
   margin-top: 2.5rem;
   line-height: 1;

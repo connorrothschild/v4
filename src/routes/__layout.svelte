@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { currentColorMode, navigationState } from "../stores/global.js";
 
   import Window from "$lib/Window.svelte";
