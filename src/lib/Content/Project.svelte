@@ -34,7 +34,7 @@
     }}
   >
     {#if hovered || isTouchscreen}
-      <div in:fade|local={{ duration: 200 }} class="hovered-gradient" />
+      <div transition:fade|local={{ duration: 200 }} class="hovered-gradient" />
     {/if}
     <img
       loading="lazy"

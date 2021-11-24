@@ -3,6 +3,7 @@
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
   import { navigationState, pageTransitionDelay } from "../stores/global.js";
+  import { page } from "$app/stores";
 
   const progress = tweened(0, {
     duration: 2000,
@@ -19,10 +20,11 @@
   let transitioning = false;
 
   let initTransition = function () {
+    let transitionDur = $page.path == "/" ? 0 : $pageTransitionDelay;
     transitioning = true;
     setTimeout(() => {
       transitioning = false;
-    }, $pageTransitionDelay);
+    }, transitionDur);
   };
 </script>
 

@@ -101,6 +101,10 @@ body {
   position: relative;
 }
 
+#home { 
+  min-height: 100vh; 
+}
+
 .visible {
   opacity: 1 !important;
 }

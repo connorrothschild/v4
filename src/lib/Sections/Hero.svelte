@@ -26,7 +26,7 @@
   import { transition } from "../../scripts/transitionHero.js";
 
   onMount(async () => {
-    await sleep($pageTransitionDelay);
+    // await sleep($pageTransitionDelay);
     await transition(connor, rothschild, subtitle, overline);
     transitioned = true;
   });

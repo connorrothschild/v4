@@ -119,7 +119,7 @@
     margin: 0 auto;
     width: 100%;
     height: var(--nav-height);
-    z-index: 101;
+    z-index: 102;
     justify-content: space-between;
   }
 
