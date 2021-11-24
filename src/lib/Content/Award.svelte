@@ -106,7 +106,7 @@
     justify-content: center;
     text-align: center;
     color: var(--accent-color);
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 0.025rem;
   }
 

@@ -115,7 +115,7 @@
   #nav {
     display: flex;
     place-items: center;
-    background: var(--primary-color);
+    /* background: var(--primary-color); */
     margin: 0 auto;
     width: 100%;
     height: var(--nav-height);

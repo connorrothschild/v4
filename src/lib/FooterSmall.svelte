@@ -81,6 +81,7 @@
     color: var(--pure-text-color);
     position: relative;
     z-index: 99;
+    box-shadow: -1px -1px 6px var(--box-shadow-color);
   }
 
   .btt {
@@ -203,6 +204,7 @@
       width: 100%;
       justify-content: space-between;
     }
+
     .right .column:last-of-type .column-content {
       align-items: flex-end;
     }
@@ -210,6 +212,7 @@
     .name {
       font-size: 2rem;
     }
+
     .copyright {
       font-size: 0.65rem;
     }

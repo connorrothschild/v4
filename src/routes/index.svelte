@@ -57,7 +57,7 @@
     flex-direction: column;
     justify-content: center;
 
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
     z-index: 100; /* This is over the nav */
   }
 

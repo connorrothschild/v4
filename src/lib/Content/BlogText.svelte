@@ -52,7 +52,7 @@
       </div>
       <div class="post-misc">
         {#if hovered && !post.featured}
-          <p in:fly|local={{ x: -50, duration: 500 }} class="read-more">
+          <p transition:fly|local={{ x: -50, duration: 500 }} class="read-more">
             Read more &#8594;
           </p>
         {:else}
@@ -143,6 +143,7 @@
     text-transform: uppercase;
     margin-right: 0.25rem;
     letter-spacing: 1px;
+    /* border: 0.5px solid rgba(var(--accent-color-rgb), 0.5); */
   }
 
   .featured-star {

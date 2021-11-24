@@ -158,7 +158,7 @@
     padding: 20px;
     margin: 6px; /* Need this for perspective container overflow */
     overflow: hidden;
-    border: 1px solid var(--primary-color);
+    border: 1px solid transparent;
     transition: all 100ms linear, border 300ms ease;
     cursor: pointer;
   }
@@ -234,6 +234,7 @@
     text-transform: uppercase;
     margin-right: 0.25rem;
     letter-spacing: 1px;
+    /* border: 0.5px solid rgba(var(--accent-color-rgb), 0.5); */
   }
 
   .featured-star {

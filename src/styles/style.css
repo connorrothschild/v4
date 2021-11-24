@@ -12,8 +12,8 @@
   /* --pure-background-color: #ffffff;
   --primary-color: #edf0f8;
   --primary-color-rgb: 237, 240, 248;
-  --accent-color: rgb(235, 96, 128);
-  --accent-color-rgb: 235, 96, 128; 
+  --accent-color: rgb(44, 67, 110);
+  --accent-color-rgb: 44, 67, 110; 
   --heading-color: rgba(0, 0, 0, 0.7);
   --text-color: #1c1c1c;
   --text-color-rgb: 28, 28, 28;
@@ -58,13 +58,16 @@ html {
   scroll-behavior: smooth;  
   touch-action: manipulation;
   scroll-padding-top: var(--nav-height);
+  background: var(--primary-color);
 }
 
 body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--primary-color);
+  background: linear-gradient(to bottom right, rgba(var(--primary-color-rgb), 1) 20%, rgb(var(--accent-color-rgb), 1) 200%);
   overscroll-behavior-y: contain;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* body::before {
@@ -341,7 +344,8 @@ But for users who prefer reduced motion, we don't want to apply this
 @media (prefers-reduced-motion: no-preference) {
   .transition-title,
   .transition-subtitle,
-  .transition-content {
+  .transition-content,
+  .begin-invisible:not(.transitioned) {
     opacity: 0;
   }
 }
@@ -454,12 +458,10 @@ blockquote p:last-of-type {
 
 /* IF FIXED NAV, UNCOMMENT BELOW AND THE MAIN TAG */
 .sticky-top {
-  /* top: var(--nav-height); */
-  /* padding-top: 1px; */
-  top: 0;
+  /* top: 0;
   position: sticky;
+  background: var(--primary-color); */
   z-index: 10;
-  background: var(--primary-color);
 }
 
 /* main {

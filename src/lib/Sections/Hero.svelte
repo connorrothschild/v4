@@ -175,10 +175,6 @@
     user-select: none;
   }
 
-  /* .begin-invisible:not(.transitioned) {
-    opacity: 0;
-  } */
-
   .hero-container {
     line-height: 0.85;
     user-select: none;
