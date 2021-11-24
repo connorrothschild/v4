@@ -8,7 +8,7 @@
 
   // When navigation state becomes loading, trigger page transition
   onMount(() => {
-    initTransition();
+    if ($page.path != "/") initTransition();
   });
 
   let transitioning = false;

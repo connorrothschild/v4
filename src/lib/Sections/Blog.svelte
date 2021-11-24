@@ -31,26 +31,24 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element} id="blog">
-    <div class="sticky-top">
-      <div class="width-container">
-        <div class="see-all-flex">
-          <h1 class="page-overline">
-            <!-- {isMobile ? "Selected blog posts" : "Blog"} -->
-            03. Selected blog posts
-          </h1>
-          <a
-            class="page-overline padding-bottom see-all"
-            sveltekit:prefetch
-            href="/post">See all posts &#8599;</a
-          >
-        </div>
-        <SectionTitle {intersecting} element="#posts-title">
-          <h1 id="posts-title" class="section-title overflow-hidden">
-            Posts I’ve
-            <span class="gradient-accented bolded">written</span>​
-          </h1>
-        </SectionTitle>
+    <div class="width-container">
+      <div class="see-all-flex">
+        <h1 class="page-overline">
+          <!-- {isMobile ? "Selected blog posts" : "Blog"} -->
+          03. Selected blog posts
+        </h1>
+        <a
+          class="page-overline padding-bottom see-all"
+          sveltekit:prefetch
+          href="/post">See all posts &#8599;</a
+        >
       </div>
+      <SectionTitle {intersecting} element="#posts-title">
+        <h1 id="posts-title" class="section-title overflow-hidden">
+          Posts I’ve
+          <span class="gradient-accented bolded">written</span>​
+        </h1>
+      </SectionTitle>
     </div>
     <div class="posts-grid width-container">
       {#each finalPosts as post, index}

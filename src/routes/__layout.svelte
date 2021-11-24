@@ -40,7 +40,8 @@
 
 <Window />
 <Seo />
-<Nav styles={path === "/" ? "" : "position: fixed;"} />
+<!-- <Nav styles={path === "/" ? "" : "position: fixed;"} /> -->
+<Nav />
 <slot />
 <Loading />
 <ColorSwitcher />

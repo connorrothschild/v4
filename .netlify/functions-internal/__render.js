@@ -21239,7 +21239,7 @@ var init_index_ec7d7444 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"projects"}" class="${"svelte-18iem3v"}"${add_attribute("this", element, 0)}><div class="${"sticky-top"}"><div class="${"see-all-flex svelte-18iem3v"}"><h1 class="${"page-overline"}">
+          default: () => `<section id="${"projects"}" class="${"svelte-18iem3v"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"see-all-flex svelte-18iem3v"}"><h1 class="${"page-overline"}">
           01. Selected projects
         </h1>
         <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/project"}">See all projects \u2197
@@ -21329,7 +21329,7 @@ var init_index_ec7d7444 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"blog"}" class="${"svelte-1jgk20q"}"${add_attribute("this", element, 0)}><div class="${"sticky-top"}"><div class="${"width-container svelte-1jgk20q"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
+          default: () => `<section id="${"blog"}" class="${"svelte-1jgk20q"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"width-container svelte-1jgk20q"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
             03. Selected blog posts
           </h1>
           <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/post"}">See all posts \u2197</a></div>
@@ -21386,7 +21386,7 @@ var init_index_ec7d7444 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"awards"}" class="${"svelte-9nxrt5"}"${add_attribute("this", element, 0)}><div class="${"sticky-top"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
+          default: () => `<section id="${"awards"}" class="${"svelte-9nxrt5"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
           02. Selected awards
         </h1>
         <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/award"}">See all awards \u2197</a></div>
@@ -24550,7 +24550,7 @@ ${``}`;
       __proto__: null,
       [Symbol.toStringTag]: "Module"
     });
-    template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <!-- <link rel="icon" href="/favicon.svg" /> -->\n    <link rel="icon" href="data:image/svg+xml, \n                          <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>\n                            <text y=%221em%22 font-size=%2285%22>\u{1F642}</text>\n                          </svg>">\n\n    <link rel="preload" href="https://use.typekit.net/mhr2lku.css" as="style">\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    \n    <link rel="stylesheet" href="https://use.typekit.net/mhr2lku.css">\n\n    ' + head + '\n  </head>\n  <body>\n    <div id="svelte">' + body + "</div>\n  </body>\n</html>\n";
+    template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <!-- <link rel="icon" href="/favicon.png" /> -->\n    <link rel="icon" href="data:image/svg+xml, \n                          <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>\n                            <text y=%221em%22 font-size=%2285%22>\u{1F642}</text>\n                          </svg>">\n\n    <link rel="preload" href="https://use.typekit.net/mhr2lku.css" as="style">\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    \n    <link rel="stylesheet" href="https://use.typekit.net/mhr2lku.css">\n\n    ' + head + '\n  </head>\n  <body>\n    <div id="svelte">' + body + "</div>\n  </body>\n</html>\n";
     options = null;
     default_settings = { paths: { "base": "", "assets": "" } };
     empty = () => ({});

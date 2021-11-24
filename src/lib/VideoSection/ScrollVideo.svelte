@@ -87,8 +87,8 @@
   .sticky {
     position: sticky;
     z-index: 1;
-    /* top: calc(var(--nav-height) + 6rem);  */
-    top: 8rem;
+    top: calc(var(--nav-height) + 7rem);
+    /* top: 8rem; */
   }
 
   .section-container {
@@ -178,13 +178,6 @@
     background: var(--pure-background-color);
   }
 
-  /* @media screen and (max-width: 868px) { */
-  /* You can make this true on all desktop sizes for an overlay effect */
-  .sticky {
-    /* top: calc(var(--nav-height) + 3rem);  */
-    top: 6rem;
-  }
-
   .section-container {
     flex-direction: column-reverse;
   }
@@ -194,5 +187,4 @@
     margin: 0 auto;
     max-width: 100vw;
   }
-  /* } */
 </style>

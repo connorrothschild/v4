@@ -28,25 +28,23 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element} id="awards">
-    <div class="sticky-top">
-      <div class="see-all-flex">
-        <h1 class="page-overline">
-          <!-- {isMobile ? "Selected awards" : "Awards"} -->
-          02. Selected awards
-        </h1>
-        <a
-          class="page-overline padding-bottom see-all"
-          sveltekit:prefetch
-          href="/award">See all awards &#8599;</a
-        >
-      </div>
-      <SectionTitle {intersecting} element="#awards-title">
-        <h1 id="awards-title" class="section-title overflow-hidden">
-          Awards I’ve
-          <span class="gradient-accented bolded ">won</span>
-        </h1>
-      </SectionTitle>
+    <div class="see-all-flex">
+      <h1 class="page-overline">
+        <!-- {isMobile ? "Selected awards" : "Awards"} -->
+        02. Selected awards
+      </h1>
+      <a
+        class="page-overline padding-bottom see-all"
+        sveltekit:prefetch
+        href="/award">See all awards &#8599;</a
+      >
     </div>
+    <SectionTitle {intersecting} element="#awards-title">
+      <h1 id="awards-title" class="section-title overflow-hidden">
+        Awards I’ve
+        <span class="gradient-accented bolded ">won</span>
+      </h1>
+    </SectionTitle>
 
     <div class="awards-grid">
       {#each filteredAwards as award, index}

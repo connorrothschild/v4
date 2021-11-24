@@ -418,28 +418,6 @@ a:not(.no-underline):hover {
   background-size: 100% 1px;
 }
 
-/* a:not(.no-underline):after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--accent-color);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-  -webkit-transition: transform 0.25s ease-out;
-  -moz-transition: transform 0.25s ease-out;
-  -ms-transition: transform 0.25s ease-out;
-  -o-transition: transform 0.25s ease-out;
-}
-
-a:not(.no-underline):hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-} */
-
 blockquote {
   border-left: 10px solid var(--accent-color);
   padding: 1rem;
@@ -451,26 +429,21 @@ blockquote p:last-of-type {
   margin-bottom: 0 !important;
 }
 
-/* TWEET EMBED */
 .twitter-tweet {
   margin: 10px auto;
 }
 
-/* IF FIXED NAV, UNCOMMENT BELOW AND THE MAIN TAG */
-.sticky-top {
-  /* top: 0;
-  position: sticky;
-  background: var(--primary-color); */
-  z-index: 10;
-}
-
-/* main {
-  margin-top: var(--nav-height) !important;
-} */
-
 .see-all-flex {
   display: flex;
   justify-content: space-between;
+}
+
+.sticky-top {
+  padding-top: var(--nav-height);
+  top: 0;
+  position: sticky;
+  background: var(--primary-color);
+  z-index: 10;
 }
 
 /* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
@@ -480,7 +453,6 @@ blockquote p:last-of-type {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* border-bottom: 1px solid var(--accent-color); */
   width: 90%;
 }
 

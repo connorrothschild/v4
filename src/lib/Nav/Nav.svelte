@@ -52,12 +52,6 @@
   </h2>
 </div>
 {#if expanded}
-  <!-- <div
-    class="fullpage-nav"
-    in:slide|local={{ duration: 800 }}
-    out:slide|local={{ duration: closedViaX ? 800 : 0 }}
-    style={styles}
-  > -->
   <div
     class="fullpage-nav"
     in:slide|local={{ duration: 800 }}
@@ -115,7 +109,7 @@
   #nav {
     display: flex;
     place-items: center;
-    /* background: var(--primary-color); */
+    position: fixed;
     margin: 0 auto;
     width: 100%;
     height: var(--nav-height);

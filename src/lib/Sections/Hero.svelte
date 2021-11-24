@@ -29,7 +29,7 @@
   onMount(async () => {
     if ($prefersReducedMotion) return;
 
-    // await sleep($pageTransitionDelay);
+    await sleep(250);
     await transition(connor, rothschild, subtitle, overline);
     transitioned = true;
   });
@@ -37,14 +37,8 @@
 
 <section
   id="hero"
-  style="min-height: {$windowHeight
-    ? `calc(${$windowHeight * 1.01}px - var(--nav-height))`
-    : '101vh'};"
+  style="min-height: {$windowHeight ? `${$windowHeight * 1.01}px` : '101vh'};"
 >
-  <!-- <div aria-hidden="true" class="scroll-down" on:click={scrollToProjects}>
-    <div class="line" />
-    <div class="arrow" />
-  </div> -->
   <div class="hero-container">
     <h1 class="overline begin-invisible" class:transitioned>Hi, I'm</h1>
     <div class="title">
@@ -58,7 +52,7 @@
         Rothschild
       </h1>
     </div>
-    <h2 class="subtitle begin-invisible " class:transitioned>
+    <h2 class="subtitle begin-invisible" class:transitioned>
       And I tell visual stories <span
         class="switch"
         class:unclicked
@@ -70,86 +64,6 @@
 </section>
 
 <style>
-  .scroll-down {
-    top: calc(50% - 80px);
-    right: 25px;
-    position: absolute;
-    width: 12px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    color: rgba(var(--text-color-rgb), 0.5);
-    cursor: pointer;
-  }
-
-  .line {
-    position: relative;
-    width: 1px;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .line::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: auto;
-    top: 0;
-    bottom: auto;
-    width: 100%;
-    height: 100%;
-    background-color: currentColor;
-  }
-
-  .line::before {
-    height: 50%;
-    animation: arrow-line 4s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-  }
-
-  @keyframes arrow-line {
-    0% {
-      transform: translate3d(0, -101%, 0);
-    }
-    25% {
-      transform: translate3d(0, 101%, 0);
-    }
-    50% {
-      transform: translate3d(0, 101%, 0);
-    }
-    75% {
-      transform: translate3d(0, 101%, 0);
-    }
-    100% {
-      transform: translate3d(0, -101%, 0);
-    }
-  }
-
-  .arrow {
-    position: absolute;
-    bottom: 2px;
-    left: 0.5px;
-    width: 100%;
-    padding-bottom: 100%;
-    border-bottom: 1px solid;
-    border-right: 1px solid;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    animation: arrow 2s cubic-bezier(0.845, 0.05, 0.05, 0.845) infinite
-      alternate;
-  }
-
-  /* This just pushes arrow up and down smoothly */
-  @keyframes arrow {
-    0% {
-      -webkit-transform: translateZ(0) rotate(45deg);
-      transform: translateZ(0) rotate(45deg);
-    }
-    100% {
-      -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
-      transform: translate3d(0, 10px, 0) rotate(45deg);
-    }
-  }
   section {
     width: 95%;
     margin: auto;

@@ -44,7 +44,7 @@
 
 <IntersectionObserver {element} bind:intersecting once>
   <section bind:this={element} id="projects">
-    <div class="sticky-top">
+    <div class={isTouchscreen ? "sticky-top" : ""}>
       <div class="see-all-flex">
         <h1 class="page-overline">
           <!-- {isMobile ? "Selected projects" : "Selected projects"} -->

@@ -18,22 +18,20 @@
 
 <IntersectionObserver {element} bind:intersecting>
   <section bind:this={element}>
-    <div class="sticky-top">
-      <div class="see-all-flex">
-        <h1 class="page-overline">Experience</h1>
-        <a
-          class="page-overline padding-bottom see-all"
-          sveltekit:prefetch
-          href="/experience">See all work experience &#8599;</a
-        >
-      </div>
-      <SectionTitle {intersecting} element="#work-title">
-        <h1 id="work-title" class="section-title overflow-hidden">
-          Places I’ve
-          <span class="gradient-accented bolded ">worked</span>
-        </h1>
-      </SectionTitle>
+    <div class="see-all-flex">
+      <h1 class="page-overline">Experience</h1>
+      <a
+        class="page-overline padding-bottom see-all"
+        sveltekit:prefetch
+        href="/experience">See all work experience &#8599;</a
+      >
     </div>
+    <SectionTitle {intersecting} element="#work-title">
+      <h1 id="work-title" class="section-title overflow-hidden">
+        Places I’ve
+        <span class="gradient-accented bolded ">worked</span>
+      </h1>
+    </SectionTitle>
     <div class="flex">
       <div class="jobs-container">
         {#each sortedJobs as job, index}
