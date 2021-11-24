@@ -162,7 +162,7 @@
   .year {
     position: absolute;
     bottom: 5.35%;
-    left: 0.75%;
+    left: 15px;
     margin-left: 1rem;
     color: rgba(var(--text-color-rgb), 0.35);
     font-family: var(--font-sans);
@@ -258,6 +258,12 @@
     .subtitle {
       font-size: 4vw;
     }
+
+    .year {
+      font-size: 1.5rem;
+      bottom: 4%;
+      left: 25px;
+    }
   }
 
   @media screen and (max-width: 468px) {
@@ -271,19 +277,13 @@
       /* text-align: center; */
       text-align: left;
     }
+
     .overline {
       font-size: 2.25rem;
       margin-bottom: 0.75rem;
     }
     .subtitle {
       font-size: 1.4rem;
-    }
-    /* .big-word {
-      font-size: 3rem;
-    } */
-    .year {
-      font-size: 1.5rem;
-      left: 2.5%;
     }
   }
 </style>
