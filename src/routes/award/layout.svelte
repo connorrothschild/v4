@@ -43,9 +43,9 @@
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
       </h1>
-      <h1 class="content-description transition-subtitle overflow-hidden">
+      <h2 class="content-description transition-subtitle overflow-hidden">
         {organization}, {dateFormat(date)}
-      </h1>
+      </h2>
     </div>
   </IntersectionObserver>
   <div class="content main-content transition-content">

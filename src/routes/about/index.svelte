@@ -172,34 +172,6 @@
     margin: auto;
   }
 
-  .more {
-    border-left: 5px solid var(--accent-color);
-    padding-left: 1rem;
-  }
-
-  .more p {
-    line-height: 1.35;
-  }
-
-  .else {
-    transition: opacity 300ms ease;
-  }
-
-  .else.showMore {
-    opacity: 0.2;
-  }
-
-  .interested {
-    cursor: pointer;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 2px;
-    user-select: none;
-  }
-
-  /* .topic:nth-of-type(even) {
-    text-align: right;
-  } */
-
   .subsection {
     margin-top: 5rem;
   }
@@ -217,6 +189,17 @@
 
     .topic-title {
       font-weight: 400;
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    .topic {
+      max-width: 100%;
+      margin: 0.5rem auto;
+    }
+
+    li {
+      width: auto;
     }
   }
 </style>

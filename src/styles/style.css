@@ -504,7 +504,6 @@ blockquote p:last-of-type {
 .main-content {
   max-width: 768px;
   margin: 0 auto;
-  padding: 0 1rem;
   width: 90%;
   margin-bottom: 4rem;
 }
@@ -534,7 +533,9 @@ blockquote p:last-of-type {
     font-size: 4rem;
   }
 
-  .content-description {
+  .content-description,
+  .content-description h1,
+  .content-description h2 {
     font-size: 1.5rem;
   }
 }
@@ -544,23 +545,28 @@ blockquote p:last-of-type {
     margin: 10vh auto 2.5vh auto;
   }
 
+    .page-title {
+      font-size: 3.25rem;
+    }
+
   .content-title {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
 
-  .content-description {
+  .content-description,
+  .content-description h1,
+  .content-description h2 {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+  }
+
+  .content-description {
+    margin-bottom: 1rem;
   }
 }
 
 /* MOBILE BREAKPOINT */
 @media screen and (max-width: 460px) {
-  .page-title {
-    font-size: 4rem;
-  }
-
   .section-title {
     font-size: 3rem;
   }
@@ -569,7 +575,9 @@ blockquote p:last-of-type {
     font-size: 2.5rem;
   }
 
-  .content-description {
+  .content-description,
+  .content-description h1,
+  .content-description h2 {
     font-size: 1.25rem;
   }
 }

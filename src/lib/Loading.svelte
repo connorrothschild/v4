@@ -4,6 +4,7 @@
   import { cubicOut } from "svelte/easing";
   import { navigationState, pageTransitionDelay } from "../stores/global.js";
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
 
   // When navigation state becomes loading, trigger page transition
   onMount(() => {

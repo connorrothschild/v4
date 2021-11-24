@@ -179,8 +179,12 @@
       width: 100%;
     }
     .right {
-      width: 50%;
+      width: 80%;
       margin-left: auto;
+      justify-content: flex-end;
+    }
+    .right .column:first-of-type {
+      margin-right: 10%;
     }
     .name {
       font-size: 2.5rem;
@@ -194,13 +198,15 @@
     footer {
       height: 330px;
     }
+
     .right {
       width: 100%;
       justify-content: space-between;
     }
-    .right .column:last-child .column-content {
+    .right .column:last-of-type .column-content {
       align-items: flex-end;
     }
+
     .name {
       font-size: 2rem;
     }
