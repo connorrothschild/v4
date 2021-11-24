@@ -61,9 +61,9 @@
 
       gsap.fromTo(
         subtitleSplit["words"],
-        { x: 10, opacity: 0 },
+        { y: 100, opacity: 0 },
         {
-          x: 0,
+          y: 0,
           opacity: 1,
           stagger: 0.02,
           duration: 0.5,
