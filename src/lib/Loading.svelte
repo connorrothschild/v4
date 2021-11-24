@@ -6,13 +6,16 @@
   import { page } from "$app/stores";
 
   // When navigation state becomes loading, trigger page transition
-  $: $navigationState == "loading", initTransition();
+  onMount(() => {
+    initTransition();
+  });
 
   let transitioning = false;
 
   let initTransition = function () {
     let transitionDur = $page.path == "/" ? 0 : $pageTransitionDelay;
     transitioning = true;
+
     setTimeout(() => {
       transitioning = false;
     }, transitionDur);

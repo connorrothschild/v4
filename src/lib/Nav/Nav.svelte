@@ -61,7 +61,7 @@
   <div
     class="fullpage-nav"
     in:slide|local={{ duration: 800 }}
-    out:slide|local={{ duration: 600 }}
+    out:slide|local={{ duration: 400, delay: 200 }}
     style={styles}
   >
     {#key hovered}
