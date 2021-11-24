@@ -33,7 +33,7 @@
 {/if} -->
 {#if transitioning}
   <div
-    in:fade={{ duration: 600 }}
+    in:fade={{ duration: 0 }}
     out:fade={{ duration: 600 }}
     class="fullscreen-loading"
   />
