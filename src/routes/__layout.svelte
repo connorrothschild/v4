@@ -1,6 +1,6 @@
 <script>
   import { onMount, tick } from "svelte";
-  import { currentColorMode, navigationState } from "../stores/global.js";
+  import { currentColorMode } from "../stores/global.js";
 
   import Window from "$lib/Window.svelte";
   import Seo from "$lib/Seo.svelte";
@@ -23,13 +23,12 @@
     currentColorMode.set(currentMode);
   });
 
-  // PAGE LOADER
+  // This implements fade-in and out on the page level (smooth transitions)
   import Loading from "../lib/Loading.svelte";
 
-  // Get current page path
+  // When current page path changes, scroll to top (fixes https://github.com/sveltejs/kit/issues/2794)
   import { page } from "$app/stores";
-  $: path = $page.path;
-  $: currentPath = path;
+  $: $page.path, scrollTop();
 
   async function scrollTop() {
     await tick();
@@ -40,13 +39,12 @@
 
 <Window />
 <Seo />
-<!-- <Nav styles={path === "/" ? "" : "position: fixed;"} /> -->
 <Nav />
 <slot />
 <Loading />
 <ColorSwitcher />
 <Circle />
-{#if path === "/"}
+{#if $page.path === "/"}
   <Footer />
 {:else}
   <SmallFooter />

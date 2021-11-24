@@ -25,12 +25,6 @@
       ? document.documentElement.classList.add("disable-scroll")
       : document.documentElement.classList.remove("disable-scroll");
   }
-
-  // import { navigationState } from "../../stores/global.js";
-  // $: $navigationState == "loaded",
-  //   setTimeout(() => {
-  //     expanded = false;
-  //   }, 3000);
 </script>
 
 <div id="nav" style={styles}>
@@ -115,6 +109,11 @@
     height: var(--nav-height);
     z-index: 102;
     justify-content: space-between;
+    pointer-events: none;
+  }
+
+  #nav > * {
+    pointer-events: all;
   }
 
   .toggle-button {

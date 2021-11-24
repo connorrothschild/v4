@@ -41,7 +41,7 @@
 <TransitionInView>
   <div
     class="section-container"
-    style="height: {Math.max($windowHeight * 0.6, 500)}px"
+    style="height: {Math.max($windowHeight * 0.6, 550)}px"
   >
     <div class="projects">
       {#each projects as project, i}

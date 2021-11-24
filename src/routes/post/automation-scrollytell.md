@@ -131,7 +131,7 @@ But, it also depends on what level of `add` we are at; if `add` == 8
 (the last data point, e.g. the concluding plot), then we want to show
 _all data points_.
 
-“Okay, okay. But what is `add`???”
+> Okay, okay. But what is `add`?
 
 Good question. `add` is the variable I constructed to correspond to the
 user’s input (in this case, the scroll!). When we put it all together,

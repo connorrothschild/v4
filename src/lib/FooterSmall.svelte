@@ -14,7 +14,7 @@
   <div class="flex-container">
     <div class="left">
       <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
-      <h1 class="name">Thanks for visiting 👋</h1>
+      <h1 class="name">Thanks for visiting <span class="wave">👋</span></h1>
       <h2 class="copyright">
         © Connor Rothschild / 2021 / All rights reserved
       </h2>
@@ -170,6 +170,32 @@
     font-size: 1rem;
     letter-spacing: 0.01rem;
     width: min-content;
+  }
+
+  .wave:hover {
+    display: inline-block;
+    animation: wiggle 700ms linear forwards;
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: rotate(0);
+    }
+    20% {
+      transform: rotate(7.5deg);
+    }
+    40% {
+      transform: rotate(-7.5deg);
+    }
+    60% {
+      transform: rotate(7.5deg);
+    }
+    80% {
+      transform: rotate(-7.5deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
   }
 
   @media screen and (max-width: 768px) {

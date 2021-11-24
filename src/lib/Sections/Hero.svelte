@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { windowHeight, pageTransitionDelay } from "../../stores/global.js";
+  import { windowHeight } from "../../stores/global.js";
   import { prefersReducedMotion } from "../../stores/motion.js";
 
   let subtitleIndex = 0;

@@ -438,13 +438,6 @@ blockquote p:last-of-type {
   justify-content: space-between;
 }
 
-.sticky-top {
-  padding-top: var(--nav-height);
-  top: 0;
-  position: sticky;
-  z-index: 10;
-}
-
 /* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
 .top-level {
   max-width: 1068px;

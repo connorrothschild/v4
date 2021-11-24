@@ -91,7 +91,7 @@
     margin: auto;
     margin-bottom: var(--section-margin-bottom);
     width: 100%;
-    overflow: hidden;
+    overflow-y: visible;
   }
 
   .see-all-flex,
@@ -108,9 +108,10 @@
   }
 
   .sticky-top {
+    padding-top: var(--nav-height);
+    top: 0;
+    position: sticky;
+    z-index: 10;
     transition: background-color 500ms ease;
-  }
-  section {
-    overflow: visible;
   }
 </style>
