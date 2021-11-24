@@ -19,12 +19,6 @@
     content.forEach((d) => {
       gsap.set(d, { opacity: 0 });
       gsap.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 });
-
-      gsap.fromTo(
-        d,
-        { x: -10, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.5, delay: 0.5, clearProps: "x" }
-      );
     });
 
     title.forEach((d) => {

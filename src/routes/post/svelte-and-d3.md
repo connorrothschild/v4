@@ -52,7 +52,7 @@ Want an immediate example? Here's an (admittedly verbose) [Svelte component](htt
 
 </Info> 
 
-## What D3 does 3️⃣ 
+## What D3 does
 
 D3 allows for intuitive transformations of the DOM by leveraging easy-to-understand selection syntax. Sound confusing? Let's learn through an example (adapted from the [D3 homepage](https://d3js.org/#selections)). Imagine we had 5 circles and wanted to change the fill of each. 
 

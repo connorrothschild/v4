@@ -92,7 +92,6 @@
   .hero-container {
     line-height: 0.85;
     user-select: none;
-    margin-top: calc(0px - var(--nav-height));
   }
 
   .overline {

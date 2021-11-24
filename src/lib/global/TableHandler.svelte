@@ -25,7 +25,6 @@
     font-weight: 300;
     font-family: var(--font-sans);
     text-align: right;
-    letter-spacing: 0.64px;
     width: 100%;
     margin-left: auto;
     display: block;
