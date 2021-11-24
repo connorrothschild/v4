@@ -1,5 +1,8 @@
 <script>
   import { fade, fly } from "svelte/transition";
+
+  import { windowWidth } from "../stores/global.js";
+
   let hovered = false;
   let imageIndex = 1;
 
@@ -8,46 +11,49 @@
     : "👋 Connor 👀 Rothschild 🤠 Connor 🔥 Rothschild";
 </script>
 
-<div
-  class="circle"
-  sveltekit:prefetch
-  on:click={() => {
-    window.scrollTo(0, 0);
-  }}
-  on:mouseover={() => {
-    hovered = true;
-  }}
-  on:focus={() => {
-    hovered = true;
-  }}
-  on:mouseleave={() => {
-    hovered = false;
-    imageIndex = imageIndex == 4 ? 1 : imageIndex + 1;
-  }}
->
-  {#if hovered}
-    <img transition:fade|local src="/images/me/{imageIndex}.png" alt="Me" />
-  {/if}
-  <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
-    <path
-      id="circle"
-      fill="none"
-      data-duration="5"
-      d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-    />
-    {#key text}
-      <text
-        dy="-25"
-        in:fade={{ duration: 300, delay: 300 }}
-        out:fade={{ duration: 300 }}
-      >
-        <textPath xlink:href="#circle">
-          {text}
-        </textPath>
-      </text>
-    {/key}
-  </svg>
-</div>
+{#if $windowWidth > 968}
+  <div
+    transition:fly={{ y: 50 }}
+    class="circle"
+    sveltekit:prefetch
+    on:click={() => {
+      window.scrollTo(0, 0);
+    }}
+    on:mouseover={() => {
+      hovered = true;
+    }}
+    on:focus={() => {
+      hovered = true;
+    }}
+    on:mouseleave={() => {
+      hovered = false;
+      imageIndex = imageIndex == 4 ? 1 : imageIndex + 1;
+    }}
+  >
+    {#if hovered}
+      <img transition:fade|local src="/images/me/{imageIndex}.png" alt="Me" />
+    {/if}
+    <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
+      <path
+        id="circle"
+        fill="none"
+        data-duration="5"
+        d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
+      />
+      {#key text}
+        <text
+          dy="-25"
+          in:fade={{ duration: 300, delay: 300 }}
+          out:fade={{ duration: 300 }}
+        >
+          <textPath xlink:href="#circle">
+            {text}
+          </textPath>
+        </text>
+      {/key}
+    </svg>
+  </div>
+{/if}
 
 <style>
   .circle {
@@ -109,12 +115,6 @@
     }
     to {
       transform: rotate(360deg);
-    }
-  }
-
-  @media screen and (max-width: 560px) {
-    .circle {
-      display: none;
     }
   }
 </style>

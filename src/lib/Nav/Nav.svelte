@@ -1,5 +1,7 @@
 <script>
   export let styles = "";
+  export let hasBackground = false;
+
   import NavListItem from "./NavListItem.svelte";
   import OpenToClose from "./OpenToClose.svelte";
 
@@ -27,7 +29,7 @@
   }
 </script>
 
-<div id="nav" style={styles}>
+<div id="nav" style={styles} class:hasBackground>
   <a
     class="home-button no-underline"
     href="/"
@@ -143,6 +145,14 @@
     font-size: 2rem;
     font-family: var(--font-serif);
     cursor: pointer;
+  }
+
+  /* On small screens, put a background behind nav to prevent text overlap */
+  @media screen and (max-width: 868px) {
+    .hasBackground {
+      background: var(--primary-color);
+      box-shadow: 1px 1px 6px var(--box-shadow-color);
+    }
   }
 
   @media screen and (max-width: 560px) {

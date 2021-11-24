@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
   import { currentColorMode } from "../stores/global.js";
 
   const lightModeColors = [
@@ -56,9 +56,16 @@
   $: currentMode, currentColorMode.set(currentMode);
 </script>
 
-<p class="color-switcher" on:click={setColors}>
-  {currentMode == "dark" ? "🌕" : "☀️"}
-</p>
+{#key currentMode}
+  <p
+    out:fly={{ y: 50, duration: 300 }}
+    in:fly={{ y: 50, delay: 300 }}
+    class="color-switcher"
+    on:click={setColors}
+  >
+    {currentMode == "dark" ? "🌕" : "☀️"}
+  </p>
+{/key}
 
 <style>
   p {

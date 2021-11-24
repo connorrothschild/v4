@@ -202,7 +202,7 @@
 
   @media screen and (min-width: 1269px) {
     .absolute-container {
-      transform: translateX(55%);
+      transform: translateX(52.5%);
       position: absolute;
       right: 0;
       left: unset;

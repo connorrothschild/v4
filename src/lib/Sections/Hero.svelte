@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { windowHeight } from "../../stores/global.js";
   import { prefersReducedMotion } from "../../stores/motion.js";
+  import { fly } from "svelte/transition";
 
   let subtitleIndex = 0;
   let subtitleOptions = [
@@ -53,11 +54,17 @@
       </h1>
     </div>
     <h2 class="subtitle begin-invisible" class:transitioned>
-      And I tell visual stories <span
-        class="switch"
-        class:unclicked
-        on:click={switchSub}>{@html subtitleString}</span
-      >
+      And I tell visual stories
+      {#key subtitleString}
+        <span
+          in:fly={{ y: 30 }}
+          class="switch"
+          class:unclicked
+          on:click={switchSub}
+        >
+          {@html subtitleString}
+        </span>
+      {/key}
     </h2>
   </div>
   <h1 class="year">Portfolio 2021</h1>
@@ -97,11 +104,13 @@
   .overline {
     font-weight: 200;
     text-align: left;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    font-size: 2.75rem;
   }
 
   .title {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .connor,
@@ -139,11 +148,14 @@
     transition: border-bottom-color 200ms ease;
     display: inline-block;
     padding-bottom: 0.5rem;
+    font-style: italic;
+    font-weight: 200;
   }
 
-  .switch.unclicked {
+  /* .switch.unclicked {
     animation: wiggle 3000ms infinite;
-  }
+  } */
+
   @keyframes wiggle {
     0% {
       transform: rotate(0deg);
@@ -167,8 +179,13 @@
   }
 
   @media screen and (max-width: 768px) {
+    .overline {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
     .subtitle {
-      font-size: 4vw;
+      font-size: 1.8rem;
     }
 
     .year {
@@ -183,19 +200,12 @@
       place-items: center;
     }
 
-    .overline,
-    .subtitle,
-    .hero-container {
-      /* text-align: center; */
-      text-align: left;
+    .overline {
+      font-size: 1.5rem;
     }
 
-    .overline {
-      font-size: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
     .subtitle {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
   }
 </style>

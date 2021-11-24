@@ -43,7 +43,8 @@
 
 <Window />
 <Seo />
-<Nav />
+<!-- <Nav hasBackground={$page.path != "/"} /> -->
+<Nav hasBackground={true} />
 <slot />
 <Loading />
 <ColorSwitcher />
