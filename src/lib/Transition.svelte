@@ -60,7 +60,7 @@
       });
 
       gsap.fromTo(
-        subtitleSplit[split],
+        subtitleSplit["words"],
         { x: 10, opacity: 0 },
         {
           x: 0,

@@ -37,7 +37,7 @@
       <BackTo
         href="/award"
         text="Awards"
-        classes="page-overline transition-subtitle"
+        classes="page-overline transition-content"
       />
 
       <h1 class="content-title uppercase transition-title overflow-hidden">

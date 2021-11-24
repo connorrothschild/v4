@@ -57,7 +57,7 @@
   <BackTo
     href="/"
     text="Home"
-    classes="page-overline transition-subtitle centered"
+    classes="page-overline transition-content centered"
   />
   <h1 class="page-title transition-title overflow-hidden">
     Projects

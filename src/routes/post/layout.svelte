@@ -32,13 +32,13 @@
       <BackTo
         href="/post"
         text="Blog"
-        classes="page-overline transition-subtitle"
+        classes="page-overline transition-content"
       />
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
       </h1>
-      <div class="content-flex  transition-content content-description">
-        <h2 class="description  overflow-hidden">
+      <div class="content-flex transition-content content-description">
+        <h2 class="description overflow-hidden">
           {description}
         </h2>
         <div class="misc overflow-hidden">

@@ -32,12 +32,12 @@
       <BackTo
         href="/project"
         text="Projects"
-        classes="page-overline transition-subtitle"
+        classes="page-overline transition-content"
       />
       <h1 class="content-title uppercase transition-title overflow-hidden">
         {title}
       </h1>
-      <h1 class="content-description transition-title overflow-hidden">
+      <h1 class="content-description transition-subtitle overflow-hidden">
         {description}
       </h1>
     </div>
