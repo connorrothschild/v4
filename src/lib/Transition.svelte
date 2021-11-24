@@ -5,15 +5,13 @@
   import { gsap } from "gsap";
   import { SplitText } from "gsap/dist/SplitText.js";
   import { pageTransitionDelay } from "../stores/global.js";
+  import { prefersReducedMotion } from "../stores/motion.js";
 
   gsap.registerPlugin(SplitText);
 
-  let prefersReducedMotion = false;
   let title, subtitle, content;
 
   async function transition() {
-    if (prefersReducedMotion) return;
-
     title = document.querySelectorAll(".transition-title");
     subtitle = document.querySelectorAll(".transition-subtitle");
     content = document.querySelectorAll(".transition-content");
@@ -76,8 +74,7 @@
   import { sleep } from "../scripts/utils.js";
 
   onMount(async () => {
-    let listener = window.matchMedia("(prefers-reduced-motion: reduce)");
-    prefersReducedMotion = listener.matches;
+    if ($prefersReducedMotion) return;
 
     await sleep($pageTransitionDelay);
     await transition();

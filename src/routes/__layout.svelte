@@ -29,6 +29,7 @@
   // Get current page path
   import { page } from "$app/stores";
   $: path = $page.path;
+  $: currentPath = path;
 
   async function scrollTop() {
     await tick();
@@ -36,16 +37,6 @@
     window.scrollTo(0, 0);
   }
 </script>
-
-<svelte:window
-  on:sveltekit:navigation-start={() => {
-    navigationState.set("loading");
-  }}
-  on:sveltekit:navigation-end={async () => {
-    scrollTop();
-    navigationState.set("loaded");
-  }}
-/>
 
 <Window />
 <Seo />

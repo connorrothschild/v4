@@ -1,6 +1,7 @@
 <script>
   import { gsap } from "gsap";
   import { SplitText } from "gsap/dist/SplitText.js";
+  import { prefersReducedMotion } from "../../stores/motion";
 
   gsap.registerPlugin(SplitText);
 
@@ -8,6 +9,12 @@
   export let element;
 
   $: if (intersecting) {
+    transition();
+  }
+
+  let transition = function () {
+    if ($prefersReducedMotion) return;
+
     let titleSplit = new SplitText(document.querySelector(element), {
       type: "words,chars",
     });
@@ -26,7 +33,7 @@
         ease: "backwards",
       }
     );
-  }
+  };
 </script>
 
 <slot />

@@ -84,19 +84,6 @@
 
   let hovered = false;
 
-  // On scroll, recalculate scrollYPosition
-  // Preferring this rather than binding because of scrollToTop issue
-  // import { debounce } from "../../scripts/utils.js";
-
-  // onMount(() => {
-  //   window.addEventListener(
-  //     "scroll",
-  //     debounce(function () {
-  //       scrollYPosition = window.scrollY;
-  //     }, 150)
-  //   );
-  // });
-
   import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 

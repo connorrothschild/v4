@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { windowHeight, pageTransitionDelay } from "../../stores/global.js";
+  import { prefersReducedMotion } from "../../stores/motion.js";
 
   let subtitleIndex = 0;
   let subtitleOptions = [
@@ -26,6 +27,8 @@
   import { transition } from "../../scripts/transitionHero.js";
 
   onMount(async () => {
+    if ($prefersReducedMotion) return;
+
     // await sleep($pageTransitionDelay);
     await transition(connor, rothschild, subtitle, overline);
     transitioned = true;
@@ -172,9 +175,9 @@
     user-select: none;
   }
 
-  .begin-invisible:not(.transitioned) {
+  /* .begin-invisible:not(.transitioned) {
     opacity: 0;
-  }
+  } */
 
   .hero-container {
     line-height: 0.85;

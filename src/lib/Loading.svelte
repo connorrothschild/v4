@@ -5,15 +5,6 @@
   import { navigationState, pageTransitionDelay } from "../stores/global.js";
   import { page } from "$app/stores";
 
-  const progress = tweened(0, {
-    duration: 2000,
-    easing: cubicOut,
-  });
-
-  $: $navigationState == "loading", progress.set(0, { duration: 0 });
-  $: $navigationState == "loaded",
-    progress.set(1, { duration: 1000, easing: cubicOut });
-
   // When navigation state becomes loading, trigger page transition
   $: $navigationState == "loading", initTransition();
 
@@ -28,11 +19,6 @@
   };
 </script>
 
-<!-- {#if $navigationState === "loading"}
-  <div class="progress-bar">
-    <div class="progress-sliver" style={`--width: ${$progress * 100}%`} />
-  </div>
-{/if} -->
 {#if transitioning}
   <div
     in:fade={{ duration: 0 }}

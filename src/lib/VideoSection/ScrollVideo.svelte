@@ -10,7 +10,8 @@
     video,
     currentIndex = 0,
     videoTransitioning = false,
-    value = 0;
+    value = 0,
+    videoHasSrc = false;
 
   const updateVideo = function (index) {
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
@@ -24,6 +25,8 @@
         video.load();
 
         videoTransitioning = false;
+
+        videoHasSrc = true;
 
         currentIndex = index;
         playedOnce = true;
