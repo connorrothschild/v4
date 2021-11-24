@@ -21,7 +21,7 @@
     Connor Rothschild
   </h1>
   <h2
-    class="content-description transition-subtitle centered"
+    class="content-description transition-subtitle centered overflow-hidden"
     style="padding-bottom: 2.5rem; margin-bottom: 4rem;"
   >
     is a data scientist, web developer, and designer in Houston, TX.

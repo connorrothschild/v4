@@ -17,10 +17,12 @@
   import "../styles/blog.css";
   import "../styles/project.css";
 
-  let currentMode = "light";
+  let currentMode = "dark";
+  let mounted = false;
 
   onMount(() => {
     currentColorMode.set(currentMode);
+    mounted = true;
   });
 
   // This implements fade-in and out on the page level (smooth transitions)
@@ -28,12 +30,14 @@
 
   // When current page path changes, scroll to top (fixes https://github.com/sveltejs/kit/issues/2794)
   import { page } from "$app/stores";
-  $: $page.path, scrollTop();
+  $: $page.path, $page.path ? scrollTop() : null;
 
   async function scrollTop() {
-    await tick();
-    document.scrollingElement.scrollTop = 0;
-    window.scrollTo(0, 0);
+    if (mounted) {
+      await tick();
+      document.scrollingElement.scrollTop = 0;
+      window.scrollTo(0, 0);
+    }
   }
 </script>
 
