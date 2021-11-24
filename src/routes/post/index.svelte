@@ -39,7 +39,7 @@
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
   import { seo } from "$lib/store.js";
-  let title = "Blog | Connor Rothschild";
+  let title = "Blog • Connor Rothschild";
   let description = "Some of my writing.";
 
   $seo = {

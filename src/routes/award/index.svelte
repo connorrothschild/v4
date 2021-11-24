@@ -32,7 +32,7 @@
   let anyHovered;
 
   import { seo } from "$lib/store.js";
-  let title = "Awards | Connor Rothschild";
+  let title = "Awards • Connor Rothschild";
   let description = "Some of my awards.";
 
   $seo = {

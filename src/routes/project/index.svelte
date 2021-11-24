@@ -41,7 +41,7 @@
   // let showAll = true;
 
   import { seo } from "$lib/store.js";
-  let title = "Projects | Connor Rothschild";
+  let title = "Projects • Connor Rothschild";
   let description = "Some of my projects.";
 
   $seo = {

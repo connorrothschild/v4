@@ -2,6 +2,7 @@
   export let projects;
   export let videos;
   export let videosLoaded;
+  export let value = 0;
 
   import Scroll from "$lib/Scroll.svelte";
   import { onMount } from "svelte";
@@ -10,7 +11,6 @@
     video,
     currentIndex = 0,
     videoTransitioning = false,
-    value = 0,
     videoHasSrc = false;
 
   const updateVideo = function (index) {
@@ -175,7 +175,7 @@
   }
 
   .step.active .step-content {
-    background: var(--pure-background-color);
+    background: var(--primary-color);
   }
 
   .section-container {
