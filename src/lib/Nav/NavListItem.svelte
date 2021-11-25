@@ -1,6 +1,7 @@
 <script>
   export let code;
   export let title;
+  export let index;
   export let anyHovered = false;
   export let expanded = true;
   export let hovered = null;
@@ -34,7 +35,7 @@
     }}
     sveltekit:prefetch
     href="/{code}"
-    class="no-underline link {anyHovered
+    class="no-underline link link-{index} {anyHovered
       ? hovered == title
         ? 'active'
         : 'inactive'
@@ -105,27 +106,18 @@
     }
   }
 
-  @media screen and (max-width: 868px) {
-    li {
-      font-size: 6rem;
-    }
-  }
-
-  @media screen and (max-width: 568px) {
-    li {
-      font-size: 5rem;
-    }
-  }
-
   @media screen and (max-width: 468px) {
-    li {
-      font-size: 4rem;
+    .link-1 {
+      font-size: 20vw;
     }
-  }
-
-  @media screen and (max-width: 400px) {
-    li {
-      font-size: 3rem;
+    .link-2 {
+      font-size: 24vw;
+    }
+    .link-3 {
+      font-size: 29vw;
+    }
+    .link-4 {
+      font-size: 37vw;
     }
   }
 </style>

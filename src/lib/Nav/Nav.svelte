@@ -71,8 +71,8 @@
         bind:closedViaX
         code={"project"}
         title={"Projects"}
+        index={1}
       />
-
       <NavListItem
         bind:expanded
         bind:anyHovered
@@ -80,6 +80,7 @@
         bind:closedViaX
         code={"award"}
         title={"Awards"}
+        index={2}
       />
       <NavListItem
         bind:expanded
@@ -88,13 +89,16 @@
         bind:closedViaX
         code={"about"}
         title={"About"}
-      /><NavListItem
+        index={3}
+      />
+      <NavListItem
         bind:expanded
         bind:anyHovered
         bind:hovered
         bind:closedViaX
         code={"post"}
         title={"Blog"}
+        index={4}
       />
     </ul>
   </div>
@@ -151,7 +155,7 @@
   @media screen and (max-width: 868px) {
     .hasBackground {
       background: var(--primary-color);
-      box-shadow: 1px 1px 6px var(--box-shadow-color);
+      /* box-shadow: 1px 1px 6px var(--box-shadow-color); */
     }
   }
 
@@ -170,6 +174,8 @@
 
   /* FULLPAGE NAV */
   .fullpage-nav {
+    position: fixed;
+    z-index: 101;
     display: flex;
     flex-direction: column;
     place-items: flex-start;
@@ -179,8 +185,6 @@
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
-    z-index: 101;
-    position: fixed;
   }
 
   .nav-items {
@@ -190,9 +194,8 @@
   }
 
   /* FIXME: Disable scroll when nav is open */
-  :global(html.disable-scroll) {
-    overflow-y: hidden;
-    /* position: absolute; */
+  :global(.disable-scroll, .disable-scroll body) {
+    overflow: hidden;
   }
 
   @media screen and (max-width: 868px) {

@@ -133,13 +133,14 @@
   .post-tag {
     font-family: var(--font-sans);
     padding: 3px 8px;
-    background: rgba(var(--accent-color-rgb), 0.05);
+    background: var(--semitransparent-bg);
     margin: 2px;
     margin-right: 2px;
     border-radius: 3px;
     color: rgba(var(--accent-color-rgb), 1);
+    /* color: var(--pure-text-color); */
     font-size: 0.85rem;
-    font-weight: 200;
+    font-weight: 400;
     text-transform: uppercase;
     margin-right: 0.25rem;
     letter-spacing: 1px;
