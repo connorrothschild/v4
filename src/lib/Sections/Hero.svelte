@@ -111,6 +111,7 @@
 
   .title {
     margin-bottom: 1.5rem;
+    overflow-y: visible;
   }
 
   .connor,
@@ -119,8 +120,19 @@
     font-weight: 500;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
-    overflow-y: hidden;
-    /* text-shadow: 1px 1px 2px black; */
+    overflow: hidden;
+    /* overflow: visible; */
+    text-shadow: 1px 1px 2px var(--box-shadow-color);
+  }
+
+  :global(.connor *) {
+    overflow: visible;
+    transform-origin: center bottom;
+  }
+
+  :global(.rothschild *) {
+    overflow: visible;
+    transform-origin: center top;
   }
 
   .connor {

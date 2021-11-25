@@ -10,17 +10,18 @@ export const transition = async function (connor, rothschild, subtitle, overline
     subtitle = document.querySelector(".subtitle");
     overline = document.querySelector(".overline");
 
-    let overlineSplit = new SplitText(overline, { type: "words,chars" });
-    let connorSplit = new SplitText(connor, { type: "words,chars" });
-    let rothschildSplit = new SplitText(rothschild, { type: "words,chars" });
+    let overlineSplit = new SplitText(overline, { type: "chars" });
+    let connorSplit = new SplitText(connor, { type: "chars" });
+    let rothschildSplit = new SplitText(rothschild, { type: "chars" });
 
-    gsap.set(connor, { perspective: 400, opacity: 0 });
-    gsap.set(rothschild, { perspective: 400, opacity: 0 });
+    gsap.set(connor, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d", force3D: true, });
+    gsap.set(rothschild, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d" , force3D: true, });
     gsap.set(overline, { perspective: 400, opacity: 0 });
 
     gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.25 });
+
 
     gsap.fromTo(
       overlineSplit.chars,
@@ -37,31 +38,38 @@ export const transition = async function (connor, rothschild, subtitle, overline
 
     gsap.fromTo(
       connorSplit.chars,
-      // { y: "100%", scaleY: "100%", opacity: 0 },
-      { y: "-50%", opacity: 0 },
       {
-        x: 0,
-        y: 0,
-        // scaleY: "100%",
+        translateY: "20%",
+        rotationX: '-90deg',
+        // opacity: 0,
+      },
+      {
+        translateY: "0",
+        rotationX: 0,
         opacity: 1,
-        duration: 0.85,
-        stagger: 0.12,
+        duration: 1,
+        stagger: 0.2,
+        force3D: true,
         ease: "ease",
         clearProps: "opacity",
       }
     );
 
-    gsap.fromTo(
-      rothschildSplit.chars,
-      // { y: "-100%", scaleY: "100%", opacity: 0 },
-      { y: "50%", opacity: 0 },
+   gsap.fromTo(
+     rothschildSplit.chars,
+     {
+        translateY: "-20%",
+        rotationX: '90deg',
+        // opacity: 0,
+      },
       {
-        x: 0,
-        y: 0,
-        // scaleY: "100%",
+        translateY: "0",
+        rotationX: 0,
         opacity: 1,
-        duration: 0.85,
-        stagger: 0.08,
+        duration: 1.15,
+        delay: .25,
+        stagger: 0.1,
+        force3D: true,
         ease: "ease",
         clearProps: "opacity",
       }
@@ -70,7 +78,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.1, clearProps: "opacity" }
+      { opacity: 1, x: 0, duration: 1, delay: 1.6, clearProps: "opacity" }
     );
 
     gsap.to(".year", {
