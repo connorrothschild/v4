@@ -16,7 +16,7 @@
   />
   <h1
     class="page-title transition-title overflow-hidden"
-    style="border-bottom: none; margin-bottom: 1rem;"
+    style="border-bottom: none; margin-bottom: 1rem; padding-bottom: 0;"
   >
     Connor Rothschild
   </h1>
@@ -27,95 +27,117 @@
     is a data scientist, web developer, and designer in Houston, TX.
   </h2>
   <div class="transition-content main-content">
-    <div>
-      <p>
-        I live in Houston, Texas and work at Moksha Data. There, I lead our data
-        visualization and storytelling team and make microsites, interactives,
-        and visualizations for clients working in the social impact space.
-      </p>
-      <p>
-        I’m originally from Springfield, Missouri. I moved to Houston to attend
-        Rice University, where I majored in the quantitative social sciences. I
-        taught myself the stuff on this site in my free time.
-      </p>
-      <p>
-        I’m passionate about accessibility and disability advocacy; my mother is
-        fully blind (<a
-          href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          and really cool</a
-        >). I’m also interested in public policy (in particular, housing
-        policy).
-      </p>
-      <p>
-        I enjoy meeting new people, lifting weights, and visiting coffee shops
-        in Houston.
-      </p>
-      <div class="else" class:showMore>
-        <div class="subsection">
-          <h2 class="subsection-title">Get in touch</h2>
-          <p>
-            I love learning from and teaching passionate people, and hope that
-            this site can be an outlet for that.
-          </p>
-          <p>
-            Please reach out if you’re interested in talking about design,
-            business strategy, data visualization, or anything else you think I
-            would be interested in. Need a conversation starter? 👇
-          </p>
-        </div>
+    <div class="subsection">
+      <h2 class="subsection-title">A brief bio</h2>
+      <div>
+        <p>
+          I live in Houston, Texas and work at Moksha Data. There, I lead our
+          data visualization and storytelling team and make microsites,
+          interactives, and visualizations for clients working in the social
+          impact space.
+        </p>
+        <p>
+          I’m originally from Springfield, Missouri. I moved to Houston to
+          attend Rice University, where I majored in the quantitative social
+          sciences. I taught myself the stuff on this site in my free time.
+        </p>
+        <p>
+          I’m passionate about accessibility and disability advocacy; my mother
+          is fully blind (<a
+            href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            and really cool</a
+          >). I’m also interested in public policy (in particular, housing
+          policy).
+        </p>
+        <p>
+          I enjoy meeting new people, lifting weights, and visiting coffee shops
+          in Houston.
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">Get in touch</h2>
+        <p>
+          I love learning from and teaching passionate people, and hope that
+          this site can be an outlet for that.
+        </p>
+        <p>
+          Please reach out (via <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
+            >Twitter</a
+          >
+          or
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:connor@connorrothschild.com">email</a
+          >) if you’re interested in talking about design, business strategy,
+          data visualization, or anything else you think I would be interested
+          in. Need a conversation starter? 👇
+        </p>
+      </div>
 
-        <div class="conversation-container">
-          <div class="topic">
-            <h1 class="topic-title">Things I’m good at</h1>
-            <ul>
-              <li>R</li>
-              <li>Vue</li>
-              <li>D3.js</li>
-              <li>Svelte</li>
-            </ul>
-          </div>
-          <div class="topic">
-            <h1 class="topic-title">Things I’m learning</h1>
-            <ul>
-              <li>Three.js</li>
-              <li>Canvas</li>
-              <li>Figma</li>
-              <li>Web3</li>
-            </ul>
-          </div>
-          <div class="topic">
-            <h1 class="topic-title">Ways I can help</h1>
-            <ul>
-              <li>Starting your first personal website</li>
-              <li>Technical book recommendations</li>
-              <li>Feedback on dataviz</li>
-              <li>Early career advice</li>
-            </ul>
-          </div>
-          <div class="topic">
-            <h1 class="topic-title">Miscellaneous</h1>
-            <ul>
-              <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"
-                  >Music</a
-                >
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.are.na/connor-rothschild">Anything here</a
-                >
-              </li>
-              <li>Married at First Sight</li>
-            </ul>
-          </div>
+      <div class="conversation-container">
+        <div class="topic">
+          <h1 class="topic-title">Things I’m good at</h1>
+          <ul>
+            <li>R</li>
+            <li>Vue</li>
+            <li>D3.js</li>
+            <li>Svelte</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Things I’m learning</h1>
+          <ul>
+            <li>Three.js</li>
+            <li>Canvas</li>
+            <li>Figma</li>
+            <li>Web3</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Ways I can help</h1>
+          <ul>
+            <li>Starting your first personal website</li>
+            <li>Technical book recommendations</li>
+            <li>Feedback on dataviz</li>
+            <li>Early career advice</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <h1 class="topic-title">Miscellaneous</h1>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"
+                >Music</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.fontshare.com/">Typography</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.are.na/connor-rothschild">Anything here</a
+              >
+            </li>
+            <li>Married at First Sight</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -147,29 +169,29 @@
     flex: 1 1 calc(50% - 1rem);
     padding: 1rem 0;
     text-align: left;
-    background: var(--semitransparent-bg);
-    box-shadow: 1px 1px 6px var(--box-shadow-color);
     margin: 1rem 1rem 0 0;
-    padding: 1rem;
     border-radius: 0.2rem;
-    text-align: center;
+  }
+
+  .topic:nth-child(even) {
+    text-align: right;
   }
 
   .topic-title {
     margin-bottom: 1rem;
-    font-size: 1.75rem;
-    font-weight: 300;
-    letter-spacing: 0.025rem;
+    font-size: 1.15rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   li {
-    list-style-type: none;
+    list-style: none;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 0;
     padding-left: 0;
     margin-left: 0;
-    /* border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.2); */
-    /* padding: 0.25rem 0.5rem; */
-    width: max-content;
-    margin: auto;
   }
 
   .subsection {

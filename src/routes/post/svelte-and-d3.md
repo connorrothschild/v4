@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Making visualizations literally using Svelte + D3"
+title: "Making visualizations literally w/ Svelte and D3"
 description: Why Svelte has replaced (and complemented) D3 as my go-to tool for powerful visualizations
 image: svelte-and-d3/header.png
 date: "2021-07-02"

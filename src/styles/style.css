@@ -316,9 +316,10 @@ button:focus:not(:focus-visible) {
 .page-title {
   font-size: 8rem;
   font-weight: 200;
-  margin: 2rem 0 3rem 0;;
-  padding-bottom: 1.5rem;
-  border-bottom: .5px solid var(--accent-color);
+  margin: 2rem 0;
+  /* padding-bottom: 1.5rem; */
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(var(--accent-color-rgb), .5);
   overflow: hidden;
   text-transform: uppercase;
   text-align: center;

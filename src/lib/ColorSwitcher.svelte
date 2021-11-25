@@ -6,8 +6,8 @@
     { var: `--pure-background-color`, value: `#ffffff` },
     { var: `--primary-color`, value: `#edf0f8` },
     { var: `--primary-color-rgb`, value: `237, 240, 248` },
-    { var: `--accent-color`, value: `rgb(44, 67, 110)` },
-    { var: `--accent-color-rgb`, value: `44, 67, 110` },
+    { var: `--accent-color`, value: `rgb(41, 89, 180)` },
+    { var: `--accent-color-rgb`, value: `41, 89, 180` },
     { var: `--heading-color`, value: `rgba(0, 0, 0, 0.7)` },
     { var: `--text-color`, value: `#1c1c1c` },
     { var: `--text-color-rgb`, value: `28, 28, 28` },
@@ -17,7 +17,7 @@
     { var: `--box-shadow-color`, value: `rgba(0, 0, 0, 0.1)` },
     { var: `--works-on-accent-bg`, value: `var(--pure-background-color)` },
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.5)` },
-    { var: `--footer-bg`, value: `rgba(220, 220, 220, .8)` },
+    { var: `--footer-bg`, value: `var(--semitransparent-bg)` },
   ];
 
   const darkModeColors = [

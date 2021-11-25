@@ -99,7 +99,7 @@
   .organization {
     font-size: 1.25rem;
     padding: 0 1rem;
-    line-height: 1.15;
+    line-height: 1.3;
     font-family: var(--font-serif);
     display: flex;
     place-items: center;
@@ -107,7 +107,8 @@
     text-align: center;
     color: var(--accent-color);
     font-weight: 300;
-    letter-spacing: 0.025rem;
+    font-style: italic;
+    letter-spacing: 0.01rem;
   }
 
   time {
