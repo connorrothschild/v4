@@ -17,6 +17,7 @@
 
   import { slide, fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import { expoInOut } from "svelte/easing";
 
   onMount(() => {
     mounted = true;
@@ -50,8 +51,8 @@
 {#if expanded}
   <div
     class="fullpage-nav"
-    in:slide|local={{ duration: 800 }}
-    out:slide|local={{ duration: 400, delay: 200 }}
+    in:slide|local={{ duration: 1000, easing: expoInOut }}
+    out:slide|local={{ duration: 400, delay: 200, easing: expoInOut }}
     style={styles}
   >
     {#key hovered}

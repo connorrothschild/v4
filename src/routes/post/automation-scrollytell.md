@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "How to Scrollytell in R"
-description: Because its easier than doing it in D3
+description: Because it’s easier than doing it in D3
 image: automation-scrollytell/header.png
 date: "2019-10-02"
 tags: ['r', 'tutorial']

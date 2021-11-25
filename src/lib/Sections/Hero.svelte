@@ -25,7 +25,7 @@
   let transitioned = false;
 
   import { sleep } from "../../scripts/utils.js";
-  import { transition } from "../../scripts/transitionHero.js";
+  import { transition } from "../../scripts/transitions/fall.js";
 
   onMount(async () => {
     if ($prefersReducedMotion) return;
@@ -120,19 +120,27 @@
     font-weight: 500;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
-    overflow: hidden;
-    /* overflow: visible; */
+    /* overflow: hidden; */
+    overflow: visible;
     text-shadow: 1px 1px 2px var(--box-shadow-color);
   }
 
   :global(.connor *) {
     overflow: visible;
     transform-origin: center bottom;
+    /* transform-origin: center top; */
+    transform-style: preserve-3d;
+    transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   :global(.rothschild *) {
     overflow: visible;
-    transform-origin: center top;
+    transform-origin: center bottom;
+    /* transform-origin: center top; */
+    transform-style: preserve-3d;
+    transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   .connor {

@@ -43,7 +43,6 @@
 
 <Window />
 <Seo />
-<!-- <Nav hasBackground={$page.path != "/"} /> -->
 <Nav hasBackground={true} />
 <slot />
 <Loading />
