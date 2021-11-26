@@ -18,6 +18,7 @@
     { var: `--works-on-accent-bg`, value: `var(--pure-background-color)` },
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.5)` },
     { var: `--footer-bg`, value: `var(--semitransparent-bg)` },
+    { var: `--noise-opacity`, value: `.35` },
   ];
 
   const darkModeColors = [
@@ -36,6 +37,7 @@
     { var: `--works-on-accent-bg`, value: `var(--pure-background-color)` },
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.08)` },
     { var: `--footer-bg`, value: `var(--semitransparent-bg)` },
+    { var: `--noise-opacity`, value: `.275` },
   ];
 
   let currentMode = "dark";
@@ -71,19 +73,12 @@
   p {
     cursor: pointer;
     position: fixed;
-    bottom: 3.5%;
-    left: 2%;
+    bottom: 20px;
+    left: 20px;
     font-family: var(--font-sans);
     font-weight: 300;
     font-size: 1.5rem;
     z-index: 101;
     user-select: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    p {
-      left: 20px;
-      bottom: 20px;
-    }
   }
 </style>

@@ -37,9 +37,9 @@
 
 <style>
   .error {
+    margin: auto;
     margin-top: var(--nav-height);
     max-width: 1068px;
-    margin: auto;
     width: 95%;
     padding: 1rem;
   }

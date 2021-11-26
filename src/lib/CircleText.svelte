@@ -117,4 +117,9 @@
       transform: rotate(360deg);
     }
   }
+
+  /* If nav is open, fade this out */
+  :global(.disable-scroll body .circle) {
+    opacity: 0;
+  }
 </style>

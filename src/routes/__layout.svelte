@@ -9,6 +9,7 @@
   import Footer from "$lib/Footer.svelte";
   import SmallFooter from "$lib/FooterSmall.svelte";
   import Circle from "$lib/CircleText.svelte";
+  import Noise from "$lib/Noise.svelte";
 
   import "../styles/fonts.css";
   import "../styles/immutable.css";
@@ -44,6 +45,7 @@
 <Window />
 <Seo />
 <Nav hasBackground={true} />
+<Noise />
 <slot />
 <Loading />
 <ColorSwitcher />

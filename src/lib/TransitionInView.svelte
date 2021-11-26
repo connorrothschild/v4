@@ -14,16 +14,19 @@
 </IntersectionObserver>
 
 <style>
-  .transitioning-container {
-    transition: opacity 1000ms ease 200ms, transform 1000ms ease;
-    opacity: 0;
-    transform: translateX(-5%);
-    /* transform: translateY(15%); */
-  }
+  /* Only apply if user prefers reduced motion is false */
+  @media (prefers-reduced-motion: no-preference) {
+    .transitioning-container {
+      transition: opacity 1000ms ease 200ms, transform 1000ms ease;
+      opacity: 0;
+      transform: translateX(-5%);
+      /* transform: translateY(15%); */
+    }
 
-  .intersecting {
-    opacity: 1;
-    transform: none;
+    .intersecting {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   div {

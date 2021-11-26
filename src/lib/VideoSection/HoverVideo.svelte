@@ -55,20 +55,18 @@
               ? ''
               : 'blurred'
             : ''}"
+          on:mouseover={() => {
+            value = i;
+            literallyHovered = i;
+          }}
+          on:focus={() => {
+            value = i;
+          }}
+          on:mouseleave={() => {
+            literallyHovered = null;
+          }}
         >
-          <h1
-            class="title-{i}"
-            on:mouseover={() => {
-              value = i;
-              literallyHovered = i;
-            }}
-            on:focus={() => {
-              value = i;
-            }}
-            on:mouseleave={() => {
-              literallyHovered = null;
-            }}
-          >
+          <h1 class="title-{i}">
             {project.metadata.title}
           </h1>
         </a>

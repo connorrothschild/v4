@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import { windowHeight } from "../../stores/global.js";
+  import { windowHeight, windowWidth } from "../../stores/global.js";
   import { prefersReducedMotion } from "../../stores/motion.js";
   import { fly } from "svelte/transition";
+  import { scaleLinear } from "d3-scale";
 
   let subtitleIndex = 0;
   let subtitleOptions = [
@@ -34,13 +35,31 @@
     await transition(connor, rothschild, subtitle, overline);
     transitioned = true;
   });
+
+  // HOVER EFFECT ON TEXT ROTATION
+  let xDeg = 0;
+  let yDeg = 0;
+
+  $: xScale = scaleLinear().domain([0, $windowWidth]).range([-10, 10]);
+  $: yScale = scaleLinear().domain([0, $windowHeight]).range([-10, 10]);
+
+  function handleMousemove(event) {
+    xDeg = xScale(event.clientX);
+    yDeg = yScale(event.clientY);
+  }
 </script>
 
 <section
   id="hero"
-  style="min-height: {$windowHeight ? `${$windowHeight * 1.01}px` : '101vh'};"
+  style="min-height: {$windowHeight
+    ? `${$windowHeight * 1.01}px`
+    : '101vh'}; perspective: 100vw;"
+  on:mousemove={handleMousemove}
 >
-  <div class="hero-container">
+  <div
+    class="hero-container"
+    style="transition: 1000ms cubic-bezier(.3, 1, 1, .3); transform: translateX({xDeg}px) translateY({yDeg}px);"
+  >
     <h1 class="overline begin-invisible" class:transitioned>Hi, I'm</h1>
     <div class="title">
       <h1 class="connor begin-invisible gradient-accented" class:transitioned>
@@ -72,7 +91,7 @@
 
 <style>
   section {
-    width: 95%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -85,9 +104,9 @@
 
   .year {
     position: absolute;
-    bottom: 5.35%;
-    left: 15px;
-    margin-left: 1rem;
+    bottom: calc(20px + 1.5rem / 2);
+    left: 20px;
+    margin-left: 2rem;
     color: rgba(var(--text-color-rgb), 0.35);
     font-family: var(--font-sans);
     font-weight: 300;
@@ -134,13 +153,35 @@
       transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
+  :global(.connor div div:hover, .rothschild div div:hover) {
+    animation: spin 500ms forwards;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    33% {
+      transform: rotate(2.5deg);
+    }
+
+    66% {
+      transform: rotate(-2.5deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
   :global(.rothschild *) {
     overflow: visible;
     transform-origin: center bottom;
     /* transform-origin: center top; */
     transform-style: preserve-3d;
     transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
-      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1), filter 100ms ease;
   }
 
   .connor {
@@ -210,8 +251,6 @@
 
     .year {
       font-size: 1.5rem;
-      bottom: 4%;
-      left: 25px;
     }
   }
 
