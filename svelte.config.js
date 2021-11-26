@@ -1,7 +1,6 @@
 import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
-// import adapter from "@sveltejs/adapter-netlify";
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from "@sveltejs/adapter-netlify";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,12 +9,11 @@ const config = {
     mdsvex(mdsvexConfig),
   ],
   kit: {
-    // adapter: adapter({
-    //   pages: 'build',  
-    //   assets: 'build', 
-    //   fallback: null
-    // }),
-    adapter: vercel(),
+    adapter: adapter({
+      pages: 'build',  
+      assets: 'build', 
+      fallback: null
+    }),
     target: "#svelte"
   },
 };
