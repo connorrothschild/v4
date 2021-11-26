@@ -44,7 +44,11 @@
         {title}
       </h1>
       <h2 class="content-description transition-subtitle overflow-hidden">
-        {organization}, {dateFormat(date)}
+        <span style="font-weight: 600;">{organization}</span>
+        <span
+          style="font-weight: 300; text-transform: uppercase; font-size: 1.25rem;"
+          >{dateFormat(date)}</span
+        >
       </h2>
     </div>
   </IntersectionObserver>

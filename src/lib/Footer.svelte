@@ -157,14 +157,6 @@
     color: var(--pure-text-color);
   }
 
-  footer h1::selection,
-  footer h2::selection,
-  footer a::selection,
-  footer *::selection {
-    background: var(--pure-text-color);
-    color: var(--primary-color);
-  }
-
   .me,
   .you {
     flex: 1;

@@ -106,7 +106,7 @@
     justify-content: center;
     text-align: center;
     color: var(--accent-color);
-    font-weight: 300;
+    font-weight: 200;
     font-style: italic;
     letter-spacing: 0.01rem;
   }
@@ -148,7 +148,6 @@
     .organization {
       padding: 0;
       font-size: 1.1rem;
-      font-weight: 200;
     }
 
     time {

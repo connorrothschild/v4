@@ -109,13 +109,6 @@
     color: var(--pure-text-color);
   }
 
-  footer h1::selection,
-  footer h2::selection,
-  footer a::selection {
-    background: var(--pure-background-color);
-    color: var(--pure-text-color);
-  }
-
   .right {
     display: flex;
     justify-content: space-evenly;
