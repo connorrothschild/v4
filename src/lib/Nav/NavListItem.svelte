@@ -7,11 +7,13 @@
   export let hovered = null;
   export let closedViaX = false;
 
+  import Transition from "../Transition.svelte";
+
   import { page } from "$app/stores";
-  import { fade } from "svelte/transition";
 </script>
 
-<li transition:fade|local>
+<Transition split={"chars"} stagger={0.05} />
+<li>
   <a
     on:mouseover={() => {
       hovered = title;
@@ -29,13 +31,11 @@
       closedViaX =
         $page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}` ? true : false;
     }}
-    on:mouseleave={() => {
-      hovered = null;
-      anyHovered = false;
-    }}
     sveltekit:prefetch
     href="/{code}"
-    class="no-underline link link-{index} {anyHovered
+    class="transition-title overflow-hidden no-underline 
+    link link-{index} 
+    {anyHovered
       ? hovered == title
         ? 'active'
         : 'inactive'
@@ -44,9 +44,6 @@
       : 'not-current-page'}"
   >
     {title}
-    <!-- {#if hovered == title}
-      <span>🔥</span>
-    {/if} -->
   </a>
 </li>
 
@@ -64,9 +61,7 @@
   .link {
     color: var(--text-color);
     text-transform: uppercase;
-    transition: opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
-      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
-      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
+    transition: color 600ms ease;
     width: 100%;
     display: block;
   }
@@ -81,19 +76,14 @@
 
   .active {
     color: var(--accent-color);
-    opacity: 1;
-    text-shadow: none;
   }
 
   .active:hover {
     text-decoration: none;
-    background-size: 0 1px;
   }
 
   .inactive {
-    opacity: 0.5;
-    color: transparent;
-    text-shadow: 0px 0px 6px var(--text-color);
+    color: rgba(var(--text-color-rgb), 0.3);
   }
 
   .current-page {

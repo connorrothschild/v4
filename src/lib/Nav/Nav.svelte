@@ -64,7 +64,13 @@
         {hovered != null ? hovered : ""}
       </h1>
     {/key}
-    <ul class="nav-items">
+    <ul
+      class="nav-items"
+      on:mouseleave={() => {
+        hovered = null;
+        anyHovered = false;
+      }}
+    >
       <NavListItem
         bind:expanded
         bind:anyHovered

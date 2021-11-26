@@ -1,5 +1,6 @@
 <script>
   export let split = "chars";
+  export let stagger = 0.02;
 
   import { onMount } from "svelte";
   import { gsap } from "gsap";
@@ -36,7 +37,7 @@
           translateY: 0,
           opacity: 1,
           rotation: 0,
-          stagger: 0.02,
+          stagger: stagger,
           duration: 0.5,
           ease: "power2.out",
         }

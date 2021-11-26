@@ -7,20 +7,23 @@
 
 <IntersectionObserver {element} bind:intersecting once>
   <div bind:this={element}>
-    <div class="opacity-container" class:intersecting>
+    <div class="transitioning-container" class:intersecting>
       <slot />
     </div>
   </div>
 </IntersectionObserver>
 
 <style>
-  .opacity-container {
-    transition: opacity 1000ms ease 200ms;
+  .transitioning-container {
+    transition: opacity 1000ms ease 200ms, transform 1000ms ease;
     opacity: 0;
+    transform: translateX(-5%);
+    /* transform: translateY(15%); */
   }
 
   .intersecting {
     opacity: 1;
+    transform: none;
   }
 
   div {
