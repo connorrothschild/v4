@@ -36,6 +36,8 @@
     expanded
       ? document.documentElement.classList.add("disable-scroll")
       : document.documentElement.classList.remove("disable-scroll");
+
+    hovered = null;
   }
 
   // Transition params (responsive)

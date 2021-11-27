@@ -13,7 +13,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
     color: #d6deeb;
-    font-family: Input Mono, PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: input-mono, PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-weight: 300;
     text-align: left;
     white-space: pre;

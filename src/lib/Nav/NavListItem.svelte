@@ -22,7 +22,7 @@
     }}
     on:click={() => {
       hovered = title;
-      anyHovered = false;
+      // anyHovered = false;
       expanded = false;
 
       // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.
