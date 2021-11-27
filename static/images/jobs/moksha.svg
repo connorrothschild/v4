@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="120" height="120" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>moksha-data</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="moksha-data" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="moksha-petal">
-            <path d="M60,60 L120,60 C120,93.137085 93.137085,120 60,120 L0,120 L0,60 C0,26.862915 26.862915,0 60,0 L60,60 Z" id="petal" fill="#103CDF" fill-rule="evenodd"></path>
-            <path d="M0,97 C12.7025492,97 23,107.297451 23,120 L0,120 L0,97 Z" id="center" fill="#F5A623" fill-rule="evenodd"></path>
-            <path d="M0,90 C16.5685425,90 30,103.431458 30,120 L22,120 C22,107.849736 12.1502645,98 0,98 L0,90 Z" id="center-ring" fill="#FFFFFF" fill-rule="nonzero"></path>
-            <path d="M60,0 C60,33.137085 86.862915,60 120,60 L60,60 L60,0 Z" id="mid-petal" fill="#FFFFFF" fill-rule="evenodd"></path>
-            <path d="M120,60 C86.862915,60 60,33.137085 60,0 L120,0 L120,60 Z" id="outer-petal" fill="#2D3092" fill-rule="evenodd"></path>
-        </g>
-    </g>
-</svg>
+<svg height="120" viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m60 60h60c0 33.137085-26.862915 60-60 60h-60v-60c0-33.137085 26.862915-60 60-60z" fill="#103cdf" fill-rule="evenodd"/><path d="m0 97c12.7025492 0 23 10.297451 23 23h-23z" fill="#f5a623" fill-rule="evenodd"/><path d="m0 90c16.5685425 0 30 13.431458 30 30h-8c0-12.150264-9.8497355-22-22-22z" fill="#fff" fill-rule="nonzero"/><g fill-rule="evenodd"><path d="m60 0c0 33.137085 26.862915 60 60 60h-60z" fill="#fff"/><path d="m120 60c-33.137085 0-60-26.862915-60-60h60z" fill="#2d3092"/></g></g></svg>
