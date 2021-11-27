@@ -24,7 +24,7 @@ I’ve went through my fair share of blogs. See [version 1](https://connorrothsc
 
 Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the [Nuxt Blog](https://nuxtjs.org/post/going-full-static/):
 
-> `nuxt generate` with `target: 'static'` will pre-render all your pages to HTML and save a payload file in order to mock `asyncData` and `fetch` on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it (from the in the header) for optimal performance.
+> `nuxt generate` with `target: 'static'` will pre-render all your pages to HTML and save a payload file in order to mock `asyncData` and `fetch` on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it for optimal performance.
 
 You can see the impact of SSR on performance by comparing my [last blog iteration](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fconnorrothschild.github.io%2Fv2%2F&tab=desktop) to [this one](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop).
 

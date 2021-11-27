@@ -31,15 +31,6 @@
       if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
-  // let featuredProjects = filteredProjects.filter(
-  //   (d) => d.metadata.featured == true
-  // );
-  // let otherProjects = filteredProjects.filter(
-  //   (d) => !d.metadata.featured == true
-  // );
-
-  // let showAll = true;
-
   import { seo } from "$lib/store.js";
   let title = "Projects • Connor Rothschild";
   let description = "Some of my projects.";
@@ -52,18 +43,13 @@
 </script>
 
 <Transition />
-<main>
-  <!-- <h1 class="page-overline transition-subtitle">Projects I’ve built</h1> -->
+<main class="main">
   <BackTo
     href="/"
     text="Home"
     classes="page-overline transition-content centered"
   />
-  <h1 class="page-title transition-title overflow-hidden">
-    Projects
-    <!-- I’ve
-    <span class="gradient-accented bolded">built</span> -->
-  </h1>
+  <h1 class="page-title transition-title overflow-hidden">Projects</h1>
 
   <div class="projects-container transition-content">
     {#each filteredProjects as project}
@@ -76,24 +62,11 @@
 </main>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1rem;
-    width: 95%;
-    margin-bottom: 4rem;
-    margin-top: var(--nav-height);
-  }
-
   .projects-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
   }
-
-  /* .button {
-    margin: 12px 0 12px auto;
-  } */
 
   @media screen and (max-width: 700px) {
     .projects-container {

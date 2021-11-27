@@ -7,12 +7,9 @@
   export let hovered = null;
   export let closedViaX = false;
 
-  import Transition from "../Transition.svelte";
-
   import { page } from "$app/stores";
 </script>
 
-<Transition split={"chars"} stagger={0.05} />
 <li>
   <a
     on:mouseover={() => {
@@ -27,9 +24,9 @@
       hovered = title;
       anyHovered = false;
       expanded = false;
+
       // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.
-      closedViaX =
-        $page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}` ? true : false;
+      closedViaX = $page.path.replace(/^\/([^\/]*).*$/, "$1") == `${code}`;
     }}
     sveltekit:prefetch
     href="/{code}"
@@ -96,18 +93,22 @@
     }
   }
 
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 528px) {
+    .link {
+      line-height: 0.9;
+    }
     .link-1 {
-      font-size: 20vw;
+      font-size: 20.3vw;
+      overflow: visible;
     }
     .link-2 {
       font-size: 24vw;
     }
     .link-3 {
-      font-size: 29vw;
+      font-size: 28.9vw;
     }
     .link-4 {
-      font-size: 37vw;
+      font-size: 36.8vw;
     }
   }
 </style>

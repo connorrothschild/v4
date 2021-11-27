@@ -53,18 +53,13 @@
 </script>
 
 <Transition />
-<main>
-  <!-- <h1 class="page-overline transition-subtitle">Posts I’ve written</h1> -->
+<main class="main">
   <BackTo
     href="/"
     text="Home"
     classes="page-overline transition-content centered"
   />
-  <h1 class="page-title transition-title overflow-hidden">
-    Writing
-    <!-- Posts I’ve
-    <span class="gradient-accented bolded">written</span>​ -->
-  </h1>
+  <h1 class="page-title transition-title overflow-hidden">Writing</h1>
   <div class="transition-content posts-grid">
     {#each filteredPosts as post, index}
       <BlogSection
@@ -101,15 +96,6 @@
 </main>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1rem;
-    width: 95%;
-    margin-bottom: 4rem;
-    margin-top: var(--nav-height);
-  }
-
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

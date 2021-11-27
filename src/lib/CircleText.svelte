@@ -1,7 +1,7 @@
 <script>
   import { fade, fly } from "svelte/transition";
 
-  import { windowWidth } from "../stores/global.js";
+  import { windowWidth, menuExpanded } from "../stores/global.js";
 
   let hovered = false;
   let imageIndex = 1;
@@ -14,7 +14,7 @@
 {#if $windowWidth > 968}
   <div
     transition:fly={{ y: 50 }}
-    class="circle"
+    class="circle {$menuExpanded ? 'invisible' : ''}"
     sveltekit:prefetch
     on:click={() => {
       window.scrollTo(0, 0);
@@ -118,8 +118,7 @@
     }
   }
 
-  /* If nav is open, fade this out */
-  :global(.disable-scroll body .circle) {
+  .invisible {
     opacity: 0;
   }
 </style>

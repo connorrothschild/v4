@@ -4,6 +4,8 @@ export const currentIcon = writable("");
 export const currentColorMode = writable('light')
 
 export const pageTransitionDelay = readable(900);
+export const menuExpanded = writable(false);
 
 export const windowWidth = writable(0);
 export const windowHeight = writable(0);
+

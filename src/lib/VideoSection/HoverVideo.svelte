@@ -151,6 +151,10 @@
     text-shadow: 0 0 5px rgba(var(--text-color-rgb), 0.5);
   }
 
+  .blurred {
+    border-bottom: 1px solid rgba(var(--text-color-rgb), 0.1);
+  }
+
   .active {
     z-index: 5;
     border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.8);

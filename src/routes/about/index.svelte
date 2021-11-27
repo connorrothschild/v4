@@ -1,14 +1,10 @@
 <script>
-  import { slide } from "svelte/transition";
-
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
-
-  let showMore = false;
 </script>
 
 <Transition />
-<main>
+<main class="main">
   <BackTo
     href="/"
     text="Home"
@@ -53,8 +49,10 @@
           policy).
         </p>
         <p>
-          I enjoy meeting new people, lifting weights, and visiting coffee shops
-          in Houston.
+          I enjoy <abbr title="Pac-Man main 😅">Super Smash Bros</abbr>,
+          <abbr title="Current bench PR: 260lbs 😎">lifting weights</abbr>, and
+          visiting
+          <abbr title="Brass Tacks is the best 💯">coffee shops</abbr> in Houston.
         </p>
       </div>
       <div class="subsection">
@@ -145,14 +143,6 @@
 </main>
 
 <style>
-  main {
-    max-width: 868px;
-    width: 95%;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-    margin-top: var(--nav-height);
-  }
-
   p {
     margin-bottom: 1.15rem;
     line-height: 1.5;
@@ -223,5 +213,9 @@
     li {
       width: auto;
     }
+  }
+
+  abbr {
+    text-decoration: none;
   }
 </style>

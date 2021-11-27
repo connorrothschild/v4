@@ -1,6 +1,6 @@
 :root {
-  --font-serif:  ivypresto-display, Georgia, serif;
-  --font-sans:  Satoshi, halyard-display, -apple-system, sans-serif;
+  --font-serif: ivypresto-display, Georgia, serif;
+  --font-sans: Satoshi, halyard-display, -apple-system, sans-serif;
   --font-mono: 'Fira Mono', monospace;
   font-family: var(--font-serif);
 
@@ -40,23 +40,23 @@
   --background-without-opacity: rgba(0, 0, 0, 0.7);
   --box-shadow-color: rgba(0, 0, 0, 0.1);
   --works-on-accent-bg: var(--pure-background-color);
-  --semitransparent-bg: rgba(255, 255, 255, 0.08); 
+  --semitransparent-bg: rgba(255, 255, 255, 0.08);
   --footer-bg: var(--semitransparent-bg);
   --noise-opacity: .35;
 }
 
 * {
-   transition: color 300ms linear, background 300ms linear;
-   -webkit-transition: color 300ms linear, background 300ms linear;
-   -moz-transition: color 300ms linear, background 300ms linear;
-   -ms-transition: color 300ms linear, background 300ms linear;
-   -o-transition: color 300ms linear, background 300ms linear;
-   box-sizing: border-box;
+  transition: color 300ms linear, background 300ms linear;
+  -webkit-transition: color 300ms linear, background 300ms linear;
+  -moz-transition: color 300ms linear, background 300ms linear;
+  -ms-transition: color 300ms linear, background 300ms linear;
+  -o-transition: color 300ms linear, background 300ms linear;
+  box-sizing: border-box;
 }
 
 html {
   overflow-y: scroll;
-  scroll-behavior: smooth;  
+  scroll-behavior: smooth;
   touch-action: manipulation;
   scroll-padding-top: var(--nav-height);
   background: var(--primary-color);
@@ -93,8 +93,8 @@ body {
   position: relative;
 }
 
-#home { 
-  min-height: 100vh; 
+#home {
+  min-height: 100vh;
 }
 
 .visible {
@@ -107,7 +107,8 @@ h2 {
   color: var(--text-color)
 }
 
-p, li {
+p,
+li {
   color: var(--pure-text-color);
   font-family: var(--font-sans);
   font-size: 1.2rem;
@@ -139,10 +140,6 @@ a {
   text-decoration: none;
 }
 
-/* a:hover {
-  text-decoration: underline;
-} */
-
 h1 {
   font-size: 2rem;
 }
@@ -155,11 +152,12 @@ h3 {
   font-size: 1.5rem;
 }
 
-h4 { 
+h4 {
   font-size: 1.3rem;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-size: 1.2rem;
 }
 
@@ -190,12 +188,6 @@ pre {
   font-size: 0.9rem !important;
   margin-bottom: 1rem !important;
   border-radius: 3px;
-  /* font-family: var(--font-mono);
-  background-color: var(--background-without-opacity);
-  box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-  padding: 0.5rem;
-  overflow-x: auto;
-  color: var(--text-color); */
 }
 
 code:not(pre > code) {
@@ -210,8 +202,6 @@ code:not(pre > code) {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   font-size: .825em;
-  /* border: .5px solid var(--accent-color); */
-  /* margin: 0 2px; */
 }
 
 input,
@@ -234,7 +224,6 @@ button:focus:not(:focus-visible) {
 
 .button {
   font-family: var(--font-sans);
-  /* border: 1px solid var(--primary-color); */
   border: none;
   cursor: pointer;
   border-radius: 3px;
@@ -257,35 +246,35 @@ button:focus:not(:focus-visible) {
 }
 
 .button:before {
-  	position: absolute;
-  	content: "";
-  	top: 0;
-  	right: 0;
-  	bottom: 0;
-  	left: 0;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-  	background-image: linear-gradient(135deg, 
-    var(--semitransparent-bg) 10%,
-    /* var(--pure-background-color) 30%, */
-    rgba(var(--accent-color-rgb), .4) 150%);
-  	z-index: -1;
-  	opacity: 0;
-  	transition: opacity 250ms linear;
-  	-webkit-transition: opacity 250ms linear;
-  	-moz-transition: opacity 250ms linear;
-  	-ms-transition: opacity 250ms linear;
-  	-o-transition: opacity 250ms linear;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  background-image: linear-gradient(135deg,
+      var(--semitransparent-bg) 10%,
+      /* var(--pure-background-color) 30%, */
+      rgba(var(--accent-color-rgb), .4) 150%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 250ms linear;
+  -webkit-transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  -ms-transition: opacity 250ms linear;
+  -o-transition: opacity 250ms linear;
 }
 
 .button:hover::before {
   opacity: 1;
 }
 
-.pulled-right { 
+.pulled-right {
   margin-left: auto;
   text-align: right;
 }
@@ -332,6 +321,7 @@ button:focus:not(:focus-visible) {
 But for users who prefer reduced motion, we don't want to apply this 
 (they would never become visible because transitions never trigger) */
 @media (prefers-reduced-motion: no-preference) {
+
   .transition-title,
   .transition-subtitle,
   .transition-content,
@@ -344,11 +334,11 @@ But for users who prefer reduced motion, we don't want to apply this
   overflow: hidden;
 }
 
-/* FIXME: Leads to bug on safari */
 .gradient-accented {
   color: var(--accent-color);
 }
 
+/* FIXME: Leads to bug on safari */
 /* @supports ((background-clip: text) or (-webkit-background-clip: text)) and ((text-fill-color: transparent) or (-webkit-text-fill-color: transparent)) {
   .gradient-accented {
       background: linear-gradient(to right, var(--pure-text-color) 10%, var(--accent-color) 60%);
@@ -361,14 +351,14 @@ But for users who prefer reduced motion, we don't want to apply this
 } */
 
 .accented {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .bolded {
   font-weight: 500;
 }
 
-.padding-bottom { 
+.padding-bottom {
   padding-bottom: .2rem;
 }
 
@@ -395,7 +385,7 @@ But for users who prefer reduced motion, we don't want to apply this
 a:not(.no-underline) {
   position: relative;
   color: var(--accent-color);
-  background:linear-gradient(var(--accent-color), var(--accent-color)) left bottom no-repeat;
+  background: linear-gradient(var(--accent-color), var(--accent-color)) left bottom no-repeat;
   background-size: 0% 1px;
   transition: background-size 0.25s ease-out;
   -webkit-transition: background-size 0.25s ease-out;
@@ -426,6 +416,15 @@ blockquote p:last-of-type {
 .see-all-flex {
   display: flex;
   justify-content: space-between;
+}
+
+/* ALL INDEX.SVELTE PAGES HAVE THIS FOR THEIR MAIN TAG */
+.main {
+  max-width: 868px;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  margin-top: var(--nav-height);
 }
 
 /* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
@@ -464,7 +463,7 @@ blockquote p:last-of-type {
   margin-bottom: 4rem;
 }
 
-.main-content :not(h1,h2,h3)::selection {
+.main-content :not(h1, h2, h3)::selection {
   color: var(--pure-background-color);
   background: var(--pure-text-color);
   text-shadow: none;
@@ -501,9 +500,9 @@ blockquote p:last-of-type {
     margin: 10vh auto 2.5vh auto;
   }
 
-    .page-title {
-      font-size: 3.25rem;
-    }
+  .page-title {
+    font-size: 3.25rem;
+  }
 
   .content-title {
     font-size: 3rem;

@@ -10,9 +10,9 @@ export const transition = async function (connor, rothschild, subtitle, overline
     subtitle = document.querySelector(".subtitle");
     overline = document.querySelector(".overline");
 
-    let overlineSplit = new SplitText(overline, { type: "chars" });
-    let connorSplit = new SplitText(connor, { type: "chars" });
-    let rothschildSplit = new SplitText(rothschild, { type: "chars" });
+    let overlineSplit = new SplitText(overline, { type: "words" });
+    let connorSplit = new SplitText(connor, { type: "words" });
+    let rothschildSplit = new SplitText(rothschild, { type: "words" });
 
     gsap.set(connor, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d", force3D: true, });
     gsap.set(rothschild, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d" , force3D: true, });
@@ -24,7 +24,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
 
 
     gsap.fromTo(
-      overlineSplit.chars,
+      overlineSplit.words,
       { x: -20, opacity: 0 },
       {
         x: 0,
@@ -37,18 +37,20 @@ export const transition = async function (connor, rothschild, subtitle, overline
     );
 
     gsap.fromTo(
-      connorSplit.chars,
+      connorSplit.words,
       {
-        translateY: "100%",
+        scale: .25,
+        translateY: "50%",
         rotationX: '-90deg',
         opacity: 0,
       },
       {
+        scale: 1,
         translateY: "0",
         rotationX: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.1,
+        // stagger: 0.1,
         force3D: true,
         ease: "ease",
         clearProps: "opacity",
@@ -56,19 +58,21 @@ export const transition = async function (connor, rothschild, subtitle, overline
     );
 
    gsap.fromTo(
-     rothschildSplit.chars,
+     rothschildSplit.words,
      {
-        translateY: "100%",
+       scale: 0.25,
+        translateY: "50%",
         rotationX: '-90deg',
         opacity: 0,
       },
-      {
+     {
+        scale: 1,
         translateY: "0",
         rotationX: 0,
         opacity: 1,
         duration: 1.15,
         delay: .25,
-        stagger: 0.05,
+        // stagger: 0.05,
         force3D: true,
         ease: "ease",
         clearProps: "opacity",
@@ -78,7 +82,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1.6, clearProps: "opacity" }
+      { opacity: 1, x: 0, duration: 1, delay: 1, clearProps: "opacity" }
     );
 
     gsap.to(".year", {

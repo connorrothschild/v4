@@ -37,7 +37,7 @@
     { var: `--works-on-accent-bg`, value: `var(--pure-background-color)` },
     { var: `--semitransparent-bg`, value: `rgba(255, 255, 255, 0.08)` },
     { var: `--footer-bg`, value: `var(--semitransparent-bg)` },
-    { var: `--noise-opacity`, value: `.275` },
+    { var: `--noise-opacity`, value: `.35` },
   ];
 
   let currentMode = "dark";

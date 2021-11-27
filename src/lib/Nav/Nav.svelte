@@ -2,8 +2,15 @@
   export let styles = "";
   export let hasBackground = false;
 
+  import {
+    menuExpanded,
+    windowHeight,
+    windowWidth,
+  } from "../../stores/global.js";
+
   import NavListItem from "./NavListItem.svelte";
   import OpenToClose from "./OpenToClose.svelte";
+  import Transition from "../Transition.svelte";
 
   let anyHovered,
     hovered = null,
@@ -15,7 +22,9 @@
     expanded = !expanded;
   };
 
-  import { slide, fade } from "svelte/transition";
+  $: expanded, menuExpanded.set(expanded);
+
+  import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
   import { expoInOut } from "svelte/easing";
 
@@ -28,6 +37,25 @@
       ? document.documentElement.classList.add("disable-scroll")
       : document.documentElement.classList.remove("disable-scroll");
   }
+
+  // Transition params (responsive)
+  $: inParams = {
+    duration: 1000,
+    opacity: 1,
+    y: $windowWidth > 768 ? -$windowHeight : 0,
+    x: $windowWidth > 768 ? 0 : $windowWidth,
+    easing: expoInOut,
+  };
+  $: outParams = {
+    duration: closedViaX ? 400 : 800,
+    opacity: closedViaX ? 1 : 0,
+    y: closedViaX ? ($windowWidth > 768 ? -$windowHeight : 0) : 0,
+    x: $windowWidth > 768 ? 0 : -$windowWidth,
+    delay: closedViaX ? 0 : 200,
+    easing: expoInOut,
+  };
+
+  import { page } from "$app/stores";
 </script>
 
 <div id="nav" style={styles} class:hasBackground>
@@ -36,23 +64,27 @@
     href="/"
     on:click={() => {
       expanded = false;
+      // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.
+      closedViaX = $page.path.replace(/^\/([^\/]*).*$/, "$1") == "";
     }}>CR</a
   >
-  <h2
+  <button
     class="toggle-button"
+    aria-label={expanded ? "Close menu" : "Open menu"}
     on:click={() => {
       toggle();
       closedViaX = true;
     }}
   >
     <OpenToClose {expanded} />
-  </h2>
+  </button>
 </div>
 {#if expanded}
+  <Transition split={"chars"} stagger={0.05} />
   <div
     class="fullpage-nav"
-    in:slide|local={{ duration: 1000, easing: expoInOut }}
-    out:slide|local={{ duration: 400, delay: 200, easing: expoInOut }}
+    in:fly|local={inParams}
+    out:fly|local={outParams}
     style={styles}
   >
     {#key hovered}
@@ -134,6 +166,13 @@
     margin-right: 1rem;
     cursor: pointer;
     user-select: none;
+    background: none;
+    border: none;
+  }
+
+  .toggle-button:focus,
+  .toggle-button:active {
+    background: none;
   }
 
   .massive-word {

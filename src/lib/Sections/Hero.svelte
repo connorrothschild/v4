@@ -26,7 +26,7 @@
   let transitioned = false;
 
   import { sleep } from "../../scripts/utils.js";
-  import { transition } from "../../scripts/transitions/fall.js";
+  import { transition } from "../../scripts/transitions/rotate.js";
 
   onMount(async () => {
     if ($prefersReducedMotion) return;
@@ -132,7 +132,7 @@
 
   .title {
     margin-bottom: 1.5rem;
-    overflow-y: visible;
+    /* overflow: hidden; */
   }
 
   .connor,
@@ -141,13 +141,10 @@
     font-weight: 500;
     letter-spacing: -0.1rem;
     text-transform: uppercase;
-    /* overflow: hidden; */
-    overflow: visible;
     text-shadow: 1px 1px 2px var(--box-shadow-color);
   }
 
   :global(.connor *) {
-    overflow: visible;
     transform-origin: center bottom;
     /* transform-origin: center top; */
     transform-style: preserve-3d;
@@ -155,37 +152,12 @@
       transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
-  :global(.transitioned.connor div div:hover, .transitioned.rothschild
-      div
-      div:hover) {
-    animation: spin 500ms forwards;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    33% {
-      transform: rotate(2.5deg);
-    }
-
-    66% {
-      transform: rotate(-2.5deg);
-    }
-
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
   :global(.rothschild *) {
-    overflow: visible;
     transform-origin: center bottom;
     /* transform-origin: center top; */
     transform-style: preserve-3d;
     transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
-      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1), filter 100ms ease;
+      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   .connor {
@@ -194,7 +166,6 @@
 
   .rothschild {
     font-size: 12.15vw;
-    /* margin-left: 1.5vw; */
   }
 
   .subtitle {

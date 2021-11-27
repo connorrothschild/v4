@@ -43,18 +43,13 @@
 </script>
 
 <Transition />
-<main>
-  <!-- <h1 class="page-overline transition-subtitle">Awards I’ve won</h1> -->
+<main class="main">
   <BackTo
     href="/"
     text="Home"
     classes="page-overline transition-content centered"
   />
-  <h1 class="page-title transition-title overflow-hidden">
-    Awards
-    <!-- I’ve
-    <span class="gradient-accented bolded ">won</span> -->
-  </h1>
+  <h1 class="page-title transition-title overflow-hidden">Awards</h1>
 
   <div class="awards-grid transition-content">
     {#each awards as award}
@@ -68,12 +63,4 @@
 </main>
 
 <style>
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1rem;
-    width: 95%;
-    margin-bottom: 4rem;
-    margin-top: var(--nav-height);
-  }
 </style>

@@ -44,9 +44,9 @@
         {title}
       </h1>
       <h2 class="content-description transition-subtitle overflow-hidden">
-        <span style="font-weight: 600;">{organization}</span>
+        <span style="display: block; font-weight: 600;">{organization}</span>
         <span
-          style="font-weight: 300; text-transform: uppercase; font-size: 1.25rem;"
+          style="display: block; font-weight: 300; text-transform: uppercase; font-size: 1.25rem;"
           >{dateFormat(date)}</span
         >
       </h2>
@@ -57,7 +57,7 @@
 
     <p class="media-link">
       <a href={media_url} target="_blank" rel="noopener noreferrer"
-        >See media here.</a
+        >See media &rarr;</a
       >
     </p>
     <BackTo href="/award" text="Back to all awards" classes="border-top" />
@@ -65,4 +65,8 @@
 </main>
 
 <style>
+  .media-link {
+    text-align: right;
+    font-family: var(--font-serif);
+  }
 </style>
