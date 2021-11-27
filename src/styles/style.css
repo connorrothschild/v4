@@ -42,7 +42,7 @@
   --works-on-accent-bg: var(--pure-background-color);
   --semitransparent-bg: rgba(255, 255, 255, 0.08); 
   --footer-bg: var(--semitransparent-bg);
-  --noise-opacity: .275;
+  --noise-opacity: .35;
 }
 
 * {
