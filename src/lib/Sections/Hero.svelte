@@ -33,6 +33,8 @@
 
     await sleep(250);
     await transition(connor, rothschild, subtitle, overline);
+
+    await sleep(2000);
     transitioned = true;
   });
 
@@ -153,7 +155,9 @@
       transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
-  :global(.connor div div:hover, .rothschild div div:hover) {
+  :global(.transitioned.connor div div:hover, .transitioned.rothschild
+      div
+      div:hover) {
     animation: spin 500ms forwards;
   }
 
