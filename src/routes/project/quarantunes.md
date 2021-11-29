@@ -7,7 +7,7 @@ audience: "The world (2000 users)"
 featured: true
 image: quarantunes/header.png
 img_alt: "Quarantunes header, includes an image of a MacBook with the application open."
-techstack: "D3.js, Vue.js, Bulma, R, Spotify API"
+techstack: [D3.js, Vue.js, Bulma, R, Spotify API]
 github: "https://github.com/connorrothschild/quarantunes"
 url: "https://quarantune.netlify.app"
 ---
@@ -32,7 +32,7 @@ I used [Vue](https://vuejs.org/) to design the majority of this application. Cha
 
 I also had some fun developing the more novel contributions of this project, such as a 'recommended' artist and a whole playlist of recommended songs. For recommended artists, I scraped a users' top 50 artists, and for each of those artists, pulled 20 ['related' artists](https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-an-artists-related-artists) according to Spotify. Then, I appended all 1000 (50 x 20) of those artists into one array, and presented the one that appeared most frequently to the user. As for the playlist, I took the users' top 5 tracks and gathered 4 ['seed' recommendations](https://developer.spotify.com/console/get-recommendations/) based on those tracks. Voila! A playlist of 20 recommendations.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></Image>
 <Image style="box-shadow: none;" src="/images/project/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></Image>

@@ -7,7 +7,7 @@ audience: "The world!"
 featured: false
 image: covid-masking/header.png
 img_alt: "COVID masking header image, includes an image of a MacBook with the application open."
-techstack: "Observable"
+techstack: [Observable]
 github: "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"
 url: "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"
 ---
@@ -26,7 +26,7 @@ import Image from "$lib/global/Image.svelte"
 
 This project was exclusively built with [Observable](https://observablehq.com/). The notebook contains a series of visualizations, each of which build upon the prior. Altogether, the intention is to tell a _story_ about masking, not just create a series of visuals.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/covid-masking/mac-1.png" alt="Project image for 'Mask Wearing in Your County'" width="100%"></Image>
 

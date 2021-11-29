@@ -7,7 +7,7 @@ audience: "The world!"
 featured: false
 image: media-mentions/header.png
 img_alt: "Media mentions header image, includes an image of a MacBook with the application open."
-techstack: "Observable"
+techstack: [Observable]
 github: "https://observablehq.com/@connorrothschild/bar-chart-race"
 url: "https://observablehq.com/@connorrothschild/bar-chart-race"
 ---
@@ -26,7 +26,7 @@ import Image from "$lib/global/Image.svelte"
 
 This project was built with [Observable](https://observablehq.com/). It was my first Observable notebook, and mostly an attempt to learn. (It was a fork of Mike Bostock's existing bar chart race.)
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/media-mentions/mac.png" alt="Project image for 'The Race for Media Attention'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/images/project/media-mentions/phone.png" alt="Project image for 'The Race for Media Attention'" width="22%"></Image>

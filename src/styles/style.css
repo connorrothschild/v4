@@ -45,12 +45,15 @@
   --noise-opacity: .35;
 }
 
-* {
+/* * {
   transition: color 300ms linear, background 300ms linear;
   -webkit-transition: color 300ms linear, background 300ms linear;
   -moz-transition: color 300ms linear, background 300ms linear;
   -ms-transition: color 300ms linear, background 300ms linear;
   -o-transition: color 300ms linear, background 300ms linear;
+} */
+
+* {
   box-sizing: border-box;
 }
 
@@ -429,7 +432,7 @@ blockquote p:last-of-type {
 
 /* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
 .top-level {
-  max-width: 1068px;
+  /* max-width: 1068px; */
   margin: 10vh auto 5vh auto;
   text-align: center;
   display: flex;
@@ -438,13 +441,25 @@ blockquote p:last-of-type {
 }
 
 .content-title {
-  font-size: 6rem;
-  font-weight: 200;
-  margin-bottom: 2rem;
+  /* font-size: 8rem; */
+  font-size: 9vw;
+  font-weight: 500;
+  margin-bottom: 4rem;
   overflow: hidden;
   margin-top: 2.5rem;
   line-height: 1;
   text-align: center;
+}
+
+.content-title.smaller {
+  font-size: 7.5vw;
+  margin-bottom: 3rem;
+}
+
+.content-title code {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  background: none !important;
 }
 
 .content-description {
@@ -469,11 +484,38 @@ blockquote p:last-of-type {
   text-shadow: none;
 }
 
+/* SMALL DESKTOP BREAKPOINT */
+/* TABLET BREAKPOINT */
+@media screen and (max-width: 1068px) {
+  .page-title {
+    font-size: 6rem;
+    padding-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .page-overline {
+    font-size: .85rem;
+  }
+
+  .content-title, .content-title.smaller {
+    margin-bottom: 2.25rem;
+    /* font-size: 5.5rem; */
+  }
+
+  .content-description,
+  .content-description h1,
+  .content-description h2 {
+    font-size: 1.5rem;
+  }
+}
+
 /* TABLET BREAKPOINT */
 @media screen and (max-width: 768px) {
   .page-title {
     font-size: 3.5rem;
-    padding-bottom: 1rem;
   }
 
   .section-title {
@@ -484,8 +526,8 @@ blockquote p:last-of-type {
     font-size: .75rem;
   }
 
-  .content-title {
-    font-size: 4rem;
+  .content-title, .content-title.smaller {
+    /* font-size: 4rem; */
   }
 
   .content-description,
@@ -504,8 +546,8 @@ blockquote p:last-of-type {
     font-size: 3.25rem;
   }
 
-  .content-title {
-    font-size: 3rem;
+  .content-title, .content-title.smaller {
+    /* font-size: 3rem; */
     margin-bottom: 1rem;
   }
 
@@ -526,8 +568,8 @@ blockquote p:last-of-type {
     font-size: 3rem;
   }
 
-  .content-title {
-    font-size: 2.5rem;
+  .content-title, .content-title.smaller {
+    font-size: 3rem;
   }
 
   .content-description,

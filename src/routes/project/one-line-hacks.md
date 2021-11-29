@@ -7,7 +7,7 @@ audience: "The world!"
 featured: false
 image: one-line-hacks/header.png
 img_alt: "One line hacks header image, includes an image of a MacBook with the application open."
-techstack: "JavaScript, Vue, Tailwind"
+techstack: [JavaScript, Vue, Tailwind]
 github: "https://connorrothschild.github.io/one-line-hacks/"
 url: "https://connorrothschild.github.io/one-line-hacks/"
 ---
@@ -26,7 +26,7 @@ url: "https://connorrothschild.github.io/one-line-hacks/"
 
 This small site was built with Vue and Tailwind. I use Nuxt and Nuxt Content for Markdown-based content creation.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/one-line-hacks/mac-1.png" alt="Project image for the project 'One Line Hacks'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/images/project/one-line-hacks/phone-1.png" alt="Project image for the project 'One Line Hacks'" width="22%"></Image>

@@ -26,7 +26,7 @@ import Image from "$lib/global/Image.svelte"
 
 I used [D3.js](https://d3js.org/) for the minor visualization that accompanies these numbers. The rest of the computation is done by simply dividing the state's police spending by a specified denominator, one for each metric. This was a technically simple project. The goal is not to amaze, but to provide simple, easy comparisons that better inform the user about their state's police spending.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/images/project/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></Image>

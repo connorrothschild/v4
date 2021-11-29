@@ -8,7 +8,7 @@ featured: false
 archived: true
 image: compas/header.png
 img_alt: "COMPAS header image, includes an image of a MacBook with the application open."
-techstack: "D3.js, Bulma, R"
+techstack: [D3.js, Bulma, R]
 github: "https://github.com/connorrothschild/compas"
 url: "https://connorrothschild.github.io/compas/"
 ---
@@ -29,7 +29,7 @@ The application is meant to showcase how inaccurate COMPAS is, and illustrate th
 
 This project was built using vanilla JavaScript, and styling was done with assistance from [Bulma](https://bulma.io/). It was rather easy to build; it was mostly an exercise to 1) inform users about how inaccurate sentencing algorithms are, and 2) learn JavaScript 🙂.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/images/project/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>

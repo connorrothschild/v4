@@ -8,7 +8,7 @@ featured: false
 archived: true
 image: tpl-schools-db/header.png
 img_alt: "TPL header image, includes an image of a MacBook with the application open."
-techstack: "R, Shiny"
+techstack: [R, Shiny]
 # github: "https://github.com/connorrothschild/what-are-you-doing"
 url: "http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/"
 ---
@@ -27,7 +27,7 @@ import Image from "$lib/global/Image.svelte"
 
 The app is built with R and is a Shiny web application. I was mostly responsible for the frontend development and some design. I helped less with the backend data retrieval, wrangling, and testing.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/tpl-schools-db/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>
 <Image style="box-shadow: none;" src="/images/project/tpl-schools-db/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="49%"></Image>

@@ -7,7 +7,7 @@ audience: "The world!"
 featured: true
 image: map-missing-migrants/header.png
 img_alt: "An example screen of the 'Mapping Missing Migrants' article"
-techstack: "Mapbox, R"
+techstack: [Mapbox, R]
 github: "https://github.com/connorrothschild/map-missing-migrants/"
 url: "https://connorrothschild.github.io/map-missing-migrants"
 ---
@@ -30,7 +30,7 @@ I used Mapbox Studio to create each of the bubbles that is present on the map. A
 
 To trigger scroll events, I used the Mapbox storytelling template. This was a simple JSON where, for each 'view', I defined three elements: the _text_, the _layer_, and the _location_.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/map-missing-migrants/mac-1.png" alt="Project image for 'Mapping Missing Migrants'" width="100%"></Image>
 

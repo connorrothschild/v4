@@ -7,7 +7,7 @@ audience: "Rice Datathon"
 featured: false
 image: map-houston-homicides/header.png
 img_alt: "An example screen of the 'Mapping Houston Homicides' article"
-techstack: "Mapbox, R"
+techstack: [Mapbox, R]
 github: "https://github.com/connorrothschild/datathon-2020/"
 url: "https://connorrothschild.github.io/datathon-2020/source"
 ---
@@ -30,7 +30,7 @@ We used Mapbox Studio to create each of the bubbles that is present on the map. 
 
 To trigger scroll events, We used the Mapbox storytelling template. This was a simple JSON where, for each 'view', I defined three elements: the _text_, the _layer_, and the _location_.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-1.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
 <Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-2.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>

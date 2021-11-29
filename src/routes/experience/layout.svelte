@@ -31,7 +31,7 @@
         classes="page-overline transition-content"
       />
 
-      <h1 class="content-title uppercase transition-title overflow-hidden">
+      <h1 class="content-title uppercase transition-title ">
         {name}
         <img
           loading="lazy"

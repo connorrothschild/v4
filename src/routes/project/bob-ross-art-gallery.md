@@ -7,7 +7,7 @@ audience: "The world!"
 featured: true
 image: bob-ross-art-gallery/header.png
 img_alt: 'A header image that says "The Bob Ross (virtual) Art Gallery"'
-techstack: "D3.js, Svelte, R, Scrollama"
+techstack: [D3.js, Svelte, R, Scrollama]
 github: "https://github.com/connorrothschild/bob-ross-art-gallery/"
 url: "https://connorrothschild.github.io/bob-ross-art-gallery/"
 ---
@@ -22,9 +22,7 @@ import Image from "$lib/global/Image.svelte"
 
 [**The Bob Ross Virtual Art Gallery**](https://connorrothschild.github.io/bob-ross-art-gallery/) is a visual storytelling piece analyzing Bob Ross' series _The Joy of Painting_. 
 
-<!-- It allows the user to explore each painting from the series in an interactive, digital art gallery. -->
-
-It has since been retired due to a cease and desist from Bob Ross, Inc. Before that, it attracted media attention from [Yahoo](https://www.yahoo.com/now/bob-ross-virtual-gallery-offers-195835693.html), [Nerdist](https://nerdist.com/article/bob-ross-virtual-gallery-art/), [OpenCulture](https://www.openculture.com/2021/06/the-bob-ross-virtual-art-gallery.html), [Fatherly](https://www.fatherly.com/play/bob-ross-virtual-art-gallery-perfect-relax/), [DesignTaxi](https://designtaxi.com/news/414284/Bob-Ross-Virtual-Art-Gallery-Lets-You-Take-A-Happy-Little-Break-To-See-His-Art/), [FlowingData](https://flowingdata.com/2021/06/01/colors-of-bob-ross-explored/) and others. It also won first place in the Standalone Multimedia category at the Society for News Design's [2021 Student Design Contest](https://msusnd.org/2021-college-design-contest/).
+It allows the user to explore each painting from the series in an interactive, digital art gallery. It has attracted media attention from [Yahoo](https://www.yahoo.com/now/bob-ross-virtual-gallery-offers-195835693.html), [Nerdist](https://nerdist.com/article/bob-ross-virtual-gallery-art/), [OpenCulture](https://www.openculture.com/2021/06/the-bob-ross-virtual-art-gallery.html), [Fatherly](https://www.fatherly.com/play/bob-ross-virtual-art-gallery-perfect-relax/), [DesignTaxi](https://designtaxi.com/news/414284/Bob-Ross-Virtual-Art-Gallery-Lets-You-Take-A-Happy-Little-Break-To-See-His-Art/), [FlowingData](https://flowingdata.com/2021/06/01/colors-of-bob-ross-explored/) and others. It also won first place in the Standalone Multimedia category at the Society for News Design's [2021 Student Design Contest](https://msusnd.org/2021-college-design-contest/).
 
 # Tools used
 
@@ -32,7 +30,7 @@ I used [Svelte](https://svelte.dev/) and [D3.js](https://d3js.org/) for all thin
 
 For the scroll-based interactions, I used Russell Goldenberg's [Scrollama](https://github.com/russellgoldenberg/scrollama). As of the creation of this project, there is no formal or official Svelte-based scrollytelling library. I therefore used Scrollama in its vanilla form, and plugged it into the Svelte component as if I were writing normal JavaScript.
 
-# Project images
+# At a glance
 
 <Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/iphone-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>

@@ -34,12 +34,12 @@
         text="Blog"
         classes="page-overline transition-content"
       />
-      <h1 class="content-title uppercase transition-title overflow-hidden">
-        {title}
+      <h1 class="content-title smaller uppercase transition-title">
+        {@html title}
       </h1>
       <div class="content-flex transition-content content-description">
         <h2 class="description overflow-hidden">
-          {description}
+          {@html description}
         </h2>
         <div class="misc overflow-hidden">
           <h2 class="date">{dateFormat(date)}</h2>
@@ -102,6 +102,7 @@
     padding: 0.45rem 0.55rem;
     border-radius: 2px;
     letter-spacing: 0.05rem;
+    font-family: var(--font-serif);
   }
 
   @media screen and (max-width: 768px) {

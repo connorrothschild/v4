@@ -45,8 +45,8 @@
     />
     {#if hovered || isTouchscreen}
       <div in:fly|local={{ y: 50, duration: 200 }} class="project-text">
-        <h1 class="title">{project.title}</h1>
-        <h2 class="description">{project.description}</h2>
+        <h1 class="title">{@html project.title}</h1>
+        <h2 class="description">{@html project.description}</h2>
       </div>
     {/if}
   </a>

@@ -40,8 +40,8 @@
         classes="page-overline transition-content"
       />
 
-      <h1 class="content-title uppercase transition-title overflow-hidden">
-        {title}
+      <h1 class="content-title uppercase transition-title">
+        {@html title}
       </h1>
       <h2 class="content-description transition-subtitle overflow-hidden">
         <span style="display: block; font-weight: 600;">{organization}</span>

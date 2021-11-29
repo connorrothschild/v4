@@ -135,8 +135,8 @@
       <div class="post-card">
         <div class="post-info">
           <h2 class="post-date">{dateFormat(post.date)}</h2>
-          <h1 class="post-title">{post.title}</h1>
-          <h2 class="post-description">{post.description}</h2>
+          <h1 class="post-title">{@html post.title}</h1>
+          <h2 class="post-description">{@html post.description}</h2>
         </div>
         <div class="post-tags">
           {#each post.tags as tag}
