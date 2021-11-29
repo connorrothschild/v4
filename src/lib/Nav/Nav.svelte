@@ -82,7 +82,7 @@
   </button>
 </div>
 {#if expanded}
-  <Transition split={"chars"} stagger={0.05} />
+  <Transition split={"chars"} stagger={0.05} startingOpacity={0.7} />
   <div
     class="fullpage-nav"
     in:fly|local={inParams}

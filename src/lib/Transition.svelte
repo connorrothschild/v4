@@ -1,6 +1,7 @@
 <script>
   export let split = "chars";
   export let stagger = 0.02;
+  export let startingOpacity = 0;
 
   import { onMount } from "svelte";
   import { gsap } from "gsap";
@@ -19,12 +20,20 @@
 
     content.forEach((d) => {
       gsap.set(d, { opacity: 0 });
-      gsap.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 });
+      gsap.fromTo(
+        d,
+        { opacity: startingOpacity },
+        { opacity: 1, duration: 0.5, delay: 0.5 }
+      );
     });
 
     title.forEach((d) => {
       gsap.set(d, { opacity: 0 });
-      gsap.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+      gsap.fromTo(
+        d,
+        { opacity: startingOpacity },
+        { opacity: 1, duration: 1.5 }
+      );
 
       const titleSplit = new SplitText(d, {
         type: "lines,words,chars",
@@ -32,9 +41,9 @@
 
       gsap.fromTo(
         titleSplit[split],
-        { y: 100, opacity: 0, rotation: 0 },
+        { y: "100%", opacity: startingOpacity, rotation: 0 },
         {
-          translateY: 0,
+          y: 0,
           opacity: 1,
           rotation: 0,
           stagger: stagger,
@@ -45,8 +54,12 @@
     });
 
     subtitle.forEach((d) => {
-      gsap.set(d, { opacity: 0 });
-      gsap.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+      gsap.set(d, { opacity: startingOpacity });
+      gsap.fromTo(
+        d,
+        { opacity: startingOpacity },
+        { opacity: 1, duration: 1.5 }
+      );
 
       const subtitleSplit = new SplitText(d, {
         type: "lines,words,chars",
@@ -54,7 +67,7 @@
 
       gsap.fromTo(
         subtitleSplit["words"],
-        { y: 100, opacity: 0 },
+        { y: "100%", opacity: startingOpacity },
         {
           y: 0,
           opacity: 1,

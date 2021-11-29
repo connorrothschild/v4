@@ -1,6 +1,6 @@
 <script>
   import { fly } from "svelte/transition";
-  import { currentColorMode } from "../stores/global.js";
+  import { currentColorMode, windowWidth } from "../stores/global.js";
 
   const lightModeColors = [
     { var: `--pure-background-color`, value: `#ffffff` },
@@ -41,7 +41,21 @@
   ];
 
   let currentMode = "dark";
-  function setColors() {
+  let transitioning = false;
+  let transitionDuration = 1000;
+  let currentAccent;
+
+  import { sleep } from "../scripts/utils.js";
+
+  async function setColors() {
+    currentAccent = getComputedStyle(document.documentElement).getPropertyValue(
+      "--accent-color"
+    );
+
+    transitioning = true;
+    await sleep(transitionDuration);
+
+    transitioning = false;
     if (currentMode == "dark") {
       lightModeColors.forEach((color) => {
         document.documentElement.style.setProperty(color.var, color.value);
@@ -56,8 +70,17 @@
   }
 
   $: currentMode, currentColorMode.set(currentMode);
+  import { cubicIn, cubicOut } from "svelte/easing";
 </script>
 
+{#if transitioning}
+  <div
+    in:fly={{ opacity: 1, x: -$windowWidth, easing: cubicIn }}
+    out:fly={{ opacity: 1, x: $windowWidth, easing: cubicOut }}
+    class="fullscreen-transition"
+    style="background: {currentAccent};"
+  />
+{/if}
 {#key currentMode}
   <p
     out:fly={{ y: 50, duration: 300 }}
@@ -70,6 +93,14 @@
 {/key}
 
 <style>
+  .fullscreen-transition {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: grey;
+    z-index: 10000;
+  }
+
   p {
     cursor: pointer;
     position: fixed;
