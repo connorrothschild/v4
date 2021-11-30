@@ -1,6 +1,7 @@
 <script>
   export let projects;
   export let videosLoaded;
+  export let videos;
 
   import TouchVideoSection from "./TouchVideoSection.svelte";
 </script>
@@ -8,7 +9,7 @@
 <div>
   <div class="projects">
     {#each projects as project, i}
-      <TouchVideoSection {project} {i} {videosLoaded} />
+      <TouchVideoSection {project} {i} {videos} {videosLoaded} />
     {/each}
   </div>
 </div>

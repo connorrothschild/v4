@@ -2,8 +2,10 @@
   export let project;
   export let i;
   export let videosLoaded;
+  export let videos;
 
   import IntersectionObserver from "svelte-intersection-observer";
+  import { onMount } from "svelte";
 
   let playedOnce = false,
     currentIndex = 0,
@@ -19,6 +21,7 @@
     videoTransitioning = true;
 
     setTimeout(() => {
+      element.src = window.URL.createObjectURL(videos[index]);
       element.load();
       element.play();
 
@@ -38,6 +41,12 @@
   $: if (intersecting) {
     playVideo(i);
   }
+
+  onMount(() => {
+    setInterval(() => {
+      if (!videoHasSrc) playVideo(0);
+    }, 2000);
+  });
 </script>
 
 <IntersectionObserver {element} bind:intersecting>
