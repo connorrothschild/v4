@@ -8,40 +8,39 @@
   import { onMount } from "svelte";
 
   let playedOnce = false,
-    currentIndex = 0,
-    videoTransitioning = false;
+    videoTransitioning = false,
+    intersected = false;
 
   let element, intersecting;
 
   const playVideo = function (index) {
-    // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
-    if (playedOnce && index === currentIndex) return;
+    if (playedOnce) return;
 
-    if (element) {
-      videoTransitioning = true;
+    videoTransitioning = true;
 
-      setTimeout(() => {
-        element.src = window.URL.createObjectURL(videos[index]);
-        element.load();
-        element.play();
+    setTimeout(() => {
+      element.src = window.URL.createObjectURL(videos[index]);
+      element.load();
+      element.play();
 
-        videoTransitioning = false;
+      videoTransitioning = false;
 
-        currentIndex = index;
-        playedOnce = true;
-      }, 200);
-    }
+      currentIndex = index;
+      playedOnce = true;
+    }, 200);
   };
 
   $: videoHasSrc = element?.src != "";
 
-  $: if (intersecting && !playedOnce) {
-    playVideo(i);
+  $: if (intersecting) {
+    intersected = true;
   }
+
+  $: intersected == true, playVideo(i);
 
   onMount(() => {
     setInterval(() => {
-      if (!videoHasSrc && !playedOnce) playVideo(i);
+      if (!videoHasSrc) playVideo(i);
     }, 500);
   });
 
