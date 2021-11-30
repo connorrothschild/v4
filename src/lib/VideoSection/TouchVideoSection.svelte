@@ -25,10 +25,6 @@
         element.load();
         element.play();
 
-        // console.log(element.src);
-
-        // videoHasSrc = true;
-
         videoTransitioning = false;
 
         currentIndex = index;
@@ -39,13 +35,13 @@
 
   $: videoHasSrc = element?.src != "";
 
-  $: if (intersecting) {
+  $: if (intersecting && !playedOnce) {
     playVideo(i);
   }
 
   onMount(() => {
     setInterval(() => {
-      if (!videoHasSrc) playVideo(i);
+      if (!videoHasSrc && !playedOnce) playVideo(i);
     }, 500);
   });
 
