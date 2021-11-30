@@ -35,7 +35,7 @@
     }
   };
 
-  $: videosLoaded, playVideo(0);
+  //   $: videosLoaded, playVideo(0);
 
   $: if (intersecting) {
     playVideo(i);
