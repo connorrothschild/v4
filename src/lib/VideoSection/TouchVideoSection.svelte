@@ -5,45 +5,23 @@
   export let videosLoaded;
 
   import IntersectionObserver from "svelte-intersection-observer";
-  import { onMount } from "svelte";
 
-  let playedOnce = false,
-    videoTransitioning = false,
-    intersected = false;
+  let intersected = false;
 
   let element, intersecting;
 
-  const playVideo = function (index) {
-    if (playedOnce) return;
-
-    videoTransitioning = true;
-
-    setTimeout(() => {
-      element.src = window.URL.createObjectURL(videos[index]);
+  const playVideo = function () {
+    if (element) {
       element.load();
       element.play();
-
-      videoTransitioning = false;
-
-      currentIndex = index;
-      playedOnce = true;
-    }, 200);
+    }
   };
-
-  $: videoHasSrc = element?.src != "";
 
   $: if (intersecting) {
     intersected = true;
   }
 
-  $: intersected == true, playVideo(i);
-  $: videoHasSrc == true, playVideo(i);
-
-  // onMount(() => {
-  //   setInterval(() => {
-  //     if (!videoHasSrc) playVideo(i);
-  //   }, 500);
-  // });
+  $: intersected == true, playVideo();
 
   import { windowHeight } from "../../stores/global.js";
 </script>
@@ -69,9 +47,8 @@
         autoplay
         muted
         playsinline
-        id="video-{i}"
-        class:videoTransitioning
         style="height: {$windowHeight * 0.8}px;"
+        src={window.URL.createObjectURL(videos[i])}
       />
     {/if}
   </div>
@@ -130,10 +107,6 @@
     transition: opacity 200ms linear;
   }
 
-  .videoTransitioning {
-    opacity: 0;
-  }
-
   video {
     width: auto;
     margin: 0 auto;
@@ -146,7 +119,7 @@
     width: 80px;
     height: 80px;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
