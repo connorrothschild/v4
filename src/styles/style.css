@@ -564,6 +564,9 @@ blockquote p:last-of-type {
 
 /* MOBILE BREAKPOINT */
 @media screen and (max-width: 460px) {
+  .top-level {
+    margin: 12.5h auto 2.5vh auto
+  }
   .section-title {
     font-size: 3rem;
   }

@@ -2,8 +2,8 @@
   export let project;
   export let i;
   export let videos;
-  export let videosLoaded;
 
+  import { fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
 
   let intersected = false;
@@ -42,6 +42,7 @@
       <div class="lds-dual-ring" />
     {:else}
       <video
+        transition:fade
         bind:this={element}
         preload="metadata"
         autoplay
