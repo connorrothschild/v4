@@ -3,7 +3,7 @@
 
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
   import HoverVideo from "$lib/VideoSection/HoverVideo.svelte";
-  import ScrollVideo from "$lib/VideoSection/ScrollVideo.svelte";
+  import TouchVideo from "$lib/VideoSection/TouchVideo.svelte";
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
 
@@ -46,34 +46,27 @@
 
 <IntersectionObserver {element} bind:intersecting once>
   <section bind:this={element} id="projects">
-    <div
-      class={isTouchscreen ? "sticky-top" : ""}
-      style="background-color: {step >= 0
-        ? 'var(--primary-color)'
-        : 'transparent'}"
-    >
-      <div class="see-all-flex">
-        <h1 class="page-overline">
-          <!-- {isMobile ? "Selected projects" : "Selected projects"} -->
-          01. Selected projects
-        </h1>
-        <a
-          class="page-overline padding-bottom see-all"
-          sveltekit:prefetch
-          href="/project"
-        >
-          See all projects &#8599;
-        </a>
-      </div>
-      <SectionTitle {intersecting} element="#projects-title">
-        <h1 id="projects-title" class="section-title overflow-hidden">
-          Projects I’ve
-          <span class="gradient-accented bolded">built</span>
-        </h1>
-      </SectionTitle>
+    <div class="see-all-flex">
+      <h1 class="page-overline">
+        <!-- {isMobile ? "Selected projects" : "Selected projects"} -->
+        01. Selected projects
+      </h1>
+      <a
+        class="page-overline padding-bottom see-all"
+        sveltekit:prefetch
+        href="/project"
+      >
+        See all projects &#8599;
+      </a>
     </div>
+    <SectionTitle {intersecting} element="#projects-title">
+      <h1 id="projects-title" class="section-title overflow-hidden">
+        Projects I’ve
+        <span class="gradient-accented bolded">built</span>
+      </h1>
+    </SectionTitle>
     {#if isTouchscreen}
-      <ScrollVideo
+      <TouchVideo
         projects={filteredProjects}
         {videos}
         {videosLoaded}
