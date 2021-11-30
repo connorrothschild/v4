@@ -41,11 +41,11 @@
     playVideo(i);
   }
 
-  onMount(() => {
-    setInterval(() => {
-      if (i == 0 && !videoHasSrc) playVideo(0);
-    }, 200);
-  });
+  //   onMount(() => {
+  //     setInterval(() => {
+  //       if (i == 0 && !videoHasSrc) playVideo(i);
+  //     }, 200);
+  //   });
 
   import { windowHeight } from "../../stores/global.js";
 </script>
