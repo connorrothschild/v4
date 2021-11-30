@@ -38,7 +38,7 @@
         <h2>{project.metadata.description}</h2>
       </div>
     </a>
-    {#if !videosLoaded}
+    {#if !videos[i]}
       <div class="lds-dual-ring" />
     {:else}
       <video
