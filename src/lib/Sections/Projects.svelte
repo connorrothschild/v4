@@ -38,9 +38,10 @@
   $: if (intersecting) {
     for (let i = 0; i < filteredProjects.length; i++) {
       preload(i);
-      if (i == filteredProjects.length - 1) videosLoaded = true;
     }
   }
+
+  $: videosLoaded = videos.length == 4;
 </script>
 
 <IntersectionObserver {element} bind:intersecting once>

@@ -9,8 +9,7 @@
 
   let playedOnce = false,
     currentIndex = 0,
-    videoTransitioning = false,
-    videoHasSrc = false;
+    videoTransitioning = false;
 
   let element, intersecting;
 
@@ -20,12 +19,15 @@
 
     if (element) {
       videoTransitioning = true;
-      videoHasSrc = true;
 
       setTimeout(() => {
         element.src = window.URL.createObjectURL(videos[index]);
         element.load();
         element.play();
+
+        // console.log(element.src);
+
+        // videoHasSrc = true;
 
         videoTransitioning = false;
 
@@ -35,17 +37,17 @@
     }
   };
 
-  //   $: videosLoaded, playVideo(0);
+  $: videoHasSrc = element?.src != "";
 
   $: if (intersecting) {
     playVideo(i);
   }
 
-  //   onMount(() => {
-  //     setInterval(() => {
-  //       if (i == 0 && !videoHasSrc) playVideo(i);
-  //     }, 200);
-  //   });
+  onMount(() => {
+    setInterval(() => {
+      if (!videoHasSrc) playVideo(i);
+    }, 500);
+  });
 
   import { windowHeight } from "../../stores/global.js";
 </script>
@@ -62,19 +64,20 @@
         <h2>{project.metadata.description}</h2>
       </div>
     </a>
-    {#if !videoHasSrc}
+    {#if !videosLoaded}
       <div class="lds-dual-ring" />
+    {:else}
+      <video
+        bind:this={element}
+        preload="metadata"
+        autoplay
+        muted
+        playsinline
+        id="video-{i}"
+        class:videoTransitioning
+        style="height: {$windowHeight * 0.8}px;"
+      />
     {/if}
-    <video
-      bind:this={element}
-      preload="metadata"
-      autoplay
-      muted
-      playsinline
-      id="video-{i}"
-      class:videoTransitioning
-      style="height: {$windowHeight * 0.8}px;"
-    />
   </div>
 </IntersectionObserver>
 
