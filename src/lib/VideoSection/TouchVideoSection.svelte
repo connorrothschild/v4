@@ -1,7 +1,6 @@
 <script>
   export let project;
   export let i;
-  export let videosLoaded;
   export let videos;
 
   import IntersectionObserver from "svelte-intersection-observer";
@@ -19,6 +18,7 @@
     if (playedOnce && index === currentIndex) return;
 
     videoTransitioning = true;
+    videoHasSrc = true;
 
     setTimeout(() => {
       element.src = window.URL.createObjectURL(videos[index]);
@@ -27,14 +27,10 @@
 
       videoTransitioning = false;
 
-      videoHasSrc = true;
-
       currentIndex = index;
       playedOnce = true;
     }, 200);
   };
-
-  $: videosLoaded, playVideo(0);
 
   import { windowHeight } from "../../stores/global.js";
 
@@ -44,12 +40,12 @@
 
   onMount(() => {
     setInterval(() => {
-      if (!videoHasSrc) playVideo(0);
-    }, 2000);
+      if (i == 0 && !videoHasSrc) playVideo(0);
+    }, 200);
   });
 </script>
 
-<IntersectionObserver {element} bind:intersecting>
+<IntersectionObserver {element} bind:intersecting once>
   <div class="project-section" style="height: {$windowHeight * 0.85}px;">
     <a
       class="project-overlay no-underline"
@@ -61,6 +57,9 @@
         <h2>{project.metadata.description}</h2>
       </div>
     </a>
+    {#if !videoHasSrc}
+      <div class="lds-dual-ring" />
+    {/if}
     <video
       bind:this={element}
       preload="metadata"
@@ -134,5 +133,35 @@
     width: auto;
     margin: 0 auto;
     width: 101vw;
+  }
+
+  /* LOADING */
+  .lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 </style>

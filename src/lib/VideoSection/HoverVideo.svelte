@@ -11,13 +11,13 @@
   const updateVideo = function (index) {
     if (video && videosLoaded) {
       videoTransitioning = true;
+      videoHasSrc = true;
 
       setTimeout(() => {
         video.src = window.URL.createObjectURL(videos[index]);
         video.load();
 
         videoTransitioning = false;
-        videoHasSrc = true;
       }, 200);
     }
   };
@@ -28,7 +28,7 @@
   onMount(() => {
     setInterval(() => {
       if (!videoHasSrc) updateVideo(value);
-    }, 2000);
+    }, 200);
   });
 
   import { windowHeight } from "../../stores/global.js";
