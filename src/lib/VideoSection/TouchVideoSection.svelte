@@ -2,6 +2,7 @@
   export let project;
   export let i;
   export let videos;
+  export let videosLoaded;
 
   import IntersectionObserver from "svelte-intersection-observer";
   import { onMount } from "svelte";
@@ -17,22 +18,24 @@
     // If value is unchanged from prior, do nothing (this could occur since the default/initial value is 0, and when a user re-hovers over zero)
     if (playedOnce && index === currentIndex) return;
 
-    videoTransitioning = true;
-    videoHasSrc = true;
+    if (element) {
+      videoTransitioning = true;
+      videoHasSrc = true;
 
-    setTimeout(() => {
-      element.src = window.URL.createObjectURL(videos[index]);
-      element.load();
-      element.play();
+      setTimeout(() => {
+        element.src = window.URL.createObjectURL(videos[index]);
+        element.load();
+        element.play();
 
-      videoTransitioning = false;
+        videoTransitioning = false;
 
-      currentIndex = index;
-      playedOnce = true;
-    }, 200);
+        currentIndex = index;
+        playedOnce = true;
+      }, 200);
+    }
   };
 
-  import { windowHeight } from "../../stores/global.js";
+  $: videosLoaded, playVideo(0);
 
   $: if (intersecting) {
     playVideo(i);
@@ -43,6 +46,8 @@
       if (i == 0 && !videoHasSrc) playVideo(0);
     }, 200);
   });
+
+  import { windowHeight } from "../../stores/global.js";
 </script>
 
 <IntersectionObserver {element} bind:intersecting once>
@@ -63,6 +68,7 @@
     <video
       bind:this={element}
       preload="metadata"
+      autoplay
       muted
       playsinline
       id="video-{i}"

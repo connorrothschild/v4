@@ -8,8 +8,6 @@
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
 
-  let step;
-
   let element;
   let intersecting;
 
@@ -67,12 +65,7 @@
       </h1>
     </SectionTitle>
     {#if isTouchscreen}
-      <TouchVideo
-        projects={filteredProjects}
-        {videos}
-        {videosLoaded}
-        bind:value={step}
-      />
+      <TouchVideo projects={filteredProjects} {videos} {videosLoaded} />
     {:else}
       <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
     {/if}
@@ -99,13 +92,5 @@
 
   #projects-title {
     margin-bottom: 0; /* This allows for section content to be flush with border bottom on page title */
-  }
-
-  .sticky-top {
-    padding-top: var(--nav-height);
-    top: 0;
-    position: sticky;
-    z-index: 10;
-    transition: background-color 500ms ease;
   }
 </style>
