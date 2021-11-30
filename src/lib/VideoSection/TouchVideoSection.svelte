@@ -19,7 +19,6 @@
     videoTransitioning = true;
 
     setTimeout(() => {
-      // let video = document.getElementById(`video-${index}`);
       element.load();
       element.play();
 
@@ -37,8 +36,7 @@
   import { windowHeight } from "../../stores/global.js";
 
   $: if (intersecting) {
-    element.load();
-    element.play();
+    playVideo(i);
   }
 </script>
 
@@ -62,10 +60,7 @@
       id="video-{i}"
       class:videoTransitioning
       style="height: {$windowHeight * 0.8}px;"
-    >
-      <source src="videos/{i}.webm" />
-      <source src="videos/{i}.mov" />
-    </video>
+    />
   </div>
 </IntersectionObserver>
 

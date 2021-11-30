@@ -4,6 +4,7 @@
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
   import HoverVideo from "$lib/VideoSection/HoverVideo.svelte";
   import TouchVideo from "$lib/VideoSection/TouchVideo.svelte";
+
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
 
