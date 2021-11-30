@@ -37,12 +37,13 @@
   }
 
   $: intersected == true, playVideo(i);
+  $: videoHasSrc == true, playVideo(i);
 
-  onMount(() => {
-    setInterval(() => {
-      if (!videoHasSrc) playVideo(i);
-    }, 500);
-  });
+  // onMount(() => {
+  //   setInterval(() => {
+  //     if (!videoHasSrc) playVideo(i);
+  //   }, 500);
+  // });
 
   import { windowHeight } from "../../stores/global.js";
 </script>
