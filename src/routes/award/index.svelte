@@ -31,7 +31,7 @@
 
   let anyHovered;
 
-  import { seo } from "$lib/store.js";
+  import { seo } from "$lib/seo.js";
   let title = "Awards • Connor Rothschild";
   let description = "Some of my awards.";
 

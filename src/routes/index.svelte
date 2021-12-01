@@ -33,7 +33,6 @@
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
   import Awards from "$lib/Sections/Awards.svelte";
-  import Circle from "$lib/CircleText.svelte";
 
   let pageWidth;
   $: isMobile = pageWidth < 768;
@@ -42,7 +41,6 @@
 <svelte:window bind:innerWidth={pageWidth} />
 <main id="home">
   <Hero />
-  <!-- <Work {jobs} /> -->
   <Projects {projects} />
   <Awards {awards} {isMobile} />
   <Blog {posts} {isMobile} />

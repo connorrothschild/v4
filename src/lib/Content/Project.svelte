@@ -7,14 +7,7 @@
   let hovered = false;
 
   // Show titles by default on touch devices
-  import { onMount } from "svelte";
-  import { detectTouchscreen } from "../../scripts/utils.js";
-
-  let isTouchscreen = false;
-  onMount(() => {
-    isTouchscreen = detectTouchscreen();
-  });
-
+  import { isTouchscreen } from "../../stores/device.js";
   import TransitionInView from "$lib/TransitionInView.svelte";
 </script>
 
@@ -33,7 +26,7 @@
       hovered = false;
     }}
   >
-    {#if hovered || isTouchscreen}
+    {#if hovered || $isTouchscreen}
       <div transition:fade|local={{ duration: 200 }} class="hovered-gradient" />
     {/if}
     <img
@@ -43,7 +36,7 @@
       class="project-image"
       class:hovered
     />
-    {#if hovered || isTouchscreen}
+    {#if hovered || $isTouchscreen}
       <div in:fly|local={{ y: 50, duration: 200 }} class="project-text">
         <h1 class="title">{@html project.title}</h1>
         <h2 class="description">{@html project.description}</h2>

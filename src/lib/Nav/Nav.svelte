@@ -58,6 +58,7 @@
   };
 
   import { page } from "$app/stores";
+  import { isTouchscreen } from "../../stores/device.js";
 </script>
 
 <div id="nav" style={styles} class:hasBackground>
@@ -89,15 +90,17 @@
     out:fly|local={outParams}
     style={styles}
   >
-    {#key hovered}
-      <h1
-        in:fade={{ delay: 100, duration: 300 }}
-        out:fade={{ duration: 300 }}
-        class="massive-word"
-      >
-        {hovered != null ? hovered : ""}
-      </h1>
-    {/key}
+    {#if !$isTouchscreen}
+      {#key hovered}
+        <h1
+          in:fade={{ delay: 100, duration: 300 }}
+          out:fade={{ duration: 300 }}
+          class="massive-word"
+        >
+          {hovered != null ? hovered : ""}
+        </h1>
+      {/key}
+    {/if}
     <ul
       class="nav-items"
       on:mouseleave={() => {

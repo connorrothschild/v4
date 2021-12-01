@@ -526,9 +526,9 @@ blockquote p:last-of-type {
     font-size: .75rem;
   }
 
-  .content-title, .content-title.smaller {
-    /* font-size: 4rem; */
-  }
+  /* .content-title, .content-title.smaller {
+    font-size: 4rem;
+  } */
 
   .content-description,
   .content-description h1,
@@ -565,8 +565,13 @@ blockquote p:last-of-type {
 /* MOBILE BREAKPOINT */
 @media screen and (max-width: 460px) {
   .top-level {
-    margin: 12.5h auto 2.5vh auto
+    margin: 12.5vh auto 2.5vh auto
   }
+
+  .main {
+    margin-top: 5.5rem;
+  }
+
   .section-title {
     font-size: 3rem;
   }

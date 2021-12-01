@@ -161,11 +161,11 @@
   }
 
   .connor {
-    font-size: 17.55vw;
+    font-size: 21.55vw;
   }
 
   .rothschild {
-    font-size: 12.15vw;
+    font-size: 14.85vw;
   }
 
   .subtitle {
@@ -235,11 +235,11 @@
     }
 
     .overline {
-      font-size: 1.5rem;
+      font-size: 8vw;
     }
 
     .subtitle {
-      font-size: 1.3rem;
+      font-size: 5.75vw;
     }
   }
 </style>

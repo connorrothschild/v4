@@ -3,7 +3,7 @@
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/store";
+  import { seo } from "$lib/seo";
 
   export let title;
   export let description;

@@ -31,7 +31,7 @@
       if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
-  import { seo } from "$lib/store.js";
+  import { seo } from "$lib/seo.js";
   let title = "Projects • Connor Rothschild";
   let description = "Some of my projects.";
 

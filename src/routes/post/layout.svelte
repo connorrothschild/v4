@@ -3,7 +3,7 @@
   import CornerTitle from "$lib/Text/CornerTitle.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/store";
+  import { seo } from "$lib/seo";
   import { dateFormat } from "../../scripts/utils.js";
 
   export let title;

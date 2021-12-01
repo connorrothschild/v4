@@ -3,7 +3,7 @@
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/store";
+  import { seo } from "$lib/seo";
 
   export let title;
   export let organization;
@@ -25,12 +25,7 @@
 </script>
 
 <Transition split={"words"} />
-<CornerTitle
-  {title}
-  subtitle={dateFormat(date)}
-  {intersecting}
-  rootMargin="-60px"
-/>
+<CornerTitle {title} subtitle={dateFormat(date)} {intersecting} />
 <main>
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>

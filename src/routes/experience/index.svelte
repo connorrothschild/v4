@@ -23,7 +23,7 @@
 
   const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
 
-  import { seo } from "$lib/store.js";
+  import { seo } from "$lib/seo.js";
   let title = "Experience • Connor Rothschild";
   let description = "Some of my work experience.";
 

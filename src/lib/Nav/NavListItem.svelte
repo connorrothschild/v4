@@ -97,11 +97,11 @@
       line-height: 0.9;
     }
     .link-1 {
-      font-size: 20.3vw;
+      font-size: 21vw;
       overflow: visible;
     }
     .link-2 {
-      font-size: 24vw;
+      font-size: 23.8vw;
     }
     .link-3 {
       font-size: 28.9vw;

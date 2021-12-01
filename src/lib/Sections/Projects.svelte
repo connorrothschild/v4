@@ -13,20 +13,12 @@
 
   let filteredProjects = projects.filter((d) => d.metadata.featured == true);
 
-  let isTouchscreen = false,
-    isHEVC = false;
-
-  import { detectTouchscreen, supportsHEVCAlpha } from "../../scripts/utils.js";
-
-  onMount(() => {
-    isTouchscreen = detectTouchscreen();
-    isHEVC = supportsHEVCAlpha();
-  });
+  import { isTouchscreen, isHEVC } from "../../stores/device.js";
 
   let videos = [];
 
   function preload(i) {
-    let videoUrl = isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`;
+    let videoUrl = $isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`;
     let req = fetch(videoUrl).then((response) => response.blob());
 
     req.then((blob) => {
@@ -65,8 +57,8 @@
         <span class="gradient-accented bolded">built</span>
       </h1>
     </SectionTitle>
-    {#if isTouchscreen}
-      <TouchVideo projects={filteredProjects} {videos} {videosLoaded} />
+    {#if $isTouchscreen}
+      <TouchVideo projects={filteredProjects} {videos} />
     {:else}
       <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
     {/if}

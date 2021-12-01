@@ -38,7 +38,7 @@
     .filter((d) => d.metadata.archived == true)
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
-  import { seo } from "$lib/store.js";
+  import { seo } from "$lib/seo.js";
   let title = "Blog • Connor Rothschild";
   let description = "Some of my writing.";
 
