@@ -45,7 +45,7 @@
       <video
         transition:fade
         bind:this={element}
-        preload="metadata"
+        preload="auto"
         autoplay
         muted
         playsinline
