@@ -27,7 +27,7 @@
 
   onMount(() => {
     setInterval(() => {
-      if (!videoHasSrc) updateVideo(value);
+      if (videos[0]) updateVideo(0);
     }, 200);
   });
 
