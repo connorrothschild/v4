@@ -244,7 +244,6 @@
     width: 100%;
   }
 
-  /* FIXME: Disable scroll when nav is open */
   :global(.disable-scroll, .disable-scroll body) {
     overflow: hidden;
   }
