@@ -21,7 +21,7 @@
       }, 200);
     }
   };
-  //
+
   $: videosLoaded, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
@@ -32,10 +32,27 @@
   });
 
   import { windowHeight } from "../../stores/global.js";
-  import TransitionInView from "$lib/TransitionInView.svelte";
   import { onMount } from "svelte";
+  import TransitionInView from "$lib/TransitionInView.svelte";
 
   let literallyHovered;
+
+  import { isTouchscreen } from "../../stores/device.js";
+
+  import { goto } from "$app/navigation";
+
+  // Requre double click on
+  function navigate(url, index) {
+    if ($isTouchscreen && value === index) {
+      goto(url);
+      return;
+    }
+    if ($isTouchscreen && value !== index) {
+      value = index;
+      return;
+    }
+    goto(url);
+  }
 </script>
 
 <TransitionInView>
@@ -45,8 +62,8 @@
   >
     <div class="projects">
       {#each projects as project, i}
-        <a
-          href={project.path.replace(/\.[^/.]+$/, "")}
+        <div
+          on:click={navigate(project.path.replace(/\.[^/.]+$/, ""), i)}
           sveltekit:prefetch
           class="project-card no-underline 
         {value === i ? 'active' : 'inactive'} {typeof literallyHovered ==
@@ -69,7 +86,7 @@
           <h1 class="title-{i}">
             {project.metadata.title}
           </h1>
-        </a>
+        </div>
       {/each}
     </div>
     <div class="absolute-container">
@@ -121,10 +138,7 @@
 
   .section-container {
     position: relative;
-    /* min-height: 45vh; */
-    /* height: 65vh; */
     overflow: hidden;
-    /* min-height: 400px; */
   }
 
   h1 {
@@ -188,9 +202,9 @@
     opacity: 0;
   }
 
-  .title-0 {
+  /* .title-0 {
     margin-top: 1rem;
-  }
+  } */
 
   .title-3 {
     transform: scaleY(0.95);
@@ -284,6 +298,24 @@
 
     .title-3 {
       font-size: 13.9vw;
+    }
+  }
+
+  @media screen and (max-width: 538px) {
+    .title-0 {
+      font-size: 8.9vw;
+    }
+
+    .title-1 {
+      font-size: 11.2vw;
+    }
+
+    .title-2 {
+      font-size: 11.3vw;
+    }
+
+    .title-3 {
+      font-size: 14vw;
     }
   }
 </style>

@@ -207,7 +207,7 @@
   @media screen and (max-width: 568px) {
     .topic {
       max-width: 100%;
-      margin: 0.5rem auto;
+      margin: 0.5rem 0;
     }
 
     li {
