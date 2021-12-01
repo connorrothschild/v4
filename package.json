@@ -2,10 +2,10 @@
   "name": "personal-site",
   "version": "0.0.1",
   "scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"start": "svelte-kit start",
-		"deploy": "node ./gh-pages.js"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "start": "svelte-kit start",
+    "deploy": "node ./gh-pages.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
@@ -44,6 +44,7 @@
     "codemirror": "^5.63.1",
     "gsap": "file:gsap-bonus.tgz",
     "highlight.js": "^11.2.0",
+    "intersection-observer": "^0.12.0",
     "lodash.debounce": "^4.0.8",
     "node-fetch": "^2.6.5",
     "prismjs": "^1.25.0",
