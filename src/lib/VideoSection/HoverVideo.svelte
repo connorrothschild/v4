@@ -5,13 +5,11 @@
 
   let video,
     videoTransitioning = false,
-    value = 0,
-    videoHasSrc = false;
+    value = 0;
 
   const updateVideo = function (index) {
     if (video && videosLoaded) {
       videoTransitioning = true;
-      videoHasSrc = true;
 
       setTimeout(() => {
         video.src = window.URL.createObjectURL(videos[index]);
@@ -22,12 +20,13 @@
     }
   };
 
+  $: videoHasSrc = video ? video.src != "" : false;
   $: videosLoaded, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
   onMount(() => {
     setInterval(() => {
-      if (videos[0]) updateVideo(0);
+      if (!videoHasSrc) updateVideo(value);
     }, 200);
   });
 
