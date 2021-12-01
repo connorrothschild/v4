@@ -46,7 +46,6 @@
         transition:fade
         bind:this={element}
         preload="auto"
-        autoplay
         muted
         playsinline
         style="height: {$windowHeight * 0.8}px;"
