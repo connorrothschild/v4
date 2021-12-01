@@ -73,6 +73,7 @@
               : 'blurred'
             : ''}"
           on:mouseover={() => {
+            if ($isTouchscreen) return;
             value = i;
             literallyHovered = i;
           }}
