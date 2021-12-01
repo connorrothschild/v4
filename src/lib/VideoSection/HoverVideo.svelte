@@ -41,7 +41,7 @@
 
   import { goto } from "$app/navigation";
 
-  // Requre double click on
+  // Require double click on mobile
   function navigate(url, index) {
     if ($isTouchscreen && value === index) {
       goto(url);
