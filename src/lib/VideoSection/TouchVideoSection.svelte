@@ -24,6 +24,7 @@
   $: intersected == true, playVideo();
 
   import { windowHeight } from "../../stores/global.js";
+  import { isHEVC } from "../../stores/device.js";
 </script>
 
 <IntersectionObserver {element} bind:intersecting once>
@@ -49,7 +50,7 @@
         muted
         playsinline
         style="height: {$windowHeight * 0.8}px;"
-        src={window.URL.createObjectURL(videos[i])}
+        src={$isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`}
       />
     {/if}
   </div>
