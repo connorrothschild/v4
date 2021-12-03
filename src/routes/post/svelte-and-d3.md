@@ -154,7 +154,11 @@ Going back to the above circles, imagine if we could simply bind our data to our
               {x: 90, r: 25}]
 </script>
 
-<p>{data.map(x => x)}</p>
+<svg>
+  {#each data as d}
+    <circle cx={d.x + "%"} cy="50%" r={d.r} fill="white" />
+  {/each}
+</svg>
 ```
 
 </Code>

@@ -57,11 +57,11 @@
         <span class="gradient-accented bolded">built</span>
       </h1>
     </SectionTitle>
-    {#if $isTouchscreen}
+    <!-- {#if $isTouchscreen}
       <TouchVideo projects={filteredProjects} {videos} />
-    {:else}
-      <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
-    {/if}
+    {:else} -->
+    <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
+    <!-- {/if} -->
   </section>
 </IntersectionObserver>
 
