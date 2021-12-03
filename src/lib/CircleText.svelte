@@ -13,6 +13,7 @@
 
 {#if $windowWidth > 968}
   <div
+    aria-hidden="true"
     transition:fly={{ y: 50 }}
     class="circle {$menuExpanded ? 'invisible' : ''}"
     sveltekit:prefetch
@@ -31,7 +32,7 @@
     }}
   >
     {#if hovered}
-      <img transition:fade|local src="/images/me/{imageIndex}.png" alt="Me" />
+      <img transition:fade|local src="/images/me/{imageIndex}.png" alt="" />
     {/if}
     <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
       <path

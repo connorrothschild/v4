@@ -245,7 +245,10 @@
   }
 
   :global(.disable-scroll, .disable-scroll body) {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
     overflow: hidden;
+    overscroll-behavior: none;
   }
 
   @media screen and (max-width: 868px) {
