@@ -296,7 +296,6 @@ button:focus:not(:focus-visible) {
   font-size: 8rem;
   font-weight: 200;
   margin: 2rem 0;
-  /* padding-bottom: 1.5rem; */
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(var(--accent-color-rgb), .5);
   overflow: hidden;
@@ -305,7 +304,7 @@ button:focus:not(:focus-visible) {
 }
 
 .section-title {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 200;
   margin: 2rem 0 1rem;
   padding-bottom: 1.5rem;
@@ -313,18 +312,20 @@ button:focus:not(:focus-visible) {
   overflow: hidden;
 }
 
-/* On large screens, larger */
-@media screen and (min-width: 1268px) {
-  .section-title {
-    font-size: 5rem;
-  }
+.section-title,
+.transition-title,
+.transition-subtitle {
+  transition: font-size 400ms linear;
+  -webkit-transition: font-size 400ms linear;
+  -moz-transition: font-size 400ms linear;
+  -ms-transition: font-size 400ms linear;
+  -o-transition: font-size 400ms linear;
 }
 
 /* We set opacity of transitioning elements to 0 to prevent brief paint before opacity transitions 
 But for users who prefer reduced motion, we don't want to apply this 
 (they would never become visible because transitions never trigger) */
 @media (prefers-reduced-motion: no-preference) {
-
   .transition-title,
   .transition-subtitle,
   .transition-content,
@@ -492,10 +493,6 @@ blockquote p:last-of-type {
     padding-bottom: 1rem;
   }
 
-  .section-title {
-    font-size: 3rem;
-  }
-
   .page-overline {
     font-size: .85rem;
   }
@@ -519,7 +516,7 @@ blockquote p:last-of-type {
   }
 
   .section-title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .page-overline {
@@ -540,6 +537,7 @@ blockquote p:last-of-type {
 @media screen and (max-width: 568px) {
   .top-level {
     margin: 10vh auto 2.5vh auto;
+    text-align: left;
   }
 
   .page-title {
@@ -547,8 +545,9 @@ blockquote p:last-of-type {
   }
 
   .content-title, .content-title.smaller {
-    /* font-size: 3rem; */
+    font-size: 4rem;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   .content-description,
@@ -593,4 +592,7 @@ blockquote p:last-of-type {
     font-size: 2.25rem;
   }
 
+  .section-title {
+    font-size: 2.5rem;
+  }
 }

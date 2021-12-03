@@ -38,8 +38,12 @@
       <h1 class="content-title uppercase transition-title">
         {@html title}
       </h1>
-      <h2 class="content-description transition-subtitle overflow-hidden">
-        <span style="display: block; font-weight: 600;">{organization}</span>
+      <h2
+        class="content-description transition-subtitle overflow-hidden right-on-mobile"
+      >
+        <span style="display: block; font-weight: 600; margin-bottom: .25rem;"
+          >{organization}</span
+        >
         <span
           style="display: block; font-weight: 300; text-transform: uppercase; font-size: 1.25rem;"
           >{dateFormat(date)}</span
@@ -63,5 +67,13 @@
   .media-link {
     text-align: right;
     font-family: var(--font-serif);
+  }
+
+  @media screen and (max-width: 568px) {
+    .right-on-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 </style>

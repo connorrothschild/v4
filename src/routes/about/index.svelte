@@ -23,16 +23,15 @@
     is a data scientist, web developer, and designer in Houston, TX.
   </h2>
   <div class="transition-content main-content">
-    <div class="subsection">
-      <h2 class="subsection-title">A brief bio</h2>
-      <div>
-        <p>
-          I live in Houston, Texas and work at Moksha Data. There, I lead our
-          data visualization and storytelling team and make microsites,
-          interactives, and visualizations for clients working in the social
-          impact space.
-        </p>
-        <p>
+    <!-- <div class="subsection"> -->
+    <!-- <h2 class="subsection-title">A brief bio</h2> -->
+    <div>
+      <p>
+        I live in Houston, Texas and work at Moksha Data. There, I lead our data
+        visualization and storytelling team and make microsites, interactives,
+        and visualizations for clients working in the social impact space.
+      </p>
+      <!-- <p>
           I’m originally from Springfield, Missouri. I moved to Houston to
           attend Rice University, where I majored in the quantitative social
           sciences. I taught myself the stuff on this site in my free time.
@@ -53,33 +52,32 @@
           <abbr title="Current bench PR: 260lbs 😎">lifting weights</abbr>, and
           visiting
           <abbr title="Brass Tacks is the best 💯">coffee shops</abbr> in Houston.
-        </p>
-      </div>
+        </p> -->
+      <!-- </div>
       <div class="subsection">
         <h2 class="subsection-title">Get in touch</h2>
         <p>
           I love learning from and teaching passionate people, and hope that
           this site can be an outlet for that.
-        </p>
-        <p>
-          Please reach out (via <a
-            class="link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
-            >Twitter</a
-          >
-          or
-          <a
-            class="link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:connor@connorrothschild.com">email</a
-          >) if you’re interested in talking about design, business strategy,
-          data visualization, or anything else you think I would be interested
-          in. Need a conversation starter? 👇
-        </p>
-      </div>
+        </p> -->
+      <p>
+        Please reach out (via <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
+          >Twitter</a
+        >
+        or
+        <a
+          class="link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:connor@connorrothschild.com">email</a
+        >) if you’re interested in working together, or just want to chat. Need
+        a conversation starter? 👇
+      </p>
+      <!-- </div> -->
 
       <div class="conversation-container">
         <div class="topic">

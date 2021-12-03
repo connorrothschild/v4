@@ -117,6 +117,7 @@
       flex-direction: row;
       place-items: center;
       justify-content: space-between;
+      width: 95%;
     }
     .tags,
     .tag {
@@ -130,6 +131,9 @@
     }
     .content-flex .misc {
       flex-direction: column-reverse;
+      align-items: flex-end;
+      width: 100%;
+      margin-top: 1rem;
     }
     .date {
       font-size: 1rem;

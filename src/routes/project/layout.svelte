@@ -152,6 +152,9 @@
     .tag {
       font-size: 1rem;
     }
+    .misc {
+      align-items: flex-end;
+    }
     .one-third {
       margin-top: 2.5rem;
     }
@@ -159,6 +162,7 @@
       font-size: 1.5rem;
       padding: 1rem 2rem;
       margin-top: 0;
+      justify-content: flex-end;
     }
   }
 </style>
