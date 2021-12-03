@@ -36,7 +36,7 @@
     >
       <div class="project-text">
         <h1>{project.metadata.title}</h1>
-        <h2>{project.metadata.description}</h2>
+        <!-- <h2>{project.metadata.description}</h2> -->
       </div>
     </a>
     {#if !videos[i]}
