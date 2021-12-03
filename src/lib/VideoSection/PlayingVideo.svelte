@@ -27,7 +27,7 @@
   bind:this={element}
   style="height: {$windowHeight * 0.8}px; opacity: {value == i ? 1 : 0}"
 >
-  <source src="./videos/{i}.mov" type="video/mp4; codecs="hvc1"" />
+  <source src="./videos/{i}.mov" type="video/mp4" />
   <source src="./videos/{i}.webm" type="video/webm" />
 </video>
 
