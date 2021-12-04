@@ -42,7 +42,7 @@
 
   let currentMode = "dark";
   let transitioning = false;
-  let transitionDuration = 1000;
+  let transitionDuration = 600;
   let currentAccent;
 
   import { sleep } from "../scripts/utils.js";

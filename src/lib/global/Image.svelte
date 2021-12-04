@@ -59,7 +59,7 @@
 <style>
   .centered {
     display: block;
-    margin: 1rem auto;
+    margin: auto;
   }
 
   .fullscreen-unscrollable {
@@ -79,6 +79,11 @@
     cursor: zoom-in;
     z-index: 1;
     position: relative;
+    margin-bottom: 0;
+  }
+
+  img:last-of-type {
+    margin-bottom: 1.15rem;
   }
 
   img.href {

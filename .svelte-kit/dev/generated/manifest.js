@@ -62,6 +62,7 @@ const c = [
 	() => import("../../../src/routes/post/svelte-and-d3.md"),
 	() => import("../../../src/routes/post/covid-posts.md"),
 	() => import("../../../src/routes/post/flat-data-r.md"),
+	() => import("../../../src/routes/post/this-site.md"),
 	() => import("../../../src/routes/post/layout.svelte")
 ];
 
@@ -259,8 +260,11 @@ export const routes = [
 	// src/routes/post/flat-data-r.md
 	[/^\/post\/flat-data-r\/?$/, [c[0], c[62]], [c[1]]],
 
+	// src/routes/post/this-site.md
+	[/^\/post\/this-site\/?$/, [c[0], c[63]], [c[1]]],
+
 	// src/routes/post/layout.svelte
-	[/^\/post\/layout\/?$/, [c[0], c[63]], [c[1]]]
+	[/^\/post\/layout\/?$/, [c[0], c[64]], [c[1]]]
 ];
 
 // we import the root layout/error components eagerly, so that

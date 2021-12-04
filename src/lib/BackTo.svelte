@@ -13,12 +13,7 @@
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0;
-    font-weight: 300;
+    font-weight: 300 !important;
     font-family: var(--font-sans);
-    /* transition: transform 300ms ease; */
   }
-
-  /* a:hover {
-    transform: translateX(-10px);
-  } */
 </style>

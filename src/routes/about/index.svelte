@@ -1,6 +1,10 @@
 <script>
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
+
+  let showMore = false;
+
+  import { slide } from "svelte/transition";
 </script>
 
 <Transition />
@@ -26,40 +30,11 @@
     <!-- <div class="subsection"> -->
     <!-- <h2 class="subsection-title">A brief bio</h2> -->
     <div>
-      <p>
+      <p class="larger">
         I live in Houston, Texas and work at Moksha Data. There, I lead our data
         visualization and storytelling team and make microsites, interactives,
         and visualizations for clients working in the social impact space.
       </p>
-      <!-- <p>
-          I’m originally from Springfield, Missouri. I moved to Houston to
-          attend Rice University, where I majored in the quantitative social
-          sciences. I taught myself the stuff on this site in my free time.
-        </p>
-        <p>
-          I’m passionate about accessibility and disability advocacy; my mother
-          is fully blind (<a
-            href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            and really cool</a
-          >). I’m also interested in public policy (in particular, housing
-          policy).
-        </p>
-        <p>
-          I enjoy <abbr title="Pac-Man main 😅">Super Smash Bros</abbr>,
-          <abbr title="Current bench PR: 260lbs 😎">lifting weights</abbr>, and
-          visiting
-          <abbr title="Brass Tacks is the best 💯">coffee shops</abbr> in Houston.
-        </p> -->
-      <!-- </div>
-      <div class="subsection">
-        <h2 class="subsection-title">Get in touch</h2>
-        <p>
-          I love learning from and teaching passionate people, and hope that
-          this site can be an outlet for that.
-        </p> -->
       <p>
         Please reach out (via <a
           class="link"
@@ -137,6 +112,56 @@
         </div>
       </div>
     </div>
+    <div class="subsection">
+      <h2
+        class="subsection-title"
+        style="cursor: pointer;"
+        on:click={() => {
+          showMore = !showMore;
+        }}
+      >
+        (More Personal Stuff {showMore ? "👆" : "👇"})
+      </h2>
+      {#if showMore}
+        <div transition:slide>
+          <p>
+            I’m originally from Springfield, Missouri. I moved to Houston to
+            attend Rice University, where I majored in the quantitative social
+            sciences. I taught myself the stuff on this site in my free time.
+          </p>
+          <p>
+            I’m passionate about accessibility and disability advocacy; my
+            mother is fully blind (<a
+              href="https://en.wikipedia.org/wiki/Jennifer_Rothschild"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              and really cool</a
+            >). I’m also interested in public policy (in particular, housing
+            policy).
+          </p>
+          <p>
+            I enjoy Super Smash Bros, lifting weights, and visiting coffee shops
+            in Houston. My favorite movie is <a
+              href="https://en.wikipedia.org/wiki/Eternal_Sunshine_of_the_Spotless_Mind"
+              target="_blank"
+              rel="noopener noreferrer">Eternal Sunshine of the Spotless Mind</a
+            >
+            and my favorite artist is
+            <a
+              href="https://www.youtube.com/watch?v=Rs_kavGKeHI"
+              target="_blank"
+              rel="noopener noreferrer">Ecco2K</a
+            >.
+          </p>
+          <p>
+            This personal site took <span style="text-decoration: line-through;"
+              >like 100 hours</span
+            > far too long to make. I hope you liked it &lt;3.
+          </p>
+        </div>
+      {/if}
+    </div>
   </div>
 </main>
 
@@ -151,6 +176,8 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.2);
   }
 
   .topic {
@@ -183,13 +210,16 @@
   }
 
   .subsection {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
   }
 
   .subsection-title {
     font-size: 2.5rem;
     font-family: var(--font-serif);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
   }
 
   @media screen and (max-width: 768px) {
@@ -215,5 +245,14 @@
 
   abbr {
     text-decoration: none;
+  }
+
+  .larger {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01rem;
+    color: var(--text-color);
   }
 </style>
