@@ -391,6 +391,7 @@ a:not(.no-underline) {
   color: var(--accent-color);
   background: linear-gradient(var(--accent-color), var(--accent-color)) left bottom no-repeat;
   background-size: 0% 1px;
+  font-weight: 500;
   transition: background-size 0.25s ease-out;
   -webkit-transition: background-size 0.25s ease-out;
   -moz-transition: background-size 0.25s ease-out;

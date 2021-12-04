@@ -16,10 +16,12 @@ export const transition = async function (connor, rothschild, subtitle, overline
 
     gsap.set(connor, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d", force3D: true, });
     gsap.set(rothschild, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d" , force3D: true, });
+    gsap.set(subtitle, { opacity: 0 });
     gsap.set(overline, { perspective: 400, opacity: 0 });
 
     gsap.fromTo(overline, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.25 });
+    gsap.set(subtitle, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.25 });
 
 
@@ -82,7 +84,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
     gsap.fromTo(
       subtitle,
       { opacity: 0, x: "-2.5%" },
-      { opacity: 1, x: 0, duration: 1, delay: 1, clearProps: "opacity" }
+      { opacity: 1, x: 0, duration: 1, delay: 1 }
     );
 
     gsap.to(".year", {

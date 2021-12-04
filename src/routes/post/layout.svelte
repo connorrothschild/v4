@@ -127,7 +127,8 @@
 
   @media screen and (max-width: 468px) {
     .content-flex .description {
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
     }
     .content-flex .misc {
       flex-direction: column-reverse;
@@ -136,13 +137,13 @@
       margin-top: 1rem;
     }
     .date {
-      font-size: 1rem;
+      font-size: 1.75rem;
     }
     .tags {
       margin-bottom: 1rem;
     }
     .tag {
-      font-size: 0.7rem;
+      font-size: 1.1rem;
     }
   }
 </style>

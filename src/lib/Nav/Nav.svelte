@@ -251,6 +251,11 @@
     overscroll-behavior: none;
   }
 
+  /* This prevents jumping on menu open, while the above prevents scrolling */
+  :global(.disable-scroll body) {
+    overflow-y: scroll;
+  }
+
   @media screen and (max-width: 868px) {
     .fullpage-nav {
       padding-left: 0;

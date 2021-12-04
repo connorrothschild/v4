@@ -89,13 +89,6 @@
     margin-bottom: 1rem;
   }
 
-  h2 {
-    font-family: var(--font-sans);
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.25;
-  }
-
   video {
     width: 100%;
     display: block;

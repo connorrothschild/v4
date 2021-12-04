@@ -332,6 +332,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
   }
 
   .loading:after {
@@ -341,9 +342,10 @@
     height: 64px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
+    border: 6px solid #8e8a8a;
+    border-color: #8e8a8a transparent #8e8a8a transparent;
     animation: spin 1.2s ease infinite;
+    z-index: 1;
   }
 
   @keyframes spin {
