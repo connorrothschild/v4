@@ -293,10 +293,10 @@ button:focus:not(:focus-visible) {
 }
 
 .page-title {
-  font-size: 8rem;
+  font-size: 9rem;
   font-weight: 200;
   margin: 2rem 0;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid rgba(var(--accent-color-rgb), .5);
   overflow: hidden;
   text-transform: uppercase;
@@ -444,7 +444,7 @@ blockquote p:last-of-type {
 .content-title {
   /* font-size: 8rem; */
   font-size: 9vw;
-  font-weight: 500;
+  font-weight: 200;
   margin-bottom: 4rem;
   overflow: hidden;
   margin-top: 2.5rem;
@@ -453,7 +453,7 @@ blockquote p:last-of-type {
 }
 
 .content-title.smaller {
-  font-size: 7.5vw;
+  font-size: 7vw;
   margin-bottom: 3rem;
 }
 
@@ -546,7 +546,7 @@ blockquote p:last-of-type {
 
   .content-title, .content-title.smaller {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: left;
   }
 
@@ -558,6 +558,7 @@ blockquote p:last-of-type {
 
   .content-description {
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 }
 

@@ -69,7 +69,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 102;
     display: flex;
     place-items: center;
     justify-content: center;
@@ -77,6 +77,8 @@
 
   img:not(.expanded) {
     cursor: zoom-in;
+    z-index: 1;
+    position: relative;
   }
 
   img.href {
@@ -84,7 +86,7 @@
   }
 
   .expanded {
-    z-index: 100;
+    z-index: 103;
     max-height: 95%;
     max-width: 95%;
     left: 50%;

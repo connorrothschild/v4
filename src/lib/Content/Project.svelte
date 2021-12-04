@@ -17,9 +17,11 @@
     href={slug}
     sveltekit:prefetch
     on:mouseover={() => {
+      if ($isTouchscreen) return;
       hovered = true;
     }}
     on:focus={() => {
+      if ($isTouchscreen) return;
       hovered = true;
     }}
     on:mouseleave={() => {

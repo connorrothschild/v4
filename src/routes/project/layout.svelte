@@ -151,12 +151,17 @@
   @media screen and (max-width: 568px) {
     .tag {
       font-size: 1rem;
+      margin: 0.25rem 0 0 0.25rem;
     }
     .misc {
       align-items: flex-end;
     }
+    .tags {
+      justify-content: flex-end;
+    }
     .one-third {
       margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
     .live-site {
       font-size: 1.5rem;

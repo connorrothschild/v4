@@ -7,6 +7,7 @@
     videoTransitioning = false,
     value = 0;
 
+  // $: console.log(videos[0], video);
   const updateVideo = function (index) {
     if (video && videosLoaded) {
       videoTransitioning = true;
@@ -37,7 +38,6 @@
   let literallyHovered;
 
   import { isTouchscreen } from "../../stores/device.js";
-
   import { goto } from "$app/navigation";
 
   // Require double click on mobile
@@ -90,15 +90,19 @@
       {/each}
     </div>
     <div class="absolute-container">
-      <video
-        preload="auto"
-        autoplay
-        muted
-        playsinline
-        id="video"
-        bind:this={video}
-        class:videoTransitioning
-      />
+      {#if videos[0]}
+        <video
+          preload="auto"
+          autoplay
+          muted
+          playsinline
+          id="video"
+          bind:this={video}
+          class:videoTransitioning
+        />
+      {:else}
+        <div class="loading" />
+      {/if}
     </div>
   </div>
 </TransitionInView>
@@ -316,6 +320,38 @@
 
     .title-3 {
       font-size: 14vw;
+    }
+  }
+
+  /* LOADING */
+  .loading {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loading:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: spin 1.2s ease infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 </style>
