@@ -1,6 +1,7 @@
 ---
 title: Winner, The 2020 Pudding Cup
 place: Winner
+place_code: gold
 award: The 2020 Pudding Cup
 organization: The Pudding
 featured: true

@@ -128,10 +128,10 @@
   }
 
   .filename {
-    color: white;
+    color: var(--primary-color);
     padding: 0.4rem;
-    letter-spacing: 1.4px;
     font-weight: 400;
+    /* letter-spacing: 1.4px; */
   }
 
   .language {

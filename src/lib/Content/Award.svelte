@@ -14,7 +14,8 @@
       ? 'inactive'
       : active
       ? 'active'
-      : ''}"
+      : ''}
+      {award.place_code}"
     sveltekit:prefetch
     href={slug}
     on:mouseover={() => {
@@ -30,7 +31,9 @@
       anyHovered = false;
     }}
   >
-    <h2 class="title">{award.title}</h2>
+    <h2 class="title">
+      {award.title}
+    </h2>
     <p class="organization hidden-mobile">
       {award.organization}
     </p>
@@ -54,7 +57,7 @@
 
   .container {
     display: flex;
-    padding: 1.25rem 0;
+    padding: 1.15rem 0;
     filter: none;
     justify-content: space-between;
     position: relative;
@@ -85,6 +88,27 @@
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }
+
+  /* .container::before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 0;
+    bottom: -1px;
+    left: 0;
+  }
+
+  .container.bronze::before {
+    border-bottom: 1px solid #cd7f32;
+  }
+
+  .container.silver::before {
+    border-bottom: 1px solid #c0c0c0;
+  }
+
+  .container.gold::before {
+    border-bottom: 1px solid #ffd700;
+  } */
 
   .title {
     flex: 1;

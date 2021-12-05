@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: "The new connorrothschild.com is live"
-description: A creative but content-focused personal site, built with Sveltekit
+title: "This site is live!"
+description: A creative, content-focused personal website, built with SvelteKit
 date: "2021-12-09"
 image: tidy-tuesday-powerlifting/header.png
 archived: false
@@ -13,6 +13,7 @@ tags: ['svelte', 'personal']
 <script>
   import Image from "../../lib/global/Image.svelte"
   import Info from "../../lib/global/Info.svelte"
+  import Code from "../../lib/global/Code.svelte"
   import TransitionExample from "../../lib/global/BlogComponents/TransitionExample.svelte"
 </script>
 
@@ -24,7 +25,11 @@ The new connorrothschild.com is live! (You're likely reading this post on connor
 
 My new site, which is my fourth personal website, is built with Sveltekit and takes inspiration from creative coders like [Félix Péault](https://flayks.com/) and [Henry Desroches](https://henry.codes/). You should check out their sites if you haven't already—they're pretty great.
 
-I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/svelte-personal-site/commits/master)). In this brief post, I'll detail some of the highlights, headaches, and give some practical tips for creating a personal website.
+I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/svelte-personal-site/commits/master)). 
+
+<Image src="../images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
+
+In this brief post, I'll detail some of the highlights, headaches, and give some practical tips for creating a personal website.
 
 ## Creativity & content
 
@@ -34,7 +39,7 @@ connorrothschild.com is meant to be a highly creative, but still content-focused
 
 ### Creativity
 
-You can find plenty of examples of creative websites by perusing the collection of [awwwards Site of the Day](https://www.awwwards.com/websites/sites_of_the_day/) winners. This collection is mostly comprised of 'creative coders' who build highly creative, design-focused sites, usually for brands of for their own portfolio. A great example of an incredibly creative personal website is Niccolo Miranda's [personal site](https://niccolomiranda.com/):
+You can find plenty of examples of creative websites by perusing the collection of [awwwards Site of the Day](https://www.awwwards.com/websites/sites_of_the_day/) winners. This collection is mostly comprised of 'creative coders' who build highly creative, design-focused sites, usually for brands of for their own portfolio. A great example of an incredibly creative personal website is [Niccolo Miranda's](https://niccolomiranda.com/):
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud to finally release my new &quot;Paper Portfolio&quot;.<br><br>Live site ↳ <a href="https://t.co/zr4BTo31kP">https://t.co/zr4BTo31kP</a> <br><br>Many thanks to <a href="https://twitter.com/clementroche_?ref_src=twsrc%5Etfw">@clementroche_</a> &amp; <a href="https://twitter.com/michael_dlb?ref_src=twsrc%5Etfw">@michael_dlb</a> for the dev support. <a href="https://t.co/n1gDHnYkbl">pic.twitter.com/n1gDHnYkbl</a></p>&mdash; Niccolò Miranda (@niccolomiranda) <a href="https://twitter.com/niccolomiranda/status/1452636062866710531?ref_src=twsrc%5Etfw">October 25, 2021</a></blockquote>
 
@@ -46,11 +51,11 @@ What makes the site great—beyond its general aesthetic—is its unified theme 
 
 On the other hand, many sites are designed with *content* in mind. These sites tend to reduce 'fluff' and focus on making sure users are able to easily find and peruse content, such as blog posts. This tends to be the default for most developers who maintain a personal portfolio or blog, but don't describe themselves as a 'creative coder.'
 
-Perhaps the most extreme example of a content-focused personal website is [Paul Graham's](http://paulgraham.com/articles.html).
+Perhaps the most extreme example of a content-focused personal website is [Paul Graham's](http://paulgraham.com/articles.html):
 
-[tk image of paulgraham.com]
+<Image src="../images/post/this-site/paul-graham.png" alt="Paul Graham's personal website, featuring a collection of essays" />
 
-The site is by no means pretty, but it gets you the content you need *immediately*. 
+The site is not meant to be pretty, but it gets you the content you need *immediately*. 
 
 Beyond its easy navigability, the benefit of a site like this is **your visitors know what to expect**. When you click on a blog post, you get a blog post, with nothing distracting you from the main content. No page transitions, no whimsy, just content. Visitors know that they are visiting your website to learn about your thoughts, not to be impressed by your ability to put a website together.
 
@@ -78,12 +83,147 @@ Second, because I'm not as good at design as Félix. 😆
 
 Skills aside, there is value in impressing your users on a homepage, and rewarding them with simpler content once they request it (e.g., by clicking a blog post). If you ever feel limited on time and are worried about not being able to include whimsy and creativity throughout your site, this could be a good approach.
 
-## Parts of the site I hope you enjoy
+# Parts of the site I hope you enjoy
 
 Here are some parts of the website I hope you enjoy and maybe pull inspiration from.
 
-### GSAP SplitText transitions
+<Info>
+  
+This part of the post gets pretty technical.
+
+</Info>
+
+
+## `GSAP SplitText` transitions
 
 The site's main text elements (e.g. section titles) are animated using a combination of `IntersectionObserver` and `GSAP`'s `SplitText` plugin. This enables cool transitions like this one when an element scrolls into view:
 
 <TransitionExample />
+
+## The projects section
+
+The projects section on my site's homepage is one of its more creative elements. As you can see in the video below, it layers transparent videos with overlaying text elements, to give the appearance of the videos 'popping out' in an almost-3D fashion.
+
+[tk video here]
+
+Technically, this was challenging. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
+
+Once the videos were created, I had to convert them to transparent videos, which was made harder by the fact that different browsers encode transparency with different formats. (Chrome uses `webm`, Safari uses `mp4` with `HEVC`.) I downloaded videos from Rotato and used the application [Shutter Encoder](https://www.shutterencoder.com/en/) to output videos compatible with all browsers.
+
+Finally, after creating 8 transparent videos (4 `.mov` and 4 `.mp4`), I was ready to include them in the projects section. The question then was **how to render** the videos. The obvious option was having 4 different `<video>` tags, each with two `<source>` elements, and toggle the transparency of each on hover. I found that this led to some lagginess on video `load()` and `play()`, so I needed to find a different solution.
+
+Instead, I ended up preloading each of the four videos as `Blob()` objects and then dynamically updated the `video` source to equal the active video. The `Blob()` method enabled caching of the videos on all browsers and devices ([to my understanding, iOS refuses to cache large videos if they were passed in as a regular source](https://stackoverflow.com/questions/52220696/how-to-cache-mp4-video-for-the-html-video-tag/55982659#55982659)). 
+
+Technically, this meant I had to detect whether the user's browser supported HEVC alpha, and then pass in the video source dynamically to the `Blob` construction. This function detects if the user's browser supported HEVC alpha (adapted from [this snippet](https://css-tricks.com/overlaying-video-with-transparency-while-wrangling-cross-browser-support/)):
+
+<Code language="js"> 
+
+```
+import Bowser from "bowser";
+
+function supportsHEVCAlpha() {
+  if (!browser) return false;
+  const navigator = window.navigator;
+
+  const thisBrowser = Bowser.getParser(window.navigator.userAgent).getBrowser();
+  const os = Bowser.getParser(window.navigator.userAgent).getOS();
+
+  const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo)
+
+  const isSafari = thisBrowser.name === "Safari";
+  const isMac = os.name === "macOS";
+  const isIOS = os.name === "iOS";
+  const version = {major: os.version.split('.')[0], minor: os.version.split('.')[1]};
+  const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
+  
+  if (isMac && isSafari && isPast1015) return true;
+  if (isSafari && hasMediaCapabilities) return true;
+  if (isIOS) return true;
+
+  return false;
+}
+```
+
+</Code>
+
+Whew! Here's the code for [preloading videos](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte), and [here's how we update `src` dynamically](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte).
+
+## Noise
+
+Having a background noise applied to the `body` of your personal website is kinda in right now. It's also very easy to carry out technically.
+
+[Here's a simple `<Noise />` component](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/Noise.svelte) (which is really just entirely CSS) that we put in our `__layout.svelte` so that it is present on every page of the site. We (optionally) apply a `shake` animation so that it jitters a bit as well. 
+
+You can create your own noise texture on a site [like this one](https://www.noisetexturegenerator.com/), and use the `<Noise />` component above to add a bit of flare to your site.
+
+## Preference-respecting animations
+
+I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you're greeted with my name flying into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/scripts/transitions/rotate.js)):
+
+[tk video here]
+
+When you scroll throughout the site, content more subtly fades into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/TransitionInView.svelte)):
+
+[tk video here]
+
+Both of these animations (and all others on the site) respect the [user's `prefers-reduced-motion` setting](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion). Practically, this looks like applying animation functions and transitions **only when the user has no motion preference**. In CSS, that looks like this:
+
+<Code language="css">
+
+```
+@media (prefers-reduced-motion: no-preference) {
+  .transitioning-container {
+    transition: opacity 1000ms ease 200ms, transform 1000ms ease;
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  .intersecting {
+    opacity: 1;
+    transform: none;
+  }
+}
+```
+
+</Code>
+
+And in Svelte/JavaScript, that means building an app-wide store that corresponds to the user's motion preference, and then applying whatever `transition()` function you've defined **only if that store is false**.
+
+<Code language="javascript" filename="store.js">
+
+```
+import { readable } from 'svelte/store';
+import { browser } from '$app/env';
+
+const reducedMotionQuery = '(prefers-reduced-motion: reduce)';
+
+const getInitialMotionPreference = () => {
+  if (!browser) return false;
+  return window.matchMedia(reducedMotionQuery).matches;
+};
+
+export const prefersReducedMotion = readable(getInitialMotionPreference());
+```
+</Code>
+
+<Code language="svelte" filename="App.svelte">
+
+```
+<script>
+import { prefersReducedMotion } from "./store.js";
+
+onMount(() => {
+  if ($prefersReducedMotion) return;
+  transition();
+});
+</script>
+```
+
+</Code>
+
+## What are your thoughts?
+
+Do you like this site? (Hopefully!) Hate it? (Hopefully not!) [Reach out](https://twitter.com/CL_Rothschild) and let me know what you think, or if anything is broken for you! 
+
+This site was built with [SvelteKit](https://kit.svelte.dev/); although the framework is powerful, it hasn't yet reached 1.0, so there are definitely issues that should arise along the way. I made the intentional choice to use a growing framework, rather than an established one, so that I could be an early adopter of this framework I have a lot of confidence in.
+
+Thanks for reading, and thanks for visiting this site! I hope you enjoyed it.

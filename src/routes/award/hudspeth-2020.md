@@ -1,6 +1,7 @@
 ---
 title: Hudspeth Award
 place: Winner
+place_code: gold
 award: Hudspeth Award
 organization: Rice Political Science Department
 date: "2020-05-19"

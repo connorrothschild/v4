@@ -1,6 +1,7 @@
 ---
 title: National Champion, IX Speaking
 place: International Extemporaneous Speaking
+place_code: gold
 award: National Champion
 organization: National Speech and Debate Association
 date: "2017-07-15"

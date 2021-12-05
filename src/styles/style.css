@@ -205,6 +205,8 @@ code:not(pre > code) {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   font-size: .825em;
+  font-weight: 600;
+  box-decoration-break: clone;
 }
 
 input,
@@ -472,6 +474,12 @@ blockquote p:last-of-type {
   font-weight: 300;
   border-bottom: 1px solid var(--accent-color);
 }
+
+  .content-description,
+  .content-description h1,
+  .content-description h2 {
+    font-weight: 300;
+  }
 
 .main-content {
   max-width: 768px;

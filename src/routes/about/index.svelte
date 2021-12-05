@@ -120,7 +120,7 @@
           showMore = !showMore;
         }}
       >
-        (More Personal Stuff {showMore ? "👆" : "👇"})
+        (More Personal Stuff{showMore ? "!" : "?"})
       </h2>
       {#if showMore}
         <div transition:slide>

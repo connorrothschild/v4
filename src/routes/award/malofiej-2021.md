@@ -1,6 +1,7 @@
 ---
 title: Bronze, 2021 Malofiej Awards
 place: Bronze
+place_code: bronze
 award: 2021 Malofiej Awards
 organization: Malofiej
 date: "2021-06-18"

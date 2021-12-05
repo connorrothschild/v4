@@ -133,7 +133,7 @@
   .post-tag {
     font-family: var(--font-sans);
     padding: 3px 8px;
-    background: var(--semitransparent-bg);
+    background: rgba(var(--accent-color-rgb), 0.1);
     margin: 2px;
     margin-right: 2px;
     border-radius: 3px;

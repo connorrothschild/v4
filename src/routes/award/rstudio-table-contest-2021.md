@@ -1,6 +1,7 @@
 ---
 title: Honorable Mention, RStudio Table Contest
 place: Honorable Mention
+place_code: bronze
 award: RStudio Table Contest
 organization: RStudio, Inc.
 date: "2021-01-06"
