@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "How to Combine Animated Plots in R"
-description: Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers.
+description: Leveraging the power of <code>gganimate</code> and <code>magick</code> to combine animated plots for your viewers.
 date: "2019-10-09"
 image: tidy-tuesday-powerlifting/header.png
 archived: true

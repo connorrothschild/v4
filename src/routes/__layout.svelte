@@ -46,9 +46,9 @@
 <Seo />
 <Nav hasBackground={true} />
 <Noise />
+<ColorSwitcher />
 <slot />
 <Loading />
-<ColorSwitcher />
 <Circle />
 {#if $page.path === "/"}
   <Footer />

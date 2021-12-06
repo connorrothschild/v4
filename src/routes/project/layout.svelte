@@ -44,11 +44,13 @@
           <h2 class="description">
             {@html description}
           </h2>
-          <div class="tags">
-            {#each techstack as tech}
-              <span class="tag">{tech}</span>
-            {/each}
-          </div>
+          {#if techstack}
+            <div class="tags">
+              {#each techstack as tech}
+                <span class="tag">{tech}</span>
+              {/each}
+            </div>
+          {/if}
         </div>
         <h2 class="one-third">
           <a

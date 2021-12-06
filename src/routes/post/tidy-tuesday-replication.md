@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Using Shiny to Replicate a Bloomberg Graphic"
-description: Leveraging the power of {shiny} for static graphics
+description: Leveraging the power of <code>shiny</code> for static graphics
 date: "2019-12-10"
 image: tidy-tuesday-replication/header.png
 archived: true

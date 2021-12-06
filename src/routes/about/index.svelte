@@ -243,9 +243,9 @@
     }
   }
 
-  abbr {
+  /* abbr {
     text-decoration: none;
-  }
+  } */
 
   .larger {
     font-size: 1.5rem;

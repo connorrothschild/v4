@@ -429,15 +429,15 @@ blockquote p:last-of-type {
 .main {
   max-width: 868px;
   width: 95%;
-  margin: 0 auto;
-  margin-bottom: 4rem;
-  margin-top: var(--nav-height);
+  margin: 0 auto 4rem;
+  padding-top: var(--nav-height);
 }
 
 /* FORMATTING FOR CONTENT PAGES (BLOG POSTS, PROJECT PAGES, AWARD PAGES */
 .top-level {
   /* max-width: 1068px; */
-  margin: 10vh auto 5vh auto;
+  margin: 0 auto 5vh;
+  padding-top: var(--nav-height);
   text-align: center;
   display: flex;
   flex-direction: column;

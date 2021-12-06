@@ -57,6 +57,7 @@
 
     /* background-color: var(--primary-color); */
     z-index: 100; /* This is over the nav */
+    position: relative;
   }
 
   /* On desktop, do the cool sticky footer that reveals on scroll */
