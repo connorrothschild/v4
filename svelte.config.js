@@ -15,11 +15,8 @@ const config = {
     paths: {
 			base: dev ? '' : '/svelte-personal-site',
 		},
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		})
+    target: "#svelte",
+		adapter: adapter()
 	}
 };
 
