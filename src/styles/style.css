@@ -545,7 +545,7 @@ blockquote p:last-of-type {
 
 @media screen and (max-width: 568px) {
   .top-level {
-    margin: 10vh auto 2.5vh auto;
+    margin: 5vh auto 2.5vh;
     text-align: left;
   }
 
@@ -573,12 +573,8 @@ blockquote p:last-of-type {
 
 /* MOBILE BREAKPOINT */
 @media screen and (max-width: 460px) {
-  .top-level {
-    margin: 12.5vh auto 2.5vh auto
-  }
-
   .main {
-    margin-top: 5.5rem;
+    margin-top: 1.5rem;
   }
 
   .section-title {

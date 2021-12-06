@@ -168,7 +168,7 @@
 <style>
   p {
     margin-bottom: 1.15rem;
-    line-height: 1.5;
+    line-height: 1.25;
   }
 
   .conversation-container {
@@ -222,13 +222,18 @@
     font-weight: 200;
   }
 
+  .larger {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01rem;
+    color: var(--text-color);
+  }
+
   @media screen and (max-width: 768px) {
     .conversation-container {
       flex-direction: column;
-    }
-
-    .topic-title {
-      font-weight: 400;
     }
   }
 
@@ -241,18 +246,9 @@
     li {
       width: auto;
     }
-  }
 
-  /* abbr {
-    text-decoration: none;
-  } */
-
-  .larger {
-    font-size: 1.5rem;
-    line-height: 1.3;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    letter-spacing: -0.01rem;
-    color: var(--text-color);
+    .larger {
+      font-size: 1.25rem;
+    }
   }
 </style>

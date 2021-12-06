@@ -137,13 +137,13 @@
       margin-top: 1rem;
     }
     .date {
-      font-size: 1.75rem;
+      font-size: 1.65rem;
     }
     .tags {
       margin-bottom: 1rem;
     }
     .tag {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 </style>

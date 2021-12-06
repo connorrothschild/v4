@@ -7,7 +7,7 @@ audience: "The world!"
 featured: false
 image: state-police-spending/header.png
 img_alt: "State police spending header, includes an image of a MacBook with the application open."
-techstack: "D3.js"
+techstack: [D3.js]
 github: "https://github.com/connorrothschild/state-police-spending"
 url: "https://connorrothschild.github.io/state-police-spending/"
 ---

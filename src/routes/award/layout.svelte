@@ -45,7 +45,7 @@
           >{organization}</span
         >
         <span
-          style="display: block; font-weight: 300; text-transform: uppercase; font-size: 1.25rem;"
+          style="display: block; font-weight: 300; text-transform: uppercase; font-size: 1.05rem;"
           >{dateFormat(date)}</span
         >
       </h2>

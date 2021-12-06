@@ -1,6 +1,6 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-6b5565b7.js",
+    "file": "start-387cf0c5.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
@@ -91,7 +91,7 @@
       "_device-25ed66de.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-2360f5a6.css"
+      "assets/pages/__layout.svelte-18c29ba7.css"
     ]
   },
   "src/routes/__error.svelte": {
@@ -214,7 +214,7 @@
     ]
   },
   "src/routes/project/index.svelte": {
-    "file": "pages/project/index.svelte-f91b44ce.js",
+    "file": "pages/project/index.svelte-28763437.js",
     "src": "src/routes/project/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -268,7 +268,7 @@
     ]
   },
   "src/routes/project/state-police-spending.md": {
-    "file": "pages/project/state-police-spending.md-a98a556c.js",
+    "file": "pages/project/state-police-spending.md-06c17ca9.js",
     "src": "src/routes/project/state-police-spending.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -515,7 +515,7 @@
     ]
   },
   "src/routes/about/index.svelte": {
-    "file": "pages/about/index.svelte-7e6efab6.js",
+    "file": "pages/about/index.svelte-c7e8d009.js",
     "src": "src/routes/about/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -526,7 +526,7 @@
       "_utils-7d7cee54.js"
     ],
     "css": [
-      "assets/pages/about/index.svelte-31db2d3e.css"
+      "assets/pages/about/index.svelte-814ad1ad.css"
     ]
   },
   "src/routes/award/index.svelte": {
@@ -545,7 +545,7 @@
     ]
   },
   "src/routes/award/rstudio-table-contest-2021.md": {
-    "file": "pages/award/rstudio-table-contest-2021.md-572f59b3.js",
+    "file": "pages/award/rstudio-table-contest-2021.md-c7f3a6ac.js",
     "src": "src/routes/award/rstudio-table-contest-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -560,7 +560,7 @@
     ]
   },
   "src/routes/award/layout.svelte": {
-    "file": "pages/award/layout.svelte-01d93f5b.js",
+    "file": "pages/award/layout.svelte-0dca92dc.js",
     "src": "src/routes/award/layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -577,7 +577,7 @@
     ]
   },
   "src/routes/award/d2k-showcase-2020.md": {
-    "file": "pages/award/d2k-showcase-2020.md-e624bbc2.js",
+    "file": "pages/award/d2k-showcase-2020.md-ec4cba68.js",
     "src": "src/routes/award/d2k-showcase-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -592,7 +592,7 @@
     ]
   },
   "src/routes/award/northeastern-2020.md": {
-    "file": "pages/award/northeastern-2020.md-b7766466.js",
+    "file": "pages/award/northeastern-2020.md-07e2954f.js",
     "src": "src/routes/award/northeastern-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -607,7 +607,7 @@
     ]
   },
   "src/routes/award/pudding-cup-2020.md": {
-    "file": "pages/award/pudding-cup-2020.md-7e2ef4e2.js",
+    "file": "pages/award/pudding-cup-2020.md-b5c07957.js",
     "src": "src/routes/award/pudding-cup-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -622,7 +622,7 @@
     ]
   },
   "src/routes/award/nationals-2017.md": {
-    "file": "pages/award/nationals-2017.md-d0f81dd3.js",
+    "file": "pages/award/nationals-2017.md-9c9c11be.js",
     "src": "src/routes/award/nationals-2017.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -637,7 +637,7 @@
     ]
   },
   "src/routes/award/datathon-2020.md": {
-    "file": "pages/award/datathon-2020.md-de0a35b6.js",
+    "file": "pages/award/datathon-2020.md-30faae8d.js",
     "src": "src/routes/award/datathon-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -652,7 +652,7 @@
     ]
   },
   "src/routes/award/hudspeth-2020.md": {
-    "file": "pages/award/hudspeth-2020.md-a08a42ad.js",
+    "file": "pages/award/hudspeth-2020.md-2fa5d94c.js",
     "src": "src/routes/award/hudspeth-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -667,7 +667,7 @@
     ]
   },
   "src/routes/award/malofiej-2020.md": {
-    "file": "pages/award/malofiej-2020.md-631d9648.js",
+    "file": "pages/award/malofiej-2020.md-91610bba.js",
     "src": "src/routes/award/malofiej-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -682,7 +682,7 @@
     ]
   },
   "src/routes/award/malofiej-2021.md": {
-    "file": "pages/award/malofiej-2021.md-514aa1f8.js",
+    "file": "pages/award/malofiej-2021.md-a3bcae5f.js",
     "src": "src/routes/award/malofiej-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -697,7 +697,7 @@
     ]
   },
   "src/routes/award/bipp-2018.md": {
-    "file": "pages/award/bipp-2018.md-7843176f.js",
+    "file": "pages/award/bipp-2018.md-2550e999.js",
     "src": "src/routes/award/bipp-2018.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -712,7 +712,7 @@
     ]
   },
   "src/routes/award/chrp-2020.md": {
-    "file": "pages/award/chrp-2020.md-ace4c55e.js",
+    "file": "pages/award/chrp-2020.md-22d11851.js",
     "src": "src/routes/award/chrp-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -727,7 +727,7 @@
     ]
   },
   "src/routes/award/hpc-2018.md": {
-    "file": "pages/award/hpc-2018.md-1c83a783.js",
+    "file": "pages/award/hpc-2018.md-26f693ad.js",
     "src": "src/routes/award/hpc-2018.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -742,7 +742,7 @@
     ]
   },
   "src/routes/award/hpc-2019.md": {
-    "file": "pages/award/hpc-2019.md-9c7cf93e.js",
+    "file": "pages/award/hpc-2019.md-11668d7e.js",
     "src": "src/routes/award/hpc-2019.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -757,7 +757,7 @@
     ]
   },
   "src/routes/award/hpc-2020.md": {
-    "file": "pages/award/hpc-2020.md-2a6793bd.js",
+    "file": "pages/award/hpc-2020.md-00e15203.js",
     "src": "src/routes/award/hpc-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -772,7 +772,7 @@
     ]
   },
   "src/routes/award/snd-2021.md": {
-    "file": "pages/award/snd-2021.md-d65885f9.js",
+    "file": "pages/award/snd-2021.md-853f74c6.js",
     "src": "src/routes/award/snd-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -805,7 +805,7 @@
     ]
   },
   "src/routes/post/economist-table-replication-using-reactable.md": {
-    "file": "pages/post/economist-table-replication-using-reactable.md-f911140a.js",
+    "file": "pages/post/economist-table-replication-using-reactable.md-1ad2df47.js",
     "src": "src/routes/post/economist-table-replication-using-reactable.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -825,7 +825,7 @@
     ]
   },
   "src/routes/post/layout.svelte": {
-    "file": "pages/post/layout.svelte-aba96baa.js",
+    "file": "pages/post/layout.svelte-4cbceaa2.js",
     "src": "src/routes/post/layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -838,11 +838,11 @@
       "_utils-7d7cee54.js"
     ],
     "css": [
-      "assets/pages/post/layout.svelte-d1747aa7.css"
+      "assets/pages/post/layout.svelte-0f71e6d6.css"
     ]
   },
   "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": {
-    "file": "pages/post/adding-a-chart-to-your-d3-tooltip.md-bb649252.js",
+    "file": "pages/post/adding-a-chart-to-your-d3-tooltip.md-a31e9003.js",
     "src": "src/routes/post/adding-a-chart-to-your-d3-tooltip.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -865,7 +865,7 @@
     ]
   },
   "src/routes/post/tidy-tuesday-powerlifting.md": {
-    "file": "pages/post/tidy-tuesday-powerlifting.md-c894dc85.js",
+    "file": "pages/post/tidy-tuesday-powerlifting.md-23255068.js",
     "src": "src/routes/post/tidy-tuesday-powerlifting.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -885,7 +885,7 @@
     ]
   },
   "src/routes/post/tidy-tuesday-replication.md": {
-    "file": "pages/post/tidy-tuesday-replication.md-d1b0e68f.js",
+    "file": "pages/post/tidy-tuesday-replication.md-cedb34a2.js",
     "src": "src/routes/post/tidy-tuesday-replication.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -905,7 +905,7 @@
     ]
   },
   "src/routes/post/automation-scrollytell.md": {
-    "file": "pages/post/automation-scrollytell.md-cab947a2.js",
+    "file": "pages/post/automation-scrollytell.md-2fae002c.js",
     "src": "src/routes/post/automation-scrollytell.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -926,7 +926,7 @@
     ]
   },
   "src/routes/post/animate-hugo-academic.md": {
-    "file": "pages/post/animate-hugo-academic.md-0c6eaadc.js",
+    "file": "pages/post/animate-hugo-academic.md-15decba4.js",
     "src": "src/routes/post/animate-hugo-academic.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -948,7 +948,7 @@
     ]
   },
   "src/routes/post/introducing-tpltheme.md": {
-    "file": "pages/post/introducing-tpltheme.md-440347c1.js",
+    "file": "pages/post/introducing-tpltheme.md-c6f17c9d.js",
     "src": "src/routes/post/introducing-tpltheme.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -968,7 +968,7 @@
     ]
   },
   "src/routes/post/color-in-data-vis.md": {
-    "file": "pages/post/color-in-data-vis.md-baff4302.js",
+    "file": "pages/post/color-in-data-vis.md-5f239b5b.js",
     "src": "src/routes/post/color-in-data-vis.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -988,7 +988,7 @@
     ]
   },
   "src/routes/post/do-something-else.md": {
-    "file": "pages/post/do-something-else.md-e886abcd.js",
+    "file": "pages/post/do-something-else.md-df7be233.js",
     "src": "src/routes/post/do-something-else.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1009,7 +1009,7 @@
     ]
   },
   "src/routes/post/nuxt-blog-starter.md": {
-    "file": "pages/post/nuxt-blog-starter.md-e771ce26.js",
+    "file": "pages/post/nuxt-blog-starter.md-16bd3685.js",
     "src": "src/routes/post/nuxt-blog-starter.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1031,7 +1031,7 @@
     ]
   },
   "src/routes/post/covid-gun-spikes.md": {
-    "file": "pages/post/covid-gun-spikes.md-61fffff5.js",
+    "file": "pages/post/covid-gun-spikes.md-c08e4bcf.js",
     "src": "src/routes/post/covid-gun-spikes.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1053,7 +1053,7 @@
     ]
   },
   "src/routes/post/covid-on-campus.md": {
-    "file": "pages/post/covid-on-campus.md-3c3f1442.js",
+    "file": "pages/post/covid-on-campus.md-9a75aff8.js",
     "src": "src/routes/post/covid-on-campus.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1074,7 +1074,7 @@
     ]
   },
   "src/routes/post/map-springfield.md": {
-    "file": "pages/post/map-springfield.md-c1d1f642.js",
+    "file": "pages/post/map-springfield.md-8b5e9254.js",
     "src": "src/routes/post/map-springfield.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1094,7 +1094,7 @@
     ]
   },
   "src/routes/post/dumbbell-plots.md": {
-    "file": "pages/post/dumbbell-plots.md-a9f86603.js",
+    "file": "pages/post/dumbbell-plots.md-b2196dfc.js",
     "src": "src/routes/post/dumbbell-plots.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1114,7 +1114,7 @@
     ]
   },
   "src/routes/post/refugee-trends.md": {
-    "file": "pages/post/refugee-trends.md-cafde0a7.js",
+    "file": "pages/post/refugee-trends.md-ffc83882.js",
     "src": "src/routes/post/refugee-trends.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1134,7 +1134,7 @@
     ]
   },
   "src/routes/post/svelte-scatter.md": {
-    "file": "pages/post/svelte-scatter.md-841e9b0e.js",
+    "file": "pages/post/svelte-scatter.md-8314764f.js",
     "src": "src/routes/post/svelte-scatter.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1154,7 +1154,7 @@
     ]
   },
   "src/routes/post/svelte-and-d3.md": {
-    "file": "pages/post/svelte-and-d3.md-6fd122c0.js",
+    "file": "pages/post/svelte-and-d3.md-fd127fe0.js",
     "src": "src/routes/post/svelte-and-d3.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1176,7 +1176,7 @@
     ]
   },
   "src/routes/post/covid-posts.md": {
-    "file": "pages/post/covid-posts.md-9e35e586.js",
+    "file": "pages/post/covid-posts.md-9f7cd6e3.js",
     "src": "src/routes/post/covid-posts.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1196,7 +1196,7 @@
     ]
   },
   "src/routes/post/flat-data-r.md": {
-    "file": "pages/post/flat-data-r.md-5cc19d58.js",
+    "file": "pages/post/flat-data-r.md-96935989.js",
     "src": "src/routes/post/flat-data-r.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -1218,7 +1218,7 @@
     ]
   },
   "src/routes/post/this-site.md": {
-    "file": "pages/post/this-site.md-d1f9631f.js",
+    "file": "pages/post/this-site.md-621b2b0d.js",
     "src": "src/routes/post/this-site.md",
     "isEntry": true,
     "isDynamicEntry": true,
