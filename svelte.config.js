@@ -12,9 +12,6 @@ const config = {
     mdsvex(mdsvexConfig),
   ],
 	kit: {
-    paths: {
-			base: dev ? '' : '/svelte-personal-site',
-		},
     target: "#svelte",
 		adapter: adapter()
 	}
