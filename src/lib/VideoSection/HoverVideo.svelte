@@ -25,11 +25,11 @@
   $: videosLoaded && !videoHasSrc, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
-  // onMount(() => {
-  //   setInterval(() => {
-  //     if (!videoHasSrc) updateVideo(value);
-  //   }, 200);
-  // });
+  onMount(() => {
+    setInterval(() => {
+      if (!videoHasSrc) updateVideo(value);
+    }, 200);
+  });
 
   import { windowHeight } from "../../stores/global.js";
   import { onMount } from "svelte";
