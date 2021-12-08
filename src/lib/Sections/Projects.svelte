@@ -3,7 +3,7 @@
 
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
   import HoverVideo from "$lib/VideoSection/HoverVideo.svelte";
-  import TouchVideo from "$lib/VideoSection/TouchVideo.svelte";
+  import ProjectSection from "$lib/Content/Project.svelte";
 
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
@@ -13,7 +13,7 @@
 
   let filteredProjects = projects.filter((d) => d.metadata.featured == true);
 
-  import { isTouchscreen, isHEVC } from "../../stores/device.js";
+  import { isHEVC, isPre1015 } from "../../stores/device.js";
 
   let videos = [];
 
@@ -57,11 +57,18 @@
         <span class="gradient-accented bolded">built</span>
       </h1>
     </SectionTitle>
-    <!-- {#if $isTouchscreen}
-      <TouchVideo projects={filteredProjects} {videos} />
-    {:else} -->
-    <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
-    <!-- {/if} -->
+    {#if $isPre1015}
+      <div class="projects-container">
+        {#each filteredProjects as project}
+          <ProjectSection
+            project={project.metadata}
+            slug={project.path.replace(/\.[^/.]+$/, "")}
+          />
+        {/each}
+      </div>
+    {:else}
+      <HoverVideo projects={filteredProjects} {videos} {videosLoaded} />
+    {/if}
   </section>
 </IntersectionObserver>
 
@@ -85,5 +92,22 @@
 
   #projects-title {
     margin-bottom: 0; /* This allows for section content to be flush with border bottom on page title */
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    max-width: 1168px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .projects-container {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(1, 1fr);
+    }
   }
 </style>

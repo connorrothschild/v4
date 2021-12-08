@@ -1,5 +1,9 @@
-import { readable } from 'svelte/store';
-import { browser } from '$app/env';
+import {
+    readable
+} from 'svelte/store';
+import {
+    browser
+} from '$app/env';
 
 function detectTouchscreen() {
     if (!browser) return false;
@@ -27,29 +31,65 @@ export const isTouchscreen = readable(detectTouchscreen());
 
 import Bowser from "bowser";
 
+// function getBrowserDetails() {
+//     if (!browser) return false;
+//     const navigator = window.navigator;
+
+//     const thisBrowser = Bowser.getParser(window.navigator.userAgent).getBrowser();
+//     const os = Bowser.getParser(window.navigator.userAgent).getOS();
+
+//     return {
+//         navigator,
+//         thisBrowser,
+//         os
+//     }
+// }
+
 function supportsHEVCAlpha() {
-  if (!browser) return false;
-  const navigator = window.navigator;
+     if (!browser) return false;
+    const navigator = window.navigator;
 
-  const thisBrowser = Bowser.getParser(window.navigator.userAgent).getBrowser();
-  const os = Bowser.getParser(window.navigator.userAgent).getOS();
+    const thisBrowser = Bowser.getParser(window.navigator.userAgent).getBrowser();
+    const os = Bowser.getParser(window.navigator.userAgent).getOS();
 
-  const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo)
+    const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo)
 
-  const isSafari = thisBrowser.name === "Safari";
-  const isMac = os.name === "macOS";
-  const isIOS = os.name === "iOS";
-  const version = {major: os.version.split('.')[0], minor: os.version.split('.')[1]};
-  const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
-  
-  if (isMac && isSafari && isPast1015) return true;
-  if (isSafari && hasMediaCapabilities) return true;
-  if (isIOS) return true;
+    const isSafari = thisBrowser.name === "Safari";
+    const isMac = os.name === "macOS";
+    const isIOS = os.name === "iOS";
 
-  // FIXME: These ~10% of Mac users, cannot use HEVC w/alpha and so no video appears
-  const cannotRenderTransparentVideo = isMac && !isPast1015;
+    const version = {
+        major: os.version.split('.')[0],
+        minor: os.version.split('.')[1]
+    };
+    const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
 
-  return false;
+    if (isMac && isSafari && isPast1015) return true;
+    if (isSafari && hasMediaCapabilities) return true;
+    if (isIOS) return true;
+
+    return false;
 }
 
 export const isHEVC = readable(supportsHEVCAlpha());
+
+function check1015() {
+    if (!browser) return false;
+    const os = Bowser.getParser(window.navigator.userAgent).getOS();
+
+    const isMac = os.name === "macOS";
+
+    const version = {
+        major: os.version.split('.')[0],
+        minor: os.version.split('.')[1]
+    };
+    const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
+
+    // FIXME: These ~10% of Mac users, cannot use HEVC w/alpha and so no video appears
+    const cannotRenderTransparentVideo = isMac && !isPast1015;
+    console.log(cannotRenderTransparentVideo);
+
+    return cannotRenderTransparentVideo;
+}
+
+export const isPre1015 = readable(check1015());
