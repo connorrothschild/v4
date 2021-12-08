@@ -7,7 +7,6 @@
     videoTransitioning = false,
     value = 0;
 
-  // $: console.log(videos[0], video);
   const updateVideo = function (index) {
     if (video && videosLoaded) {
       videoTransitioning = true;
@@ -22,14 +21,15 @@
   };
 
   $: videoHasSrc = video ? video.src != "" : false;
-  $: videosLoaded, updateVideo(0);
+  // $: videosLoaded, !videoHasSrc ? updateVideo(0) : null;
+  $: videosLoaded && !videoHasSrc, updateVideo(0);
   $: value, typeof value == "number" ? updateVideo(value) : null;
 
-  onMount(() => {
-    setInterval(() => {
-      if (!videoHasSrc) updateVideo(value);
-    }, 200);
-  });
+  // onMount(() => {
+  //   setInterval(() => {
+  //     if (!videoHasSrc) updateVideo(value);
+  //   }, 200);
+  // });
 
   import { windowHeight } from "../../stores/global.js";
   import { onMount } from "svelte";
