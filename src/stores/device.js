@@ -85,10 +85,7 @@ function check1015() {
     };
     const isPast1015 = version.major > 10 || (version.major >= 10 && version.minor >= 15);
 
-    // FIXME: These ~10% of Mac users, cannot use HEVC w/alpha and so no video appears
     const cannotRenderTransparentVideo = isMac && !isPast1015;
-    console.log(cannotRenderTransparentVideo);
-
     return cannotRenderTransparentVideo;
 }
 
