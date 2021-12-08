@@ -43,12 +43,12 @@
   // Require double click on mobile
   // Use navigating to prevent slug duplication on quick double click
   let navigating = false;
-  function navigate(url, index) {
+  async function navigate(url, index) {
     if (navigating == true) return;
     navigating = true;
 
     if ($isTouchscreen && value === index) {
-      goto(url);
+      await goto(url);
       navigating = false;
       return;
     }
@@ -57,7 +57,7 @@
       navigating = false;
       return;
     }
-    goto(url);
+    await goto(url);
     navigating = false;
   }
 </script>
