@@ -28,7 +28,7 @@ The [GitHub OCTO team](https://octo.github.com/) recently released their first p
 
 [Flat Data](https://octo.github.com/project/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via [GitHub](https://octo.github.com/project/flat-data)):
 
-<Image src="../images/post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow"></Image>
+<Image src="/images/post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow"></Image>
 
 The idea, as seen above, is essentially to read in data (*data.json*), conduct some postprocessing (*process.js*), and output some better data (*processed-data.json*).
 
@@ -160,6 +160,6 @@ Obviously, the content in the above cleaning script is irrelevant. It functions 
 
 Upon completing these steps and pushing the above to a repository, GitHub will automatically set up the action and run it on a daily basis. You can then examine the logs for each run in the **Actions** tab. This tab will be helpful for debugging, and you can force workflow executions manually here as well. In sum, the process of carrying out a GitHub Flat Data workflow, with the addition of an R postprocessing script, looks something like this:
 
-<Image src="../images/post/flat-data-r/header.png" alt="Diagram of flat data processing in R"></Image>
+<Image src="/images/post/flat-data-r/header.png" alt="Diagram of flat data processing in R"></Image>
 
 Thanks for reading! You might learn more by perusing the [GitHub repository](https://github.com/connorrothschild/flat-demo-r-processing) that accompanies this post; otherwise, please send any questions via [Twitter](https://twitter.com/CL_Rothschild) 🙂

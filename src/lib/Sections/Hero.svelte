@@ -142,6 +142,7 @@
     letter-spacing: -0.1rem;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px var(--box-shadow-color);
+    overflow: hidden;
   }
 
   :global(.connor *) {
@@ -161,11 +162,11 @@
   }
 
   .connor {
-    font-size: 21.55vw;
+    font-size: 20vw;
   }
 
   .rothschild {
-    font-size: 14.85vw;
+    font-size: 13.65vw;
   }
 
   .subtitle {

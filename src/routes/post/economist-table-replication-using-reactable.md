@@ -15,4 +15,4 @@ tags: ['r', 'tutorial']
 
 Thanks for visiting this blog post, but it has moved! It can be found in its fully interactive form [here](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/).
 
-[<Image alt="A table depicting excess deaths by country during 2020." src="../images/post/economist-table-replication-using-reactable/featured.png" ></Image>](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/)
+[<Image alt="A table depicting excess deaths by country during 2020." src="/images/post/economist-table-replication-using-reactable/featured.png" ></Image>](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/)

@@ -15,7 +15,7 @@ tags: ['analysis', 'r']
   import Code from "../../lib/global/Code.svelte"
 </script>
 
-<Image src="../images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>
+<Image src="/images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>
 
 So far in 2020, firearm background checks are happening **significantly** more frequently than they did during the first six months of the last 20 years. Some [media reports](https://www.nytimes.com/interactive/2020/04/01/business/coronavirus-gun-sales.html) captured the gun-buying frenzy during its apparent peak in March, but according to data from the [FBI NICS](https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view), _the month of June saw the largest single month count of firearm background checks in the last 20 years._
 
@@ -65,7 +65,7 @@ data %>%
 
 </Code>
 
-<TableHandler src="../images/post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/" width="70%"></TableHandler>
+<TableHandler src="/images/post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/" width="70%"></TableHandler>
 
 As the table shows, the last 5 months have seen some of the greatest numbers of firearm background checks since the FBI has collected such data. It seems as if the only non-2020 entrants to the top 7 are from December 2015, and December 2019, which are (perhaps coincidentally) both the final months before new presidents took office.
 
@@ -94,7 +94,7 @@ data %>%
 
 </Code>
 
-<Image src="../images/post/covid-gun-spikes/unnamed-chunk-4-1.png" alt="An area chart showing background checks over time. Despite some seasonaility, the trend is increasing over time, and is at its highest point at the end of the chart in 2020."></Image>
+<Image src="/images/post/covid-gun-spikes/unnamed-chunk-4-1.png" alt="An area chart showing background checks over time. Despite some seasonaility, the trend is increasing over time, and is at its highest point at the end of the chart in 2020."></Image>
 
 And we can better understand the magnitude of these shifts by visualizing year-to-year changes:
 
@@ -122,7 +122,7 @@ data %>%
 
 </Code>
 
-<Image src="../images/post/covid-gun-spikes/unnamed-chunk-5-1.png" alt="A barchart showing the temporal year-on-year change in background checks for firearms over time. The last year, 2020, is the highest, meaning background checks have seen the greatest year on year growth this year."></Image>
+<Image src="/images/post/covid-gun-spikes/unnamed-chunk-5-1.png" alt="A barchart showing the temporal year-on-year change in background checks for firearms over time. The last year, 2020, is the highest, meaning background checks have seen the greatest year on year growth this year."></Image>
 
 Visualized another way, we can explore the temporal change **within each year** for every year between 1999 and 2020, with 2020 <span style="color:red">highlighted in red.</span>
 
@@ -150,7 +150,7 @@ Visualized another way, we can explore the temporal change **within each year** 
 
 </Code>
 
-<Image src="../images/post/covid-gun-spikes/unnamed-chunk-6-1.png" alt="A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."></Image>
+<Image src="/images/post/covid-gun-spikes/unnamed-chunk-6-1.png" alt="A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."></Image>
 
 The FBI database also includes background check data for each U.S. state. This data allows us to compare trends _across_ states and over time (using `geofacet`):
 
@@ -189,7 +189,7 @@ data %>%
 
 </Code>
 
-<Image src="../images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>
+<Image src="/images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>
 
 ## The impact
 

@@ -82,13 +82,15 @@
   />
 {/if}
 {#key currentMode}
-  <p
+  <!-- <p
     out:fly={{ y: 50, duration: 300 }}
     in:fly={{ y: 50, delay: 300 }}
     class="color-switcher"
     on:click={setColors}
-  >
-    {currentMode == "dark" ? "🌕" : "☀️"}
+  > -->
+  <p class="color-switcher" on:click={setColors}>
+    {currentMode == "dark" ? "🌙" : "☀️"}
+    <!-- <MoonSun active={currentMode} /> -->
   </p>
 {/key}
 

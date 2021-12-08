@@ -26,7 +26,8 @@
 .content hr,
 .content img,
 .content table,
-.content blockquote {
+.content blockquote,
+.content video {
     margin-bottom: 1.15rem;
 }
 
@@ -38,6 +39,11 @@ blockquote p:last-of-type {
 .content img:not(.expanded) {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .15);
     border-radius: 5px;
+}
+
+.content video {
+    width: 100%;
+    max-width: 100%;
 }
 
 table {

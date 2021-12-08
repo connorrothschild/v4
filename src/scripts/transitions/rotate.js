@@ -14,8 +14,8 @@ export const transition = async function (connor, rothschild, subtitle, overline
     let connorSplit = new SplitText(connor, { type: "words" });
     let rothschildSplit = new SplitText(rothschild, { type: "words" });
 
-    gsap.set(connor, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d", force3D: true, });
-    gsap.set(rothschild, {  opacity: 0, perspective: '20vw', transformStyle:"preserve-3d" , force3D: true, });
+    gsap.set(connor, {  opacity: 0, perspective: '15vw', transformStyle:"preserve-3d", force3D: true, });
+    gsap.set(rothschild, {  opacity: 0, perspective: '15vw', transformStyle:"preserve-3d" , force3D: true, });
     gsap.set(subtitle, { opacity: 0 });
     gsap.set(overline, { perspective: 400, opacity: 0 });
 
@@ -41,7 +41,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
     gsap.fromTo(
       connorSplit.words,
       {
-        scale: .25,
+        scale: 0,
         translateY: "50%",
         rotationX: '-90deg',
         opacity: 0,
@@ -62,7 +62,7 @@ export const transition = async function (connor, rothschild, subtitle, overline
    gsap.fromTo(
      rothschildSplit.words,
      {
-       scale: 0.25,
+       scale: 0,
         translateY: "50%",
         rotationX: '-90deg',
         opacity: 0,

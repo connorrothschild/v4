@@ -6,7 +6,7 @@ date: "2021-12-09"
 image: tidy-tuesday-powerlifting/header.png
 archived: false
 featured: true
-draft: true
+draft: false
 tags: ['svelte', 'personal']
 ---
 
@@ -27,7 +27,7 @@ My new site, which is my fourth personal website, is built with Sveltekit and ta
 
 I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/svelte-personal-site/commits/master)). 
 
-<Image src="../images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
+<Image src="/images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
 
 In this brief post, I'll detail some of the highlights, headaches, and give some practical tips for creating a personal website.
 
@@ -53,7 +53,7 @@ On the other hand, many sites are designed with *content* in mind. These sites t
 
 Perhaps the most extreme example of a content-focused personal website is [Paul Graham's](http://paulgraham.com/articles.html):
 
-<Image src="../images/post/this-site/paul-graham.png" alt="Paul Graham's personal website, featuring a collection of essays" />
+<Image src="/images/post/this-site/paul-graham.png" alt="Paul Graham's personal website, featuring a collection of essays" />
 
 The site is not meant to be pretty, but it gets you the content you need *immediately*. 
 
@@ -63,17 +63,21 @@ Beyond its easy navigability, the benefit of a site like this is **your visitors
 
 In designing connorrothschild.com, I aimed to make a site that had just enough whimsy to be interesting without it being distracting. 
 
+In the matrix above, it would be placed somewhere around here:
+
+[tk matrix with my site halfway]
+
 Practically, that meant introducing creativity whenever possible while ensuring that visitors had a consistent experience across content-specific pages. For example, each of my project, blog, and award pages have a consistent 'blog-post' style layout:
 
-<Image src="../images/post/this-site/project-example.png" alt="An example of my personal website's project page" width="48%"/>
-<Image src="../images/post/this-site/blog-example.png" alt="An example of my personal website's blog page" width="48%"/>
-<Image src="../images/post/this-site/award-example.png" alt="An example of my personal website's award page" width="70%" centered="true" />
+<Image src="/images/post/this-site/project-example.png" alt="An example of my personal website's project page" width="48%"/>
+<Image src="/images/post/this-site/blog-example.png" alt="An example of my personal website's blog page" width="48%"/>
+<Image src="/images/post/this-site/award-example.png" alt="An example of my personal website's award page" width="70%" centered="true" />
 
 When a user visits any of these content-based pages, they see a title, subtitle, and the main content with a `max-width: 768px` applied. There is consistency *within* categories (awards, blog, projects), and *across* them.
 
 Alternatively, I could have designed each of these sections with their own quirks, (e.g. full width images and grid based layouts introducing constituent parts of the content), as you see in sites like Félix Péault's:
 
-<Image src="../images/post/this-site/flayks-project.png" alt="An example of Flayks personal website's project page" />
+<Image src="/images/post/this-site/flayks-project.png" alt="An example of Flayks personal website's project page" />
 
 I chose not to do that, for two reasons.
 
@@ -104,7 +108,7 @@ The site's main text elements (e.g. section titles) are animated using a combina
 
 The projects section on my site's homepage is one of its more creative elements. As you can see in the video below, it layers transparent videos with overlaying text elements, to give the appearance of the videos 'popping out' in an almost-3D fashion.
 
-[tk video here]
+<video controls muted preload="metadata" src="/images/post/this-site/projects.mp4" alt="A video showcasing my projects section. Each time you hover over a different project, a new mockup video of that project appears."></video>
 
 Technically, this was challenging. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
 

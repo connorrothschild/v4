@@ -25,11 +25,11 @@ Of course, there's nothing _wrong_ with these kinds of tooltips. But they are tr
 
 That's why I recently updated one of my tooltips from a static presentation of textual information to a line chart depicting change over time. In other words, I went from this:
 
-<Image src="../images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif" alt="A GIF depicting the old tooltip, which contained static values in textual form"></Image>
+<Image src="/images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif" alt="A GIF depicting the old tooltip, which contained static values in textual form"></Image>
 
 to this:
 
-<Image src="../images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif" alt="A GIF depicting the old tooltip, which contained dynamic, temporal data over time for a given state upon hover"></Image>
+<Image src="/images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif" alt="A GIF depicting the old tooltip, which contained dynamic, temporal data over time for a given state upon hover"></Image>
 
 ## Why did I make that change?
 
@@ -41,7 +41,7 @@ The new tooltip shows a trend over time. It also shows the state name (just in c
 
 For example, hovering on West Virginia, which in 2017 seemed to have the highest opioid-involved overdose death rate (as indicated by it having the darkest shade of red), reveals that its also experienced one of the largest over-time increase in this rate since 1999:
 
-<Image src="../images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg" alt="A static image focusing on West Virginia, showcasing the tooltip which shows a line chart increasing over time."></Image>
+<Image src="/images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg" alt="A static image focusing on West Virginia, showcasing the tooltip which shows a line chart increasing over time."></Image>
 
 ## So, how do you do it?
 
