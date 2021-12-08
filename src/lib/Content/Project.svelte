@@ -15,6 +15,7 @@
   <a
     class="project-card no-underline"
     href={slug}
+    rel="external"
     sveltekit:prefetch
     on:mouseover={() => {
       if ($isTouchscreen) return;

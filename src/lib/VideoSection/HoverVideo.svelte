@@ -41,16 +41,24 @@
   import { goto } from "$app/navigation";
 
   // Require double click on mobile
+  // Use navigating to prevent slug duplication on quick double click
+  let navigating = false;
   function navigate(url, index) {
+    if (navigating == true) return;
+    navigating = true;
+
     if ($isTouchscreen && value === index) {
       goto(url);
+      navigating = false;
       return;
     }
     if ($isTouchscreen && value !== index) {
       value = index;
+      navigating = false;
       return;
     }
     goto(url);
+    navigating = false;
   }
 </script>
 

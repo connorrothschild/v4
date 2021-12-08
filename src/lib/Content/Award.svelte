@@ -16,8 +16,8 @@
       ? 'active'
       : ''}
       {award.place_code}"
-    sveltekit:prefetch
     href={slug}
+    rel="external"
     on:mouseover={() => {
       active = true;
       anyHovered = true;
@@ -64,6 +64,7 @@
     border-bottom-color: rgba(var(--text-color-rgb), 0.05);
     border-bottom-style: solid;
     border-bottom-width: 2px;
+    cursor: pointer;
   }
 
   .container::after {
