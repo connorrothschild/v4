@@ -13,7 +13,8 @@ const config = {
   ],
 	kit: {
     target: "#svelte",
-		adapter: adapter()
+		adapter: adapter(),
+    trailingSlash: 'never',
 	}
 };
 
