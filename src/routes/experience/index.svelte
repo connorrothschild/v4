@@ -28,7 +28,7 @@
   let description = "Some of my work experience.";
 
   $seo = {
-    title: title,
+    title: `${title} | Connor Rothschild`,
     description: description,
     image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
   };

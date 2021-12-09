@@ -15,7 +15,7 @@
 
   // META TAGS
   $seo = {
-    title: title,
+    title: `${title} | Connor Rothschild`,
     description: description,
     image: image,
   };

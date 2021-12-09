@@ -81,7 +81,7 @@ Alternatively, I could have designed each of these sections with their own quirk
 
 I chose not to do that, for two reasons.
 
-First, to build a consistent user experience across different types of content, so that users spent less time getting 'onboarded' to my site, and more time spent engaging with the content.
+First, to build a consistent user experience across different types of content, so that users spent less time getting 'onboarded' to my site, and more time spent engaging with the content. For certain developers (e.g., self-described creative coders), the creativity within project pages is something to showcase—for others, its nota s important.
 
 Second, because I'm not as good at design as Félix. 😆
 
@@ -93,7 +93,7 @@ Here are some parts of the website I hope you enjoy and maybe pull inspiration f
 
 <Info>
   
-This part of the post gets pretty technical.
+This part of the post gets somewhat technical.
 
 </Info>
 
@@ -116,7 +116,7 @@ Once the videos were created, I had to convert them to transparent videos, which
 
 Finally, after creating 8 transparent videos (4 `.mov` and 4 `.mp4`), I was ready to include them in the projects section. The question then was **how to render** the videos. The obvious option was having 4 different `<video>` tags, each with two `<source>` elements, and toggle the transparency of each on hover. I found that this led to some lagginess on video `load()` and `play()`, so I needed to find a different solution.
 
-Instead, I ended up preloading each of the four videos as `Blob()` objects and then dynamically updated the `video` source to equal the active video. The `Blob()` method enabled caching of the videos on all browsers and devices ([to my understanding, iOS refuses to cache large videos if they were passed in as a regular source](https://stackoverflow.com/questions/52220696/how-to-cache-mp4-video-for-the-html-video-tag/55982659#55982659)). 
+Instead, I ended up preloading each of the four videos as `Blob()` objects and then dynamically updated the `video` source to match the active video. The `Blob()` method enabled caching of the videos on all browsers and devices ([to my understanding, iOS refuses to cache large videos if they were passed in as a regular source](https://stackoverflow.com/questions/52220696/how-to-cache-mp4-video-for-the-html-video-tag/55982659#55982659)). 
 
 Technically, this meant I had to detect whether the user's browser supported HEVC alpha, and then pass in the video source dynamically to the `Blob` construction. This function detects if the user's browser supported HEVC alpha (adapted from [this snippet](https://css-tricks.com/overlaying-video-with-transparency-while-wrangling-cross-browser-support/)):
 
@@ -150,11 +150,13 @@ function supportsHEVCAlpha() {
 
 </Code>
 
+I then used that function to determine whether to update the `video` source to be our `.mp4` or `.mov` file.
+
 Whew! Here's the code for [preloading videos](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte), and [here's how we update `src` dynamically](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte).
 
 ## Noise
 
-Having a background noise applied to the `body` of your personal website is kinda in right now. It's also very easy to carry out technically.
+Having a background noise applied to the `body` of your personal website is kinda in right now. It's also very easy to carry out technically. (Zoom into my site's background to see the effect.)
 
 [Here's a simple `<Noise />` component](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/Noise.svelte) (which is really just entirely CSS) that we put in our `__layout.svelte` so that it is present on every page of the site. We (optionally) apply a `shake` animation so that it jitters a bit as well. 
 
@@ -217,7 +219,7 @@ import { prefersReducedMotion } from "./store.js";
 
 onMount(() => {
   if ($prefersReducedMotion) return;
-  transition();
+  transition(); /* Defined elsewhere */
 });
 </script>
 ```
