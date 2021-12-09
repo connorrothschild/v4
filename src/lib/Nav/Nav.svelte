@@ -237,7 +237,7 @@
     background: var(--primary-color);
     margin: 0 auto;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
 
   .nav-items {
