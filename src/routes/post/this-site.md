@@ -19,10 +19,6 @@ tags: ['svelte', 'personal']
   // import Matrix from "../../lib/global/BlogComponents/Matrix.svelte"
 </script>
 
-<svelte:head>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</svelte:head>
-
 The new connorrothschild.com is live! (You're likely reading this post on connorrothschild.com, so that isn't a surprise).
 
 My new site, which is my fourth personal website, is built with Sveltekit and takes inspiration from creative coders like [Félix Péault](https://flayks.com/) and [Henry Desroches](https://henry.codes/). You should check out their sites if you haven't already—they're pretty great.
@@ -41,11 +37,11 @@ connorrothschild.com is meant to be a highly creative, but still content-focused
 
 You can find plenty of examples of creative websites by perusing the collection of [awwwards Site of the Day](https://www.awwwards.com/websites/sites_of_the_day/) winners. This collection is mostly comprised of 'creative coders' who build highly creative, design-focused sites, usually for brands of for their own portfolio. A great example of an incredibly creative personal website is [Niccolo Miranda's](https://niccolomiranda.com/):
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud to finally release my new &quot;Paper Portfolio&quot;.<br><br>Live site ↳ <a href="https://t.co/zr4BTo31kP">https://t.co/zr4BTo31kP</a> <br><br>Many thanks to <a href="https://twitter.com/clementroche_?ref_src=twsrc%5Etfw">@clementroche_</a> &amp; <a href="https://twitter.com/michael_dlb?ref_src=twsrc%5Etfw">@michael_dlb</a> for the dev support. <a href="https://t.co/n1gDHnYkbl">pic.twitter.com/n1gDHnYkbl</a></p>&mdash; Niccolò Miranda (@niccolomiranda) <a href="https://twitter.com/niccolomiranda/status/1452636062866710531?ref_src=twsrc%5Etfw">October 25, 2021</a></blockquote>
+<Image src="/images/post/this-site/niccolo-tweet-1.png" alt="A Tweet from Niccolo Miranda reading: Proud to finally release my new 'Paper Portfolio.' Many thanks to @clementroche_ & @michael_dlb for the dev support." href="https://twitter.com/niccolomiranda/status/1452636062866710531" width="66%" centered="true"/>
 
 What makes the site great—beyond its general aesthetic—is its unified theme of a 'paper portfolio.' The site is meant to resemble a newspaper, and is chock-full of animations and design decisions that support that association. You can read more about those decisions in his thread below:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Big news! My new portfolio has been awarded <a href="https://twitter.com/hashtag/SOTD?src=hash&amp;ref_src=twsrc%5Etfw">#SOTD</a> and <a href="https://twitter.com/hashtag/DEVAWARD?src=hash&amp;ref_src=twsrc%5Etfw">#DEVAWARD</a> on <a href="https://twitter.com/AWWWARDS?ref_src=twsrc%5Etfw">@AWWWARDS</a>. <br><br>⤷ <a href="https://t.co/4DvfkZi53r">https://t.co/4DvfkZi53r</a><br><br>To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. <br><br>Read below 🚧👇 <a href="https://t.co/05t9LPJJAD">pic.twitter.com/05t9LPJJAD</a></p>&mdash; Niccolò Miranda (@niccolomiranda) <a href="https://twitter.com/niccolomiranda/status/1461291594477449220?ref_src=twsrc%5Etfw">November 18, 2021</a></blockquote> 
+<Image src="/images/post/this-site/niccolo-tweet-2.png" alt="A Tweet from Niccolo Miranda reading: Big news! My new portfolio has been awarded #SOTD and #DEVAWARD on @AWWWARDS. To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. Read below 🚧" href="https://twitter.com/niccolomiranda/status/1461291594477449220" width="66%" centered="true"/>
 
 ### Content
 
