@@ -12,7 +12,7 @@
   let anyHovered = false;
 
   let filteredPosts = posts
-    .filter((d) => !d.metadata.draft && !d.metadata.archived)
+    .filter((d) => !d.metadata?.draft && !d.metadata?.archived)
     // Sort by featured first, and if featured is the same (both false), then sort by date
     .sort((a, b) => {
       if (b.metadata.featured && !a.metadata.featured) return 1;

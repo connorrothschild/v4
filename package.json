@@ -5,7 +5,8 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "start": "svelte-kit start",
-    "preview": "svelte-kit preview"
+    "preview": "svelte-kit preview",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
@@ -47,6 +48,7 @@
     "intersection-observer": "^0.12.0",
     "lodash.debounce": "^4.0.8",
     "node-fetch": "^2.6.5",
+    "patch-package": "^6.4.7",
     "prismjs": "^1.25.0",
     "svelte-markdown": "^0.1.12",
     "svelte-paginate": "^0.0.1",
