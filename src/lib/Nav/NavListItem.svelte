@@ -8,19 +8,35 @@
   export let closedViaX = false;
 
   import { page } from "$app/stores";
+
+  import { onMount } from "svelte";
+
+  let hoverReady = false;
+
+  onMount(() => {
+    setTimeout(() => {
+      hoverReady = true;
+    }, 1000);
+  });
 </script>
 
 <li>
   <a
     on:mouseover={() => {
+      if (!hoverReady) return;
+
       hovered = title;
       anyHovered = true;
     }}
     on:focus={() => {
+      if (!hoverReady) return;
+
       hovered = title;
       anyHovered = true;
     }}
     on:click={() => {
+      if (!hoverReady) return;
+
       hovered = title;
       expanded = false;
 

@@ -18,6 +18,8 @@
     closedViaX = false,
     mounted = false;
 
+  // If the menu is not expanded, wait until the transition is finished to set expanded to true
+  // This prevents jittering on hover events while the menu is expanding
   const toggle = function () {
     expanded = !expanded;
   };
@@ -86,8 +88,8 @@
   <Transition split={"chars"} stagger={0.05} startingOpacity={0} />
   <div
     class="fullpage-nav"
-    in:fly|local={inParams}
-    out:fly|local={outParams}
+    in:fly={inParams}
+    out:fly={outParams}
     style={styles}
   >
     {#if !$isTouchscreen}
