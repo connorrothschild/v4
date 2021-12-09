@@ -23,7 +23,7 @@ The new connorrothschild.com is live! (You're likely reading this post on connor
 
 My new site, which is my fourth personal website, is built with Sveltekit and takes inspiration from creative coders like [Félix Péault](https://flayks.com/) and [Henry Desroches](https://henry.codes/). You should check out their sites if you haven't already—they're pretty great.
 
-I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/svelte-personal-site/commits/master)). 
+I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/.com/commits/master)). 
 
 <Image src="/images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
 
@@ -148,23 +148,23 @@ function supportsHEVCAlpha() {
 
 I then used that function to determine whether to update the `video` source to be our `.mp4` or `.mov` file.
 
-Whew! Here's the code for [preloading videos](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte), and [here's how we update `src` dynamically](https://github.com/connorrothschild/svelte-personal-site/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte).
+Whew! Here's the code for [preloading videos](https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte), and [here's how we update `src` dynamically](https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte).
 
 ## Noise
 
 Having a background noise applied to the `body` of your personal website is kinda in right now. It's also very easy to carry out technically. (Zoom into my site's background to see the effect.)
 
-[Here's a simple `<Noise />` component](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/Noise.svelte) (which is really just entirely CSS) that we put in our `__layout.svelte` so that it is present on every page of the site. We (optionally) apply a `shake` animation so that it jitters a bit as well. 
+[Here's a simple `<Noise />` component](https://github.com/connorrothschild/.com/blob/master/src/lib/Noise.svelte) (which is really just entirely CSS) that we put in our `__layout.svelte` so that it is present on every page of the site. We (optionally) apply a `shake` animation so that it jitters a bit as well. 
 
 You can create your own noise texture on a site [like this one](https://www.noisetexturegenerator.com/), and use the `<Noise />` component above to add a bit of flare to your site.
 
 ## Preference-respecting animations
 
-I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you're greeted with my name flying into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/scripts/transitions/rotate.js)):
+I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you're greeted with my name flying into view ([code](https://github.com/connorrothschild/.com/blob/master/src/scripts/transitions/rotate.js)):
 
 <video controls muted preload="metadata" src="/images/post/this-site/hero.mp4" alt="A video showcasing my 'hero' section, where the words 'Connor Rothschild' fly into view."></video>
 
-When you scroll throughout the site, content more subtly fades into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/TransitionInView.svelte)):
+When you scroll throughout the site, content more subtly fades into view ([code](https://github.com/connorrothschild/.com/blob/master/src/lib/TransitionInView.svelte)):
 
 <video controls muted preload="metadata" src="/images/post/this-site/inview.mp4" alt="A video showcasing awards progressively showing as the user scrolls down."></video>
 
