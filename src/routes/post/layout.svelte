@@ -137,7 +137,7 @@
       margin-top: 1rem;
     }
     .date {
-      font-size: 1.65rem;
+      font-size: 1.45rem;
     }
     .tags {
       margin-bottom: 1rem;

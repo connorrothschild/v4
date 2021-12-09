@@ -14,7 +14,9 @@ tags: ['svelte', 'personal']
   import Image from "../../lib/global/Image.svelte"
   import Info from "../../lib/global/Info.svelte"
   import Code from "../../lib/global/Code.svelte"
+
   import TransitionExample from "../../lib/global/BlogComponents/TransitionExample.svelte"
+  // import Matrix from "../../lib/global/BlogComponents/Matrix.svelte"
 </script>
 
 <svelte:head>
@@ -33,9 +35,7 @@ In this brief post, I'll detail some of the highlights, headaches, and give some
 
 ## Creativity & content
 
-connorrothschild.com is meant to be a highly creative, but still content-focused personal site. I think you can imagine all personal websites falling somewhere on this matrix:
-
-[tk matrix of X axis being creativity and Y axis being content]
+connorrothschild.com is meant to be a highly creative, but still content-focused personal site. Here are some examples of sites that served as inspiration on both fronts.
 
 ### Creativity
 
@@ -63,9 +63,9 @@ Beyond its easy navigability, the benefit of a site like this is **your visitors
 
 In designing connorrothschild.com, I aimed to make a site that had just enough whimsy to be interesting without it being distracting. 
 
-In the matrix above, it would be placed somewhere around here:
+<!-- If we compared my site to the two examples referenced earlier, it would fall somewhere around here:
 
-[tk matrix with my site halfway]
+<Matrix /> -->
 
 Practically, that meant introducing creativity whenever possible while ensuring that visitors had a consistent experience across content-specific pages. For example, each of my project, blog, and award pages have a consistent 'blog-post' style layout:
 
@@ -110,7 +110,7 @@ The projects section on my site's homepage is one of its more creative elements.
 
 <video controls muted preload="metadata" src="/images/post/this-site/projects.mp4" alt="A video showcasing my projects section. Each time you hover over a different project, a new mockup video of that project appears."></video>
 
-Technically, this was challenging. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
+Here's how it's done. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
 
 Once the videos were created, I had to convert them to transparent videos, which was made harder by the fact that different browsers encode transparency with different formats. (Chrome uses `webm`, Safari uses `mp4` with `HEVC`.) I downloaded videos from Rotato and used the application [Shutter Encoder](https://www.shutterencoder.com/en/) to output videos compatible with all browsers.
 
@@ -164,11 +164,11 @@ You can create your own noise texture on a site [like this one](https://www.nois
 
 I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you're greeted with my name flying into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/scripts/transitions/rotate.js)):
 
-[tk video here]
+<video controls muted preload="metadata" src="/images/post/this-site/hero.mp4" alt="A video showcasing my 'hero' section, where the words 'Connor Rothschild' fly into view."></video>
 
 When you scroll throughout the site, content more subtly fades into view ([code](https://github.com/connorrothschild/svelte-personal-site/blob/master/src/lib/TransitionInView.svelte)):
 
-[tk video here]
+<video controls muted preload="metadata" src="/images/post/this-site/inview.mp4" alt="A video showcasing awards progressively showing as the user scrolls down."></video>
 
 Both of these animations (and all others on the site) respect the [user's `prefers-reduced-motion` setting](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion). Practically, this looks like applying animation functions and transitions **only when the user has no motion preference**. In CSS, that looks like this:
 

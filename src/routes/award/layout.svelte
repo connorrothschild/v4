@@ -41,8 +41,8 @@
       >
         {@html title}
       </h1>
-      <h2 class="content-description transition-subtitle overflow-hidden flex">
-        <div class="misc">
+      <h2 class="content-description overflow-hidden flex">
+        <div class="misc transition-subtitle ">
           <span style="display: block; font-weight: 600; margin-bottom: .25rem;"
             >{organization}</span
           >
@@ -55,7 +55,7 @@
           href={media_url}
           target="_blank"
           rel="noopener noreferrer"
-          class="media">See media &rarr;</a
+          class="media transition-subtitle">See media &rarr;</a
         >
       </h2>
     </div>
@@ -110,6 +110,7 @@
       display: flex;
       flex-direction: column;
       place-items: unset;
+      padding-top: 1rem;
     }
     .misc {
       margin-bottom: 2rem;
@@ -119,6 +120,7 @@
       padding: 1rem 2rem;
       margin-top: 0;
       text-align: right;
+      align-self: flex-end;
     }
   }
 </style>
