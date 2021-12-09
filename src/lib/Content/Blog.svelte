@@ -107,7 +107,6 @@
     bind:offsetWidth={cardWidth}
     bind:offsetHeight={cardHeight}
     href={slug}
-    rel="external"
     sveltekit:prefetch
   >
     <div

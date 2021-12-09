@@ -20,7 +20,6 @@
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     sveltekit:prefetch
     href={slug}
-    rel="external"
     on:mouseover={() => {
       anyHovered = true;
       hovered = true;

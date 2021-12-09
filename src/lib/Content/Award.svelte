@@ -17,7 +17,6 @@
       : ''}
       {award.place_code}"
     href={slug}
-    rel="external"
     on:mouseover={() => {
       active = true;
       anyHovered = true;

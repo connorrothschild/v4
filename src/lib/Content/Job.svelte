@@ -17,7 +17,6 @@
     class:preview
     sveltekit:prefetch
     href={slug}
-    rel="external"
     on:mouseover={() => {
       if (preview) {
         hoveredFromChild = job.name;
