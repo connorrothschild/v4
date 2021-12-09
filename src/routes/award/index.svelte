@@ -55,7 +55,7 @@
     {#each awards as award}
       <AwardSection
         award={award.metadata}
-        slug={award.path.replace(/\.[^/.]+$/, "")}
+        slug={award.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
         bind:anyHovered
       />
     {/each}

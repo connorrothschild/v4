@@ -17,6 +17,7 @@
       : ''}
       {award.place_code}"
     href={slug}
+    sveltekit:prefetch
     on:mouseover={() => {
       active = true;
       anyHovered = true;

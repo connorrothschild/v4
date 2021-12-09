@@ -38,7 +38,7 @@
           <div class="job">
             <JobSection
               job={job.metadata}
-              slug={job.path.replace(/\.[^/.]+$/, "")}
+              slug={job.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
               preview={true}
               bind:hoveredFromChild
             />

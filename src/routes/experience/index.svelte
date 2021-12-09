@@ -47,7 +47,7 @@
     {#each sortedJobs as job}
       <JobSection
         job={job.metadata}
-        slug={job.path.replace(/\.[^/.]+$/, "")}
+        slug={job.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
         preview={false}
         hoveredFromChild={null}
       />

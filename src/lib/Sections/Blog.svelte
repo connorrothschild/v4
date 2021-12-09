@@ -54,7 +54,7 @@
       {#each finalPosts as post, index}
         <BlogSection
           post={post.metadata}
-          slug={post.path.replace(/\.[^/.]+$/, "")}
+          slug={post.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
           {index}
           bind:anyHovered
         />
