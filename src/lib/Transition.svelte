@@ -18,65 +18,71 @@
     subtitle = document.querySelectorAll(".transition-subtitle");
     content = document.querySelectorAll(".transition-content");
 
-    content.forEach((d) => {
-      gsap.set(d, { opacity: 0 });
-      gsap.fromTo(
-        d,
-        { opacity: startingOpacity },
-        { opacity: 1, duration: 0.5, delay: 0.5 }
-      );
-    });
-
-    title.forEach((d) => {
-      gsap.set(d, { opacity: 0 });
-      gsap.fromTo(
-        d,
-        { opacity: startingOpacity },
-        { opacity: 1, duration: 1.5 }
-      );
-
-      const titleSplit = new SplitText(d, {
-        type: "lines,words,chars",
+    if (content.length > 0) {
+      content.forEach((d) => {
+        gsap.set(d, { opacity: 0 });
+        gsap.fromTo(
+          d,
+          { opacity: startingOpacity },
+          { opacity: 1, duration: 0.5, delay: 0.5 }
+        );
       });
+    }
 
-      gsap.fromTo(
-        titleSplit[split],
-        { y: "100%", opacity: startingOpacity, rotation: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          rotation: 0,
-          stagger: stagger,
-          duration: 0.5,
-          ease: "power2.out",
-        }
-      );
-    });
+    if (title.length > 0) {
+      title.forEach((d) => {
+        gsap.set(d, { opacity: 0 });
+        gsap.fromTo(
+          d,
+          { opacity: startingOpacity },
+          { opacity: 1, duration: 1.5 }
+        );
 
-    subtitle.forEach((d) => {
-      gsap.set(d, { opacity: startingOpacity });
-      gsap.fromTo(
-        d,
-        { opacity: startingOpacity },
-        { opacity: 1, duration: 1.5 }
-      );
+        const titleSplit = new SplitText(d, {
+          type: "lines,words,chars",
+        });
 
-      const subtitleSplit = new SplitText(d, {
-        type: "lines,words,chars",
+        gsap.fromTo(
+          titleSplit[split],
+          { y: "100%", opacity: startingOpacity, rotation: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            rotation: 0,
+            stagger: stagger,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
       });
+    }
 
-      gsap.fromTo(
-        subtitleSplit["words"],
-        { y: "100%", opacity: startingOpacity },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.02,
-          duration: 0.5,
-          ease: "backwards",
-        }
-      );
-    });
+    if (subtitle.length > 0) {
+      subtitle.forEach((d) => {
+        gsap.set(d, { opacity: startingOpacity });
+        gsap.fromTo(
+          d,
+          { opacity: startingOpacity },
+          { opacity: 1, duration: 1.5 }
+        );
+
+        const subtitleSplit = new SplitText(d, {
+          type: "lines,words,chars",
+        });
+
+        gsap.fromTo(
+          subtitleSplit["words"],
+          { y: "100%", opacity: startingOpacity },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.02,
+            duration: 0.5,
+            ease: "backwards",
+          }
+        );
+      });
+    }
   }
 
   import { sleep } from "../scripts/utils.js";
