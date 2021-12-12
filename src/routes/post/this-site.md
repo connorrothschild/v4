@@ -108,9 +108,9 @@ The projects section on my site's homepage is one of its more creative elements.
 
 Here's how it's done. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
 
-Once the videos were created, I had to convert them to transparent videos, which was made harder by the fact that different browsers encode transparency with different formats. (Chrome uses `webm`, Safari uses `mp4` with `HEVC`.) I downloaded videos from Rotato and used the application [Shutter Encoder](https://www.shutterencoder.com/en/) to output videos compatible with all browsers.
+Once the videos were created, I had to convert them to transparent videos, which was made harder by the fact that different browsers encode transparency with different formats. (Chrome uses `webm`, Safari uses `mov` with `HEVC`.) I downloaded videos from Rotato and used the application [Shutter Encoder](https://www.shutterencoder.com/en/) to output videos compatible with all browsers.
 
-Finally, after creating 8 transparent videos (4 `.mov` and 4 `.mp4`), I was ready to include them in the projects section. The question then was **how to render** the videos. The obvious option was having 4 different `<video>` tags, each with two `<source>` elements, and toggle the transparency of each on hover. I found that this led to some lagginess on video `load()` and `play()`, so I needed to find a different solution.
+Finally, after creating 8 transparent videos (4 `.mov` and 4 `.webm`), I was ready to include them in the projects section. The question then was **how to render** the videos. The obvious option was having 4 different `<video>` tags, each with two `<source>` elements, and toggle the transparency of each on hover. I found that this led to some lagginess on video `load()` and `play()`, so I needed to find a different solution.
 
 Instead, I ended up preloading each of the four videos as `Blob()` objects and then dynamically updated the `video` source to match the active video. The `Blob()` method enabled caching of the videos on all browsers and devices ([to my understanding, iOS refuses to cache large videos if they were passed in as a regular source](https://stackoverflow.com/questions/52220696/how-to-cache-mp4-video-for-the-html-video-tag/55982659#55982659)). 
 
@@ -146,7 +146,7 @@ function supportsHEVCAlpha() {
 
 </Code>
 
-I then used that function to determine whether to update the `video` source to be our `.mp4` or `.mov` file.
+I then used that function to determine whether to update the `video` source to be our `.webm` or `.mov` file.
 
 Whew! Here's the code for [preloading videos](https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte), and [here's how we update `src` dynamically](https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte).
 
