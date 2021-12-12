@@ -7,7 +7,6 @@
   import Nav from "$lib/Nav/Nav.svelte";
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
-  import SmallFooter from "$lib/FooterSmall.svelte";
   import Circle from "$lib/CircleText.svelte";
   import Noise from "$lib/Noise.svelte";
 
@@ -103,11 +102,7 @@
 <slot />
 <Loading />
 <Circle />
-{#if $page.path === "/"}
-  <Footer />
-{:else}
-  <SmallFooter />
-{/if}
+<Footer />
 
 <style>
 </style>

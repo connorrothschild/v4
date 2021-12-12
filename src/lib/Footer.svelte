@@ -1,120 +1,65 @@
 <script>
-  let hoveredEmoji = null;
-
-  let setEmoji = (emo) => {
-    hoveredEmoji = emo;
-  };
-  let nullEmoji = () => {
-    hoveredEmoji = null;
-  };
 </script>
 
 <footer>
-  <span
-    on:mouseover={() => {
-      setEmoji("👀");
-    }}
-    on:focus={() => {
-      setEmoji("👀");
-    }}
-    on:mouseleave={() => {
-      nullEmoji();
-    }}
-    aria-hidden="true"
-    class="emoji bottom right">{hoveredEmoji ? hoveredEmoji : "👀"}</span
-  >
-  <span
-    on:mouseover={() => {
-      setEmoji("🔥");
-    }}
-    on:focus={() => {
-      setEmoji("🔥");
-    }}
-    on:mouseleave={() => {
-      nullEmoji();
-    }}
-    on:mouseleave={nullEmoji}
-    aria-hidden="true"
-    class="emoji top right">{hoveredEmoji ? hoveredEmoji : "🔥"}</span
-  >
-  <span
-    on:mouseover={() => {
-      setEmoji("🤠");
-    }}
-    on:focus={() => {
-      setEmoji("🤠");
-    }}
-    on:mouseleave={() => {
-      nullEmoji();
-    }}
-    aria-hidden="true"
-    class="emoji top left">{hoveredEmoji ? hoveredEmoji : "🤠"}</span
-  >
   <div class="flex-container">
-    <div class="me">
-      <h2 class="thanks">Thanks for visiting the personal site of</h2>
-      <h1 class="name">Connor Rothschild</h1>
+    <div class="left">
+      <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
+      <h1 class="name">Thanks for visiting <span class="wave">👋</span></h1>
+      <!-- <h2 class="copyright"> -->
+      <div class="column-content copyright">
+        <p style="font-weight: 500; font-size: 1.2rem;">Connor Rothschild</p>
+        <p style="font-size: .95rem;">All rights reserved © 2021</p>
+      </div>
+      <!-- </h2> -->
     </div>
-    <div
-      class="you"
-      on:mouseleave={() => {
-        nullEmoji();
-      }}
-    >
-      <h1 class="stay-in-touch">
-        Let's stay in touch <span class="inline-emoji">
-          {hoveredEmoji || "👇"}</span
-        >
-      </h1>
-      <div class="links">
-        <a
-          class="link no-underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          on:mouseover={() => {
-            setEmoji("✉️");
-          }}
-          on:focus={() => {
-            setEmoji("✉️");
-          }}
-          href="mailto:connor@connorrothschild.com">Email</a
-        >
-        <a
-          class="link no-underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/connor-rothschild/"
-          on:mouseover={() => {
-            setEmoji("🔗");
-          }}
-          on:focus={() => {
-            setEmoji("🔗");
-          }}>LinkedIn</a
-        >
-        <a
-          class="link no-underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/connorrothschild/"
-          on:mouseover={() => {
-            setEmoji("💻");
-          }}
-          on:focus={() => {
-            setEmoji("💻");
-          }}>GitHub</a
-        >
-        <a
-          class="link no-underline"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
-          on:mouseover={() => {
-            setEmoji("🐦");
-          }}
-          on:focus={() => {
-            setEmoji("🐦");
-          }}>Twitter</a
-        >
+    <div class="right">
+      <div class="column">
+        <h5 class="column-header">Connect</h5>
+        <div class="column-content">
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/connor-rothschild/">LinkedIn</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/connorrothschild/">GitHub</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/intent/follow?screen_name=CL_Rothschild"
+            >Twitter</a
+          >
+        </div>
+      </div>
+      <div class="column">
+        <h5 class="column-header">Contact</h5>
+        <div class="column-content">
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:connor@connorrothschild.com">Personal</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:connor@mokshadata.com">Work</a
+          >
+          <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://calendly.com/connorrothschild/meeting">Meet</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -124,28 +69,19 @@
   footer {
     display: flex;
     place-items: center;
-    padding: 0;
-    width: 100%;
-    /* background: var(--text-color);
-    background: linear-gradient(
-      to bottom right,
-      var(--text-color) 0%,
-      var(--accent-color) 150%
-      ); */
+    height: 300px;
+    padding: 3rem 1rem;
     background: var(--footer-bg);
     color: var(--pure-text-color);
-    z-index: 99;
-  }
-
-  footer {
-    height: 600px;
     position: relative;
+    z-index: 99;
+    box-shadow: -1px -1px 6px var(--box-shadow-color);
   }
 
   .flex-container {
     max-width: 1268px;
-    width: 100%;
     height: 100%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -157,176 +93,137 @@
     color: var(--pure-text-color);
   }
 
-  .me,
-  .you {
+  .right {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .left,
+  .right {
     flex: 1;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .thanks {
-    font-family: var(--font-sans);
-    margin-bottom: 1rem;
-    font-weight: 200;
-    font-size: 1.8rem;
-  }
-
-  .name {
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1;
-  }
-
-  .stay-in-touch {
-    line-height: 1;
-    margin-bottom: 2rem;
-    font-size: 3.5rem;
-    font-weight: 200;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .links {
-    display: flex;
-    justify-content: space-between;
-    width: 450px;
-  }
-
-  .link {
-    font-family: var(--font-sans);
-    letter-spacing: 0.05rem;
-    padding-bottom: 0.5rem;
-    font-weight: 500;
-    transition: color 500ms ease;
-    text-transform: uppercase;
-    color: rgba(var(--text-color-rgb), 0.7);
-  }
-
-  .link:hover {
-    color: var(--pure-text-color);
-  }
-
-  /* RANDOM EMOJIS lol */
-  .emoji {
-    position: absolute;
-    font-size: 4rem;
-    padding: 1rem;
-    cursor: pointer;
-  }
-
-  .top {
-    top: 0;
-  }
-
-  .bottom {
-    bottom: 0;
   }
 
   .left {
-    left: 0;
-  }
-  .right {
-    right: 0;
+    text-align: left;
   }
 
-  .inline-emoji {
-    margin-left: 0.5rem;
-    /* font-size: 90%; */
+  .name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: 0.025rem;
   }
 
-  @media screen and (max-width: 1068px) {
-    .thanks {
-      font-size: 1.55rem;
+  .copyright {
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--pure-text-color);
+    font-family: var(--font-sans);
+  }
+
+  .column-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--pure-text-color);
+  }
+
+  .column-content {
+    display: flex;
+    flex-direction: column;
+    /* place-items: center; */
+  }
+
+  .column-content.copyright {
+    place-items: flex-start;
+  }
+
+  .link {
+    color: var(--pure-text-color);
+    font-family: var(--font-sans);
+    margin-bottom: 0.15rem;
+    padding-bottom: 0.25rem;
+    font-weight: 200;
+    font-size: 1.1rem;
+    letter-spacing: 0.025rem;
+    width: min-content;
+    text-transform: uppercase;
+  }
+
+  .wave:hover {
+    display: inline-block;
+    animation: wiggle 700ms linear forwards;
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: rotate(0);
     }
-    .name,
-    .stay-in-touch {
-      font-size: 3.25rem;
+    20% {
+      transform: rotate(7.5deg);
+    }
+    40% {
+      transform: rotate(-7.5deg);
+    }
+    60% {
+      transform: rotate(7.5deg);
+    }
+    80% {
+      transform: rotate(-7.5deg);
+    }
+    100% {
+      transform: rotate(0);
     }
   }
 
-  @media screen and (max-width: 900px) {
-    .thanks {
-      font-size: 1.25rem;
+  @media screen and (max-width: 868px) {
+    footer {
+      height: 400px;
     }
-    .name,
-    .stay-in-touch {
-      font-size: 2.825rem;
-    }
-
-    .links {
-      width: 350px;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
     .flex-container {
       flex-direction: column;
     }
-
-    .me,
-    .you {
-      justify-content: center;
-      flex: 1;
-    }
-
-    .me {
-      align-self: flex-start;
-    }
-
-    .you {
-      align-self: flex-end;
-    }
-
-    .inline-emoji {
-      margin-left: 0;
-      margin-right: 0.75rem;
-    }
-
-    .stay-in-touch {
-      flex-direction: row-reverse;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .name,
-    .stay-in-touch {
-      font-size: 3rem;
-    }
-
-    .you {
-      align-self: flex-start;
-    }
-
-    .inline-emoji {
-      margin-right: 0;
-      margin-left: 0.5rem;
-    }
-
-    .stay-in-touch {
-      flex-direction: row;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .thanks {
-      font-size: 1.1rem;
-    }
-
-    .name,
-    .stay-in-touch {
-      font-size: 11vw;
-    }
-
-    .link {
-      font-size: 0.85rem;
-    }
-    .emoji {
-      font-size: 3rem;
-    }
-
-    .links {
+    .left {
       width: 100%;
+    }
+    .right {
+      width: 80%;
+      margin-left: auto;
+      justify-content: flex-end;
+      place-items: flex-end;
+    }
+    .right .column:first-of-type {
+      margin-right: 10%;
+    }
+    .name {
+      font-size: 2.5rem;
+    }
+    .link {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 468px) {
+    .right {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .right .column:last-of-type .column-content {
+      align-items: flex-end;
+    }
+
+    .name {
+      font-size: 2rem;
+    }
+
+    .copyright {
+      font-size: 0.65rem;
     }
   }
 </style>
