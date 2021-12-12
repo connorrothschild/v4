@@ -4,19 +4,16 @@
 <footer>
   <div class="flex-container">
     <div class="left">
-      <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
       <h1 class="name">Thanks for visiting <span class="wave">👋</span></h1>
-      <!-- <h2 class="copyright"> -->
       <div class="column-content copyright">
         <p style="font-weight: 500; font-size: 1.2rem;">Connor Rothschild</p>
         <p style="font-size: .95rem;">All rights reserved © 2021</p>
       </div>
-      <!-- </h2> -->
     </div>
     <div class="right">
       <div class="column">
         <h5 class="column-header">Connect</h5>
-        <div class="column-content">
+        <div class="column-content connect">
           <a
             class="link"
             target="_blank"
@@ -40,7 +37,7 @@
       </div>
       <div class="column">
         <h5 class="column-header">Contact</h5>
-        <div class="column-content">
+        <div class="column-content contact">
           <a
             class="link"
             target="_blank"
@@ -76,6 +73,7 @@
     position: relative;
     z-index: 99;
     box-shadow: -1px -1px 6px var(--box-shadow-color);
+    transition: height 300ms ease;
   }
 
   .flex-container {
@@ -88,8 +86,7 @@
     place-items: center;
   }
 
-  footer h1,
-  footer h2 {
+  footer h1 {
     color: var(--pure-text-color);
   }
 
@@ -109,7 +106,7 @@
 
   .name {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1;
     margin-bottom: 1rem;
     letter-spacing: 0.025rem;
@@ -128,7 +125,7 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-family: var(--font-serif);
-    font-weight: 900;
+    font-weight: 600;
     font-size: 2rem;
     color: var(--pure-text-color);
   }
@@ -136,11 +133,15 @@
   .column-content {
     display: flex;
     flex-direction: column;
-    /* place-items: center; */
   }
 
   .column-content.copyright {
     place-items: flex-start;
+  }
+
+  .column-content.connect,
+  .column-content.contact {
+    place-items: center;
   }
 
   .link {
@@ -195,7 +196,7 @@
       width: 80%;
       margin-left: auto;
       justify-content: flex-end;
-      place-items: flex-end;
+      place-items: flex-end !important;
     }
     .right .column:first-of-type {
       margin-right: 10%;
@@ -206,12 +207,20 @@
     .link {
       font-size: 1rem;
     }
+    .column-content.connect,
+    .column-content.contact {
+      place-items: flex-end;
+    }
   }
 
   @media screen and (max-width: 468px) {
     .right {
       width: 100%;
       justify-content: space-between;
+    }
+
+    .right .column:first-of-type .column-content {
+      align-items: flex-start;
     }
 
     .right .column:last-of-type .column-content {
