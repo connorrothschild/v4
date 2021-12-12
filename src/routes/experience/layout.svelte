@@ -21,7 +21,7 @@
   let element, intersecting;
 </script>
 
-<Transition split={"words"} />
+<Transition split={"words"} stagger={0.07} />
 <main>
   <IntersectionObserver {element} bind:intersecting>
     <div class="top-level" bind:this={element}>

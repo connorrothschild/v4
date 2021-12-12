@@ -24,7 +24,7 @@
   let element, intersecting;
 </script>
 
-<Transition split={"words"} />
+<Transition split={"words"} stagger={0.07} />
 <CornerTitle {title} subtitle={dateFormat(date)} {intersecting} />
 <main>
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">

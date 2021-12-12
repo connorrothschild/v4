@@ -57,15 +57,15 @@
     font-weight: 700;
     letter-spacing: 0.64px;
     color: var(--pure-text-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .corner-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 100;
     letter-spacing: 0.64px;
     color: var(--text-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .scroll-to-top {
