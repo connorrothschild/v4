@@ -3,7 +3,6 @@
   import { windowWidth } from "../stores/global.js";
   import { theme } from "../stores/theme.js";
 
-  $: console.log($theme);
   let transitioning = false;
   let transitionDuration = 600;
   let currentAccent;

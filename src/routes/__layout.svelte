@@ -21,6 +21,7 @@
 
   onMount(() => {
     mounted = true;
+    setColors($theme);
   });
 
   // This implements fade-in and out on the page level (smooth transitions)
@@ -79,7 +80,6 @@
 
   function setColors(theme) {
     if (!mounted) return;
-    console.log(theme);
     if (theme == "light") {
       lightModeColors.forEach((color) => {
         document.documentElement.style.setProperty(color.var, color.value);
