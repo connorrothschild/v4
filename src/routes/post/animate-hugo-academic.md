@@ -8,9 +8,9 @@ tags: ['html', 'r', 'tutorial']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Code from "../../lib/global/Code.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Code from "../../lib/Global/Code.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 <Image src="/images/post/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage."></Image>

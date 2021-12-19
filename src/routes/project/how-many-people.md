@@ -13,7 +13,7 @@ url: "https://connorrothschild.github.io/how-many-people"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/how-many-people" src="/images/project/how-many-people/header.png" alt="Header"></Image>

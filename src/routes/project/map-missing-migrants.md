@@ -13,7 +13,7 @@ url: "https://connorrothschild.github.io/map-missing-migrants"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/map-missing-migrants" src="/images/project/map-missing-migrants/header.png" alt="Header"></Image>

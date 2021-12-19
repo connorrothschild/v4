@@ -13,7 +13,7 @@ url: "https://connorrothschild.github.io/bob-ross-art-gallery/"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/bob-ross-art-gallery/"  src="/images/project/bob-ross-art-gallery/header.png" alt="Header"></Image>

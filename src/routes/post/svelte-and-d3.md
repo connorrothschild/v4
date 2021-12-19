@@ -9,9 +9,9 @@ tags: ['svelte', 'd3', 'tutorial']
 ---
 
 <script>
-  import Code from "$lib/global/Code.svelte"
-  import Image from "$lib/global/Image.svelte";
-  import Info from "$lib/global/Info.svelte";
+  import Code from "$lib/Global/Code.svelte"
+  import Image from "$lib/Global/Image.svelte";
+  import Info from "$lib/Global/Info.svelte";
 </script>
 
 <style>

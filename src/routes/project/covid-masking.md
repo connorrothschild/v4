@@ -13,7 +13,7 @@ url: "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"  src="/images/project/covid-masking/header.png" alt="Header"></Image>

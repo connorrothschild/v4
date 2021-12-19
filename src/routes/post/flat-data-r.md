@@ -9,9 +9,9 @@ tags: ['r', 'github', 'tutorial']
 ---
 
 <script>
-  import Code from "$lib/global/Code.svelte"
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Code from "$lib/Global/Code.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 The [GitHub OCTO team](https://octo.github.com/) recently released their first project: [**Flat Data**](https://octo.github.com/project/flat-data). The project aims to offer "a simple pattern for bringing working datasets into your repositories and versioning them." And it succeeds in doing so! I recently incorporated Flat Data into [one of my projects](https://github.com/connorrothschild/police-killings), allowing me to finally stop manually updating the data on a semiregular basis (yikes!). While working, I couldn't find any documentation on using R with Flat Data. Here, I'll explain the steps I took to incorporate R scripts into a Flat Data pipeline.

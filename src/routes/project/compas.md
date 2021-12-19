@@ -14,7 +14,7 @@ url: "https://connorrothschild.github.io/compas/"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/compas/" style="box-shadow: none;" src="/images/project/compas/header.png" alt="Header"></Image>

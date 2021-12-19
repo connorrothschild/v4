@@ -13,7 +13,7 @@ url: "https://quarantune.netlify.app"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://quarantune.netlify.app" src="/images/project/quarantunes/header.png" alt="Header"></Image>

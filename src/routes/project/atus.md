@@ -14,7 +14,7 @@ url: "https://connorrothschild.github.io/what-are-you-doing/"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/what-are-you-doing/"  src="/images/project/atus/header.png" alt="Header"></Image>

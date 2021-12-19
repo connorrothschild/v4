@@ -9,9 +9,9 @@ tags: ['vue', 'nuxt', 'package']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
-  import Code from "../../lib/global/Code.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
+  import Code from "../../lib/Global/Code.svelte"
 </script>
 
 I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own *former* personal site](https://connorrothschild.github.io/v3/). 

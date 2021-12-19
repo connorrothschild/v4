@@ -9,10 +9,10 @@ tags: ['analysis', 'r']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
-  import TableHandler from "../../lib/global/TableHandler.svelte"
-  import Code from "../../lib/global/Code.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
+  import TableHandler from "../../lib/Global/TableHandler.svelte"
+  import Code from "../../lib/Global/Code.svelte"
 </script>
 
 <Image src="/images/post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></Image>

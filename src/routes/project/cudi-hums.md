@@ -13,7 +13,7 @@ url: "https://connorrothschild.github.io/cudi-hums/"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/cudi-hums/" src="/images/project/cudi-hums/header.png" alt="Header"></Image>

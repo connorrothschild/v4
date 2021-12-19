@@ -9,8 +9,8 @@ tags: ['r', 'tutorial']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 <Image alt="A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'" src="/images/post/dumbbell-plots/featured.jpg"></Image>

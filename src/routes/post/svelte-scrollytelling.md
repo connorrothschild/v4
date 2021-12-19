@@ -9,13 +9,13 @@ tags: ['svelte', 'd3', 'tutorial']
 ---
 
 <script>
-  import Code from "$lib/global/Code.svelte"
-  import Image from "$lib/global/Image.svelte"
-  import Info from "$lib/global/Info.svelte"
+  import Code from "$lib/Global/Code.svelte"
+  import Image from "$lib/Global/Image.svelte"
+  import Info from "$lib/Global/Info.svelte"
 
-  import TweenedExample from "$lib/global/blog/svelte-scrollytelling/TweenedExample.svelte"
-  import D3ScaleExample from "$lib/global/blog/svelte-scrollytelling/D3ScaleExample.svelte"
-  import TweenedXPositionExample from "$lib/global/blog/svelte-scrollytelling/TweenedXPosition.svelte"
+  import TweenedExample from "$lib/Global/Blog/svelte-scrollytelling/TweenedExample.svelte"
+  import D3ScaleExample from "$lib/Global/Blog/svelte-scrollytelling/D3ScaleExample.svelte"
+  import TweenedXPositionExample from "$lib/Global/Blog/svelte-scrollytelling/TweenedXPosition.svelte"
 </script>
 
 Tk intro

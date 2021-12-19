@@ -9,8 +9,8 @@ tags: ['analysis', 'r']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 <Image alt="A small multiples map of refugee acceptance over time, across states" src="/images/post/refugee-trends/featured.png"></Image>

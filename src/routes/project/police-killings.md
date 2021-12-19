@@ -13,7 +13,7 @@ url: "https://mappingpoliceviolence.org/"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/police-killings/" src="/images/project/police-killings/header.png" alt="Header"></Image>

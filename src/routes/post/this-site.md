@@ -11,11 +11,11 @@ tags: ['svelte', 'personal']
 ---
 
 <script>
-  import Image from "$lib/global/Image.svelte"
-  import Info from "$lib/global/Info.svelte"
-  import Code from "$lib/global/Code.svelte"
+  import Image from "$lib/Global/Image.svelte"
+  import Info from "$lib/Global/Info.svelte"
+  import Code from "$lib/Global/Code.svelte"
 
-  import TransitionExample from "$lib/global/blog/this-site/TransitionExample.svelte"
+  import TransitionExample from "$lib/Global/Blog/this-site/TransitionExample.svelte"
 </script>
 
 The new connorrothschild.com is live! (You're likely reading this post on connorrothschild.com, so that isn't a surprise).

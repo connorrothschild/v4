@@ -9,8 +9,8 @@ tags: ['analysis', 'r']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 Over the last few months, we’ve been collecting hundreds of COVID-19

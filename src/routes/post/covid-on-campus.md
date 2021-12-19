@@ -8,9 +8,9 @@ tags: ['analysis', 'r']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
-  import TableHandler from "../../lib/global/TableHandler.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
+  import TableHandler from "../../lib/Global/TableHandler.svelte"
 </script>
 
 <svelte:head>

@@ -8,10 +8,10 @@ tags: ['r', 'tutorial']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
-  import Code from "../../lib/global/Code.svelte"
-  import HighlightFromProp from "../../lib/global/HighlightFromProp.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
+  import Code from "../../lib/Global/Code.svelte"
+  import HighlightFromProp from "../../lib/Global/HighlightFromProp.svelte"
 
   let hoveredId;
   let highlightedLines;

@@ -14,7 +14,7 @@ url: "http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texa
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/" src="/images/project/tpl-schools-db/header.png" alt="Header"></Image>

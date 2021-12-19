@@ -9,8 +9,8 @@ tags: ['r', 'tutorial']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 Thanks for visiting this blog post, but it has moved! It can be found in its fully interactive form [here](https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/).

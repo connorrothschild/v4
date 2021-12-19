@@ -13,7 +13,7 @@ url: "https://observablehq.com/@connorrothschild/bar-chart-race"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://observablehq.com/@connorrothschild/bar-chart-race/" src="/images/project/media-mentions/header.png" alt="Header"></Image>

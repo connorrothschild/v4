@@ -9,8 +9,8 @@ tags: ['personal']
 ---
 
 <script>
-  import Image from "../../lib/global/Image.svelte"
-  import Info from "../../lib/global/Info.svelte"
+  import Image from "../../lib/Global/Image.svelte"
+  import Info from "../../lib/Global/Info.svelte"
 </script>
 
 https://angel.co/post/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft

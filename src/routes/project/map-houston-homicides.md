@@ -13,7 +13,7 @@ url: "https://connorrothschild.github.io/datathon-2020/source"
 ---
 
 <script>
-import Image from "$lib/global/Image.svelte"
+import Image from "$lib/Global/Image.svelte"
 </script>
 
 <Image href="https://connorrothschild.github.io/datathon-2020/source/" src="/images/project/map-houston-homicides/header.png" alt="Header"></Image>
