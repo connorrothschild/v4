@@ -8,7 +8,7 @@
   import { onMount } from "svelte";
 
   import { dateFormat } from "../../scripts/utils.js";
-  import Star from "$lib/icons/Star.svelte";
+  import Star from "$lib/Icons/Star.svelte";
 
   import { windowWidth } from "../../stores/global.js";
 

@@ -7,7 +7,7 @@
   import { fly, fade } from "svelte/transition";
 
   import { dateFormat } from "../../scripts/utils.js";
-  import Star from "$lib/icons/Star.svelte";
+  import Star from "$lib/Icons/Star.svelte";
 
   let hovered = false;
 
