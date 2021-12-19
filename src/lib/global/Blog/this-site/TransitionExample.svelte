@@ -36,7 +36,7 @@
   <h1 id="transition-me">Hi, I'm Connor Rothschild!</h1>
   <a
     class="code no-underline"
-    href="https://github.com/connorrothschild/.com/tree/master/src/lib/global/Blog/this-site/TransitionExample.svelte"
+    href="https://github.com/connorrothschild/.com/tree/master/src/lib/global/blog/this-site/TransitionExample.svelte"
     target="_blank"
     rel="noopener noreferrer">See source code</a
   >
