@@ -49,6 +49,7 @@ const c = [
 	() => import("../../../src/routes/post/tidy-tuesday-replication.md"),
 	() => import("../../../src/routes/post/automation-scrollytell.md"),
 	() => import("../../../src/routes/post/animate-hugo-academic.md"),
+	() => import("../../../src/routes/post/svelte-scrollytelling.md"),
 	() => import("../../../src/routes/post/introducing-tpltheme.md"),
 	() => import("../../../src/routes/post/color-in-data-vis.md"),
 	() => import("../../../src/routes/post/do-something-else.md"),
@@ -63,6 +64,7 @@ const c = [
 	() => import("../../../src/routes/post/covid-posts.md"),
 	() => import("../../../src/routes/post/flat-data-r.md"),
 	() => import("../../../src/routes/post/this-site.md"),
+	() => import("../../../src/routes/post/learning.md"),
 	() => import("../../../src/routes/post/layout.svelte")
 ];
 
@@ -221,50 +223,56 @@ export const routes = [
 	// src/routes/post/animate-hugo-academic.md
 	[/^\/post\/animate-hugo-academic\/?$/, [c[0], c[49]], [c[1]]],
 
+	// src/routes/post/svelte-scrollytelling.md
+	[/^\/post\/svelte-scrollytelling\/?$/, [c[0], c[50]], [c[1]]],
+
 	// src/routes/post/introducing-tpltheme.md
-	[/^\/post\/introducing-tpltheme\/?$/, [c[0], c[50]], [c[1]]],
+	[/^\/post\/introducing-tpltheme\/?$/, [c[0], c[51]], [c[1]]],
 
 	// src/routes/post/color-in-data-vis.md
-	[/^\/post\/color-in-data-vis\/?$/, [c[0], c[51]], [c[1]]],
+	[/^\/post\/color-in-data-vis\/?$/, [c[0], c[52]], [c[1]]],
 
 	// src/routes/post/do-something-else.md
-	[/^\/post\/do-something-else\/?$/, [c[0], c[52]], [c[1]]],
+	[/^\/post\/do-something-else\/?$/, [c[0], c[53]], [c[1]]],
 
 	// src/routes/post/nuxt-blog-starter.md
-	[/^\/post\/nuxt-blog-starter\/?$/, [c[0], c[53]], [c[1]]],
+	[/^\/post\/nuxt-blog-starter\/?$/, [c[0], c[54]], [c[1]]],
 
 	// src/routes/post/covid-gun-spikes.md
-	[/^\/post\/covid-gun-spikes\/?$/, [c[0], c[54]], [c[1]]],
+	[/^\/post\/covid-gun-spikes\/?$/, [c[0], c[55]], [c[1]]],
 
 	// src/routes/post/covid-on-campus.md
-	[/^\/post\/covid-on-campus\/?$/, [c[0], c[55]], [c[1]]],
+	[/^\/post\/covid-on-campus\/?$/, [c[0], c[56]], [c[1]]],
 
 	// src/routes/post/map-springfield.md
-	[/^\/post\/map-springfield\/?$/, [c[0], c[56]], [c[1]]],
+	[/^\/post\/map-springfield\/?$/, [c[0], c[57]], [c[1]]],
 
 	// src/routes/post/dumbbell-plots.md
-	[/^\/post\/dumbbell-plots\/?$/, [c[0], c[57]], [c[1]]],
+	[/^\/post\/dumbbell-plots\/?$/, [c[0], c[58]], [c[1]]],
 
 	// src/routes/post/refugee-trends.md
-	[/^\/post\/refugee-trends\/?$/, [c[0], c[58]], [c[1]]],
+	[/^\/post\/refugee-trends\/?$/, [c[0], c[59]], [c[1]]],
 
 	// src/routes/post/svelte-scatter.md
-	[/^\/post\/svelte-scatter\/?$/, [c[0], c[59]], [c[1]]],
+	[/^\/post\/svelte-scatter\/?$/, [c[0], c[60]], [c[1]]],
 
 	// src/routes/post/svelte-and-d3.md
-	[/^\/post\/svelte-and-d3\/?$/, [c[0], c[60]], [c[1]]],
+	[/^\/post\/svelte-and-d3\/?$/, [c[0], c[61]], [c[1]]],
 
 	// src/routes/post/covid-posts.md
-	[/^\/post\/covid-posts\/?$/, [c[0], c[61]], [c[1]]],
+	[/^\/post\/covid-posts\/?$/, [c[0], c[62]], [c[1]]],
 
 	// src/routes/post/flat-data-r.md
-	[/^\/post\/flat-data-r\/?$/, [c[0], c[62]], [c[1]]],
+	[/^\/post\/flat-data-r\/?$/, [c[0], c[63]], [c[1]]],
 
 	// src/routes/post/this-site.md
-	[/^\/post\/this-site\/?$/, [c[0], c[63]], [c[1]]],
+	[/^\/post\/this-site\/?$/, [c[0], c[64]], [c[1]]],
+
+	// src/routes/post/learning.md
+	[/^\/post\/learning\/?$/, [c[0], c[65]], [c[1]]],
 
 	// src/routes/post/layout.svelte
-	[/^\/post\/layout\/?$/, [c[0], c[64]], [c[1]]]
+	[/^\/post\/layout\/?$/, [c[0], c[66]], [c[1]]]
 ];
 
 // we import the root layout/error components eagerly, so that

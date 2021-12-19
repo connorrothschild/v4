@@ -6,7 +6,7 @@
     <div class="left">
       <h1 class="name">Thanks for visiting <span class="wave">👋</span></h1>
       <div class="column-content copyright">
-        <p style="font-weight: 500; font-size: 1.2rem;">Connor Rothschild</p>
+        <p style="font-weight: 400; font-size: 1.2rem;">Connor Rothschild</p>
         <p style="font-size: .95rem;">All rights reserved © 2021</p>
       </div>
     </div>

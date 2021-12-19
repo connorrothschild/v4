@@ -23,7 +23,6 @@
     gsap.to(icon, {
       duration: 0.6,
       morphSVG: expanded ? closedPath : openPath,
-      //   fill: "var(--accent-color)",
       ease: "power3.inOut",
     });
   };

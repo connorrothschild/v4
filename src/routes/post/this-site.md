@@ -15,8 +15,7 @@ tags: ['svelte', 'personal']
   import Info from "../../lib/global/Info.svelte"
   import Code from "../../lib/global/Code.svelte"
 
-  import TransitionExample from "../../lib/global/BlogComponents/TransitionExample.svelte"
-  // import Matrix from "../../lib/global/BlogComponents/Matrix.svelte"
+  import TransitionExample from "../../lib/global/Blog/this-site/TransitionExample.svelte"
 </script>
 
 The new connorrothschild.com is live! (You're likely reading this post on connorrothschild.com, so that isn't a surprise).
