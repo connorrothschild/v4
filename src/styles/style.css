@@ -174,7 +174,7 @@ iframe {
   width: 100%;
   left: 0;
   box-shadow: 1px 1px 6px 1px var(--box-shadow-color);
-  margin: 1rem 0 1.5rem 0;
+  margin: 1rem 0 2rem 0 !important;
   z-index: 3;
   position: relative;
 }
@@ -188,6 +188,20 @@ iframe {
     width: 70vw;
   }
 } */
+
+/* On blog posts, we make code chunks and iframes larger than content width */
+/* We do this instead so that iframes are not centered but instead right justified */
+@media screen and (min-width: 1100px) {
+  iframe {
+    width: 75vw;
+  }
+
+  pre {
+    width: max-content;
+    min-width: 100%;
+    max-width: 75vw;
+  }
+}
 
 pre {
   font-size: 0.9rem !important;

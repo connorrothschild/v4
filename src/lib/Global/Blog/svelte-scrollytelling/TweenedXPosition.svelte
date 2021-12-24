@@ -45,8 +45,8 @@
 
 <style>
   .example {
-    width: 480px;
-    max-width: 100%;
+    /* width: 480px; */
+    width: 100%;
     margin: auto;
     background: var(--semitransparent-bg);
     margin-bottom: 1.15rem;
@@ -65,7 +65,7 @@
   }
 
   .active {
-    background: rgba(var(--primary-color-rgb), 0.7);
+    background: rgba(0, 0, 0, 0.25);
   }
 
   .active:hover::before {

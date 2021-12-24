@@ -47,11 +47,13 @@ Find the things that make you excited to learn, or at the very least find the th
 
 These kind of small tweaks ensure you spend enough time doing the things that help you learn.
 
-# Find the right people to follow  
+# Follow the right people
 
 There’s a common adage that you are the average of your five closest friends. A slightly-less-punchy but more way-more-accurate adage is: **you learn from the people you follow**. 
 
 The quickest way to learn in the long run is to surround yourself with people who feed you knowledge passively. 
+
+https://twitter.com/JamesClear/status/1312386219599433729
 
 This kind of tip requires a sort of rethinking of how we learn. We tend to think of learning as an *active process*, where you seek out information, commit time, and give attention to the topic at hand. In contrast, finding the right people to follow is a *passive approach to learning*, where you come across informative and helpful information sporadically and intermittently (FIXME these are the same words).
 

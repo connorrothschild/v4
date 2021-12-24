@@ -95,17 +95,19 @@
   }
 </script>
 
-{#if filename.length > 0}
-  <div class="filename-container"><span class="filename">{filename}</span></div>
-{/if}
 <code style="display: none;" bind:this={fakeCodeEl}>
   <slot />
 </code>
 <pre
-  class="{prismClasses} {classes}"
+  class="{prismClasses} {classes} {filename.length > 0 ? 'has-filename' : ''}"
   data-line={highlightedLines}
   bind:this={preEl}
   {...$$restProps}>
+  {#if filename.length > 0}
+    <div class="filename-container">
+      <span class="filename">{filename}</span>
+    </div>
+  {/if}
   {#if showLanguage && filename.length == 0}
     <span class="language">{language}</span>
   {/if}
@@ -119,19 +121,21 @@
     text-align: right;
     width: 100%;
     height: 30px;
-    margin-bottom: -0.55em;
     border-radius: 5px 5px 0 0;
     background: rgba(var(--accent-color-rgb), 0.9);
     display: flex;
     justify-content: flex-end;
     place-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .filename {
     color: var(--primary-color);
     padding: 0.4rem;
     font-weight: 400;
-    /* letter-spacing: 1.4px; */
   }
 
   .language {
@@ -144,5 +148,9 @@
     padding: 3px 4px;
     background: rgba(1, 22, 39, 0.79);
     user-select: none;
+  }
+
+  .has-filename {
+    padding-top: calc(1rem + 30px) !important;
   }
 </style>

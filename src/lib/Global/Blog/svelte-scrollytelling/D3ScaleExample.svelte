@@ -12,7 +12,7 @@
   <h1>Input</h1>
   <input min="0" max="9" type="range" bind:value={input} /><span>{input}</span>
 
-  <h1 style="margin-top: 1.5rem;">Output</h1>
+  <h1 style="margin-top: 1.5rem !important;">Output</h1>
   <div class="output-range">
     <div class="circle output" style="left: {xScale(input)}px" />
     <p class="output" style="left: {xScale(input)}px">
@@ -23,7 +23,7 @@
 
 <style>
   h1 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem 0 !important;
   }
 
   span {
