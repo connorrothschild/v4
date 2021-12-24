@@ -13,9 +13,9 @@
   import "../styles/fonts.css";
   import "../styles/immutable.css";
   import "../styles/code.css";
-  import "../styles/style.css";
   import "../styles/blog.css";
   import "../styles/project.css";
+  import "../styles/style.css";
 
   let mounted = false;
 
