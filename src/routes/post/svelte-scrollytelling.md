@@ -32,7 +32,7 @@ First, let's take a brief look at these elements, one by one.
 
 <Info>
 
-Are you already an expert? Feel free to [skip to the creation of our chart](#step-1-build-a-chart), or [view the final REPL](TK TK TK) instead.
+Are you already an expert? Feel free to [skip to the creation of our chart](#step-1-build-a-chart), or [view the final REPL](https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3) instead.
 
 </Info>
 
@@ -161,7 +161,7 @@ Below, you can see what this looks like in action. This example includes a tween
 
 <TweenedExample />
 
-Notice how the value begins tweening **as soon as a new step becomes active**. These are *triggers*, not *scrubbers*—the entire tween occurs at the point at which a new step becomes active, and the tween is not linked to anything like the scroll position.
+Notice how the value begins tweening **as soon as a new step becomes active**. These are *triggers*, not *scrubbers*—the entire tween occurs at the point at which a new step becomes active, and the tween is not linked to the scroll position.
 
 In our scrollytelling piece, we'll leverage `tweened` values to **transition the x and y positions of elements in a scatterplot**. We'll add to our example from above by adding some *data* to our steps, and animate between those datapoints at each step. 
 
@@ -371,4 +371,26 @@ All we need to do now is combine `currentStep` via `<Scrolly />`, and update our
 3. Pass the tweened data into our `{#each}` loop which renders SVG circles
 4. Admire the beauty that we have created!
 
-fin example + outro content
+So, here's a complete example combining all of the insights we've discussed so far:
+
+<iframe loading="lazy" src="https://svelte.dev/repl/81194f65fdc74601930df7974fb9ffff?version=3.38.3
+" width="100%" height='700' title="A Svelte Scrollytelling starter"></iframe>
+
+## Next steps
+
+We could extend upon our chart in a few ways. The logic that we used to tween x positions is extensible across any value that could be scaled. Currently, only the circles' x positions are tweened; we could do the same to each circles' y positions, or their radius. Now that we understand the pattern that enables scroll-driven tweening, we can use it for elements' position, size, and color.
+
+In visuals other than scatterplots, we could use scroll-driven interaction to tell a more dynamic story, such as linking an interactive map's viewport to the user's scroll position, as we see in this [article](https://www.ons.gov.uk/visualisations/dvc1371/#/E07000223) from the UK's Office of National Statistics:
+
+<Image src="/images/post/svelte-scrollytelling/map.gif" alt="A map that zooms out on scroll to show new datapoints" />
+
+## A final, polished example
+
+The scrollytelling visual we created was a starter kit, and as a result it neglected certain best practices. For completion's sake, here's a REPL with a complete, polished scrollytelling visualization.
+
+This example separates the charting logic into its own `<Scatterplot />` component, and includes a few lines of CSS to make it more responsive. When the canvas is larger than 767 pixels, it will place the text to the left of the chart, rather than directly on top of it. It also tweens the x and y positions simultaneously.
+
+<iframe loading="lazy" src="https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3
+" width="100%" height='700' title="A Svelte Scrollytelling example"></iframe>
+
+Thanks for reading! As always, feel free to [ping me](https://twitter.com/CL_Rothschild) with any questions, comments, or tips.

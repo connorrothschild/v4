@@ -9,10 +9,14 @@
   <meta name="twitter:creator" content="@CL_Rothschild" />
   <meta name="twitter:image" content={$seo.image} />
   <meta name="twitter:title" content={$seo.title} />
-  <meta name="og:title" content={$seo.title} />
-  <meta name="description" content={$seo.description} />
   <meta name="twitter:description" content={$seo.description} />
-  <meta name="og:image" content={$seo.image} />
+  <meta name="title" property="og:title" content={$seo.title} />
+  <meta
+    name="description"
+    property="og:description"
+    content={$seo.description}
+  />
+  <meta name="image" property="og:image" content={$seo.image} />
   <meta name="keywords" content={$seo.keywords} />
   <meta name="topic" content={$seo.keywords} />
   <meta name="language" content="EN" />
