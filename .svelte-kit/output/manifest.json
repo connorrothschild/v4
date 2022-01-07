@@ -1,6 +1,6 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-789d2adc.js",
+    "file": "start-f7ede53d.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
@@ -12,7 +12,6 @@
       "src/routes/__error.svelte",
       "src/routes/index.svelte",
       "src/routes/experience/index.svelte",
-      "src/routes/experience/layout.svelte",
       "src/routes/experience/moksha.md",
       "src/routes/experience/axios.md",
       "src/routes/experience/socom.md",
@@ -31,7 +30,6 @@
       "src/routes/project/quarantunes.md",
       "src/routes/project/cudi-hums.md",
       "src/routes/project/compas.md",
-      "src/routes/project/layout.svelte",
       "src/routes/project/atus.md",
       "src/routes/about/index.svelte",
       "src/routes/award/index.svelte",
@@ -50,7 +48,6 @@
       "src/routes/award/hpc-2019.md",
       "src/routes/award/hpc-2020.md",
       "src/routes/award/snd-2021.md",
-      "src/routes/award/layout.svelte",
       "src/routes/post/index.svelte",
       "src/routes/post/economist-table-replication-using-reactable.md",
       "src/routes/post/adding-a-chart-to-your-d3-tooltip.md",
@@ -72,16 +69,16 @@
       "src/routes/post/svelte-and-d3.md",
       "src/routes/post/covid-posts.md",
       "src/routes/post/flat-data-r.md",
+      "src/routes/post/following.md",
       "src/routes/post/this-site.md",
-      "src/routes/post/learning.md",
-      "src/routes/post/layout.svelte"
+      "src/routes/post/learning.md"
     ],
     "css": [
       "assets/start-d977ffc4.css"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-ed07bbcb.js",
+    "file": "pages/__layout.svelte-385db1f0.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -93,7 +90,7 @@
       "_device-a817a4b0.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-8952f4f5.css"
+      "assets/pages/__layout.svelte-032e82fd.css"
     ]
   },
   "src/routes/__error.svelte": {
@@ -109,7 +106,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-7d69ecad.js",
+    "file": "pages/index.svelte-92d1d1a5.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -120,7 +117,7 @@
       "_device-a817a4b0.js",
       "_singletons-12a22614.js",
       "_Project-99a0ef73.js",
-      "_Star-7b9803a5.js",
+      "_Star-afc23a4c.js",
       "_Award-d36aa0d2.js"
     ],
     "css": [
@@ -144,30 +141,14 @@
       "assets/pages/experience/index.svelte-a2e9f5af.css"
     ]
   },
-  "src/routes/experience/layout.svelte": {
-    "file": "pages/experience/layout.svelte-f254ffc2.js",
-    "src": "src/routes/experience/layout.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-f3571e25.js",
-      "_Transition-1c437cfe.js",
-      "_BackTo-c22a4cad.js",
-      "_seo-a44f086e.js",
-      "_utils-3e432cc7.js"
-    ],
-    "css": [
-      "assets/pages/experience/layout.svelte-35e46340.css"
-    ]
-  },
   "src/routes/experience/moksha.md": {
-    "file": "pages/experience/moksha.md-95a2a3da.js",
+    "file": "pages/experience/moksha.md-19e87340.js",
     "src": "src/routes/experience/moksha.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/experience/layout.svelte",
+      "__layout-b6119be1.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_BackTo-c22a4cad.js",
@@ -175,13 +156,13 @@
     ]
   },
   "src/routes/experience/axios.md": {
-    "file": "pages/experience/axios.md-85843656.js",
+    "file": "pages/experience/axios.md-320f320c.js",
     "src": "src/routes/experience/axios.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/experience/layout.svelte",
+      "__layout-b6119be1.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_BackTo-c22a4cad.js",
@@ -189,13 +170,13 @@
     ]
   },
   "src/routes/experience/socom.md": {
-    "file": "pages/experience/socom.md-9c55a7cb.js",
+    "file": "pages/experience/socom.md-9ee07fb7.js",
     "src": "src/routes/experience/socom.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/experience/layout.svelte",
+      "__layout-b6119be1.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_BackTo-c22a4cad.js",
@@ -203,13 +184,13 @@
     ]
   },
   "src/routes/experience/tpl.md": {
-    "file": "pages/experience/tpl.md-99ef8fa0.js",
+    "file": "pages/experience/tpl.md-c7335c93.js",
     "src": "src/routes/experience/tpl.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/experience/layout.svelte",
+      "__layout-b6119be1.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_BackTo-c22a4cad.js",
@@ -236,14 +217,14 @@
     ]
   },
   "src/routes/project/map-houston-homicides.md": {
-    "file": "pages/project/map-houston-homicides.md-091b623f.js",
+    "file": "pages/project/map-houston-homicides.md-2591e814.js",
     "src": "src/routes/project/map-houston-homicides.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -254,32 +235,15 @@
       "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css"
     ]
   },
-  "src/routes/project/layout.svelte": {
-    "file": "pages/project/layout.svelte-05bc3ee6.js",
-    "src": "src/routes/project/layout.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-f3571e25.js",
-      "_CornerTitle-0877d6cb.js",
-      "_Transition-1c437cfe.js",
-      "_BackTo-c22a4cad.js",
-      "_seo-a44f086e.js",
-      "_utils-3e432cc7.js"
-    ],
-    "css": [
-      "assets/pages/project/layout.svelte-785b0e22.css"
-    ]
-  },
   "src/routes/project/state-police-spending.md": {
-    "file": "pages/project/state-police-spending.md-936ba328.js",
+    "file": "pages/project/state-police-spending.md-a5649da7.js",
     "src": "src/routes/project/state-police-spending.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -291,14 +255,14 @@
     ]
   },
   "src/routes/project/bob-ross-art-gallery.md": {
-    "file": "pages/project/bob-ross-art-gallery.md-79642ba0.js",
+    "file": "pages/project/bob-ross-art-gallery.md-164f09b6.js",
     "src": "src/routes/project/bob-ross-art-gallery.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -310,14 +274,14 @@
     ]
   },
   "src/routes/project/map-missing-migrants.md": {
-    "file": "pages/project/map-missing-migrants.md-2c36f671.js",
+    "file": "pages/project/map-missing-migrants.md-73e9c8cb.js",
     "src": "src/routes/project/map-missing-migrants.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -329,14 +293,14 @@
     ]
   },
   "src/routes/project/how-many-people.md": {
-    "file": "pages/project/how-many-people.md-80f556b1.js",
+    "file": "pages/project/how-many-people.md-bc596a00.js",
     "src": "src/routes/project/how-many-people.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -348,14 +312,14 @@
     ]
   },
   "src/routes/project/police-killings.md": {
-    "file": "pages/project/police-killings.md-23beab28.js",
+    "file": "pages/project/police-killings.md-51d914ef.js",
     "src": "src/routes/project/police-killings.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -367,14 +331,14 @@
     ]
   },
   "src/routes/project/media-mentions.md": {
-    "file": "pages/project/media-mentions.md-b2e305f0.js",
+    "file": "pages/project/media-mentions.md-ad9c8f4d.js",
     "src": "src/routes/project/media-mentions.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -386,14 +350,14 @@
     ]
   },
   "src/routes/project/one-line-hacks.md": {
-    "file": "pages/project/one-line-hacks.md-1dc5c583.js",
+    "file": "pages/project/one-line-hacks.md-db76cb5a.js",
     "src": "src/routes/project/one-line-hacks.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -405,14 +369,14 @@
     ]
   },
   "src/routes/project/tpl-schools-db.md": {
-    "file": "pages/project/tpl-schools-db.md-204fc318.js",
+    "file": "pages/project/tpl-schools-db.md-8e1d6ae3.js",
     "src": "src/routes/project/tpl-schools-db.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -424,14 +388,14 @@
     ]
   },
   "src/routes/project/covid-masking.md": {
-    "file": "pages/project/covid-masking.md-699c9fd3.js",
+    "file": "pages/project/covid-masking.md-928841c4.js",
     "src": "src/routes/project/covid-masking.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -443,14 +407,14 @@
     ]
   },
   "src/routes/project/quarantunes.md": {
-    "file": "pages/project/quarantunes.md-564227ff.js",
+    "file": "pages/project/quarantunes.md-c71556aa.js",
     "src": "src/routes/project/quarantunes.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -462,14 +426,14 @@
     ]
   },
   "src/routes/project/cudi-hums.md": {
-    "file": "pages/project/cudi-hums.md-e90aab7e.js",
+    "file": "pages/project/cudi-hums.md-ea78e62a.js",
     "src": "src/routes/project/cudi-hums.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -481,14 +445,14 @@
     ]
   },
   "src/routes/project/compas.md": {
-    "file": "pages/project/compas.md-44b1c223.js",
+    "file": "pages/project/compas.md-aebc22ba.js",
     "src": "src/routes/project/compas.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -500,14 +464,14 @@
     ]
   },
   "src/routes/project/atus.md": {
-    "file": "pages/project/atus.md-7fc243cd.js",
+    "file": "pages/project/atus.md-3cf09371.js",
     "src": "src/routes/project/atus.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/project/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-47c7dfdf.js",
+      "_Image-edcde62f.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -549,13 +513,13 @@
     ]
   },
   "src/routes/award/rstudio-table-contest-2021.md": {
-    "file": "pages/award/rstudio-table-contest-2021.md-42c53acf.js",
+    "file": "pages/award/rstudio-table-contest-2021.md-07dc42eb.js",
     "src": "src/routes/award/rstudio-table-contest-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -563,31 +527,14 @@
       "_seo-a44f086e.js"
     ]
   },
-  "src/routes/award/layout.svelte": {
-    "file": "pages/award/layout.svelte-2b22a26e.js",
-    "src": "src/routes/award/layout.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-f3571e25.js",
-      "_CornerTitle-0877d6cb.js",
-      "_Transition-1c437cfe.js",
-      "_BackTo-c22a4cad.js",
-      "_seo-a44f086e.js",
-      "_utils-3e432cc7.js"
-    ],
-    "css": [
-      "assets/pages/award/layout.svelte-d6934f59.css"
-    ]
-  },
   "src/routes/award/d2k-showcase-2020.md": {
-    "file": "pages/award/d2k-showcase-2020.md-363b3ecf.js",
+    "file": "pages/award/d2k-showcase-2020.md-41365879.js",
     "src": "src/routes/award/d2k-showcase-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -596,13 +543,13 @@
     ]
   },
   "src/routes/award/northeastern-2020.md": {
-    "file": "pages/award/northeastern-2020.md-bb838f03.js",
+    "file": "pages/award/northeastern-2020.md-b17cf609.js",
     "src": "src/routes/award/northeastern-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -611,13 +558,13 @@
     ]
   },
   "src/routes/award/pudding-cup-2020.md": {
-    "file": "pages/award/pudding-cup-2020.md-de35414c.js",
+    "file": "pages/award/pudding-cup-2020.md-049df688.js",
     "src": "src/routes/award/pudding-cup-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -626,13 +573,13 @@
     ]
   },
   "src/routes/award/nationals-2017.md": {
-    "file": "pages/award/nationals-2017.md-c0e0d3ce.js",
+    "file": "pages/award/nationals-2017.md-7f3d7eae.js",
     "src": "src/routes/award/nationals-2017.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -641,13 +588,13 @@
     ]
   },
   "src/routes/award/datathon-2020.md": {
-    "file": "pages/award/datathon-2020.md-dbd1c3b8.js",
+    "file": "pages/award/datathon-2020.md-a6422ec0.js",
     "src": "src/routes/award/datathon-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -656,13 +603,13 @@
     ]
   },
   "src/routes/award/hudspeth-2020.md": {
-    "file": "pages/award/hudspeth-2020.md-d781c7ae.js",
+    "file": "pages/award/hudspeth-2020.md-b5a477cd.js",
     "src": "src/routes/award/hudspeth-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -671,13 +618,13 @@
     ]
   },
   "src/routes/award/malofiej-2020.md": {
-    "file": "pages/award/malofiej-2020.md-ad72ce39.js",
+    "file": "pages/award/malofiej-2020.md-5163fc49.js",
     "src": "src/routes/award/malofiej-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -686,13 +633,13 @@
     ]
   },
   "src/routes/award/malofiej-2021.md": {
-    "file": "pages/award/malofiej-2021.md-3bc18b81.js",
+    "file": "pages/award/malofiej-2021.md-9defbcda.js",
     "src": "src/routes/award/malofiej-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -701,13 +648,13 @@
     ]
   },
   "src/routes/award/bipp-2018.md": {
-    "file": "pages/award/bipp-2018.md-83b2702a.js",
+    "file": "pages/award/bipp-2018.md-28050315.js",
     "src": "src/routes/award/bipp-2018.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -716,13 +663,13 @@
     ]
   },
   "src/routes/award/chrp-2020.md": {
-    "file": "pages/award/chrp-2020.md-46b9e688.js",
+    "file": "pages/award/chrp-2020.md-97be84cd.js",
     "src": "src/routes/award/chrp-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -731,13 +678,13 @@
     ]
   },
   "src/routes/award/hpc-2018.md": {
-    "file": "pages/award/hpc-2018.md-ae3c899b.js",
+    "file": "pages/award/hpc-2018.md-85344add.js",
     "src": "src/routes/award/hpc-2018.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -746,13 +693,13 @@
     ]
   },
   "src/routes/award/hpc-2019.md": {
-    "file": "pages/award/hpc-2019.md-b1552e45.js",
+    "file": "pages/award/hpc-2019.md-104ef019.js",
     "src": "src/routes/award/hpc-2019.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -761,13 +708,13 @@
     ]
   },
   "src/routes/award/hpc-2020.md": {
-    "file": "pages/award/hpc-2020.md-be0d7381.js",
+    "file": "pages/award/hpc-2020.md-adb76a45.js",
     "src": "src/routes/award/hpc-2020.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -776,13 +723,13 @@
     ]
   },
   "src/routes/award/snd-2021.md": {
-    "file": "pages/award/snd-2021.md-a7b42f63.js",
+    "file": "pages/award/snd-2021.md-2d4b695f.js",
     "src": "src/routes/award/snd-2021.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/award/layout.svelte",
+      "__layout-5992dd8c.js",
       "_CornerTitle-0877d6cb.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
@@ -791,14 +738,14 @@
     ]
   },
   "src/routes/post/index.svelte": {
-    "file": "pages/post/index.svelte-df864cc4.js",
+    "file": "pages/post/index.svelte-704f0841.js",
     "src": "src/routes/post/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
       "_utils-3e432cc7.js",
-      "_Star-7b9803a5.js",
+      "_Star-afc23a4c.js",
       "_TransitionInView-0825f4a0.js",
       "_Transition-1c437cfe.js",
       "_BackTo-c22a4cad.js",
@@ -809,14 +756,14 @@
     ]
   },
   "src/routes/post/economist-table-replication-using-reactable.md": {
-    "file": "pages/post/economist-table-replication-using-reactable.md-243b3da4.js",
+    "file": "pages/post/economist-table-replication-using-reactable.md-5c106cd5.js",
     "src": "src/routes/post/economist-table-replication-using-reactable.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -828,35 +775,18 @@
       "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css"
     ]
   },
-  "src/routes/post/layout.svelte": {
-    "file": "pages/post/layout.svelte-4acb377e.js",
-    "src": "src/routes/post/layout.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-f3571e25.js",
-      "_Transition-1c437cfe.js",
-      "_CornerTitle-0877d6cb.js",
-      "_BackTo-c22a4cad.js",
-      "_seo-a44f086e.js",
-      "_utils-3e432cc7.js"
-    ],
-    "css": [
-      "assets/pages/post/layout.svelte-9f482b23.css"
-    ]
-  },
   "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": {
-    "file": "pages/post/adding-a-chart-to-your-d3-tooltip.md-79f7db6b.js",
+    "file": "pages/post/adding-a-chart-to-your-d3-tooltip.md-ce8d843c.js",
     "src": "src/routes/post/adding-a-chart-to-your-d3-tooltip.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_Code-c94bb176.js",
-      "_HighlightFromProp-a84b3569.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_Code-d39c2069.js",
+      "_HighlightFromProp-48352791.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -869,14 +799,14 @@
     ]
   },
   "src/routes/post/tidy-tuesday-powerlifting.md": {
-    "file": "pages/post/tidy-tuesday-powerlifting.md-ea19f866.js",
+    "file": "pages/post/tidy-tuesday-powerlifting.md-89c6667d.js",
     "src": "src/routes/post/tidy-tuesday-powerlifting.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -889,14 +819,14 @@
     ]
   },
   "src/routes/post/tidy-tuesday-replication.md": {
-    "file": "pages/post/tidy-tuesday-replication.md-f462751a.js",
+    "file": "pages/post/tidy-tuesday-replication.md-031f71fc.js",
     "src": "src/routes/post/tidy-tuesday-replication.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -909,15 +839,15 @@
     ]
   },
   "src/routes/post/automation-scrollytell.md": {
-    "file": "pages/post/automation-scrollytell.md-52d55ac7.js",
+    "file": "pages/post/automation-scrollytell.md-a155375d.js",
     "src": "src/routes/post/automation-scrollytell.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Code-c94bb176.js",
-      "_HighlightFromProp-a84b3569.js",
+      "__layout-28997534.js",
+      "_Code-d39c2069.js",
+      "_HighlightFromProp-48352791.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -930,16 +860,16 @@
     ]
   },
   "src/routes/post/animate-hugo-academic.md": {
-    "file": "pages/post/animate-hugo-academic.md-f2313755.js",
+    "file": "pages/post/animate-hugo-academic.md-a850a6a0.js",
     "src": "src/routes/post/animate-hugo-academic.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_Code-c94bb176.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_Code-d39c2069.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -952,15 +882,16 @@
     ]
   },
   "src/routes/post/svelte-scrollytelling.md": {
-    "file": "pages/post/svelte-scrollytelling.md-c70fbe71.js",
+    "file": "pages/post/svelte-scrollytelling.md-5e1d0696.js",
     "src": "src/routes/post/svelte-scrollytelling.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Code-c94bb176.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Code-d39c2069.js",
+      "_Image-edcde62f.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -968,20 +899,20 @@
       "_seo-a44f086e.js"
     ],
     "css": [
-      "assets/pages/post/svelte-scrollytelling.md-f3573758.css",
+      "assets/pages/post/svelte-scrollytelling.md-3a108e36.css",
       "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css",
       "assets/Info.svelte_svelte&type=style&lang-4136c559.css"
     ]
   },
   "src/routes/post/introducing-tpltheme.md": {
-    "file": "pages/post/introducing-tpltheme.md-4e7ad7ad.js",
+    "file": "pages/post/introducing-tpltheme.md-b40751cc.js",
     "src": "src/routes/post/introducing-tpltheme.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -994,14 +925,14 @@
     ]
   },
   "src/routes/post/color-in-data-vis.md": {
-    "file": "pages/post/color-in-data-vis.md-526927ba.js",
+    "file": "pages/post/color-in-data-vis.md-561add53.js",
     "src": "src/routes/post/color-in-data-vis.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1014,15 +945,15 @@
     ]
   },
   "src/routes/post/do-something-else.md": {
-    "file": "pages/post/do-something-else.md-34c866db.js",
+    "file": "pages/post/do-something-else.md-977b423c.js",
     "src": "src/routes/post/do-something-else.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1035,16 +966,16 @@
     ]
   },
   "src/routes/post/nuxt-blog-starter.md": {
-    "file": "pages/post/nuxt-blog-starter.md-4f181f03.js",
+    "file": "pages/post/nuxt-blog-starter.md-509c540b.js",
     "src": "src/routes/post/nuxt-blog-starter.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_Info-e6dc864e.js",
-      "_Code-c94bb176.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_Info-ffc97b00.js",
+      "_Code-d39c2069.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1057,16 +988,16 @@
     ]
   },
   "src/routes/post/covid-gun-spikes.md": {
-    "file": "pages/post/covid-gun-spikes.md-2c1feb29.js",
+    "file": "pages/post/covid-gun-spikes.md-77d8d11a.js",
     "src": "src/routes/post/covid-gun-spikes.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_TableHandler-4beb93fb.js",
-      "_Code-c94bb176.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_TableHandler-9d2d6ac5.js",
+      "_Code-d39c2069.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1079,15 +1010,15 @@
     ]
   },
   "src/routes/post/covid-on-campus.md": {
-    "file": "pages/post/covid-on-campus.md-bb298941.js",
+    "file": "pages/post/covid-on-campus.md-b0b85ab0.js",
     "src": "src/routes/post/covid-on-campus.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_TableHandler-4beb93fb.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_TableHandler-9d2d6ac5.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1100,14 +1031,14 @@
     ]
   },
   "src/routes/post/map-springfield.md": {
-    "file": "pages/post/map-springfield.md-d41ae356.js",
+    "file": "pages/post/map-springfield.md-852e14fc.js",
     "src": "src/routes/post/map-springfield.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1120,14 +1051,14 @@
     ]
   },
   "src/routes/post/dumbbell-plots.md": {
-    "file": "pages/post/dumbbell-plots.md-61423a9c.js",
+    "file": "pages/post/dumbbell-plots.md-456533de.js",
     "src": "src/routes/post/dumbbell-plots.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1140,14 +1071,14 @@
     ]
   },
   "src/routes/post/refugee-trends.md": {
-    "file": "pages/post/refugee-trends.md-de4bec5c.js",
+    "file": "pages/post/refugee-trends.md-e8bb19c9.js",
     "src": "src/routes/post/refugee-trends.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1160,14 +1091,14 @@
     ]
   },
   "src/routes/post/svelte-scatter.md": {
-    "file": "pages/post/svelte-scatter.md-daf7d26f.js",
+    "file": "pages/post/svelte-scatter.md-81c6372d.js",
     "src": "src/routes/post/svelte-scatter.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1180,15 +1111,15 @@
     ]
   },
   "src/routes/post/svelte-and-d3.md": {
-    "file": "pages/post/svelte-and-d3.md-9f0660d8.js",
+    "file": "pages/post/svelte-and-d3.md-64700072.js",
     "src": "src/routes/post/svelte-and-d3.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Code-c94bb176.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Code-d39c2069.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1202,14 +1133,14 @@
     ]
   },
   "src/routes/post/covid-posts.md": {
-    "file": "pages/post/covid-posts.md-411f66f9.js",
+    "file": "pages/post/covid-posts.md-b6e27add.js",
     "src": "src/routes/post/covid-posts.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1222,16 +1153,16 @@
     ]
   },
   "src/routes/post/flat-data-r.md": {
-    "file": "pages/post/flat-data-r.md-cae25ca0.js",
+    "file": "pages/post/flat-data-r.md-b53e834e.js",
     "src": "src/routes/post/flat-data-r.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Code-c94bb176.js",
-      "_Image-84ecf4e8.js",
-      "_Info-e6dc864e.js",
+      "__layout-28997534.js",
+      "_Code-d39c2069.js",
+      "_Image-edcde62f.js",
+      "_Info-ffc97b00.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1243,17 +1174,35 @@
       "assets/Info.svelte_svelte&type=style&lang-4136c559.css"
     ]
   },
+  "src/routes/post/following.md": {
+    "file": "pages/post/following.md-1c247ed8.js",
+    "src": "src/routes/post/following.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-f3571e25.js",
+      "__layout-28997534.js",
+      "_Transition-1c437cfe.js",
+      "_utils-3e432cc7.js",
+      "_CornerTitle-0877d6cb.js",
+      "_BackTo-c22a4cad.js",
+      "_seo-a44f086e.js"
+    ],
+    "css": [
+      "assets/pages/post/following.md-381a741f.css"
+    ]
+  },
   "src/routes/post/this-site.md": {
-    "file": "pages/post/this-site.md-cbc89e15.js",
+    "file": "pages/post/this-site.md-0581a14a.js",
     "src": "src/routes/post/this-site.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
-      "_Image-84ecf4e8.js",
-      "_Info-e6dc864e.js",
-      "_Code-c94bb176.js",
+      "__layout-28997534.js",
+      "_Image-edcde62f.js",
+      "_Info-ffc97b00.js",
+      "_Code-d39c2069.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1267,13 +1216,13 @@
     ]
   },
   "src/routes/post/learning.md": {
-    "file": "pages/post/learning.md-d364bd00.js",
+    "file": "pages/post/learning.md-9202c667.js",
     "src": "src/routes/post/learning.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-f3571e25.js",
-      "src/routes/post/layout.svelte",
+      "__layout-28997534.js",
       "_Transition-1c437cfe.js",
       "_utils-3e432cc7.js",
       "_CornerTitle-0877d6cb.js",
@@ -1345,8 +1294,8 @@
       "assets/TransitionInView-c3300d6c.css"
     ]
   },
-  "_Star-7b9803a5.js": {
-    "file": "chunks/Star-7b9803a5.js",
+  "_Star-afc23a4c.js": {
+    "file": "chunks/Star-afc23a4c.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],
@@ -1363,8 +1312,34 @@
       "assets/BackTo-524f5ccd.css"
     ]
   },
-  "_Image-84ecf4e8.js": {
-    "file": "chunks/Image-84ecf4e8.js",
+  "__layout-b6119be1.js": {
+    "file": "chunks/_layout-b6119be1.js",
+    "imports": [
+      "_vendor-f3571e25.js",
+      "_Transition-1c437cfe.js",
+      "_BackTo-c22a4cad.js",
+      "_seo-a44f086e.js"
+    ],
+    "css": [
+      "assets/_layout-d4117a87.css"
+    ]
+  },
+  "__layout-47c7dfdf.js": {
+    "file": "chunks/_layout-47c7dfdf.js",
+    "imports": [
+      "_vendor-f3571e25.js",
+      "_CornerTitle-0877d6cb.js",
+      "_Transition-1c437cfe.js",
+      "_BackTo-c22a4cad.js",
+      "_seo-a44f086e.js",
+      "_utils-3e432cc7.js"
+    ],
+    "css": [
+      "assets/_layout-2f1bb5bb.css"
+    ]
+  },
+  "_Image-edcde62f.js": {
+    "file": "chunks/Image-edcde62f.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],
@@ -1381,17 +1356,45 @@
       "assets/CornerTitle-46353616.css"
     ]
   },
-  "_Code-c94bb176.js": {
-    "file": "chunks/Code-c94bb176.js",
+  "__layout-5992dd8c.js": {
+    "file": "chunks/_layout-5992dd8c.js",
+    "imports": [
+      "_vendor-f3571e25.js",
+      "_CornerTitle-0877d6cb.js",
+      "_Transition-1c437cfe.js",
+      "_BackTo-c22a4cad.js",
+      "_seo-a44f086e.js",
+      "_utils-3e432cc7.js"
+    ],
+    "css": [
+      "assets/_layout-f51f5020.css"
+    ]
+  },
+  "__layout-28997534.js": {
+    "file": "chunks/_layout-28997534.js",
+    "imports": [
+      "_vendor-f3571e25.js",
+      "_Transition-1c437cfe.js",
+      "_CornerTitle-0877d6cb.js",
+      "_BackTo-c22a4cad.js",
+      "_seo-a44f086e.js",
+      "_utils-3e432cc7.js"
+    ],
+    "css": [
+      "assets/_layout-2f4a1b15.css"
+    ]
+  },
+  "_Code-d39c2069.js": {
+    "file": "chunks/Code-d39c2069.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],
     "css": [
-      "assets/Code-db4e4684.css"
+      "assets/Code-52f67dfa.css"
     ]
   },
-  "_HighlightFromProp-a84b3569.js": {
-    "file": "chunks/HighlightFromProp-a84b3569.js",
+  "_HighlightFromProp-48352791.js": {
+    "file": "chunks/HighlightFromProp-48352791.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],
@@ -1399,8 +1402,8 @@
       "assets/HighlightFromProp-c6af3753.css"
     ]
   },
-  "_Info-e6dc864e.js": {
-    "file": "chunks/Info-e6dc864e.js",
+  "_Info-ffc97b00.js": {
+    "file": "chunks/Info-ffc97b00.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],
@@ -1408,8 +1411,8 @@
       "assets/Info.svelte_svelte&type=style&lang-4136c559.css"
     ]
   },
-  "_TableHandler-4beb93fb.js": {
-    "file": "chunks/TableHandler-4beb93fb.js",
+  "_TableHandler-9d2d6ac5.js": {
+    "file": "chunks/TableHandler-9d2d6ac5.js",
     "imports": [
       "_vendor-f3571e25.js"
     ],

@@ -1,5 +1,5 @@
 <script>
-  import { seo } from "./seo";
+  import { seo } from "./seo.js";
 </script>
 
 <svelte:head>

@@ -2,7 +2,7 @@
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/seo";
+  import { seo } from "$lib/seo.js";
 
   export let name;
   export let description;
