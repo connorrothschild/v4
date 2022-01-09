@@ -32,7 +32,7 @@ First, let's take a brief look at these elements, one by one.
 
 <Info>
 
-Are you already an expert? Feel free to [skip to the creation of our chart](#step-1-build-a-chart), or [view the final REPL](https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3) instead.
+Already familiar with these concepts? Feel free to [skip to the creation of our chart](#step-1-build-a-chart), or [view the final REPL](https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3) instead.
 
 </Info>
 
@@ -69,7 +69,7 @@ This renders three bits of text, and applies a class of `active` to the current 
 
 Thanks to line 6, **`currentStep` will be bound to the current step index**. (Russell's `Scrolly` component is handling this—you don't have to worry about it.) In other words, as you scroll down and the first step comes into focus, `currentStep` will be set to 0.
 
-Then, on line 8, we set an `active` class to the step content if `currentStep` is equal to the step index. Practically, this means that we can make sure that the step in focus is visually distinct from others. 
+Then, on line 8, we set an `active` class to the step content if `currentStep` is equal to the step index. Practically, this means that we can make sure that the step in focus is visually distinct from others (e.g., by changing its background or text color). 
 
 To showcase exactly how this works, let's add some minor styling to our `.step` and `.step-content` elements:
 
@@ -109,9 +109,9 @@ This results in a simple (text-only) scrollytelling experience, where the text t
 <iframe loading="lazy" src="https://svelte.dev/repl/ec07a8fd46684d2d8fbcda679d65d296?version=3.44.3
 " width="100%" height='600' title="A text-only scrollytelling experience"></iframe>
 
-Notice that we (on line 6) create a `steps` array that includes paragraphs that we include in each step; this makes including prose a bit easier.
+Notice that we (on line 6) create a `steps` array that contains paragraphs that we include in each step; this makes integrating prose a bit easier.
 
-Congrats! You've completed the first step of your Svelte scrollytelling project.
+Congrats! You've completed the first step of your Svelte scrollytelling project. If all we wanted to do was toggle the visual appearance of text elements, we would be done. (But we don't. We instead want to include data, as we explain below.)
 
 ## Step 0b: Understand `tweened` values
 
@@ -119,7 +119,7 @@ Now that our app tracks the user's scroll position and which step is in focus, w
 
 Tk example here
 
-In our case, we'll achieve this by using Svelte's `tweened` values. **By creating a tweened value, we tell Svelte that changes to that value should be tweened, or animated.** Rather than immediately jump from our first number (e.g. 100) to the next (e.g. 200), the tweened value will smoothly transition between the two numbers (e.g. 100, 101... 200).
+In our case, we'll achieve this by using [Svelte's `tweened` values](https://svelte.dev/tutorial/tweened). **By creating a tweened value, we tell Svelte that changes to that value should be tweened, or animated.** Rather than immediately jump from our first number (e.g. 100) to the next (e.g. 200), the tweened value will smoothly transition between the two numbers (e.g. 100, 101... 200).
 
 Below, you can see what this looks like in action. This example includes a tweened value that changes according to the current step (watch the bottom left as you scroll).
 
@@ -161,7 +161,7 @@ Below, you can see what this looks like in action. This example includes a tween
 
 <TweenedExample />
 
-Notice how the value begins tweening **as soon as a new step becomes active**. These are *triggers*, not *scrubbers*—the entire tween occurs at the point at which a new step becomes active, and the tween is not linked to the scroll position.
+Notice how the value begins tweening **as soon as a new step becomes active**. These are *triggers*, not *scrubbers*—the entire tween occurs at the point at which a new step becomes active, and the tween is **not** linked to the scroll position.
 
 In our scrollytelling piece, we'll leverage `tweened` values to **transition the x and y positions of elements in a scatterplot**. We'll add to our example from above by adding some *data* to our steps, and animate between those datapoints at each step. 
 
@@ -181,7 +181,7 @@ Let's begin by building a simple, static scatterplot. The scatterplot will have 
 
 This scatterplot is intentionally minimal and therefore omits certain best practices, such as responsiveness. (We assign a fixed width and height of 400px.) I'm attempting to minimize the non-scrollytelling code to make this tutorial more streamlined. 
 
-[The final version of this scatterplot](LINK LINK TK TK) is responsive and follows other best practices, but is a bit more complex.
+[The final version of this scatterplot](https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3) is responsive and follows other best practices, but is a bit more complex.
 
 </Info>
 
@@ -205,9 +205,9 @@ In order to create our chart, we obviously need data:
 
 </Code>
 
-For this scatterplot, *let's set `foo` to correspond to each points' x position*, and *`bar` to correspond to their y positions*.
+For this scatterplot, let's set `foo` to correspond to *each points' x position*, and `bar` to correspond to *their y positions*.
 
-Here, we'll need some way to map "raw values" to "computed values"—that is, we want the value *9* (the highest in our dataset) to be at the upper bound of the chart.
+Here, we'll need some way to map "raw values" to "computed values"—that is, we want the number *9* (the highest in our dataset) to be at the upper bound of our chart.
 
 ### Scale the values!
 
@@ -236,7 +236,7 @@ let yScale = scaleLinear()
 
 Essentially, for both our X and Y values, we are creating a function that will take in something within the *domain* (e.g. 5, right in the middle), and spit out a value within the *range* (e.g. 200, because that is midpoint of the specified range).
 
-Still not making sense? Here's an interactive take: input a number between 1 and 9 and see the position in our range that it outputs.
+Still not making sense? Here's an interactive example: input a number between 1 and 9 and see the position in our range that it outputs.
 
 <D3ScaleExample />
 
@@ -257,7 +257,7 @@ In the static chart above, we have an array of objects, each with a `foo` and `b
 
 In a dynamic, scrollytelling visualization, we'll want these values to be dynamic and tweenable. In order to achieve this, we'll make a `tweened` array, where each value in that array is animatable just like the tweened values we looked at earlier.
 
-Practically, that means we would instantiate a `tweened` array with our starting x positions, as you see on line 15. Then, we can set that array to equal new values with the functions between lines 17 and 22. Go ahead and try below!
+Practically, that means we would instantiate a `tweened` array with our starting x positions, as you see on line 15 below. Then, we can set that array to contain new values with the functions between lines 17 and 22. Go ahead and try below!
 
 <Code language="svelte" highlightedLines={"15,17-22"}>
 
@@ -299,11 +299,9 @@ Practically, that means we would instantiate a `tweened` array with our starting
 
 <TweenedXPositionExample />
 
-At this point, we should know how to tween an array of numbers, which makes it more clear how we can animate the positions of our circles!
+The takeaway here is that we can tween *arrays* the same way that we tween *numbers*. This should make it more clear how we can animate the positions of our circles!
 
-We'll mimic what we just did for our x positions for our y positions.
-
-Once we have a tweened X array and a tweened Y array, we can reference the values in our markup in an `{#each}` loop via their index, like this:
+Once we have a tweened array of X positions, we can reference the values in our markup in an `{#each}` loop via their index, like this:
 
 <Code language="svelte">
 
@@ -312,7 +310,7 @@ Once we have a tweened X array and a tweened Y array, we can reference the value
     {#each data as d, index}
         <circle
             cx={xScale($tweenedX[index])}
-            cy={yScale($tweenedY[index])}
+            cy={yScale(d.bar)}
             r={15}
         />
     {/each}
@@ -356,7 +354,7 @@ Recall in an [earlier example](#step-0b-understand-tweened-values) we triggered 
 
 </Code>
 
-This bit of code uses Svelte's [dollar sign operator](https://dev.to/itsjzt/understanding-svelte-s-dollar-label-syntax-3h2b) `$` to run code reactively. In action, this means that the above `if... else` block will run every time the variable `currentStep` changes. Then, depending on the value of `currentStep`, the `if... else` block will evaluate differently. 
+This bit of code uses Svelte's [dollar label operator](https://svelte.dev/docs#component-format-script-3-$-marks-a-statement-as-reactive) `$:` to run code reactively. In action, this means that the above `if... else` block will run every time the variable `currentStep` changes. Then, depending on the value of `currentStep`, the `if... else` block will evaluate differently. 
 
 <Info>
 
@@ -378,7 +376,7 @@ So, here's a complete example combining all of the insights we've discussed so f
 
 ## Next steps
 
-We could extend upon our chart in a few ways. The logic that we used to tween x positions is extensible across any value that could be scaled. Currently, only the circles' x positions are tweened; we could do the same to each circles' y positions, or their radius. Now that we understand the pattern that enables scroll-driven tweening, we can use it for elements' position, size, and color.
+We could extend upon our chart in a few ways. The logic that we used to tween x positions is extensible across any value that can be animated. Currently, only the circles' x positions are tweened; we could do the same to each circles' y positions, or their radius. Now that we understand the pattern that enables scroll-driven tweening, we can use it for things like position, size, and color.
 
 In visuals other than scatterplots, we could use scroll-driven interaction to tell a more dynamic story, such as linking an interactive map's viewport to the user's scroll position, as we see in this [article](https://www.ons.gov.uk/visualisations/dvc1371/#/E07000223) from the UK's Office of National Statistics:
 

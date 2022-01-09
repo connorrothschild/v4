@@ -36,9 +36,8 @@
   .example {
     width: 480px;
     max-width: 100%;
-    margin: auto;
     background: var(--semitransparent-bg);
-    margin-bottom: 1.15rem;
+    margin: 2rem auto;
     z-index: 3;
     position: relative;
     padding: 1rem;

@@ -35,8 +35,10 @@
 }
 
 table {
+    position: relative;
+    z-index: 10;
     background: var(--primary-color);
-    color: black;
+    color: var(--text-color);
     font-family: var(--font-sans);
     line-height: 1.5;
     width: 100%;
