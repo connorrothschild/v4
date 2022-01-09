@@ -1,7 +1,7 @@
 :root {
   --font-serif: ivypresto-display, Georgia, serif;
   --font-sans: Satoshi, halyard-display, -apple-system, sans-serif;
-  --font-mono: 'Fira Mono', monospace;
+  --font-mono: input-mono, PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-family: var(--font-serif);
 
   --nav-height: 60px;

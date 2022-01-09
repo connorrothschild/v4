@@ -6,7 +6,6 @@ date: "2021-12-09"
 image: tidy-tuesday-powerlifting/header.png
 archived: false
 featured: true
-draft: false
 tags: ['svelte', 'personal']
 ---
 

@@ -4,7 +4,7 @@ title: "Firearm Background Checks Are Spiking"
 description: Visualizing the precipitous rise in gun sales during COVID-19
 date: "2020-07-02"
 image: covid-gun-spikes/header.png
-featured: true
+featured: false
 tags: ['analysis', 'r']
 ---
 
