@@ -1,4 +1,4 @@
-[![Connor Rothschild](./static/social.png)]((www.connorrothschild.com))
+[![Connor Rothschild](./static/social.png)](https://www.connorrothschild.com)
 
 This repository contains the code for my 2021/2022 personal portfolio site.
 
