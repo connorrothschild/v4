@@ -59,7 +59,9 @@ function check1015() {
     const os = Bowser.getParser(window.navigator.userAgent).getOS();
     const isMac = os.name === "macOS";
     
-    // We only care about os.version if the user is on Mac OS X,
+    // We only care about os.version if the user is on Mac OS X
+    if (!isMac) return false;
+    
     // The following approach works only on Mac OSX because their os.version is always in the format 'xx.xx.xx'
     // If OS version is a whole number with no decimal, do not split but instead make minor == 0
     const version = {
