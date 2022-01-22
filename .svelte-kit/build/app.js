@@ -15,7 +15,7 @@ set_paths({"base":"","assets":""});
 // named imports without triggering Rollup's missing import detection
 const get_hooks = hooks => ({
 	getSession: hooks.getSession || (() => ({})),
-	handle: hooks.handle || (({ event, resolve }) => resolve(event)),
+	handle: hooks.handle || (({ request, resolve }) => resolve(request)),
 	handleError: hooks.handleError || (({ error }) => console.error(error.stack)),
 	externalFetch: hooks.externalFetch || fetch
 });
@@ -40,17 +40,8 @@ export class App {
 			dev: false,
 			floc: false,
 			get_stack: error => String(error), // for security
-			handle_error: (error, event) => {
-				hooks.handleError({
-					error,
-					event,
-
-					// TODO remove for 1.0
-					// @ts-expect-error
-					get request() {
-						throw new Error('request in handleError has been replaced with event. See https://github.com/sveltejs/kit/pull/3384 for details');
-					}
-				});
+			handle_error: (error, request) => {
+				hooks.handleError({ error, request });
 				error.stack = this.options.get_stack(error);
 			},
 			hooks,
@@ -73,10 +64,14 @@ export class App {
 	render(request, {
 		prerender
 	} = {}) {
-		if (!(request instanceof Request)) {
-			throw new Error('The first argument to app.render must be a Request object. See https://github.com/sveltejs/kit/pull/3384 for details');
+		// TODO remove this for 1.0
+		if (Object.keys(request).sort().join() !== 'headers,method,rawBody,url') {
+			throw new Error('Adapters should call app.render({ url, method, headers, rawBody })');
 		}
 
-		return respond(request, this.options, { prerender });
+		const host = request.headers["host"];
+		const protocol = default_protocol;
+
+		return respond({ ...request, url: new URL(request.url, protocol + '://' + host) }, this.options, { prerender });
 	}
 }
