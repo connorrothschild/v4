@@ -3,7 +3,7 @@
   import { theme } from "../stores/theme.js";
 
   import Window from "$lib/Window.svelte";
-  import Seo from "$lib/Seo.svelte";
+  // import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav/Nav.svelte";
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
@@ -95,7 +95,7 @@
 </script>
 
 <Window />
-<Seo />
+<!-- <Seo /> -->
 <Nav hasBackground={true} />
 <Noise />
 <ColorSwitcher />

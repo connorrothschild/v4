@@ -31,18 +31,15 @@
       if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date)) return -1;
     });
 
-  import { seo } from "$lib/seo.js";
-  let title = "Projects • Connor Rothschild";
-  let description = "Some of my projects.";
+  import Seo from "$lib/Seo.svelte";
 
-  $seo = {
-    title: `${title} | Connor Rothschild`,
-    description: description,
-    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
-  };
+  let title = "Projects | Connor Rothschild";
+  let description = "Some of my projects.";
+  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
 </script>
 
 <Transition />
+<Seo {title} {description} {image} />
 <main class="main">
   <BackTo
     href="/"

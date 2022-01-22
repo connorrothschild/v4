@@ -4747,7 +4747,7 @@ var require_gsap = __commonJS({
         return _isFunction(value) || _isString(value);
       }, _isTypedArray = typeof ArrayBuffer === "function" && ArrayBuffer.isView || function() {
       }, _isArray = Array.isArray, _strictNumExp = /(?:-?\.?\d|\.)+/gi, _numExp = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g, _numWithUnitExp = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g, _complexStringNumExp = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi, _relExp = /[+-]=-?[.\d]+/, _delimitedValueExp = /[^,'"\[\]\s]+/gi, _unitExp = /[\d.+\-=]+(?:e[-+]\d*)*/i, _globalTimeline, _win, _coreInitted, _doc, _globals = {}, _installScope = {}, _coreReady, _install = function _install2(scope) {
-        return (_installScope = _merge(scope, _globals)) && gsap5;
+        return (_installScope = _merge(scope, _globals)) && gsap6;
       }, _missingPlugin = function _missingPlugin2(property, value) {
         return console.warn("Invalid property", property, "set to", value, "Missing plugin? gsap.registerPlugin()");
       }, _warn = function _warn2(message, suppress) {
@@ -5355,7 +5355,7 @@ var require_gsap = __commonJS({
           name = (name === "css" ? "CSS" : name.charAt(0).toUpperCase() + name.substr(1)) + "Plugin";
         }
         _addGlobal(name, Plugin);
-        config.register && config.register(gsap5, Plugin, PropTween);
+        config.register && config.register(gsap6, Plugin, PropTween);
       }, _255 = 255, _colorLookup = {
         aqua: [0, _255, _255],
         lime: [0, _255, 0],
@@ -5529,8 +5529,8 @@ var require_gsap = __commonJS({
               if (!_coreInitted && _windowExists()) {
                 _win = _coreInitted = window;
                 _doc = _win.document || {};
-                _globals.gsap = gsap5;
-                (_win.gsapVersions || (_win.gsapVersions = [])).push(gsap5.version);
+                _globals.gsap = gsap6;
+                (_win.gsapVersions || (_win.gsapVersions = [])).push(gsap6.version);
                 _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
                 _raf = _win.requestAnimationFrame;
               }
@@ -7082,7 +7082,7 @@ var require_gsap = __commonJS({
           target = toArray(target);
           if (target.length > 1) {
             var setters = target.map(function(t) {
-              return gsap5.quickSetter(t, property, unit2);
+              return gsap6.quickSetter(t, property, unit2);
             }), l = setters.length;
             return function(value) {
               var i = l;
@@ -7246,7 +7246,7 @@ var require_gsap = __commonJS({
           }
         };
       };
-      var gsap5 = _gsap.registerPlugin({
+      var gsap6 = _gsap.registerPlugin({
         name: "attr",
         init: function init2(target, vars, tween, index, targets) {
           var p, pt;
@@ -7265,7 +7265,7 @@ var require_gsap = __commonJS({
           }
         }
       }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-      Tween.version = Timeline.version = gsap5.version = "3.8.0";
+      Tween.version = Timeline.version = gsap6.version = "3.8.0";
       _coreReady = 1;
       _windowExists() && _wake();
       var Power0 = _easeMap.Power0, Power1 = _easeMap.Power1, Power2 = _easeMap.Power2, Power3 = _easeMap.Power3, Power4 = _easeMap.Power4, Linear = _easeMap.Linear, Quad = _easeMap.Quad, Cubic = _easeMap.Cubic, Quart = _easeMap.Quart, Quint = _easeMap.Quint, Strong = _easeMap.Strong, Elastic = _easeMap.Elastic, Back = _easeMap.Back, SteppedEase = _easeMap.SteppedEase, Bounce = _easeMap.Bounce, Sine = _easeMap.Sine, Expo = _easeMap.Expo, Circ = _easeMap.Circ;
@@ -8098,7 +8098,7 @@ var require_gsap = __commonJS({
           _getMatrix
         }
       };
-      gsap5.utils.checkPrefix = _checkPropPrefix;
+      gsap6.utils.checkPrefix = _checkPropPrefix;
       (function(positionAndScale, rotation, others, aliases) {
         var all = _forEachName(positionAndScale + "," + rotation + "," + others, function(name) {
           _transformProps[name] = 1;
@@ -8116,8 +8116,8 @@ var require_gsap = __commonJS({
       _forEachName("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", function(name) {
         _config.units[name] = "px";
       });
-      gsap5.registerPlugin(CSSPlugin);
-      var gsapWithCSS = gsap5.registerPlugin(CSSPlugin) || gsap5, TweenMaxWithCSS = gsapWithCSS.core.Tween;
+      gsap6.registerPlugin(CSSPlugin);
+      var gsapWithCSS = gsap6.registerPlugin(CSSPlugin) || gsap6, TweenMaxWithCSS = gsapWithCSS.core.Tween;
       exports2.Back = Back;
       exports2.Bounce = Bounce;
       exports2.CSSPlugin = CSSPlugin;
@@ -8500,8 +8500,8 @@ var require_SplitText = __commonJS({
         }
         _splitRawText(element, vars, wordStart, charStart);
       };
-      var SplitText3 = function() {
-        function SplitText4(element, vars) {
+      var SplitText4 = function() {
+        function SplitText5(element, vars) {
           _coreInitted || _initCore();
           this.elements = _toArray(element);
           this.chars = [];
@@ -8511,7 +8511,7 @@ var require_SplitText = __commonJS({
           this.vars = vars || {};
           this.split(vars);
         }
-        var _proto = SplitText4.prototype;
+        var _proto = SplitText5.prototype;
         _proto.split = function split(vars) {
           this.isSplit && this.revert();
           this.vars = vars = vars || this.vars;
@@ -8545,20 +8545,20 @@ var require_SplitText = __commonJS({
           this.isSplit = false;
           return this;
         };
-        SplitText4.create = function create(element, vars) {
-          return new SplitText4(element, vars);
+        SplitText5.create = function create(element, vars) {
+          return new SplitText5(element, vars);
         };
-        return SplitText4;
+        return SplitText5;
       }();
-      SplitText3.version = "3.8.0";
-      exports2.SplitText = SplitText3;
-      exports2.default = SplitText3;
+      SplitText4.version = "3.8.0";
+      exports2.SplitText = SplitText4;
+      exports2.default = SplitText4;
       Object.defineProperty(exports2, "__esModule", { value: true });
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/global-130d3fe3.js
+// .svelte-kit/output/server/chunks/motion-65df28f6.js
 function readable(value, start) {
   return {
     subscribe: writable(value, start).subscribe
@@ -8605,705 +8605,68 @@ function writable(value, start = noop) {
   }
   return { set, update, subscribe: subscribe2 };
 }
-var subscriber_queue, currentColorMode, navigationState, pageTransitionDelay, windowWidth, windowHeight;
-var init_global_130d3fe3 = __esm({
-  ".svelte-kit/output/server/chunks/global-130d3fe3.js"() {
+var subscriber_queue, pageTransitionDelay, menuExpanded, windowWidth, windowHeight, getInitialMotionPreference, prefersReducedMotion;
+var init_motion_65df28f6 = __esm({
+  ".svelte-kit/output/server/chunks/motion-65df28f6.js"() {
     init_shims();
-    init_app_9f378dda();
+    init_app_89d516be();
     subscriber_queue = [];
-    currentColorMode = writable("light");
-    navigationState = writable("loaded");
-    pageTransitionDelay = readable(700);
+    pageTransitionDelay = readable(900);
+    menuExpanded = writable(false);
     windowWidth = writable(0);
     windowHeight = writable(0);
+    getInitialMotionPreference = () => {
+      return false;
+    };
+    prefersReducedMotion = readable(getInitialMotionPreference());
   }
 });
 
-// node_modules/bowser/es5.js
-var require_es5 = __commonJS({
-  "node_modules/bowser/es5.js"(exports, module2) {
+// .svelte-kit/output/server/chunks/BackTo-db5abc2d.js
+var import_gsap, import_SplitText, Seo, Transition, css, BackTo;
+var init_BackTo_db5abc2d = __esm({
+  ".svelte-kit/output/server/chunks/BackTo-db5abc2d.js"() {
     init_shims();
-    !function(e, t) {
-      typeof exports == "object" && typeof module2 == "object" ? module2.exports = t() : typeof define == "function" && define.amd ? define([], t) : typeof exports == "object" ? exports.bowser = t() : e.bowser = t();
-    }(exports, function() {
-      return function(e) {
-        var t = {};
-        function r(n) {
-          if (t[n])
-            return t[n].exports;
-          var i = t[n] = { i: n, l: false, exports: {} };
-          return e[n].call(i.exports, i, i.exports, r), i.l = true, i.exports;
-        }
-        return r.m = e, r.c = t, r.d = function(e3, t2, n) {
-          r.o(e3, t2) || Object.defineProperty(e3, t2, { enumerable: true, get: n });
-        }, r.r = function(e3) {
-          typeof Symbol != "undefined" && Symbol.toStringTag && Object.defineProperty(e3, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e3, "__esModule", { value: true });
-        }, r.t = function(e3, t2) {
-          if (1 & t2 && (e3 = r(e3)), 8 & t2)
-            return e3;
-          if (4 & t2 && typeof e3 == "object" && e3 && e3.__esModule)
-            return e3;
-          var n = Object.create(null);
-          if (r.r(n), Object.defineProperty(n, "default", { enumerable: true, value: e3 }), 2 & t2 && typeof e3 != "string")
-            for (var i in e3)
-              r.d(n, i, function(t3) {
-                return e3[t3];
-              }.bind(null, i));
-          return n;
-        }, r.n = function(e3) {
-          var t2 = e3 && e3.__esModule ? function() {
-            return e3.default;
-          } : function() {
-            return e3;
-          };
-          return r.d(t2, "a", t2), t2;
-        }, r.o = function(e3, t2) {
-          return Object.prototype.hasOwnProperty.call(e3, t2);
-        }, r.p = "", r(r.s = 90);
-      }({ 17: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n = r(18), i = function() {
-          function e3() {
-          }
-          return e3.getFirstMatch = function(e4, t2) {
-            var r2 = t2.match(e4);
-            return r2 && r2.length > 0 && r2[1] || "";
-          }, e3.getSecondMatch = function(e4, t2) {
-            var r2 = t2.match(e4);
-            return r2 && r2.length > 1 && r2[2] || "";
-          }, e3.matchAndReturnConst = function(e4, t2, r2) {
-            if (e4.test(t2))
-              return r2;
-          }, e3.getWindowsVersionName = function(e4) {
-            switch (e4) {
-              case "NT":
-                return "NT";
-              case "XP":
-                return "XP";
-              case "NT 5.0":
-                return "2000";
-              case "NT 5.1":
-                return "XP";
-              case "NT 5.2":
-                return "2003";
-              case "NT 6.0":
-                return "Vista";
-              case "NT 6.1":
-                return "7";
-              case "NT 6.2":
-                return "8";
-              case "NT 6.3":
-                return "8.1";
-              case "NT 10.0":
-                return "10";
-              default:
-                return;
-            }
-          }, e3.getMacOSVersionName = function(e4) {
-            var t2 = e4.split(".").splice(0, 2).map(function(e6) {
-              return parseInt(e6, 10) || 0;
-            });
-            if (t2.push(0), t2[0] === 10)
-              switch (t2[1]) {
-                case 5:
-                  return "Leopard";
-                case 6:
-                  return "Snow Leopard";
-                case 7:
-                  return "Lion";
-                case 8:
-                  return "Mountain Lion";
-                case 9:
-                  return "Mavericks";
-                case 10:
-                  return "Yosemite";
-                case 11:
-                  return "El Capitan";
-                case 12:
-                  return "Sierra";
-                case 13:
-                  return "High Sierra";
-                case 14:
-                  return "Mojave";
-                case 15:
-                  return "Catalina";
-                default:
-                  return;
-              }
-          }, e3.getAndroidVersionName = function(e4) {
-            var t2 = e4.split(".").splice(0, 2).map(function(e6) {
-              return parseInt(e6, 10) || 0;
-            });
-            if (t2.push(0), !(t2[0] === 1 && t2[1] < 5))
-              return t2[0] === 1 && t2[1] < 6 ? "Cupcake" : t2[0] === 1 && t2[1] >= 6 ? "Donut" : t2[0] === 2 && t2[1] < 2 ? "Eclair" : t2[0] === 2 && t2[1] === 2 ? "Froyo" : t2[0] === 2 && t2[1] > 2 ? "Gingerbread" : t2[0] === 3 ? "Honeycomb" : t2[0] === 4 && t2[1] < 1 ? "Ice Cream Sandwich" : t2[0] === 4 && t2[1] < 4 ? "Jelly Bean" : t2[0] === 4 && t2[1] >= 4 ? "KitKat" : t2[0] === 5 ? "Lollipop" : t2[0] === 6 ? "Marshmallow" : t2[0] === 7 ? "Nougat" : t2[0] === 8 ? "Oreo" : t2[0] === 9 ? "Pie" : void 0;
-          }, e3.getVersionPrecision = function(e4) {
-            return e4.split(".").length;
-          }, e3.compareVersions = function(t2, r2, n2) {
-            n2 === void 0 && (n2 = false);
-            var i2 = e3.getVersionPrecision(t2), s2 = e3.getVersionPrecision(r2), a = Math.max(i2, s2), o = 0, u = e3.map([t2, r2], function(t3) {
-              var r3 = a - e3.getVersionPrecision(t3), n3 = t3 + new Array(r3 + 1).join(".0");
-              return e3.map(n3.split("."), function(e4) {
-                return new Array(20 - e4.length).join("0") + e4;
-              }).reverse();
-            });
-            for (n2 && (o = a - Math.min(i2, s2)), a -= 1; a >= o; ) {
-              if (u[0][a] > u[1][a])
-                return 1;
-              if (u[0][a] === u[1][a]) {
-                if (a === o)
-                  return 0;
-                a -= 1;
-              } else if (u[0][a] < u[1][a])
-                return -1;
-            }
-          }, e3.map = function(e4, t2) {
-            var r2, n2 = [];
-            if (Array.prototype.map)
-              return Array.prototype.map.call(e4, t2);
-            for (r2 = 0; r2 < e4.length; r2 += 1)
-              n2.push(t2(e4[r2]));
-            return n2;
-          }, e3.find = function(e4, t2) {
-            var r2, n2;
-            if (Array.prototype.find)
-              return Array.prototype.find.call(e4, t2);
-            for (r2 = 0, n2 = e4.length; r2 < n2; r2 += 1) {
-              var i2 = e4[r2];
-              if (t2(i2, r2))
-                return i2;
-            }
-          }, e3.assign = function(e4) {
-            for (var t2, r2, n2 = e4, i2 = arguments.length, s2 = new Array(i2 > 1 ? i2 - 1 : 0), a = 1; a < i2; a++)
-              s2[a - 1] = arguments[a];
-            if (Object.assign)
-              return Object.assign.apply(Object, [e4].concat(s2));
-            var o = function() {
-              var e6 = s2[t2];
-              typeof e6 == "object" && e6 !== null && Object.keys(e6).forEach(function(t3) {
-                n2[t3] = e6[t3];
-              });
-            };
-            for (t2 = 0, r2 = s2.length; t2 < r2; t2 += 1)
-              o();
-            return e4;
-          }, e3.getBrowserAlias = function(e4) {
-            return n.BROWSER_ALIASES_MAP[e4];
-          }, e3.getBrowserTypeByAlias = function(e4) {
-            return n.BROWSER_MAP[e4] || "";
-          }, e3;
-        }();
-        t.default = i, e.exports = t.default;
-      }, 18: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.ENGINE_MAP = t.OS_MAP = t.PLATFORMS_MAP = t.BROWSER_MAP = t.BROWSER_ALIASES_MAP = void 0;
-        t.BROWSER_ALIASES_MAP = { "Amazon Silk": "amazon_silk", "Android Browser": "android", Bada: "bada", BlackBerry: "blackberry", Chrome: "chrome", Chromium: "chromium", Electron: "electron", Epiphany: "epiphany", Firefox: "firefox", Focus: "focus", Generic: "generic", "Google Search": "google_search", Googlebot: "googlebot", "Internet Explorer": "ie", "K-Meleon": "k_meleon", Maxthon: "maxthon", "Microsoft Edge": "edge", "MZ Browser": "mz", "NAVER Whale Browser": "naver", Opera: "opera", "Opera Coast": "opera_coast", PhantomJS: "phantomjs", Puffin: "puffin", QupZilla: "qupzilla", QQ: "qq", QQLite: "qqlite", Safari: "safari", Sailfish: "sailfish", "Samsung Internet for Android": "samsung_internet", SeaMonkey: "seamonkey", Sleipnir: "sleipnir", Swing: "swing", Tizen: "tizen", "UC Browser": "uc", Vivaldi: "vivaldi", "WebOS Browser": "webos", WeChat: "wechat", "Yandex Browser": "yandex", Roku: "roku" };
-        t.BROWSER_MAP = { amazon_silk: "Amazon Silk", android: "Android Browser", bada: "Bada", blackberry: "BlackBerry", chrome: "Chrome", chromium: "Chromium", electron: "Electron", epiphany: "Epiphany", firefox: "Firefox", focus: "Focus", generic: "Generic", googlebot: "Googlebot", google_search: "Google Search", ie: "Internet Explorer", k_meleon: "K-Meleon", maxthon: "Maxthon", edge: "Microsoft Edge", mz: "MZ Browser", naver: "NAVER Whale Browser", opera: "Opera", opera_coast: "Opera Coast", phantomjs: "PhantomJS", puffin: "Puffin", qupzilla: "QupZilla", qq: "QQ Browser", qqlite: "QQ Browser Lite", safari: "Safari", sailfish: "Sailfish", samsung_internet: "Samsung Internet for Android", seamonkey: "SeaMonkey", sleipnir: "Sleipnir", swing: "Swing", tizen: "Tizen", uc: "UC Browser", vivaldi: "Vivaldi", webos: "WebOS Browser", wechat: "WeChat", yandex: "Yandex Browser" };
-        t.PLATFORMS_MAP = { tablet: "tablet", mobile: "mobile", desktop: "desktop", tv: "tv" };
-        t.OS_MAP = { WindowsPhone: "Windows Phone", Windows: "Windows", MacOS: "macOS", iOS: "iOS", Android: "Android", WebOS: "WebOS", BlackBerry: "BlackBerry", Bada: "Bada", Tizen: "Tizen", Linux: "Linux", ChromeOS: "Chrome OS", PlayStation4: "PlayStation 4", Roku: "Roku" };
-        t.ENGINE_MAP = { EdgeHTML: "EdgeHTML", Blink: "Blink", Trident: "Trident", Presto: "Presto", Gecko: "Gecko", WebKit: "WebKit" };
-      }, 90: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n, i = (n = r(91)) && n.__esModule ? n : { default: n }, s2 = r(18);
-        function a(e3, t2) {
-          for (var r2 = 0; r2 < t2.length; r2++) {
-            var n2 = t2[r2];
-            n2.enumerable = n2.enumerable || false, n2.configurable = true, "value" in n2 && (n2.writable = true), Object.defineProperty(e3, n2.key, n2);
-          }
-        }
-        var o = function() {
-          function e3() {
-          }
-          var t2, r2, n2;
-          return e3.getParser = function(e4, t3) {
-            if (t3 === void 0 && (t3 = false), typeof e4 != "string")
-              throw new Error("UserAgent should be a string");
-            return new i.default(e4, t3);
-          }, e3.parse = function(e4) {
-            return new i.default(e4).getResult();
-          }, t2 = e3, n2 = [{ key: "BROWSER_MAP", get: function() {
-            return s2.BROWSER_MAP;
-          } }, { key: "ENGINE_MAP", get: function() {
-            return s2.ENGINE_MAP;
-          } }, { key: "OS_MAP", get: function() {
-            return s2.OS_MAP;
-          } }, { key: "PLATFORMS_MAP", get: function() {
-            return s2.PLATFORMS_MAP;
-          } }], (r2 = null) && a(t2.prototype, r2), n2 && a(t2, n2), e3;
-        }();
-        t.default = o, e.exports = t.default;
-      }, 91: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n = u(r(92)), i = u(r(93)), s2 = u(r(94)), a = u(r(95)), o = u(r(17));
-        function u(e3) {
-          return e3 && e3.__esModule ? e3 : { default: e3 };
-        }
-        var d = function() {
-          function e3(e4, t3) {
-            if (t3 === void 0 && (t3 = false), e4 == null || e4 === "")
-              throw new Error("UserAgent parameter can't be empty");
-            this._ua = e4, this.parsedResult = {}, t3 !== true && this.parse();
-          }
-          var t2 = e3.prototype;
-          return t2.getUA = function() {
-            return this._ua;
-          }, t2.test = function(e4) {
-            return e4.test(this._ua);
-          }, t2.parseBrowser = function() {
-            var e4 = this;
-            this.parsedResult.browser = {};
-            var t3 = o.default.find(n.default, function(t4) {
-              if (typeof t4.test == "function")
-                return t4.test(e4);
-              if (t4.test instanceof Array)
-                return t4.test.some(function(t5) {
-                  return e4.test(t5);
-                });
-              throw new Error("Browser's test function is not valid");
-            });
-            return t3 && (this.parsedResult.browser = t3.describe(this.getUA())), this.parsedResult.browser;
-          }, t2.getBrowser = function() {
-            return this.parsedResult.browser ? this.parsedResult.browser : this.parseBrowser();
-          }, t2.getBrowserName = function(e4) {
-            return e4 ? String(this.getBrowser().name).toLowerCase() || "" : this.getBrowser().name || "";
-          }, t2.getBrowserVersion = function() {
-            return this.getBrowser().version;
-          }, t2.getOS = function() {
-            return this.parsedResult.os ? this.parsedResult.os : this.parseOS();
-          }, t2.parseOS = function() {
-            var e4 = this;
-            this.parsedResult.os = {};
-            var t3 = o.default.find(i.default, function(t4) {
-              if (typeof t4.test == "function")
-                return t4.test(e4);
-              if (t4.test instanceof Array)
-                return t4.test.some(function(t5) {
-                  return e4.test(t5);
-                });
-              throw new Error("Browser's test function is not valid");
-            });
-            return t3 && (this.parsedResult.os = t3.describe(this.getUA())), this.parsedResult.os;
-          }, t2.getOSName = function(e4) {
-            var t3 = this.getOS().name;
-            return e4 ? String(t3).toLowerCase() || "" : t3 || "";
-          }, t2.getOSVersion = function() {
-            return this.getOS().version;
-          }, t2.getPlatform = function() {
-            return this.parsedResult.platform ? this.parsedResult.platform : this.parsePlatform();
-          }, t2.getPlatformType = function(e4) {
-            e4 === void 0 && (e4 = false);
-            var t3 = this.getPlatform().type;
-            return e4 ? String(t3).toLowerCase() || "" : t3 || "";
-          }, t2.parsePlatform = function() {
-            var e4 = this;
-            this.parsedResult.platform = {};
-            var t3 = o.default.find(s2.default, function(t4) {
-              if (typeof t4.test == "function")
-                return t4.test(e4);
-              if (t4.test instanceof Array)
-                return t4.test.some(function(t5) {
-                  return e4.test(t5);
-                });
-              throw new Error("Browser's test function is not valid");
-            });
-            return t3 && (this.parsedResult.platform = t3.describe(this.getUA())), this.parsedResult.platform;
-          }, t2.getEngine = function() {
-            return this.parsedResult.engine ? this.parsedResult.engine : this.parseEngine();
-          }, t2.getEngineName = function(e4) {
-            return e4 ? String(this.getEngine().name).toLowerCase() || "" : this.getEngine().name || "";
-          }, t2.parseEngine = function() {
-            var e4 = this;
-            this.parsedResult.engine = {};
-            var t3 = o.default.find(a.default, function(t4) {
-              if (typeof t4.test == "function")
-                return t4.test(e4);
-              if (t4.test instanceof Array)
-                return t4.test.some(function(t5) {
-                  return e4.test(t5);
-                });
-              throw new Error("Browser's test function is not valid");
-            });
-            return t3 && (this.parsedResult.engine = t3.describe(this.getUA())), this.parsedResult.engine;
-          }, t2.parse = function() {
-            return this.parseBrowser(), this.parseOS(), this.parsePlatform(), this.parseEngine(), this;
-          }, t2.getResult = function() {
-            return o.default.assign({}, this.parsedResult);
-          }, t2.satisfies = function(e4) {
-            var t3 = this, r2 = {}, n2 = 0, i2 = {}, s3 = 0;
-            if (Object.keys(e4).forEach(function(t4) {
-              var a3 = e4[t4];
-              typeof a3 == "string" ? (i2[t4] = a3, s3 += 1) : typeof a3 == "object" && (r2[t4] = a3, n2 += 1);
-            }), n2 > 0) {
-              var a2 = Object.keys(r2), u2 = o.default.find(a2, function(e6) {
-                return t3.isOS(e6);
-              });
-              if (u2) {
-                var d2 = this.satisfies(r2[u2]);
-                if (d2 !== void 0)
-                  return d2;
-              }
-              var c = o.default.find(a2, function(e6) {
-                return t3.isPlatform(e6);
-              });
-              if (c) {
-                var f = this.satisfies(r2[c]);
-                if (f !== void 0)
-                  return f;
-              }
-            }
-            if (s3 > 0) {
-              var l = Object.keys(i2), h = o.default.find(l, function(e6) {
-                return t3.isBrowser(e6, true);
-              });
-              if (h !== void 0)
-                return this.compareVersion(i2[h]);
-            }
-          }, t2.isBrowser = function(e4, t3) {
-            t3 === void 0 && (t3 = false);
-            var r2 = this.getBrowserName().toLowerCase(), n2 = e4.toLowerCase(), i2 = o.default.getBrowserTypeByAlias(n2);
-            return t3 && i2 && (n2 = i2.toLowerCase()), n2 === r2;
-          }, t2.compareVersion = function(e4) {
-            var t3 = [0], r2 = e4, n2 = false, i2 = this.getBrowserVersion();
-            if (typeof i2 == "string")
-              return e4[0] === ">" || e4[0] === "<" ? (r2 = e4.substr(1), e4[1] === "=" ? (n2 = true, r2 = e4.substr(2)) : t3 = [], e4[0] === ">" ? t3.push(1) : t3.push(-1)) : e4[0] === "=" ? r2 = e4.substr(1) : e4[0] === "~" && (n2 = true, r2 = e4.substr(1)), t3.indexOf(o.default.compareVersions(i2, r2, n2)) > -1;
-          }, t2.isOS = function(e4) {
-            return this.getOSName(true) === String(e4).toLowerCase();
-          }, t2.isPlatform = function(e4) {
-            return this.getPlatformType(true) === String(e4).toLowerCase();
-          }, t2.isEngine = function(e4) {
-            return this.getEngineName(true) === String(e4).toLowerCase();
-          }, t2.is = function(e4, t3) {
-            return t3 === void 0 && (t3 = false), this.isBrowser(e4, t3) || this.isOS(e4) || this.isPlatform(e4);
-          }, t2.some = function(e4) {
-            var t3 = this;
-            return e4 === void 0 && (e4 = []), e4.some(function(e6) {
-              return t3.is(e6);
-            });
-          }, e3;
-        }();
-        t.default = d, e.exports = t.default;
-      }, 92: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n, i = (n = r(17)) && n.__esModule ? n : { default: n };
-        var s2 = /version\/(\d+(\.?_?\d+)+)/i, a = [{ test: [/googlebot/i], describe: function(e3) {
-          var t2 = { name: "Googlebot" }, r2 = i.default.getFirstMatch(/googlebot\/(\d+(\.\d+))/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/opera/i], describe: function(e3) {
-          var t2 = { name: "Opera" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:opera)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/opr\/|opios/i], describe: function(e3) {
-          var t2 = { name: "Opera" }, r2 = i.default.getFirstMatch(/(?:opr|opios)[\s/](\S+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/SamsungBrowser/i], describe: function(e3) {
-          var t2 = { name: "Samsung Internet for Android" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:SamsungBrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/Whale/i], describe: function(e3) {
-          var t2 = { name: "NAVER Whale Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:whale)[\s/](\d+(?:\.\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/MZBrowser/i], describe: function(e3) {
-          var t2 = { name: "MZ Browser" }, r2 = i.default.getFirstMatch(/(?:MZBrowser)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/focus/i], describe: function(e3) {
-          var t2 = { name: "Focus" }, r2 = i.default.getFirstMatch(/(?:focus)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/swing/i], describe: function(e3) {
-          var t2 = { name: "Swing" }, r2 = i.default.getFirstMatch(/(?:swing)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/coast/i], describe: function(e3) {
-          var t2 = { name: "Opera Coast" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:coast)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/opt\/\d+(?:.?_?\d+)+/i], describe: function(e3) {
-          var t2 = { name: "Opera Touch" }, r2 = i.default.getFirstMatch(/(?:opt)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/yabrowser/i], describe: function(e3) {
-          var t2 = { name: "Yandex Browser" }, r2 = i.default.getFirstMatch(/(?:yabrowser)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/ucbrowser/i], describe: function(e3) {
-          var t2 = { name: "UC Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:ucbrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/Maxthon|mxios/i], describe: function(e3) {
-          var t2 = { name: "Maxthon" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:Maxthon|mxios)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/epiphany/i], describe: function(e3) {
-          var t2 = { name: "Epiphany" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:epiphany)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/puffin/i], describe: function(e3) {
-          var t2 = { name: "Puffin" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:puffin)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/sleipnir/i], describe: function(e3) {
-          var t2 = { name: "Sleipnir" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:sleipnir)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/k-meleon/i], describe: function(e3) {
-          var t2 = { name: "K-Meleon" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:k-meleon)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/micromessenger/i], describe: function(e3) {
-          var t2 = { name: "WeChat" }, r2 = i.default.getFirstMatch(/(?:micromessenger)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/qqbrowser/i], describe: function(e3) {
-          var t2 = { name: /qqbrowserlite/i.test(e3) ? "QQ Browser Lite" : "QQ Browser" }, r2 = i.default.getFirstMatch(/(?:qqbrowserlite|qqbrowser)[/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/msie|trident/i], describe: function(e3) {
-          var t2 = { name: "Internet Explorer" }, r2 = i.default.getFirstMatch(/(?:msie |rv:)(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/\sedg\//i], describe: function(e3) {
-          var t2 = { name: "Microsoft Edge" }, r2 = i.default.getFirstMatch(/\sedg\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/edg([ea]|ios)/i], describe: function(e3) {
-          var t2 = { name: "Microsoft Edge" }, r2 = i.default.getSecondMatch(/edg([ea]|ios)\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/vivaldi/i], describe: function(e3) {
-          var t2 = { name: "Vivaldi" }, r2 = i.default.getFirstMatch(/vivaldi\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/seamonkey/i], describe: function(e3) {
-          var t2 = { name: "SeaMonkey" }, r2 = i.default.getFirstMatch(/seamonkey\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/sailfish/i], describe: function(e3) {
-          var t2 = { name: "Sailfish" }, r2 = i.default.getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/silk/i], describe: function(e3) {
-          var t2 = { name: "Amazon Silk" }, r2 = i.default.getFirstMatch(/silk\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/phantom/i], describe: function(e3) {
-          var t2 = { name: "PhantomJS" }, r2 = i.default.getFirstMatch(/phantomjs\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/slimerjs/i], describe: function(e3) {
-          var t2 = { name: "SlimerJS" }, r2 = i.default.getFirstMatch(/slimerjs\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/blackberry|\bbb\d+/i, /rim\stablet/i], describe: function(e3) {
-          var t2 = { name: "BlackBerry" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/blackberry[\d]+\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/(web|hpw)[o0]s/i], describe: function(e3) {
-          var t2 = { name: "WebOS Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/w(?:eb)?[o0]sbrowser\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/bada/i], describe: function(e3) {
-          var t2 = { name: "Bada" }, r2 = i.default.getFirstMatch(/dolfin\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/tizen/i], describe: function(e3) {
-          var t2 = { name: "Tizen" }, r2 = i.default.getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/qupzilla/i], describe: function(e3) {
-          var t2 = { name: "QupZilla" }, r2 = i.default.getFirstMatch(/(?:qupzilla)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/firefox|iceweasel|fxios/i], describe: function(e3) {
-          var t2 = { name: "Firefox" }, r2 = i.default.getFirstMatch(/(?:firefox|iceweasel|fxios)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/electron/i], describe: function(e3) {
-          var t2 = { name: "Electron" }, r2 = i.default.getFirstMatch(/(?:electron)\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/MiuiBrowser/i], describe: function(e3) {
-          var t2 = { name: "Miui" }, r2 = i.default.getFirstMatch(/(?:MiuiBrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/chromium/i], describe: function(e3) {
-          var t2 = { name: "Chromium" }, r2 = i.default.getFirstMatch(/(?:chromium)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/chrome|crios|crmo/i], describe: function(e3) {
-          var t2 = { name: "Chrome" }, r2 = i.default.getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/GSA/i], describe: function(e3) {
-          var t2 = { name: "Google Search" }, r2 = i.default.getFirstMatch(/(?:GSA)\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: function(e3) {
-          var t2 = !e3.test(/like android/i), r2 = e3.test(/android/i);
-          return t2 && r2;
-        }, describe: function(e3) {
-          var t2 = { name: "Android Browser" }, r2 = i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/playstation 4/i], describe: function(e3) {
-          var t2 = { name: "PlayStation 4" }, r2 = i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/safari|applewebkit/i], describe: function(e3) {
-          var t2 = { name: "Safari" }, r2 = i.default.getFirstMatch(s2, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/.*/i], describe: function(e3) {
-          var t2 = e3.search("\\(") !== -1 ? /^(.*)\/(.*)[ \t]\((.*)/ : /^(.*)\/(.*) /;
-          return { name: i.default.getFirstMatch(t2, e3), version: i.default.getSecondMatch(t2, e3) };
-        } }];
-        t.default = a, e.exports = t.default;
-      }, 93: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
-        var a = [{ test: [/Roku\/DVP/], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/Roku\/DVP-(\d+\.\d+)/i, e3);
-          return { name: s2.OS_MAP.Roku, version: t2 };
-        } }, { test: [/windows phone/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i, e3);
-          return { name: s2.OS_MAP.WindowsPhone, version: t2 };
-        } }, { test: [/windows /i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/Windows ((NT|XP)( \d\d?.\d)?)/i, e3), r2 = i.default.getWindowsVersionName(t2);
-          return { name: s2.OS_MAP.Windows, version: t2, versionName: r2 };
-        } }, { test: [/Macintosh(.*?) FxiOS(.*?)\//], describe: function(e3) {
-          var t2 = { name: s2.OS_MAP.iOS }, r2 = i.default.getSecondMatch(/(Version\/)(\d[\d.]+)/, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/macintosh/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/mac os x (\d+(\.?_?\d+)+)/i, e3).replace(/[_\s]/g, "."), r2 = i.default.getMacOSVersionName(t2), n2 = { name: s2.OS_MAP.MacOS, version: t2 };
-          return r2 && (n2.versionName = r2), n2;
-        } }, { test: [/(ipod|iphone|ipad)/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i, e3).replace(/[_\s]/g, ".");
-          return { name: s2.OS_MAP.iOS, version: t2 };
-        } }, { test: function(e3) {
-          var t2 = !e3.test(/like android/i), r2 = e3.test(/android/i);
-          return t2 && r2;
-        }, describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/android[\s/-](\d+(\.\d+)*)/i, e3), r2 = i.default.getAndroidVersionName(t2), n2 = { name: s2.OS_MAP.Android, version: t2 };
-          return r2 && (n2.versionName = r2), n2;
-        } }, { test: [/(web|hpw)[o0]s/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/(?:web|hpw)[o0]s\/(\d+(\.\d+)*)/i, e3), r2 = { name: s2.OS_MAP.WebOS };
-          return t2 && t2.length && (r2.version = t2), r2;
-        } }, { test: [/blackberry|\bbb\d+/i, /rim\stablet/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i, e3) || i.default.getFirstMatch(/blackberry\d+\/(\d+([_\s]\d+)*)/i, e3) || i.default.getFirstMatch(/\bbb(\d+)/i, e3);
-          return { name: s2.OS_MAP.BlackBerry, version: t2 };
-        } }, { test: [/bada/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/bada\/(\d+(\.\d+)*)/i, e3);
-          return { name: s2.OS_MAP.Bada, version: t2 };
-        } }, { test: [/tizen/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/tizen[/\s](\d+(\.\d+)*)/i, e3);
-          return { name: s2.OS_MAP.Tizen, version: t2 };
-        } }, { test: [/linux/i], describe: function() {
-          return { name: s2.OS_MAP.Linux };
-        } }, { test: [/CrOS/], describe: function() {
-          return { name: s2.OS_MAP.ChromeOS };
-        } }, { test: [/PlayStation 4/], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/PlayStation 4[/\s](\d+(\.\d+)*)/i, e3);
-          return { name: s2.OS_MAP.PlayStation4, version: t2 };
-        } }];
-        t.default = a, e.exports = t.default;
-      }, 94: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
-        var a = [{ test: [/googlebot/i], describe: function() {
-          return { type: "bot", vendor: "Google" };
-        } }, { test: [/huawei/i], describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/(can-l01)/i, e3) && "Nova", r2 = { type: s2.PLATFORMS_MAP.mobile, vendor: "Huawei" };
-          return t2 && (r2.model = t2), r2;
-        } }, { test: [/nexus\s*(?:7|8|9|10).*/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Nexus" };
-        } }, { test: [/ipad/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Apple", model: "iPad" };
-        } }, { test: [/Macintosh(.*?) FxiOS(.*?)\//], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Apple", model: "iPad" };
-        } }, { test: [/kftt build/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Amazon", model: "Kindle Fire HD 7" };
-        } }, { test: [/silk/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Amazon" };
-        } }, { test: [/tablet(?! pc)/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet };
-        } }, { test: function(e3) {
-          var t2 = e3.test(/ipod|iphone/i), r2 = e3.test(/like (ipod|iphone)/i);
-          return t2 && !r2;
-        }, describe: function(e3) {
-          var t2 = i.default.getFirstMatch(/(ipod|iphone)/i, e3);
-          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Apple", model: t2 };
-        } }, { test: [/nexus\s*[0-6].*/i, /galaxy nexus/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Nexus" };
-        } }, { test: [/[^-]mobi/i], describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile };
-        } }, { test: function(e3) {
-          return e3.getBrowserName(true) === "blackberry";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile, vendor: "BlackBerry" };
-        } }, { test: function(e3) {
-          return e3.getBrowserName(true) === "bada";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile };
-        } }, { test: function(e3) {
-          return e3.getBrowserName() === "windows phone";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Microsoft" };
-        } }, { test: function(e3) {
-          var t2 = Number(String(e3.getOSVersion()).split(".")[0]);
-          return e3.getOSName(true) === "android" && t2 >= 3;
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.tablet };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "android";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.mobile };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "macos";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.desktop, vendor: "Apple" };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "windows";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.desktop };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "linux";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.desktop };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "playstation 4";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.tv };
-        } }, { test: function(e3) {
-          return e3.getOSName(true) === "roku";
-        }, describe: function() {
-          return { type: s2.PLATFORMS_MAP.tv };
-        } }];
-        t.default = a, e.exports = t.default;
-      }, 95: function(e, t, r) {
-        "use strict";
-        t.__esModule = true, t.default = void 0;
-        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
-        var a = [{ test: function(e3) {
-          return e3.getBrowserName(true) === "microsoft edge";
-        }, describe: function(e3) {
-          if (/\sedg\//i.test(e3))
-            return { name: s2.ENGINE_MAP.Blink };
-          var t2 = i.default.getFirstMatch(/edge\/(\d+(\.?_?\d+)+)/i, e3);
-          return { name: s2.ENGINE_MAP.EdgeHTML, version: t2 };
-        } }, { test: [/trident/i], describe: function(e3) {
-          var t2 = { name: s2.ENGINE_MAP.Trident }, r2 = i.default.getFirstMatch(/trident\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: function(e3) {
-          return e3.test(/presto/i);
-        }, describe: function(e3) {
-          var t2 = { name: s2.ENGINE_MAP.Presto }, r2 = i.default.getFirstMatch(/presto\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: function(e3) {
-          var t2 = e3.test(/gecko/i), r2 = e3.test(/like gecko/i);
-          return t2 && !r2;
-        }, describe: function(e3) {
-          var t2 = { name: s2.ENGINE_MAP.Gecko }, r2 = i.default.getFirstMatch(/gecko\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }, { test: [/(apple)?webkit\/537\.36/i], describe: function() {
-          return { name: s2.ENGINE_MAP.Blink };
-        } }, { test: [/(apple)?webkit/i], describe: function(e3) {
-          var t2 = { name: s2.ENGINE_MAP.WebKit }, r2 = i.default.getFirstMatch(/webkit\/(\d+(\.?_?\d+)+)/i, e3);
-          return r2 && (t2.version = r2), t2;
-        } }];
-        t.default = a, e.exports = t.default;
-      } });
-    });
-  }
-});
-
-// .svelte-kit/output/server/chunks/BackTo-d882ed88.js
-var import_gsap, import_SplitText, import_bowser, Transition, css, BackTo;
-var init_BackTo_d882ed88 = __esm({
-  ".svelte-kit/output/server/chunks/BackTo-d882ed88.js"() {
-    init_shims();
-    init_app_9f378dda();
+    init_app_89d516be();
     import_gsap = __toModule(require_gsap());
     import_SplitText = __toModule(require_SplitText());
-    init_global_130d3fe3();
-    import_bowser = __toModule(require_es5());
+    init_motion_65df28f6();
+    Seo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { title: title5 = "Connor Rothschild" } = $$props;
+      let { description: description5 = "I tell visual stories on the web." } = $$props;
+      let { keywords = "web design, data science, data visualization" } = $$props;
+      let { image = "https://connorr.netlify.app/social.png" } = $$props;
+      if ($$props.title === void 0 && $$bindings.title && title5 !== void 0)
+        $$bindings.title(title5);
+      if ($$props.description === void 0 && $$bindings.description && description5 !== void 0)
+        $$bindings.description(description5);
+      if ($$props.keywords === void 0 && $$bindings.keywords && keywords !== void 0)
+        $$bindings.keywords(keywords);
+      if ($$props.image === void 0 && $$bindings.image && image !== void 0)
+        $$bindings.image(image);
+      return `${$$result.head += `${$$result.title = `<title>${escape(title5)}</title>`, ""}<meta name="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-k345bl"><meta name="${"twitter:site"}" content="${"@CL_Rothschild"}" data-svelte="svelte-k345bl"><meta name="${"twitter:creator"}" content="${"@CL_Rothschild"}" data-svelte="svelte-k345bl"><meta name="${"twitter:image"}"${add_attribute("content", image, 0)} data-svelte="svelte-k345bl"><meta name="${"twitter:title"}"${add_attribute("content", title5, 0)} data-svelte="svelte-k345bl"><meta name="${"twitter:description"}"${add_attribute("content", description5, 0)} data-svelte="svelte-k345bl"><meta name="${"title"}" property="${"og:title"}"${add_attribute("content", title5, 0)} data-svelte="svelte-k345bl"><meta name="${"description"}" property="${"og:description"}"${add_attribute("content", description5, 0)} data-svelte="svelte-k345bl"><meta name="${"image"}" property="${"og:image"}"${add_attribute("content", image, 0)} data-svelte="svelte-k345bl"><meta name="${"keywords"}"${add_attribute("content", keywords, 0)} data-svelte="svelte-k345bl"><meta name="${"topic"}"${add_attribute("content", keywords, 0)} data-svelte="svelte-k345bl"><meta name="${"language"}" content="${"EN"}" data-svelte="svelte-k345bl"><meta name="${"robots"}" content="${"index, follow"}" data-svelte="svelte-k345bl"><meta name="${"abstract"}"${add_attribute("content", description5, 0)} data-svelte="svelte-k345bl"><meta name="${"summary"}"${add_attribute("content", description5, 0)} data-svelte="svelte-k345bl"><meta name="${"author"}" content="${"Connor Rothschild"}" data-svelte="svelte-k345bl"><meta name="${"url"}" content="${"http://www.connorrothschild.com"}" data-svelte="svelte-k345bl">`, ""}`;
+    });
     Transition = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let $$unsubscribe_pageTransitionDelay;
+      let $$unsubscribe_prefersReducedMotion;
       $$unsubscribe_pageTransitionDelay = subscribe(pageTransitionDelay, (value) => value);
+      $$unsubscribe_prefersReducedMotion = subscribe(prefersReducedMotion, (value) => value);
       let { split = "chars" } = $$props;
+      let { stagger = 0.02 } = $$props;
+      let { startingOpacity = 0 } = $$props;
       import_gsap.gsap.registerPlugin(import_SplitText.SplitText);
       if ($$props.split === void 0 && $$bindings.split && split !== void 0)
         $$bindings.split(split);
+      if ($$props.stagger === void 0 && $$bindings.stagger && stagger !== void 0)
+        $$bindings.stagger(stagger);
+      if ($$props.startingOpacity === void 0 && $$bindings.startingOpacity && startingOpacity !== void 0)
+        $$bindings.startingOpacity(startingOpacity);
       $$unsubscribe_pageTransitionDelay();
+      $$unsubscribe_prefersReducedMotion();
       return ``;
     });
     css = {
-      code: "a.svelte-1clgk59{font-size:1rem;text-transform:uppercase;letter-spacing:0;font-weight:300;font-family:var(--font-sans)}",
+      code: "a.svelte-97s2x2{font-size:1rem;text-transform:uppercase;letter-spacing:0;font-weight:300 !important;font-family:var(--font-sans)}",
       map: null
     };
     BackTo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -9317,33 +8680,18 @@ var init_BackTo_d882ed88 = __esm({
       if ($$props.classes === void 0 && $$bindings.classes && classes !== void 0)
         $$bindings.classes(classes);
       $$result.css.add(css);
-      return `<div${add_attribute("class", classes, 0)}><a class="${"padding-bottom svelte-1clgk59"}"${add_attribute("href", href, 0)} sveltekit:prefetch>\u2190 <!-- HTML_TAG_START -->${text}<!-- HTML_TAG_END --></a>
+      return `<div${add_attribute("class", classes, 0)}><a class="${"padding-bottom svelte-97s2x2"}"${add_attribute("href", href, 0)} sveltekit:prefetch>\u2190 <!-- HTML_TAG_START -->${text}<!-- HTML_TAG_END --></a>
 </div>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/store-8bf23024.js
-var seo;
-var init_store_8bf23024 = __esm({
-  ".svelte-kit/output/server/chunks/store-8bf23024.js"() {
-    init_shims();
-    init_global_130d3fe3();
-    seo = writable({
-      title: "Connor Rothschild",
-      description: "I tell visual stories on the web.",
-      keywords: "web design, data science, data visualization",
-      image: "https://og-image-eight-eta.vercel.app/Connor Rothschild.png?subtitle=I%20tell%20visual%20stories%20on%20the%20web.&theme=light&md=true&hasImage=true"
-    });
-  }
-});
-
-// .svelte-kit/output/server/chunks/IntersectionObserver-4cd4a541.js
+// .svelte-kit/output/server/chunks/IntersectionObserver-20eeae9e.js
 var IntersectionObserver_1;
-var init_IntersectionObserver_4cd4a541 = __esm({
-  ".svelte-kit/output/server/chunks/IntersectionObserver-4cd4a541.js"() {
+var init_IntersectionObserver_20eeae9e = __esm({
+  ".svelte-kit/output/server/chunks/IntersectionObserver-20eeae9e.js"() {
     init_shims();
-    init_app_9f378dda();
+    init_app_89d516be();
     IntersectionObserver_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { element = null } = $$props;
       let { once = false } = $$props;
@@ -9375,33 +8723,23 @@ var init_IntersectionObserver_4cd4a541 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/layout-720789ab.js
-var layout_720789ab_exports = {};
-__export(layout_720789ab_exports, {
-  default: () => Layout
-});
-var import_bowser2, css2, Layout;
-var init_layout_720789ab = __esm({
-  ".svelte-kit/output/server/chunks/layout-720789ab.js"() {
+// .svelte-kit/output/server/chunks/_layout-4da02fd7.js
+var css2, Layout;
+var init_layout_4da02fd7 = __esm({
+  ".svelte-kit/output/server/chunks/_layout-4da02fd7.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_BackTo_d882ed88();
-    init_store_8bf23024();
-    init_IntersectionObserver_4cd4a541();
-    init_global_130d3fe3();
-    import_bowser2 = __toModule(require_es5());
+    init_app_89d516be();
+    init_BackTo_db5abc2d();
+    init_IntersectionObserver_20eeae9e();
     css2 = {
       code: ".logo.svelte-1k62azy{height:0.75em;transition:transform 500ms ease}.logo.svelte-1k62azy:hover{transform:rotate(360deg)}",
       map: null
     };
     Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { name } = $$props;
       let { description: description5 } = $$props;
       let { imageUrl } = $$props;
       let image = `https://og-image-eight-eta.vercel.app/Connor Rothschild | ${name}.png?subtitle=Some details about my work experience at ${name}.&theme=light&md=true&hasImage=true`;
-      set_store_value(seo, $seo = { title: name, description: description5, image }, $seo);
       let element, intersecting;
       if ($$props.name === void 0 && $$bindings.name && name !== void 0)
         $$bindings.name(name);
@@ -9414,7 +8752,8 @@ var init_layout_720789ab = __esm({
       let $$rendered;
       do {
         $$settled = true;
-        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words" }, {}, {})}
+        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words", stagger: 0.07 }, {}, {})}
+${validate_component(Seo, "Seo").$$render($$result, { title: name, description: description5, image }, {}, {})}
 <main>${validate_component(IntersectionObserver_1, "IntersectionObserver").$$render($$result, { element, intersecting }, {
           intersecting: ($$value) => {
             intersecting = $$value;
@@ -9424,11 +8763,11 @@ var init_layout_720789ab = __esm({
           default: () => `<div class="${"top-level"}"${add_attribute("this", element, 0)}>${validate_component(BackTo, "BackTo").$$render($$result, {
             href: "/experience",
             text: "Experience",
-            classes: "page-overline transition-subtitle"
+            classes: "page-overline transition-content"
           }, {}, {})}
 
-      <h1 class="${"content-title uppercase transition-title overflow-hidden"}">${escape(name)}
-        <img loading="${"lazy"}"${add_attribute("src", `/images/jobs/${imageUrl}.svg`, 0)} alt="${"Logo for " + escape(name)}" class="${"logo svelte-1k62azy"}"></h1></div>`
+      <h1 class="${"content-title uppercase transition-title "}">${escape(name)}
+        <img loading="${"lazy"}"${add_attribute("src", imageUrl ? `/images/jobs/${imageUrl}.svg` : "", 0)} alt="${"Logo for " + escape(name)}" class="${"logo svelte-1k62azy"}"></h1></div>`
         })}
   <div class="${"main-content transition-content"}"><div class="${"content"}">${slots.default ? slots.default({}) : ``}
       ${validate_component(BackTo, "BackTo").$$render($$result, {
@@ -9438,29 +8777,26 @@ var init_layout_720789ab = __esm({
         }, {}, {})}</div></div>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/axios-c62f5b73.js
-var axios_c62f5b73_exports = {};
-__export(axios_c62f5b73_exports, {
+// .svelte-kit/output/server/chunks/axios-b77e1fc3.js
+var axios_b77e1fc3_exports = {};
+__export(axios_b77e1fc3_exports, {
   default: () => Axios,
   metadata: () => metadata
 });
-var import_bowser3, metadata, Axios;
-var init_axios_c62f5b73 = __esm({
-  ".svelte-kit/output/server/chunks/axios-c62f5b73.js"() {
+var metadata, Axios;
+var init_axios_b77e1fc3 = __esm({
+  ".svelte-kit/output/server/chunks/axios-b77e1fc3.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_720789ab();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser3 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_4da02fd7();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_IntersectionObserver_20eeae9e();
     metadata = {
       "layout": "experience",
       "name": "Axios",
@@ -9483,23 +8819,21 @@ var init_axios_c62f5b73 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/moksha-36761011.js
-var moksha_36761011_exports = {};
-__export(moksha_36761011_exports, {
+// .svelte-kit/output/server/chunks/moksha-082acc3d.js
+var moksha_082acc3d_exports = {};
+__export(moksha_082acc3d_exports, {
   default: () => Moksha,
   metadata: () => metadata2
 });
-var import_bowser4, metadata2, Moksha;
-var init_moksha_36761011 = __esm({
-  ".svelte-kit/output/server/chunks/moksha-36761011.js"() {
+var metadata2, Moksha;
+var init_moksha_082acc3d = __esm({
+  ".svelte-kit/output/server/chunks/moksha-082acc3d.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_720789ab();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser4 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_4da02fd7();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_IntersectionObserver_20eeae9e();
     metadata2 = {
       "layout": "experience",
       "name": "Moksha Data",
@@ -9520,23 +8854,21 @@ var init_moksha_36761011 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/socom-928a555d.js
-var socom_928a555d_exports = {};
-__export(socom_928a555d_exports, {
+// .svelte-kit/output/server/chunks/socom-e51f48c0.js
+var socom_e51f48c0_exports = {};
+__export(socom_e51f48c0_exports, {
   default: () => Socom,
   metadata: () => metadata3
 });
-var import_bowser5, metadata3, Socom;
-var init_socom_928a555d = __esm({
-  ".svelte-kit/output/server/chunks/socom-928a555d.js"() {
+var metadata3, Socom;
+var init_socom_e51f48c0 = __esm({
+  ".svelte-kit/output/server/chunks/socom-e51f48c0.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_720789ab();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser5 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_4da02fd7();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_IntersectionObserver_20eeae9e();
     metadata3 = {
       "layout": "experience",
       "name": "USSOCOM",
@@ -9554,23 +8886,21 @@ var init_socom_928a555d = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/tpl-a65e72fb.js
-var tpl_a65e72fb_exports = {};
-__export(tpl_a65e72fb_exports, {
+// .svelte-kit/output/server/chunks/tpl-05d608d7.js
+var tpl_05d608d7_exports = {};
+__export(tpl_05d608d7_exports, {
   default: () => Tpl,
   metadata: () => metadata4
 });
-var import_bowser6, metadata4, Tpl;
-var init_tpl_a65e72fb = __esm({
-  ".svelte-kit/output/server/chunks/tpl-a65e72fb.js"() {
+var metadata4, Tpl;
+var init_tpl_05d608d7 = __esm({
+  ".svelte-kit/output/server/chunks/tpl-05d608d7.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_720789ab();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser6 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_4da02fd7();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_IntersectionObserver_20eeae9e();
     metadata4 = {
       "layout": "experience",
       "name": "Texas Policy Lab",
@@ -9589,18 +8919,18 @@ var init_tpl_a65e72fb = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/experience.json-eeaf338a.js
-var experience_json_eeaf338a_exports = {};
-__export(experience_json_eeaf338a_exports, {
+// .svelte-kit/output/server/chunks/experience.json-2c7ac6eb.js
+var experience_json_2c7ac6eb_exports = {};
+__export(experience_json_2c7ac6eb_exports, {
   get: () => get
 });
 async function get() {
-  const imports = { "./experience/axios.md": () => Promise.resolve().then(() => (init_axios_c62f5b73(), axios_c62f5b73_exports)), "./experience/moksha.md": () => Promise.resolve().then(() => (init_moksha_36761011(), moksha_36761011_exports)), "./experience/socom.md": () => Promise.resolve().then(() => (init_socom_928a555d(), socom_928a555d_exports)), "./experience/tpl.md": () => Promise.resolve().then(() => (init_tpl_a65e72fb(), tpl_a65e72fb_exports)) };
+  const imports = { "./experience/axios.md": () => Promise.resolve().then(() => (init_axios_b77e1fc3(), axios_b77e1fc3_exports)), "./experience/moksha.md": () => Promise.resolve().then(() => (init_moksha_082acc3d(), moksha_082acc3d_exports)), "./experience/socom.md": () => Promise.resolve().then(() => (init_socom_e51f48c0(), socom_e51f48c0_exports)), "./experience/tpl.md": () => Promise.resolve().then(() => (init_tpl_05d608d7(), tpl_05d608d7_exports)) };
   let body = [];
   for (const path in imports) {
-    body.push(imports[path]().then(({ metadata: metadata53 }) => {
+    body.push(imports[path]().then(({ metadata: metadata57 }) => {
       return {
-        metadata: metadata53,
+        metadata: metadata57,
         path
       };
     }));
@@ -9610,20 +8940,20 @@ async function get() {
     body: JSON.stringify(posts)
   };
 }
-var init_experience_json_eeaf338a = __esm({
-  ".svelte-kit/output/server/chunks/experience.json-eeaf338a.js"() {
+var init_experience_json_2c7ac6eb = __esm({
+  ".svelte-kit/output/server/chunks/experience.json-2c7ac6eb.js"() {
     init_shims();
   }
 });
 
-// .svelte-kit/output/server/chunks/CornerTitle-6f993505.js
+// .svelte-kit/output/server/chunks/CornerTitle-433952fc.js
 var css3, CornerTitle;
-var init_CornerTitle_6f993505 = __esm({
-  ".svelte-kit/output/server/chunks/CornerTitle-6f993505.js"() {
+var init_CornerTitle_433952fc = __esm({
+  ".svelte-kit/output/server/chunks/CornerTitle-433952fc.js"() {
     init_shims();
-    init_app_9f378dda();
+    init_app_89d516be();
     css3 = {
-      code: ".corner.svelte-1o6wnzi{position:fixed;top:var(--nav-height);left:0;padding:1rem;opacity:1;transition:opacity 500ms ease 500ms}.corner-title.svelte-1o6wnzi{font-size:1.15rem;line-height:1.1;font-weight:700;letter-spacing:0.64px;color:var(--pure-text-color);margin-bottom:0.5rem}.corner-subtitle.svelte-1o6wnzi{font-size:1rem;font-weight:100;letter-spacing:0.64px;color:var(--text-color)}",
+      code: ".corner.svelte-ykf32{position:fixed;top:var(--nav-height);left:0;padding:1rem;opacity:1;transition:opacity 500ms ease 500ms}.corner-title.svelte-ykf32{font-size:1.15rem;line-height:1.1;font-weight:700;letter-spacing:0.64px;color:var(--pure-text-color);margin-bottom:0.25rem}.corner-subtitle.svelte-ykf32{font-size:0.9rem;font-weight:100;letter-spacing:0.64px;color:var(--text-color);margin-bottom:0.75rem}.scroll-to-top.svelte-ykf32{font-size:0.85rem;text-transform:uppercase;color:var(--accent-color);cursor:pointer}",
       map: null
     };
     CornerTitle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -9642,52 +8972,48 @@ var init_CornerTitle_6f993505 = __esm({
       $$result.css.add(css3);
       cornerTitleWidth = (w - 768) / 2 * 0.85;
       return `
-${!intersecting && w > 1168 && pageHasLoaded ? `<div aria-hidden="${"true"}" class="${"corner svelte-1o6wnzi"}" style="${"max-width: " + escape(cornerTitleWidth) + "px"}"><p class="${"corner-title svelte-1o6wnzi"}">${escape(title5)}</p>
-    <p class="${"corner-subtitle svelte-1o6wnzi"}">${escape(subtitle)}</p></div>` : ``}`;
+${!intersecting && w > 1168 && pageHasLoaded ? `<div aria-hidden="${"true"}" class="${"corner svelte-ykf32"}" style="${"max-width: " + escape(cornerTitleWidth) + "px"}"><p class="${"corner-title svelte-ykf32"}">${escape(title5)}</p>
+    <p class="${"corner-subtitle svelte-ykf32"}">${escape(subtitle)}</p>
+    <p class="${"scroll-to-top svelte-ykf32"}">Scroll to top \u2191
+    </p></div>` : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/utils-09998264.js
+// .svelte-kit/output/server/chunks/utils-4d01bc61.js
 function dateFormat(date2) {
   const parsed = new Date(date2);
   const month = parsed.toLocaleString("default", { month: "long" });
   const year = parsed.getUTCFullYear();
   return `${month} ${year}`;
 }
-var import_bowser7;
-var init_utils_09998264 = __esm({
-  ".svelte-kit/output/server/chunks/utils-09998264.js"() {
+var init_utils_4d01bc61 = __esm({
+  ".svelte-kit/output/server/chunks/utils-4d01bc61.js"() {
     init_shims();
-    import_bowser7 = __toModule(require_es5());
   }
 });
 
-// .svelte-kit/output/server/chunks/layout-3f1c4dcc.js
-var layout_3f1c4dcc_exports = {};
-__export(layout_3f1c4dcc_exports, {
-  default: () => Layout2
-});
-var import_bowser8, Layout2;
-var init_layout_3f1c4dcc = __esm({
-  ".svelte-kit/output/server/chunks/layout-3f1c4dcc.js"() {
+// .svelte-kit/output/server/chunks/_layout-1a2760fe.js
+var css4, Layout2;
+var init_layout_1a2760fe = __esm({
+  ".svelte-kit/output/server/chunks/_layout-1a2760fe.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    init_global_130d3fe3();
-    import_bowser8 = __toModule(require_es5());
+    init_app_89d516be();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    css4 = {
+      code: ".misc.svelte-3m1w1k{display:flex;place-items:center;justify-content:space-between;height:100%;overflow:visible}.description.svelte-3m1w1k{font-weight:200;user-select:none}.two-thirds.svelte-3m1w1k{flex:2}.one-third.svelte-3m1w1k{flex:1}.live-site.svelte-3m1w1k{padding:2rem;background:var(--semitransparent-bg);text-transform:uppercase;font-size:2.5rem;font-weight:200;font-family:var(--font-serif);border-radius:50%;transition:border-radius 500ms ease}.live-site.svelte-3m1w1k:hover{border-radius:0}.tags.svelte-3m1w1k{display:flex;flex-wrap:wrap;place-items:center;justify-content:center;margin-top:1rem}.tag.svelte-3m1w1k{font-size:1.15rem;margin:0.5rem 0 0 0.5rem;background:rgba(var(--accent-color-rgb), 0.2);padding:0.45rem 0.55rem;border-radius:2px;letter-spacing:0.05rem;color:var(--text-color);font-family:var(--font-serif)}@media screen and (max-width: 1068px){.misc.svelte-3m1w1k{flex-direction:column}.one-third.svelte-3m1w1k{margin-top:4rem}.live-site.svelte-3m1w1k{font-size:2rem;padding:1rem 4rem}}@media screen and (max-width: 568px){.tag.svelte-3m1w1k{font-size:1rem;margin:0.25rem 0 0 0.25rem}.misc.svelte-3m1w1k{align-items:flex-end}.tags.svelte-3m1w1k{justify-content:flex-end}.one-third.svelte-3m1w1k{margin-top:2.5rem;margin-bottom:1rem}.live-site.svelte-3m1w1k{font-size:1.5rem;padding:1rem 2rem;margin-top:0;justify-content:flex-end}}",
+      map: null
+    };
     Layout2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { title: title5 } = $$props;
       let { description: description5 } = $$props;
       let { date: date2 } = $$props;
+      let { techstack } = $$props;
+      let { url } = $$props;
       let image = `https://og-image-eight-eta.vercel.app/${title5}.png?subtitle=${description5}&theme=light&md=true&hasImage=true`;
-      set_store_value(seo, $seo = { title: title5, description: description5, image }, $seo);
       let element, intersecting;
       if ($$props.title === void 0 && $$bindings.title && title5 !== void 0)
         $$bindings.title(title5);
@@ -9695,11 +9021,21 @@ var init_layout_3f1c4dcc = __esm({
         $$bindings.description(description5);
       if ($$props.date === void 0 && $$bindings.date && date2 !== void 0)
         $$bindings.date(date2);
+      if ($$props.techstack === void 0 && $$bindings.techstack && techstack !== void 0)
+        $$bindings.techstack(techstack);
+      if ($$props.url === void 0 && $$bindings.url && url !== void 0)
+        $$bindings.url(url);
+      $$result.css.add(css4);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
-        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words" }, {}, {})}
+        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words", stagger: 0.07 }, {}, {})}
+${validate_component(Seo, "Seo").$$render($$result, {
+          title: `${title5} | Connor Rothschild`,
+          description: description5,
+          image
+        }, {}, {})}
 ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
           title: title5,
           subtitle: dateFormat(date2),
@@ -9715,13 +9051,15 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
             $$settled = false;
           }
         }, {
-          default: () => `<div class="${"top-level"}"${add_attribute("this", element, 0)}>${validate_component(BackTo, "BackTo").$$render($$result, {
+          default: () => `<div class="${"top-level"}" style="${"max-width: none;"}"${add_attribute("this", element, 0)}>${validate_component(BackTo, "BackTo").$$render($$result, {
             href: "/project",
             text: "Projects",
-            classes: "page-overline transition-subtitle"
+            classes: "page-overline transition-content"
           }, {}, {})}
-      <h1 class="${"content-title uppercase transition-title overflow-hidden"}">${escape(title5)}</h1>
-      <h1 class="${"content-description transition-title overflow-hidden"}">${escape(description5)}</h1></div>`
+      <h1 class="${"content-title uppercase transition-title"}"><!-- HTML_TAG_START -->${title5}<!-- HTML_TAG_END --></h1>
+      <div class="${"transition-content misc overflow-hidden content-description svelte-3m1w1k"}"><div class="${"two-thirds svelte-3m1w1k"}"><h2 class="${"description svelte-3m1w1k"}"><!-- HTML_TAG_START -->${description5}<!-- HTML_TAG_END --></h2>
+          ${techstack ? `<div class="${"tags svelte-3m1w1k"}">${each(techstack, (tech) => `<span class="${"tag svelte-3m1w1k"}">${escape(tech)}</span>`)}</div>` : ``}</div>
+        <h2 class="${"one-third svelte-3m1w1k"}"><a class="${"live-site svelte-3m1w1k"}" target="${"_blank"}" rel="${"noopener noreferrer"}"${add_attribute("href", url, 0)}>Live site \u2192</a></h2></div></div>`
         })}
   <div class="${"project main-content transition-content"}">${slots.default ? slots.default({}) : ``}
     ${validate_component(BackTo, "BackTo").$$render($$result, {
@@ -9731,26 +9069,25 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
         }, {}, {})}</div>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/Image-8e30e86c.js
-var css4, Image;
-var init_Image_8e30e86c = __esm({
-  ".svelte-kit/output/server/chunks/Image-8e30e86c.js"() {
+// .svelte-kit/output/server/chunks/Image-2006dc25.js
+var css5, Image;
+var init_Image_2006dc25 = __esm({
+  ".svelte-kit/output/server/chunks/Image-2006dc25.js"() {
     init_shims();
-    init_app_9f378dda();
-    css4 = {
-      code: ".centered.svelte-1n0adjk{display:block;margin:1rem auto}.fullscreen-unscrollable.svelte-1n0adjk{width:100vw;height:100vh;background:rgba(0, 0, 0, 0.7);position:fixed;top:0;left:0;z-index:100;display:flex;place-items:center;justify-content:center}img.svelte-1n0adjk:not(.expanded){cursor:zoom-in}img.href.svelte-1n0adjk{cursor:pointer}.expanded.svelte-1n0adjk{z-index:100;max-height:95%;max-width:95%;left:50%;top:50%;position:fixed;transform:translate(-50%, -50%);border-radius:5px;cursor:zoom-out}@media screen and (max-width: 768px){img.svelte-1n0adjk:not(.project img){width:100% !important}}",
+    init_app_89d516be();
+    css5 = {
+      code: ".centered.svelte-1az4bm4{display:block;margin:auto}.fullscreen-unscrollable.svelte-1az4bm4{width:100vw;height:100vh;background:rgba(0, 0, 0, 0.7);position:fixed;top:0;left:0;z-index:102;display:flex;place-items:center;justify-content:center}img.svelte-1az4bm4:not(.expanded){cursor:zoom-in;z-index:1;position:relative;margin-bottom:0}img.svelte-1az4bm4:last-of-type{margin-bottom:1.15rem}img.href.svelte-1az4bm4{cursor:pointer}.expanded.svelte-1az4bm4{z-index:103;max-height:95%;max-width:95%;left:50%;top:50%;position:fixed;transform:translate(-50%, -50%);border-radius:5px;cursor:zoom-out}@media screen and (max-width: 768px){img.svelte-1az4bm4:not(.project img){width:100% !important}}",
       map: null
     };
     Image = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { src: src2 } = $$props;
       let { alt } = $$props;
-      let { width = "100%" } = $$props;
+      let { width: width2 = "100%" } = $$props;
       let { centered = false } = $$props;
       let { style = "" } = $$props;
       let { href = null } = $$props;
@@ -9758,44 +9095,42 @@ var init_Image_8e30e86c = __esm({
         $$bindings.src(src2);
       if ($$props.alt === void 0 && $$bindings.alt && alt !== void 0)
         $$bindings.alt(alt);
-      if ($$props.width === void 0 && $$bindings.width && width !== void 0)
-        $$bindings.width(width);
+      if ($$props.width === void 0 && $$bindings.width && width2 !== void 0)
+        $$bindings.width(width2);
       if ($$props.centered === void 0 && $$bindings.centered && centered !== void 0)
         $$bindings.centered(centered);
       if ($$props.style === void 0 && $$bindings.style && style !== void 0)
         $$bindings.style(style);
       if ($$props.href === void 0 && $$bindings.href && href !== void 0)
         $$bindings.href(href);
-      $$result.css.add(css4);
+      $$result.css.add(css5);
       return `
 
 ${``}
-<a${add_attribute("href", href, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}" class="${"no-underline"}"><img loading="${"lazy"}"${add_attribute("src", src2, 0)}${add_attribute("alt", alt, 0)}${add_attribute("width", width, 0)}${add_attribute("style", style, 0)} class="${["svelte-1n0adjk", (centered ? "centered" : "") + " " + (href ? "href" : "")].join(" ").trim()}">
+<a${add_attribute("href", href, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}" class="${"no-underline"}"><img loading="${"lazy"}"${add_attribute("src", src2, 0)}${add_attribute("alt", alt, 0)}${add_attribute("width", width2, 0)}${add_attribute("style", style, 0)} class="${["svelte-1az4bm4", (centered ? "centered" : "") + " " + (href ? "href" : "")].join(" ").trim()}">
 </a>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/atus-5ac17a29.js
-var atus_5ac17a29_exports = {};
-__export(atus_5ac17a29_exports, {
+// .svelte-kit/output/server/chunks/atus-8db468e8.js
+var atus_8db468e8_exports = {};
+__export(atus_8db468e8_exports, {
   default: () => Atus,
   metadata: () => metadata5
 });
-var import_bowser9, metadata5, Atus;
-var init_atus_5ac17a29 = __esm({
-  ".svelte-kit/output/server/chunks/atus-5ac17a29.js"() {
+var metadata5, Atus;
+var init_atus_8db468e8 = __esm({
+  ".svelte-kit/output/server/chunks/atus-8db468e8.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser9 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata5 = {
       "layout": "project",
       "title": "I Can Guess What You're Doing Right Now",
@@ -9806,7 +9141,7 @@ var init_atus_5ac17a29 = __esm({
       "archived": true,
       "image": "atus/header.png",
       "img_alt": "ATUS header image, includes an image of a MacBook with the application open.",
-      "techstack": "JavaScript, Bulma, R",
+      "techstack": ["JavaScript", "Bulma", "R"],
       "github": "https://github.com/connorrothschild/what-are-you-doing",
       "url": "https://connorrothschild.github.io/what-are-you-doing/"
     };
@@ -9821,7 +9156,7 @@ var init_atus_5ac17a29 = __esm({
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This project was built using vanilla JavaScript, and styling was done with assistance from <a href="${"https://bulma.io/"}" rel="${"nofollow"}">Bulma</a>. It was rather easy to build. It was one of my first JS projects and so it was mostly an attempt to learn \u{1F642}.</p>
 <p>Methodologically, for each demographic profile (a combination of race, age, marital status), I found the most common activities at every given time. (Technically, I grouped per hour to prevent issues with low N\u2019s). I would then display that activity to the user, given their parameters. If that didn\u2019t fit (according to the user), I would show the second most common activity, and so on!</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/atus/mac-1.png",
@@ -9851,26 +9186,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/bob-ross-art-gallery-9eeb337a.js
-var bob_ross_art_gallery_9eeb337a_exports = {};
-__export(bob_ross_art_gallery_9eeb337a_exports, {
+// .svelte-kit/output/server/chunks/bob-ross-art-gallery-c7277cdf.js
+var bob_ross_art_gallery_c7277cdf_exports = {};
+__export(bob_ross_art_gallery_c7277cdf_exports, {
   default: () => Bob_ross_art_gallery,
   metadata: () => metadata6
 });
-var import_bowser10, metadata6, Bob_ross_art_gallery;
-var init_bob_ross_art_gallery_9eeb337a = __esm({
-  ".svelte-kit/output/server/chunks/bob-ross-art-gallery-9eeb337a.js"() {
+var metadata6, Bob_ross_art_gallery;
+var init_bob_ross_art_gallery_c7277cdf = __esm({
+  ".svelte-kit/output/server/chunks/bob-ross-art-gallery-c7277cdf.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser10 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata6 = {
       "layout": "project",
       "title": "The Bob Ross Virtual Art Gallery",
@@ -9880,7 +9213,7 @@ var init_bob_ross_art_gallery_9eeb337a = __esm({
       "featured": true,
       "image": "bob-ross-art-gallery/header.png",
       "img_alt": 'A header image that says "The Bob Ross (virtual) Art Gallery"',
-      "techstack": "D3.js, Svelte, R, Scrollama",
+      "techstack": ["D3.js", "Svelte", "R", "Scrollama"],
       "github": "https://github.com/connorrothschild/bob-ross-art-gallery/",
       "url": "https://connorrothschild.github.io/bob-ross-art-gallery/"
     };
@@ -9892,12 +9225,11 @@ var init_bob_ross_art_gallery_9eeb337a = __esm({
           alt: "Header"
         }, {}, {})}
 <p><a href="${"https://connorrothschild.github.io/bob-ross-art-gallery/"}" rel="${"nofollow"}"><strong>The Bob Ross Virtual Art Gallery</strong></a> is a visual storytelling piece analyzing Bob Ross\u2019 series <em>The Joy of Painting</em>. </p>
-
-<p>It has since been retired due to a cease and desist from Bob Ross, Inc. Before that, it attracted media attention from <a href="${"https://www.yahoo.com/now/bob-ross-virtual-gallery-offers-195835693.html"}" rel="${"nofollow"}">Yahoo</a>, <a href="${"https://nerdist.com/article/bob-ross-virtual-gallery-art/"}" rel="${"nofollow"}">Nerdist</a>, <a href="${"https://www.openculture.com/2021/06/the-bob-ross-virtual-art-gallery.html"}" rel="${"nofollow"}">OpenCulture</a>, <a href="${"https://www.fatherly.com/play/bob-ross-virtual-art-gallery-perfect-relax/"}" rel="${"nofollow"}">Fatherly</a>, <a href="${"https://designtaxi.com/news/414284/Bob-Ross-Virtual-Art-Gallery-Lets-You-Take-A-Happy-Little-Break-To-See-His-Art/"}" rel="${"nofollow"}">DesignTaxi</a>, <a href="${"https://flowingdata.com/2021/06/01/colors-of-bob-ross-explored/"}" rel="${"nofollow"}">FlowingData</a> and others. It also won first place in the Standalone Multimedia category at the Society for News Design\u2019s <a href="${"https://msusnd.org/2021-college-design-contest/"}" rel="${"nofollow"}">2021 Student Design Contest</a>.</p>
+<p>It allows the user to explore each painting from the series in an interactive, digital art gallery. It has attracted media attention from <a href="${"https://www.yahoo.com/now/bob-ross-virtual-gallery-offers-195835693.html"}" rel="${"nofollow"}">Yahoo</a>, <a href="${"https://nerdist.com/article/bob-ross-virtual-gallery-art/"}" rel="${"nofollow"}">Nerdist</a>, <a href="${"https://www.openculture.com/2021/06/the-bob-ross-virtual-art-gallery.html"}" rel="${"nofollow"}">OpenCulture</a>, <a href="${"https://www.fatherly.com/play/bob-ross-virtual-art-gallery-perfect-relax/"}" rel="${"nofollow"}">Fatherly</a>, <a href="${"https://designtaxi.com/news/414284/Bob-Ross-Virtual-Art-Gallery-Lets-You-Take-A-Happy-Little-Break-To-See-His-Art/"}" rel="${"nofollow"}">DesignTaxi</a>, <a href="${"https://flowingdata.com/2021/06/01/colors-of-bob-ross-explored/"}" rel="${"nofollow"}">FlowingData</a> and others. It also won first place in the Standalone Multimedia category at the Society for News Design\u2019s <a href="${"https://msusnd.org/2021-college-design-contest/"}" rel="${"nofollow"}">2021 Student Design Contest</a>.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>I used <a href="${"https://svelte.dev/"}" rel="${"nofollow"}">Svelte</a> and <a href="${"https://d3js.org/"}" rel="${"nofollow"}">D3.js</a> for all things visual and front-end. I used The Pudding\u2019s <a href="${"https://github.com/the-pudding/svelte-starter"}" rel="${"nofollow"}">Svelte Starter template</a> which made configuration much easier, and made a lot of the visual aspects of the project less difficult to create (e.g. their <code>Window</code> component simplified resize events a ton).</p>
 <p>For the scroll-based interactions, I used Russell Goldenberg\u2019s <a href="${"https://github.com/russellgoldenberg/scrollama"}" rel="${"nofollow"}">Scrollama</a>. As of the creation of this project, there is no formal or official Svelte-based scrollytelling library. I therefore used Scrollama in its vanilla form, and plugged it into the Svelte component as if I were writing normal JavaScript.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/bob-ross-art-gallery/mac-1.png",
@@ -9958,26 +9290,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/compas-720ac1d2.js
-var compas_720ac1d2_exports = {};
-__export(compas_720ac1d2_exports, {
+// .svelte-kit/output/server/chunks/compas-f83e985b.js
+var compas_f83e985b_exports = {};
+__export(compas_f83e985b_exports, {
   default: () => Compas,
   metadata: () => metadata7
 });
-var import_bowser11, metadata7, Compas;
-var init_compas_720ac1d2 = __esm({
-  ".svelte-kit/output/server/chunks/compas-720ac1d2.js"() {
+var metadata7, Compas;
+var init_compas_f83e985b = __esm({
+  ".svelte-kit/output/server/chunks/compas-f83e985b.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser11 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata7 = {
       "layout": "project",
       "title": "Are You Smarter Than COMPAS?",
@@ -9988,7 +9318,7 @@ var init_compas_720ac1d2 = __esm({
       "archived": true,
       "image": "compas/header.png",
       "img_alt": "COMPAS header image, includes an image of a MacBook with the application open.",
-      "techstack": "D3.js, Bulma, R",
+      "techstack": ["D3.js", "Bulma", "R"],
       "github": "https://github.com/connorrothschild/compas",
       "url": "https://connorrothschild.github.io/compas/"
     };
@@ -10004,7 +9334,7 @@ var init_compas_720ac1d2 = __esm({
 <p>The application is meant to showcase how inaccurate COMPAS is, and illustrate that human judgment can more accurately assess risk than an algorithm that has sentenced millions behind bars.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This project was built using vanilla JavaScript, and styling was done with assistance from <a href="${"https://bulma.io/"}" rel="${"nofollow"}">Bulma</a>. It was rather easy to build; it was mostly an exercise to 1) inform users about how inaccurate sentencing algorithms are, and 2) learn JavaScript \u{1F642}.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/compas/mac-1.png",
@@ -10034,26 +9364,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/covid-masking-556f2090.js
-var covid_masking_556f2090_exports = {};
-__export(covid_masking_556f2090_exports, {
+// .svelte-kit/output/server/chunks/covid-masking-106cf7ec.js
+var covid_masking_106cf7ec_exports = {};
+__export(covid_masking_106cf7ec_exports, {
   default: () => Covid_masking,
   metadata: () => metadata8
 });
-var import_bowser12, metadata8, Covid_masking;
-var init_covid_masking_556f2090 = __esm({
-  ".svelte-kit/output/server/chunks/covid-masking-556f2090.js"() {
+var metadata8, Covid_masking;
+var init_covid_masking_106cf7ec = __esm({
+  ".svelte-kit/output/server/chunks/covid-masking-106cf7ec.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser12 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata8 = {
       "layout": "project",
       "title": "Mask Wearing in Your County",
@@ -10063,7 +9391,7 @@ var init_covid_masking_556f2090 = __esm({
       "featured": false,
       "image": "covid-masking/header.png",
       "img_alt": "COVID masking header image, includes an image of a MacBook with the application open.",
-      "techstack": "Observable",
+      "techstack": ["Observable"],
       "github": "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county",
       "url": "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"
     };
@@ -10077,7 +9405,7 @@ var init_covid_masking_556f2090 = __esm({
 <p><a href="${"https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"}" rel="${"nofollow"}"><strong>Mask Wearing in Your County</strong></a> is an Observable notebook that allows users to explore mask wearing in their county, compared to COVID-19 case counts and mask wearing in other counties.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This project was exclusively built with <a href="${"https://observablehq.com/"}" rel="${"nofollow"}">Observable</a>. The notebook contains a series of visualizations, each of which build upon the prior. Altogether, the intention is to tell a <em>story</em> about masking, not just create a series of visuals.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/covid-masking/mac-1.png",
@@ -10131,26 +9459,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/cudi-hums-00d50d13.js
-var cudi_hums_00d50d13_exports = {};
-__export(cudi_hums_00d50d13_exports, {
+// .svelte-kit/output/server/chunks/cudi-hums-a1b23a97.js
+var cudi_hums_a1b23a97_exports = {};
+__export(cudi_hums_a1b23a97_exports, {
   default: () => Cudi_hums,
   metadata: () => metadata9
 });
-var import_bowser13, metadata9, Cudi_hums;
-var init_cudi_hums_00d50d13 = __esm({
-  ".svelte-kit/output/server/chunks/cudi-hums-00d50d13.js"() {
+var metadata9, Cudi_hums;
+var init_cudi_hums_a1b23a97 = __esm({
+  ".svelte-kit/output/server/chunks/cudi-hums-a1b23a97.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser13 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata9 = {
       "layout": "project",
       "title": "How Much Does Kid Cudi Hum?",
@@ -10160,7 +9486,7 @@ var init_cudi_hums_00d50d13 = __esm({
       "featured": true,
       "image": "cudi-hums/header.png",
       "img_alt": 'A header image that says "how much does Kid Cudi hum?"',
-      "techstack": "D3.js, Vue.js, Bulma, R, Scrollama, Genius API",
+      "techstack": ["D3.js", "Vue.js", "Bulma", "R", "Scrollama", "Genius API"],
       "github": "https://github.com/connorrothschild/cudi-hums",
       "url": "https://connorrothschild.github.io/cudi-hums/"
     };
@@ -10174,7 +9500,7 @@ var init_cudi_hums_00d50d13 = __esm({
 <p><a href="${"https://connorrothschild.github.io/cudi-hums/"}" rel="${"nofollow"}"><strong>How Much Does Kid Cudi Hum?</strong></a> is a visual storytelling piece centered around analyzing music\u2019s most famous hum. It was recognized as a winner of the <a href="${"https://pudding.cool/process/pudding-cup-2020/"}" rel="${"nofollow"}">2020 Pudding Cup</a> out of 130+ entries.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>I used <a href="${"https://vuejs.org/"}" rel="${"nofollow"}">Vue</a> and <a href="${"https://d3js.org/"}" rel="${"nofollow"}">D3.js</a> for all things visual and front-end. This was the first <a href="${"https://medium.com/nightingale/from-storytelling-to-scrollytelling-a-short-introduction-and-beyond-fbda32066964"}" rel="${"nofollow"}">scrollytelling</a> project I built, and I wanted an accessible way to approach scrollytelling so that it wouldn\u2019t get in the way of other stuff (such as making cool visuals and telling an actually interesting story). I had heard good things about Russell Goldenberg\u2019s <a href="${"https://github.com/russellgoldenberg/scrollama"}" rel="${"nofollow"}"><code>Scrollama</code></a> and wanted to find an easy way to incorporate that library with Vue. I was able to do so with Vignesh Shenoy\u2019s <a href="${"https://github.com/vgshenoy/vue-scrollama"}" rel="${"nofollow"}"><code>vue-scrollama</code></a>. It had a few quirks, but allowed me to quickly hit the ground running with scrollytelling capabilities.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/cudi-hums/albums-mac.png",
@@ -10228,26 +9554,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/how-many-people-3ca8cf42.js
-var how_many_people_3ca8cf42_exports = {};
-__export(how_many_people_3ca8cf42_exports, {
+// .svelte-kit/output/server/chunks/how-many-people-f50c1eba.js
+var how_many_people_f50c1eba_exports = {};
+__export(how_many_people_f50c1eba_exports, {
   default: () => How_many_people,
   metadata: () => metadata10
 });
-var import_bowser14, metadata10, How_many_people;
-var init_how_many_people_3ca8cf42 = __esm({
-  ".svelte-kit/output/server/chunks/how-many-people-3ca8cf42.js"() {
+var metadata10, How_many_people;
+var init_how_many_people_f50c1eba = __esm({
+  ".svelte-kit/output/server/chunks/how-many-people-f50c1eba.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser14 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata10 = {
       "layout": "project",
       "title": "How Many People Have Had COVID-19?",
@@ -10257,7 +9581,7 @@ var init_how_many_people_3ca8cf42 = __esm({
       "featured": false,
       "image": "how-many-people/header.png",
       "img_alt": "An example screen of the 'How Many People' application",
-      "techstack": "D3.js, Vue.js, Bulma",
+      "techstack": ["D3.js", "Vue.js", "Bulma"],
       "github": "https://github.com/connorrothschild/how-many-people",
       "url": "https://connorrothschild.github.io/how-many-people"
     };
@@ -10271,7 +9595,7 @@ var init_how_many_people_3ca8cf42 = __esm({
 <p><a href="${"https://connorrothschild.github.io/how-many-people"}" rel="${"nofollow"}">How Many People Have Had COVID-19?</a> is a small web application that visualizes COVID-19 case counts in a novel way: via state populations. The application\u2019s user can see cases either in the US or globally. The goal is to capture case counts with some comparison that everyone can understand.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This application was built with <a href="${"https://vuejs.org/"}" rel="${"nofollow"}">Vue</a>. The minimal styling was thanks to <a href="${"https://bulma.io/"}" rel="${"nofollow"}">Bulma</a>, my framework of choice recently. The application was simpler than some others I have built (there were only <a href="${"https://github.com/connorrothschild/how-many-people/tree/master/src/components"}" rel="${"nofollow"}">three components</a>). It was mostly a fun exercise to play around with SVGs and Vue, and also an exercise to better handle user interactions. The tool needed to be robust to many changes, including 1) the adding of state populations together, 2) a \u2018ceiling\u2019 (the case counts) that state populations could not exceed, 3) resets on toggle of US/global views.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/how-many-people/mac-1.png",
@@ -10299,26 +9623,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/map-houston-homicides-fb5e3c63.js
-var map_houston_homicides_fb5e3c63_exports = {};
-__export(map_houston_homicides_fb5e3c63_exports, {
+// .svelte-kit/output/server/chunks/map-houston-homicides-63947bcb.js
+var map_houston_homicides_63947bcb_exports = {};
+__export(map_houston_homicides_63947bcb_exports, {
   default: () => Map_houston_homicides,
   metadata: () => metadata11
 });
-var import_bowser15, metadata11, Map_houston_homicides;
-var init_map_houston_homicides_fb5e3c63 = __esm({
-  ".svelte-kit/output/server/chunks/map-houston-homicides-fb5e3c63.js"() {
+var metadata11, Map_houston_homicides;
+var init_map_houston_homicides_63947bcb = __esm({
+  ".svelte-kit/output/server/chunks/map-houston-homicides-63947bcb.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser15 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata11 = {
       "layout": "project",
       "title": "Mapping Houston Homicides",
@@ -10328,7 +9650,7 @@ var init_map_houston_homicides_fb5e3c63 = __esm({
       "featured": false,
       "image": "map-houston-homicides/header.png",
       "img_alt": "An example screen of the 'Mapping Houston Homicides' article",
-      "techstack": "Mapbox, R",
+      "techstack": ["Mapbox", "R"],
       "github": "https://github.com/connorrothschild/datathon-2020/",
       "url": "https://connorrothschild.github.io/datathon-2020/source"
     };
@@ -10344,7 +9666,7 @@ var init_map_houston_homicides_fb5e3c63 = __esm({
 <p>This project was an example of a low-code but high-impact story. Rather than reinventing the wheel and implementing my own scrollytelling capabilities, my team used two tools from Mapbox: their <a href="${"https://www.mapbox.com/solutions/interactive-storytelling"}" rel="${"nofollow"}">interactive storytelling template</a> and <a href="${"https://www.mapbox.com/mapbox-studio"}" rel="${"nofollow"}">Mapbox Studio</a>. In combination, we were able to write very little code but provide a highly tailored, powerful user experience for the reader.</p>
 <p>We used Mapbox Studio to create each of the bubbles that is present on the map. As a corollary, we used Studio to define the size, fill, and location of each bubble. we created many different layers that toggled visibility on scroll.</p>
 <p>To trigger scroll events, We used the Mapbox storytelling template. This was a simple JSON where, for each \u2018view\u2019, I defined three elements: the <em>text</em>, the <em>layer</em>, and the <em>location</em>.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/map-houston-homicides/mac-1.png",
@@ -10392,26 +9714,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/map-missing-migrants-1cf10cfb.js
-var map_missing_migrants_1cf10cfb_exports = {};
-__export(map_missing_migrants_1cf10cfb_exports, {
+// .svelte-kit/output/server/chunks/map-missing-migrants-ce5ab402.js
+var map_missing_migrants_ce5ab402_exports = {};
+__export(map_missing_migrants_ce5ab402_exports, {
   default: () => Map_missing_migrants,
   metadata: () => metadata12
 });
-var import_bowser16, metadata12, Map_missing_migrants;
-var init_map_missing_migrants_1cf10cfb = __esm({
-  ".svelte-kit/output/server/chunks/map-missing-migrants-1cf10cfb.js"() {
+var metadata12, Map_missing_migrants;
+var init_map_missing_migrants_ce5ab402 = __esm({
+  ".svelte-kit/output/server/chunks/map-missing-migrants-ce5ab402.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser16 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata12 = {
       "layout": "project",
       "title": "Mapping Missing Migrants",
@@ -10421,7 +9741,7 @@ var init_map_missing_migrants_1cf10cfb = __esm({
       "featured": true,
       "image": "map-missing-migrants/header.png",
       "img_alt": "An example screen of the 'Mapping Missing Migrants' article",
-      "techstack": "Mapbox, R",
+      "techstack": ["Mapbox", "R"],
       "github": "https://github.com/connorrothschild/map-missing-migrants/",
       "url": "https://connorrothschild.github.io/map-missing-migrants"
     };
@@ -10437,7 +9757,7 @@ var init_map_missing_migrants_1cf10cfb = __esm({
 <p>This project was an example of a low-code but high-impact story. Rather than reinventing the wheel and implementing my own scrollytelling capabilities, I used two tools from Mapbox: their <a href="${"https://www.mapbox.com/solutions/interactive-storytelling"}" rel="${"nofollow"}">interactive storytelling template</a> and <a href="${"https://www.mapbox.com/mapbox-studio"}" rel="${"nofollow"}">Mapbox Studio</a>. In combination, I was able to write very little code but provide a highly tailored, powerful user experience for the reader.</p>
 <p>I used Mapbox Studio to create each of the bubbles that is present on the map. As a corollary, I used Studio to define the size, fill, and location of each bubble. I created many different layers that toggled visibility on scroll.</p>
 <p>To trigger scroll events, I used the Mapbox storytelling template. This was a simple JSON where, for each \u2018view\u2019, I defined three elements: the <em>text</em>, the <em>layer</em>, and the <em>location</em>.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/map-missing-migrants/mac-1.png",
@@ -10491,26 +9811,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/media-mentions-37dc09b6.js
-var media_mentions_37dc09b6_exports = {};
-__export(media_mentions_37dc09b6_exports, {
+// .svelte-kit/output/server/chunks/media-mentions-770927e8.js
+var media_mentions_770927e8_exports = {};
+__export(media_mentions_770927e8_exports, {
   default: () => Media_mentions,
   metadata: () => metadata13
 });
-var import_bowser17, metadata13, Media_mentions;
-var init_media_mentions_37dc09b6 = __esm({
-  ".svelte-kit/output/server/chunks/media-mentions-37dc09b6.js"() {
+var metadata13, Media_mentions;
+var init_media_mentions_770927e8 = __esm({
+  ".svelte-kit/output/server/chunks/media-mentions-770927e8.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser17 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata13 = {
       "layout": "project",
       "title": "The Race for Media Attention",
@@ -10520,7 +9838,7 @@ var init_media_mentions_37dc09b6 = __esm({
       "featured": false,
       "image": "media-mentions/header.png",
       "img_alt": "Media mentions header image, includes an image of a MacBook with the application open.",
-      "techstack": "Observable",
+      "techstack": ["Observable"],
       "github": "https://observablehq.com/@connorrothschild/bar-chart-race",
       "url": "https://observablehq.com/@connorrothschild/bar-chart-race"
     };
@@ -10534,7 +9852,7 @@ var init_media_mentions_37dc09b6 = __esm({
 <p><a href="${"https://observablehq.com/@connorrothschild/bar-chart-race"}" rel="${"nofollow"}"><strong>The Race for Media Attention?</strong></a> is an animated bar chart race depicting media mentions of Democratic presidential candidates during the 2020 presidential election. I made it before animated bar chart races were cool (and then <a href="${"https://www.newsbreak.com/news/1465770194170/reddits-dataisbeautiful-is-sick-of-bar-chart-races-so-its-banning-them"}" rel="${"nofollow"}">uncool</a>).</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This project was built with <a href="${"https://observablehq.com/"}" rel="${"nofollow"}">Observable</a>. It was my first Observable notebook, and mostly an attempt to learn. (It was a fork of Mike Bostock\u2019s existing bar chart race.)</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/media-mentions/mac.png",
@@ -10552,26 +9870,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/one-line-hacks-8cd8beed.js
-var one_line_hacks_8cd8beed_exports = {};
-__export(one_line_hacks_8cd8beed_exports, {
+// .svelte-kit/output/server/chunks/one-line-hacks-8e7deae4.js
+var one_line_hacks_8e7deae4_exports = {};
+__export(one_line_hacks_8e7deae4_exports, {
   default: () => One_line_hacks,
   metadata: () => metadata14
 });
-var import_bowser18, metadata14, One_line_hacks;
-var init_one_line_hacks_8cd8beed = __esm({
-  ".svelte-kit/output/server/chunks/one-line-hacks-8cd8beed.js"() {
+var metadata14, One_line_hacks;
+var init_one_line_hacks_8e7deae4 = __esm({
+  ".svelte-kit/output/server/chunks/one-line-hacks-8e7deae4.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser18 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata14 = {
       "layout": "project",
       "title": "One Line Hacks",
@@ -10581,7 +9897,7 @@ var init_one_line_hacks_8cd8beed = __esm({
       "featured": false,
       "image": "one-line-hacks/header.png",
       "img_alt": "One line hacks header image, includes an image of a MacBook with the application open.",
-      "techstack": "JavaScript, Vue, Tailwind",
+      "techstack": ["JavaScript", "Vue", "Tailwind"],
       "github": "https://connorrothschild.github.io/one-line-hacks/",
       "url": "https://connorrothschild.github.io/one-line-hacks/"
     };
@@ -10595,7 +9911,7 @@ var init_one_line_hacks_8cd8beed = __esm({
 <p><a href="${"https://connorrothschild.github.io/one-line-hacks/"}" rel="${"nofollow"}"><strong>One Line Hacks</strong></a> is a collection of random utilities and functions that I find myself Googling too often.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>This small site was built with Vue and Tailwind. I use Nuxt and Nuxt Content for Markdown-based content creation.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/one-line-hacks/mac-1.png",
@@ -10613,26 +9929,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/police-killings-c1167173.js
-var police_killings_c1167173_exports = {};
-__export(police_killings_c1167173_exports, {
+// .svelte-kit/output/server/chunks/police-killings-1e479bac.js
+var police_killings_1e479bac_exports = {};
+__export(police_killings_1e479bac_exports, {
   default: () => Police_killings,
   metadata: () => metadata15
 });
-var import_bowser19, metadata15, Police_killings;
-var init_police_killings_c1167173 = __esm({
-  ".svelte-kit/output/server/chunks/police-killings-c1167173.js"() {
+var metadata15, Police_killings;
+var init_police_killings_1e479bac = __esm({
+  ".svelte-kit/output/server/chunks/police-killings-1e479bac.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser19 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata15 = {
       "layout": "project",
       "title": "Mapping Police Killings",
@@ -10642,7 +9956,7 @@ var init_police_killings_c1167173 = __esm({
       "featured": false,
       "image": "police-killings/header.png",
       "img_alt": "Police killings header, includes an image of a MacBook with the application open.",
-      "techstack": "D3.js, Vue.js, Bulma, R",
+      "techstack": ["D3.js", "Vue.js", "Bulma", "R"],
       "github": "https://github.com/connorrothschild/police-killings",
       "url": "https://mappingpoliceviolence.org/"
     };
@@ -10658,7 +9972,7 @@ var init_police_killings_c1167173 = __esm({
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>I used <a href="${"https://vuejs.org/"}" rel="${"nofollow"}">Vue</a> to design the application and handle user interaction. I used <a href="${"https://d3js.org/"}" rel="${"nofollow"}">D3.js</a> for visualization and for its force-directed diagram capabilities. Additional styling was done with <a href="${"https://bulma.io/"}" rel="${"nofollow"}">Bulma</a>.</p>
 <p>This was actually the second iteration of this visualization. <a href="${"https://connorrothschild.github.io/police-killings-v1/"}" rel="${"nofollow"}">Version 1 can be found here</a>. Although that version was <a href="${"https://github.com/connorrothschild/police-killings-v1"}" rel="${"nofollow"}">built</a> with vanilla JavaScript and no CSS library (everything was built from scratch!). Upon deploying this to a more serious and more visited site (Mapping Police Violence\u2019s homepage), I decided an upgrade would be worth the investment.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/police-killings/mac-1.png",
@@ -10688,26 +10002,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/quarantunes-4fd849e9.js
-var quarantunes_4fd849e9_exports = {};
-__export(quarantunes_4fd849e9_exports, {
+// .svelte-kit/output/server/chunks/quarantunes-762c4e23.js
+var quarantunes_762c4e23_exports = {};
+__export(quarantunes_762c4e23_exports, {
   default: () => Quarantunes,
   metadata: () => metadata16
 });
-var import_bowser20, metadata16, Quarantunes;
-var init_quarantunes_4fd849e9 = __esm({
-  ".svelte-kit/output/server/chunks/quarantunes-4fd849e9.js"() {
+var metadata16, Quarantunes;
+var init_quarantunes_762c4e23 = __esm({
+  ".svelte-kit/output/server/chunks/quarantunes-762c4e23.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser20 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata16 = {
       "layout": "project",
       "title": "Quarantunes",
@@ -10717,7 +10029,7 @@ var init_quarantunes_4fd849e9 = __esm({
       "featured": true,
       "image": "quarantunes/header.png",
       "img_alt": "Quarantunes header, includes an image of a MacBook with the application open.",
-      "techstack": "D3.js, Vue.js, Bulma, R, Spotify API",
+      "techstack": ["D3.js", "Vue.js", "Bulma", "R", "Spotify API"],
       "github": "https://github.com/connorrothschild/quarantunes",
       "url": "https://quarantune.netlify.app"
     };
@@ -10736,7 +10048,7 @@ The last tab creates two playlists for the user: one with their top tracks and a
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>I used <a href="${"https://vuejs.org/"}" rel="${"nofollow"}">Vue</a> to design the majority of this application. Charts were built using <a href="${"https://www.chartjs.org/"}" rel="${"nofollow"}">Chart.js</a>. This was my first serious project working with the <a href="${"https://developer.spotify.com/documentation/web-api/"}" rel="${"nofollow"}">Spotify API</a>. Perhaps the greatest lessons I learned throughout this process were related to API calls, asynchronous code, and race conditions. I also learned a bit about cookies; because the application creates a \u2018recommended\u2019 playlist for users, I had to store whether they had visited the site before to prevent creating multiple playlists on app reloads.</p>
 <p>I also had some fun developing the more novel contributions of this project, such as a \u2018recommended\u2019 artist and a whole playlist of recommended songs. For recommended artists, I scraped a users\u2019 top 50 artists, and for each of those artists, pulled 20 <a href="${"https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-an-artists-related-artists"}" rel="${"nofollow"}">\u2018related\u2019 artists</a> according to Spotify. Then, I appended all 1000 (50 x 20) of those artists into one array, and presented the one that appeared most frequently to the user. As for the playlist, I took the users\u2019 top 5 tracks and gathered 4 <a href="${"https://developer.spotify.com/console/get-recommendations/"}" rel="${"nofollow"}">\u2018seed\u2019 recommendations</a> based on those tracks. Voila! A playlist of 20 recommendations.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/quarantunes/macbook.png",
@@ -10752,26 +10064,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/state-police-spending-3f7bcce7.js
-var state_police_spending_3f7bcce7_exports = {};
-__export(state_police_spending_3f7bcce7_exports, {
+// .svelte-kit/output/server/chunks/state-police-spending-4d9a5190.js
+var state_police_spending_4d9a5190_exports = {};
+__export(state_police_spending_4d9a5190_exports, {
   default: () => State_police_spending,
   metadata: () => metadata17
 });
-var import_bowser21, metadata17, State_police_spending;
-var init_state_police_spending_3f7bcce7 = __esm({
-  ".svelte-kit/output/server/chunks/state-police-spending-3f7bcce7.js"() {
+var metadata17, State_police_spending;
+var init_state_police_spending_4d9a5190 = __esm({
+  ".svelte-kit/output/server/chunks/state-police-spending-4d9a5190.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser21 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata17 = {
       "layout": "project",
       "title": "How Much Does Your State Spend on Police?",
@@ -10781,7 +10091,7 @@ var init_state_police_spending_3f7bcce7 = __esm({
       "featured": false,
       "image": "state-police-spending/header.png",
       "img_alt": "State police spending header, includes an image of a MacBook with the application open.",
-      "techstack": "D3.js",
+      "techstack": ["D3.js"],
       "github": "https://github.com/connorrothschild/state-police-spending",
       "url": "https://connorrothschild.github.io/state-police-spending/"
     };
@@ -10795,7 +10105,7 @@ var init_state_police_spending_3f7bcce7 = __esm({
 <p><a href="${"https://connorrothschild.github.io/state-police-spending/"}" rel="${"nofollow"}"><strong>How Much Does Your State Spend on Police?</strong></a> allows users to compare their state\u2019s police spending to a variety of equivalent costing programs, such as residential drug treatment programs or additional SNAP recipients. The goal is to contextualize police spending in numbers that everyone can understand, in particular by comparing it to other known programs.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>I used <a href="${"https://d3js.org/"}" rel="${"nofollow"}">D3.js</a> for the minor visualization that accompanies these numbers. The rest of the computation is done by simply dividing the state\u2019s police spending by a specified denominator, one for each metric. This was a technically simple project. The goal is not to amaze, but to provide simple, easy comparisons that better inform the user about their state\u2019s police spending.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/state-police-spending/mac.png",
@@ -10813,26 +10123,24 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/tpl-schools-db-e581ff12.js
-var tpl_schools_db_e581ff12_exports = {};
-__export(tpl_schools_db_e581ff12_exports, {
+// .svelte-kit/output/server/chunks/tpl-schools-db-a0517ade.js
+var tpl_schools_db_a0517ade_exports = {};
+__export(tpl_schools_db_a0517ade_exports, {
   default: () => Tpl_schools_db,
   metadata: () => metadata18
 });
-var import_bowser22, metadata18, Tpl_schools_db;
-var init_tpl_schools_db_e581ff12 = __esm({
-  ".svelte-kit/output/server/chunks/tpl-schools-db-e581ff12.js"() {
+var metadata18, Tpl_schools_db;
+var init_tpl_schools_db_a0517ade = __esm({
+  ".svelte-kit/output/server/chunks/tpl-schools-db-a0517ade.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_3f1c4dcc();
-    init_Image_8e30e86c();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser22 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_1a2760fe();
+    init_Image_2006dc25();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata18 = {
       "layout": "project",
       "title": "Texas School District COVID-19 Monitoring Dashboard",
@@ -10843,7 +10151,7 @@ var init_tpl_schools_db_e581ff12 = __esm({
       "archived": true,
       "image": "tpl-schools-db/header.png",
       "img_alt": "TPL header image, includes an image of a MacBook with the application open.",
-      "techstack": "R, Shiny",
+      "techstack": ["R", "Shiny"],
       "url": "http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/"
     };
     Tpl_schools_db = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -10856,7 +10164,7 @@ var init_tpl_schools_db_e581ff12 = __esm({
 <p><a href="${"http://news.rice.edu/2021/05/05/dashboard-developed-at-rice-will-help-texas-schools-open-safely-amid-pandemic/"}" rel="${"nofollow"}"><strong>The Texas School District COVID-19 Monitoring Dashboard</strong></a> was a dashboard built by my team at the Texas Policy Lab for Texas policymakers (and any other interested parties) to survey the landscape of COVID-19 in their school districts.</p>
 <h1 id="${"tools-used"}"><a href="${"#tools-used"}">Tools used</a></h1>
 <p>The app is built with R and is a Shiny web application. I was mostly responsible for the frontend development and some design. I helped less with the backend data retrieval, wrangling, and testing.</p>
-<h1 id="${"project-images"}"><a href="${"#project-images"}">Project images</a></h1>
+<h1 id="${"at-a-glance"}"><a href="${"#at-a-glance"}">At a glance</a></h1>
 ${validate_component(Image, "Image").$$render($$result, {
           style: "box-shadow: none;",
           src: "/images/project/tpl-schools-db/mac-1.png",
@@ -10892,19 +10200,18 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/projects.json-5153e243.js
-var projects_json_5153e243_exports = {};
-__export(projects_json_5153e243_exports, {
+// .svelte-kit/output/server/chunks/projects.json-8acfcd9d.js
+var projects_json_8acfcd9d_exports = {};
+__export(projects_json_8acfcd9d_exports, {
   get: () => get2
 });
 async function get2() {
-  const imports = { "./project/atus.md": () => Promise.resolve().then(() => (init_atus_5ac17a29(), atus_5ac17a29_exports)), "./project/bob-ross-art-gallery.md": () => Promise.resolve().then(() => (init_bob_ross_art_gallery_9eeb337a(), bob_ross_art_gallery_9eeb337a_exports)), "./project/compas.md": () => Promise.resolve().then(() => (init_compas_720ac1d2(), compas_720ac1d2_exports)), "./project/covid-masking.md": () => Promise.resolve().then(() => (init_covid_masking_556f2090(), covid_masking_556f2090_exports)), "./project/cudi-hums.md": () => Promise.resolve().then(() => (init_cudi_hums_00d50d13(), cudi_hums_00d50d13_exports)), "./project/how-many-people.md": () => Promise.resolve().then(() => (init_how_many_people_3ca8cf42(), how_many_people_3ca8cf42_exports)), "./project/map-houston-homicides.md": () => Promise.resolve().then(() => (init_map_houston_homicides_fb5e3c63(), map_houston_homicides_fb5e3c63_exports)), "./project/map-missing-migrants.md": () => Promise.resolve().then(() => (init_map_missing_migrants_1cf10cfb(), map_missing_migrants_1cf10cfb_exports)), "./project/media-mentions.md": () => Promise.resolve().then(() => (init_media_mentions_37dc09b6(), media_mentions_37dc09b6_exports)), "./project/one-line-hacks.md": () => Promise.resolve().then(() => (init_one_line_hacks_8cd8beed(), one_line_hacks_8cd8beed_exports)), "./project/police-killings.md": () => Promise.resolve().then(() => (init_police_killings_c1167173(), police_killings_c1167173_exports)), "./project/quarantunes.md": () => Promise.resolve().then(() => (init_quarantunes_4fd849e9(), quarantunes_4fd849e9_exports)), "./project/state-police-spending.md": () => Promise.resolve().then(() => (init_state_police_spending_3f7bcce7(), state_police_spending_3f7bcce7_exports)), "./project/tpl-schools-db.md": () => Promise.resolve().then(() => (init_tpl_schools_db_e581ff12(), tpl_schools_db_e581ff12_exports)) };
+  const imports = { "./project/atus.md": () => Promise.resolve().then(() => (init_atus_8db468e8(), atus_8db468e8_exports)), "./project/bob-ross-art-gallery.md": () => Promise.resolve().then(() => (init_bob_ross_art_gallery_c7277cdf(), bob_ross_art_gallery_c7277cdf_exports)), "./project/compas.md": () => Promise.resolve().then(() => (init_compas_f83e985b(), compas_f83e985b_exports)), "./project/covid-masking.md": () => Promise.resolve().then(() => (init_covid_masking_106cf7ec(), covid_masking_106cf7ec_exports)), "./project/cudi-hums.md": () => Promise.resolve().then(() => (init_cudi_hums_a1b23a97(), cudi_hums_a1b23a97_exports)), "./project/how-many-people.md": () => Promise.resolve().then(() => (init_how_many_people_f50c1eba(), how_many_people_f50c1eba_exports)), "./project/map-houston-homicides.md": () => Promise.resolve().then(() => (init_map_houston_homicides_63947bcb(), map_houston_homicides_63947bcb_exports)), "./project/map-missing-migrants.md": () => Promise.resolve().then(() => (init_map_missing_migrants_ce5ab402(), map_missing_migrants_ce5ab402_exports)), "./project/media-mentions.md": () => Promise.resolve().then(() => (init_media_mentions_770927e8(), media_mentions_770927e8_exports)), "./project/one-line-hacks.md": () => Promise.resolve().then(() => (init_one_line_hacks_8e7deae4(), one_line_hacks_8e7deae4_exports)), "./project/police-killings.md": () => Promise.resolve().then(() => (init_police_killings_1e479bac(), police_killings_1e479bac_exports)), "./project/quarantunes.md": () => Promise.resolve().then(() => (init_quarantunes_762c4e23(), quarantunes_762c4e23_exports)), "./project/state-police-spending.md": () => Promise.resolve().then(() => (init_state_police_spending_4d9a5190(), state_police_spending_4d9a5190_exports)), "./project/tpl-schools-db.md": () => Promise.resolve().then(() => (init_tpl_schools_db_a0517ade(), tpl_schools_db_a0517ade_exports)) };
   let body = [];
   for (const path in imports) {
-    body.push(imports[path]().then(({ metadata: metadata53, slug }) => {
+    body.push(imports[path]().then(({ metadata: metadata57 }) => {
       return {
-        metadata: metadata53,
-        slug,
+        metadata: metadata57,
         path
       };
     }));
@@ -10914,57 +10221,56 @@ async function get2() {
     body: JSON.stringify(projects)
   };
 }
-var init_projects_json_5153e243 = __esm({
-  ".svelte-kit/output/server/chunks/projects.json-5153e243.js"() {
+var init_projects_json_8acfcd9d = __esm({
+  ".svelte-kit/output/server/chunks/projects.json-8acfcd9d.js"() {
     init_shims();
   }
 });
 
-// .svelte-kit/output/server/chunks/layout-f08d1a0d.js
-var layout_f08d1a0d_exports = {};
-__export(layout_f08d1a0d_exports, {
-  default: () => Layout3
-});
-var import_bowser23, Layout3;
-var init_layout_f08d1a0d = __esm({
-  ".svelte-kit/output/server/chunks/layout-f08d1a0d.js"() {
+// .svelte-kit/output/server/chunks/_layout-35c20447.js
+var css6, Layout3;
+var init_layout_35c20447 = __esm({
+  ".svelte-kit/output/server/chunks/_layout-35c20447.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    init_global_130d3fe3();
-    import_bowser23 = __toModule(require_es5());
+    init_app_89d516be();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    css6 = {
+      code: ".flex.svelte-vv7sge{display:flex;justify-content:space-between;place-items:center;padding-top:2rem;margin-top:0}.misc.svelte-vv7sge{display:flex;flex-direction:column;justify-content:flex-start}.media.svelte-vv7sge{padding:2rem;background:var(--semitransparent-bg);text-transform:uppercase;font-size:2.5rem;font-weight:200;font-family:var(--font-serif);border-radius:50%;transition:border-radius 500ms ease}.media.svelte-vv7sge:hover{border-radius:0}@media screen and (max-width: 1068px){.media.svelte-vv7sge{font-size:2rem;padding:1rem 4rem}}@media screen and (max-width: 568px){.flex.svelte-vv7sge{display:flex;flex-direction:column;place-items:unset;padding-top:1rem}.misc.svelte-vv7sge{margin-bottom:2rem}.media.svelte-vv7sge{font-size:1.5rem;padding:1rem 2rem;margin-top:0;text-align:right;align-self:flex-end}}",
+      map: null
+    };
     Layout3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { title: title5 } = $$props;
-      let { description: description5 } = $$props;
+      let { organization } = $$props;
       let { media_url } = $$props;
       let { date: date2 } = $$props;
-      let image = `https://og-image-eight-eta.vercel.app/${title5}.png?subtitle=${description5}&theme=light&md=true&hasImage=true`;
-      set_store_value(seo, $seo = { title: title5, description: description5, image }, $seo);
+      let image = `https://og-image-eight-eta.vercel.app/${title5}.png?subtitle=${organization}, ${date2}&theme=light&md=true&hasImage=true`;
       let element, intersecting;
       if ($$props.title === void 0 && $$bindings.title && title5 !== void 0)
         $$bindings.title(title5);
-      if ($$props.description === void 0 && $$bindings.description && description5 !== void 0)
-        $$bindings.description(description5);
+      if ($$props.organization === void 0 && $$bindings.organization && organization !== void 0)
+        $$bindings.organization(organization);
       if ($$props.media_url === void 0 && $$bindings.media_url && media_url !== void 0)
         $$bindings.media_url(media_url);
       if ($$props.date === void 0 && $$bindings.date && date2 !== void 0)
         $$bindings.date(date2);
+      $$result.css.add(css6);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
-        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words" }, {}, {})}
+        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words", stagger: 0.07 }, {}, {})}
+${validate_component(Seo, "Seo").$$render($$result, {
+          title: `${title5} | Connor Rothschild`,
+          description: `${organization}, ${date2}`,
+          image
+        }, {}, {})}
 ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
           title: title5,
           subtitle: dateFormat(date2),
-          intersecting,
-          rootMargin: "-60px"
+          intersecting
         }, {}, {})}
 <main>${validate_component(IntersectionObserver_1, "IntersectionObserver").$$render($$result, {
           element,
@@ -10979,14 +10285,15 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
           default: () => `<div class="${"top-level"}"${add_attribute("this", element, 0)}>${validate_component(BackTo, "BackTo").$$render($$result, {
             href: "/award",
             text: "Awards",
-            classes: "page-overline transition-subtitle"
+            classes: "page-overline transition-content"
           }, {}, {})}
 
-      <h1 class="${"content-title uppercase transition-title overflow-hidden"}">${escape(title5)}</h1></div>`
+      <h1 class="${"content-title uppercase transition-title"}" style="${"margin-bottom: 1rem;"}"><!-- HTML_TAG_START -->${title5}<!-- HTML_TAG_END --></h1>
+      <h2 class="${"content-description overflow-hidden flex svelte-vv7sge"}"><div class="${"misc transition-subtitle  svelte-vv7sge"}"><span style="${"display: block; font-weight: 600; margin-bottom: .25rem;"}">${escape(organization)}</span>
+          <span style="${"display: block; font-weight: 300; text-transform: uppercase; font-size: 1.05rem;"}">${escape(dateFormat(date2))}</span></div>
+        <a${add_attribute("href", media_url, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}" class="${"media transition-subtitle svelte-vv7sge"}">See media \u2192</a></h2></div>`
         })}
   <div class="${"content main-content transition-content"}">${slots.default ? slots.default({}) : ``}
-
-    <p class="${"media-link"}"><a${add_attribute("href", media_url, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}">See media here.</a></p>
     ${validate_component(BackTo, "BackTo").$$render($$result, {
           href: "/award",
           text: "Back to all awards",
@@ -10994,34 +10301,32 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
         }, {}, {})}</div>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/bipp-2018-2f226335.js
-var bipp_2018_2f226335_exports = {};
-__export(bipp_2018_2f226335_exports, {
+// .svelte-kit/output/server/chunks/bipp-2018-c080feec.js
+var bipp_2018_c080feec_exports = {};
+__export(bipp_2018_c080feec_exports, {
   default: () => Bipp_2018,
   metadata: () => metadata19
 });
-var import_bowser24, metadata19, Bipp_2018;
-var init_bipp_2018_2f226335 = __esm({
-  ".svelte-kit/output/server/chunks/bipp-2018-2f226335.js"() {
+var metadata19, Bipp_2018;
+var init_bipp_2018_c080feec = __esm({
+  ".svelte-kit/output/server/chunks/bipp-2018-c080feec.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser24 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata19 = {
       "title": "1st Place, BIPP Competition",
       "place": "1st Place",
+      "place_code": "gold",
       "award": "BIPP Competition",
       "organization": "The Baker Institute for Public Policy",
       "date": "2018-04-15",
@@ -11038,28 +10343,27 @@ var init_bipp_2018_2f226335 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/chrp-2020-7675f653.js
-var chrp_2020_7675f653_exports = {};
-__export(chrp_2020_7675f653_exports, {
+// .svelte-kit/output/server/chunks/chrp-2020-f189a67d.js
+var chrp_2020_f189a67d_exports = {};
+__export(chrp_2020_f189a67d_exports, {
   default: () => Chrp_2020,
   metadata: () => metadata20
 });
-var import_bowser25, metadata20, Chrp_2020;
-var init_chrp_2020_7675f653 = __esm({
-  ".svelte-kit/output/server/chunks/chrp-2020-7675f653.js"() {
+var metadata20, Chrp_2020;
+var init_chrp_2020_f189a67d = __esm({
+  ".svelte-kit/output/server/chunks/chrp-2020-f189a67d.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser25 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata20 = {
       "title": "1st Place, Coronavirus Houston Response Projects",
       "place": "1st Place",
+      "place_code": "gold",
       "award": "Coronavirus Houston Response Projects",
       "organization": "Data To Knowledge Lab",
       "date": "2020-04-15",
@@ -11075,28 +10379,27 @@ var init_chrp_2020_7675f653 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/d2k-showcase-2020-6103b3a1.js
-var d2k_showcase_2020_6103b3a1_exports = {};
-__export(d2k_showcase_2020_6103b3a1_exports, {
+// .svelte-kit/output/server/chunks/d2k-showcase-2020-3b3c4038.js
+var d2k_showcase_2020_3b3c4038_exports = {};
+__export(d2k_showcase_2020_3b3c4038_exports, {
   default: () => D2k_showcase_2020,
   metadata: () => metadata21
 });
-var import_bowser26, metadata21, D2k_showcase_2020;
-var init_d2k_showcase_2020_6103b3a1 = __esm({
-  ".svelte-kit/output/server/chunks/d2k-showcase-2020-6103b3a1.js"() {
+var metadata21, D2k_showcase_2020;
+var init_d2k_showcase_2020_3b3c4038 = __esm({
+  ".svelte-kit/output/server/chunks/d2k-showcase-2020-3b3c4038.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser26 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata21 = {
       "title": "2nd Place, 2020 D2K Showcase",
       "place": "2nd Place",
+      "place_code": "silver",
       "award": "2020 D2K Showcase",
       "organization": "Data to Knowledge Lab",
       "date": "2020-12-09",
@@ -11112,28 +10415,27 @@ var init_d2k_showcase_2020_6103b3a1 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/datathon-2020-417f5796.js
-var datathon_2020_417f5796_exports = {};
-__export(datathon_2020_417f5796_exports, {
+// .svelte-kit/output/server/chunks/datathon-2020-e3d2886a.js
+var datathon_2020_e3d2886a_exports = {};
+__export(datathon_2020_e3d2886a_exports, {
   default: () => Datathon_2020,
   metadata: () => metadata22
 });
-var import_bowser27, metadata22, Datathon_2020;
-var init_datathon_2020_417f5796 = __esm({
-  ".svelte-kit/output/server/chunks/datathon-2020-417f5796.js"() {
+var metadata22, Datathon_2020;
+var init_datathon_2020_e3d2886a = __esm({
+  ".svelte-kit/output/server/chunks/datathon-2020-e3d2886a.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser27 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata22 = {
       "title": "1st Place (Houston Track), 2020 Rice Datathon",
       "place": "1st Place (Houston Track)",
+      "place_code": "gold",
       "award": "2020 Rice Datathon",
       "organization": "Rice DataSci Club",
       "date": "2020-01-09",
@@ -11149,28 +10451,27 @@ var init_datathon_2020_417f5796 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/hpc-2018-3b361fa0.js
-var hpc_2018_3b361fa0_exports = {};
-__export(hpc_2018_3b361fa0_exports, {
+// .svelte-kit/output/server/chunks/hpc-2018-46236bea.js
+var hpc_2018_46236bea_exports = {};
+__export(hpc_2018_46236bea_exports, {
   default: () => Hpc_2018,
   metadata: () => metadata23
 });
-var import_bowser28, metadata23, Hpc_2018;
-var init_hpc_2018_3b361fa0 = __esm({
-  ".svelte-kit/output/server/chunks/hpc-2018-3b361fa0.js"() {
+var metadata23, Hpc_2018;
+var init_hpc_2018_46236bea = __esm({
+  ".svelte-kit/output/server/chunks/hpc-2018-46236bea.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser28 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata23 = {
       "title": "1st Place, 2018 Houston Policy Challenge",
       "place": "1st Place",
+      "place_code": "gold",
       "award": "2018 Houston Policy Challenge",
       "organization": "Rice University",
       "date": "2018-02-04",
@@ -11187,28 +10488,27 @@ var init_hpc_2018_3b361fa0 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/hpc-2019-ea0c7b04.js
-var hpc_2019_ea0c7b04_exports = {};
-__export(hpc_2019_ea0c7b04_exports, {
+// .svelte-kit/output/server/chunks/hpc-2019-80ad0609.js
+var hpc_2019_80ad0609_exports = {};
+__export(hpc_2019_80ad0609_exports, {
   default: () => Hpc_2019,
   metadata: () => metadata24
 });
-var import_bowser29, metadata24, Hpc_2019;
-var init_hpc_2019_ea0c7b04 = __esm({
-  ".svelte-kit/output/server/chunks/hpc-2019-ea0c7b04.js"() {
+var metadata24, Hpc_2019;
+var init_hpc_2019_80ad0609 = __esm({
+  ".svelte-kit/output/server/chunks/hpc-2019-80ad0609.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser29 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata24 = {
       "title": "2nd Place, 2019 Houston Policy Challenge",
       "place": "2nd Place",
+      "place_code": "silver",
       "award": "2019 Houston Policy Challenge",
       "organization": "Rice University",
       "date": "2019-02-04",
@@ -11224,28 +10524,27 @@ var init_hpc_2019_ea0c7b04 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/hpc-2020-8d2ea241.js
-var hpc_2020_8d2ea241_exports = {};
-__export(hpc_2020_8d2ea241_exports, {
+// .svelte-kit/output/server/chunks/hpc-2020-8d547883.js
+var hpc_2020_8d547883_exports = {};
+__export(hpc_2020_8d547883_exports, {
   default: () => Hpc_2020,
   metadata: () => metadata25
 });
-var import_bowser30, metadata25, Hpc_2020;
-var init_hpc_2020_8d2ea241 = __esm({
-  ".svelte-kit/output/server/chunks/hpc-2020-8d2ea241.js"() {
+var metadata25, Hpc_2020;
+var init_hpc_2020_8d547883 = __esm({
+  ".svelte-kit/output/server/chunks/hpc-2020-8d547883.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser30 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata25 = {
       "title": "1st Place, 2020 Houston Policy Challenge",
       "place": "1st Place",
+      "place_code": "gold",
       "award": "2020 Houston Policy Challenge",
       "organization": "Rice University",
       "date": "2020-03-09",
@@ -11261,28 +10560,27 @@ var init_hpc_2020_8d2ea241 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/hudspeth-2020-05fcf5b9.js
-var hudspeth_2020_05fcf5b9_exports = {};
-__export(hudspeth_2020_05fcf5b9_exports, {
+// .svelte-kit/output/server/chunks/hudspeth-2020-16a4895c.js
+var hudspeth_2020_16a4895c_exports = {};
+__export(hudspeth_2020_16a4895c_exports, {
   default: () => Hudspeth_2020,
   metadata: () => metadata26
 });
-var import_bowser31, metadata26, Hudspeth_2020;
-var init_hudspeth_2020_05fcf5b9 = __esm({
-  ".svelte-kit/output/server/chunks/hudspeth-2020-05fcf5b9.js"() {
+var metadata26, Hudspeth_2020;
+var init_hudspeth_2020_16a4895c = __esm({
+  ".svelte-kit/output/server/chunks/hudspeth-2020-16a4895c.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser31 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata26 = {
       "title": "Hudspeth Award",
       "place": "Winner",
+      "place_code": "gold",
       "award": "Hudspeth Award",
       "organization": "Rice Political Science Department",
       "date": "2020-05-19",
@@ -11298,28 +10596,27 @@ var init_hudspeth_2020_05fcf5b9 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/malofiej-2020-fa078526.js
-var malofiej_2020_fa078526_exports = {};
-__export(malofiej_2020_fa078526_exports, {
+// .svelte-kit/output/server/chunks/malofiej-2020-f6b8429e.js
+var malofiej_2020_f6b8429e_exports = {};
+__export(malofiej_2020_f6b8429e_exports, {
   default: () => Malofiej_2020,
   metadata: () => metadata27
 });
-var import_bowser32, metadata27, Malofiej_2020;
-var init_malofiej_2020_fa078526 = __esm({
-  ".svelte-kit/output/server/chunks/malofiej-2020-fa078526.js"() {
+var metadata27, Malofiej_2020;
+var init_malofiej_2020_f6b8429e = __esm({
+  ".svelte-kit/output/server/chunks/malofiej-2020-f6b8429e.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser32 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata27 = {
       "title": "Bronze, 2020 Malofiej Awards",
       "place": "Bronze",
+      "place_code": "bronze",
       "award": "2020 Malofiej Awards",
       "organization": "Malofiej",
       "date": "2020-08-07",
@@ -11335,28 +10632,27 @@ var init_malofiej_2020_fa078526 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/malofiej-2021-adbb9a9b.js
-var malofiej_2021_adbb9a9b_exports = {};
-__export(malofiej_2021_adbb9a9b_exports, {
+// .svelte-kit/output/server/chunks/malofiej-2021-6ae90f6e.js
+var malofiej_2021_6ae90f6e_exports = {};
+__export(malofiej_2021_6ae90f6e_exports, {
   default: () => Malofiej_2021,
   metadata: () => metadata28
 });
-var import_bowser33, metadata28, Malofiej_2021;
-var init_malofiej_2021_adbb9a9b = __esm({
-  ".svelte-kit/output/server/chunks/malofiej-2021-adbb9a9b.js"() {
+var metadata28, Malofiej_2021;
+var init_malofiej_2021_6ae90f6e = __esm({
+  ".svelte-kit/output/server/chunks/malofiej-2021-6ae90f6e.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser33 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata28 = {
       "title": "Bronze, 2021 Malofiej Awards",
       "place": "Bronze",
+      "place_code": "bronze",
       "award": "2021 Malofiej Awards",
       "organization": "Malofiej",
       "date": "2021-06-18",
@@ -11372,28 +10668,27 @@ var init_malofiej_2021_adbb9a9b = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/nationals-2017-ef86cfd7.js
-var nationals_2017_ef86cfd7_exports = {};
-__export(nationals_2017_ef86cfd7_exports, {
+// .svelte-kit/output/server/chunks/nationals-2017-649788f2.js
+var nationals_2017_649788f2_exports = {};
+__export(nationals_2017_649788f2_exports, {
   default: () => Nationals_2017,
   metadata: () => metadata29
 });
-var import_bowser34, metadata29, Nationals_2017;
-var init_nationals_2017_ef86cfd7 = __esm({
-  ".svelte-kit/output/server/chunks/nationals-2017-ef86cfd7.js"() {
+var metadata29, Nationals_2017;
+var init_nationals_2017_649788f2 = __esm({
+  ".svelte-kit/output/server/chunks/nationals-2017-649788f2.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser34 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata29 = {
       "title": "National Champion, IX Speaking",
       "place": "International Extemporaneous Speaking",
+      "place_code": "gold",
       "award": "National Champion",
       "organization": "National Speech and Debate Association",
       "date": "2017-07-15",
@@ -11410,28 +10705,27 @@ var init_nationals_2017_ef86cfd7 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/northeastern-2020-6cc1f185.js
-var northeastern_2020_6cc1f185_exports = {};
-__export(northeastern_2020_6cc1f185_exports, {
+// .svelte-kit/output/server/chunks/northeastern-2020-23db5f27.js
+var northeastern_2020_23db5f27_exports = {};
+__export(northeastern_2020_23db5f27_exports, {
   default: () => Northeastern_2020,
   metadata: () => metadata30
 });
-var import_bowser35, metadata30, Northeastern_2020;
-var init_northeastern_2020_6cc1f185 = __esm({
-  ".svelte-kit/output/server/chunks/northeastern-2020-6cc1f185.js"() {
+var metadata30, Northeastern_2020;
+var init_northeastern_2020_23db5f27 = __esm({
+  ".svelte-kit/output/server/chunks/northeastern-2020-23db5f27.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser35 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata30 = {
       "title": "Student Winner, Computation + Journalism 2020 Conference",
       "place": "Student Winner",
+      "place_code": "gold",
       "award": "Computation + Journalism 2020 Conference",
       "organization": "Northeastern University",
       "date": "2020-01-07",
@@ -11447,28 +10741,27 @@ var init_northeastern_2020_6cc1f185 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/pudding-cup-2020-f7625164.js
-var pudding_cup_2020_f7625164_exports = {};
-__export(pudding_cup_2020_f7625164_exports, {
+// .svelte-kit/output/server/chunks/pudding-cup-2020-62e7907e.js
+var pudding_cup_2020_62e7907e_exports = {};
+__export(pudding_cup_2020_62e7907e_exports, {
   default: () => Pudding_cup_2020,
   metadata: () => metadata31
 });
-var import_bowser36, metadata31, Pudding_cup_2020;
-var init_pudding_cup_2020_f7625164 = __esm({
-  ".svelte-kit/output/server/chunks/pudding-cup-2020-f7625164.js"() {
+var metadata31, Pudding_cup_2020;
+var init_pudding_cup_2020_62e7907e = __esm({
+  ".svelte-kit/output/server/chunks/pudding-cup-2020-62e7907e.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser36 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata31 = {
       "title": "Winner, The 2020 Pudding Cup",
       "place": "Winner",
+      "place_code": "gold",
       "award": "The 2020 Pudding Cup",
       "organization": "The Pudding",
       "featured": true,
@@ -11484,28 +10777,27 @@ var init_pudding_cup_2020_f7625164 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/rstudio-table-contest-2021-1dd07ccb.js
-var rstudio_table_contest_2021_1dd07ccb_exports = {};
-__export(rstudio_table_contest_2021_1dd07ccb_exports, {
+// .svelte-kit/output/server/chunks/rstudio-table-contest-2021-11773f41.js
+var rstudio_table_contest_2021_11773f41_exports = {};
+__export(rstudio_table_contest_2021_11773f41_exports, {
   default: () => Rstudio_table_contest_2021,
   metadata: () => metadata32
 });
-var import_bowser37, metadata32, Rstudio_table_contest_2021;
-var init_rstudio_table_contest_2021_1dd07ccb = __esm({
-  ".svelte-kit/output/server/chunks/rstudio-table-contest-2021-1dd07ccb.js"() {
+var metadata32, Rstudio_table_contest_2021;
+var init_rstudio_table_contest_2021_11773f41 = __esm({
+  ".svelte-kit/output/server/chunks/rstudio-table-contest-2021-11773f41.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser37 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata32 = {
       "title": "Honorable Mention, RStudio Table Contest",
       "place": "Honorable Mention",
+      "place_code": "bronze",
       "award": "RStudio Table Contest",
       "organization": "RStudio, Inc.",
       "date": "2021-01-06",
@@ -11521,28 +10813,27 @@ var init_rstudio_table_contest_2021_1dd07ccb = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/snd-2021-b57846b6.js
-var snd_2021_b57846b6_exports = {};
-__export(snd_2021_b57846b6_exports, {
+// .svelte-kit/output/server/chunks/snd-2021-9e5cb3e9.js
+var snd_2021_9e5cb3e9_exports = {};
+__export(snd_2021_9e5cb3e9_exports, {
   default: () => Snd_2021,
   metadata: () => metadata33
 });
-var import_bowser38, metadata33, Snd_2021;
-var init_snd_2021_b57846b6 = __esm({
-  ".svelte-kit/output/server/chunks/snd-2021-b57846b6.js"() {
+var metadata33, Snd_2021;
+var init_snd_2021_9e5cb3e9 = __esm({
+  ".svelte-kit/output/server/chunks/snd-2021-9e5cb3e9.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_f08d1a0d();
-    init_CornerTitle_6f993505();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser38 = __toModule(require_es5());
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_35c20447();
+    init_CornerTitle_433952fc();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata33 = {
       "title": "1st Place, 2021 Student Design Contest",
       "place": "1st Place",
+      "place_code": "gold",
       "award": "2021 Student Design Contest",
       "organization": "Society for News Design",
       "date": "2021-05-10",
@@ -11559,18 +10850,18 @@ var init_snd_2021_b57846b6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/awards.json-2a867850.js
-var awards_json_2a867850_exports = {};
-__export(awards_json_2a867850_exports, {
+// .svelte-kit/output/server/chunks/awards.json-5d79fe43.js
+var awards_json_5d79fe43_exports = {};
+__export(awards_json_5d79fe43_exports, {
   get: () => get3
 });
 async function get3() {
-  const imports = { "./award/bipp-2018.md": () => Promise.resolve().then(() => (init_bipp_2018_2f226335(), bipp_2018_2f226335_exports)), "./award/chrp-2020.md": () => Promise.resolve().then(() => (init_chrp_2020_7675f653(), chrp_2020_7675f653_exports)), "./award/d2k-showcase-2020.md": () => Promise.resolve().then(() => (init_d2k_showcase_2020_6103b3a1(), d2k_showcase_2020_6103b3a1_exports)), "./award/datathon-2020.md": () => Promise.resolve().then(() => (init_datathon_2020_417f5796(), datathon_2020_417f5796_exports)), "./award/hpc-2018.md": () => Promise.resolve().then(() => (init_hpc_2018_3b361fa0(), hpc_2018_3b361fa0_exports)), "./award/hpc-2019.md": () => Promise.resolve().then(() => (init_hpc_2019_ea0c7b04(), hpc_2019_ea0c7b04_exports)), "./award/hpc-2020.md": () => Promise.resolve().then(() => (init_hpc_2020_8d2ea241(), hpc_2020_8d2ea241_exports)), "./award/hudspeth-2020.md": () => Promise.resolve().then(() => (init_hudspeth_2020_05fcf5b9(), hudspeth_2020_05fcf5b9_exports)), "./award/malofiej-2020.md": () => Promise.resolve().then(() => (init_malofiej_2020_fa078526(), malofiej_2020_fa078526_exports)), "./award/malofiej-2021.md": () => Promise.resolve().then(() => (init_malofiej_2021_adbb9a9b(), malofiej_2021_adbb9a9b_exports)), "./award/nationals-2017.md": () => Promise.resolve().then(() => (init_nationals_2017_ef86cfd7(), nationals_2017_ef86cfd7_exports)), "./award/northeastern-2020.md": () => Promise.resolve().then(() => (init_northeastern_2020_6cc1f185(), northeastern_2020_6cc1f185_exports)), "./award/pudding-cup-2020.md": () => Promise.resolve().then(() => (init_pudding_cup_2020_f7625164(), pudding_cup_2020_f7625164_exports)), "./award/rstudio-table-contest-2021.md": () => Promise.resolve().then(() => (init_rstudio_table_contest_2021_1dd07ccb(), rstudio_table_contest_2021_1dd07ccb_exports)), "./award/snd-2021.md": () => Promise.resolve().then(() => (init_snd_2021_b57846b6(), snd_2021_b57846b6_exports)) };
+  const imports = { "./award/bipp-2018.md": () => Promise.resolve().then(() => (init_bipp_2018_c080feec(), bipp_2018_c080feec_exports)), "./award/chrp-2020.md": () => Promise.resolve().then(() => (init_chrp_2020_f189a67d(), chrp_2020_f189a67d_exports)), "./award/d2k-showcase-2020.md": () => Promise.resolve().then(() => (init_d2k_showcase_2020_3b3c4038(), d2k_showcase_2020_3b3c4038_exports)), "./award/datathon-2020.md": () => Promise.resolve().then(() => (init_datathon_2020_e3d2886a(), datathon_2020_e3d2886a_exports)), "./award/hpc-2018.md": () => Promise.resolve().then(() => (init_hpc_2018_46236bea(), hpc_2018_46236bea_exports)), "./award/hpc-2019.md": () => Promise.resolve().then(() => (init_hpc_2019_80ad0609(), hpc_2019_80ad0609_exports)), "./award/hpc-2020.md": () => Promise.resolve().then(() => (init_hpc_2020_8d547883(), hpc_2020_8d547883_exports)), "./award/hudspeth-2020.md": () => Promise.resolve().then(() => (init_hudspeth_2020_16a4895c(), hudspeth_2020_16a4895c_exports)), "./award/malofiej-2020.md": () => Promise.resolve().then(() => (init_malofiej_2020_f6b8429e(), malofiej_2020_f6b8429e_exports)), "./award/malofiej-2021.md": () => Promise.resolve().then(() => (init_malofiej_2021_6ae90f6e(), malofiej_2021_6ae90f6e_exports)), "./award/nationals-2017.md": () => Promise.resolve().then(() => (init_nationals_2017_649788f2(), nationals_2017_649788f2_exports)), "./award/northeastern-2020.md": () => Promise.resolve().then(() => (init_northeastern_2020_23db5f27(), northeastern_2020_23db5f27_exports)), "./award/pudding-cup-2020.md": () => Promise.resolve().then(() => (init_pudding_cup_2020_62e7907e(), pudding_cup_2020_62e7907e_exports)), "./award/rstudio-table-contest-2021.md": () => Promise.resolve().then(() => (init_rstudio_table_contest_2021_11773f41(), rstudio_table_contest_2021_11773f41_exports)), "./award/snd-2021.md": () => Promise.resolve().then(() => (init_snd_2021_9e5cb3e9(), snd_2021_9e5cb3e9_exports)) };
   let body = [];
   for (const path in imports) {
-    body.push(imports[path]().then(({ metadata: metadata53 }) => {
+    body.push(imports[path]().then(({ metadata: metadata57 }) => {
       return {
-        metadata: metadata53,
+        metadata: metadata57,
         path
       };
     }));
@@ -11580,42 +10871,32 @@ async function get3() {
     body: JSON.stringify(awards)
   };
 }
-var init_awards_json_2a867850 = __esm({
-  ".svelte-kit/output/server/chunks/awards.json-2a867850.js"() {
+var init_awards_json_5d79fe43 = __esm({
+  ".svelte-kit/output/server/chunks/awards.json-5d79fe43.js"() {
     init_shims();
   }
 });
 
-// .svelte-kit/output/server/chunks/layout-ef610ed1.js
-var layout_ef610ed1_exports = {};
-__export(layout_ef610ed1_exports, {
-  default: () => Layout4
-});
-var import_bowser39, css5, Layout4;
-var init_layout_ef610ed1 = __esm({
-  ".svelte-kit/output/server/chunks/layout-ef610ed1.js"() {
+// .svelte-kit/output/server/chunks/_layout-6edf1f79.js
+var css7, Layout4;
+var init_layout_6edf1f79 = __esm({
+  ".svelte-kit/output/server/chunks/_layout-6edf1f79.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_BackTo_d882ed88();
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    init_global_130d3fe3();
-    import_bowser39 = __toModule(require_es5());
-    css5 = {
-      code: ".content-flex.svelte-9q9w3b.svelte-9q9w3b{display:flex;place-items:center}.content-flex.svelte-9q9w3b .description.svelte-9q9w3b{flex:2}.content-flex.svelte-9q9w3b .misc.svelte-9q9w3b{flex:1}.date.svelte-9q9w3b.svelte-9q9w3b,.tags.svelte-9q9w3b.svelte-9q9w3b{text-transform:uppercase;color:var(--text-color)}.date.svelte-9q9w3b.svelte-9q9w3b{font-family:var(--font-serif);font-weight:200;font-size:1.5rem}.tags.svelte-9q9w3b.svelte-9q9w3b{display:flex;flex-wrap:wrap;justify-content:center;margin-top:1rem}.tag.svelte-9q9w3b.svelte-9q9w3b{font-size:0.9rem;margin:0.5rem 0 0 0.5rem;background:rgba(var(--accent-color-rgb), 0.2);padding:0.45rem 0.55rem;border-radius:2px;letter-spacing:0.05rem}@media screen and (max-width: 768px){.content-flex.svelte-9q9w3b.svelte-9q9w3b{flex-direction:column}.content-flex.svelte-9q9w3b .description.svelte-9q9w3b{margin-bottom:2rem}.content-flex.svelte-9q9w3b .misc.svelte-9q9w3b{display:flex;flex-direction:row;place-items:center;justify-content:space-between}.tags.svelte-9q9w3b.svelte-9q9w3b,.tag.svelte-9q9w3b.svelte-9q9w3b{margin-top:0}}@media screen and (max-width: 468px){.content-flex.svelte-9q9w3b .description.svelte-9q9w3b{margin-bottom:1rem}.content-flex.svelte-9q9w3b .misc.svelte-9q9w3b{flex-direction:column-reverse}.date.svelte-9q9w3b.svelte-9q9w3b{font-size:1rem}.tags.svelte-9q9w3b.svelte-9q9w3b{margin-bottom:1rem}.tag.svelte-9q9w3b.svelte-9q9w3b{font-size:0.7rem}}",
+    init_app_89d516be();
+    init_BackTo_db5abc2d();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    css7 = {
+      code: ".content-flex.svelte-1j3rz7r.svelte-1j3rz7r{display:flex;place-items:center}.content-flex.svelte-1j3rz7r .description.svelte-1j3rz7r{flex:2}.content-flex.svelte-1j3rz7r .misc.svelte-1j3rz7r{flex:1}.date.svelte-1j3rz7r.svelte-1j3rz7r,.tags.svelte-1j3rz7r.svelte-1j3rz7r{text-transform:uppercase;color:var(--text-color)}.date.svelte-1j3rz7r.svelte-1j3rz7r{font-family:var(--font-serif);font-weight:200;font-size:1.5rem}.tags.svelte-1j3rz7r.svelte-1j3rz7r{display:flex;flex-wrap:wrap;justify-content:center;margin-top:1rem}.tag.svelte-1j3rz7r.svelte-1j3rz7r{font-size:0.9rem;margin:0.5rem 0 0 0.5rem;background:rgba(var(--accent-color-rgb), 0.2);padding:0.45rem 0.55rem;border-radius:2px;letter-spacing:0.05rem;font-family:var(--font-serif)}@media screen and (max-width: 768px){.content-flex.svelte-1j3rz7r.svelte-1j3rz7r{flex-direction:column}.content-flex.svelte-1j3rz7r .description.svelte-1j3rz7r{margin-bottom:2rem}.content-flex.svelte-1j3rz7r .misc.svelte-1j3rz7r{display:flex;flex-direction:row;place-items:center;justify-content:space-between;width:95%}.tags.svelte-1j3rz7r.svelte-1j3rz7r,.tag.svelte-1j3rz7r.svelte-1j3rz7r{margin-top:0}}@media screen and (max-width: 468px){.content-flex.svelte-1j3rz7r .description.svelte-1j3rz7r{margin-bottom:0.75rem;font-size:1.35rem}.content-flex.svelte-1j3rz7r .misc.svelte-1j3rz7r{flex-direction:column-reverse;align-items:flex-end;width:100%;margin-top:1rem}.date.svelte-1j3rz7r.svelte-1j3rz7r{font-size:1.45rem}.tags.svelte-1j3rz7r.svelte-1j3rz7r{margin-bottom:1rem}.tag.svelte-1j3rz7r.svelte-1j3rz7r{font-size:1rem}}",
       map: null
     };
     Layout4 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { title: title5 } = $$props;
       let { description: description5 } = $$props;
       let { date: date2 } = $$props;
       let { tags } = $$props;
       let image = `https://og-image-eight-eta.vercel.app/${title5}.png?subtitle=${description5}&theme=light&md=true&hasImage=true`;
-      set_store_value(seo, $seo = { title: title5, description: description5, image }, $seo);
       let element, intersecting;
       if ($$props.title === void 0 && $$bindings.title && title5 !== void 0)
         $$bindings.title(title5);
@@ -11625,12 +10906,17 @@ var init_layout_ef610ed1 = __esm({
         $$bindings.date(date2);
       if ($$props.tags === void 0 && $$bindings.tags && tags !== void 0)
         $$bindings.tags(tags);
-      $$result.css.add(css5);
+      $$result.css.add(css7);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
-        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words" }, {}, {})}
+        $$rendered = `${validate_component(Transition, "Transition").$$render($$result, { split: "words", stagger: 0.07 }, {}, {})}
+${validate_component(Seo, "Seo").$$render($$result, {
+          title: `${title5} | Connor Rothschild`,
+          description: description5,
+          image
+        }, {}, {})}
 ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
           title: title5,
           subtitle: dateFormat(date2),
@@ -11649,12 +10935,12 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
           default: () => `<div class="${"top-level"}"${add_attribute("this", element, 0)}>${validate_component(BackTo, "BackTo").$$render($$result, {
             href: "/post",
             text: "Blog",
-            classes: "page-overline transition-subtitle"
+            classes: "page-overline transition-content"
           }, {}, {})}
-      <h1 class="${"content-title uppercase transition-title overflow-hidden"}">${escape(title5)}</h1>
-      <div class="${"content-flex svelte-9q9w3b"}"><h2 class="${"description transition-content content-description overflow-hidden svelte-9q9w3b"}">${escape(description5)}</h2>
-        <div class="${"misc transition-content content-description overflow-hidden svelte-9q9w3b"}"><h2 class="${"date svelte-9q9w3b"}">${escape(dateFormat(date2))}</h2>
-          <div class="${"tags svelte-9q9w3b"}">${each(tags, (tag) => `<span class="${"tag svelte-9q9w3b"}">${escape(tag)}</span>`)}</div></div></div></div>`
+      <h1 class="${"content-title smaller uppercase transition-title"}"><!-- HTML_TAG_START -->${title5}<!-- HTML_TAG_END --></h1>
+      <div class="${"content-flex transition-content content-description svelte-1j3rz7r"}"><h2 class="${"description overflow-hidden svelte-1j3rz7r"}"><!-- HTML_TAG_START -->${description5}<!-- HTML_TAG_END --></h2>
+        <div class="${"misc overflow-hidden svelte-1j3rz7r"}"><h2 class="${"date svelte-1j3rz7r"}">${escape(dateFormat(date2))}</h2>
+          <div class="${"tags svelte-1j3rz7r"}">${tags ? `${each(tags, (tag) => `<span class="${"tag svelte-1j3rz7r"}">${escape(tag)}</span>`)}` : ``}</div></div></div></div>`
         })}
   <div class="${"main-content transition-content"}"><div class="${"content"}">${slots.default ? slots.default({}) : ``}
       ${validate_component(BackTo, "BackTo").$$render($$result, {
@@ -11664,7 +10950,6 @@ ${validate_component(CornerTitle, "CornerTitle").$$render($$result, {
         }, {}, {})}</div></div>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
@@ -13634,12 +12919,12 @@ var init_prism_yaml = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Code-71f36c68.js
-var import_prismjs, import_prism_normalize_whitespace, blocks, css6, Code;
-var init_Code_71f36c68 = __esm({
-  ".svelte-kit/output/server/chunks/Code-71f36c68.js"() {
+// .svelte-kit/output/server/chunks/Code-bcfeb83b.js
+var import_prismjs, import_prism_normalize_whitespace, blocks, css8, Code;
+var init_Code_bcfeb83b = __esm({
+  ".svelte-kit/output/server/chunks/Code-bcfeb83b.js"() {
     init_shims();
-    init_app_9f378dda();
+    init_app_89d516be();
     import_prismjs = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace = __toModule(require_prism_normalize_whitespace());
@@ -13770,8 +13055,8 @@ var init_Code_71f36c68 = __esm({
     });
     Prism.languages.svelte.tag.addInlined("style", "css");
     Prism.languages.svelte.tag.addInlined("script", "javascript");
-    css6 = {
-      code: ".filename-container.svelte-qjxfwc{text-align:right;width:100%;height:30px;margin-bottom:-0.55em;border-radius:5px 5px 0 0;background:rgba(var(--accent-color-rgb), 0.9);display:flex;justify-content:flex-end;place-items:center}.filename.svelte-qjxfwc{color:white;padding:0.4rem;letter-spacing:1.4px;font-weight:400}.language.svelte-qjxfwc{position:absolute;top:0;right:0;color:#cecece;font-size:0.7rem;text-transform:uppercase;padding:3px 4px;background:rgba(1, 22, 39, 0.79);user-select:none}",
+    css8 = {
+      code: ".filename-container.svelte-lvx87{text-align:right;width:100%;height:30px;border-radius:5px 5px 0 0;background:rgba(var(--accent-color-rgb), 0.9);display:flex;justify-content:flex-end;place-items:center;position:absolute;top:0;right:0}.filename.svelte-lvx87{color:var(--primary-color);padding:0.4rem;font-weight:400}.language.svelte-lvx87{position:absolute;top:0;right:0;color:#cecece;font-size:0.7rem;text-transform:uppercase;padding:3px 4px;background:rgba(1, 22, 39, 0.79);user-select:none}.has-filename.svelte-lvx87{padding-top:calc(1rem + 30px) !important}",
       map: null
     };
     Code = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -13820,37 +13105,37 @@ var init_Code_71f36c68 = __esm({
         $$bindings.normalizeWhiteSpaceConfig(normalizeWhiteSpaceConfig);
       if ($$props.classes === void 0 && $$bindings.classes && classes !== void 0)
         $$bindings.classes(classes);
-      $$result.css.add(css6);
+      $$result.css.add(css8);
       prismClasses = `language-${language} ${showLineNumbers || highlightedLines.length > 0 ? "line-numbers" : ""} ${normalizeWhiteSpace === true ? "" : "no-whitespace-normalization"}`;
       {
         if (typeof Prism !== "undefined" && code) {
           formattedCode = Prism.highlight(code, Prism.languages["r"], language);
         }
       }
-      return `${filename.length > 0 ? `<div class="${"filename-container svelte-qjxfwc"}"><span class="${"filename svelte-qjxfwc"}">${escape(filename)}</span></div>` : ``}
-<code style="${"display: none;"}"${add_attribute("this", fakeCodeEl, 0)}>${slots.default ? slots.default({}) : ``}</code>
+      return `<code style="${"display: none;"}"${add_attribute("this", fakeCodeEl, 0)}>${slots.default ? slots.default({}) : ``}</code>
 <pre${spread([
         {
-          class: escape(prismClasses) + " " + escape(classes)
+          class: escape(prismClasses) + " " + escape(classes) + " " + escape(filename.length > 0 ? "has-filename" : "")
         },
         {
           "data-line": escape_attribute_value(highlightedLines)
         },
         escape_object($$restProps)
-      ], "svelte-qjxfwc")}${add_attribute("this", preEl, 0)}>${showLanguage && filename.length == 0 ? `<span class="${"language svelte-qjxfwc"}">${escape(language)}</span>` : ``}
-  <code class="${"language-" + escape(language) + " svelte-qjxfwc"}"><!-- HTML_TAG_START -->${formattedCode}<!-- HTML_TAG_END --></code>
+      ], "svelte-lvx87")}${add_attribute("this", preEl, 0)}>${filename.length > 0 ? `<div class="${"filename-container svelte-lvx87"}"><span class="${"filename svelte-lvx87"}">${escape(filename)}</span></div>` : ``}
+  ${showLanguage && filename.length == 0 ? `<span class="${"language svelte-lvx87"}">${escape(language)}</span>` : ``}
+  <code class="${"language-" + escape(language) + " svelte-lvx87"}"><!-- HTML_TAG_START -->${formattedCode}<!-- HTML_TAG_END --></code>
 </pre>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/HighlightFromProp-41fd8065.js
-var css7, HighlightFromProp;
-var init_HighlightFromProp_41fd8065 = __esm({
-  ".svelte-kit/output/server/chunks/HighlightFromProp-41fd8065.js"() {
+// .svelte-kit/output/server/chunks/HighlightFromProp-ac6880f6.js
+var css9, HighlightFromProp;
+var init_HighlightFromProp_ac6880f6 = __esm({
+  ".svelte-kit/output/server/chunks/HighlightFromProp-ac6880f6.js"() {
     init_shims();
-    init_app_9f378dda();
-    css7 = {
+    init_app_89d516be();
+    css9 = {
       code: "span.svelte-p78l24{background:rgba(var(--accent-color-rgb), 0.2);padding:1px 4px}",
       map: null
     };
@@ -13867,53 +13152,51 @@ var init_HighlightFromProp_41fd8065 = __esm({
         $$bindings.hoveredId(hoveredId);
       if ($$props.highlightedLines === void 0 && $$bindings.highlightedLines && highlightedLines !== void 0)
         $$bindings.highlightedLines(highlightedLines);
-      $$result.css.add(css7);
+      $$result.css.add(css9);
       return `<span class="${"svelte-p78l24"}">${slots.default ? slots.default({}) : ``}</span>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/Info-43a233e8.js
-var css8, Info;
-var init_Info_43a233e8 = __esm({
-  ".svelte-kit/output/server/chunks/Info-43a233e8.js"() {
+// .svelte-kit/output/server/chunks/Info-796ef0bb.js
+var css10, Info;
+var init_Info_796ef0bb = __esm({
+  ".svelte-kit/output/server/chunks/Info-796ef0bb.js"() {
     init_shims();
-    init_app_9f378dda();
-    css8 = {
+    init_app_89d516be();
+    css10 = {
       code: '.info.svelte-1oeu49g::before{content:"\u2757\uFE0F";font-size:1.5rem;margin-right:1rem}.info.svelte-1oeu49g{display:flex;place-items:center;border-radius:10px;font-weight:normal;background:var(--semitransparent-bg);box-shadow:2px 2px 5px 1px var(--box-shadow-color);padding:1rem;margin:1.75rem 0}.info .text p:not(:last-child){margin-bottom:1rem}.info .text p:last-child{margin-bottom:0}',
       map: null
     };
     Info = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css8);
+      $$result.css.add(css10);
       return `<div class="${"info svelte-1oeu49g"}"><div class="${"text"}"><p>${slots.default ? slots.default({}) : ``}</p></div>
 </div>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/adding-a-chart-to-your-d3-tooltip-67831f20.js
-var adding_a_chart_to_your_d3_tooltip_67831f20_exports = {};
-__export(adding_a_chart_to_your_d3_tooltip_67831f20_exports, {
+// .svelte-kit/output/server/chunks/adding-a-chart-to-your-d3-tooltip-47b265d1.js
+var adding_a_chart_to_your_d3_tooltip_47b265d1_exports = {};
+__export(adding_a_chart_to_your_d3_tooltip_47b265d1_exports, {
   default: () => Adding_a_chart_to_your_d3_tooltip,
   metadata: () => metadata34
 });
-var import_bowser40, import_prismjs2, import_prism_normalize_whitespace2, metadata34, Adding_a_chart_to_your_d3_tooltip;
-var init_adding_a_chart_to_your_d3_tooltip_67831f20 = __esm({
-  ".svelte-kit/output/server/chunks/adding-a-chart-to-your-d3-tooltip-67831f20.js"() {
+var import_prismjs2, import_prism_normalize_whitespace2, metadata34, Adding_a_chart_to_your_d3_tooltip;
+var init_adding_a_chart_to_your_d3_tooltip_47b265d1 = __esm({
+  ".svelte-kit/output/server/chunks/adding-a-chart-to-your-d3-tooltip-47b265d1.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_Code_71f36c68();
-    init_HighlightFromProp_41fd8065();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser40 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_Code_bcfeb83b();
+    init_HighlightFromProp_ac6880f6();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs2 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace2 = __toModule(require_prism_normalize_whitespace());
@@ -13945,12 +13228,12 @@ var init_adding_a_chart_to_your_d3_tooltip_67831f20 = __esm({
 <p>Of course, there\u2019s nothing <em>wrong</em> with these kinds of tooltips. But they are truly doing the bare minimum, and, as a result, they\u2019re missing out on the full potential of tooltips. <strong>If users are actively seeking more information by hovering over data, we ought to reward them with the most helpful and interesting information we can.</strong></p>
 <p>That\u2019s why I recently updated one of my tooltips from a static presentation of textual information to a line chart depicting change over time. In other words, I went from this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-            src: "../images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif",
+            src: "/images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif",
             alt: "A GIF depicting the old tooltip, which contained static values in textual form"
           }, {}, {})}
 <p>to this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-            src: "../images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif",
+            src: "/images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif",
             alt: "A GIF depicting the old tooltip, which contained dynamic, temporal data over time for a given state upon hover"
           }, {}, {})}
 <h2 id="${"why-did-i-make-that-change"}"><a href="${"#why-did-i-make-that-change"}">Why did I make that change?</a></h2>
@@ -13959,7 +13242,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>The new tooltip shows a trend over time. It also shows the state name (just in case you skipped that day in US geography!), and also the most recent data on overdose deaths. Because this map is meant to show how the opioid crisis <em>has evolved</em>, showing a line chart for each state in my tooltip allows the user to explore state-by-state trends on hover! This is much easier than hovering on each state during each year and trying to keep track of the trends.</p>
 <p>For example, hovering on West Virginia, which in 2017 seemed to have the highest opioid-involved overdose death rate (as indicated by it having the darkest shade of red), reveals that its also experienced one of the largest over-time increase in this rate since 1999:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-            src: "../images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg",
+            src: "/images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg",
             alt: "A static image focusing on West Virginia, showcasing the tooltip which shows a line chart increasing over time."
           }, {}, {})}
 <h2 id="${"so-how-do-you-do-it"}"><a href="${"#so-how-do-you-do-it"}">So, how do you do it?</a></h2>
@@ -14203,28 +13486,26 @@ tipSVG.append(&quot;text&quot;)
   }
 });
 
-// .svelte-kit/output/server/chunks/animate-hugo-academic-123d84a8.js
-var animate_hugo_academic_123d84a8_exports = {};
-__export(animate_hugo_academic_123d84a8_exports, {
+// .svelte-kit/output/server/chunks/animate-hugo-academic-8d202400.js
+var animate_hugo_academic_8d202400_exports = {};
+__export(animate_hugo_academic_8d202400_exports, {
   default: () => Animate_hugo_academic,
   metadata: () => metadata35
 });
-var import_bowser41, import_prismjs3, import_prism_normalize_whitespace3, metadata35, Animate_hugo_academic;
-var init_animate_hugo_academic_123d84a8 = __esm({
-  ".svelte-kit/output/server/chunks/animate-hugo-academic-123d84a8.js"() {
+var import_prismjs3, import_prism_normalize_whitespace3, metadata35, Animate_hugo_academic;
+var init_animate_hugo_academic_8d202400 = __esm({
+  ".svelte-kit/output/server/chunks/animate-hugo-academic-8d202400.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_Code_71f36c68();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser41 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_Code_bcfeb83b();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs3 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace3 = __toModule(require_prism_normalize_whitespace());
@@ -14246,7 +13527,7 @@ var init_animate_hugo_academic_123d84a8 = __esm({
     Animate_hugo_academic = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata35), {}, {
         default: () => `${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/final.gif",
+          src: "/images/post/animate-hugo-academic/final.gif",
           alt: "A GIF showcasing the final version of my animated homepage."
         }, {}, {})}
 <p>The R package <code>blogdown</code> is an incredibly powerful tool\u2014it allows R users with little to no familiarity in web development to build a fully functional, content-oriented, beautiful website using a language they\u2019re already familiar with. It\u2019s built on top of <a href="${"https://gohugo.io/"}" rel="${"nofollow"}">Hugo</a>, the world\u2019s (self-proclaimed) \u2018fastest framework for building websites,\u2019 which comes with a <a href="${"https://themes.gohugo.io/"}" rel="${"nofollow"}">variety of themes</a> suitable for a variety of different uses.</p>
@@ -14261,12 +13542,12 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <h2 id="${"step-0-make-your-about-page-your-actual-homepage"}"><a href="${"#step-0-make-your-about-page-your-actual-homepage"}">Step 0) Make your \u2018about\u2019 page your actual homepage</a></h2>
 <p>By default, the Hugo Academic theme\u2019s first section is a grandiose self-introduction (I guess the creators of the theme do deserve such credit). Before we incorporate any of our animations, lets go ahead and make our \u2018about\u2019 page the landing page users first see when they visit our site. This requires us to find the files <code>hero.md</code> and <code>demo.md</code>, and in each of those files, set <code>active</code> equal to <code>false</code>. That takes our home page from this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/before-demo-hero-remove.png",
+          src: "/images/post/animate-hugo-academic/before-demo-hero-remove.png",
           alt: "A GIF showcasing the initial version of my homepage, before any edits."
         }, {}, {})}
 <p>to this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/after-demo-hero-remove.png",
+          src: "/images/post/animate-hugo-academic/after-demo-hero-remove.png",
           alt: "A GIF showcasing a version of my homepage where I replace \u2018hero' with \u2018about\u2019."
         }, {}, {})}
 <p>(As you progress, you might have to make additional small changes, such as removing \u2018Demo\u2019 from the navbar menu.)</p>
@@ -14284,7 +13565,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <p>With that newly created <code>about.html</code> living in <code>layouts/partials/widgets/</code>, you may notice that your homepage looks the exact same. This is correct! In this step, we\u2019ll customize that html file so that it can be animated.</p>
 <p>Within <code>about.html</code>, you\u2019ll notice all of your page\u2019s elements in order of appearance, despite a lot of extra characters that don\u2019t make much sense. It should look like this (don\u2019t read into this code, just verify it looks the same):</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/about.png",
+          src: "/images/post/animate-hugo-academic/about.png",
           alt: "A screenshot of complicated code that is initially used to render the homepage."
         }, {}, {})}
 <p>Throughout step 3, we\u2019ll use each element\u2019s class to target it for animations. In the above screenshot (and in your <code>about.html</code> page), you\u2019ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found <a href="${"https://www.w3schools.com/cssref/sel_class.asp"}" rel="${"nofollow"}">here</a>.</p>
@@ -14392,7 +13673,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
         })}
 <p>As we expected, our section background is now an (unbelievably ugly shade of) red.</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/bg-red.png",
+          src: "/images/post/animate-hugo-academic/bg-red.png",
           alt: "An example of turning the background color of the page red."
         }, {}, {})}
 <p>(Now remove that property immediately! This is not quite the welcome we want for our visitors.) We can also target elements <em>within</em> the section by nesting new selectors inside of <code>#about</code>. For example, if we wanted to change the color of our \u2018biography\u2019 title text, we could do so with the following code. (This is because we created a class named <code>biography-title</code> in step 1):</p>
@@ -14404,7 +13685,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
 &#125;</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/font-red.png",
+          src: "/images/post/animate-hugo-academic/font-red.png",
           alt: "An example of turning the font color  red."
         }, {}, {})}
 ${validate_component(Info, "Info").$$render($$result, {}, {}, {
@@ -14453,7 +13734,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
 &#125;</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/red.gif",
+          src: "/images/post/animate-hugo-academic/red.gif",
           alt: "An example transition, turning the font color to red over a 5 second duration."
         }, {}, {})}
 <p>Of course, we don\u2019t want a 5 second animation, nor do we want our text to start off as red. A cleaner animation might leverage the power of CSS to modify an element\u2019s <em>position</em>. In our case, we want an element to <strong>slide in from the right side of the screen</strong>, and so we make a few tweaks to the code above. Let\u2019s make a new animation called <code>slide-from-right</code> which starts (at keyframe 0%) with our element 150% to the right of its original position (therefore off the screen) and ends (at keyframe 100%) with it at its original position. This involves the use of <code>translateX</code>, which you can read about <a href="${"https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX"}" rel="${"nofollow"}">here</a>.</p>
@@ -14472,7 +13753,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
 &#125;</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/slide-from-right.gif",
+          src: "/images/post/animate-hugo-academic/slide-from-right.gif",
           alt: "A gif of the content sliding in from the right side of the page"
         }, {}, {})}
 <p>There is one slight improvement we can make on the above transition. Specifically, we can call an <em>easing function</em> on our animation. <a href="${"https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function"}" rel="${"nofollow"}">Easing functions</a> give a more natural feel to a transition\u2019s flow\u2014rather than our object flying in at a perfectly linear rate, we can add some personality by specifying its speed at different points in the transition. To find an easing function, visit <a href="${"https://easings.net/en#"}" rel="${"nofollow"}">easings.net</a>, which allows you to visualize all of the different ways to modify your transition\u2019s ease. (For this tutorial, I chose a clean-looking \u201C<em>easeInOutQuint</em>\u201C function, which looks like this: <code>cubic-bezier(0.83, 0, 0.17, 1)</code>.)</p>
@@ -14487,7 +13768,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
         })}
 <p>In combination with above, this creates a transition that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/double-slide.gif",
+          src: "/images/post/animate-hugo-academic/double-slide.gif",
           alt: "A gif of two pieces of content sliding in, one after another (with a 100ms delay)"
         }, {}, {})}
 <p>Nice! That looks clean. It looks like those two text blocks are racing to greet your new site visitor :)</p>
@@ -14509,7 +13790,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
 &#125;</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/left-and-right.gif",
+          src: "/images/post/animate-hugo-academic/left-and-right.gif",
           alt: "Two paragraphs of content sliding in from opposite directions."
         }, {}, {})}
 <h3 id="${"step-3d-finally-the-fade"}"><a href="${"#step-3d-finally-the-fade"}">Step 3D) Finally, the Fade</a></h3>
@@ -14542,7 +13823,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "css", filenam
         })}
 <p>Now, we have a final homepage that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/animate-hugo-academic/final.gif",
+          src: "/images/post/animate-hugo-academic/final.gif",
           alt: "A GIF showing the final iteration of a homepage, with animations."
         }, {}, {})}
 <p>To make our SCSS file more robust across different browsers, we can take our completed file and put it into the <a href="${"https://autoprefixer.github.io/"}" rel="${"nofollow"}">CSS Autoprefixer</a>. This adds additional lines of code to our CSS file so that all browsers render the same animations upon page load. Your completed SCSS file should look like <a href="${"https://github.com/connorrothschild/animate-hugo-academic/blob/master/assets/scss/custom.scss"}" rel="${"nofollow"}">this</a>.</p>
@@ -14556,27 +13837,25 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/automation-scrollytell-6d42332b.js
-var automation_scrollytell_6d42332b_exports = {};
-__export(automation_scrollytell_6d42332b_exports, {
+// .svelte-kit/output/server/chunks/automation-scrollytell-b70f7f0c.js
+var automation_scrollytell_b70f7f0c_exports = {};
+__export(automation_scrollytell_b70f7f0c_exports, {
   default: () => Automation_scrollytell,
   metadata: () => metadata36
 });
-var import_bowser42, import_prismjs4, import_prism_normalize_whitespace4, metadata36, Automation_scrollytell;
-var init_automation_scrollytell_6d42332b = __esm({
-  ".svelte-kit/output/server/chunks/automation-scrollytell-6d42332b.js"() {
+var import_prismjs4, import_prism_normalize_whitespace4, metadata36, Automation_scrollytell;
+var init_automation_scrollytell_b70f7f0c = __esm({
+  ".svelte-kit/output/server/chunks/automation-scrollytell-b70f7f0c.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Code_71f36c68();
-    init_HighlightFromProp_41fd8065();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser42 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Code_bcfeb83b();
+    init_HighlightFromProp_ac6880f6();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs4 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace4 = __toModule(require_prism_normalize_whitespace());
@@ -14590,7 +13869,7 @@ var init_automation_scrollytell_6d42332b = __esm({
     metadata36 = {
       "layout": "blog",
       "title": "How to Scrollytell in R",
-      "description": "Because its easier than doing it in D3",
+      "description": "Because it\u2019s easier than doing it in D3",
       "image": "automation-scrollytell/header.png",
       "date": "2019-10-02",
       "tags": ["r", "tutorial"]
@@ -14698,7 +13977,7 @@ correspond to a typical level of education for a given job.</p>
 <p>But, it also depends on what level of <code>add</code> we are at; if <code>add</code> == 8
 (the last data point, e.g.\xA0the concluding plot), then we want to show
 <em>all data points</em>.</p>
-<p>\u201COkay, okay. But what is <code>add</code>???\u201D</p>
+<blockquote><p>Okay, okay. But what is <code>add</code>?</p></blockquote>
 <p>Good question. <code>add</code> is the variable I constructed to correspond to the
 user\u2019s input (in this case, the scroll!). When we put it all together,
 we\u2019re going to wrap our plot object into a rendering function <em>inside</em>
@@ -15037,26 +14316,24 @@ column<span class="token punctuation">(</span><span class="token number">1</span
   }
 });
 
-// .svelte-kit/output/server/chunks/color-in-data-vis-3bd4b890.js
-var color_in_data_vis_3bd4b890_exports = {};
-__export(color_in_data_vis_3bd4b890_exports, {
+// .svelte-kit/output/server/chunks/color-in-data-vis-d49b9294.js
+var color_in_data_vis_d49b9294_exports = {};
+__export(color_in_data_vis_d49b9294_exports, {
   default: () => Color_in_data_vis,
   metadata: () => metadata37
 });
-var import_bowser43, metadata37, Color_in_data_vis;
-var init_color_in_data_vis_3bd4b890 = __esm({
-  ".svelte-kit/output/server/chunks/color-in-data-vis-3bd4b890.js"() {
+var metadata37, Color_in_data_vis;
+var init_color_in_data_vis_d49b9294 = __esm({
+  ".svelte-kit/output/server/chunks/color-in-data-vis-d49b9294.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser43 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata37 = {
       "layout": "blog",
       "title": "Color in Data Visualization: Less How, More Why",
@@ -15071,18 +14348,18 @@ var init_color_in_data_vis_3bd4b890 = __esm({
 <p>For one example, look at this \u201CColor Emotion Guide\u201D from marketing site <a href="${"https://www.tapclicks.com/resources/post/the-influence-of-color-in-data-visualization/"}" rel="${"nofollow"}">TapClicks</a> (one of the top results when you Google \u201Ccolor in data visualization\u201D \u{1F9D0}).</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Color guide that doesn\u2019t make any sense. Random emotions are assigned to different brand colors, with no apparent pattern.",
-          src: "../images/post/color-in-data-vis/color-emotion-guide-lol.jpg"
+          src: "/images/post/color-in-data-vis/color-emotion-guide-lol.jpg"
         }, {}, {})}
 <p>The implicit suggestion here is that we should use color\u2014whenever and however we can\u2014to capture some form of emotion. Not only is this specific categorization rather odd (Monster energy drinks are peaceful, Virgin Mobile embodies \u201Cbold excitement\u201D, and Harley Davidson motorcycles just scream \u201Ccheerful friendliness\u201D \u{1F929}), it leads novice practitioners to believe that color should be used just for the sake of using color.</p>
 <p>Examples of gratuitous color use abound.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A pie chart with far too many colors.",
-          src: "../images/post/color-in-data-vis/bad-color-use-1.jpg",
+          src: "/images/post/color-in-data-vis/bad-color-use-1.jpg",
           width: "29.2%"
         }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Multiple pie charts, all with poor color usage.",
-          src: "../images/post/color-in-data-vis/bad-color-use-2.jpg",
+          src: "/images/post/color-in-data-vis/bad-color-use-2.jpg",
           width: "69%"
         }, {}, {})}
 <p>These examples illustrate my thesis: <strong>Too often, we ask <em>how</em> we can use color in our visualizations when we should be asking <em>why</em> we are using it.</strong></p>
@@ -15092,7 +14369,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>The reality is, however, that if you need more than a handful of colors in your chart, you can probably present your data in a different way. Take <a href="${"https://blog.datawrapper.de/colors/"}" rel="${"nofollow"}">this example</a> from Datawrapper:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a poor and better visualization. One has many colors sequentially, while the other breaks up each color into its own bar for clarity's sake.",
-          src: "../images/post/color-in-data-vis/bad-and-better.jpg"
+          src: "/images/post/color-in-data-vis/bad-and-better.jpg"
         }, {}, {})}
 <p>The takeaway? When you emphasize <em>everything</em>, you end up emphasizing <em>nothing</em>. That\u2019s why its important that we stop uncritically asking <em>how</em> we can use color in our charts.</p>
 <p>A data visualization is nothing more than a pretty picture if it does not <em>inform</em> its viewer. And if your chart presents 14 different data points all mapped to different colors, what kind of story is it telling? I really like this from Apple\u2019s data visualization practitioner <a href="${"https://medium.com/@Elijah_Meeks/viz-palette-for-data-visualization-color-8e678d996077?"}" rel="${"nofollow"}">Elijah Meeks</a>:</p>
@@ -15106,38 +14383,38 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Here\u2019s a quick <a href="${"https://github.com/connorrothschild/bbdata"}" rel="${"nofollow"}">example</a> I made in R a while back:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A barplot showcasing vaccination by county in Texas. All bars are grey except the lowest bar, representing Terry County (78% vaccinated), which is highlighted in a royal blue.",
-          src: "../images/post/color-in-data-vis/color-emphasized.png"
+          src: "/images/post/color-in-data-vis/color-emphasized.png"
         }, {}, {})}
 <p>The point of the visualization is not to show our audience the kindergarten vaccination rate of <em>every county</em> in Texas. It is instead to highlight the lowest rate\u2014Terry County. This visualization leverages the grey fill of every other bar to immediately draw the audiences\u2019 eyes to Terry County. Because we used only two colors, we can also highlight text in the subtitle to make the connection even clearer for our audience. Color\u2014if used prudently\u2014makes our visualizations more digestible and more informative.</p>
 <p>Now, imagine if I visualized that same data in the following way:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A barplot showcasing vaccination by county in Texas. All bars are grey.",
-          src: "../images/post/color-in-data-vis/all-grey.jpg"
+          src: "/images/post/color-in-data-vis/all-grey.jpg"
         }, {}, {})}
 <p>Or, even worse:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A barplot showcasing vaccination by county in Texas. All bars are separate colors, with no pattern present.",
-          src: "../images/post/color-in-data-vis/all-color.jpg"
+          src: "/images/post/color-in-data-vis/all-color.jpg"
         }, {}, {})}
 <p>After seeing those eyesores, aren\u2019t you thankful that we used color sparingly in the initial plot?</p>
 <p>Perhaps you\u2019re interested in a county-by-county overview of 2016 election results. Although you might be tempted to code all counties according to their Trump/Clinton split, that\u2019s prettier than it is insightful. What if, instead, we focused on those notable counties which flipped from one party to another between 2012 and 2016? From Kieran Healy\u2019s book <a href="${"https://socviz.co/refineplots.html#use-color-to-your-advantage"}" rel="${"nofollow"}">Data Visualization</a>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue.",
-          src: "../images/post/color-in-data-vis/flipping-points-color.jpg",
+          src: "/images/post/color-in-data-vis/flipping-points-color.jpg",
           width: "80%",
           centered: "true"
         }, {}, {})}
 <p>As we can see here, more counties flipped from majority-Democratic in 2012 to majority-Republican in 2016 than vice-versa. Because we\u2019re focusing on only a fraction of all of the data points, we can also observe trends: The majority of counties that flipped had a small black population. No county that had over a ~53% black population flipped in either direction (annotation my own):</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation above 53% black to show that no counties with such a population flipped in either direction.",
-          src: "../images/post/color-in-data-vis/flipping-points-color-annotate1.jpg",
+          src: "/images/post/color-in-data-vis/flipping-points-color-annotate1.jpg",
           width: "80%",
           centered: "true"
         }, {}, {})}
 <p>We also notice that flipping direction might be correlated with population size: nearly all of the flipping counties with a log population under 100,000 flipped to Republicans, while a greater proportion of all switching counties flipped toward the Democratic Party if their log population was greater than 100,000.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation past population 100,000 to show that more populous counties were more likely to flip Democratic.",
-          src: "../images/post/color-in-data-vis/flipping-points-color-annotate2.jpg",
+          src: "/images/post/color-in-data-vis/flipping-points-color-annotate2.jpg",
           width: "80%",
           centered: "true"
         }, {}, {})}
@@ -15147,14 +14424,14 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Color does not have to be used in contrast to plain old grey. It can also be used as a tool to showcase a variety of data points all mapped to different colors. The important note is that this usage should be sparing. Given our prior examples, we definitely don\u2019t want a plot like this one (from <a href="${"https://serialmentor.com/dataviz/color-pitfalls.html"}" rel="${"nofollow"}">Chapter 19 of Claus Wilke\u2019s <em>Fundamentals of Data Visualization</em></a>):</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded to a separate color, with no pattern.",
-          src: "../images/post/color-in-data-vis/bad-chart.jpg",
+          src: "/images/post/color-in-data-vis/bad-chart.jpg",
           width: "50%",
           centered: "true"
         }, {}, {})}
 <p>A more appropriate alternative may look something like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded according to its region.",
-          src: "../images/post/color-in-data-vis/betterchart-1.jpg",
+          src: "/images/post/color-in-data-vis/betterchart-1.jpg",
           width: "70%",
           centered: "true"
         }, {}, {})}
@@ -15164,7 +14441,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>These examples are most commonly found in <a href="${"https://en.wikipedia.org/wiki/Choropleth_map"}" rel="${"nofollow"}">choropleth maps</a>, where the shade of color in a given state (or county, or region) corresponds to a value of interest. As an example, here\u2019s a <a href="${"https://connorrothschild.github.io/D3.js/map-overdoses/"}" rel="${"nofollow"}">choropleth map</a> I created using D3.js, which visualizes opioid-involved overdose deaths in the United States:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A choropleth chart wherein each state is shaded according to its opioid overdose rate.",
-          src: "../images/post/color-in-data-vis/choropleth-ex.jpg",
+          src: "/images/post/color-in-data-vis/choropleth-ex.jpg",
           width: "70%",
           centered: "true"
         }, {}, {})}
@@ -15172,7 +14449,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>However, color in this context can also be misused. Data may be mapped according to a categorical color scale, or a rainbow scale which makes it difficult to see progression. This chart from <a href="${"https://serialmentor.com/dataviz/color-pitfalls.html"}" rel="${"nofollow"}">Claus O. Wilke</a> is a good (bad) example:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A map of Texas where each county is shaded according to its proportional white population. The color scale is rainbow, making it difficult to detect relative differences.",
-          src: "../images/post/color-in-data-vis/map-Texas-rainbow-1.jpg",
+          src: "/images/post/color-in-data-vis/map-Texas-rainbow-1.jpg",
           width: "70%",
           centered: "true"
         }, {}, {})}
@@ -15186,59 +14463,57 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/TableHandler-a93fb82a.js
-var css9, TableHandler;
-var init_TableHandler_a93fb82a = __esm({
-  ".svelte-kit/output/server/chunks/TableHandler-a93fb82a.js"() {
+// .svelte-kit/output/server/chunks/TableHandler-eff74f87.js
+var css11, TableHandler;
+var init_TableHandler_eff74f87 = __esm({
+  ".svelte-kit/output/server/chunks/TableHandler-eff74f87.js"() {
     init_shims();
-    init_app_9f378dda();
-    css9 = {
-      code: "div.svelte-17u5tpa{margin:1.35rem auto}img.svelte-17u5tpa{margin-bottom:0.5rem}a.svelte-17u5tpa{font-weight:300;font-family:var(--font-sans);text-align:right;letter-spacing:0.64px;width:100%;margin-left:auto;display:block}@media screen and (max-width: 768px){div.svelte-17u5tpa{width:100% !important}}",
+    init_app_89d516be();
+    css11 = {
+      code: "div.svelte-1yizkq9{margin:1.35rem auto}img.svelte-1yizkq9{margin-bottom:0.5rem}a.svelte-1yizkq9{font-weight:300;font-family:var(--font-sans);text-align:right;width:100%;margin-left:auto;display:block}@media screen and (max-width: 768px){div.svelte-1yizkq9{width:100% !important}}",
       map: null
     };
     TableHandler = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { src: src2 } = $$props;
       let { alt } = $$props;
       let { link } = $$props;
-      let { width = "100%" } = $$props;
+      let { width: width2 = "100%" } = $$props;
       if ($$props.src === void 0 && $$bindings.src && src2 !== void 0)
         $$bindings.src(src2);
       if ($$props.alt === void 0 && $$bindings.alt && alt !== void 0)
         $$bindings.alt(alt);
       if ($$props.link === void 0 && $$bindings.link && link !== void 0)
         $$bindings.link(link);
-      if ($$props.width === void 0 && $$bindings.width && width !== void 0)
-        $$bindings.width(width);
-      $$result.css.add(css9);
-      return `<div style="${"width: " + escape(width) + ";"}" class="${"svelte-17u5tpa"}"><img loading="${"lazy"}"${add_attribute("src", src2, 0)}${add_attribute("alt", alt, 0)} width="${"100%"}" class="${"svelte-17u5tpa"}">
-  <a${add_attribute("href", link, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}" class="${"no-underline svelte-17u5tpa"}">The original, interactive table can be found here</a>
+      if ($$props.width === void 0 && $$bindings.width && width2 !== void 0)
+        $$bindings.width(width2);
+      $$result.css.add(css11);
+      return `<div style="${"width: " + escape(width2) + ";"}" class="${"svelte-1yizkq9"}"><img loading="${"lazy"}"${add_attribute("src", src2, 0)}${add_attribute("alt", alt, 0)} width="${"100%"}" class="${"svelte-1yizkq9"}">
+  <a${add_attribute("href", link, 0)} target="${"_blank"}" rel="${"noopener noreferrer"}" class="${"no-underline svelte-1yizkq9"}">The original, interactive table can be found here</a>
 </div>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/covid-gun-spikes-595c3f78.js
-var covid_gun_spikes_595c3f78_exports = {};
-__export(covid_gun_spikes_595c3f78_exports, {
+// .svelte-kit/output/server/chunks/covid-gun-spikes-cb167433.js
+var covid_gun_spikes_cb167433_exports = {};
+__export(covid_gun_spikes_cb167433_exports, {
   default: () => Covid_gun_spikes,
   metadata: () => metadata38
 });
-var import_bowser44, import_prismjs5, import_prism_normalize_whitespace5, metadata38, Covid_gun_spikes;
-var init_covid_gun_spikes_595c3f78 = __esm({
-  ".svelte-kit/output/server/chunks/covid-gun-spikes-595c3f78.js"() {
+var import_prismjs5, import_prism_normalize_whitespace5, metadata38, Covid_gun_spikes;
+var init_covid_gun_spikes_cb167433 = __esm({
+  ".svelte-kit/output/server/chunks/covid-gun-spikes-cb167433.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_TableHandler_a93fb82a();
-    init_Code_71f36c68();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser44 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_TableHandler_eff74f87();
+    init_Code_bcfeb83b();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs5 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace5 = __toModule(require_prism_normalize_whitespace());
@@ -15255,13 +14530,13 @@ var init_covid_gun_spikes_595c3f78 = __esm({
       "description": "Visualizing the precipitous rise in gun sales during COVID-19",
       "date": "2020-07-02",
       "image": "covid-gun-spikes/header.png",
-      "featured": true,
+      "featured": false,
       "tags": ["analysis", "r"]
     };
     Covid_gun_spikes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata38), {}, {
         default: () => `${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/featured.png",
+          src: "/images/post/covid-gun-spikes/featured.png",
           alt: "A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"
         }, {}, {})}
 <p>So far in 2020, firearm background checks are happening <strong>significantly</strong> more frequently than they did during the first six months of the last 20 years. Some <a href="${"https://www.nytimes.com/interactive/2020/04/01/business/coronavirus-gun-sales.html"}" rel="${"nofollow"}">media reports</a> captured the gun-buying frenzy during its apparent peak in March, but according to data from the <a href="${"https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view"}" rel="${"nofollow"}">FBI NICS</a>, <em>the month of June saw the largest single month count of firearm background checks in the last 20 years.</em></p>
@@ -15306,7 +14581,7 @@ data <span class="token percent-operator operator">%>%</span>
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/table-replacement.png",
+          src: "/images/post/covid-gun-spikes/table-replacement.png",
           alt: "A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest.",
           link: "http://connorrothschild.github.io/v2/post/covid-gun-spikes/",
           width: "70%"
@@ -15332,7 +14607,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r", showLineN
                      ))</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/unnamed-chunk-4-1.png",
+          src: "/images/post/covid-gun-spikes/unnamed-chunk-4-1.png",
           alt: "An area chart showing background checks over time. Despite some seasonaility, the trend is increasing over time, and is at its highest point at the end of the chart in 2020."
         }, {}, {})}
 <p>And we can better understand the magnitude of these shifts by visualizing year-to-year changes:</p>
@@ -15355,7 +14630,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
        subtitle <span class="token operator">=</span> <span class="token string">"January through June"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/unnamed-chunk-5-1.png",
+          src: "/images/post/covid-gun-spikes/unnamed-chunk-5-1.png",
           alt: "A barchart showing the temporal year-on-year change in background checks for firearms over time. The last year, 2020, is the highest, meaning background checks have seen the greatest year on year growth this year."
         }, {}, {})}
 <p>Visualized another way, we can explore the temporal change <strong>within each year</strong> for every year between 1999 and 2020, with 2020 <span style="${"color:red"}">highlighted in red.</span></p>
@@ -15379,7 +14654,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
   theme<span class="token punctuation">(</span>plot.title <span class="token operator">=</span> ggtext<span class="token operator">::</span>element_markdown<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/unnamed-chunk-6-1.png",
+          src: "/images/post/covid-gun-spikes/unnamed-chunk-6-1.png",
           alt: "A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."
         }, {}, {})}
 <p>The FBI database also includes background check data for each U.S. state. This data allows us to compare trends <em>across</em> states and over time (using <code>geofacet</code>):</p>
@@ -15414,7 +14689,7 @@ ${validate_component(Code, "Code").$$render($$result, { language: "r" }, {}, {
 <span class="token comment">## With additional styling changes made in Illustrator!</span></code>`}<!-- HTML_TAG_END --></pre>`
         })}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-gun-spikes/featured.png",
+          src: "/images/post/covid-gun-spikes/featured.png",
           alt: "A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"
         }, {}, {})}
 <h2 id="${"the-impact"}"><a href="${"#the-impact"}">The impact</a></h2>
@@ -15427,33 +14702,32 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/covid-on-campus-09e3e28f.js
-var covid_on_campus_09e3e28f_exports = {};
-__export(covid_on_campus_09e3e28f_exports, {
+// .svelte-kit/output/server/chunks/covid-on-campus-e998c76c.js
+var covid_on_campus_e998c76c_exports = {};
+__export(covid_on_campus_e998c76c_exports, {
   default: () => Covid_on_campus,
   metadata: () => metadata39
 });
-var import_bowser45, metadata39, Covid_on_campus;
-var init_covid_on_campus_09e3e28f = __esm({
-  ".svelte-kit/output/server/chunks/covid-on-campus-09e3e28f.js"() {
+var metadata39, Covid_on_campus;
+var init_covid_on_campus_e998c76c = __esm({
+  ".svelte-kit/output/server/chunks/covid-on-campus-e998c76c.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_TableHandler_a93fb82a();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser45 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_TableHandler_eff74f87();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata39 = {
       "layout": "blog",
       "title": "An Analysis of COVID on Campus",
       "date": "2020-10-02",
       "description": "Where university reopenings led to spikes in COVID-19 case counts",
       "image": "covid-on-campus/header.png",
+      "archived": true,
       "tags": ["analysis", "r"]
     };
     Covid_on_campus = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -15492,7 +14766,7 @@ within just a few weeks.</p>
 broken down by college (from the <a href="${"https://github.com/nytimes/covid-19-data/tree/master/colleges"}" rel="${"nofollow"}">New York
 Times</a>):</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-          src: "../images/post/covid-on-campus/table1.png",
+          src: "/images/post/covid-on-campus/table1.png",
           alt: "A table showcasing universities that have the greatest number of COVID-19 cases. University of Georgia leads the pack at 3888 cases. Last updated October 11, 2020",
           link: "http://connorrothschild.github.io/v2/post/covid-on-campus/",
           width: "80%"
@@ -15514,7 +14788,7 @@ problems much larger than students throwing fraternity parties.</p>
 <p>Below, you can explore your county\u2019s case count relative to its
 university-affiliated case counts.</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-          src: "../images/post/covid-on-campus/table2.png",
+          src: "/images/post/covid-on-campus/table2.png",
           alt: "A table showcasing counties that have the greatest number of COVID-19 cases attributable to colleges. Pickens, South Carolina is expanded, showcasing two universities which account for 105% of the county's total cases. Last updated October 11, 2020",
           link: "http://connorrothschild.github.io/v2/post/covid-on-campus/",
           width: "80%"
@@ -15540,14 +14814,14 @@ share of cases in the state overall.</p>
 <p>Geographically, the data looks like this (note the x-axis runs from 0 to
 10%):</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/covid-on-campus/geofacet_processed.png",
+          src: "/images/post/covid-on-campus/geofacet_processed.png",
           alt: "A geofaceted map that shows percent of COVID cases attributable to colleges, by US state. Each state ranges between 0 and 10% of total cases attributable to colleges."
         }, {}, {})}
 <p>In the table below, you can search for your state and drill down on
 which counties within your state make up the greatest share of COVID-19
 cases.</p>
 ${validate_component(TableHandler, "TableHandler").$$render($$result, {
-          src: "../images/post/covid-on-campus/table3.png",
+          src: "/images/post/covid-on-campus/table3.png",
           alt: "A table showcasing states that have the greatest number of COVID-19 cases attributable to colleges. Wyoming (number 1) is expanded, showcasing three universities which account for 7% of the state's total cases. Last updated October 11, 2020",
           link: "http://connorrothschild.github.io/v2/post/covid-on-campus/",
           width: "80%"
@@ -15563,26 +14837,24 @@ comments, or just to say hi \u{1F642}</p>`
   }
 });
 
-// .svelte-kit/output/server/chunks/covid-posts-32b068ed.js
-var covid_posts_32b068ed_exports = {};
-__export(covid_posts_32b068ed_exports, {
+// .svelte-kit/output/server/chunks/covid-posts-f2563c6d.js
+var covid_posts_f2563c6d_exports = {};
+__export(covid_posts_f2563c6d_exports, {
   default: () => Covid_posts,
   metadata: () => metadata40
 });
-var import_bowser46, metadata40, Covid_posts;
-var init_covid_posts_32b068ed = __esm({
-  ".svelte-kit/output/server/chunks/covid-posts-32b068ed.js"() {
+var metadata40, Covid_posts;
+var init_covid_posts_f2563c6d = __esm({
+  ".svelte-kit/output/server/chunks/covid-posts-f2563c6d.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser46 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata40 = {
       "layout": "blog",
       "title": "COVID-19 Posts: A Novel Dataset",
@@ -15622,7 +14894,7 @@ blog post, but rather an overview of the data <em>that we have found</em>.</p>
 COVID-related data, as we notice that blog posts peaked in March of 2020.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "COVID-19 blog posts by week. There is a peak in mid March (40 posts).",
-          src: "../images/post/covid-posts/weekly-1.png"
+          src: "/images/post/covid-posts/weekly-1.png"
         }, {}, {})}
 <p>Some bloggers have been prolific; many more have been one and done. The
 plot below shows the names and posts of the 23 bloggers who have so far
@@ -15636,7 +14908,7 @@ bloggers. If you include the postgraduate students, universities writ
 large account for nearly all of the prolific bloggers.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell chart showcasing the timing of posts among 'prolific authors' (4 or more total posts). It shows temporally when these individuals post. ",
-          src: "../images/post/covid-posts/prolificVer2-1.png"
+          src: "/images/post/covid-posts/prolificVer2-1.png"
         }, {}, {})}
 <h3 id="${"roles-of-authors"}"><a href="${"#roles-of-authors"}">Roles of authors</a></h3>
 <p>The bloggers in our dataset describe their work-day roles in a variety
@@ -15650,7 +14922,7 @@ fall into one of five categories: <em>university</em>, <em>corporate</em>,
 are represented as columns in the following chart.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140).",
-          src: "../images/post/covid-posts/authorVer2-1.png"
+          src: "/images/post/covid-posts/authorVer2-1.png"
         }, {}, {})}
 <h3 id="${"data-sources"}"><a href="${"#data-sources"}">Data sources</a></h3>
 <p>A greater number of data sources related to COVID-19 will yield richer
@@ -15666,7 +14938,7 @@ early, comprehensively and consistently has set the standard for
 COVID-19 data collection and dissemination to the public.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51.",
-          src: "../images/post/covid-posts/dataTable-1.png"
+          src: "/images/post/covid-posts/dataTable-1.png"
         }, {}, {})}
 <p>Below, you can look at <em>all</em> data sources and how often they were
 referenced in COVID-19 blog posts.</p>
@@ -15711,7 +14983,7 @@ seem to use COVID data to showcase something else, or apply R in novel
 ways.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A balloon plot shows the number of posts by topic and employment category. The most common is university/epidemiology (107 posts).",
-          src: "../images/post/covid-posts/topicsVer2-1.png"
+          src: "/images/post/covid-posts/topicsVer2-1.png"
         }, {}, {})}
 <h2 id="${"concluding-thoughts"}"><a href="${"#concluding-thoughts"}">Concluding thoughts</a></h2>
 <p>We encourage you to use our <a href="${"https://connorrothschild.shinyapps.io/covid-posts/"}" target="${"_blank"}" rel="${"noopener noreferrer"}">Shiny application</a>
@@ -15730,27 +15002,25 @@ and recent information from reputable sources such as the <a href="${"https://ww
   }
 });
 
-// .svelte-kit/output/server/chunks/do-something-else-1f16f77a.js
-var do_something_else_1f16f77a_exports = {};
-__export(do_something_else_1f16f77a_exports, {
+// .svelte-kit/output/server/chunks/do-something-else-12627b95.js
+var do_something_else_12627b95_exports = {};
+__export(do_something_else_12627b95_exports, {
   default: () => Do_something_else,
   metadata: () => metadata41
 });
-var import_bowser47, metadata41, Do_something_else;
-var init_do_something_else_1f16f77a = __esm({
-  ".svelte-kit/output/server/chunks/do-something-else-1f16f77a.js"() {
+var metadata41, Do_something_else;
+var init_do_something_else_12627b95 = __esm({
+  ".svelte-kit/output/server/chunks/do-something-else-12627b95.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser47 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata41 = {
       "layout": "blog",
       "title": 'Feel Free to Do "Something Else" After Graduation',
@@ -15772,7 +15042,7 @@ var init_do_something_else_1f16f77a = __esm({
 <p><strong>Technical graduates</strong>:</p>
 <ol><li>Big tech (FAANG, etc.)</li>
 <li>Something else (startup, civic tech, etc.)</li></ol>
-<p>Is it reductive to categorize <em>all jobs</em> into these four categories? Check my LinkedIn feed, and you\u2019ll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, <a href="${"https://medium.com/s/story/a-culture-of-prestige-98c8671ceade"}" rel="${"nofollow"}">~40% of Harvard grads</a> and <a href="${"https://yaledailynews.com/post/2019/11/01/mckinsey-and-the-fig-tree/"}" rel="${"nofollow"}">~29% of Yale grads</a> go into finance or consulting after college.)</p>
+<p>Is it reductive to categorize <em>all jobs</em> into these four categories? Check my LinkedIn feed, and you\u2019ll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, <a href="${"https://medium.com/s/story/a-culture-of-prestige-98c8671ceade"}" rel="${"nofollow"}">~40% of Harvard grads</a> and <a href="${"https://yaledailynews.com/../images/post/2019/11/01/mckinsey-and-the-fig-tree/"}" rel="${"nofollow"}">~29% of Yale grads</a> go into finance or consulting after college.)</p>
 <p>Of course, these sets of options mirror one another. Most students who aren\u2019t set on a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, \u201Cbig\u201D option after graduating, or something else. </p>
 <p>When they do choose, there\u2019s not much enthusiasm\u2014it\u2019s a tradeoff. These bigger companies offer alluring signing bonuses, prestige, and exorbitant salaries. In return, they ask you to put up with longer-than-usual hours and more monotonous work.</p>
 <p>I\u2019m writing about <em>taking the risk</em>\u2014doing the \u201Csomething else\u201D that isn\u2019t McKinsey or Microsoft. There\u2019s value in the something else, and I hope I can encourage you it\u2019s more than consolation, it\u2019s a career.</p>
@@ -15784,7 +15054,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <h2 id="${"fulfillment"}"><a href="${"#fulfillment"}">Fulfillment</a></h2>
 <p>In 2019, <a href="${"https://angel.co/"}" rel="${"nofollow"}">AngelList</a> and <a href="${"https://www.teamblind.com/"}" rel="${"nofollow"}">Blind</a> surveyed 11,000 employees across FAANG and various startups, asking about job satisfaction and the factors that influence it. Their findings? <strong>Employees at startups were much happier than their FAANG counterparts.</strong></p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "post/do-something-else/startup-faang-satisfaction.png",
+          src: "../images/post/do-something-else/startup-faang-satisfaction.png",
           alt: "A bar graph showing higher rates of job satisfaction among startup employees compared to FAANG employees."
         }, {}, {})}
 <p>Data on early-career consultants in non-technical fields is harder to come by, but generally employees are <a href="${"https://poetsandquants.com/2017/09/10/job-satisfaction-rates-at-top-consulting-firms/3/"}" rel="${"nofollow"}">relatively satisfied despite the long hours</a>. Many consultants, however, do quit their job and pursue <a href="${"https://hbr.org/2019/07/why-consultants-quit-their-jobs-to-go-independent"}" rel="${"nofollow"}">independent consulting</a>, where they tend to be <a href="${"https://www.consultancy.uk/news/12795/independent-management-consultants-are-happier-and-half-earn-more"}" rel="${"nofollow"}">happier</a>.</p>
@@ -15886,30 +15156,28 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/dumbbell-plots-da9731c3.js
-var dumbbell_plots_da9731c3_exports = {};
-__export(dumbbell_plots_da9731c3_exports, {
+// .svelte-kit/output/server/chunks/dumbbell-plots-82c51849.js
+var dumbbell_plots_82c51849_exports = {};
+__export(dumbbell_plots_82c51849_exports, {
   default: () => Dumbbell_plots,
   metadata: () => metadata42
 });
-var import_bowser48, metadata42, Dumbbell_plots;
-var init_dumbbell_plots_da9731c3 = __esm({
-  ".svelte-kit/output/server/chunks/dumbbell-plots-da9731c3.js"() {
+var metadata42, Dumbbell_plots;
+var init_dumbbell_plots_82c51849 = __esm({
+  ".svelte-kit/output/server/chunks/dumbbell-plots-82c51849.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser48 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata42 = {
       "layout": "blog",
       "title": "Create Dumbbell Plots to Visualize Group Differences in R",
-      "description": "How to create dumbbell plots in R, using {ggalt}",
+      "description": "How to create dumbbell plots in R, using <code>ggalt</code>",
       "date": "2020-03-02",
       "image": "dumbbell-plots/header.png",
       "archived": true,
@@ -15919,7 +15187,7 @@ var init_dumbbell_plots_da9731c3 = __esm({
       return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata42), {}, {
         default: () => `${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-          src: "../images/post/dumbbell-plots/featured.jpg"
+          src: "/images/post/dumbbell-plots/featured.jpg"
         }, {}, {})}
 <p>As of this writing, nearly <a href="${"https://www.worldometers.info/coronavirus/coronavirus-death-toll/"}" rel="${"nofollow"}">6000</a> people have died of COVID-19 and another <a href="${"https://www.worldometers.info/coronavirus/coronavirus-death-toll/"}" rel="${"nofollow"}">150,000</a> have been infected. All signs seem to show that the virus is only growing.</p>
 <p>But some groups are less worried about COVID-19 than others. Recent <a href="${"https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter"}" rel="${"nofollow"}">polling</a> from Quinnipiac University suggests that worries about the coronavirus are related to one\u2019s partisan identity, age, and race.</p>
@@ -15928,12 +15196,12 @@ var init_dumbbell_plots_da9731c3 = __esm({
 <p>Republicans tend to be significantly less worried about coronavirus than Democrats. This is true in two regards. First, with respect to <em>concern for becoming infected</em>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-          src: "../images/post/dumbbell-plots/partisan-worry.jpg"
+          src: "/images/post/dumbbell-plots/partisan-worry.jpg"
         }, {}, {})}
 <p>It\u2019s also true when we look at concern than COVID-19 will <em>disrupt an individual\u2019s life</em>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that the coronavirus will disrupt your daily life?'",
-          src: "../images/post/dumbbell-plots/partisan-disrupt.jpg"
+          src: "/images/post/dumbbell-plots/partisan-disrupt.jpg"
         }, {}, {})}
 <p>Looking at the first plot, we notice that Republicans are <strong>3x more likely</strong> than Democrats to say that they are \u2019not concerned at all\u2019 by the prospect of coronavirus infecting them or someone they know. By contrast, Democrats are nearly <strong>3x as likely</strong> as Republicans to say that they are \u2018very concerned\u2019 by the same risk.</p>
 <p>The second plot shows us similar trends for fears of disruption: 3 in 4 Democrats are concerned (very or somewhat) that COVID-19 will disrupt their daily lives, compared to only 38% of Republicans. While 26% of Democrats are not worried about disruption, the same is true for 61% of Republicans.</p>
@@ -15941,24 +15209,24 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>There is also a relationship between age and fears related to the coronavirus.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between different age groups' worry about the Coronavirus. It shows that older respondents are more concerned than younger ones. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-          src: "../images/post/dumbbell-plots/age-disrupt.jpg"
+          src: "/images/post/dumbbell-plots/age-disrupt.jpg"
         }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between different age groups' worry about the Coronavirus. It shows that older respondents are more concerned than younger ones. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-          src: "../images/post/dumbbell-plots/age-worry.jpg"
+          src: "/images/post/dumbbell-plots/age-worry.jpg"
         }, {}, {})}
 <p>These plots show that there are significant differences in worry by age, but that fears of disruption are felt more universally than fears of infection. The first plot shows that <em>every age group</em> fears that COVID-19 will disrupt their daily lives; although younger people express this sentiment less frequently. The second plot <strong>the majority of people under age 50 are unconcerned by the prospect of COVID-19 infection</strong>. The opposite is true for older respondents; those aged 65 years and old are <strong>significantly</strong> more likely to be concerned by the risk of infection (62% vs 37%).</p>
 <h2 id="${"why-dumbbell-plots"}"><a href="${"#why-dumbbell-plots"}">Why dumbbell plots?</a></h2>
 <p>Dumbbell plots are an alternative to grouped barcharts. Like barcharts, they show differences between populations and they more powerfully represent the <em>distances between two groups</em>. They are frequently used by survey research firms such as the Pew Research Center, as seen in this <a href="${"https://twitter.com/pewresearch/status/1238345807348334593/photo/1"}" rel="${"nofollow"}">example</a>:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot from the Pew Research Center, showcasing perceived importance of US military bases by the age of the respondent; older folks think overseas bases are more important.",
-          src: "../images/post/dumbbell-plots/pew.jpg"
+          src: "/images/post/dumbbell-plots/pew.jpg"
         }, {}, {})}
 <p>While a barchart would require eight bars to visualize each datapoint above, a dumbbell dot plot shows eight dots <em>on four lines</em>, reducing clutter and emphasizing the differences <em>between groups</em>.</p>
 <p>Here\u2019s another example, this time from <a href="${"https://www.axios.com/trumps-disapproval-rate-is-up-in-every-state-2495232720.html?utm_source=twitter&utm_medium=social&utm_campaign=organic&utm_content=infographic&utm_term=politics"}" rel="${"nofollow"}">Axios</a> (visualizing changes in presidential disapproval between January and October 2017):</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot from Axios, which showcases changes in approval ratings between January and October 2017, by state. Most states have become more disapproving of the President.",
-          src: "../images/post/dumbbell-plots/axios.jpg"
+          src: "/images/post/dumbbell-plots/axios.jpg"
         }, {}, {})}
 <p>This pseudo-dumbbell plot (dumbbells with weird endpoints; don\u2019t pick up that side!) has 50 \u2018groups\u2019 (US states), but only two <em>outcomes</em> (January and October). A dumbbell plot is <em>far</em> superior to a grouped bar chart in this case because it emphasizes the difference is between two periods of time, and it does so with fewer objects (50 lines rather than 100 bars) than a barchart would use.</p>
 <p>One key lesson from the examples above: If the <em>comparison</em> of interest is between two groups (e.g. Republicans and Democrats), or if the <em>outcome</em> of interest is two-fold (e.g. \u2018concerned\u2019 and \u2018not concerned\u2019), dot plots are a superior way to visualize your data.</p>
@@ -15966,12 +15234,12 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>Now it\u2019s time to make your own dumbbell dot plot. We\u2019ll be creating this viz:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'",
-          src: "../images/post/dumbbell-plots/partisan-worry.jpg"
+          src: "/images/post/dumbbell-plots/partisan-worry.jpg"
         }, {}, {})}
 <p>For reference, the data I\u2019m using looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that the coronavirus will disrupt your daily life?'",
-          src: "../images/post/dumbbell-plots/partisan-disrupt.jpg"
+          src: "/images/post/dumbbell-plots/partisan-disrupt.jpg"
         }, {}, {})}
 <p>Pretty simple, right? <a href="${"https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter"}" rel="${"nofollow"}">It comes from here, by the way.</a></p>
 <p>The process relies on Bob Rudis\u2019s <code>ggalt</code> package and the <code>geom_dumbbell</code> function, which does most of the heavy lifting. This tutorial is mostly a step-by-step recreation of Rudis\u2019s code <a href="${"https://rud.is/b/2016/04/17/ggplot2-exercising-with-ggalt-dumbbells/"}" rel="${"nofollow"}">found here</a>.</p>
@@ -15996,7 +15264,7 @@ ggplot<span class="token punctuation">(</span><span class="token punctuation">)<
 <p>Here, <code>geom_segment</code> creates grey lines with a size of 0.15. The lines span from 0 to 0.5. This changes according to your data; because the largest number we are dealing with is .43 (representing 43% of Democrats), our bound on the right side can be 0.5; this also leaves room for the difference column which we create later.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A blank canvas with only plot bounds.",
-          src: "../images/post/dumbbell-plots/process-0.jpg"
+          src: "/images/post/dumbbell-plots/process-0.jpg"
         }, {}, {})}
 <p>Then, <code>geom_dumbbell</code> reads in our data and creates the dumbbells: we specify the <em>beginning</em> (<code>x</code>) of each dumbbell to represent Republicans and the <em>end</em> (<code>xend</code>) to correspond to Democrats. Other specifications affect the accompanying line and points.</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">geom_dumbbell<span class="token punctuation">(</span>data<span class="token operator">=</span>infected<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>y<span class="token operator">=</span>concerned<span class="token punctuation">,</span> x<span class="token operator">=</span>rep<span class="token punctuation">,</span> xend<span class="token operator">=</span>dem<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -16005,7 +15273,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>That code creates the following plot:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Four lines appear, each corresponding to the level of concern. The end of each line (signified with a blue or red dot) represents Democrats' and Republicans' level of concern. The x axis is percentage of respondents.",
-          src: "../images/post/dumbbell-plots/process-1.jpg"
+          src: "/images/post/dumbbell-plots/process-1.jpg"
         }, {}, {})}
 <p>Already, we can begin to see the barebones for the finished version: each dumbbell represents a level of concern, and visualizes Republicans and Democrats\u2019 proportions for that level.</p>
 <h3 id="${"step-2-labels"}"><a href="${"#step-2-labels"}">Step 2: Labels</a></h3>
@@ -16021,7 +15289,7 @@ geom_text<span class="token punctuation">(</span>data<span class="token operator
 <p>We label each point at its respective political affiliation, and we specify color according to the point color. The rest is just minor beautification for the text.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "In addition to the prior plot, there are now labels appended for each party.",
-          src: "../images/post/dumbbell-plots/process-2.jpg"
+          src: "/images/post/dumbbell-plots/process-2.jpg"
         }, {}, {})}
 <p>We also have to add direct labels for values, so that the exact percentages for each group are clear:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">geom_text<span class="token punctuation">(</span>data<span class="token operator">=</span>infected<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x<span class="token operator">=</span>rep<span class="token punctuation">,</span> y<span class="token operator">=</span>concerned<span class="token punctuation">,</span> label<span class="token operator">=</span>percent_first<span class="token punctuation">(</span>rep<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -16031,7 +15299,7 @@ geom_text<span class="token punctuation">(</span>data<span class="token operator
 <p>Here, we utilize the function <code>percent_first</code> we defined earlier, because we only want percentages to appear on the first numbers (to reduce clutter). The rest of the labels are just numbers which represent percentages. The syntax here is simple syntax that should be familiar to <code>ggplot</code> users. It creates this output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "In addition to the prior plot, there are now direct labels for the percent of respondents represented by each point.",
-          src: "../images/post/dumbbell-plots/process-3.jpg"
+          src: "/images/post/dumbbell-plots/process-3.jpg"
         }, {}, {})}
 <h3 id="${"step-3-a-differences-column"}"><a href="${"#step-3-a-differences-column"}">Step 3: A differences column</a></h3>
 <p>Finally, we want to help our viewers see <em>how stark</em> the differences between Democrats and Republicans really is. We do so with a differences column.</p>
@@ -16045,7 +15313,7 @@ scale_y_discrete<span class="token punctuation">(</span>expand<span class="token
 <p>Here, we first create a grey rectangle with <code>geom_rect</code>. It spans the entire chart vertically, hence why <code>ymin</code> and <code>ymax</code> range from negative to positive infinity. Next, we create labels according to the differences column. We position each of them according to the degree of concern (our y-axis). Finally, we expand the bounds of the chart so its a bit prettier:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "In addition to the prior plot, there is now a 'differences' column which has the difference between Republican and Democrat proportions added as a percent.",
-          src: "../images/post/dumbbell-plots/process-4.jpg"
+          src: "/images/post/dumbbell-plots/process-4.jpg"
         }, {}, {})}
 <h3 id="${"step-4-titles-labels--captions"}"><a href="${"#step-4-titles-labels--captions"}">Step 4: Titles, labels &amp; captions</a></h3>
 <p>Finally, let\u2019s add our title, subtitle, caption, and axis labels:</p>
@@ -16056,7 +15324,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 								&#92;n&#92;nDesign<span class="token operator">:</span> Connor Rothschild"<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "In addition to the prior plot, there are now axis labels and a title.",
-          src: "../images/post/dumbbell-plots/process-5.jpg"
+          src: "/images/post/dumbbell-plots/process-5.jpg"
         }, {}, {})}
 <p>That\u2019s our plot! Too bad its kinda ugly. Let\u2019s fix that in our final step.</p>
 <h3 id="${"step-5-beautification"}"><a href="${"#step-5-beautification"}">Step 5: Beautification</a></h3>
@@ -16082,13 +15350,13 @@ theme<span class="token punctuation">(</span>
 <p>Our final output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Stylization is added to the chart. There is now a white background, Lato font, and better typography rules are followed.",
-          src: "../images/post/dumbbell-plots/process-6.jpg"
+          src: "/images/post/dumbbell-plots/process-6.jpg"
         }, {}, {})}
 <h2 id="${"to-summarize"}"><a href="${"#to-summarize"}">To summarize</a></h2>
 <p>Our process looked like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A GIF showcasing the prior six steps outlined in this blog post; the GIF shows the chart going from a blank canvas to a full visual.",
-          src: "../images/post/dumbbell-plots/process-gif.gif"
+          src: "/images/post/dumbbell-plots/process-gif.gif"
         }, {}, {})}
 <p>The code for the above visualizations, as well as the underlying datasets and outputs, can be found <a href="${"https://github.com/connorrothschild/R/tree/master/covid"}" rel="${"nofollow"}">here</a>.</p>
 <p>Thanks for reading!</p>`
@@ -16097,30 +15365,28 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/economist-table-replication-using-reactable-d59c42a0.js
-var economist_table_replication_using_reactable_d59c42a0_exports = {};
-__export(economist_table_replication_using_reactable_d59c42a0_exports, {
+// .svelte-kit/output/server/chunks/economist-table-replication-using-reactable-4c40e42b.js
+var economist_table_replication_using_reactable_4c40e42b_exports = {};
+__export(economist_table_replication_using_reactable_4c40e42b_exports, {
   default: () => Economist_table_replication_using_reactable,
   metadata: () => metadata43
 });
-var import_bowser49, metadata43, Economist_table_replication_using_reactable;
-var init_economist_table_replication_using_reactable_d59c42a0 = __esm({
-  ".svelte-kit/output/server/chunks/economist-table-replication-using-reactable-d59c42a0.js"() {
+var metadata43, Economist_table_replication_using_reactable;
+var init_economist_table_replication_using_reactable_4c40e42b = __esm({
+  ".svelte-kit/output/server/chunks/economist-table-replication-using-reactable-4c40e42b.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser49 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     metadata43 = {
       "layout": "blog",
       "title": "Recreating a Table by The Economist Using Reactable",
-      "description": "Recreating a table by The Economist entirely in R, using reactable",
+      "description": "Recreating a table by The Economist entirely in R, using <code>reactable</code>",
       "date": "2020-05-02",
       "image": "economist-table-replication-using-reactable/header.png",
       "archived": true,
@@ -16131,35 +15397,33 @@ var init_economist_table_replication_using_reactable_d59c42a0 = __esm({
         default: () => `<p>Thanks for visiting this blog post, but it has moved! It can be found in its fully interactive form <a href="${"https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/"}" rel="${"nofollow"}">here</a>.</p>
 <p><a href="${"https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable/"}" rel="${"nofollow"}">${validate_component(Image, "Image").$$render($$result, {
           alt: "A table depicting excess deaths by country during 2020.",
-          src: "../images/post/economist-table-replication-using-reactable/featured.png"
+          src: "/images/post/economist-table-replication-using-reactable/featured.png"
         }, {}, {})}</a></p>`
       })}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/flat-data-r-0a30bdaf.js
-var flat_data_r_0a30bdaf_exports = {};
-__export(flat_data_r_0a30bdaf_exports, {
+// .svelte-kit/output/server/chunks/flat-data-r-f9cd9da9.js
+var flat_data_r_f9cd9da9_exports = {};
+__export(flat_data_r_f9cd9da9_exports, {
   default: () => Flat_data_r,
   metadata: () => metadata44
 });
-var import_bowser50, import_prismjs6, import_prism_normalize_whitespace6, metadata44, Flat_data_r;
-var init_flat_data_r_0a30bdaf = __esm({
-  ".svelte-kit/output/server/chunks/flat-data-r-0a30bdaf.js"() {
+var import_prismjs6, import_prism_normalize_whitespace6, metadata44, Flat_data_r;
+var init_flat_data_r_f9cd9da9 = __esm({
+  ".svelte-kit/output/server/chunks/flat-data-r-f9cd9da9.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Code_71f36c68();
-    init_Image_8e30e86c();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser50 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Code_bcfeb83b();
+    init_Image_2006dc25();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs6 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace6 = __toModule(require_prism_normalize_whitespace());
@@ -16188,7 +15452,7 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
 <h2 id="${"whats-flat-data"}"><a href="${"#whats-flat-data"}">What\u2019s Flat Data?</a></h2>
 <p><a href="${"https://octo.github.com/project/flat-data"}" rel="${"nofollow"}">Flat Data</a> solves the problem of carrying out the same repetitive tasks\u2014retrieving, cleaning, and then republishing data\u2014that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via <a href="${"https://octo.github.com/project/flat-data"}" rel="${"nofollow"}">GitHub</a>):</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/flat-data-r/flat-diagram.png",
+          src: "/images/post/flat-data-r/flat-diagram.png",
           alt: "A diagram showcasing a common Flat Data workflow"
         }, {}, {})}
 <p>The idea, as seen above, is essentially to read in data (<em>data.json</em>), conduct some postprocessing (<em>process.js</em>), and output some better data (<em>processed-data.json</em>).</p>
@@ -16283,7 +15547,7 @@ readr<span class="token operator">::</span>write_csv<span class="token punctuati
 <h2 id="${"in-sum"}"><a href="${"#in-sum"}">In sum</a></h2>
 <p>Upon completing these steps and pushing the above to a repository, GitHub will automatically set up the action and run it on a daily basis. You can then examine the logs for each run in the <strong>Actions</strong> tab. This tab will be helpful for debugging, and you can force workflow executions manually here as well. In sum, the process of carrying out a GitHub Flat Data workflow, with the addition of an R postprocessing script, looks something like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/flat-data-r/header.png",
+          src: "/images/post/flat-data-r/header.png",
           alt: "Diagram of flat data processing in R"
         }, {}, {})}
 <p>Thanks for reading! You might learn more by perusing the <a href="${"https://github.com/connorrothschild/flat-demo-r-processing"}" rel="${"nofollow"}">GitHub repository</a> that accompanies this post; otherwise, please send any questions via <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">Twitter</a> \u{1F642}</p>`
@@ -16292,37 +15556,135 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/introducing-tpltheme-70118bb6.js
-var introducing_tpltheme_70118bb6_exports = {};
-__export(introducing_tpltheme_70118bb6_exports, {
-  default: () => Introducing_tpltheme,
+// .svelte-kit/output/server/chunks/following-8ff919a6.js
+var following_8ff919a6_exports = {};
+__export(following_8ff919a6_exports, {
+  default: () => Following_1,
   metadata: () => metadata45
 });
-var import_bowser51, metadata45, Introducing_tpltheme;
-var init_introducing_tpltheme_70118bb6 = __esm({
-  ".svelte-kit/output/server/chunks/introducing-tpltheme-70118bb6.js"() {
+var css12, Following, metadata45, Following_1;
+var init_following_8ff919a6 = __esm({
+  ".svelte-kit/output/server/chunks/following-8ff919a6.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser51 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    css12 = {
+      code: "a.svelte-1co1vl9{font-weight:400}",
+      map: null
+    };
+    Following = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let people = [
+        {
+          name: "Amelia Wattenberger",
+          twitter: "https://twitter.com/Wattenberger"
+        },
+        {
+          name: "Will Chase",
+          twitter: "https://twitter.com/W_R_Chase"
+        },
+        {
+          name: "Danielle Alberti",
+          twitter: "https://twitter.com/DanielleAlberti"
+        },
+        {
+          name: "Nathan Yau",
+          twitter: "https://twitter.com/flowingdata"
+        },
+        {
+          name: "Simran Parwani",
+          twitter: "https://twitter.com/simranparwani"
+        },
+        {
+          name: "Jon Schwabish",
+          twitter: "https://twitter.com/jschwabish"
+        },
+        {
+          name: "Alli Torban",
+          twitter: "https://twitter.com/AlliTorban"
+        },
+        {
+          name: "Russell Goldenberg",
+          twitter: "https://twitter.com/codenberg"
+        },
+        {
+          name: "Alberto Cairo",
+          twitter: "https://twitter.com/AlbertoCairo"
+        },
+        {
+          name: "Michelle McGhee",
+          twitter: "https://twitter.com/mich_mcghee"
+        },
+        {
+          name: "Gabrielle Merite",
+          twitter: "https://twitter.com/Data_Soul"
+        },
+        {
+          name: "Shirley Wu",
+          twitter: "https://twitter.com/sxywu"
+        },
+        {
+          name: "Nadieh Bremer",
+          twitter: "https://twitter.com/NadiehBremer"
+        }
+      ];
+      $$result.css.add(css12);
+      return `<div style="${"margin-bottom: 1.15rem;"}">${each(people, (person) => `<li><a target="${"_blank"}" rel="${"noopener noreferrer"}"${add_attribute("href", person.twitter, 0)} class="${"svelte-1co1vl9"}">${escape(person.name)}</a>
+    </li>`)}
+</div>`;
+    });
     metadata45 = {
       "layout": "blog",
-      "title": "My First Package! Introducing tpltheme",
-      "description": "Introducing {tpltheme}, a toolkit to create publication-ready plots in the style of the Texas Policy Lab.",
+      "title": "People I'm following",
+      "description": "A definitely non-exhaustive list of people I've learned a lot from",
+      "image": "flat-data-r/header.png",
+      "date": "2021-01-07",
+      "draft": true,
+      "tags": ["personal", "career"]
+    };
+    Following_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata45), {}, {
+        default: () => `<p>I\u2019ve been asked a few times for recommendations as to \u201Cwho to follow\u201D in the data viz/design space. To prevent accidentally omitting people (and stay up to date), this page will serve as a running, non-exhaustive list of the people I recommend others follow.</p>
+<p>This is just the tip of the iceberg when it comes to awesome data design folks that learn in public. If you know of any you think should be added, <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">let me know</a>.</p>
+${validate_component(Following, "Following").$$render($$result, {}, {}, {})}`
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/introducing-tpltheme-b315a3b4.js
+var introducing_tpltheme_b315a3b4_exports = {};
+__export(introducing_tpltheme_b315a3b4_exports, {
+  default: () => Introducing_tpltheme,
+  metadata: () => metadata46
+});
+var metadata46, Introducing_tpltheme;
+var init_introducing_tpltheme_b315a3b4 = __esm({
+  ".svelte-kit/output/server/chunks/introducing-tpltheme-b315a3b4.js"() {
+    init_shims();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata46 = {
+      "layout": "blog",
+      "title": "My First Package! Introducing <code>tpltheme</code>",
+      "description": "Introducing <code>tpltheme</code>, a toolkit to create publication-ready plots in the style of the Texas Policy Lab.",
       "image": "introducing-tpltheme/header.png",
       "date": "2019-07-02",
       "archived": true,
       "tags": ["r"]
     };
     Introducing_tpltheme = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata45), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata46), {}, {
         default: () => `<p>I\u2019ve spent the majority of the summer as an
 <a href="${"https://www.texaspolicylab.org/profile/connor-rothschild/"}" rel="${"nofollow"}">intern</a> with
 the Texas Policy Lab, working on primarily data science-related matters
@@ -16387,7 +15749,7 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
     labs<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"Mean Sepal Width (cm)"</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">"Iris Dataset"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-3-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-3-1.png"
         }, {}, {})}
 <h3 id="${"fonts"}"><a href="${"#fonts"}">Fonts</a></h3>
 <p>The user is able to specify whether they want to use <em>Lato</em> or <em>Adobe
@@ -16406,7 +15768,7 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
     labs<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"Sepal Width (cm)"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"Sepal Length (cm)"</span><span class="token punctuation">,</span> col<span class="token operator">=</span><span class="token string">"Species"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token string">"Petal Length"</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">"Iris Dataset"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-5-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-5-1.png"
         }, {}, {})}
 <p>By specifying <code>style = &quot;Texas&quot;</code> within <code>set_tpl_theme</code>, the user may
 also create Texas-specific plots.</p>
@@ -16423,7 +15785,7 @@ ggplot<span class="token punctuation">(</span>data <span class="token operator">
        caption <span class="token operator">=</span> <span class="token string">"Source: Texas DSHS"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-6-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-6-1.png"
         }, {}, {})}
 <p>And it also works for categorical variables:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">set_tpl_theme<span class="token punctuation">(</span>style <span class="token operator">=</span> <span class="token string">"Texas"</span><span class="token punctuation">,</span> font <span class="token operator">=</span> <span class="token string">"lato"</span><span class="token punctuation">)</span>
@@ -16441,7 +15803,7 @@ tx_vac <span class="token percent-operator operator">%>%</span>
        caption <span class="token operator">=</span> <span class="token string">"Source: Texas DSHS"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-7-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-7-1.png"
         }, {}, {})}
 <p>If the number of colors exceeds the number of colors in the TPL palette
 (9), the function <code>tpl_color_pal()</code> will drop the TPL color palette and
@@ -16456,7 +15818,7 @@ chapter</a>).</p>
   labs<span class="token punctuation">(</span>title <span class="token operator">=</span> <span class="token string">"Texas Counties"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-8-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-8-1.png"
         }, {}, {})}
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r"><span class="token comment"># default to print afterwards</span>
 set_tpl_theme<span class="token punctuation">(</span>style <span class="token operator">=</span> <span class="token string">"print"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
@@ -16478,7 +15840,7 @@ The logo defaults to 1/7th of the size of the plot.</p>
 add_tpl_logo<span class="token punctuation">(</span>plot<span class="token punctuation">,</span> position <span class="token operator">=</span> <span class="token string">"top right"</span><span class="token punctuation">,</span> scale <span class="token operator">=</span> <span class="token number">1.5</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-9-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-9-1.png"
         }, {}, {})}
 <h4 id="${"logo-text"}"><a href="${"#logo-text"}">Logo text</a></h4>
 <p>There may be some instances when an all-out logo is not warranted or
@@ -16492,7 +15854,7 @@ to add text to an existing plot object:</p>
 add_tpl_logo_text<span class="token punctuation">(</span>plot<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-10-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-10-1.png"
         }, {}, {})}
 <p>The user may also need to specify <code>align</code>, which moves the plot
 horizontally across the bottom of the page.</p>
@@ -16503,7 +15865,7 @@ horizontally across the bottom of the page.</p>
 add_tpl_logo_text<span class="token punctuation">(</span>plot<span class="token punctuation">,</span> align <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-11-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-11-1.png"
         }, {}, {})}
 <h3 id="${"additional-functions"}"><a href="${"#additional-functions"}">Additional functions</a></h3>
 <h4 id="${"drop-axes"}"><a href="${"#drop-axes"}">Drop axes</a></h4>
@@ -16519,7 +15881,7 @@ plot object:</p>
     drop_axis<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-12-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-12-1.png"
         }, {}, {})}
 <h3 id="${"colors"}"><a href="${"#colors"}">Colors</a></h3>
 <p>I also put a lot of time into creating a color palette which was both
@@ -16539,7 +15901,7 @@ p3 <span class="token operator">&lt;-</span> view_palette<span class="token punc
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">,</span> nrow <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-13-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-13-1.png"
         }, {}, {})}
 <p>These palettes were created using <a href="${"http://colorbrewer2.org"}" rel="${"nofollow"}">http://colorbrewer2.org</a> and
 <a href="${"http://coloors.co"}" rel="${"nofollow"}">http://coloors.co</a> and are colorblind friendly.</p>
@@ -16571,7 +15933,7 @@ reversed <span class="token operator">&lt;-</span> normal <span class="token ope
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>normal<span class="token punctuation">,</span> reversed<span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-14-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-14-1.png"
         }, {}, {})}
 <p>The user may specify the color palette in the <code>scale_fill_*</code> or
 <code>scale_color_*</code> functions in a ggplot call. Specifically, the user can
@@ -16595,7 +15957,7 @@ reversed <span class="token operator">&lt;-</span> normal <span class="token ope
 gridExtra<span class="token operator">::</span>grid.arrange<span class="token punctuation">(</span>normal<span class="token punctuation">,</span> reversed<span class="token punctuation">,</span> nrow <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-15-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-15-1.png"
         }, {}, {})}
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">data <span class="token operator">&lt;-</span> gapminder<span class="token operator">::</span>gapminder <span class="token percent-operator operator">%>%</span>
   dplyr<span class="token operator">::</span>filter<span class="token punctuation">(</span>gapminder<span class="token operator">::</span>gapminder<span class="token operator">$</span>country <span class="token percent-operator operator">%in%</span> c<span class="token punctuation">(</span><span class="token string">"France"</span><span class="token punctuation">,</span> <span class="token string">"Germany"</span><span class="token punctuation">,</span> <span class="token string">"Ireland"</span><span class="token punctuation">,</span> <span class="token string">"Italy"</span><span class="token punctuation">,</span> <span class="token string">"Japan"</span><span class="token punctuation">,</span> <span class="token string">"Norway"</span><span class="token punctuation">,</span> <span class="token string">"Mexico"</span><span class="token punctuation">,</span> <span class="token string">"United States"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
@@ -16613,7 +15975,7 @@ ggplot<span class="token punctuation">(</span>data <span class="token operator">
   theme<span class="token punctuation">(</span>axis.text.x <span class="token operator">=</span> element_text<span class="token punctuation">(</span>angle <span class="token operator">=</span> <span class="token number">45</span><span class="token punctuation">,</span> hjust <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-16-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-16-1.png"
         }, {}, {})}
 <h3 id="${"restore-defaults"}"><a href="${"#restore-defaults"}">Restore Defaults</a></h3>
 <p>By calling <code>undo_tpl_theme</code>, you are able to remove TPL-specific theme
@@ -16627,41 +15989,129 @@ ggplot<span class="token punctuation">(</span>iris<span class="token punctuation
 <p>This results in the following plot:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-17-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-17-1.png"
         }, {}, {})}
 <p>To restore the TPL theme, simply call <code>set_tpl_theme()</code>:</p>
 <pre class="${"language-r"}"><!-- HTML_TAG_START -->${`<code class="language-r">set_tpl_theme<span class="token punctuation">(</span><span class="token punctuation">)</span>
 last_plot<span class="token punctuation">(</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "An example of a plot in the TPL theme.",
-          src: "../images/post/introducing-tpltheme/unnamed-chunk-18-1.png"
+          src: "/images/post/introducing-tpltheme/unnamed-chunk-18-1.png"
         }, {}, {})}`
       })}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/map-springfield-65bdac35.js
-var map_springfield_65bdac35_exports = {};
-__export(map_springfield_65bdac35_exports, {
-  default: () => Map_springfield,
-  metadata: () => metadata46
+// .svelte-kit/output/server/chunks/learning-6eef23d0.js
+var learning_6eef23d0_exports = {};
+__export(learning_6eef23d0_exports, {
+  default: () => Learning,
+  metadata: () => metadata47
 });
-var import_bowser52, metadata46, Map_springfield;
-var init_map_springfield_65bdac35 = __esm({
-  ".svelte-kit/output/server/chunks/map-springfield-65bdac35.js"() {
+var css13, metadata47, Learning;
+var init_learning_6eef23d0 = __esm({
+  ".svelte-kit/output/server/chunks/learning-6eef23d0.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser52 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    metadata46 = {
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    css13 = {
+      code: "li.svelte-gpo931 a.svelte-gpo931{font-weight:300;margin-left:.25rem}",
+      map: null
+    };
+    metadata47 = {
+      "layout": "blog",
+      "title": "How to Learn Effectively",
+      "description": "An evolving list of what works (for me)",
+      "date": "2021-12-15",
+      "image": "map-springfield/header.png",
+      "archived": false,
+      "draft": true,
+      "tags": ["personal", "learning"]
+    };
+    Learning = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      $$result.css.add(css13);
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata47), {}, {
+        default: () => `<p>What follows is an evolving collection of the tips and tricks that have helped me learn effectively. The list was last updated December 13, 2021. The items are listed in order of perceived importance (to me).</p>
+<ol><li class="${"svelte-gpo931"}"><a href="${"#form-habits-not-goals"}" class="${"svelte-gpo931"}">Forms habits, not goals</a></li>
+<li class="${"svelte-gpo931"}"><a href="${"#find-the-right-people-to-follow"}" class="${"svelte-gpo931"}">Find the right people to follow</a></li>
+<li class="${"svelte-gpo931"}"><a href="${"#commit-at-least-10-hours"}" class="${"svelte-gpo931"}">Commit at least 10 hours</a></li>
+<li class="${"svelte-gpo931"}"><a href="${"#learn-in-public"}" class="${"svelte-gpo931"}">Learn in public</a></li>
+<li class="${"svelte-gpo931"}"><a href="${"#but-dont-depend-on-external-validation"}" class="${"svelte-gpo931"}">(But don\u2019t depend on external validation)</a></li>
+<li class="${"svelte-gpo931"}"><a href="${"#avoid-the-stuff-you-hate"}" class="${"svelte-gpo931"}">Avoid the stuff you hate</a></li></ol>
+<br>
+<hr>
+<h1 id="${"form-habits-not-goals"}"><a href="${"#form-habits-not-goals"}">Form habits, not goals</a></h1>
+<p>Goals are deceiving. They seem to be what we\u2019re working toward, but they give us little to no actual motivation to achieve them.  </p>
+<p>An analogy I often use is working out. Going to the gym with a goal (\u201CI want to get strong, or look more fit\u201D) is most commonly why people buy a gym membership, and why they eventually cancel it. Real results take time, and lofty goals set standards that soon seem unattainable after they don\u2019t bear results. </p>
+<p><strong>A better approach would be to form habits</strong>. Habits are less sexy, but more successful, because they bear results no matter our goals. A new gym goer is more likely to be successful if they have <em>something getting them to the gym</em>, such as a personal trainer, a friend, or a gym community.</p>
+<p>In the same way, people learn not because of their goals, but because of their habits. Doing the same thing every day will inevitably bear results. (The quality of those results will depend on how efficacious your habits really are).</p>
+<p>Find the things that make you excited to learn, or at the very least find the things that force you to learn (ideally, the former). Practically, that might be:</p>
+<ul><li>A daily \u2018coding block\u2019, where you invest time into learning (e.g. 6 - 8pm on weeknights).</li>
+<li>An accountability partner you learn with, or report regular updates to </li>
+<li>???? TK TK</li></ul>
+<p>These kind of small tweaks ensure you spend enough time doing the things that help you learn.</p>
+<h1 id="${"follow-the-right-people"}"><a href="${"#follow-the-right-people"}">Follow the right people</a></h1>
+<p>There\u2019s a common adage that you are the average of your five closest friends. A slightly-less-punchy but more way-more-accurate adage is: <strong>you learn from the people you follow</strong>. </p>
+<p>The quickest way to learn in the long run is to surround yourself with people who feed you knowledge passively. </p>
+<p><a href="${"https://twitter.com/JamesClear/status/1312386219599433729"}" rel="${"nofollow"}">https://twitter.com/JamesClear/status/1312386219599433729</a></p>
+<p>This kind of tip requires a sort of rethinking of how we learn. We tend to think of learning as an <em>active process</em>, where you seek out information, commit time, and give attention to the topic at hand. In contrast, finding the right people to follow is a <em>passive approach to learning</em>, where you come across informative and helpful information sporadically and intermittently (FIXME these are the same words).</p>
+<p>Some of the most helpful tips I\u2019ve encountered have been <strong>_</strong>\u2026.</p>
+<p>Following people who learn in public and who learn with an active curiosity has exposed me to \u2026</p>
+<h1 id="${"commit-at-least-10-hours"}"><a href="${"#commit-at-least-10-hours"}">Commit at least 10 hours</a></h1>
+<p>Learning can actually be quite fun once you get past \u201Cthe tipping point.\u201D But the first few hours of learning anything are almost always frustrating.</p>
+<p>You have to persevere up until that tipping point. Be patient with the hard parts, get frustrated, and get confused. I don\u2019t know if I made up this rule (I did make up the number, to my knowledge), but <strong>you should always commit at least 10 hours toward something before giving up</strong>. If, after those 10 hours, you\u2019re still frustrated and confused, it might be worth abandoning (or rethinking your approach). </p>
+<p>But those 10 hours tend to be the time when we get over the hurdles, get our first wins, and start to really understand the topic at hand.</p>
+<p>[tk chart of diminishing marginal returns of time invested -&gt; stuff learned]</p>
+<p>[tk chart of the \u2018tipping point\u2019 - time invested -&gt; perceived difficulty of task at hand. once you pass the tipping point, each subsequent hour feels easier and more rewarding]</p>
+<h1 id="${"learn-in-public"}"><a href="${"#learn-in-public"}">Learn in public</a></h1>
+<p>A good way to hold yourself accountable, get feedback, and learn from others is to <strong>learn in public</strong>. </p>
+<p>Swyx tk tk</p>
+<p><a href="${"https://chriscoyier.net/2012/09/23/working-in-public/"}" rel="${"nofollow"}">https://chriscoyier.net/2012/09/23/working-in-public/</a>
+<a href="${"https://www.swyx.io/learn-in-public/"}" rel="${"nofollow"}">https://www.swyx.io/learn-in-public/</a></p>
+<h1 id="${"but-dont-depend-on-external-validation"}"><a href="${"#but-dont-depend-on-external-validation"}">(But, don\u2019t depend on external validation)</a></h1>
+<p>I had (and still have) a bad habit of judging the value of my work by how many Twitter likes it receives. <strong>This is awful</strong> (please learn from me). It can be paralyzing when you spend 100+ hours on a project only to post it and for it to receive a couple dozen likes.</p>
+<p>I think this is a common mistake among people who try to \u201Clearn in public,\u201D because we associate <em>learning</em> with <em>sharing</em> and <em>sharing</em> with <em>validation</em>. If the work that we share does not receive a lot attention, we assume it was a failure.</p>
+<p>The trick here is to think of yourself as a <strong>participant in the conversation</strong>, not <strong>a creator for the public</strong>. You should be learning <em>in public</em> and <em>with the public</em>, not <em>for the public</em>. Your work (early on) will not be changing the world, and that\u2019s okay. Participating in the conversation, and engaging with a community of like-minded people, will bear results beyond external validation.</p>
+<h1 id="${"avoid-the-stuff-you-hate"}"><a href="${"#avoid-the-stuff-you-hate"}">Avoid the stuff you hate</a></h1>
+<p>Back to my gym analogy from above. After a few years of lifting, with peaks and valleys of enjoying it, I\u2019ve found a surefire strategy to keep me going even when I\u2019m not in the mood: <strong>cutting out the bad stuff</strong>. There are certain exercises I just <em>hate</em>, like bulgarian split squats and dumbbell rows (sorry, gym bros). </p>
+<p>Now, I know that the decision to go to the gym is an intentional one, and that I decide to do so based on an implicit calculation of pros, cons, and perceived enjoyment of going. Before I go, I ask myself (in my head), \u201Cwill I enjoy this workout?\u201D</p>
+<p>By cutting out the bad stuff, I make myself that much more likely to get up and actually hit the gym.</p>
+<p>Deciding to learn is an active process that you negotiate by asking yourself, \u201Cis this really worth my time?\u201D, which inevitably leads to the question, \u201Chow much will I dislike this?\u201D By cutting out the bad stuff, you dislike learning a bit less, and the rational part of your brain likes learning that much more.</p>
+<p>Avoid (within reason), the things about learning that you dread. Is there a topic you dread, or a method that you don\u2019t vibe with (e.g. reading)? Avoid it. If you can. Do whatever you can to make yourself <em>excited</em> to learn, so that you form the habits of getting started\u2014once you\u2019re in the weeds, maybe the dreadful stuff won\u2019t seem too bad.</p>
+<h1 id="${"ask-the-right-questions-and-be-curious-"}"><a href="${"#ask-the-right-questions-and-be-curious-"}">Ask the right questions (and be curious )</a></h1>
+<p>could memorize xyz fact but its better to understand by curiosity</p>
+<h1 id="${"tell-people-about-what-youre-learning"}"><a href="${"#tell-people-about-what-youre-learning"}">Tell people about what you\u2019re learning</a></h1>
+<h1 id="${"define-your-goals-by-your-contributions-not-your-outcomes"}"><a href="${"#define-your-goals-by-your-contributions-not-your-outcomes"}">Define your goals by your contributions, not your outcomes</a></h1>`
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/map-springfield-27529194.js
+var map_springfield_27529194_exports = {};
+__export(map_springfield_27529194_exports, {
+  default: () => Map_springfield,
+  metadata: () => metadata48
+});
+var metadata48, Map_springfield;
+var init_map_springfield_27529194 = __esm({
+  ".svelte-kit/output/server/chunks/map-springfield-27529194.js"() {
+    init_shims();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata48 = {
       "layout": "blog",
       "title": "Create a Streetmap of Any City in R",
       "description": "Creating a beautiful streetmap of my hometown, exclusively in R",
@@ -16671,7 +16121,7 @@ var init_map_springfield_65bdac35 = __esm({
       "tags": ["r"]
     };
     Map_springfield = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata46), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata48), {}, {
         default: () => `<p>In this post, I expand upon <a href="${"https://christianburkhart.de/"}" rel="${"nofollow"}">Christian
 Burkhart</a>\u2019s wonderful <a href="${"https://ggplot2tutor.com/streetmaps/streetmaps/"}" rel="${"nofollow"}">ggplot2tor
 tutorial</a> on streetmap
@@ -16827,7 +16277,7 @@ as borders using <code>geom_rect</code>).</p>
 map_bw</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A black and white map of Springfield, Missouri.",
-          src: "../images/post/map-springfield/bw_map_springfield.png",
+          src: "/images/post/map-springfield/bw_map_springfield.png",
           width: "50%",
           centered: true
         }, {}, {})}
@@ -16939,7 +16389,7 @@ map_gold <span class="token operator">&lt;-</span> plot_gold <span class="token 
 map_gold</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A gold map of Springfield, Missouri.",
-          src: "../images/post/map-springfield/gold_map_springfield.png",
+          src: "/images/post/map-springfield/gold_map_springfield.png",
           width: "50%",
           centered: true
         }, {}, {})}`
@@ -16948,28 +16398,26 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/nuxt-blog-starter-99b71689.js
-var nuxt_blog_starter_99b71689_exports = {};
-__export(nuxt_blog_starter_99b71689_exports, {
+// .svelte-kit/output/server/chunks/nuxt-blog-starter-6daf543b.js
+var nuxt_blog_starter_6daf543b_exports = {};
+__export(nuxt_blog_starter_6daf543b_exports, {
   default: () => Nuxt_blog_starter,
-  metadata: () => metadata47
+  metadata: () => metadata49
 });
-var import_bowser53, import_prismjs7, import_prism_normalize_whitespace7, metadata47, Nuxt_blog_starter;
-var init_nuxt_blog_starter_99b71689 = __esm({
-  ".svelte-kit/output/server/chunks/nuxt-blog-starter-99b71689.js"() {
+var import_prismjs7, import_prism_normalize_whitespace7, metadata49, Nuxt_blog_starter;
+var init_nuxt_blog_starter_6daf543b = __esm({
+  ".svelte-kit/output/server/chunks/nuxt-blog-starter-6daf543b.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_Info_43a233e8();
-    init_Code_71f36c68();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser53 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_Info_796ef0bb();
+    init_Code_bcfeb83b();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs7 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace7 = __toModule(require_prism_normalize_whitespace());
@@ -16980,32 +16428,35 @@ var init_nuxt_blog_starter_99b71689 = __esm({
     init_prism_r();
     init_prism_json();
     init_prism_yaml();
-    metadata47 = {
+    metadata49 = {
       "layout": "blog",
       "title": "Announcing the Nuxt Blog Starter",
       "date": "2021-02-10",
       "description": "A minimal, content-focused blog site built with NuxtJS and Bulma",
       "image": "nuxt-blog-starter/header.png",
-      "featured": true,
+      "featured": false,
       "tags": ["vue", "nuxt", "package"]
     };
     Nuxt_blog_starter = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata47), {}, {
-        default: () => `<p>I\u2019m happy to share a <a href="${"https://github.com/connorrothschild/nuxt-blog-starter"}" rel="${"nofollow"}">new starter template</a> for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of <a href="${"https://www.connorrothschild.com/"}" rel="${"nofollow"}">my own site</a>.</p>
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata49), {}, {
+        default: () => `<p>I\u2019m happy to share a <a href="${"https://github.com/connorrothschild/nuxt-blog-starter"}" rel="${"nofollow"}">new starter template</a> for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of <a href="${"https://connorrothschild.github.io/v3/"}" rel="${"nofollow"}">my own <em>former</em> personal site</a>. </p>
+${validate_component(Info, "Info").$$render($$result, {}, {}, {
+          default: () => `<p>This post might be slightly out of date because it is in reference to <a href="${"https://connorrothschild.github.io/v3/"}" rel="${"nofollow"}">my former site</a>, not this one.</p>`
+        })}
 <h2 id="${"why-nuxt"}"><a href="${"#why-nuxt"}">Why Nuxt?</a></h2>
 <p>I\u2019ve went through my fair share of blogs. See <a href="${"https://connorrothschild.github.io/v1/"}" rel="${"nofollow"}">version 1</a> and <a href="${"https://connorrothschild.github.io/v2/"}" rel="${"nofollow"}">version 2</a>. I moved to a site using Nuxt for three reasons:</p>
 <h4 id="${"1-speed-and-user-experience"}"><a href="${"#1-speed-and-user-experience"}">1. Speed and user experience</a></h4>
 <p>Nuxt is fast by default. It uses server-side rendering, rather than client-side rendering, which means that content is rendered before users visit your site. As explained on the <a href="${"https://nuxtjs.org/post/going-full-static/"}" rel="${"nofollow"}">Nuxt Blog</a>:</p>
-<blockquote><p><code>nuxt generate</code> with <code>target: &#39;static&#39;</code> will pre-render all your pages to HTML and save a payload file in order to mock <code>asyncData</code> and <code>fetch</code> on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it (from the in the header) for optimal performance.</p></blockquote>
-<p>You can see the impact of SSR on performance by comparing my <a href="${"https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fconnorrothschild.github.io%2Fv2%2F&tab=desktop"}" rel="${"nofollow"}">last blog iteration</a> to <a href="${"https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop"}" rel="${"nofollow"}">this one</a>.</p>
+<blockquote><p><code>nuxt generate</code> with <code>target: &#39;static&#39;</code> will pre-render all your pages to HTML and save a payload file in order to mock <code>asyncData</code> and <code>fetch</code> on client-side navigation, this means no more HTTP calls to your API on client-side navigation. By extracting the page payload to a js file, it also reduces the HTML size served as well as preloading it for optimal performance.</p></blockquote>
+<p>You can see the impact of SSR on performance by comparing my <a href="${"https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fconnorrothschild.github.io%2Fv2%2F&tab=desktop"}" rel="${"nofollow"}">last blog iteration</a> to <a href="${"https://pagespeed.web.dev/report?url=https%3A%2F%2Fconnorrothschild.github.io%2Fv3eed/insights/?url=https%3A%2F%2Fhttps://connorrothschild.github.io/v3%2F&tab=desktop"}" rel="${"nofollow"}">this one</a>.</p>
 <p>The former, built using <a href="${"https://bookdown.org/yihui/blogdown/"}" rel="${"nofollow"}">R <code>blogdown</code></a> and <a href="${"https://themes.gohugo.io/academic/"}" rel="${"nofollow"}">Hugo Academic</a>, scored 72/100 on desktop performance, compared to a 100/100 on this version:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/old-site-perf.png",
+          src: "/images/post/nuxt-blog-starter/old-site-perf.png",
           alt: "Old site performance. 72/100",
           width: "48%"
         }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/new-site-perf.png",
+          src: "/images/post/nuxt-blog-starter/new-site-perf.png",
           alt: "New site performance. 100/100",
           width: "48%"
         }, {}, {})}
@@ -17025,12 +16476,12 @@ ${validate_component(Image, "Image").$$render($$result, {
 <h4 id="${"dark-modelight-mode"}"><a href="${"#dark-modelight-mode"}">Dark mode/light mode</a></h4>
 <p>An example of this can be seen below the Sass defaults that live within <code>assets/scss/colors.scss</code>. Simply uncomment those lines (preceded by the comment \u201CLIGHT MODE\u201D) to see your site with light mode defaults.</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/dark.png",
+          src: "/images/post/nuxt-blog-starter/dark.png",
           alt: "Dark mode",
           width: "49%"
         }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/light.png",
+          src: "/images/post/nuxt-blog-starter/light.png",
           alt: "Light mode",
           width: "49%"
         }, {}, {})}
@@ -17052,19 +16503,19 @@ ${validate_component(Code, "Code").$$render($$result, { language: "js" }, {}, {
         })}
 <p>This creates some subtle yet attractive page transitions:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/transitions.gif",
+          src: "/images/post/nuxt-blog-starter/transitions.gif",
           alt: "GIF showcasing transitions of home page, to blog post pagfe, to a single blog post."
         }, {}, {})}
 <p>You can modify these transitions by adding and removing elements in the CSS selector parameters for each page\u2019s <code>enter()</code> property.</p>
 <h3 id="${"meta-tagsseo"}"><a href="${"#meta-tagsseo"}">Meta tags/SEO</a></h3>
 <p>The function <code>getSiteMeta()</code>, found in the <code>utils/</code> folder, allows for different meta tags for each page and for each blog post. The function allows the Twitter Cards for my home page and for a blog post to look different, like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/home-card.png",
+          src: "/images/post/nuxt-blog-starter/home-card.png",
           alt: "Twitter card of homepage",
           width: "47.2%"
         }, {}, {})}
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/nuxt-blog-starter/blog-card.png",
+          src: "/images/post/nuxt-blog-starter/blog-card.png",
           alt: "Twitter card of blog post page",
           width: "50%"
         }, {}, {})}
@@ -17092,27 +16543,25 @@ ${validate_component(Info, "Info").$$render($$result, {}, {}, {
   }
 });
 
-// .svelte-kit/output/server/chunks/refugee-trends-97b67ae7.js
-var refugee_trends_97b67ae7_exports = {};
-__export(refugee_trends_97b67ae7_exports, {
+// .svelte-kit/output/server/chunks/refugee-trends-479ad85d.js
+var refugee_trends_479ad85d_exports = {};
+__export(refugee_trends_479ad85d_exports, {
   default: () => Refugee_trends,
-  metadata: () => metadata48
+  metadata: () => metadata50
 });
-var import_bowser54, metadata48, Refugee_trends;
-var init_refugee_trends_97b67ae7 = __esm({
-  ".svelte-kit/output/server/chunks/refugee-trends-97b67ae7.js"() {
+var metadata50, Refugee_trends;
+var init_refugee_trends_479ad85d = __esm({
+  ".svelte-kit/output/server/chunks/refugee-trends-479ad85d.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser54 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    metadata48 = {
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata50 = {
       "layout": "blog",
       "title": "Trends in Refugee Acceptance, 2002 to 2019",
       "description": "Or, how a single line of code can create a beautiful small multiples US map.",
@@ -17122,10 +16571,10 @@ var init_refugee_trends_97b67ae7 = __esm({
       "tags": ["analysis", "r"]
     };
     Refugee_trends = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata48), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata50), {}, {
         default: () => `${validate_component(Image, "Image").$$render($$result, {
           alt: "A small multiples map of refugee acceptance over time, across states",
-          src: "../images/post/refugee-trends/featured.png"
+          src: "/images/post/refugee-trends/featured.png"
         }, {}, {})}
 <p>In <a href="${"https://connorrothschild.github.io/map-missing-migrants/"}" rel="${"nofollow"}">previous projects</a>, I\u2019ve explored how migration has unfolded across <em>places</em>: where migrants travel, where they go missing, and where their journeys come to a fatal end.</p>
 <p>Next, I wanted to see how <em>host countries</em> have approached the migrant and refugee crisis, with a particular focus on the United States. In my mind, an effective visualization of the U.S.\u2019s response to an increasing number of refugees needs to present two things: how refugee acceptance has changed <em>over time</em> and how refugee acceptance differs <em>across states.</em></p>
@@ -17133,12 +16582,12 @@ var init_refugee_trends_97b67ae7 = __esm({
 <p>There are examples of these types of small multiple maps across the internet. The Washington Post\u2019s <a href="${"https://www.washingtonpost.com/graphics/politics/how-fair-is-the-electoral-college/"}" rel="${"nofollow"}">overview of the electoral college</a> was visualized in the following way:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Washington Post small multiples map of electoral college data",
-          src: "../images/post/refugee-trends/wapo.png"
+          src: "/images/post/refugee-trends/wapo.png"
         }, {}, {})}
 <p>You can also find an overview of <em>why</em> they work, and some additional examples, on the <a href="${"https://policyviz.com/2016/05/19/small-multiple-tile-grid-map/"}" rel="${"nofollow"}">PolicyViz</a> blog:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "Policy Viz's small multiples of overall voting results over time",
-          src: "../images/post/refugee-trends/policyviz.jpg"
+          src: "/images/post/refugee-trends/policyviz.jpg"
         }, {}, {})}
 <h2 id="${"making-it-in-r"}"><a href="${"#making-it-in-r"}">Making it in R</a></h2>
 <p>The process of creating a small multiple tile grid map is relatively easy in R (like most things done in R). It is considerably more difficult in D3.js; if you\u2019re interested in that type of thing, you can take a look at <a href="${"https://bl.ocks.org/jinniluo/a95b27b1f4ea65ae94ab6ca3fcfb5934#index.html"}" rel="${"nofollow"}">this code</a> for inspiration.</p>
@@ -17157,7 +16606,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   scale_x_continuous<span class="token punctuation">(</span>breaks <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">2002</span><span class="token punctuation">,</span> <span class="token number">2019</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A small multiples map of refugee acceptance over time, across states",
-          src: "../images/post/refugee-trends/macro.jpg"
+          src: "/images/post/refugee-trends/macro.jpg"
         }, {}, {})}
 <p>Now we have the answer to our first question: <strong>how has refugee acceptance changed over time?</strong> The answer: pretty drastically. The US accepted nearly 100,000 refugees in 2016; 2 years later, that number was barely over 20,000.</p>
 <h4 id="${"step-2-make-small-multiples"}"><a href="${"#step-2-make-small-multiples"}">Step 2: Make small multiples</a></h4>
@@ -17167,7 +16616,7 @@ ${validate_component(Image, "Image").$$render($$result, {
 <p>This makes a plot that looks like this:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "first try",
-          src: "../images/post/refugee-trends/firsttry.jpg"
+          src: "/images/post/refugee-trends/firsttry.jpg"
         }, {}, {})}
 <p>It\u2019s alright, but not perfect! There are a few improvements we can definitely make.</p>
 <p>For one, the axis labels overlap. We already know the range of years is between 2002 and 2019 (its in our subtitle!). So we can remove our x axis labels.</p>
@@ -17208,7 +16657,7 @@ ${validate_component(Image, "Image").$$render($$result, {
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "secondtry",
-          src: "../images/post/refugee-trends/secondtry.jpg"
+          src: "/images/post/refugee-trends/secondtry.jpg"
         }, {}, {})}
 <p>Pretty good! Much better. But we can add some elements to take our visualization to the next level.</p>
 <p>Because our data spans nearly 20 years (2002 to 2019), we can overlay our small multiples with other variables of interest, such as who was President during a given period.</p>
@@ -17242,12 +16691,12 @@ geom_rect<span class="token punctuation">(</span>mapping<span class="token opera
   <span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "r version",
-          src: "../images/post/refugee-trends/ref.png"
+          src: "/images/post/refugee-trends/ref.png"
         }, {}, {})}
 <p>I brought that plot to Illustrator and made it a lot prettier. Here\u2019s the final version:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A small multiples map of refugee acceptance over time, across states",
-          src: "../images/post/refugee-trends/featured.png"
+          src: "/images/post/refugee-trends/featured.png"
         }, {}, {})}
 <p>What do we notice? A few key states (Texas, California, Florida, and Michigan) make up the vast majority of refugee acceptance, while other accept almost <em>no</em> <em>refugees</em>. Nearly every state has reduced their refugee acceptance since 2017, but the bulk of this decline has come from these larger states.</p>
 <p>While you\u2019re here, take a look at my project <a href="${"https://connorrothschild.github.io/map-missing-migrants/"}" rel="${"nofollow"}"><em>Mapping Missing Migrants.</em></a></p>`
@@ -17256,27 +16705,25 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/svelte-and-d3-81974204.js
-var svelte_and_d3_81974204_exports = {};
-__export(svelte_and_d3_81974204_exports, {
+// .svelte-kit/output/server/chunks/svelte-and-d3-5f409860.js
+var svelte_and_d3_5f409860_exports = {};
+__export(svelte_and_d3_5f409860_exports, {
   default: () => Svelte_and_d3,
-  metadata: () => metadata49
+  metadata: () => metadata51
 });
-var import_bowser55, import_prismjs8, import_prism_normalize_whitespace8, css10, metadata49, Svelte_and_d3;
-var init_svelte_and_d3_81974204 = __esm({
-  ".svelte-kit/output/server/chunks/svelte-and-d3-81974204.js"() {
+var import_prismjs8, import_prism_normalize_whitespace8, css14, metadata51, Svelte_and_d3;
+var init_svelte_and_d3_5f409860 = __esm({
+  ".svelte-kit/output/server/chunks/svelte-and-d3-5f409860.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Code_71f36c68();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser55 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Code_bcfeb83b();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
     import_prismjs8 = __toModule(require_prism());
     init_prism_line_numbers();
     import_prism_normalize_whitespace8 = __toModule(require_prism_normalize_whitespace());
@@ -17287,13 +16734,13 @@ var init_svelte_and_d3_81974204 = __esm({
     init_prism_r();
     init_prism_json();
     init_prism_yaml();
-    css10 = {
+    css14 = {
       code: "svg.svelte-1qkbzqf{width:100%;margin:0.5rem 0 1.5rem 0;border-radius:6px}rect.svelte-1qkbzqf{width:100%;height:100%}circle.svelte-1qkbzqf{cursor:crosshair}",
       map: null
     };
-    metadata49 = {
+    metadata51 = {
       "layout": "blog",
-      "title": "Making visualizations literally using Svelte + D3",
+      "title": "Making visualizations literally w/ Svelte & D3",
       "description": "Why Svelte has replaced (and complemented) D3 as my go-to tool for powerful visualizations",
       "image": "svelte-and-d3/header.png",
       "date": "2021-07-02",
@@ -17301,8 +16748,8 @@ var init_svelte_and_d3_81974204 = __esm({
       "tags": ["svelte", "d3", "tutorial"]
     };
     Svelte_and_d3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css10);
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata49), {}, {
+      $$result.css.add(css14);
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata51), {}, {
         default: () => `<p>When I started making data visualizations, I considered <a href="${"https://d3js.org/"}" rel="${"nofollow"}">D3</a>\u2014Data Driven Documents\u2014to be the gold standard programming language required to create beautiful graphics on the web.</p>
 <p>As I progress in my career, I\u2019m realizing that D3 has a more particular (and smaller) role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I\u2019m learning that my most efficient and intuitive development comes when I <strong>program literally</strong>. </p>
 <p>What does that mean? (To be honest, I\u2019m making up the term.) It means that I\u2019m moving away from <em>pseudo-declarative</em> data visualization in D3, and starting to make my visualizations <em>literally</em>, by simply writing markup in <a href="${"https://svelte.dev/"}" rel="${"nofollow"}">Svelte</a>. </p>
@@ -17313,7 +16760,7 @@ var init_svelte_and_d3_81974204 = __esm({
           default: () => `<p>This is not a comprehensive tutorial about <strong>how to</strong> use D3 and Svelte together. I\u2019ll cover that in the <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">future</a>. In the meantime, check out tutorials from <a href="${"https://www.youtube.com/watch?v=bnd64ZrHC0U"}" rel="${"nofollow"}">Matthias Stahl</a>, examples of Svelte and D3 in action on The Pudding\u2019s <a href="${"https://github.com/the-pudding/"}" rel="${"nofollow"}">GitHub</a>, and an example of similar framework-driven logic on Amelia Wattenberger\u2019s <a href="${"https://wattenberger.com/post/react-and-d3"}" rel="${"nofollow"}">blog</a>. </p>
 <p>Want an immediate example? Here\u2019s an (admittedly verbose) <a href="${"https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte"}" rel="${"nofollow"}">Svelte component</a> I used in a recent project about Bob Ross.</p>`
         })} 
-<h2 id="${"what-d3-does-3\uFE0F\u20E3"}"><a href="${"#what-d3-does-3\uFE0F\u20E3"}">What D3 does 3\uFE0F\u20E3</a></h2>
+<h2 id="${"what-d3-does"}"><a href="${"#what-d3-does"}">What D3 does</a></h2>
 <p>D3 allows for intuitive transformations of the DOM by leveraging easy-to-understand selection syntax. Sound confusing? Let\u2019s learn through an example (adapted from the <a href="${"https://d3js.org/#selections"}" rel="${"nofollow"}">D3 homepage</a>). Imagine we had 5 circles and wanted to change the fill of each. </p>
 <svg class="${"svelte-1qkbzqf"}"><rect width="${"100%"}" height="${"100%"}" class="${"svelte-1qkbzqf"}"></rect><circle cx="${"10%"}" cy="${"50%"}" r="${"10"}" fill="${"steelblue"}" class="${"svelte-1qkbzqf"}"><title>Hello from the circle!</title></circle><circle cx="${"30%"}" cy="${"50%"}" r="${"10"}" fill="${"steelblue"}" class="${"svelte-1qkbzqf"}"><title>Hello from the circle!</title></circle><circle cx="${"50%"}" cy="${"50%"}" r="${"10"}" fill="${"steelblue"}" class="${"svelte-1qkbzqf"}"><title>Hello from the circle!</title></circle><circle cx="${"70%"}" cy="${"50%"}" r="${"10"}" fill="${"steelblue"}" class="${"svelte-1qkbzqf"}"><title>Hello from the circle!</title></circle><circle cx="${"90%"}" cy="${"50%"}" r="${"10"}" fill="${"steelblue"}" class="${"svelte-1qkbzqf"}"><title>Hello from the circle!</title></circle></svg>
 <p>In the traditional <a href="${"https://www.w3schools.com/js/js_htmldom.asp"}" rel="${"nofollow"}">HTML DOM model</a>, we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:</p>
@@ -17362,7 +16809,11 @@ ${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}
               &#123;x: 90, r: 25&#125;]
 &lt;/script&gt;
 
-&lt;p&gt;&#123;data.map(x =&gt; x)&#125;&lt;/p&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+&lt;svg&gt;
+  &#123;#each data as d&#125;
+    &lt;circle cx=&#123;d.x + &quot;%&quot;&#125; cy=&quot;50%&quot; r=&#123;d.r&#125; fill=&quot;white&quot; /&gt;
+  &#123;/each&#125;
+&lt;/svg&gt;</code>`}<!-- HTML_TAG_END --></pre>`
         })}
 
 <p>In my view, there are three benefits to writing our code this way:</p>
@@ -17475,27 +16926,25 @@ ${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}
   }
 });
 
-// .svelte-kit/output/server/chunks/svelte-scatter-f5d4a79a.js
-var svelte_scatter_f5d4a79a_exports = {};
-__export(svelte_scatter_f5d4a79a_exports, {
+// .svelte-kit/output/server/chunks/svelte-scatter-811ff131.js
+var svelte_scatter_811ff131_exports = {};
+__export(svelte_scatter_811ff131_exports, {
   default: () => Svelte_scatter,
-  metadata: () => metadata50
+  metadata: () => metadata52
 });
-var import_bowser56, metadata50, Svelte_scatter;
-var init_svelte_scatter_f5d4a79a = __esm({
-  ".svelte-kit/output/server/chunks/svelte-scatter-f5d4a79a.js"() {
+var metadata52, Svelte_scatter;
+var init_svelte_scatter_811ff131 = __esm({
+  ".svelte-kit/output/server/chunks/svelte-scatter-811ff131.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Info_43a233e8();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser56 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    metadata50 = {
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Info_796ef0bb();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata52 = {
       "layout": "blog",
       "title": "Creating the ultimate scatterplot in Svelte",
       "description": "Svelte + D3, in action",
@@ -17505,7 +16954,7 @@ var init_svelte_scatter_f5d4a79a = __esm({
       "tags": ["svelte", "d3", "tutorial"]
     };
     Svelte_scatter = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata50), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata52), {}, {
         default: () => `
 
 <p>Earlier this year, I wrote about how I use Svelte to compose beautiful, powerful data visualizations. In that post, I documented how Svelte has gradually replaced D3 as the key tool for creating graphics. </p>
@@ -17606,42 +17055,1795 @@ $<span class="token operator">:</span> yScale <span class="token operator">=</sp
   }
 });
 
-// .svelte-kit/output/server/chunks/tidy-tuesday-powerlifting-56cc77f6.js
-var tidy_tuesday_powerlifting_56cc77f6_exports = {};
-__export(tidy_tuesday_powerlifting_56cc77f6_exports, {
-  default: () => Tidy_tuesday_powerlifting,
-  metadata: () => metadata51
-});
-var import_bowser57, metadata51, Tidy_tuesday_powerlifting;
-var init_tidy_tuesday_powerlifting_56cc77f6 = __esm({
-  ".svelte-kit/output/server/chunks/tidy-tuesday-powerlifting-56cc77f6.js"() {
+// .svelte-kit/output/server/chunks/linear-5e174aa1.js
+function ascending(a, b) {
+  return a == null || b == null ? NaN : a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+}
+function bisector(f) {
+  let delta = f;
+  let compare1 = f;
+  let compare2 = f;
+  if (f.length === 1) {
+    delta = (d, x) => f(d) - x;
+    compare1 = ascending;
+    compare2 = (d, x) => ascending(f(d), x);
+  }
+  function left(a, x, lo = 0, hi = a.length) {
+    if (lo < hi) {
+      if (compare1(x, x) !== 0)
+        return hi;
+      do {
+        const mid = lo + hi >>> 1;
+        if (compare2(a[mid], x) < 0)
+          lo = mid + 1;
+        else
+          hi = mid;
+      } while (lo < hi);
+    }
+    return lo;
+  }
+  function right(a, x, lo = 0, hi = a.length) {
+    if (lo < hi) {
+      if (compare1(x, x) !== 0)
+        return hi;
+      do {
+        const mid = lo + hi >>> 1;
+        if (compare2(a[mid], x) <= 0)
+          lo = mid + 1;
+        else
+          hi = mid;
+      } while (lo < hi);
+    }
+    return lo;
+  }
+  function center(a, x, lo = 0, hi = a.length) {
+    const i = left(a, x, lo, hi - 1);
+    return i > lo && delta(a[i - 1], x) > -delta(a[i], x) ? i - 1 : i;
+  }
+  return { left, center, right };
+}
+function number$1(x) {
+  return x === null ? NaN : +x;
+}
+function ticks(start, stop, count) {
+  var reverse, i = -1, n, ticks2, step;
+  stop = +stop, start = +start, count = +count;
+  if (start === stop && count > 0)
+    return [start];
+  if (reverse = stop < start)
+    n = start, start = stop, stop = n;
+  if ((step = tickIncrement(start, stop, count)) === 0 || !isFinite(step))
+    return [];
+  if (step > 0) {
+    let r0 = Math.round(start / step), r1 = Math.round(stop / step);
+    if (r0 * step < start)
+      ++r0;
+    if (r1 * step > stop)
+      --r1;
+    ticks2 = new Array(n = r1 - r0 + 1);
+    while (++i < n)
+      ticks2[i] = (r0 + i) * step;
+  } else {
+    step = -step;
+    let r0 = Math.round(start * step), r1 = Math.round(stop * step);
+    if (r0 / step < start)
+      ++r0;
+    if (r1 / step > stop)
+      --r1;
+    ticks2 = new Array(n = r1 - r0 + 1);
+    while (++i < n)
+      ticks2[i] = (r0 + i) / step;
+  }
+  if (reverse)
+    ticks2.reverse();
+  return ticks2;
+}
+function tickIncrement(start, stop, count) {
+  var step = (stop - start) / Math.max(0, count), power = Math.floor(Math.log(step) / Math.LN10), error2 = step / Math.pow(10, power);
+  return power >= 0 ? (error2 >= e10 ? 10 : error2 >= e5 ? 5 : error2 >= e2 ? 2 : 1) * Math.pow(10, power) : -Math.pow(10, -power) / (error2 >= e10 ? 10 : error2 >= e5 ? 5 : error2 >= e2 ? 2 : 1);
+}
+function tickStep(start, stop, count) {
+  var step0 = Math.abs(stop - start) / Math.max(0, count), step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)), error2 = step0 / step1;
+  if (error2 >= e10)
+    step1 *= 10;
+  else if (error2 >= e5)
+    step1 *= 5;
+  else if (error2 >= e2)
+    step1 *= 2;
+  return stop < start ? -step1 : step1;
+}
+function initRange(domain, range) {
+  switch (arguments.length) {
+    case 0:
+      break;
+    case 1:
+      this.range(domain);
+      break;
+    default:
+      this.range(range).domain(domain);
+      break;
+  }
+  return this;
+}
+function define2(constructor, factory, prototype) {
+  constructor.prototype = factory.prototype = prototype;
+  prototype.constructor = constructor;
+}
+function extend(parent, definition) {
+  var prototype = Object.create(parent.prototype);
+  for (var key in definition)
+    prototype[key] = definition[key];
+  return prototype;
+}
+function Color() {
+}
+function color_formatHex() {
+  return this.rgb().formatHex();
+}
+function color_formatHsl() {
+  return hslConvert(this).formatHsl();
+}
+function color_formatRgb() {
+  return this.rgb().formatRgb();
+}
+function color(format22) {
+  var m, l;
+  format22 = (format22 + "").trim().toLowerCase();
+  return (m = reHex.exec(format22)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) : l === 3 ? new Rgb(m >> 8 & 15 | m >> 4 & 240, m >> 4 & 15 | m & 240, (m & 15) << 4 | m & 15, 1) : l === 8 ? rgba(m >> 24 & 255, m >> 16 & 255, m >> 8 & 255, (m & 255) / 255) : l === 4 ? rgba(m >> 12 & 15 | m >> 8 & 240, m >> 8 & 15 | m >> 4 & 240, m >> 4 & 15 | m & 240, ((m & 15) << 4 | m & 15) / 255) : null) : (m = reRgbInteger.exec(format22)) ? new Rgb(m[1], m[2], m[3], 1) : (m = reRgbPercent.exec(format22)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) : (m = reRgbaInteger.exec(format22)) ? rgba(m[1], m[2], m[3], m[4]) : (m = reRgbaPercent.exec(format22)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) : (m = reHslPercent.exec(format22)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) : (m = reHslaPercent.exec(format22)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) : named.hasOwnProperty(format22) ? rgbn(named[format22]) : format22 === "transparent" ? new Rgb(NaN, NaN, NaN, 0) : null;
+}
+function rgbn(n) {
+  return new Rgb(n >> 16 & 255, n >> 8 & 255, n & 255, 1);
+}
+function rgba(r, g, b, a) {
+  if (a <= 0)
+    r = g = b = NaN;
+  return new Rgb(r, g, b, a);
+}
+function rgbConvert(o) {
+  if (!(o instanceof Color))
+    o = color(o);
+  if (!o)
+    return new Rgb();
+  o = o.rgb();
+  return new Rgb(o.r, o.g, o.b, o.opacity);
+}
+function rgb$1(r, g, b, opacity) {
+  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+}
+function Rgb(r, g, b, opacity) {
+  this.r = +r;
+  this.g = +g;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+function rgb_formatHex() {
+  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
+}
+function rgb_formatRgb() {
+  var a = this.opacity;
+  a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+  return (a === 1 ? "rgb(" : "rgba(") + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.b) || 0)) + (a === 1 ? ")" : ", " + a + ")");
+}
+function hex(value) {
+  value = Math.max(0, Math.min(255, Math.round(value) || 0));
+  return (value < 16 ? "0" : "") + value.toString(16);
+}
+function hsla(h, s2, l, a) {
+  if (a <= 0)
+    h = s2 = l = NaN;
+  else if (l <= 0 || l >= 1)
+    h = s2 = NaN;
+  else if (s2 <= 0)
+    h = NaN;
+  return new Hsl(h, s2, l, a);
+}
+function hslConvert(o) {
+  if (o instanceof Hsl)
+    return new Hsl(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof Color))
+    o = color(o);
+  if (!o)
+    return new Hsl();
+  if (o instanceof Hsl)
+    return o;
+  o = o.rgb();
+  var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max = Math.max(r, g, b), h = NaN, s2 = max - min, l = (max + min) / 2;
+  if (s2) {
+    if (r === max)
+      h = (g - b) / s2 + (g < b) * 6;
+    else if (g === max)
+      h = (b - r) / s2 + 2;
+    else
+      h = (r - g) / s2 + 4;
+    s2 /= l < 0.5 ? max + min : 2 - max - min;
+    h *= 60;
+  } else {
+    s2 = l > 0 && l < 1 ? 0 : h;
+  }
+  return new Hsl(h, s2, l, o.opacity);
+}
+function hsl(h, s2, l, opacity) {
+  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s2, l, opacity == null ? 1 : opacity);
+}
+function Hsl(h, s2, l, opacity) {
+  this.h = +h;
+  this.s = +s2;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+function hsl2rgb(h, m1, m2) {
+  return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
+}
+function linear$1(a, d) {
+  return function(t) {
+    return a + t * d;
+  };
+}
+function exponential(a, b, y) {
+  return a = Math.pow(a, y), b = Math.pow(b, y) - a, y = 1 / y, function(t) {
+    return Math.pow(a + t * b, y);
+  };
+}
+function gamma(y) {
+  return (y = +y) === 1 ? nogamma : function(a, b) {
+    return b - a ? exponential(a, b, y) : constant(isNaN(a) ? b : a);
+  };
+}
+function nogamma(a, b) {
+  var d = b - a;
+  return d ? linear$1(a, d) : constant(isNaN(a) ? b : a);
+}
+function numberArray(a, b) {
+  if (!b)
+    b = [];
+  var n = a ? Math.min(b.length, a.length) : 0, c = b.slice(), i;
+  return function(t) {
+    for (i = 0; i < n; ++i)
+      c[i] = a[i] * (1 - t) + b[i] * t;
+    return c;
+  };
+}
+function isNumberArray(x) {
+  return ArrayBuffer.isView(x) && !(x instanceof DataView);
+}
+function genericArray(a, b) {
+  var nb = b ? b.length : 0, na = a ? Math.min(nb, a.length) : 0, x = new Array(na), c = new Array(nb), i;
+  for (i = 0; i < na; ++i)
+    x[i] = interpolate(a[i], b[i]);
+  for (; i < nb; ++i)
+    c[i] = b[i];
+  return function(t) {
+    for (i = 0; i < na; ++i)
+      c[i] = x[i](t);
+    return c;
+  };
+}
+function date(a, b) {
+  var d = new Date();
+  return a = +a, b = +b, function(t) {
+    return d.setTime(a * (1 - t) + b * t), d;
+  };
+}
+function interpolateNumber(a, b) {
+  return a = +a, b = +b, function(t) {
+    return a * (1 - t) + b * t;
+  };
+}
+function object(a, b) {
+  var i = {}, c = {}, k;
+  if (a === null || typeof a !== "object")
+    a = {};
+  if (b === null || typeof b !== "object")
+    b = {};
+  for (k in b) {
+    if (k in a) {
+      i[k] = interpolate(a[k], b[k]);
+    } else {
+      c[k] = b[k];
+    }
+  }
+  return function(t) {
+    for (k in i)
+      c[k] = i[k](t);
+    return c;
+  };
+}
+function zero(b) {
+  return function() {
+    return b;
+  };
+}
+function one(b) {
+  return function(t) {
+    return b(t) + "";
+  };
+}
+function string(a, b) {
+  var bi = reA.lastIndex = reB.lastIndex = 0, am, bm, bs, i = -1, s2 = [], q = [];
+  a = a + "", b = b + "";
+  while ((am = reA.exec(a)) && (bm = reB.exec(b))) {
+    if ((bs = bm.index) > bi) {
+      bs = b.slice(bi, bs);
+      if (s2[i])
+        s2[i] += bs;
+      else
+        s2[++i] = bs;
+    }
+    if ((am = am[0]) === (bm = bm[0])) {
+      if (s2[i])
+        s2[i] += bm;
+      else
+        s2[++i] = bm;
+    } else {
+      s2[++i] = null;
+      q.push({ i, x: interpolateNumber(am, bm) });
+    }
+    bi = reB.lastIndex;
+  }
+  if (bi < b.length) {
+    bs = b.slice(bi);
+    if (s2[i])
+      s2[i] += bs;
+    else
+      s2[++i] = bs;
+  }
+  return s2.length < 2 ? q[0] ? one(q[0].x) : zero(b) : (b = q.length, function(t) {
+    for (var i2 = 0, o; i2 < b; ++i2)
+      s2[(o = q[i2]).i] = o.x(t);
+    return s2.join("");
+  });
+}
+function interpolate(a, b) {
+  var t = typeof b, c;
+  return b == null || t === "boolean" ? constant(b) : (t === "number" ? interpolateNumber : t === "string" ? (c = color(b)) ? (b = c, rgb) : string : b instanceof color ? rgb : b instanceof Date ? date : isNumberArray(b) ? numberArray : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object : interpolateNumber)(a, b);
+}
+function interpolateRound(a, b) {
+  return a = +a, b = +b, function(t) {
+    return Math.round(a * (1 - t) + b * t);
+  };
+}
+function constants(x) {
+  return function() {
+    return x;
+  };
+}
+function number(x) {
+  return +x;
+}
+function identity$1(x) {
+  return x;
+}
+function normalize(a, b) {
+  return (b -= a = +a) ? function(x) {
+    return (x - a) / b;
+  } : constants(isNaN(b) ? NaN : 0.5);
+}
+function clamper(a, b) {
+  var t;
+  if (a > b)
+    t = a, a = b, b = t;
+  return function(x) {
+    return Math.max(a, Math.min(b, x));
+  };
+}
+function bimap(domain, range, interpolate2) {
+  var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
+  if (d1 < d0)
+    d0 = normalize(d1, d0), r0 = interpolate2(r1, r0);
+  else
+    d0 = normalize(d0, d1), r0 = interpolate2(r0, r1);
+  return function(x) {
+    return r0(d0(x));
+  };
+}
+function polymap(domain, range, interpolate2) {
+  var j = Math.min(domain.length, range.length) - 1, d = new Array(j), r = new Array(j), i = -1;
+  if (domain[j] < domain[0]) {
+    domain = domain.slice().reverse();
+    range = range.slice().reverse();
+  }
+  while (++i < j) {
+    d[i] = normalize(domain[i], domain[i + 1]);
+    r[i] = interpolate2(range[i], range[i + 1]);
+  }
+  return function(x) {
+    var i2 = bisect(domain, x, 1, j) - 1;
+    return r[i2](d[i2](x));
+  };
+}
+function copy(source, target) {
+  return target.domain(source.domain()).range(source.range()).interpolate(source.interpolate()).clamp(source.clamp()).unknown(source.unknown());
+}
+function transformer() {
+  var domain = unit, range = unit, interpolate$1 = interpolate, transform, untransform, unknown, clamp = identity$1, piecewise, output, input;
+  function rescale() {
+    var n = Math.min(domain.length, range.length);
+    if (clamp !== identity$1)
+      clamp = clamper(domain[0], domain[n - 1]);
+    piecewise = n > 2 ? polymap : bimap;
+    output = input = null;
+    return scale;
+  }
+  function scale(x) {
+    return x == null || isNaN(x = +x) ? unknown : (output || (output = piecewise(domain.map(transform), range, interpolate$1)))(transform(clamp(x)));
+  }
+  scale.invert = function(y) {
+    return clamp(untransform((input || (input = piecewise(range, domain.map(transform), interpolateNumber)))(y)));
+  };
+  scale.domain = function(_) {
+    return arguments.length ? (domain = Array.from(_, number), rescale()) : domain.slice();
+  };
+  scale.range = function(_) {
+    return arguments.length ? (range = Array.from(_), rescale()) : range.slice();
+  };
+  scale.rangeRound = function(_) {
+    return range = Array.from(_), interpolate$1 = interpolateRound, rescale();
+  };
+  scale.clamp = function(_) {
+    return arguments.length ? (clamp = _ ? true : identity$1, rescale()) : clamp !== identity$1;
+  };
+  scale.interpolate = function(_) {
+    return arguments.length ? (interpolate$1 = _, rescale()) : interpolate$1;
+  };
+  scale.unknown = function(_) {
+    return arguments.length ? (unknown = _, scale) : unknown;
+  };
+  return function(t, u) {
+    transform = t, untransform = u;
+    return rescale();
+  };
+}
+function continuous() {
+  return transformer()(identity$1, identity$1);
+}
+function formatDecimal(x) {
+  return Math.abs(x = Math.round(x)) >= 1e21 ? x.toLocaleString("en").replace(/,/g, "") : x.toString(10);
+}
+function formatDecimalParts(x, p) {
+  if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0)
+    return null;
+  var i, coefficient = x.slice(0, i);
+  return [
+    coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
+    +x.slice(i + 1)
+  ];
+}
+function exponent(x) {
+  return x = formatDecimalParts(Math.abs(x)), x ? x[1] : NaN;
+}
+function formatGroup(grouping, thousands) {
+  return function(value, width2) {
+    var i = value.length, t = [], j = 0, g = grouping[0], length = 0;
+    while (i > 0 && g > 0) {
+      if (length + g + 1 > width2)
+        g = Math.max(1, width2 - length);
+      t.push(value.substring(i -= g, i + g));
+      if ((length += g + 1) > width2)
+        break;
+      g = grouping[j = (j + 1) % grouping.length];
+    }
+    return t.reverse().join(thousands);
+  };
+}
+function formatNumerals(numerals) {
+  return function(value) {
+    return value.replace(/[0-9]/g, function(i) {
+      return numerals[+i];
+    });
+  };
+}
+function formatSpecifier(specifier) {
+  if (!(match = re.exec(specifier)))
+    throw new Error("invalid format: " + specifier);
+  var match;
+  return new FormatSpecifier({
+    fill: match[1],
+    align: match[2],
+    sign: match[3],
+    symbol: match[4],
+    zero: match[5],
+    width: match[6],
+    comma: match[7],
+    precision: match[8] && match[8].slice(1),
+    trim: match[9],
+    type: match[10]
+  });
+}
+function FormatSpecifier(specifier) {
+  this.fill = specifier.fill === void 0 ? " " : specifier.fill + "";
+  this.align = specifier.align === void 0 ? ">" : specifier.align + "";
+  this.sign = specifier.sign === void 0 ? "-" : specifier.sign + "";
+  this.symbol = specifier.symbol === void 0 ? "" : specifier.symbol + "";
+  this.zero = !!specifier.zero;
+  this.width = specifier.width === void 0 ? void 0 : +specifier.width;
+  this.comma = !!specifier.comma;
+  this.precision = specifier.precision === void 0 ? void 0 : +specifier.precision;
+  this.trim = !!specifier.trim;
+  this.type = specifier.type === void 0 ? "" : specifier.type + "";
+}
+function formatTrim(s2) {
+  out:
+    for (var n = s2.length, i = 1, i0 = -1, i1; i < n; ++i) {
+      switch (s2[i]) {
+        case ".":
+          i0 = i1 = i;
+          break;
+        case "0":
+          if (i0 === 0)
+            i0 = i;
+          i1 = i;
+          break;
+        default:
+          if (!+s2[i])
+            break out;
+          if (i0 > 0)
+            i0 = 0;
+          break;
+      }
+    }
+  return i0 > 0 ? s2.slice(0, i0) + s2.slice(i1 + 1) : s2;
+}
+function formatPrefixAuto(x, p) {
+  var d = formatDecimalParts(x, p);
+  if (!d)
+    return x + "";
+  var coefficient = d[0], exponent2 = d[1], i = exponent2 - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent2 / 3))) * 3) + 1, n = coefficient.length;
+  return i === n ? coefficient : i > n ? coefficient + new Array(i - n + 1).join("0") : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i) : "0." + new Array(1 - i).join("0") + formatDecimalParts(x, Math.max(0, p + i - 1))[0];
+}
+function formatRounded(x, p) {
+  var d = formatDecimalParts(x, p);
+  if (!d)
+    return x + "";
+  var coefficient = d[0], exponent2 = d[1];
+  return exponent2 < 0 ? "0." + new Array(-exponent2).join("0") + coefficient : coefficient.length > exponent2 + 1 ? coefficient.slice(0, exponent2 + 1) + "." + coefficient.slice(exponent2 + 1) : coefficient + new Array(exponent2 - coefficient.length + 2).join("0");
+}
+function identity(x) {
+  return x;
+}
+function formatLocale(locale2) {
+  var group = locale2.grouping === void 0 || locale2.thousands === void 0 ? identity : formatGroup(map.call(locale2.grouping, Number), locale2.thousands + ""), currencyPrefix = locale2.currency === void 0 ? "" : locale2.currency[0] + "", currencySuffix = locale2.currency === void 0 ? "" : locale2.currency[1] + "", decimal = locale2.decimal === void 0 ? "." : locale2.decimal + "", numerals = locale2.numerals === void 0 ? identity : formatNumerals(map.call(locale2.numerals, String)), percent = locale2.percent === void 0 ? "%" : locale2.percent + "", minus = locale2.minus === void 0 ? "\u2212" : locale2.minus + "", nan = locale2.nan === void 0 ? "NaN" : locale2.nan + "";
+  function newFormat(specifier) {
+    specifier = formatSpecifier(specifier);
+    var fill = specifier.fill, align = specifier.align, sign = specifier.sign, symbol = specifier.symbol, zero2 = specifier.zero, width2 = specifier.width, comma = specifier.comma, precision = specifier.precision, trim = specifier.trim, type = specifier.type;
+    if (type === "n")
+      comma = true, type = "g";
+    else if (!formatTypes[type])
+      precision === void 0 && (precision = 12), trim = true, type = "g";
+    if (zero2 || fill === "0" && align === "=")
+      zero2 = true, fill = "0", align = "=";
+    var prefix = symbol === "$" ? currencyPrefix : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "", suffix = symbol === "$" ? currencySuffix : /[%p]/.test(type) ? percent : "";
+    var formatType = formatTypes[type], maybeSuffix = /[defgprs%]/.test(type);
+    precision = precision === void 0 ? 6 : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision)) : Math.max(0, Math.min(20, precision));
+    function format22(value) {
+      var valuePrefix = prefix, valueSuffix = suffix, i, n, c;
+      if (type === "c") {
+        valueSuffix = formatType(value) + valueSuffix;
+        value = "";
+      } else {
+        value = +value;
+        var valueNegative = value < 0 || 1 / value < 0;
+        value = isNaN(value) ? nan : formatType(Math.abs(value), precision);
+        if (trim)
+          value = formatTrim(value);
+        if (valueNegative && +value === 0 && sign !== "+")
+          valueNegative = false;
+        valuePrefix = (valueNegative ? sign === "(" ? sign : minus : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
+        valueSuffix = (type === "s" ? prefixes[8 + prefixExponent / 3] : "") + valueSuffix + (valueNegative && sign === "(" ? ")" : "");
+        if (maybeSuffix) {
+          i = -1, n = value.length;
+          while (++i < n) {
+            if (c = value.charCodeAt(i), 48 > c || c > 57) {
+              valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
+              value = value.slice(0, i);
+              break;
+            }
+          }
+        }
+      }
+      if (comma && !zero2)
+        value = group(value, Infinity);
+      var length = valuePrefix.length + value.length + valueSuffix.length, padding = length < width2 ? new Array(width2 - length + 1).join(fill) : "";
+      if (comma && zero2)
+        value = group(padding + value, padding.length ? width2 - valueSuffix.length : Infinity), padding = "";
+      switch (align) {
+        case "<":
+          value = valuePrefix + value + valueSuffix + padding;
+          break;
+        case "=":
+          value = valuePrefix + padding + value + valueSuffix;
+          break;
+        case "^":
+          value = padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length);
+          break;
+        default:
+          value = padding + valuePrefix + value + valueSuffix;
+          break;
+      }
+      return numerals(value);
+    }
+    format22.toString = function() {
+      return specifier + "";
+    };
+    return format22;
+  }
+  function formatPrefix2(specifier, value) {
+    var f = newFormat((specifier = formatSpecifier(specifier), specifier.type = "f", specifier)), e = Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3, k = Math.pow(10, -e), prefix = prefixes[8 + e / 3];
+    return function(value2) {
+      return f(k * value2) + prefix;
+    };
+  }
+  return {
+    format: newFormat,
+    formatPrefix: formatPrefix2
+  };
+}
+function defaultLocale(definition) {
+  locale = formatLocale(definition);
+  format2 = locale.format;
+  formatPrefix = locale.formatPrefix;
+  return locale;
+}
+function precisionFixed(step) {
+  return Math.max(0, -exponent(Math.abs(step)));
+}
+function precisionPrefix(step, value) {
+  return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3 - exponent(Math.abs(step)));
+}
+function precisionRound(step, max) {
+  step = Math.abs(step), max = Math.abs(max) - step;
+  return Math.max(0, exponent(max) - exponent(step)) + 1;
+}
+function tickFormat(start, stop, count, specifier) {
+  var step = tickStep(start, stop, count), precision;
+  specifier = formatSpecifier(specifier == null ? ",f" : specifier);
+  switch (specifier.type) {
+    case "s": {
+      var value = Math.max(Math.abs(start), Math.abs(stop));
+      if (specifier.precision == null && !isNaN(precision = precisionPrefix(step, value)))
+        specifier.precision = precision;
+      return formatPrefix(specifier, value);
+    }
+    case "":
+    case "e":
+    case "g":
+    case "p":
+    case "r": {
+      if (specifier.precision == null && !isNaN(precision = precisionRound(step, Math.max(Math.abs(start), Math.abs(stop)))))
+        specifier.precision = precision - (specifier.type === "e");
+      break;
+    }
+    case "f":
+    case "%": {
+      if (specifier.precision == null && !isNaN(precision = precisionFixed(step)))
+        specifier.precision = precision - (specifier.type === "%") * 2;
+      break;
+    }
+  }
+  return format2(specifier);
+}
+function linearish(scale) {
+  var domain = scale.domain;
+  scale.ticks = function(count) {
+    var d = domain();
+    return ticks(d[0], d[d.length - 1], count == null ? 10 : count);
+  };
+  scale.tickFormat = function(count, specifier) {
+    var d = domain();
+    return tickFormat(d[0], d[d.length - 1], count == null ? 10 : count, specifier);
+  };
+  scale.nice = function(count) {
+    if (count == null)
+      count = 10;
+    var d = domain();
+    var i0 = 0;
+    var i1 = d.length - 1;
+    var start = d[i0];
+    var stop = d[i1];
+    var prestep;
+    var step;
+    var maxIter = 10;
+    if (stop < start) {
+      step = start, start = stop, stop = step;
+      step = i0, i0 = i1, i1 = step;
+    }
+    while (maxIter-- > 0) {
+      step = tickIncrement(start, stop, count);
+      if (step === prestep) {
+        d[i0] = start;
+        d[i1] = stop;
+        return domain(d);
+      } else if (step > 0) {
+        start = Math.floor(start / step) * step;
+        stop = Math.ceil(stop / step) * step;
+      } else if (step < 0) {
+        start = Math.ceil(start * step) / step;
+        stop = Math.floor(stop * step) / step;
+      } else {
+        break;
+      }
+      prestep = step;
+    }
+    return scale;
+  };
+  return scale;
+}
+function linear() {
+  var scale = continuous();
+  scale.copy = function() {
+    return copy(scale, linear());
+  };
+  initRange.apply(scale, arguments);
+  return linearish(scale);
+}
+var ascendingBisect, bisectRight, bisect, e10, e5, e2, darker, brighter, reI, reN, reP, reHex, reRgbInteger, reRgbPercent, reRgbaInteger, reRgbaPercent, reHslPercent, reHslaPercent, named, constant, rgb, reA, reB, unit, re, prefixExponent, formatTypes, map, prefixes, locale, format2, formatPrefix;
+var init_linear_5e174aa1 = __esm({
+  ".svelte-kit/output/server/chunks/linear-5e174aa1.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser57 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    metadata51 = {
+    ascendingBisect = bisector(ascending);
+    bisectRight = ascendingBisect.right;
+    bisector(number$1).center;
+    bisect = bisectRight;
+    e10 = Math.sqrt(50);
+    e5 = Math.sqrt(10);
+    e2 = Math.sqrt(2);
+    darker = 0.7;
+    brighter = 1 / darker;
+    reI = "\\s*([+-]?\\d+)\\s*";
+    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*";
+    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*";
+    reHex = /^#([0-9a-f]{3,8})$/;
+    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$");
+    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$");
+    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$");
+    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$");
+    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$");
+    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+    named = {
+      aliceblue: 15792383,
+      antiquewhite: 16444375,
+      aqua: 65535,
+      aquamarine: 8388564,
+      azure: 15794175,
+      beige: 16119260,
+      bisque: 16770244,
+      black: 0,
+      blanchedalmond: 16772045,
+      blue: 255,
+      blueviolet: 9055202,
+      brown: 10824234,
+      burlywood: 14596231,
+      cadetblue: 6266528,
+      chartreuse: 8388352,
+      chocolate: 13789470,
+      coral: 16744272,
+      cornflowerblue: 6591981,
+      cornsilk: 16775388,
+      crimson: 14423100,
+      cyan: 65535,
+      darkblue: 139,
+      darkcyan: 35723,
+      darkgoldenrod: 12092939,
+      darkgray: 11119017,
+      darkgreen: 25600,
+      darkgrey: 11119017,
+      darkkhaki: 12433259,
+      darkmagenta: 9109643,
+      darkolivegreen: 5597999,
+      darkorange: 16747520,
+      darkorchid: 10040012,
+      darkred: 9109504,
+      darksalmon: 15308410,
+      darkseagreen: 9419919,
+      darkslateblue: 4734347,
+      darkslategray: 3100495,
+      darkslategrey: 3100495,
+      darkturquoise: 52945,
+      darkviolet: 9699539,
+      deeppink: 16716947,
+      deepskyblue: 49151,
+      dimgray: 6908265,
+      dimgrey: 6908265,
+      dodgerblue: 2003199,
+      firebrick: 11674146,
+      floralwhite: 16775920,
+      forestgreen: 2263842,
+      fuchsia: 16711935,
+      gainsboro: 14474460,
+      ghostwhite: 16316671,
+      gold: 16766720,
+      goldenrod: 14329120,
+      gray: 8421504,
+      green: 32768,
+      greenyellow: 11403055,
+      grey: 8421504,
+      honeydew: 15794160,
+      hotpink: 16738740,
+      indianred: 13458524,
+      indigo: 4915330,
+      ivory: 16777200,
+      khaki: 15787660,
+      lavender: 15132410,
+      lavenderblush: 16773365,
+      lawngreen: 8190976,
+      lemonchiffon: 16775885,
+      lightblue: 11393254,
+      lightcoral: 15761536,
+      lightcyan: 14745599,
+      lightgoldenrodyellow: 16448210,
+      lightgray: 13882323,
+      lightgreen: 9498256,
+      lightgrey: 13882323,
+      lightpink: 16758465,
+      lightsalmon: 16752762,
+      lightseagreen: 2142890,
+      lightskyblue: 8900346,
+      lightslategray: 7833753,
+      lightslategrey: 7833753,
+      lightsteelblue: 11584734,
+      lightyellow: 16777184,
+      lime: 65280,
+      limegreen: 3329330,
+      linen: 16445670,
+      magenta: 16711935,
+      maroon: 8388608,
+      mediumaquamarine: 6737322,
+      mediumblue: 205,
+      mediumorchid: 12211667,
+      mediumpurple: 9662683,
+      mediumseagreen: 3978097,
+      mediumslateblue: 8087790,
+      mediumspringgreen: 64154,
+      mediumturquoise: 4772300,
+      mediumvioletred: 13047173,
+      midnightblue: 1644912,
+      mintcream: 16121850,
+      mistyrose: 16770273,
+      moccasin: 16770229,
+      navajowhite: 16768685,
+      navy: 128,
+      oldlace: 16643558,
+      olive: 8421376,
+      olivedrab: 7048739,
+      orange: 16753920,
+      orangered: 16729344,
+      orchid: 14315734,
+      palegoldenrod: 15657130,
+      palegreen: 10025880,
+      paleturquoise: 11529966,
+      palevioletred: 14381203,
+      papayawhip: 16773077,
+      peachpuff: 16767673,
+      peru: 13468991,
+      pink: 16761035,
+      plum: 14524637,
+      powderblue: 11591910,
+      purple: 8388736,
+      rebeccapurple: 6697881,
+      red: 16711680,
+      rosybrown: 12357519,
+      royalblue: 4286945,
+      saddlebrown: 9127187,
+      salmon: 16416882,
+      sandybrown: 16032864,
+      seagreen: 3050327,
+      seashell: 16774638,
+      sienna: 10506797,
+      silver: 12632256,
+      skyblue: 8900331,
+      slateblue: 6970061,
+      slategray: 7372944,
+      slategrey: 7372944,
+      snow: 16775930,
+      springgreen: 65407,
+      steelblue: 4620980,
+      tan: 13808780,
+      teal: 32896,
+      thistle: 14204888,
+      tomato: 16737095,
+      turquoise: 4251856,
+      violet: 15631086,
+      wheat: 16113331,
+      white: 16777215,
+      whitesmoke: 16119285,
+      yellow: 16776960,
+      yellowgreen: 10145074
+    };
+    define2(Color, color, {
+      copy: function(channels) {
+        return Object.assign(new this.constructor(), this, channels);
+      },
+      displayable: function() {
+        return this.rgb().displayable();
+      },
+      hex: color_formatHex,
+      formatHex: color_formatHex,
+      formatHsl: color_formatHsl,
+      formatRgb: color_formatRgb,
+      toString: color_formatRgb
+    });
+    define2(Rgb, rgb$1, extend(Color, {
+      brighter: function(k) {
+        k = k == null ? brighter : Math.pow(brighter, k);
+        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+      },
+      darker: function(k) {
+        k = k == null ? darker : Math.pow(darker, k);
+        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+      },
+      rgb: function() {
+        return this;
+      },
+      displayable: function() {
+        return -0.5 <= this.r && this.r < 255.5 && (-0.5 <= this.g && this.g < 255.5) && (-0.5 <= this.b && this.b < 255.5) && (0 <= this.opacity && this.opacity <= 1);
+      },
+      hex: rgb_formatHex,
+      formatHex: rgb_formatHex,
+      formatRgb: rgb_formatRgb,
+      toString: rgb_formatRgb
+    }));
+    define2(Hsl, hsl, extend(Color, {
+      brighter: function(k) {
+        k = k == null ? brighter : Math.pow(brighter, k);
+        return new Hsl(this.h, this.s, this.l * k, this.opacity);
+      },
+      darker: function(k) {
+        k = k == null ? darker : Math.pow(darker, k);
+        return new Hsl(this.h, this.s, this.l * k, this.opacity);
+      },
+      rgb: function() {
+        var h = this.h % 360 + (this.h < 0) * 360, s2 = isNaN(h) || isNaN(this.s) ? 0 : this.s, l = this.l, m2 = l + (l < 0.5 ? l : 1 - l) * s2, m1 = 2 * l - m2;
+        return new Rgb(hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2), hsl2rgb(h, m1, m2), hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2), this.opacity);
+      },
+      displayable: function() {
+        return (0 <= this.s && this.s <= 1 || isNaN(this.s)) && (0 <= this.l && this.l <= 1) && (0 <= this.opacity && this.opacity <= 1);
+      },
+      formatHsl: function() {
+        var a = this.opacity;
+        a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+        return (a === 1 ? "hsl(" : "hsla(") + (this.h || 0) + ", " + (this.s || 0) * 100 + "%, " + (this.l || 0) * 100 + "%" + (a === 1 ? ")" : ", " + a + ")");
+      }
+    }));
+    constant = (x) => () => x;
+    rgb = function rgbGamma(y) {
+      var color2 = gamma(y);
+      function rgb2(start, end) {
+        var r = color2((start = rgb$1(start)).r, (end = rgb$1(end)).r), g = color2(start.g, end.g), b = color2(start.b, end.b), opacity = nogamma(start.opacity, end.opacity);
+        return function(t) {
+          start.r = r(t);
+          start.g = g(t);
+          start.b = b(t);
+          start.opacity = opacity(t);
+          return start + "";
+        };
+      }
+      rgb2.gamma = rgbGamma;
+      return rgb2;
+    }(1);
+    reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g;
+    reB = new RegExp(reA.source, "g");
+    unit = [0, 1];
+    re = /^(?:(.)?([<>=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;
+    formatSpecifier.prototype = FormatSpecifier.prototype;
+    FormatSpecifier.prototype.toString = function() {
+      return this.fill + this.align + this.sign + this.symbol + (this.zero ? "0" : "") + (this.width === void 0 ? "" : Math.max(1, this.width | 0)) + (this.comma ? "," : "") + (this.precision === void 0 ? "" : "." + Math.max(0, this.precision | 0)) + (this.trim ? "~" : "") + this.type;
+    };
+    formatTypes = {
+      "%": (x, p) => (x * 100).toFixed(p),
+      "b": (x) => Math.round(x).toString(2),
+      "c": (x) => x + "",
+      "d": formatDecimal,
+      "e": (x, p) => x.toExponential(p),
+      "f": (x, p) => x.toFixed(p),
+      "g": (x, p) => x.toPrecision(p),
+      "o": (x) => Math.round(x).toString(8),
+      "p": (x, p) => formatRounded(x * 100, p),
+      "r": formatRounded,
+      "s": formatPrefixAuto,
+      "X": (x) => Math.round(x).toString(16).toUpperCase(),
+      "x": (x) => Math.round(x).toString(16)
+    };
+    map = Array.prototype.map;
+    prefixes = ["y", "z", "a", "f", "p", "n", "\xB5", "m", "", "k", "M", "G", "T", "P", "E", "Z", "Y"];
+    defaultLocale({
+      thousands: ",",
+      grouping: [3],
+      currency: ["$", ""]
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/svelte-scrollytelling-820b0a14.js
+var svelte_scrollytelling_820b0a14_exports = {};
+__export(svelte_scrollytelling_820b0a14_exports, {
+  default: () => Svelte_scrollytelling,
+  metadata: () => metadata53
+});
+function is_date(obj) {
+  return Object.prototype.toString.call(obj) === "[object Date]";
+}
+function get_interpolator(a, b) {
+  if (a === b || a !== a)
+    return () => a;
+  const type = typeof a;
+  if (type !== typeof b || Array.isArray(a) !== Array.isArray(b)) {
+    throw new Error("Cannot interpolate values of different type");
+  }
+  if (Array.isArray(a)) {
+    const arr = b.map((bi, i) => {
+      return get_interpolator(a[i], bi);
+    });
+    return (t) => arr.map((fn) => fn(t));
+  }
+  if (type === "object") {
+    if (!a || !b)
+      throw new Error("Object cannot be null");
+    if (is_date(a) && is_date(b)) {
+      a = a.getTime();
+      b = b.getTime();
+      const delta = b - a;
+      return (t) => new Date(a + t * delta);
+    }
+    const keys = Object.keys(b);
+    const interpolators = {};
+    keys.forEach((key) => {
+      interpolators[key] = get_interpolator(a[key], b[key]);
+    });
+    return (t) => {
+      const result = {};
+      keys.forEach((key) => {
+        result[key] = interpolators[key](t);
+      });
+      return result;
+    };
+  }
+  if (type === "number") {
+    const delta = b - a;
+    return (t) => a + t * delta;
+  }
+  throw new Error(`Cannot interpolate ${type} values`);
+}
+function tweened(value, defaults = {}) {
+  const store = writable(value);
+  let task;
+  let target_value = value;
+  function set(new_value, opts) {
+    if (value == null) {
+      store.set(value = new_value);
+      return Promise.resolve();
+    }
+    target_value = new_value;
+    let previous_task = task;
+    let started = false;
+    let { delay = 0, duration = 400, easing = identity2, interpolate: interpolate2 = get_interpolator } = assign(assign({}, defaults), opts);
+    if (duration === 0) {
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      store.set(value = target_value);
+      return Promise.resolve();
+    }
+    const start = now() + delay;
+    let fn;
+    task = loop((now2) => {
+      if (now2 < start)
+        return true;
+      if (!started) {
+        fn = interpolate2(value, new_value);
+        if (typeof duration === "function")
+          duration = duration(value, new_value);
+        started = true;
+      }
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      const elapsed = now2 - start;
+      if (elapsed > duration) {
+        store.set(value = new_value);
+        return false;
+      }
+      store.set(value = fn(easing(elapsed / duration)));
+      return true;
+    });
+    return task.promise;
+  }
+  return {
+    set,
+    update: (fn, opts) => set(fn(target_value, value), opts),
+    subscribe: store.subscribe
+  };
+}
+var import_prismjs9, import_prism_normalize_whitespace9, Scroll, css$2, TweenedExample, css$1, width, D3ScaleExample, css15, TweenedXPosition, metadata53, Svelte_scrollytelling;
+var init_svelte_scrollytelling_820b0a14 = __esm({
+  ".svelte-kit/output/server/chunks/svelte-scrollytelling-820b0a14.js"() {
+    init_shims();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Code_bcfeb83b();
+    init_Image_2006dc25();
+    init_Info_796ef0bb();
+    init_motion_65df28f6();
+    init_linear_5e174aa1();
+    init_BackTo_db5abc2d();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    import_prismjs9 = __toModule(require_prism());
+    init_prism_line_numbers();
+    import_prism_normalize_whitespace9 = __toModule(require_prism_normalize_whitespace());
+    init_prism_line_highlight();
+    init_prism_file_highlight();
+    init_prism_bash();
+    init_prism_css();
+    init_prism_r();
+    init_prism_json();
+    init_prism_yaml();
+    Scroll = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { root = null } = $$props;
+      let { top = 0 } = $$props;
+      let { bottom = 0 } = $$props;
+      let { increments = 100 } = $$props;
+      let { value = void 0 } = $$props;
+      const steps = [];
+      const threshold = [];
+      let nodes = [];
+      let intersectionObservers = [];
+      let container;
+      const update = () => {
+        if (!nodes.length)
+          return;
+        nodes.forEach(createObserver);
+      };
+      const mostInView = () => {
+        let maxRatio = 0;
+        let maxIndex = 0;
+        for (let i = 0; i < steps.length; i++) {
+          if (steps[i] > maxRatio) {
+            maxRatio = steps[i];
+            maxIndex = i;
+          }
+        }
+        if (maxRatio > 0)
+          value = maxIndex;
+        else
+          value = void 0;
+      };
+      const createObserver = (node, index) => {
+        const handleIntersect = (e) => {
+          e[0].isIntersecting;
+          const ratio = e[0].intersectionRatio;
+          steps[index] = ratio;
+          mostInView();
+        };
+        const marginTop = top ? top * -1 : 0;
+        const marginBottom = bottom ? bottom * -1 : 0;
+        const rootMargin = `${marginTop}px 0px ${marginBottom}px 0px`;
+        const options2 = { root, rootMargin, threshold };
+        if (intersectionObservers[index])
+          intersectionObservers[index].disconnect();
+        const io = new IntersectionObserver(handleIntersect, options2);
+        io.observe(node);
+        intersectionObservers[index] = io;
+      };
+      if ($$props.root === void 0 && $$bindings.root && root !== void 0)
+        $$bindings.root(root);
+      if ($$props.top === void 0 && $$bindings.top && top !== void 0)
+        $$bindings.top(top);
+      if ($$props.bottom === void 0 && $$bindings.bottom && bottom !== void 0)
+        $$bindings.bottom(bottom);
+      if ($$props.increments === void 0 && $$bindings.increments && increments !== void 0)
+        $$bindings.increments(increments);
+      if ($$props.value === void 0 && $$bindings.value && value !== void 0)
+        $$bindings.value(value);
+      {
+        update();
+      }
+      return `<div${add_attribute("this", container, 0)}>${slots.default ? slots.default({}) : ``}</div>`;
+    });
+    css$2 = {
+      code: "section.svelte-18d8x1z{height:80vh;overflow-y:scroll;background:var(--semitransparent-bg);margin-bottom:1.15rem;z-index:3;position:relative}.step.svelte-18d8x1z{height:60vh;display:flex;place-items:center;justify-content:center}.step-content.svelte-18d8x1z{background:whitesmoke;padding:0.5rem 1rem;box-shadow:1px 1px 10px rgba(0, 0, 0, 0.2);transition:background 500ms ease, color 500ms ease}.sticky.svelte-18d8x1z{position:sticky;bottom:0;left:0;margin:0;padding:1rem}.step-content .example-step-paragraph{color:#ccc;margin-bottom:0}.step.active .step-content{background:white !important}.step.active .step-content .example-step-paragraph{color:black !important}",
+      map: null
+    };
+    TweenedExample = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $number, $$unsubscribe_number;
+      let currentStep;
+      let number2 = tweened(0);
+      $$unsubscribe_number = subscribe(number2, (value) => $number = value);
+      $$result.css.add(css$2);
+      let $$settled;
+      let $$rendered;
+      do {
+        $$settled = true;
+        {
+          if (currentStep == 0) {
+            number2.set(100);
+          } else if (currentStep == 1) {
+            number2.set(200);
+          } else if (currentStep == 2) {
+            number2.set(300);
+          }
+        }
+        $$rendered = `<section class="${"svelte-18d8x1z"}">${validate_component(Scroll, "Scroll").$$render($$result, { value: currentStep }, {
+          value: ($$value) => {
+            currentStep = $$value;
+            $$settled = false;
+          }
+        }, {
+          default: () => `${each([1, 2, 3], (text, i) => `<div class="${["step svelte-18d8x1z", currentStep === i ? "active" : ""].join(" ").trim()}"><div class="${"step-content svelte-18d8x1z"}"><p class="${"example-step-paragraph"}">Step ${escape(text)}</p></div>
+      </div>`)}`
+        })}
+  <h1 class="${"sticky svelte-18d8x1z"}">${escape(Math.round($number))}</h1>
+</section>`;
+      } while (!$$settled);
+      $$unsubscribe_number();
+      return $$rendered;
+    });
+    css$1 = {
+      code: "h1.svelte-10djkb1{margin:0 0 1rem 0 !important}span.svelte-10djkb1{vertical-align:bottom;font-size:1.75rem;margin-left:0.5rem;color:var(--text-color)}.example.svelte-10djkb1{width:480px;max-width:100%;background:var(--semitransparent-bg);margin:2rem auto;z-index:3;position:relative;padding:1rem;overflow:hidden}.output-range.svelte-10djkb1{width:100%;height:50px;position:relative}.circle.svelte-10djkb1{width:20px;height:20px;border-radius:50%;background:var(--text-color)}.output.svelte-10djkb1{position:absolute;transition:left 300ms ease 0s}p.output.svelte-10djkb1{top:25px}",
+      map: null
+    };
+    width = 400;
+    D3ScaleExample = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let input = 0;
+      let xScale = linear().domain([0, 9]).range([0, width]);
+      $$result.css.add(css$1);
+      return `<div class="${"example svelte-10djkb1"}"><h1 class="${"svelte-10djkb1"}">Input</h1>
+  <input min="${"0"}" max="${"9"}" type="${"range"}"${add_attribute("value", input, 0)}><span class="${"svelte-10djkb1"}">${escape(input)}</span>
+
+  <h1 style="${"margin-top: 1.5rem !important;"}" class="${"svelte-10djkb1"}">Output</h1>
+  <div class="${"output-range svelte-10djkb1"}"><div class="${"circle output svelte-10djkb1"}" style="${"left: " + escape(xScale(input)) + "px"}"></div>
+    <p class="${"output svelte-10djkb1"}" style="${"left: " + escape(xScale(input)) + "px"}">${escape(Math.round(xScale(input)))}px
+    </p></div>
+</div>`;
+    });
+    css15 = {
+      code: ".example.svelte-1p0hueb{width:100%;margin:auto;background:var(--semitransparent-bg);margin-bottom:1.15rem;z-index:3;position:relative;padding:1rem;overflow:hidden;display:flex;place-items:center;justify-content:center;flex-direction:column}p.svelte-1p0hueb{margin-bottom:0 !important}.active.svelte-1p0hueb{background:rgba(0, 0, 0, 0.25)}.active.svelte-1p0hueb:hover::before{opacity:0}",
+      map: null
+    };
+    TweenedXPosition = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $tweenedX, $$unsubscribe_tweenedX;
+      let data = [
+        { foo: 4, bar: 1 },
+        { foo: 1, bar: 3 },
+        { foo: 9, bar: 5 },
+        { foo: 2, bar: 5 },
+        { foo: 8, bar: 6 },
+        { foo: 9, bar: 5 },
+        { foo: 5, bar: 3 },
+        { foo: 4, bar: 8 },
+        { foo: 1, bar: 6 }
+      ];
+      const tweenedX = tweened(data.map((d) => d.foo));
+      $$unsubscribe_tweenedX = subscribe(tweenedX, (value) => $tweenedX = value);
+      $$result.css.add(css15);
+      $$unsubscribe_tweenedX();
+      return `<div class="${"example svelte-1p0hueb"}"><div class="${"buttons"}"><button class="${["button svelte-1p0hueb", "active"].join(" ").trim()}">Foo</button>
+    <button class="${["button svelte-1p0hueb", ""].join(" ").trim()}">Bar</button></div>
+  <p class="${"svelte-1p0hueb"}">Your values:
+    ${each($tweenedX, (x) => `${escape(Math.round(x))} \u200E`)}</p>
+</div>`;
+    });
+    metadata53 = {
+      "layout": "blog",
+      "title": "Build your first scrollytelling visualization with Svelte",
+      "description": "(In like 100 lines of code)",
+      "date": "2022-01-09",
+      "image": "svelte-and-d3/header.png",
+      "archived": false,
+      "featured": true,
+      "tags": ["svelte", "d3", "tutorial"]
+    };
+    Svelte_scrollytelling = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `${$$result.head += `<script async src="${"https://platform.twitter.com/widgets.js"}" charset="${"utf-8"}" data-svelte="svelte-lj1ja"><\/script>`, ""}
+${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata53), {}, {
+        default: () => `<p>Scrollytelling has become a fundamental component of data visualization in most modern newsrooms. It\u2019s also one of the most apparently technically challenging techniques to master. I\u2019ve been interested in scrollytelling for a while; I\u2019ve created one of the few scrollytelling articles <a href="${"https://www.connorrothschild.com/post/automation-scrollytell"}" rel="${"nofollow"}">in R</a>, and since then I\u2019ve been relying on Javascript frameworks like <a href="${"https://www.connorrothschild.com/project/cudi-hums"}" rel="${"nofollow"}">Vue</a> and <a href="${"https://www.connorrothschild.com/project/bob-ross-art-gallery"}" rel="${"nofollow"}">Svelte</a> to make scrollytelling easier.</p>
+<p>In my experience, the developer experience of creating a scrollytelling visualization has the least friction when working in Svelte. This is thanks to reusable components, built-in tweening of numbers, and easy integration with D3.</p>
+${validate_component(Info, "Info").$$render($$result, {}, {}, {
+          default: () => `<p>Svelte is good for data visualization in general. If you want a primer of using Svelte with D3 to create visualizations more generally, check out <a href="${"https://www.connorrothschild.com/post/svelte-and-d3"}" rel="${"nofollow"}">this post</a>.</p>`
+        })}
+<p>What follows is a guided introduction to your first Svelte scrollytelling story. It leverages 1) Russell Goldenberg\u2019s reusable <code>&lt;Scrolly /&gt;</code> component to track the user\u2019s scroll position, 2) Svelte\u2019s built-in <code>tweened</code> values to cleanly transition datapoints, and 3) D3 scales to convert these raw values to points on a plot. By the end of this tutorial, you\u2019ll be able to create something that looks roughly like <a href="${"https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3"}" rel="${"nofollow"}">this</a>:</p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3\n"}" width="${"100%"}" height="${"700"}" title="${"A Svelte Scrollytelling example"}"></iframe>
+<p>Before we create the chart, let\u2019s take a brief look at the elements at play. (If you\u2019re already familiar with these concepts, feel free to <a href="${"#step-1-build-a-chart"}">skip to the creation of our chart</a>).</p>
+<h2 id="${"step-0a-understand-russells-ltscrolly-gt"}"><a href="${"#step-0a-understand-russells-ltscrolly-gt"}">Step 0a: Understand Russell\u2019s <code>&lt;Scrolly /&gt;</code></a></h2>
+<p>Russell Goldenberg\u2019s <code>Scrolly</code> component is a reusable <code>.svelte</code> file which developers can easily plug into their code.</p>
+<blockquote class="${"twitter-tweet"}"><p lang="${"en"}" dir="${"ltr"}">A <a href="${"https://twitter.com/sveltejs?ref_src=twsrc%5Etfw"}">@sveltejs</a> scrollytelling component in &lt; 100 lines. <a href="${"https://twitter.com/SvelteSociety?ref_src=twsrc%5Etfw"}">@SvelteSociety</a> <a href="${"https://t.co/l8fOJaiwkX"}">https://t.co/l8fOJaiwkX</a> <a href="${"https://t.co/VJclnWSmhT"}">pic.twitter.com/VJclnWSmhT</a></p>\u2014 Russell Goldenberg (@codenberg) <a href="${"https://twitter.com/codenberg/status/1432774653139984387?ref_src=twsrc%5Etfw"}">August 31, 2021</a></blockquote>
+<p>It\u2019s not super important you understand how the component <em>is built</em>, but rather how <em>you can use it</em>. In action, you can include the <code>Scrolly</code> component in your code like so:</p>
+${validate_component(Code, "Code").$$render($$result, {
+          language: "svelte",
+          highlightedLines: "6,8"
+        }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+    import Scrolly from &quot;./Scrolly.svelte&quot;;
+    let currentStep;
+&lt;/script&gt;
+
+&lt;Scrolly bind:value=&#123;currentStep&#125;&gt;
+    &#123;#each [1,2,3] as text, i&#125;
+        &lt;div class=&quot;step&quot; class:active=&#123;currentStep === i&#125;&gt;
+            &lt;div class=&quot;step-content&quot;&gt;
+                &lt;p&gt;Step &#123;text&#125;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &#123;/each&#125;
+&lt;/Scrolly&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>This renders three bits of text, and applies a class of <code>active</code> to the current step.</p>
+<p>Thanks to line 6, <strong><code>currentStep</code> will be bound to the current step index</strong>. (Russell\u2019s <code>Scrolly</code> component is handling this\u2014you don\u2019t have to worry about it.) In other words, as you scroll down and the first step comes into focus, <code>currentStep</code> will be set to 0.</p>
+<p>Then, on line 8, we set an <code>active</code> class to the step content if <code>currentStep</code> is equal to the step index. Practically, this means that we can make sure that the step in focus is visually distinct from others (e.g. by changing its background or text color). </p>
+<p>To showcase exactly how this works, let\u2019s add some minor styling to our <code>.step</code> and <code>.step-content</code> elements:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "css" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">.step &#123;
+    height: 90vh;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+&#125;
+
+.step-content &#123;
+    background: whitesmoke;
+    color: #ccc;
+    padding: .5rem 1rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+    transition: background 500ms ease, color 500ms ease;
+&#125;
+
+.step.active .step-content &#123;
+    background: white;
+    color: black;
+&#125;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>Don\u2019t worry too much about what\u2019s happening here. In simple terms, <code>.step</code> will be the container for each step, and <code>.step-content</code> will be the text content of each step. We want these two to be distinct so that <code>.step</code> can take up the full window height (e.g. there won\u2019t be multiple steps in view at the same time), and so that <code>.step-content</code> can fit nicely into a text box. (This structure is quite standard for most scrollytelling pieces.)</p>
+<p>Then, in our final rule, we make our <code>.step-content</code> element (the text box) stand out if it is active.</p>
+<p>This results in a simple (text-only) scrollytelling experience, where the text that is in focus also stands out visually. Notice how the steps are inactive at the top and bottom of the screen? </p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/ec07a8fd46684d2d8fbcda679d65d296?version=3.44.3\n"}" width="${"100%"}" height="${"600"}" title="${"A text-only scrollytelling experience"}"></iframe>
+<p>Notice that we (on line 6) create a <code>steps</code> array that contains paragraphs that we include in each step; this makes integrating prose a bit easier.</p>
+<p>Congrats! You\u2019ve completed the first step of your Svelte scrollytelling project. If all we wanted to do was toggle the visual appearance of text elements, we would be done. (But we don\u2019t. We instead want to include data, as we explain below.)</p>
+<h2 id="${"step-0b-understand-tweened-values"}"><a href="${"#step-0b-understand-tweened-values"}">Step 0b: Understand <code>tweened</code> values</a></h2>
+<p>Now that our app tracks the user\u2019s scroll position and which step is in focus, we <strong>want to modify the data in focus based on the active step</strong>. This is common in scrollytelling articles; the user scrolls and the chart elements (e.g. points) animate to new positions.</p>
+<p>In our case, we\u2019ll achieve this by using <a href="${"https://svelte.dev/tutorial/tweened"}" rel="${"nofollow"}">Svelte\u2019s <code>tweened</code> values</a>. <strong>By creating a tweened value, we tell Svelte that changes to that value should be animated.</strong> Rather than immediately jump from our first number (e.g. 100) to the next (e.g. 200), the tweened value will smoothly transition between the two numbers (e.g. 100, 101\u2026 200).</p>
+<p>Below, you can see what this looks like in action. This example includes a tweened value that changes according to the current step (watch the bottom left as you scroll).</p>
+${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+  import Scrolly from &quot;./Scrolly.svelte&quot;;
+
+  import &#123; tweened &#125; from &quot;svelte/motion&quot;;
+  let number = tweened(0);
+  
+  let currentStep;
+
+  $: if (currentStep == 0) &#123;
+    number.set(100);
+  &#125; else if (currentStep == 1) &#123;
+    number.set(200);
+  &#125; else if (currentStep == 2) &#123;
+    number.set(300);
+  &#125;
+&lt;/script&gt;
+
+&lt;section&gt;
+  &lt;Scrolly bind:value=&#123;currentStep&#125;&gt;
+    &#123;#each [1,2,3] as text, i&#125;
+      &lt;div class=&quot;step&quot; class:active=&#123;currentStep === i&#125;&gt;
+        &lt;div class=&quot;step-content&quot;&gt;
+          &lt;p&gt;Step &#123;text&#125;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &#123;/each&#125;
+    &lt;div class=&#39;sticky&#39;&gt;&#123;Math.round($number)&#125;&lt;/div&gt;
+  &lt;/Scroll&gt;
+&lt;/section&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+${validate_component(TweenedExample, "TweenedExample").$$render($$result, {}, {}, {})}
+<p>Notice how the value begins tweening <strong>as soon as a new step becomes active</strong>. These are <em>triggers</em>, not <em>scrubbers</em>\u2014the transition occurs at the point at which a new step becomes active, and the tween is <strong>not</strong> linked to the scroll position.</p>
+<p>In our scrollytelling piece, we\u2019ll leverage <code>tweened</code> values to <strong>transition the x positions of elements in a scatterplot</strong>. We\u2019ll add to our example from above by adding some <em>data</em> to our steps, and animate between those datapoints at each step. </p>
+<p>In simple terms, the logic will look like this:</p>
+<ol><li>Active step updates based on viewport</li>
+<li>Tweened values update based on active step</li>
+<li>Points animate to their new x position based on tween</li></ol>
+<p>Now that we understand tweening, let\u2019s create a minimal scatterplot to animate!</p>
+<h2 id="${"step-1-build-a-chart"}"><a href="${"#step-1-build-a-chart"}">Step 1: Build a chart</a></h2>
+<p>Let\u2019s begin by building a simple, static scatterplot. The scatterplot will have 9 points, each with an x and y position.</p>
+${validate_component(Info, "Info").$$render($$result, {}, {}, {
+          default: () => `<p>This scatterplot is intentionally minimal and therefore omits certain best practices, such as responsiveness. (We assign a fixed width and height of 400px.) I\u2019m attempting to minimize the non-scrollytelling code to make this tutorial more streamlined. </p>
+<p><a href="${"https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3"}" rel="${"nofollow"}">The final version of this scatterplot</a> is responsive and follows other best practices, but is a bit more complex.</p>`
+        })}
+<p>In order to create our chart, we obviously need data:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "js", showLanguage: false }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">  let data = [
+    &#123; foo: 4, bar: 1 &#125;,
+    &#123; foo: 6, bar: 7 &#125;,
+    &#123; foo: 9, bar: 5 &#125;,
+    &#123; foo: 2, bar: 4 &#125;,
+    &#123; foo: 8, bar: 2 &#125;,
+    &#123; foo: 9, bar: 9 &#125;,
+    &#123; foo: 5, bar: 3 &#125;,
+    &#123; foo: 3, bar: 8 &#125;,
+    &#123; foo: 1, bar: 6 &#125;,
+  ];</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>For this scatterplot, we will set <code>foo</code> to correspond to <em>each points\u2019 x position</em>, and <code>bar</code> to correspond to <em>their y positions</em>.</p>
+<p>Here, we\u2019ll need some way to map \u201Craw values\u201D to \u201Ccomputed values\u201D\u2014that is, we want the number <em>9</em> (the highest in our dataset) to be at the upper bound of our chart.</p>
+<h3 id="${"scale-the-values"}"><a href="${"#scale-the-values"}">Scale the values!</a></h3>
+<p><strong><a href="${"https://www.d3indepth.com/scales/"}" rel="${"nofollow"}">D3 scales</a></strong> are the conventional way of mapping one set of values (e.g. raw numbers) to another (e.g. computed ones). Although an in-depth look at D3 scales is beyond the scope of this tutorial, our scales will look like this:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+  import &#123; scaleLinear &#125; from &quot;d3-scale&quot;;
+
+  let width = 400;
+  let height = 400;
+
+  let xScale = scaleLinear()
+      .domain([0, 10])
+      .range([0, width]);
+
+  let yScale = scaleLinear()
+      .domain([0, 10])
+      .range([height, 0]);
+&lt;/script&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>Essentially, for both our x and y values, we are creating a function that will take in something within the <em>domain</em> (e.g. 5, right in the middle), and spit out a value within the <em>range</em> (e.g. 200, because that is the midpoint of the specified range).</p>
+<p>Still not making sense? Here\u2019s an interactive example: input a number between 1 and 9 and see the position in our range that it outputs.</p>
+${validate_component(D3ScaleExample, "D3ScaleExample").$$render($$result, {}, {}, {})}
+<p>We use scales like this one to map our raw values, ranging from 1 to 9, to a corresponding position on our chart, ranging from 0 to our chart width (in our case, 400px).</p>
+<p>Now that we understand D3 scales, let\u2019s include them in our scatterplot to map <code>foo</code> and <code>bar</code> to x and y positions.</p>
+<p>We\u2019re going to create an SVG with a width and height of 400px, and then we\u2019ll loop through our <code>data</code> array we created earlier with an <code>{#each}</code> block. For each point, we\u2019ll create a <code>circle</code> element with a <code>cx</code> and <code>cy</code> attribute that are computed via <code>xScale</code> and <code>yScale</code>. Focus on lines 28 through 40:</p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/02141d866af743f18546e988ca8ce721?version=3.38.3\n"}" width="${"100%"}" height="${"600"}" title="${"A simple Svelte scatterplot"}"></iframe>
+<p>Nice! This (admittedly imperfect) chart will be a good starting point for our final scrollytelling visualization. Let\u2019s combine what we\u2019ve learned about tweening, scrollytelling, and this chart to finish up.</p>
+<h2 id="${"step-2-tween-x-positions"}"><a href="${"#step-2-tween-x-positions"}">Step 2: Tween x positions</a></h2>
+<p>In the static chart above, we have an array of objects, each with a <code>foo</code> and <code>bar</code> property. By using D3 scales, we map each of these properties to positions on our chart.</p>
+<p>In a dynamic, scrollytelling visualization, we\u2019ll want these values to be dynamic and tweenable. In order to achieve this, we\u2019ll make a <code>tweened</code> array, where each value in that array is animatable just like the tweened values we looked at earlier.</p>
+<p>Practically, that means we would instantiate a <code>tweened</code> array with our starting x positions, as you see on line 15 below. Then, we can set that array to contain new values with the functions between lines 17 and 22. Go ahead and try below!</p>
+${validate_component(Code, "Code").$$render($$result, {
+          language: "svelte",
+          highlightedLines: "15,17-22"
+        }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+  let data = [
+    &#123; foo: 4, bar: 1 &#125;,
+    &#123; foo: 6, bar: 7 &#125;,
+    &#123; foo: 9, bar: 5 &#125;,
+    &#123; foo: 2, bar: 4 &#125;,
+    &#123; foo: 8, bar: 2 &#125;,
+    &#123; foo: 9, bar: 9 &#125;,
+    &#123; foo: 5, bar: 3 &#125;,
+    &#123; foo: 3, bar: 8 &#125;,
+    &#123; foo: 1, bar: 6 &#125;,
+  ];
+  
+  import &#123; tweened &#125; from &quot;svelte/motion&quot;;
+  const tweenedX = tweened(data.map((d) =&gt; d.foo));
+
+  const setFoo = function () &#123;
+    tweenedX.set(data.map((d) =&gt; d.foo));
+  &#125;;
+  const setBar = function () &#123;
+    tweenedX.set(data.map((d) =&gt; d.bar));
+  &#125;;
+&lt;/script&gt;
+
+&lt;button on:click=&#123;setFoo&#125;&gt;Foo&lt;/button&gt;
+&lt;button on:click=&#123;setBar&#125;&gt;Bar&lt;/button&gt;
+&lt;p&gt; Your values:
+    &#123;#each $tweenedX as x&#125;
+        &#123;x&#125;
+    &#123;/each&#125;
+&lt;/p&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+${validate_component(TweenedXPosition, "TweenedXPositionExample").$$render($$result, {}, {}, {})}
+<p>The takeaway here is that we can tween <em>arrays</em> the same way that we tween <em>numbers</em>. This should make it more clear how we can animate the positions of our circles!</p>
+<p>Once we have a tweened array of x positions, we can reference the values in our markup in an <code>{#each}</code> loop via their index, like this:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;svg&gt;
+    &#123;#each data as d, index&#125;
+        &lt;circle
+            cx=&#123;xScale($tweenedX[index])&#125;
+            cy=&#123;yScale(d.bar)&#125;
+            r=&#123;15&#125;
+        /&gt;
+    &#123;/each&#125;
+&lt;/svg&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>Practically, we\u2019re just passing each value in our array into the <code>xScale</code> and <code>yScale</code> that we created earlier. Not much has changed.</p>
+<p>The main difference is that, now, if and when these values change, they will animate smoothly. The D3 scales will convert each <code>tweened</code> value (even the ugly decimals) to a position on the chart.</p>
+<p>In the REPL below, you can see this code in action. Notice how, if you click on either of the buttons, the x positions of our circles animate smoothly:</p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/f84ec7ba710349bdaa4d605939b0e9ed?version=3.38.3\n"}" width="${"100%"}" height="${"600"}" title="${"An example of tweening circle positions"}"></iframe>
+<p>Here, we\u2019re seeing the power of combining 1) Svelte\u2019s <code>tweened</code> values, 2) Svelte\u2019s <code>{#each}</code> loops, and 3) D3 scales.</p>
+<p>By combining these three concepts, we\u2019ve built an animated chart in 55 lines of code! (And 10 of those lines are just defining the data, but who\u2019s counting?)</p>
+<h2 id="${"step-3-animate-point-positions-via-scroll"}"><a href="${"#step-3-animate-point-positions-via-scroll"}">Step 3: Animate point positions via scroll</a></h2>
+<p>Our final step is to trigger the animations between point positions (as we do above with buttons) via the user\u2019s scroll. Here, we\u2019re going back to Russell\u2019s <code>&lt;Scrolly /&gt;</code> component.</p>
+<p>Recall in an <a href="${"#step-0b-understand-tweened-values"}">earlier example</a> we triggered an update to our tweened object in a code block like this:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "svelte" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+  $: if (currentStep == 0) &#123;
+    // Do something here
+  &#125; else if (currentStep == 1) &#123;
+    // Do something else here
+  &#125; else if (currentStep == 2) &#123;
+    // Or do something here!
+  &#125;
+&lt;/script&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>This bit of code uses Svelte\u2019s <a href="${"https://svelte.dev/docs#component-format-script-3-$-marks-a-statement-as-reactive"}" rel="${"nofollow"}">dollar label operator</a> <code>$:</code> to run code reactively. In action, this means that the above <code>if... else</code> block will run <em>every time the variable <code>currentStep</code> changes</em>. Then, depending on the value of <code>currentStep</code>, the <code>if... else</code> block will evaluate differently. </p>
+${validate_component(Info, "Info").$$render($$result, {}, {}, {
+          default: () => `<p>For React users, this is similar to <code>useEffect</code>, and Vue users can compare it to <code>watch</code> properties.</p>`
+        })}
+<p>All we need to do now is update <code>currentStep</code> via <code>&lt;Scrolly /&gt;</code>, and update our tweened data array in our <code>if... else</code> block. In combination, the process will look like this:</p>
+<ol><li>Trigger updates to <code>currentStep</code> via <code>&lt;Scrolly /&gt;</code></li>
+<li>Tween our array of data in our <code>$: if... else</code> block </li>
+<li>Pass the tweened data into our <code>{#each}</code> loop which renders SVG circles</li></ol>
+<p>Here\u2019s a complete example combining all of the insights we\u2019ve discussed so far:</p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/81194f65fdc74601930df7974fb9ffff?version=3.38.3\n"}" width="${"100%"}" height="${"700"}" title="${"A Svelte Scrollytelling starter"}"></iframe>
+<h2 id="${"next-steps"}"><a href="${"#next-steps"}">Next steps</a></h2>
+<p>We could extend upon our chart in a few ways. The logic that we used to tween x positions is extensible across any value that can be animated. We could do the same tweening to each circles\u2019 y positions, or their radius. Now that we understand the pattern that enables scroll-driven tweening, we can use it for things like position, size, and color.</p>
+<p>And in visuals other than scatterplots, we could use scroll-driven interaction to tell a more dynamic story, such as linking an interactive map\u2019s viewport to the user\u2019s scroll position, as we see in this <a href="${"https://www.ons.gov.uk/visualisations/dvc1371/#/E07000223"}" rel="${"nofollow"}">article</a> from the UK\u2019s Office of National Statistics:</p>
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/svelte-scrollytelling/map.gif",
+          alt: "A map that zooms out on scroll to show new datapoints"
+        }, {}, {})}
+<h2 id="${"a-final-polished-example"}"><a href="${"#a-final-polished-example"}">A final, polished example</a></h2>
+<p>The scrollytelling visual we created was a starter kit, and as a result it neglected certain best practices. For completion\u2019s sake, here\u2019s a <a href="${"https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3"}" rel="${"nofollow"}">REPL</a> with a complete, polished scrollytelling visualization.</p>
+<p>This example separates the charting logic into its own <code>&lt;Scatterplot /&gt;</code> component, and includes a few lines of CSS to make it more responsive. When the canvas is larger than 767 pixels, it will place the text to the left of the chart, rather than directly on top of it. It also tweens the x and y positions simultaneously.</p>
+<iframe loading="${"lazy"}" src="${"https://svelte.dev/repl/82181dc9c8c04053a7ebabd03c654d1d?version=3.44.3\n"}" width="${"100%"}" height="${"700"}" title="${"A Svelte Scrollytelling example"}"></iframe>
+<p>Thanks for reading! As always, feel free to <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">ping me</a> with questions, comments, or tips.</p>`
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/this-site-88216723.js
+var this_site_88216723_exports = {};
+__export(this_site_88216723_exports, {
+  default: () => This_site,
+  metadata: () => metadata54
+});
+var import_gsap2, import_SplitText2, import_prismjs10, import_prism_normalize_whitespace10, css16, TransitionExample, metadata54, This_site;
+var init_this_site_88216723 = __esm({
+  ".svelte-kit/output/server/chunks/this-site-88216723.js"() {
+    init_shims();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_Info_796ef0bb();
+    init_Code_bcfeb83b();
+    import_gsap2 = __toModule(require_gsap());
+    import_SplitText2 = __toModule(require_SplitText());
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    import_prismjs10 = __toModule(require_prism());
+    init_prism_line_numbers();
+    import_prism_normalize_whitespace10 = __toModule(require_prism_normalize_whitespace());
+    init_prism_line_highlight();
+    init_prism_file_highlight();
+    init_prism_bash();
+    init_prism_css();
+    init_prism_r();
+    init_prism_json();
+    init_prism_yaml();
+    css16 = {
+      code: ".example.svelte-60m7ko{width:auto;margin:1.15rem auto;background:var(--semitransparent-bg);padding:2rem;border-radius:0.2rem;display:flex;flex-direction:column;justify-content:center;place-items:center;position:relative}.button.svelte-60m7ko{text-align:center;font-size:1.25rem}h1.svelte-60m7ko{margin:2.5rem 0 0.5rem 0 !important}.code.svelte-60m7ko{position:absolute;right:0;top:unset;bottom:0;padding:0.5rem;font-size:0.75rem;text-transform:uppercase;font-family:var(--font-sans)}",
+      map: null
+    };
+    TransitionExample = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      import_gsap2.gsap.registerPlugin(import_SplitText2.SplitText);
+      $$result.css.add(css16);
+      return `<div class="${"example svelte-60m7ko"}"><div class="${"button svelte-60m7ko"}">Transition</div>
+  <h1 id="${"transition-me"}" class="${"svelte-60m7ko"}">Hi, I&#39;m Connor Rothschild!</h1>
+  <a class="${"code no-underline svelte-60m7ko"}" href="${"https://github.com/connorrothschild/.com/tree/master/src/lib/Global/Blog/this-site/TransitionExample.svelte"}" target="${"_blank"}" rel="${"noopener noreferrer"}">See source code</a>
+</div>`;
+    });
+    metadata54 = {
+      "layout": "blog",
+      "title": "This site is live!",
+      "description": "A creative, content-focused personal website, built with SvelteKit",
+      "date": "2021-12-09",
+      "image": "tidy-tuesday-powerlifting/header.png",
+      "archived": false,
+      "featured": true,
+      "tags": ["svelte", "personal"]
+    };
+    This_site = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `${$$result.head += `<script async src="${"https://platform.twitter.com/widgets.js"}" charset="${"utf-8"}" data-svelte="svelte-lj1ja"><\/script>`, ""}
+${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata54), {}, {
+        default: () => `<p>The new connorrothschild.com is live! (You\u2019re likely reading this post on connorrothschild.com, so that isn\u2019t a surprise).</p>
+<p>My new site, which is my fourth personal website, is built with Sveltekit and takes inspiration from creative coders like <a href="${"https://flayks.com/"}" rel="${"nofollow"}">F\xE9lix P\xE9ault</a> and <a href="${"https://henry.codes/"}" rel="${"nofollow"}">Henry Desroches</a>. You should check out their sites if you haven\u2019t already\u2014they\u2019re pretty great.</p>
+<p>I spent far too long on this iteration of my personal site (see <a href="${"https://github.com/connorrothschild/.com/commits/master"}" rel="${"nofollow"}">the commits</a>). </p>
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/commits.png",
+          alt: "Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code."
+        }, {}, {})}
+<p>In this brief post, I\u2019ll detail some of the highlights, headaches, and give some practical tips for creating a personal website.</p>
+<h2 id="${"creativity--content"}"><a href="${"#creativity--content"}">Creativity &amp; content</a></h2>
+<p>connorrothschild.com is meant to be a highly creative, but still content-focused personal site. Here are some examples of sites that served as inspiration on both fronts.</p>
+<h3 id="${"creativity"}"><a href="${"#creativity"}">Creativity</a></h3>
+<p>You can find plenty of examples of creative websites by perusing the collection of <a href="${"https://www.awwwards.com/websites/sites_of_the_day/"}" rel="${"nofollow"}">awwwards Site of the Day</a> winners. This collection is mostly comprised of \u2018creative coders\u2019 who build highly creative, design-focused sites, usually for brands of for their own portfolio. A great example of an incredibly creative personal website is <a href="${"https://niccolomiranda.com/"}" rel="${"nofollow"}">Niccolo Miranda\u2019s</a>:</p>
+
+<blockquote class="${"twitter-tweet"}"><p lang="${"en"}" dir="${"ltr"}">Proud to finally release my new &quot;Paper Portfolio&quot;.<br><br>Live site \u21B3 <a href="${"https://t.co/zr4BTo31kP"}">https://t.co/zr4BTo31kP</a> <br><br>Many thanks to <a href="${"https://twitter.com/clementroche_?ref_src=twsrc%5Etfw"}">@clementroche_</a> &amp; <a href="${"https://twitter.com/michael_dlb?ref_src=twsrc%5Etfw"}">@michael_dlb</a> for the dev support. <a href="${"https://t.co/n1gDHnYkbl"}">pic.twitter.com/n1gDHnYkbl</a></p>\u2014 Niccol\xF2 Miranda (@niccolomiranda) <a href="${"https://twitter.com/niccolomiranda/status/1452636062866710531?ref_src=twsrc%5Etfw"}">October 25, 2021</a></blockquote>
+<p>What makes the site great\u2014beyond its general aesthetic\u2014is its unified theme of a \u2018paper portfolio.\u2019 The site is meant to resemble a newspaper, and is chock-full of animations and design decisions that support that association. You can read more about those decisions in his thread below:</p>
+
+<blockquote class="${"twitter-tweet"}"><p lang="${"en"}" dir="${"ltr"}">Big news! My new portfolio has been awarded <a href="${"https://twitter.com/hashtag/SOTD?src=hash&ref_src=twsrc%5Etfw"}">#SOTD</a> and <a href="${"https://twitter.com/hashtag/DEVAWARD?src=hash&ref_src=twsrc%5Etfw"}">#DEVAWARD</a> on <a href="${"https://twitter.com/awwwards?ref_src=twsrc%5Etfw"}">@AWWWARDS</a>. <br><br>\u2937 <a href="${"https://t.co/4DvfkZi53r"}">https://t.co/4DvfkZi53r</a><br><br>To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. <br><br>Read below \u{1F6A7}\u{1F447} <a href="${"https://t.co/05t9LPJJAD"}">pic.twitter.com/05t9LPJJAD</a></p>\u2014 Niccol\xF2 Miranda (@niccolomiranda) <a href="${"https://twitter.com/niccolomiranda/status/1461291594477449220?ref_src=twsrc%5Etfw"}">November 18, 2021</a></blockquote>
+<h3 id="${"content"}"><a href="${"#content"}">Content</a></h3>
+<p>On the other hand, many sites are designed with <em>content</em> in mind. These sites tend to reduce \u2018fluff\u2019 and focus on making sure users are able to easily find and peruse content, such as blog posts. This tends to be the default for most developers who maintain a personal portfolio or blog, but don\u2019t describe themselves as a \u2018creative coder.\u2019</p>
+<p>Perhaps the most extreme example of a content-focused personal website is <a href="${"http://paulgraham.com/articles.html"}" rel="${"nofollow"}">Paul Graham\u2019s</a>:</p>
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/paul-graham.png",
+          alt: "Paul Graham's personal website, featuring a collection of essays"
+        }, {}, {})}
+<p>The site is not meant to be pretty, but it gets you the content you need <em>immediately</em>. </p>
+<p>Beyond its easy navigability, the benefit of a site like this is <strong>your visitors know what to expect</strong>. When you click on a blog post, you get a blog post, with nothing distracting you from the main content. No page transitions, no whimsy, just content. Visitors know that they are visiting your website to learn about your thoughts, not to be impressed by your ability to put a website together.</p>
+<h3 id="${"why-not-both"}"><a href="${"#why-not-both"}">Why not both?</a></h3>
+<p>In designing connorrothschild.com, I aimed to make a site that had just enough whimsy to be interesting without it being distracting. </p>
+
+<p>Practically, that meant introducing creativity whenever possible while ensuring that visitors had a consistent experience across content-specific pages. For example, each of my project, blog, and award pages have a consistent \u2018blog-post\u2019 style layout:</p>
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/project-example.png",
+          alt: "An example of my personal website's project page",
+          width: "48%"
+        }, {}, {})}
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/blog-example.png",
+          alt: "An example of my personal website's blog page",
+          width: "48%"
+        }, {}, {})}
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/award-example.png",
+          alt: "An example of my personal website's award page",
+          width: "70%",
+          centered: "true"
+        }, {}, {})}
+<p>When a user visits any of these content-based pages, they see a title, subtitle, and the main content with a <code>max-width: 768px</code> applied. There is consistency <em>within</em> categories (awards, blog, projects), and <em>across</em> them.</p>
+<p>Alternatively, I could have designed each of these sections with their own quirks, (e.g. full width images and grid based layouts introducing constituent parts of the content), as you see in sites like F\xE9lix P\xE9ault\u2019s:</p>
+${validate_component(Image, "Image").$$render($$result, {
+          src: "/images/post/this-site/flayks-project.png",
+          alt: "An example of Flayks personal website's project page"
+        }, {}, {})}
+<p>I chose not to do that, for two reasons.</p>
+<p>First, to build a consistent user experience across different types of content, so that users spent less time getting \u2018onboarded\u2019 to my site, and more time spent engaging with the content. For certain developers (e.g., self-described creative coders), the creativity within project pages is something to showcase\u2014for others, its nota s important.</p>
+<p>Second, because I\u2019m not as good at design as F\xE9lix. \u{1F606}</p>
+<p>Skills aside, there is value in impressing your users on a homepage, and rewarding them with simpler content once they request it (e.g., by clicking a blog post). If you ever feel limited on time and are worried about not being able to include whimsy and creativity throughout your site, this could be a good approach.</p>
+<h1 id="${"parts-of-the-site-i-hope-you-enjoy"}"><a href="${"#parts-of-the-site-i-hope-you-enjoy"}">Parts of the site I hope you enjoy</a></h1>
+<p>Here are some parts of the website I hope you enjoy and maybe pull inspiration from.</p>
+${validate_component(Info, "Info").$$render($$result, {}, {}, {
+          default: () => `This part of the post gets somewhat technical.
+`
+        })}
+<h2 id="${"gsap-splittext-transitions"}"><a href="${"#gsap-splittext-transitions"}"><code>GSAP SplitText</code> transitions</a></h2>
+<p>The site\u2019s main text elements (e.g. section titles) are animated using a combination of <code>IntersectionObserver</code> and <code>GSAP</code>\u2019s <code>SplitText</code> plugin. This enables cool transitions like this one when an element scrolls into view:</p>
+${validate_component(TransitionExample, "TransitionExample").$$render($$result, {}, {}, {})}
+<h2 id="${"the-projects-section"}"><a href="${"#the-projects-section"}">The projects section</a></h2>
+<p>The projects section on my site\u2019s homepage is one of its more creative elements. As you can see in the video below, it layers transparent videos with overlaying text elements, to give the appearance of the videos \u2018popping out\u2019 in an almost-3D fashion.</p>
+<video controls muted preload="${"metadata"}" src="${"/images/post/this-site/projects.mp4"}" alt="${"A video showcasing my projects section. Each time you hover over a different project, a new mockup video of that project appears."}"></video>
+<p>Here\u2019s how it\u2019s done. (Continue reading to nerd out, or <a href="${"#noise"}">skip to the next section</a>) The first step was to create mockup videos for each project, which I was able to do via <a href="${"https://www.rotato.app/"}" rel="${"nofollow"}">Rotato</a>. </p>
+<p>Once the videos were created, I had to convert them to transparent videos, which was made harder by the fact that different browsers encode transparency with different formats. (Chrome uses <code>webm</code>, Safari uses <code>mov</code> with <code>HEVC</code>.) I downloaded videos from Rotato and used the application <a href="${"https://www.shutterencoder.com/en/"}" rel="${"nofollow"}">Shutter Encoder</a> to output videos compatible with all browsers.</p>
+<p>Finally, after creating 8 transparent videos (4 <code>.mov</code> and 4 <code>.webm</code>), I was ready to include them in the projects section. The question then was <strong>how to render</strong> the videos. The obvious option was having 4 different <code>&lt;video&gt;</code> tags, each with two <code>&lt;source&gt;</code> elements, and toggle the transparency of each on hover. I found that this led to some lagginess on video <code>load()</code> and <code>play()</code>, so I needed to find a different solution.</p>
+<p>Instead, I ended up preloading each of the four videos as <code>Blob()</code> objects and then dynamically updated the <code>video</code> source to match the active video. The <code>Blob()</code> method enabled caching of the videos on all browsers and devices (<a href="${"https://stackoverflow.com/questions/52220696/how-to-cache-mp4-video-for-the-html-video-tag/55982659#55982659"}" rel="${"nofollow"}">to my understanding, iOS refuses to cache large videos if they were passed in as a regular source</a>). </p>
+<p>Technically, this meant I had to detect whether the user\u2019s browser supported HEVC alpha, and then pass in the video source dynamically to the <code>Blob</code> construction. This function detects if the user\u2019s browser supported HEVC alpha (adapted from <a href="${"https://css-tricks.com/overlaying-video-with-transparency-while-wrangling-cross-browser-support/"}" rel="${"nofollow"}">this snippet</a>):</p>
+${validate_component(Code, "Code").$$render($$result, { language: "js" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">import Bowser from &quot;bowser&quot;;
+
+function supportsHEVCAlpha() &#123;
+  if (!browser) return false;
+  const navigator = window.navigator;
+
+  const thisBrowser = Bowser.getParser(window.navigator.userAgent).getBrowser();
+  const os = Bowser.getParser(window.navigator.userAgent).getOS();
+
+  const hasMediaCapabilities = !!(navigator.mediaCapabilities &amp;&amp; navigator.mediaCapabilities.decodingInfo)
+
+  const isSafari = thisBrowser.name === &quot;Safari&quot;;
+  const isMac = os.name === &quot;macOS&quot;;
+  const isIOS = os.name === &quot;iOS&quot;;
+  const version = &#123;major: os.version.split(&#39;.&#39;)[0], minor: os.version.split(&#39;.&#39;)[1]&#125;;
+  const isPast1015 = version.major &gt; 10 || (version.major &gt;= 10 &amp;&amp; version.minor &gt;= 15);
+  
+  if (isMac &amp;&amp; isSafari &amp;&amp; isPast1015) return true;
+  if (isSafari &amp;&amp; hasMediaCapabilities) return true;
+  if (isIOS) return true;
+
+  return false;
+&#125;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>I then used that function to determine whether to update the <code>video</code> source to be our <code>.webm</code> or <code>.mov</code> file.</p>
+<p>Whew! Here\u2019s the code for <a href="${"https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/Sections/Projects.svelte"}" rel="${"nofollow"}">preloading videos</a>, and <a href="${"https://github.com/connorrothschild/.com/blob/bff18c45d90540c865fab11c7e2da23d6856a62f/src/lib/VideoSection/HoverVideo.svelte"}" rel="${"nofollow"}">here\u2019s how we update <code>src</code> dynamically</a>.</p>
+<h2 id="${"noise"}"><a href="${"#noise"}">Noise</a></h2>
+<p>Having a background noise applied to the <code>body</code> of your personal website is kinda in right now. It\u2019s also very easy to carry out technically. (Zoom into my site\u2019s background to see the effect.)</p>
+<p><a href="${"https://github.com/connorrothschild/.com/blob/master/src/lib/Noise.svelte"}" rel="${"nofollow"}">Here\u2019s a simple <code>&lt;Noise /&gt;</code> component</a> (which is really just entirely CSS) that we put in our <code>__layout.svelte</code> so that it is present on every page of the site. We (optionally) apply a <code>shake</code> animation so that it jitters a bit as well. </p>
+<p>You can create your own noise texture on a site <a href="${"https://www.noisetexturegenerator.com/"}" rel="${"nofollow"}">like this one</a>, and use the <code>&lt;Noise /&gt;</code> component above to add a bit of flare to your site.</p>
+<h2 id="${"preference-respecting-animations"}"><a href="${"#preference-respecting-animations"}">Preference-respecting animations</a></h2>
+<p>I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you\u2019re greeted with my name flying into view (<a href="${"https://github.com/connorrothschild/.com/blob/master/src/scripts/transitions/rotate.js"}" rel="${"nofollow"}">code</a>):</p>
+<video controls muted preload="${"metadata"}" src="${"/images/post/this-site/hero.mp4"}" alt="${"A video showcasing my 'hero' section, where the words 'Connor Rothschild' fly into view."}"></video>
+<p>When you scroll throughout the site, content more subtly fades into view (<a href="${"https://github.com/connorrothschild/.com/blob/master/src/lib/TransitionInView.svelte"}" rel="${"nofollow"}">code</a>):</p>
+<video controls muted preload="${"metadata"}" src="${"/images/post/this-site/inview.mp4"}" alt="${"A video showcasing awards progressively showing as the user scrolls down."}"></video>
+<p>Both of these animations (and all others on the site) respect the <a href="${"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"}" rel="${"nofollow"}">user\u2019s <code>prefers-reduced-motion</code> setting</a>. Practically, this looks like applying animation functions and transitions <strong>only when the user has no motion preference</strong>. In CSS, that looks like this:</p>
+${validate_component(Code, "Code").$$render($$result, { language: "css" }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">@media (prefers-reduced-motion: no-preference) &#123;
+  .transitioning-container &#123;
+    transition: opacity 1000ms ease 200ms, transform 1000ms ease;
+    opacity: 0;
+    transform: translateX(-5%);
+  &#125;
+  .intersecting &#123;
+    opacity: 1;
+    transform: none;
+  &#125;
+&#125;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<p>And in Svelte/JavaScript, that means building an app-wide store that corresponds to the user\u2019s motion preference, and then applying whatever <code>transition()</code> function you\u2019ve defined <strong>only if that store is false</strong>.</p>
+${validate_component(Code, "Code").$$render($$result, {
+          language: "javascript",
+          filename: "store.js"
+        }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">import &#123; readable &#125; from &#39;svelte/store&#39;;
+import &#123; browser &#125; from &#39;$app/env&#39;;
+
+const reducedMotionQuery = &#39;(prefers-reduced-motion: reduce)&#39;;
+
+const getInitialMotionPreference = () =&gt; &#123;
+  if (!browser) return false;
+  return window.matchMedia(reducedMotionQuery).matches;
+&#125;;
+
+export const prefersReducedMotion = readable(getInitialMotionPreference());</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+${validate_component(Code, "Code").$$render($$result, {
+          language: "svelte",
+          filename: "App.svelte"
+        }, {}, {
+          default: () => `<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">&lt;script&gt;
+import &#123; prefersReducedMotion &#125; from &quot;./store.js&quot;;
+
+onMount(() =&gt; &#123;
+  if ($prefersReducedMotion) return;
+  transition(); /* Defined elsewhere */
+&#125;);
+&lt;/script&gt;</code>`}<!-- HTML_TAG_END --></pre>`
+        })}
+<h2 id="${"what-are-your-thoughts"}"><a href="${"#what-are-your-thoughts"}">What are your thoughts?</a></h2>
+<p>Do you like this site? (Hopefully!) Hate it? (Hopefully not!) <a href="${"https://twitter.com/CL_Rothschild"}" rel="${"nofollow"}">Reach out</a> and let me know what you think, or if anything is broken for you! </p>
+<p>This site was built with <a href="${"https://kit.svelte.dev/"}" rel="${"nofollow"}">SvelteKit</a>; although the framework is powerful, it hasn\u2019t yet reached 1.0, so there are definitely issues that should arise along the way. I made the intentional choice to use a growing framework, rather than an established one, so that I could be an early adopter of this framework I have a lot of confidence in.</p>
+<p>Thanks for reading, and thanks for visiting this site! I hope you enjoyed it.</p>`
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/tidy-tuesday-powerlifting-54ec12d9.js
+var tidy_tuesday_powerlifting_54ec12d9_exports = {};
+__export(tidy_tuesday_powerlifting_54ec12d9_exports, {
+  default: () => Tidy_tuesday_powerlifting,
+  metadata: () => metadata55
+});
+var metadata55, Tidy_tuesday_powerlifting;
+var init_tidy_tuesday_powerlifting_54ec12d9 = __esm({
+  ".svelte-kit/output/server/chunks/tidy-tuesday-powerlifting-54ec12d9.js"() {
+    init_shims();
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata55 = {
       "layout": "blog",
       "title": "How to Combine Animated Plots in R",
-      "description": "Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers.",
+      "description": "Leveraging the power of <code>gganimate</code> and <code>magick</code> to combine animated plots for your viewers.",
       "date": "2019-10-09",
       "image": "tidy-tuesday-powerlifting/header.png",
       "archived": true,
       "tags": ["r", "tutorial"]
     };
     Tidy_tuesday_powerlifting = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata51), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata55), {}, {
         default: () => `<p>In this tutorial, I\u2019m going to outline the steps necessary to create an animated, faceted plot in R. Although rare, combining animated plots can be a powerful way to showcase different elements of the same data (as you\u2019ll see below).</p>
 <p>In this example, I\u2019m using weightlifting data from the International Powerlifting Federation. For the purposes of this tutorial, we\u2019ll look at <em>differences in top lifts by sex</em>. A faceted, animated plot is a great option because we\u2019d like to observe <strong>the magnitude of these differences</strong> and <strong>how these differences have evolved over time</strong>.</p>
 <p>We\u2019ll be creating this GIF:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
+          src: "/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
           alt: "A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."
         }, {}, {})}
 <h2 id="${"environment-setup"}"><a href="${"#environment-setup"}">Environment setup</a></h2>
@@ -17755,7 +18957,7 @@ max_lifts_final <span class="token operator">&lt;-</span> max_lifts <span class=
   geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">450</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"Difference"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             color<span class="token operator">=</span><span class="token string">"grey20"</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> vjust<span class="token operator">=</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span></code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png",
+          src: "/images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png",
           alt: "A static dumbbell plot which represents male and female \u2018top lifts' in 2019."
         }, {}, {})}
 <p>Finally, we animate, using Thomas Pedersen\u2019s wonderful <a href="${"https://github.com/thomasp85/gganimate"}" rel="${"nofollow"}">gganimate
@@ -17788,7 +18990,7 @@ a_gif <span class="token operator">&lt;-</span> animate<span class="token punctu
 
 a_gif</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif",
+          src: "/images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif",
           alt: "An animated dumbbell plot which represents male and female \u2018top lifts' over time. Each tick of the animation represents a new year."
         }, {}, {})}
 <p>But in our case, we\u2019d like to include another GIF: a line chart of differences over time.</p>
@@ -17818,7 +19020,7 @@ b_gif <span class="token operator">&lt;-</span> animate<span class="token punctu
 
 b_gif</code>`}<!-- HTML_TAG_END --></pre>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif",
+          src: "/images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif",
           alt: "An animated line chart that shows, year by year, the difference in male and female top lifts on the Y axis. Each tick of the chart shows a new year."
         }, {}, {})}
 <p>Finally, we\u2019ll combine them using <code>magick</code> (thanks to <a href="${"https://github.com/thomasp85/gganimate/wiki/Animation-Composition"}" rel="${"nofollow"}">this
@@ -17839,7 +19041,7 @@ new_gif <span class="token operator">&lt;-</span> image_append<span class="token
 <p>Here, we specify <code>stack = TRUE</code> so that one plot is <strong>above</strong> the other. If you\u2019d like to place them side-by-side, specify <code>stack = FALSE</code>.</p>
 <p>In combination, the process results in our final output:</p>
 ${validate_component(Image, "Image").$$render($$result, {
-          src: "../images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
+          src: "/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif",
           alt: "A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."
         }, {}, {})}
 <p>In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), <em>and</em> we can see how these differences change over time (bottom chart). The power of an animated, combined chart!</p>`
@@ -17848,37 +19050,35 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/tidy-tuesday-replication-27e2426e.js
-var tidy_tuesday_replication_27e2426e_exports = {};
-__export(tidy_tuesday_replication_27e2426e_exports, {
+// .svelte-kit/output/server/chunks/tidy-tuesday-replication-55010e0c.js
+var tidy_tuesday_replication_55010e0c_exports = {};
+__export(tidy_tuesday_replication_55010e0c_exports, {
   default: () => Tidy_tuesday_replication,
-  metadata: () => metadata52
+  metadata: () => metadata56
 });
-var import_bowser58, metadata52, Tidy_tuesday_replication;
-var init_tidy_tuesday_replication_27e2426e = __esm({
-  ".svelte-kit/output/server/chunks/tidy-tuesday-replication-27e2426e.js"() {
+var metadata56, Tidy_tuesday_replication;
+var init_tidy_tuesday_replication_55010e0c = __esm({
+  ".svelte-kit/output/server/chunks/tidy-tuesday-replication-55010e0c.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_layout_ef610ed1();
-    init_Image_8e30e86c();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser58 = __toModule(require_es5());
-    init_CornerTitle_6f993505();
-    init_store_8bf23024();
-    init_utils_09998264();
-    init_IntersectionObserver_4cd4a541();
-    metadata52 = {
+    init_app_89d516be();
+    init_layout_6edf1f79();
+    init_Image_2006dc25();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    init_CornerTitle_433952fc();
+    init_utils_4d01bc61();
+    init_IntersectionObserver_20eeae9e();
+    metadata56 = {
       "layout": "blog",
       "title": "Using Shiny to Replicate a Bloomberg Graphic",
-      "description": "Leveraging the power of {shiny} for static graphics",
+      "description": "Leveraging the power of <code>shiny</code> for static graphics",
       "date": "2019-12-10",
       "image": "tidy-tuesday-replication/header.png",
       "archived": true,
       "tags": ["r", "tutorial"]
     };
     Tidy_tuesday_replication = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata52), {}, {
+      return `${validate_component(Layout4, "Layout_MDSVEX_DEFAULT").$$render($$result, Object.assign($$props, metadata56), {}, {
         default: () => `<p>This weeks\u2019s installment of <a href="${"https://t.co/sElb4fcv3u?amp=1"}" rel="${"nofollow"}">Tidy
 Tuesday</a> is all about replicating
 professional plots in R. Inspired by Rafael Irizarry\u2019s post <a href="${"https://simplystatistics.org/2019/08/28/you-can-replicate-almost-any-plot-with-ggplot2/"}" rel="${"nofollow"}">\u201CYou can
@@ -17897,7 +19097,7 @@ Bloomberg graphics, I decided to set out on a journey to make that plot
 as close as possible to the real thing.</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot by Bloomberg Graphics, showing automation risk compared to median income.",
-          src: "../images/post/tidy-tuesday-replication/bloomberg.png"
+          src: "/images/post/tidy-tuesday-replication/bloomberg.png"
         }, {}, {})}
 <p>The real goal of this week\u2019s Tidy Tuesday is using <strong>the data that
 Rafael posted</strong> to create other cool visualizations; I took a slightly
@@ -18205,12 +19405,12 @@ code, uninterrupted and (hopefully) reproducible,
 <p>Here\u2019s the Bloomberg visualization:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot by Bloomberg Graphics, showing automation risk compared to median income.",
-          src: "../images/post/tidy-tuesday-replication/bloomberg.png"
+          src: "/images/post/tidy-tuesday-replication/bloomberg.png"
         }, {}, {})}
 <p>And here\u2019s mine:</p>
 ${validate_component(Image, "Image").$$render($$result, {
           alt: "A scatterplot recreation, showing automation risk compared to median income.",
-          src: "../images/post/tidy-tuesday-replication/replication.png"
+          src: "/images/post/tidy-tuesday-replication/replication.png"
         }, {}, {})}
 `
       })}`;
@@ -18218,19 +19418,18 @@ ${validate_component(Image, "Image").$$render($$result, {
   }
 });
 
-// .svelte-kit/output/server/chunks/posts.json-c9cb5aa2.js
-var posts_json_c9cb5aa2_exports = {};
-__export(posts_json_c9cb5aa2_exports, {
+// .svelte-kit/output/server/chunks/posts.json-f85adb07.js
+var posts_json_f85adb07_exports = {};
+__export(posts_json_f85adb07_exports, {
   get: () => get4
 });
 async function get4() {
-  const imports = { "./post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(() => (init_adding_a_chart_to_your_d3_tooltip_67831f20(), adding_a_chart_to_your_d3_tooltip_67831f20_exports)), "./post/animate-hugo-academic.md": () => Promise.resolve().then(() => (init_animate_hugo_academic_123d84a8(), animate_hugo_academic_123d84a8_exports)), "./post/automation-scrollytell.md": () => Promise.resolve().then(() => (init_automation_scrollytell_6d42332b(), automation_scrollytell_6d42332b_exports)), "./post/color-in-data-vis.md": () => Promise.resolve().then(() => (init_color_in_data_vis_3bd4b890(), color_in_data_vis_3bd4b890_exports)), "./post/covid-gun-spikes.md": () => Promise.resolve().then(() => (init_covid_gun_spikes_595c3f78(), covid_gun_spikes_595c3f78_exports)), "./post/covid-on-campus.md": () => Promise.resolve().then(() => (init_covid_on_campus_09e3e28f(), covid_on_campus_09e3e28f_exports)), "./post/covid-posts.md": () => Promise.resolve().then(() => (init_covid_posts_32b068ed(), covid_posts_32b068ed_exports)), "./post/do-something-else.md": () => Promise.resolve().then(() => (init_do_something_else_1f16f77a(), do_something_else_1f16f77a_exports)), "./post/dumbbell-plots.md": () => Promise.resolve().then(() => (init_dumbbell_plots_da9731c3(), dumbbell_plots_da9731c3_exports)), "./post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(() => (init_economist_table_replication_using_reactable_d59c42a0(), economist_table_replication_using_reactable_d59c42a0_exports)), "./post/flat-data-r.md": () => Promise.resolve().then(() => (init_flat_data_r_0a30bdaf(), flat_data_r_0a30bdaf_exports)), "./post/introducing-tpltheme.md": () => Promise.resolve().then(() => (init_introducing_tpltheme_70118bb6(), introducing_tpltheme_70118bb6_exports)), "./post/map-springfield.md": () => Promise.resolve().then(() => (init_map_springfield_65bdac35(), map_springfield_65bdac35_exports)), "./post/nuxt-blog-starter.md": () => Promise.resolve().then(() => (init_nuxt_blog_starter_99b71689(), nuxt_blog_starter_99b71689_exports)), "./post/refugee-trends.md": () => Promise.resolve().then(() => (init_refugee_trends_97b67ae7(), refugee_trends_97b67ae7_exports)), "./post/svelte-and-d3.md": () => Promise.resolve().then(() => (init_svelte_and_d3_81974204(), svelte_and_d3_81974204_exports)), "./post/svelte-scatter.md": () => Promise.resolve().then(() => (init_svelte_scatter_f5d4a79a(), svelte_scatter_f5d4a79a_exports)), "./post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(() => (init_tidy_tuesday_powerlifting_56cc77f6(), tidy_tuesday_powerlifting_56cc77f6_exports)), "./post/tidy-tuesday-replication.md": () => Promise.resolve().then(() => (init_tidy_tuesday_replication_27e2426e(), tidy_tuesday_replication_27e2426e_exports)) };
+  const imports = { "./post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(() => (init_adding_a_chart_to_your_d3_tooltip_47b265d1(), adding_a_chart_to_your_d3_tooltip_47b265d1_exports)), "./post/animate-hugo-academic.md": () => Promise.resolve().then(() => (init_animate_hugo_academic_8d202400(), animate_hugo_academic_8d202400_exports)), "./post/automation-scrollytell.md": () => Promise.resolve().then(() => (init_automation_scrollytell_b70f7f0c(), automation_scrollytell_b70f7f0c_exports)), "./post/color-in-data-vis.md": () => Promise.resolve().then(() => (init_color_in_data_vis_d49b9294(), color_in_data_vis_d49b9294_exports)), "./post/covid-gun-spikes.md": () => Promise.resolve().then(() => (init_covid_gun_spikes_cb167433(), covid_gun_spikes_cb167433_exports)), "./post/covid-on-campus.md": () => Promise.resolve().then(() => (init_covid_on_campus_e998c76c(), covid_on_campus_e998c76c_exports)), "./post/covid-posts.md": () => Promise.resolve().then(() => (init_covid_posts_f2563c6d(), covid_posts_f2563c6d_exports)), "./post/do-something-else.md": () => Promise.resolve().then(() => (init_do_something_else_12627b95(), do_something_else_12627b95_exports)), "./post/dumbbell-plots.md": () => Promise.resolve().then(() => (init_dumbbell_plots_82c51849(), dumbbell_plots_82c51849_exports)), "./post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(() => (init_economist_table_replication_using_reactable_4c40e42b(), economist_table_replication_using_reactable_4c40e42b_exports)), "./post/flat-data-r.md": () => Promise.resolve().then(() => (init_flat_data_r_f9cd9da9(), flat_data_r_f9cd9da9_exports)), "./post/following.md": () => Promise.resolve().then(() => (init_following_8ff919a6(), following_8ff919a6_exports)), "./post/introducing-tpltheme.md": () => Promise.resolve().then(() => (init_introducing_tpltheme_b315a3b4(), introducing_tpltheme_b315a3b4_exports)), "./post/learning.md": () => Promise.resolve().then(() => (init_learning_6eef23d0(), learning_6eef23d0_exports)), "./post/map-springfield.md": () => Promise.resolve().then(() => (init_map_springfield_27529194(), map_springfield_27529194_exports)), "./post/nuxt-blog-starter.md": () => Promise.resolve().then(() => (init_nuxt_blog_starter_6daf543b(), nuxt_blog_starter_6daf543b_exports)), "./post/refugee-trends.md": () => Promise.resolve().then(() => (init_refugee_trends_479ad85d(), refugee_trends_479ad85d_exports)), "./post/svelte-and-d3.md": () => Promise.resolve().then(() => (init_svelte_and_d3_5f409860(), svelte_and_d3_5f409860_exports)), "./post/svelte-scatter.md": () => Promise.resolve().then(() => (init_svelte_scatter_811ff131(), svelte_scatter_811ff131_exports)), "./post/svelte-scrollytelling.md": () => Promise.resolve().then(() => (init_svelte_scrollytelling_820b0a14(), svelte_scrollytelling_820b0a14_exports)), "./post/this-site.md": () => Promise.resolve().then(() => (init_this_site_88216723(), this_site_88216723_exports)), "./post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(() => (init_tidy_tuesday_powerlifting_54ec12d9(), tidy_tuesday_powerlifting_54ec12d9_exports)), "./post/tidy-tuesday-replication.md": () => Promise.resolve().then(() => (init_tidy_tuesday_replication_55010e0c(), tidy_tuesday_replication_55010e0c_exports)) };
   let body = [];
   for (const path in imports) {
-    body.push(imports[path]().then(({ metadata: metadata53, slug }) => {
+    body.push(imports[path]().then(({ metadata: metadata57 }) => {
       return {
-        metadata: metadata53,
-        slug,
+        metadata: metadata57,
         path
       };
     }));
@@ -18240,8 +19439,8 @@ async function get4() {
     body: JSON.stringify(posts)
   };
 }
-var init_posts_json_c9cb5aa2 = __esm({
-  ".svelte-kit/output/server/chunks/posts.json-c9cb5aa2.js"() {
+var init_posts_json_f85adb07 = __esm({
+  ".svelte-kit/output/server/chunks/posts.json-f85adb07.js"() {
     init_shims();
   }
 });
@@ -18703,8 +19902,8 @@ var require_MorphSVGPlugin = __commonJS({
         }
         return result;
       }
-      var gsap5, _toArray, _lastLinkedAnchor, _coreInitted, PluginClass, _getGSAP = function _getGSAP2() {
-        return gsap5 || typeof window !== "undefined" && (gsap5 = window.gsap) && gsap5.registerPlugin && gsap5;
+      var gsap6, _toArray, _lastLinkedAnchor, _coreInitted, PluginClass, _getGSAP = function _getGSAP2() {
+        return gsap6 || typeof window !== "undefined" && (gsap6 = window.gsap) && gsap6.registerPlugin && gsap6;
       }, _isFunction = function _isFunction2(value) {
         return typeof value === "function";
       }, _atan2 = Math.atan2, _cos$1 = Math.cos, _sin$1 = Math.sin, _sqrt$1 = Math.sqrt, _PI = Math.PI, _2PI = _PI * 2, _angleMin = _PI * 0.3, _angleMax = _PI * 0.7, _bigNum = 1e20, _numExp = /[-+=\.]*\d+[\.e\-\+]*\d*[e\-\+]*\d*/gi, _selectorExp$1 = /(^[#\.][a-z]|[a-y][a-z])/i, _commands = /[achlmqstvz]/i, _log = function _log2(message) {
@@ -19117,10 +20316,10 @@ var require_MorphSVGPlugin = __commonJS({
           i
         };
       }, _initCore = function _initCore2(required) {
-        gsap5 = _getGSAP();
-        PluginClass = PluginClass || gsap5 && gsap5.plugins.morphSVG;
-        if (gsap5 && PluginClass) {
-          _toArray = gsap5.utils.toArray;
+        gsap6 = _getGSAP();
+        PluginClass = PluginClass || gsap6 && gsap6.plugins.morphSVG;
+        if (gsap6 && PluginClass) {
+          _toArray = gsap6.utils.toArray;
           PluginClass.prototype._tweenRotation = _tweenRotation;
           _coreInitted = 1;
         } else if (required) {
@@ -19132,7 +20331,7 @@ var require_MorphSVGPlugin = __commonJS({
         name: "morphSVG",
         rawVars: 1,
         register: function register(core, Plugin) {
-          gsap5 = core;
+          gsap6 = core;
           PluginClass = Plugin;
           _initCore();
         },
@@ -19361,7 +20560,7 @@ var require_MorphSVGPlugin = __commonJS({
         defaultUpdateTarget: true,
         defaultMap: "size"
       };
-      _getGSAP() && gsap5.registerPlugin(MorphSVGPlugin3);
+      _getGSAP() && gsap6.registerPlugin(MorphSVGPlugin3);
       exports2.MorphSVGPlugin = MorphSVGPlugin3;
       exports2.default = MorphSVGPlugin3;
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -19369,121 +20568,712 @@ var require_MorphSVGPlugin = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-f4d524c8.js
-var layout_f4d524c8_exports = {};
-__export(layout_f4d524c8_exports, {
+// node_modules/bowser/es5.js
+var require_es5 = __commonJS({
+  "node_modules/bowser/es5.js"(exports, module2) {
+    init_shims();
+    !function(e, t) {
+      typeof exports == "object" && typeof module2 == "object" ? module2.exports = t() : typeof define == "function" && define.amd ? define([], t) : typeof exports == "object" ? exports.bowser = t() : e.bowser = t();
+    }(exports, function() {
+      return function(e) {
+        var t = {};
+        function r(n) {
+          if (t[n])
+            return t[n].exports;
+          var i = t[n] = { i: n, l: false, exports: {} };
+          return e[n].call(i.exports, i, i.exports, r), i.l = true, i.exports;
+        }
+        return r.m = e, r.c = t, r.d = function(e3, t2, n) {
+          r.o(e3, t2) || Object.defineProperty(e3, t2, { enumerable: true, get: n });
+        }, r.r = function(e3) {
+          typeof Symbol != "undefined" && Symbol.toStringTag && Object.defineProperty(e3, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e3, "__esModule", { value: true });
+        }, r.t = function(e3, t2) {
+          if (1 & t2 && (e3 = r(e3)), 8 & t2)
+            return e3;
+          if (4 & t2 && typeof e3 == "object" && e3 && e3.__esModule)
+            return e3;
+          var n = Object.create(null);
+          if (r.r(n), Object.defineProperty(n, "default", { enumerable: true, value: e3 }), 2 & t2 && typeof e3 != "string")
+            for (var i in e3)
+              r.d(n, i, function(t3) {
+                return e3[t3];
+              }.bind(null, i));
+          return n;
+        }, r.n = function(e3) {
+          var t2 = e3 && e3.__esModule ? function() {
+            return e3.default;
+          } : function() {
+            return e3;
+          };
+          return r.d(t2, "a", t2), t2;
+        }, r.o = function(e3, t2) {
+          return Object.prototype.hasOwnProperty.call(e3, t2);
+        }, r.p = "", r(r.s = 90);
+      }({ 17: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n = r(18), i = function() {
+          function e3() {
+          }
+          return e3.getFirstMatch = function(e4, t2) {
+            var r2 = t2.match(e4);
+            return r2 && r2.length > 0 && r2[1] || "";
+          }, e3.getSecondMatch = function(e4, t2) {
+            var r2 = t2.match(e4);
+            return r2 && r2.length > 1 && r2[2] || "";
+          }, e3.matchAndReturnConst = function(e4, t2, r2) {
+            if (e4.test(t2))
+              return r2;
+          }, e3.getWindowsVersionName = function(e4) {
+            switch (e4) {
+              case "NT":
+                return "NT";
+              case "XP":
+                return "XP";
+              case "NT 5.0":
+                return "2000";
+              case "NT 5.1":
+                return "XP";
+              case "NT 5.2":
+                return "2003";
+              case "NT 6.0":
+                return "Vista";
+              case "NT 6.1":
+                return "7";
+              case "NT 6.2":
+                return "8";
+              case "NT 6.3":
+                return "8.1";
+              case "NT 10.0":
+                return "10";
+              default:
+                return;
+            }
+          }, e3.getMacOSVersionName = function(e4) {
+            var t2 = e4.split(".").splice(0, 2).map(function(e6) {
+              return parseInt(e6, 10) || 0;
+            });
+            if (t2.push(0), t2[0] === 10)
+              switch (t2[1]) {
+                case 5:
+                  return "Leopard";
+                case 6:
+                  return "Snow Leopard";
+                case 7:
+                  return "Lion";
+                case 8:
+                  return "Mountain Lion";
+                case 9:
+                  return "Mavericks";
+                case 10:
+                  return "Yosemite";
+                case 11:
+                  return "El Capitan";
+                case 12:
+                  return "Sierra";
+                case 13:
+                  return "High Sierra";
+                case 14:
+                  return "Mojave";
+                case 15:
+                  return "Catalina";
+                default:
+                  return;
+              }
+          }, e3.getAndroidVersionName = function(e4) {
+            var t2 = e4.split(".").splice(0, 2).map(function(e6) {
+              return parseInt(e6, 10) || 0;
+            });
+            if (t2.push(0), !(t2[0] === 1 && t2[1] < 5))
+              return t2[0] === 1 && t2[1] < 6 ? "Cupcake" : t2[0] === 1 && t2[1] >= 6 ? "Donut" : t2[0] === 2 && t2[1] < 2 ? "Eclair" : t2[0] === 2 && t2[1] === 2 ? "Froyo" : t2[0] === 2 && t2[1] > 2 ? "Gingerbread" : t2[0] === 3 ? "Honeycomb" : t2[0] === 4 && t2[1] < 1 ? "Ice Cream Sandwich" : t2[0] === 4 && t2[1] < 4 ? "Jelly Bean" : t2[0] === 4 && t2[1] >= 4 ? "KitKat" : t2[0] === 5 ? "Lollipop" : t2[0] === 6 ? "Marshmallow" : t2[0] === 7 ? "Nougat" : t2[0] === 8 ? "Oreo" : t2[0] === 9 ? "Pie" : void 0;
+          }, e3.getVersionPrecision = function(e4) {
+            return e4.split(".").length;
+          }, e3.compareVersions = function(t2, r2, n2) {
+            n2 === void 0 && (n2 = false);
+            var i2 = e3.getVersionPrecision(t2), s2 = e3.getVersionPrecision(r2), a = Math.max(i2, s2), o = 0, u = e3.map([t2, r2], function(t3) {
+              var r3 = a - e3.getVersionPrecision(t3), n3 = t3 + new Array(r3 + 1).join(".0");
+              return e3.map(n3.split("."), function(e4) {
+                return new Array(20 - e4.length).join("0") + e4;
+              }).reverse();
+            });
+            for (n2 && (o = a - Math.min(i2, s2)), a -= 1; a >= o; ) {
+              if (u[0][a] > u[1][a])
+                return 1;
+              if (u[0][a] === u[1][a]) {
+                if (a === o)
+                  return 0;
+                a -= 1;
+              } else if (u[0][a] < u[1][a])
+                return -1;
+            }
+          }, e3.map = function(e4, t2) {
+            var r2, n2 = [];
+            if (Array.prototype.map)
+              return Array.prototype.map.call(e4, t2);
+            for (r2 = 0; r2 < e4.length; r2 += 1)
+              n2.push(t2(e4[r2]));
+            return n2;
+          }, e3.find = function(e4, t2) {
+            var r2, n2;
+            if (Array.prototype.find)
+              return Array.prototype.find.call(e4, t2);
+            for (r2 = 0, n2 = e4.length; r2 < n2; r2 += 1) {
+              var i2 = e4[r2];
+              if (t2(i2, r2))
+                return i2;
+            }
+          }, e3.assign = function(e4) {
+            for (var t2, r2, n2 = e4, i2 = arguments.length, s2 = new Array(i2 > 1 ? i2 - 1 : 0), a = 1; a < i2; a++)
+              s2[a - 1] = arguments[a];
+            if (Object.assign)
+              return Object.assign.apply(Object, [e4].concat(s2));
+            var o = function() {
+              var e6 = s2[t2];
+              typeof e6 == "object" && e6 !== null && Object.keys(e6).forEach(function(t3) {
+                n2[t3] = e6[t3];
+              });
+            };
+            for (t2 = 0, r2 = s2.length; t2 < r2; t2 += 1)
+              o();
+            return e4;
+          }, e3.getBrowserAlias = function(e4) {
+            return n.BROWSER_ALIASES_MAP[e4];
+          }, e3.getBrowserTypeByAlias = function(e4) {
+            return n.BROWSER_MAP[e4] || "";
+          }, e3;
+        }();
+        t.default = i, e.exports = t.default;
+      }, 18: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.ENGINE_MAP = t.OS_MAP = t.PLATFORMS_MAP = t.BROWSER_MAP = t.BROWSER_ALIASES_MAP = void 0;
+        t.BROWSER_ALIASES_MAP = { "Amazon Silk": "amazon_silk", "Android Browser": "android", Bada: "bada", BlackBerry: "blackberry", Chrome: "chrome", Chromium: "chromium", Electron: "electron", Epiphany: "epiphany", Firefox: "firefox", Focus: "focus", Generic: "generic", "Google Search": "google_search", Googlebot: "googlebot", "Internet Explorer": "ie", "K-Meleon": "k_meleon", Maxthon: "maxthon", "Microsoft Edge": "edge", "MZ Browser": "mz", "NAVER Whale Browser": "naver", Opera: "opera", "Opera Coast": "opera_coast", PhantomJS: "phantomjs", Puffin: "puffin", QupZilla: "qupzilla", QQ: "qq", QQLite: "qqlite", Safari: "safari", Sailfish: "sailfish", "Samsung Internet for Android": "samsung_internet", SeaMonkey: "seamonkey", Sleipnir: "sleipnir", Swing: "swing", Tizen: "tizen", "UC Browser": "uc", Vivaldi: "vivaldi", "WebOS Browser": "webos", WeChat: "wechat", "Yandex Browser": "yandex", Roku: "roku" };
+        t.BROWSER_MAP = { amazon_silk: "Amazon Silk", android: "Android Browser", bada: "Bada", blackberry: "BlackBerry", chrome: "Chrome", chromium: "Chromium", electron: "Electron", epiphany: "Epiphany", firefox: "Firefox", focus: "Focus", generic: "Generic", googlebot: "Googlebot", google_search: "Google Search", ie: "Internet Explorer", k_meleon: "K-Meleon", maxthon: "Maxthon", edge: "Microsoft Edge", mz: "MZ Browser", naver: "NAVER Whale Browser", opera: "Opera", opera_coast: "Opera Coast", phantomjs: "PhantomJS", puffin: "Puffin", qupzilla: "QupZilla", qq: "QQ Browser", qqlite: "QQ Browser Lite", safari: "Safari", sailfish: "Sailfish", samsung_internet: "Samsung Internet for Android", seamonkey: "SeaMonkey", sleipnir: "Sleipnir", swing: "Swing", tizen: "Tizen", uc: "UC Browser", vivaldi: "Vivaldi", webos: "WebOS Browser", wechat: "WeChat", yandex: "Yandex Browser" };
+        t.PLATFORMS_MAP = { tablet: "tablet", mobile: "mobile", desktop: "desktop", tv: "tv" };
+        t.OS_MAP = { WindowsPhone: "Windows Phone", Windows: "Windows", MacOS: "macOS", iOS: "iOS", Android: "Android", WebOS: "WebOS", BlackBerry: "BlackBerry", Bada: "Bada", Tizen: "Tizen", Linux: "Linux", ChromeOS: "Chrome OS", PlayStation4: "PlayStation 4", Roku: "Roku" };
+        t.ENGINE_MAP = { EdgeHTML: "EdgeHTML", Blink: "Blink", Trident: "Trident", Presto: "Presto", Gecko: "Gecko", WebKit: "WebKit" };
+      }, 90: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n, i = (n = r(91)) && n.__esModule ? n : { default: n }, s2 = r(18);
+        function a(e3, t2) {
+          for (var r2 = 0; r2 < t2.length; r2++) {
+            var n2 = t2[r2];
+            n2.enumerable = n2.enumerable || false, n2.configurable = true, "value" in n2 && (n2.writable = true), Object.defineProperty(e3, n2.key, n2);
+          }
+        }
+        var o = function() {
+          function e3() {
+          }
+          var t2, r2, n2;
+          return e3.getParser = function(e4, t3) {
+            if (t3 === void 0 && (t3 = false), typeof e4 != "string")
+              throw new Error("UserAgent should be a string");
+            return new i.default(e4, t3);
+          }, e3.parse = function(e4) {
+            return new i.default(e4).getResult();
+          }, t2 = e3, n2 = [{ key: "BROWSER_MAP", get: function() {
+            return s2.BROWSER_MAP;
+          } }, { key: "ENGINE_MAP", get: function() {
+            return s2.ENGINE_MAP;
+          } }, { key: "OS_MAP", get: function() {
+            return s2.OS_MAP;
+          } }, { key: "PLATFORMS_MAP", get: function() {
+            return s2.PLATFORMS_MAP;
+          } }], (r2 = null) && a(t2.prototype, r2), n2 && a(t2, n2), e3;
+        }();
+        t.default = o, e.exports = t.default;
+      }, 91: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n = u(r(92)), i = u(r(93)), s2 = u(r(94)), a = u(r(95)), o = u(r(17));
+        function u(e3) {
+          return e3 && e3.__esModule ? e3 : { default: e3 };
+        }
+        var d = function() {
+          function e3(e4, t3) {
+            if (t3 === void 0 && (t3 = false), e4 == null || e4 === "")
+              throw new Error("UserAgent parameter can't be empty");
+            this._ua = e4, this.parsedResult = {}, t3 !== true && this.parse();
+          }
+          var t2 = e3.prototype;
+          return t2.getUA = function() {
+            return this._ua;
+          }, t2.test = function(e4) {
+            return e4.test(this._ua);
+          }, t2.parseBrowser = function() {
+            var e4 = this;
+            this.parsedResult.browser = {};
+            var t3 = o.default.find(n.default, function(t4) {
+              if (typeof t4.test == "function")
+                return t4.test(e4);
+              if (t4.test instanceof Array)
+                return t4.test.some(function(t5) {
+                  return e4.test(t5);
+                });
+              throw new Error("Browser's test function is not valid");
+            });
+            return t3 && (this.parsedResult.browser = t3.describe(this.getUA())), this.parsedResult.browser;
+          }, t2.getBrowser = function() {
+            return this.parsedResult.browser ? this.parsedResult.browser : this.parseBrowser();
+          }, t2.getBrowserName = function(e4) {
+            return e4 ? String(this.getBrowser().name).toLowerCase() || "" : this.getBrowser().name || "";
+          }, t2.getBrowserVersion = function() {
+            return this.getBrowser().version;
+          }, t2.getOS = function() {
+            return this.parsedResult.os ? this.parsedResult.os : this.parseOS();
+          }, t2.parseOS = function() {
+            var e4 = this;
+            this.parsedResult.os = {};
+            var t3 = o.default.find(i.default, function(t4) {
+              if (typeof t4.test == "function")
+                return t4.test(e4);
+              if (t4.test instanceof Array)
+                return t4.test.some(function(t5) {
+                  return e4.test(t5);
+                });
+              throw new Error("Browser's test function is not valid");
+            });
+            return t3 && (this.parsedResult.os = t3.describe(this.getUA())), this.parsedResult.os;
+          }, t2.getOSName = function(e4) {
+            var t3 = this.getOS().name;
+            return e4 ? String(t3).toLowerCase() || "" : t3 || "";
+          }, t2.getOSVersion = function() {
+            return this.getOS().version;
+          }, t2.getPlatform = function() {
+            return this.parsedResult.platform ? this.parsedResult.platform : this.parsePlatform();
+          }, t2.getPlatformType = function(e4) {
+            e4 === void 0 && (e4 = false);
+            var t3 = this.getPlatform().type;
+            return e4 ? String(t3).toLowerCase() || "" : t3 || "";
+          }, t2.parsePlatform = function() {
+            var e4 = this;
+            this.parsedResult.platform = {};
+            var t3 = o.default.find(s2.default, function(t4) {
+              if (typeof t4.test == "function")
+                return t4.test(e4);
+              if (t4.test instanceof Array)
+                return t4.test.some(function(t5) {
+                  return e4.test(t5);
+                });
+              throw new Error("Browser's test function is not valid");
+            });
+            return t3 && (this.parsedResult.platform = t3.describe(this.getUA())), this.parsedResult.platform;
+          }, t2.getEngine = function() {
+            return this.parsedResult.engine ? this.parsedResult.engine : this.parseEngine();
+          }, t2.getEngineName = function(e4) {
+            return e4 ? String(this.getEngine().name).toLowerCase() || "" : this.getEngine().name || "";
+          }, t2.parseEngine = function() {
+            var e4 = this;
+            this.parsedResult.engine = {};
+            var t3 = o.default.find(a.default, function(t4) {
+              if (typeof t4.test == "function")
+                return t4.test(e4);
+              if (t4.test instanceof Array)
+                return t4.test.some(function(t5) {
+                  return e4.test(t5);
+                });
+              throw new Error("Browser's test function is not valid");
+            });
+            return t3 && (this.parsedResult.engine = t3.describe(this.getUA())), this.parsedResult.engine;
+          }, t2.parse = function() {
+            return this.parseBrowser(), this.parseOS(), this.parsePlatform(), this.parseEngine(), this;
+          }, t2.getResult = function() {
+            return o.default.assign({}, this.parsedResult);
+          }, t2.satisfies = function(e4) {
+            var t3 = this, r2 = {}, n2 = 0, i2 = {}, s3 = 0;
+            if (Object.keys(e4).forEach(function(t4) {
+              var a3 = e4[t4];
+              typeof a3 == "string" ? (i2[t4] = a3, s3 += 1) : typeof a3 == "object" && (r2[t4] = a3, n2 += 1);
+            }), n2 > 0) {
+              var a2 = Object.keys(r2), u2 = o.default.find(a2, function(e6) {
+                return t3.isOS(e6);
+              });
+              if (u2) {
+                var d2 = this.satisfies(r2[u2]);
+                if (d2 !== void 0)
+                  return d2;
+              }
+              var c = o.default.find(a2, function(e6) {
+                return t3.isPlatform(e6);
+              });
+              if (c) {
+                var f = this.satisfies(r2[c]);
+                if (f !== void 0)
+                  return f;
+              }
+            }
+            if (s3 > 0) {
+              var l = Object.keys(i2), h = o.default.find(l, function(e6) {
+                return t3.isBrowser(e6, true);
+              });
+              if (h !== void 0)
+                return this.compareVersion(i2[h]);
+            }
+          }, t2.isBrowser = function(e4, t3) {
+            t3 === void 0 && (t3 = false);
+            var r2 = this.getBrowserName().toLowerCase(), n2 = e4.toLowerCase(), i2 = o.default.getBrowserTypeByAlias(n2);
+            return t3 && i2 && (n2 = i2.toLowerCase()), n2 === r2;
+          }, t2.compareVersion = function(e4) {
+            var t3 = [0], r2 = e4, n2 = false, i2 = this.getBrowserVersion();
+            if (typeof i2 == "string")
+              return e4[0] === ">" || e4[0] === "<" ? (r2 = e4.substr(1), e4[1] === "=" ? (n2 = true, r2 = e4.substr(2)) : t3 = [], e4[0] === ">" ? t3.push(1) : t3.push(-1)) : e4[0] === "=" ? r2 = e4.substr(1) : e4[0] === "~" && (n2 = true, r2 = e4.substr(1)), t3.indexOf(o.default.compareVersions(i2, r2, n2)) > -1;
+          }, t2.isOS = function(e4) {
+            return this.getOSName(true) === String(e4).toLowerCase();
+          }, t2.isPlatform = function(e4) {
+            return this.getPlatformType(true) === String(e4).toLowerCase();
+          }, t2.isEngine = function(e4) {
+            return this.getEngineName(true) === String(e4).toLowerCase();
+          }, t2.is = function(e4, t3) {
+            return t3 === void 0 && (t3 = false), this.isBrowser(e4, t3) || this.isOS(e4) || this.isPlatform(e4);
+          }, t2.some = function(e4) {
+            var t3 = this;
+            return e4 === void 0 && (e4 = []), e4.some(function(e6) {
+              return t3.is(e6);
+            });
+          }, e3;
+        }();
+        t.default = d, e.exports = t.default;
+      }, 92: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n, i = (n = r(17)) && n.__esModule ? n : { default: n };
+        var s2 = /version\/(\d+(\.?_?\d+)+)/i, a = [{ test: [/googlebot/i], describe: function(e3) {
+          var t2 = { name: "Googlebot" }, r2 = i.default.getFirstMatch(/googlebot\/(\d+(\.\d+))/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/opera/i], describe: function(e3) {
+          var t2 = { name: "Opera" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:opera)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/opr\/|opios/i], describe: function(e3) {
+          var t2 = { name: "Opera" }, r2 = i.default.getFirstMatch(/(?:opr|opios)[\s/](\S+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/SamsungBrowser/i], describe: function(e3) {
+          var t2 = { name: "Samsung Internet for Android" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:SamsungBrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/Whale/i], describe: function(e3) {
+          var t2 = { name: "NAVER Whale Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:whale)[\s/](\d+(?:\.\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/MZBrowser/i], describe: function(e3) {
+          var t2 = { name: "MZ Browser" }, r2 = i.default.getFirstMatch(/(?:MZBrowser)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/focus/i], describe: function(e3) {
+          var t2 = { name: "Focus" }, r2 = i.default.getFirstMatch(/(?:focus)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/swing/i], describe: function(e3) {
+          var t2 = { name: "Swing" }, r2 = i.default.getFirstMatch(/(?:swing)[\s/](\d+(?:\.\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/coast/i], describe: function(e3) {
+          var t2 = { name: "Opera Coast" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:coast)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/opt\/\d+(?:.?_?\d+)+/i], describe: function(e3) {
+          var t2 = { name: "Opera Touch" }, r2 = i.default.getFirstMatch(/(?:opt)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/yabrowser/i], describe: function(e3) {
+          var t2 = { name: "Yandex Browser" }, r2 = i.default.getFirstMatch(/(?:yabrowser)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/ucbrowser/i], describe: function(e3) {
+          var t2 = { name: "UC Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:ucbrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/Maxthon|mxios/i], describe: function(e3) {
+          var t2 = { name: "Maxthon" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:Maxthon|mxios)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/epiphany/i], describe: function(e3) {
+          var t2 = { name: "Epiphany" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:epiphany)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/puffin/i], describe: function(e3) {
+          var t2 = { name: "Puffin" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:puffin)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/sleipnir/i], describe: function(e3) {
+          var t2 = { name: "Sleipnir" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:sleipnir)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/k-meleon/i], describe: function(e3) {
+          var t2 = { name: "K-Meleon" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/(?:k-meleon)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/micromessenger/i], describe: function(e3) {
+          var t2 = { name: "WeChat" }, r2 = i.default.getFirstMatch(/(?:micromessenger)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/qqbrowser/i], describe: function(e3) {
+          var t2 = { name: /qqbrowserlite/i.test(e3) ? "QQ Browser Lite" : "QQ Browser" }, r2 = i.default.getFirstMatch(/(?:qqbrowserlite|qqbrowser)[/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/msie|trident/i], describe: function(e3) {
+          var t2 = { name: "Internet Explorer" }, r2 = i.default.getFirstMatch(/(?:msie |rv:)(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/\sedg\//i], describe: function(e3) {
+          var t2 = { name: "Microsoft Edge" }, r2 = i.default.getFirstMatch(/\sedg\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/edg([ea]|ios)/i], describe: function(e3) {
+          var t2 = { name: "Microsoft Edge" }, r2 = i.default.getSecondMatch(/edg([ea]|ios)\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/vivaldi/i], describe: function(e3) {
+          var t2 = { name: "Vivaldi" }, r2 = i.default.getFirstMatch(/vivaldi\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/seamonkey/i], describe: function(e3) {
+          var t2 = { name: "SeaMonkey" }, r2 = i.default.getFirstMatch(/seamonkey\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/sailfish/i], describe: function(e3) {
+          var t2 = { name: "Sailfish" }, r2 = i.default.getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/silk/i], describe: function(e3) {
+          var t2 = { name: "Amazon Silk" }, r2 = i.default.getFirstMatch(/silk\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/phantom/i], describe: function(e3) {
+          var t2 = { name: "PhantomJS" }, r2 = i.default.getFirstMatch(/phantomjs\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/slimerjs/i], describe: function(e3) {
+          var t2 = { name: "SlimerJS" }, r2 = i.default.getFirstMatch(/slimerjs\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/blackberry|\bbb\d+/i, /rim\stablet/i], describe: function(e3) {
+          var t2 = { name: "BlackBerry" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/blackberry[\d]+\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/(web|hpw)[o0]s/i], describe: function(e3) {
+          var t2 = { name: "WebOS Browser" }, r2 = i.default.getFirstMatch(s2, e3) || i.default.getFirstMatch(/w(?:eb)?[o0]sbrowser\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/bada/i], describe: function(e3) {
+          var t2 = { name: "Bada" }, r2 = i.default.getFirstMatch(/dolfin\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/tizen/i], describe: function(e3) {
+          var t2 = { name: "Tizen" }, r2 = i.default.getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/qupzilla/i], describe: function(e3) {
+          var t2 = { name: "QupZilla" }, r2 = i.default.getFirstMatch(/(?:qupzilla)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/firefox|iceweasel|fxios/i], describe: function(e3) {
+          var t2 = { name: "Firefox" }, r2 = i.default.getFirstMatch(/(?:firefox|iceweasel|fxios)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/electron/i], describe: function(e3) {
+          var t2 = { name: "Electron" }, r2 = i.default.getFirstMatch(/(?:electron)\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/MiuiBrowser/i], describe: function(e3) {
+          var t2 = { name: "Miui" }, r2 = i.default.getFirstMatch(/(?:MiuiBrowser)[\s/](\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/chromium/i], describe: function(e3) {
+          var t2 = { name: "Chromium" }, r2 = i.default.getFirstMatch(/(?:chromium)[\s/](\d+(\.?_?\d+)+)/i, e3) || i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/chrome|crios|crmo/i], describe: function(e3) {
+          var t2 = { name: "Chrome" }, r2 = i.default.getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/GSA/i], describe: function(e3) {
+          var t2 = { name: "Google Search" }, r2 = i.default.getFirstMatch(/(?:GSA)\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: function(e3) {
+          var t2 = !e3.test(/like android/i), r2 = e3.test(/android/i);
+          return t2 && r2;
+        }, describe: function(e3) {
+          var t2 = { name: "Android Browser" }, r2 = i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/playstation 4/i], describe: function(e3) {
+          var t2 = { name: "PlayStation 4" }, r2 = i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/safari|applewebkit/i], describe: function(e3) {
+          var t2 = { name: "Safari" }, r2 = i.default.getFirstMatch(s2, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/.*/i], describe: function(e3) {
+          var t2 = e3.search("\\(") !== -1 ? /^(.*)\/(.*)[ \t]\((.*)/ : /^(.*)\/(.*) /;
+          return { name: i.default.getFirstMatch(t2, e3), version: i.default.getSecondMatch(t2, e3) };
+        } }];
+        t.default = a, e.exports = t.default;
+      }, 93: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
+        var a = [{ test: [/Roku\/DVP/], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/Roku\/DVP-(\d+\.\d+)/i, e3);
+          return { name: s2.OS_MAP.Roku, version: t2 };
+        } }, { test: [/windows phone/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i, e3);
+          return { name: s2.OS_MAP.WindowsPhone, version: t2 };
+        } }, { test: [/windows /i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/Windows ((NT|XP)( \d\d?.\d)?)/i, e3), r2 = i.default.getWindowsVersionName(t2);
+          return { name: s2.OS_MAP.Windows, version: t2, versionName: r2 };
+        } }, { test: [/Macintosh(.*?) FxiOS(.*?)\//], describe: function(e3) {
+          var t2 = { name: s2.OS_MAP.iOS }, r2 = i.default.getSecondMatch(/(Version\/)(\d[\d.]+)/, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/macintosh/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/mac os x (\d+(\.?_?\d+)+)/i, e3).replace(/[_\s]/g, "."), r2 = i.default.getMacOSVersionName(t2), n2 = { name: s2.OS_MAP.MacOS, version: t2 };
+          return r2 && (n2.versionName = r2), n2;
+        } }, { test: [/(ipod|iphone|ipad)/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i, e3).replace(/[_\s]/g, ".");
+          return { name: s2.OS_MAP.iOS, version: t2 };
+        } }, { test: function(e3) {
+          var t2 = !e3.test(/like android/i), r2 = e3.test(/android/i);
+          return t2 && r2;
+        }, describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/android[\s/-](\d+(\.\d+)*)/i, e3), r2 = i.default.getAndroidVersionName(t2), n2 = { name: s2.OS_MAP.Android, version: t2 };
+          return r2 && (n2.versionName = r2), n2;
+        } }, { test: [/(web|hpw)[o0]s/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/(?:web|hpw)[o0]s\/(\d+(\.\d+)*)/i, e3), r2 = { name: s2.OS_MAP.WebOS };
+          return t2 && t2.length && (r2.version = t2), r2;
+        } }, { test: [/blackberry|\bbb\d+/i, /rim\stablet/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i, e3) || i.default.getFirstMatch(/blackberry\d+\/(\d+([_\s]\d+)*)/i, e3) || i.default.getFirstMatch(/\bbb(\d+)/i, e3);
+          return { name: s2.OS_MAP.BlackBerry, version: t2 };
+        } }, { test: [/bada/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/bada\/(\d+(\.\d+)*)/i, e3);
+          return { name: s2.OS_MAP.Bada, version: t2 };
+        } }, { test: [/tizen/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/tizen[/\s](\d+(\.\d+)*)/i, e3);
+          return { name: s2.OS_MAP.Tizen, version: t2 };
+        } }, { test: [/linux/i], describe: function() {
+          return { name: s2.OS_MAP.Linux };
+        } }, { test: [/CrOS/], describe: function() {
+          return { name: s2.OS_MAP.ChromeOS };
+        } }, { test: [/PlayStation 4/], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/PlayStation 4[/\s](\d+(\.\d+)*)/i, e3);
+          return { name: s2.OS_MAP.PlayStation4, version: t2 };
+        } }];
+        t.default = a, e.exports = t.default;
+      }, 94: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
+        var a = [{ test: [/googlebot/i], describe: function() {
+          return { type: "bot", vendor: "Google" };
+        } }, { test: [/huawei/i], describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/(can-l01)/i, e3) && "Nova", r2 = { type: s2.PLATFORMS_MAP.mobile, vendor: "Huawei" };
+          return t2 && (r2.model = t2), r2;
+        } }, { test: [/nexus\s*(?:7|8|9|10).*/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Nexus" };
+        } }, { test: [/ipad/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Apple", model: "iPad" };
+        } }, { test: [/Macintosh(.*?) FxiOS(.*?)\//], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Apple", model: "iPad" };
+        } }, { test: [/kftt build/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Amazon", model: "Kindle Fire HD 7" };
+        } }, { test: [/silk/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet, vendor: "Amazon" };
+        } }, { test: [/tablet(?! pc)/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet };
+        } }, { test: function(e3) {
+          var t2 = e3.test(/ipod|iphone/i), r2 = e3.test(/like (ipod|iphone)/i);
+          return t2 && !r2;
+        }, describe: function(e3) {
+          var t2 = i.default.getFirstMatch(/(ipod|iphone)/i, e3);
+          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Apple", model: t2 };
+        } }, { test: [/nexus\s*[0-6].*/i, /galaxy nexus/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Nexus" };
+        } }, { test: [/[^-]mobi/i], describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile };
+        } }, { test: function(e3) {
+          return e3.getBrowserName(true) === "blackberry";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile, vendor: "BlackBerry" };
+        } }, { test: function(e3) {
+          return e3.getBrowserName(true) === "bada";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile };
+        } }, { test: function(e3) {
+          return e3.getBrowserName() === "windows phone";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile, vendor: "Microsoft" };
+        } }, { test: function(e3) {
+          var t2 = Number(String(e3.getOSVersion()).split(".")[0]);
+          return e3.getOSName(true) === "android" && t2 >= 3;
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.tablet };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "android";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.mobile };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "macos";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.desktop, vendor: "Apple" };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "windows";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.desktop };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "linux";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.desktop };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "playstation 4";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.tv };
+        } }, { test: function(e3) {
+          return e3.getOSName(true) === "roku";
+        }, describe: function() {
+          return { type: s2.PLATFORMS_MAP.tv };
+        } }];
+        t.default = a, e.exports = t.default;
+      }, 95: function(e, t, r) {
+        "use strict";
+        t.__esModule = true, t.default = void 0;
+        var n, i = (n = r(17)) && n.__esModule ? n : { default: n }, s2 = r(18);
+        var a = [{ test: function(e3) {
+          return e3.getBrowserName(true) === "microsoft edge";
+        }, describe: function(e3) {
+          if (/\sedg\//i.test(e3))
+            return { name: s2.ENGINE_MAP.Blink };
+          var t2 = i.default.getFirstMatch(/edge\/(\d+(\.?_?\d+)+)/i, e3);
+          return { name: s2.ENGINE_MAP.EdgeHTML, version: t2 };
+        } }, { test: [/trident/i], describe: function(e3) {
+          var t2 = { name: s2.ENGINE_MAP.Trident }, r2 = i.default.getFirstMatch(/trident\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: function(e3) {
+          return e3.test(/presto/i);
+        }, describe: function(e3) {
+          var t2 = { name: s2.ENGINE_MAP.Presto }, r2 = i.default.getFirstMatch(/presto\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: function(e3) {
+          var t2 = e3.test(/gecko/i), r2 = e3.test(/like gecko/i);
+          return t2 && !r2;
+        }, describe: function(e3) {
+          var t2 = { name: s2.ENGINE_MAP.Gecko }, r2 = i.default.getFirstMatch(/gecko\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }, { test: [/(apple)?webkit\/537\.36/i], describe: function() {
+          return { name: s2.ENGINE_MAP.Blink };
+        } }, { test: [/(apple)?webkit/i], describe: function(e3) {
+          var t2 = { name: s2.ENGINE_MAP.WebKit }, r2 = i.default.getFirstMatch(/webkit\/(\d+(\.?_?\d+)+)/i, e3);
+          return r2 && (t2.version = r2), t2;
+        } }];
+        t.default = a, e.exports = t.default;
+      } });
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/device-3e76f971.js
+function detectTouchscreen() {
+  return false;
+}
+function supportsHEVCAlpha() {
+  return false;
+}
+function check1015() {
+  return false;
+}
+var import_bowser, isTouchscreen, isHEVC, isPre1015;
+var init_device_3e76f971 = __esm({
+  ".svelte-kit/output/server/chunks/device-3e76f971.js"() {
+    init_shims();
+    init_motion_65df28f6();
+    import_bowser = __toModule(require_es5());
+    isTouchscreen = readable(detectTouchscreen());
+    isHEVC = readable(supportsHEVCAlpha());
+    isPre1015 = readable(check1015());
+  }
+});
+
+// .svelte-kit/output/server/chunks/__layout-7eb5ccfd.js
+var layout_7eb5ccfd_exports = {};
+__export(layout_7eb5ccfd_exports, {
   default: () => _layout
 });
-function cubicOut(t) {
-  const f = t - 1;
-  return f * f * f + 1;
-}
-function is_date(obj) {
-  return Object.prototype.toString.call(obj) === "[object Date]";
-}
-function get_interpolator(a, b) {
-  if (a === b || a !== a)
-    return () => a;
-  const type = typeof a;
-  if (type !== typeof b || Array.isArray(a) !== Array.isArray(b)) {
-    throw new Error("Cannot interpolate values of different type");
-  }
-  if (Array.isArray(a)) {
-    const arr = b.map((bi, i) => {
-      return get_interpolator(a[i], bi);
-    });
-    return (t) => arr.map((fn) => fn(t));
-  }
-  if (type === "object") {
-    if (!a || !b)
-      throw new Error("Object cannot be null");
-    if (is_date(a) && is_date(b)) {
-      a = a.getTime();
-      b = b.getTime();
-      const delta = b - a;
-      return (t) => new Date(a + t * delta);
-    }
-    const keys = Object.keys(b);
-    const interpolators = {};
-    keys.forEach((key) => {
-      interpolators[key] = get_interpolator(a[key], b[key]);
-    });
-    return (t) => {
-      const result = {};
-      keys.forEach((key) => {
-        result[key] = interpolators[key](t);
-      });
-      return result;
-    };
-  }
-  if (type === "number") {
-    const delta = b - a;
-    return (t) => a + t * delta;
-  }
-  throw new Error(`Cannot interpolate ${type} values`);
-}
-function tweened(value, defaults = {}) {
-  const store = writable(value);
-  let task;
-  let target_value = value;
-  function set(new_value, opts) {
-    if (value == null) {
-      store.set(value = new_value);
-      return Promise.resolve();
-    }
-    target_value = new_value;
-    let previous_task = task;
-    let started = false;
-    let { delay = 0, duration = 400, easing = identity, interpolate: interpolate2 = get_interpolator } = assign(assign({}, defaults), opts);
-    if (duration === 0) {
-      if (previous_task) {
-        previous_task.abort();
-        previous_task = null;
-      }
-      store.set(value = target_value);
-      return Promise.resolve();
-    }
-    const start = now() + delay;
-    let fn;
-    task = loop((now2) => {
-      if (now2 < start)
-        return true;
-      if (!started) {
-        fn = interpolate2(value, new_value);
-        if (typeof duration === "function")
-          duration = duration(value, new_value);
-        started = true;
-      }
-      if (previous_task) {
-        previous_task.abort();
-        previous_task = null;
-      }
-      const elapsed = now2 - start;
-      if (elapsed > duration) {
-        store.set(value = new_value);
-        return false;
-      }
-      store.set(value = fn(easing(elapsed / duration)));
-      return true;
-    });
-    return task.promise;
-  }
-  return {
-    set,
-    update: (fn, opts) => set(fn(target_value, value), opts),
-    subscribe: store.subscribe
-  };
-}
-var import_lodash, import_gsap2, import_MorphSVGPlugin, Window, Seo, getStores, page, css$5, openPath, closedPath, OpenToClose, css$4, Nav, css$3, ColorSwitcher, css$2, Footer, css$1, FooterSmall, css11, Loading, _layout;
-var init_layout_f4d524c8 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-f4d524c8.js"() {
+var import_lodash, import_gsap3, import_MorphSVGPlugin, import_bowser2, defaultValue, initialValue, theme, Window, getStores, page, css$6, openPath, closedPath, OpenToClose, css$5, Nav, css$4, ColorSwitcher, css$3, Footer, css$22, CircleText, css$12, Noise, css17, Loading, _layout;
+var init_layout_7eb5ccfd = __esm({
+  ".svelte-kit/output/server/chunks/__layout-7eb5ccfd.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_global_130d3fe3();
+    init_app_89d516be();
+    init_motion_65df28f6();
     import_lodash = __toModule(require_lodash());
-    init_store_8bf23024();
-    import_gsap2 = __toModule(require_gsap());
+    import_gsap3 = __toModule(require_gsap());
     import_MorphSVGPlugin = __toModule(require_MorphSVGPlugin());
+    init_device_3e76f971();
+    import_bowser2 = __toModule(require_es5());
+    defaultValue = "dark";
+    initialValue = defaultValue;
+    theme = writable(initialValue);
+    theme.subscribe((value) => {
+    });
     Window = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let $$unsubscribe_windowHeight;
       let $$unsubscribe_windowWidth;
@@ -19495,12 +21285,6 @@ var init_layout_f4d524c8 = __esm({
       $$unsubscribe_windowHeight();
       $$unsubscribe_windowWidth();
       return ``;
-    });
-    Seo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
-      $$unsubscribe_seo();
-      return `${$$result.head += `${$$result.title = `<title>${escape($seo.title)}</title>`, ""}<meta name="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-1agpsf7"><meta name="${"twitter:site"}" content="${"@CL_Rothschild"}" data-svelte="svelte-1agpsf7"><meta name="${"twitter:creator"}" content="${"@CL_Rothschild"}" data-svelte="svelte-1agpsf7"><meta name="${"twitter:image"}"${add_attribute("content", $seo.image, 0)} data-svelte="svelte-1agpsf7"><meta name="${"twitter:title"}"${add_attribute("content", $seo.title, 0)} data-svelte="svelte-1agpsf7"><meta name="${"og:title"}"${add_attribute("content", $seo.title, 0)} data-svelte="svelte-1agpsf7"><meta name="${"description"}"${add_attribute("content", $seo.description, 0)} data-svelte="svelte-1agpsf7"><meta name="${"twitter:description"}"${add_attribute("content", $seo.description, 0)} data-svelte="svelte-1agpsf7"><meta name="${"og:image"}"${add_attribute("content", $seo.image, 0)} data-svelte="svelte-1agpsf7"><meta name="${"keywords"}"${add_attribute("content", $seo.keywords, 0)} data-svelte="svelte-1agpsf7"><meta name="${"topic"}"${add_attribute("content", $seo.keywords, 0)} data-svelte="svelte-1agpsf7"><meta name="${"language"}" content="${"EN"}" data-svelte="svelte-1agpsf7"><meta name="${"robots"}" content="${"index, follow"}" data-svelte="svelte-1agpsf7"><meta name="${"abstract"}"${add_attribute("content", $seo.description, 0)} data-svelte="svelte-1agpsf7"><meta name="${"summary"}"${add_attribute("content", $seo.description, 0)} data-svelte="svelte-1agpsf7"><meta name="${"author"}" content="${"Connor Rothschild"}" data-svelte="svelte-1agpsf7"><meta name="${"url"}" content="${"http://www.connorrothschild.com"}" data-svelte="svelte-1agpsf7">`, ""}`;
     });
     getStores = () => {
       const stores = getContext("__svelte__");
@@ -19526,7 +21310,7 @@ var init_layout_f4d524c8 = __esm({
         return store.subscribe(fn);
       }
     };
-    css$5 = {
+    css$6 = {
       code: "svg.svelte-32a0su{width:1.9rem;height:1.9rem;fill:var(--accent-color)}",
       map: null
     };
@@ -19534,10 +21318,10 @@ var init_layout_f4d524c8 = __esm({
     closedPath = "M6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289Z";
     OpenToClose = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { expanded } = $$props;
-      import_gsap2.gsap.registerPlugin(import_MorphSVGPlugin.MorphSVGPlugin);
+      import_gsap3.gsap.registerPlugin(import_MorphSVGPlugin.MorphSVGPlugin);
       let icon;
       const switchIcon = function() {
-        import_gsap2.gsap.to(icon, {
+        import_gsap3.gsap.to(icon, {
           duration: 0.6,
           morphSVG: expanded ? closedPath : openPath,
           ease: "power3.inOut"
@@ -19545,141 +21329,151 @@ var init_layout_f4d524c8 = __esm({
       };
       if ($$props.expanded === void 0 && $$bindings.expanded && expanded !== void 0)
         $$bindings.expanded(expanded);
-      $$result.css.add(css$5);
+      $$result.css.add(css$6);
       {
         switchIcon();
       }
       return `<svg xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 24 24"}" class="${"svelte-32a0su"}"><g><path id="${"icon"}"${add_attribute("d", openPath, 0)}></path></g></svg>`;
     });
-    css$4 = {
-      code: "#nav.svelte-k0f0l9{display:flex;place-items:center;background:var(--primary-color);margin:0 auto;width:100%;height:var(--nav-height);z-index:102;justify-content:space-between}.toggle-button.svelte-k0f0l9{display:flex;margin-right:1rem;cursor:pointer;user-select:none}.massive-word.svelte-k0f0l9{position:absolute;font-size:20vw;right:2.5vw;bottom:0;opacity:0.15;user-select:none;pointer-events:none}.home-button.svelte-k0f0l9{display:flex;place-items:center;padding-left:1rem;margin-left:0;font-weight:300;letter-spacing:1px;font-size:2rem;font-family:var(--font-serif);cursor:pointer}@media screen and (max-width: 560px){.home-button.svelte-k0f0l9{font-size:1.5rem}}@media screen and (max-width: 460px){.home-button.svelte-k0f0l9{padding-left:0.85rem;font-size:1.35rem}}.fullpage-nav.svelte-k0f0l9{display:flex;flex-direction:column;place-items:flex-start;justify-content:center;padding-left:7.5vw;background:var(--primary-color);margin:0 auto;width:100vw;height:100vh;z-index:101;position:fixed}.nav-items.svelte-k0f0l9{display:flex;flex-direction:column;width:100%}html.disable-scroll{overflow-y:hidden}@media screen and (max-width: 868px){.fullpage-nav.svelte-k0f0l9{padding-left:0}ul.svelte-k0f0l9{text-align:center}.massive-word.svelte-k0f0l9{font-size:30vw;right:4vw}}",
+    css$5 = {
+      code: "#nav.svelte-3vdwdn.svelte-3vdwdn{display:flex;place-items:center;position:fixed;margin:0 auto;width:100%;height:var(--nav-height);z-index:102;justify-content:space-between;pointer-events:none}#nav.svelte-3vdwdn>.svelte-3vdwdn{pointer-events:all}.toggle-button.svelte-3vdwdn.svelte-3vdwdn{display:flex;margin-right:1rem;cursor:pointer;user-select:none;background:none;border:none}.toggle-button.svelte-3vdwdn.svelte-3vdwdn:focus,.toggle-button.svelte-3vdwdn.svelte-3vdwdn:active{background:none}.massive-word.svelte-3vdwdn.svelte-3vdwdn{position:absolute;font-size:20vw;right:2.5vw;bottom:0;opacity:0.15;user-select:none;pointer-events:none}.home-button.svelte-3vdwdn.svelte-3vdwdn{display:flex;place-items:center;padding-left:1rem;margin-left:0;font-weight:300;letter-spacing:1px;font-size:2rem;font-family:var(--font-serif);cursor:pointer}@media screen and (max-width: 868px){.hasBackground.svelte-3vdwdn.svelte-3vdwdn{background:var(--primary-color)}}@media screen and (max-width: 560px){.home-button.svelte-3vdwdn.svelte-3vdwdn{font-size:1.5rem}}@media screen and (max-width: 460px){.home-button.svelte-3vdwdn.svelte-3vdwdn{padding-left:0.85rem;font-size:1.35rem}}.fullpage-nav.svelte-3vdwdn.svelte-3vdwdn{position:fixed;z-index:101;display:flex;flex-direction:column;place-items:flex-start;justify-content:center;padding-left:7.5vw;background:var(--primary-color);margin:0 auto;width:100vw;height:100%}.nav-items.svelte-3vdwdn.svelte-3vdwdn{display:flex;flex-direction:column;width:100%}.disable-scroll, .disable-scroll body{touch-action:none;-webkit-overflow-scrolling:none;overflow:hidden;overscroll-behavior:none}.disable-scroll body{overflow-y:scroll}@media screen and (max-width: 868px){.fullpage-nav.svelte-3vdwdn.svelte-3vdwdn{padding-left:0}ul.svelte-3vdwdn.svelte-3vdwdn{text-align:center}.massive-word.svelte-3vdwdn.svelte-3vdwdn{font-size:30vw;right:4vw}}",
       map: null
     };
     Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $$unsubscribe_windowWidth;
+      let $$unsubscribe_windowHeight;
+      let $$unsubscribe_page;
+      let $$unsubscribe_isTouchscreen;
+      $$unsubscribe_windowWidth = subscribe(windowWidth, (value) => value);
+      $$unsubscribe_windowHeight = subscribe(windowHeight, (value) => value);
+      $$unsubscribe_page = subscribe(page, (value) => value);
+      $$unsubscribe_isTouchscreen = subscribe(isTouchscreen, (value) => value);
       let { styles = "" } = $$props;
+      let { hasBackground = false } = $$props;
       let expanded = false;
       if ($$props.styles === void 0 && $$bindings.styles && styles !== void 0)
         $$bindings.styles(styles);
-      $$result.css.add(css$4);
+      if ($$props.hasBackground === void 0 && $$bindings.hasBackground && hasBackground !== void 0)
+        $$bindings.hasBackground(hasBackground);
+      $$result.css.add(css$5);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
-        $$rendered = `<div id="${"nav"}"${add_attribute("style", styles, 0)} class="${"svelte-k0f0l9"}"><a class="${"home-button no-underline svelte-k0f0l9"}" href="${"/"}">CR</a>
-  <h2 class="${"toggle-button svelte-k0f0l9"}">${validate_component(OpenToClose, "OpenToClose").$$render($$result, { expanded }, {}, {})}</h2></div>
+        {
+          menuExpanded.set(expanded);
+        }
+        $$rendered = `<div id="${"nav"}"${add_attribute("style", styles, 0)} class="${["svelte-3vdwdn", hasBackground ? "hasBackground" : ""].join(" ").trim()}"><a class="${"home-button no-underline svelte-3vdwdn"}" href="${"/"}">CR</a>
+  <button class="${"toggle-button svelte-3vdwdn"}"${add_attribute("aria-label", "Open menu", 0)}>${validate_component(OpenToClose, "OpenToClose").$$render($$result, { expanded }, {}, {})}</button></div>
 ${``}`;
       } while (!$$settled);
+      $$unsubscribe_windowWidth();
+      $$unsubscribe_windowHeight();
+      $$unsubscribe_page();
+      $$unsubscribe_isTouchscreen();
       return $$rendered;
     });
-    css$3 = {
-      code: "p.svelte-1b6zq0b{cursor:pointer;position:fixed;bottom:3.5%;left:2%;font-family:var(--font-sans);font-weight:300;font-size:1.5rem;z-index:300;user-select:none}@media screen and (max-width: 768px){p.svelte-1b6zq0b{left:20px;bottom:20px}}",
+    css$4 = {
+      code: ".fullscreen-transition.svelte-16jx9vm{width:100vw;height:100vh;position:fixed;background:grey;z-index:10000}p.svelte-16jx9vm{cursor:pointer;position:fixed;bottom:20px;left:20px;font-family:var(--font-sans);font-weight:300;font-size:1.5rem;z-index:101;user-select:none}",
       map: null
     };
     ColorSwitcher = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let currentMode = "dark";
-      $$result.css.add(css$3);
-      {
-        currentColorMode.set(currentMode);
-      }
-      return `<p class="${"color-switcher svelte-1b6zq0b"}">${escape("\u{1F315}")}
-</p>`;
+      let $theme, $$unsubscribe_theme;
+      let $$unsubscribe_windowWidth;
+      $$unsubscribe_theme = subscribe(theme, (value) => $theme = value);
+      $$unsubscribe_windowWidth = subscribe(windowWidth, (value) => value);
+      $$result.css.add(css$4);
+      $$unsubscribe_theme();
+      $$unsubscribe_windowWidth();
+      return `${``}
+<p class="${"color-switcher svelte-16jx9vm"}">${escape($theme == "dark" ? "\u{1F319}" : "\u2600\uFE0F")}</p>`;
     });
-    css$2 = {
-      code: "footer.svelte-1jz5at3.svelte-1jz5at3{display:flex;place-items:center;padding:0;width:100%;background:var(--footer-bg);color:var(--pure-text-color);z-index:99}footer.svelte-1jz5at3.svelte-1jz5at3{height:600px;position:relative}.flex-container.svelte-1jz5at3.svelte-1jz5at3{max-width:1268px;width:100%;height:100%;margin:auto;display:flex;justify-content:space-between;place-items:center}footer.svelte-1jz5at3 h1.svelte-1jz5at3,footer.svelte-1jz5at3 h2.svelte-1jz5at3{color:var(--pure-text-color)}footer.svelte-1jz5at3 h1.svelte-1jz5at3::selection,footer.svelte-1jz5at3 h2.svelte-1jz5at3::selection,footer.svelte-1jz5at3 a.svelte-1jz5at3::selection,footer.svelte-1jz5at3 .svelte-1jz5at3::selection{background:var(--pure-text-color);color:var(--primary-color)}.me.svelte-1jz5at3.svelte-1jz5at3,.you.svelte-1jz5at3.svelte-1jz5at3{flex:1;padding:1rem;display:flex;flex-direction:column}.thanks.svelte-1jz5at3.svelte-1jz5at3{font-family:var(--font-sans);margin-bottom:1rem;font-weight:200;font-size:1.8rem}.name.svelte-1jz5at3.svelte-1jz5at3{font-size:4rem;font-weight:100;line-height:1}.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{line-height:1;margin-bottom:2rem;font-size:3.5rem;font-weight:200;display:flex;align-items:flex-end}.links.svelte-1jz5at3.svelte-1jz5at3{display:flex;justify-content:space-between;width:450px}.link.svelte-1jz5at3.svelte-1jz5at3{font-family:var(--font-sans);letter-spacing:0.05rem;padding-bottom:0.5rem;font-weight:500;transition:color 500ms ease;text-transform:uppercase;color:rgba(var(--text-color-rgb), 0.7)}.link.svelte-1jz5at3.svelte-1jz5at3:hover{color:var(--pure-text-color)}.emoji.svelte-1jz5at3.svelte-1jz5at3{position:absolute;font-size:4rem;padding:1rem;cursor:pointer}.top.svelte-1jz5at3.svelte-1jz5at3{top:0}.bottom.svelte-1jz5at3.svelte-1jz5at3{bottom:0}.left.svelte-1jz5at3.svelte-1jz5at3{left:0}.right.svelte-1jz5at3.svelte-1jz5at3{right:0}.inline-emoji.svelte-1jz5at3.svelte-1jz5at3{margin-left:0.5rem}@media screen and (max-width: 1068px){.thanks.svelte-1jz5at3.svelte-1jz5at3{font-size:1.55rem}.name.svelte-1jz5at3.svelte-1jz5at3,.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{font-size:3.25rem}}@media screen and (max-width: 900px){.thanks.svelte-1jz5at3.svelte-1jz5at3{font-size:1.25rem}.name.svelte-1jz5at3.svelte-1jz5at3,.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{font-size:2.825rem}.links.svelte-1jz5at3.svelte-1jz5at3{width:350px}}@media screen and (max-width: 800px){.flex-container.svelte-1jz5at3.svelte-1jz5at3{flex-direction:column}.me.svelte-1jz5at3.svelte-1jz5at3,.you.svelte-1jz5at3.svelte-1jz5at3{justify-content:center;flex:1}.me.svelte-1jz5at3.svelte-1jz5at3{align-self:flex-start}.you.svelte-1jz5at3.svelte-1jz5at3{align-self:flex-end}.inline-emoji.svelte-1jz5at3.svelte-1jz5at3{margin-left:0;margin-right:0.75rem}.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{flex-direction:row-reverse}}@media screen and (max-width: 600px){.name.svelte-1jz5at3.svelte-1jz5at3,.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{font-size:3rem}.you.svelte-1jz5at3.svelte-1jz5at3{align-self:flex-start}.inline-emoji.svelte-1jz5at3.svelte-1jz5at3{margin-right:0;margin-left:0.5rem}.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{flex-direction:row}}@media screen and (max-width: 500px){.thanks.svelte-1jz5at3.svelte-1jz5at3{font-size:1.1rem}.name.svelte-1jz5at3.svelte-1jz5at3,.stay-in-touch.svelte-1jz5at3.svelte-1jz5at3{font-size:11vw}.link.svelte-1jz5at3.svelte-1jz5at3{font-size:0.85rem}.emoji.svelte-1jz5at3.svelte-1jz5at3{font-size:3rem}.links.svelte-1jz5at3.svelte-1jz5at3{width:100%}}",
+    css$3 = {
+      code: "footer.svelte-1n8zlbx.svelte-1n8zlbx{display:flex;place-items:center;height:300px;padding:3rem 1rem;background:var(--footer-bg);color:var(--pure-text-color);position:relative;z-index:99;box-shadow:-1px -1px 6px var(--box-shadow-color);transition:height 300ms ease}.flex-container.svelte-1n8zlbx.svelte-1n8zlbx{max-width:1268px;height:100%;width:100%;margin:auto;display:flex;justify-content:space-between;place-items:center}footer.svelte-1n8zlbx h1.svelte-1n8zlbx{color:var(--pure-text-color)}.right.svelte-1n8zlbx.svelte-1n8zlbx{display:flex;justify-content:space-evenly}.left.svelte-1n8zlbx.svelte-1n8zlbx,.right.svelte-1n8zlbx.svelte-1n8zlbx{flex:1}.left.svelte-1n8zlbx.svelte-1n8zlbx{text-align:left}.name.svelte-1n8zlbx.svelte-1n8zlbx{font-size:2.5rem;font-weight:600;line-height:1;margin-bottom:1rem;letter-spacing:0.025rem}.copyright.svelte-1n8zlbx.svelte-1n8zlbx{font-size:0.85rem;font-weight:400;text-transform:uppercase;color:var(--pure-text-color);font-family:var(--font-sans)}.column-header.svelte-1n8zlbx.svelte-1n8zlbx{text-align:center;margin-bottom:1rem;text-transform:uppercase;font-family:var(--font-serif);font-weight:600;font-size:2rem;color:var(--pure-text-color)}.column-content.svelte-1n8zlbx.svelte-1n8zlbx{display:flex;flex-direction:column}.column-content.copyright.svelte-1n8zlbx.svelte-1n8zlbx{place-items:flex-start}.column-content.connect.svelte-1n8zlbx.svelte-1n8zlbx,.column-content.contact.svelte-1n8zlbx.svelte-1n8zlbx{place-items:center}.link.svelte-1n8zlbx.svelte-1n8zlbx{color:var(--pure-text-color);font-family:var(--font-sans);margin-bottom:0.15rem;padding-bottom:0.25rem;font-weight:200;font-size:1.1rem;letter-spacing:0.025rem;width:min-content;text-transform:uppercase}.wave.svelte-1n8zlbx.svelte-1n8zlbx:hover{display:inline-block;animation:svelte-1n8zlbx-wiggle 700ms linear forwards}@keyframes svelte-1n8zlbx-wiggle{0%{transform:rotate(0)}20%{transform:rotate(7.5deg)}40%{transform:rotate(-7.5deg)}60%{transform:rotate(7.5deg)}80%{transform:rotate(-7.5deg)}100%{transform:rotate(0)}}@media screen and (max-width: 868px){footer.svelte-1n8zlbx.svelte-1n8zlbx{height:400px}.flex-container.svelte-1n8zlbx.svelte-1n8zlbx{flex-direction:column}.left.svelte-1n8zlbx.svelte-1n8zlbx{width:100%}.right.svelte-1n8zlbx.svelte-1n8zlbx{width:80%;margin-left:auto;justify-content:flex-end;place-items:flex-end !important}.right.svelte-1n8zlbx .column.svelte-1n8zlbx:first-of-type{margin-right:10%}.name.svelte-1n8zlbx.svelte-1n8zlbx{font-size:2.5rem}.link.svelte-1n8zlbx.svelte-1n8zlbx{font-size:1rem}.column-content.connect.svelte-1n8zlbx.svelte-1n8zlbx,.column-content.contact.svelte-1n8zlbx.svelte-1n8zlbx{place-items:flex-end}}@media screen and (max-width: 468px){.right.svelte-1n8zlbx.svelte-1n8zlbx{width:100%;justify-content:space-between}.right.svelte-1n8zlbx .column:first-of-type .column-content.svelte-1n8zlbx{align-items:flex-start}.right.svelte-1n8zlbx .column:last-of-type .column-content.svelte-1n8zlbx{align-items:flex-end}.name.svelte-1n8zlbx.svelte-1n8zlbx{font-size:2rem}.copyright.svelte-1n8zlbx.svelte-1n8zlbx{font-size:0.65rem}}",
       map: null
     };
     Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css$2);
-      return `<footer class="${"svelte-1jz5at3"}"><span aria-hidden="${"true"}" class="${"emoji bottom right svelte-1jz5at3"}">${escape("\u{1F440}")}</span>
-  <span aria-hidden="${"true"}" class="${"emoji top right svelte-1jz5at3"}">${escape("\u{1F525}")}</span>
-  <span aria-hidden="${"true"}" class="${"emoji top left svelte-1jz5at3"}">${escape("\u{1F920}")}</span>
-  <div class="${"flex-container svelte-1jz5at3"}"><div class="${"me svelte-1jz5at3"}"><h2 class="${"thanks svelte-1jz5at3"}">Thanks for visiting the personal site of</h2>
-      <h1 class="${"name svelte-1jz5at3"}">Connor Rothschild</h1></div>
-    <div class="${"you svelte-1jz5at3"}"><h1 class="${"stay-in-touch svelte-1jz5at3"}">Let&#39;s stay in touch <span class="${"inline-emoji svelte-1jz5at3"}">${escape("\u{1F447}")}</span></h1>
-      <div class="${"links svelte-1jz5at3"}"><a class="${"link no-underline svelte-1jz5at3"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@connorrothschild.com"}">Email</a>
-        <a class="${"link no-underline svelte-1jz5at3"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.linkedin.com/in/connor-rothschild/"}">LinkedIn</a>
-        <a class="${"link no-underline svelte-1jz5at3"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://github.com/connorrothschild/"}">GitHub</a>
-        <a class="${"link no-underline svelte-1jz5at3"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://twitter.com/intent/follow?screen_name=CL_Rothschild"}">Twitter</a></div></div></div>
+      $$result.css.add(css$3);
+      return `<footer class="${"svelte-1n8zlbx"}"><div class="${"flex-container svelte-1n8zlbx"}"><div class="${"left svelte-1n8zlbx"}"><h1 class="${"name svelte-1n8zlbx"}">Thanks for visiting <span class="${"wave svelte-1n8zlbx"}">\u{1F44B}</span></h1>
+      <div class="${"column-content copyright svelte-1n8zlbx"}"><p style="${"font-weight: 400; font-size: 1.2rem;"}">Connor Rothschild</p>
+        <p style="${"font-size: .95rem;"}">All rights reserved \xA9 2021</p></div></div>
+    <div class="${"right svelte-1n8zlbx"}"><div class="${"column svelte-1n8zlbx"}"><h5 class="${"column-header svelte-1n8zlbx"}">Connect</h5>
+        <div class="${"column-content connect svelte-1n8zlbx"}"><a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.linkedin.com/in/connor-rothschild/"}">LinkedIn</a>
+          <a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://github.com/connorrothschild/"}">GitHub</a>
+          <a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://twitter.com/intent/follow?screen_name=CL_Rothschild"}">Twitter</a></div></div>
+      <div class="${"column svelte-1n8zlbx"}"><h5 class="${"column-header svelte-1n8zlbx"}">Contact</h5>
+        <div class="${"column-content contact svelte-1n8zlbx"}"><a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@connorrothschild.com"}">Personal</a>
+          <a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@mokshadata.com"}">Work</a>
+          <a class="${"link svelte-1n8zlbx"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://calendly.com/connorrothschild/meeting"}">Meet</a></div></div></div></div>
 </footer>`;
     });
-    css$1 = {
-      code: "footer.svelte-v11fez.svelte-v11fez{display:flex;place-items:center;height:300px;padding:3rem 1rem;background:var(--footer-bg);color:var(--pure-text-color);position:relative}.btt.svelte-v11fez.svelte-v11fez{position:absolute;bottom:0;right:0;left:unset;font-size:1rem;padding:1rem;cursor:pointer}.flex-container.svelte-v11fez.svelte-v11fez{max-width:1268px;height:100%;width:100%;margin:auto;display:flex;justify-content:space-between;place-items:center}footer.svelte-v11fez h1.svelte-v11fez,footer.svelte-v11fez h2.svelte-v11fez{color:var(--pure-text-color)}footer.svelte-v11fez h1.svelte-v11fez::selection,footer.svelte-v11fez h2.svelte-v11fez::selection,footer.svelte-v11fez a.svelte-v11fez::selection{background:var(--pure-background-color);color:var(--pure-text-color)}.right.svelte-v11fez.svelte-v11fez{display:flex;justify-content:space-evenly}.left.svelte-v11fez.svelte-v11fez,.right.svelte-v11fez.svelte-v11fez{flex:1}.left.svelte-v11fez.svelte-v11fez{text-align:left}.name.svelte-v11fez.svelte-v11fez{font-size:2.5rem;font-weight:500;line-height:1;margin-bottom:1rem;letter-spacing:0.025rem}.copyright.svelte-v11fez.svelte-v11fez{font-size:0.85rem;font-weight:400;text-transform:uppercase;color:var(--pure-text-color);font-family:var(--font-sans)}.column-header.svelte-v11fez.svelte-v11fez{text-align:center;margin-bottom:0.5rem;text-transform:uppercase;font-family:var(--font-sans);font-weight:700;font-size:1rem;color:var(--accent-color)}.column-content.svelte-v11fez.svelte-v11fez{display:flex;flex-direction:column}.link.svelte-v11fez.svelte-v11fez{color:var(--pure-text-color);font-family:var(--font-sans);margin-bottom:0.15rem;padding-bottom:0.15rem;font-weight:200;font-size:1rem;letter-spacing:0.01rem;width:min-content}@media screen and (max-width: 768px){.flex-container.svelte-v11fez.svelte-v11fez{flex-direction:column}.left.svelte-v11fez.svelte-v11fez{width:100%}.right.svelte-v11fez.svelte-v11fez{width:50%;margin-left:auto}.name.svelte-v11fez.svelte-v11fez{font-size:2.5rem}.link.svelte-v11fez.svelte-v11fez{font-size:1rem}}@media screen and (max-width: 400px){footer.svelte-v11fez.svelte-v11fez{height:330px}.right.svelte-v11fez.svelte-v11fez{width:100%;justify-content:space-between}.right.svelte-v11fez .column:last-child .column-content.svelte-v11fez{align-items:flex-end}.name.svelte-v11fez.svelte-v11fez{font-size:2rem}.copyright.svelte-v11fez.svelte-v11fez{font-size:0.65rem}}",
+    css$22 = {
+      code: ".circle.svelte-1asjvwp{position:sticky;right:6px;bottom:6px;padding:1rem;z-index:101;overflow:hidden;width:min-content;margin-left:auto;margin-right:6px;transform:translateZ(0);transition:all 600ms ease;cursor:pointer}.circle.svelte-1asjvwp:hover{transform:scale3d(1.05, 1.05, 1.05)}img.svelte-1asjvwp{position:absolute;border-radius:50%;width:100px;height:100px;object-fit:contain;transform:scale(0.795);z-index:100}text.svelte-1asjvwp{fill:var(--text-color);font-family:var(--font-serif);font-weight:200;font-size:63px;letter-spacing:-1px;text-shadow:1px 0px 0px var(--pure-background-color);user-select:none}path.svelte-1asjvwp{fill:rgba(var(--accent-color-rgb), 0.2)}.circleText.svelte-1asjvwp{width:100px;height:100px;overflow:visible;transform-origin:center center;stroke-opacity:0.75;animation:svelte-1asjvwp-rotate 25s linear infinite}@keyframes svelte-1asjvwp-rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.invisible.svelte-1asjvwp{opacity:0}",
       map: null
     };
-    FooterSmall = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css$1);
-      return `<footer class="${"svelte-v11fez"}"><p aria-hidden="${"true"}" class="${"btt svelte-v11fez"}">\u2191 Back to top
-  </p>
-  <div class="${"flex-container svelte-v11fez"}"><div class="${"left svelte-v11fez"}">
-      <h1 class="${"name svelte-v11fez"}">Thanks for visiting \u{1F44B}</h1>
-      <h2 class="${"copyright svelte-v11fez"}">\xA9 Connor Rothschild / 2021 / All rights reserved
-      </h2></div>
-    <div class="${"right svelte-v11fez"}"><div class="${"column"}"><h5 class="${"column-header svelte-v11fez"}">Connect</h5>
-        <div class="${"column-content svelte-v11fez"}"><a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.linkedin.com/in/connor-rothschild/"}">LinkedIn</a>
-          <a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://github.com/connorrothschild/"}">GitHub</a>
-          <a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://twitter.com/intent/follow?screen_name=CL_Rothschild"}">Twitter</a></div></div>
-      <div class="${"column"}"><h5 class="${"column-header svelte-v11fez"}">Contact</h5>
-        <div class="${"column-content svelte-v11fez"}"><a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@connorrothschild.com"}">Personal</a>
-          <a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@mokshadata.com"}">Work</a>
-          <a class="${"link svelte-v11fez"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://calendly.com/connorrothschild/meeting"}">Meet</a></div></div></div></div>
-</footer>`;
+    CircleText = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let text;
+      let $windowWidth, $$unsubscribe_windowWidth;
+      let $menuExpanded, $$unsubscribe_menuExpanded;
+      $$unsubscribe_windowWidth = subscribe(windowWidth, (value) => $windowWidth = value);
+      $$unsubscribe_menuExpanded = subscribe(menuExpanded, (value) => $menuExpanded = value);
+      $$result.css.add(css$22);
+      text = "\u{1F44B} Connor \u{1F440} Rothschild \u{1F920} Connor \u{1F525} Rothschild";
+      $$unsubscribe_windowWidth();
+      $$unsubscribe_menuExpanded();
+      return `${$windowWidth > 968 ? `<div aria-hidden="${"true"}" class="${"circle " + escape($menuExpanded ? "invisible" : "") + " svelte-1asjvwp"}" sveltekit:prefetch>${``}
+    <svg class="${"circleText svelte-1asjvwp"}" viewBox="${"0 0 500 500"}" data-duration="${"5"}"><path id="${"circle"}" fill="${"none"}" data-duration="${"5"}" d="${"M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"}" class="${"svelte-1asjvwp"}"></path><text dy="${"-25"}" class="${"svelte-1asjvwp"}"><textPath xlink:href="${"#circle"}">${escape(text)}</textPath></text></svg></div>` : ``}`;
     });
-    css11 = {
-      code: ".fullscreen-loading.svelte-165l7u4{width:100vw;height:100vh;position:fixed;left:0;top:0;background:var(--primary-color);z-index:1000}",
+    css$12 = {
+      code: '.noise.svelte-1ki45fh{width:100vw;height:100vh;position:fixed;pointer-events:none}.noise.svelte-1ki45fh::before{width:100%;height:100%;z-index:9;content:"";position:absolute;pointer-events:none;background-position:50%;background-image:url("/images/noise/basic.png");animation:svelte-1ki45fh-shake 1s steps(1) infinite;-webkit-animation:svelte-1ki45fh-shake 1s steps(1) infinite;opacity:var(--noise-opacity)}@keyframes svelte-1ki45fh-shake{0%{transform:translate3d(0, 0.9rem, 0);-webkit-transform:translate3d(0, 0.9rem, 0);-moz-transform:translate3d(0, 0.9rem, 0);-ms-transform:translate3d(0, 0.9rem, 0);-o-transform:translate3d(0, 0.9rem, 0)}10%{transform:translate3d(-0.1rem, -0.4rem, 0);-webkit-transform:translate3d(-0.1rem, -0.4rem, 0);-moz-transform:translate3d(-0.1rem, -0.4rem, 0);-ms-transform:translate3d(-0.1rem, -0.4rem, 0);-o-transform:translate3d(-0.1rem, -0.4rem, 0)}20%{transform:translate3d(-0.8rem, 0.2rem, 0);-webkit-transform:translate3d(-0.8rem, 0.2rem, 0);-moz-transform:translate3d(-0.8rem, 0.2rem, 0);-ms-transform:translate3d(-0.8rem, 0.2rem, 0);-o-transform:translate3d(-0.8rem, 0.2rem, 0)}30%{transform:translate3d(0.9rem, -0.9rem, 0);-webkit-transform:translate3d(0.9rem, -0.9rem, 0);-moz-transform:translate3d(0.9rem, -0.9rem, 0);-ms-transform:translate3d(0.9rem, -0.9rem, 0);-o-transform:translate3d(0.9rem, -0.9rem, 0)}40%{transform:translate3d(-0.2rem, 0.7rem, 0);-webkit-transform:translate3d(-0.2rem, 0.7rem, 0);-moz-transform:translate3d(-0.2rem, 0.7rem, 0);-ms-transform:translate3d(-0.2rem, 0.7rem, 0);-o-transform:translate3d(-0.2rem, 0.7rem, 0)}50%{transform:translate3d(-0.9rem, -0.4rem, 0);-webkit-transform:translate3d(-0.9rem, -0.4rem, 0);-moz-transform:translate3d(-0.9rem, -0.4rem, 0);-ms-transform:translate3d(-0.9rem, -0.4rem, 0);-o-transform:translate3d(-0.9rem, -0.4rem, 0)}60%{transform:translate3d(0.2rem, 0.6rem, 0);-webkit-transform:translate3d(0.2rem, 0.6rem, 0);-moz-transform:translate3d(0.2rem, 0.6rem, 0);-ms-transform:translate3d(0.2rem, 0.6rem, 0);-o-transform:translate3d(0.2rem, 0.6rem, 0)}70%{transform:translate3d(0.7rem, -0.8rem, 0);-webkit-transform:translate3d(0.7rem, -0.8rem, 0);-moz-transform:translate3d(0.7rem, -0.8rem, 0);-ms-transform:translate3d(0.7rem, -0.8rem, 0);-o-transform:translate3d(0.7rem, -0.8rem, 0)}80%{transform:translate3d(-0.9rem, 0.1rem, 0);-webkit-transform:translate3d(-0.9rem, 0.1rem, 0);-moz-transform:translate3d(-0.9rem, 0.1rem, 0);-ms-transform:translate3d(-0.9rem, 0.1rem, 0);-o-transform:translate3d(-0.9rem, 0.1rem, 0)}90%{transform:translate3d(0.6rem, -0.5rem, 0);-webkit-transform:translate3d(0.6rem, -0.5rem, 0);-moz-transform:translate3d(0.6rem, -0.5rem, 0);-ms-transform:translate3d(0.6rem, -0.5rem, 0);-o-transform:translate3d(0.6rem, -0.5rem, 0)}100%{transform:translate3d(-0.7rem, 0, 0);-webkit-transform:translate3d(-0.7rem, 0, 0);-moz-transform:translate3d(-0.7rem, 0, 0);-ms-transform:translate3d(-0.7rem, 0, 0);-o-transform:translate3d(-0.7rem, 0, 0)}}',
+      map: null
+    };
+    Noise = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      $$result.css.add(css$12);
+      return `<div class="${"noise svelte-1ki45fh"}"></div>`;
+    });
+    css17 = {
+      code: ".fullscreen-loading.svelte-5sgcct{width:100vw;height:100vh;position:fixed;left:0;top:0;background:var(--primary-color);z-index:100}",
       map: null
     };
     Loading = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $pageTransitionDelay, $$unsubscribe_pageTransitionDelay;
-      let $navigationState, $$unsubscribe_navigationState;
-      $$unsubscribe_pageTransitionDelay = subscribe(pageTransitionDelay, (value) => $pageTransitionDelay = value);
-      $$unsubscribe_navigationState = subscribe(navigationState, (value) => $navigationState = value);
-      const progress = tweened(0, { duration: 2e3, easing: cubicOut });
-      let transitioning = false;
-      let initTransition = function() {
-        transitioning = true;
-        setTimeout(() => {
-          transitioning = false;
-        }, $pageTransitionDelay);
-      };
-      $$result.css.add(css11);
-      {
-        progress.set(0, { duration: 0 });
-      }
-      {
-        progress.set(1, { duration: 1e3, easing: cubicOut });
-      }
-      {
-        initTransition();
-      }
+      let $$unsubscribe_pageTransitionDelay;
+      let $$unsubscribe_page;
+      $$unsubscribe_pageTransitionDelay = subscribe(pageTransitionDelay, (value) => value);
+      $$unsubscribe_page = subscribe(page, (value) => value);
+      $$result.css.add(css17);
       $$unsubscribe_pageTransitionDelay();
-      $$unsubscribe_navigationState();
-      return `
-${transitioning && $navigationState != "loading" ? `<div class="${"fullscreen-loading svelte-165l7u4"}"></div>` : ``}`;
+      $$unsubscribe_page();
+      return `${``}`;
     });
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let path;
+      let $$unsubscribe_theme;
       let $page, $$unsubscribe_page;
+      $$unsubscribe_theme = subscribe(theme, (value) => value);
       $$unsubscribe_page = subscribe(page, (value) => $page = value);
-      path = $page.path;
+      async function scrollTop() {
+      }
+      {
+        $page.path, $page.path ? scrollTop() : null;
+      }
+      $$unsubscribe_theme();
       $$unsubscribe_page();
-      return `
+      return `${validate_component(Window, "Window").$$render($$result, {}, {}, {})}
 
-${validate_component(Window, "Window").$$render($$result, {}, {}, {})}
-${validate_component(Seo, "Seo").$$render($$result, {}, {}, {})}
-${validate_component(Nav, "Nav").$$render($$result, {
-        styles: path === "/" ? "" : "position: fixed;"
-      }, {}, {})}
+${validate_component(Nav, "Nav").$$render($$result, { hasBackground: true }, {}, {})}
+${validate_component(Noise, "Noise").$$render($$result, {}, {}, {})}
+${validate_component(ColorSwitcher, "ColorSwitcher").$$render($$result, {}, {}, {})}
 ${slots.default ? slots.default({}) : ``}
 ${validate_component(Loading, "Loading").$$render($$result, {}, {}, {})}
-${validate_component(ColorSwitcher, "ColorSwitcher").$$render($$result, {}, {}, {})}
-${path === "/" ? `${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}` : `${validate_component(FooterSmall, "SmallFooter").$$render($$result, {}, {}, {})}`}`;
+${validate_component(CircleText, "Circle").$$render($$result, {}, {}, {})}
+${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/__error-e9146f31.js
-var error_e9146f31_exports = {};
-__export(error_e9146f31_exports, {
+// .svelte-kit/output/server/chunks/__error-1846c7c6.js
+var error_1846c7c6_exports = {};
+__export(error_1846c7c6_exports, {
   default: () => _error,
   load: () => load
 });
@@ -19692,13 +21486,13 @@ function load({ error: error2, status }) {
     }
   };
 }
-var css12, _error;
-var init_error_e9146f31 = __esm({
-  ".svelte-kit/output/server/chunks/__error-e9146f31.js"() {
+var css18, _error;
+var init_error_1846c7c6 = __esm({
+  ".svelte-kit/output/server/chunks/__error-1846c7c6.js"() {
     init_shims();
-    init_app_9f378dda();
-    css12 = {
-      code: ".error.svelte-3590vb{margin-top:var(--nav-height)}",
+    init_app_89d516be();
+    css18 = {
+      code: ".error.svelte-1hyovu9{margin:auto;margin-top:calc(var(--nav-height) + 3rem);max-width:1068px;width:95%;padding:1rem}h1.svelte-1hyovu9{font-size:3rem;margin-bottom:2rem}h2.svelte-1hyovu9{font-family:var(--font-mono);font-size:1rem;margin-bottom:0.75rem;padding:0.75rem;width:max-content;background:var(--semitransparent-bg);box-shadow:1px 1px 6px var(--box-shadow-color);border-radius:3px}p.svelte-1hyovu9{margin-bottom:1rem;cursor:pointer}pre.svelte-1hyovu9{font-family:var(--font-mono);overflow-x:scroll;overflow-y:visible;height:max-content;padding:1rem;background:var(--semitransparent-bg);box-shadow:1px 1px 6px var(--box-shadow-color)}h1.svelte-1hyovu9,p.svelte-1hyovu9,pre.svelte-1hyovu9{color:var(--text-color)}",
       map: null
     };
     _error = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -19708,11 +21502,11 @@ var init_error_e9146f31 = __esm({
         $$bindings.title(title5);
       if ($$props.errorCode === void 0 && $$bindings.errorCode && errorCode !== void 0)
         $$bindings.errorCode(errorCode);
-      $$result.css.add(css12);
-      return `<div class="${"error svelte-3590vb"}"><h1>${escape(title5)}</h1>
+      $$result.css.add(css18);
+      return `<div class="${"error svelte-1hyovu9"}"><h1 class="${"svelte-1hyovu9"}">There was an error \u2639\uFE0F</h1>
+  <h2 class="${"svelte-1hyovu9"}">Error ${escape(title5)}</h2>
 
-  <p>${escape("Show")} the technical details
-  </p>
+  <p class="${"svelte-1hyovu9"}">${escape("Show")} the technical details <!-- HTML_TAG_START -->${"&darr;"}<!-- HTML_TAG_END --></p>
   ${``}
 </div>`;
     });
@@ -19727,7 +21521,7 @@ var require_ScrollTrigger = __commonJS({
       typeof exports === "object" && typeof module2 !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global2 = global2 || self, factory(global2.window = global2.window || {}));
     })(exports, function(exports2) {
       "use strict";
-      var gsap5, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _raf, _request, _toArray, _clamp, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites, _ignoreResize, _limitCallbacks, _startup = 1, _proxies = [], _scrollers = [], _getTime = Date.now, _time1 = _getTime(), _lastScrollTime = 0, _enabled = 1, _passThrough = function _passThrough2(v) {
+      var gsap6, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _raf, _request, _toArray, _clamp, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites, _ignoreResize, _limitCallbacks, _startup = 1, _proxies = [], _scrollers = [], _getTime = Date.now, _time1 = _getTime(), _lastScrollTime = 0, _enabled = 1, _passThrough = function _passThrough2(v) {
         return v;
       }, _getTarget = function _getTarget2(t) {
         return _toArray(t)[0] || (_isString(t) ? console.warn("Element not found:", t) : null);
@@ -19736,7 +21530,7 @@ var require_ScrollTrigger = __commonJS({
       }, _windowExists = function _windowExists2() {
         return typeof window !== "undefined";
       }, _getGSAP = function _getGSAP2() {
-        return gsap5 || _windowExists() && (gsap5 = window.gsap) && gsap5.registerPlugin && gsap5;
+        return gsap6 || _windowExists() && (gsap6 = window.gsap) && gsap6.registerPlugin && gsap6;
       }, _isViewport = function _isViewport2(e) {
         return !!~_root.indexOf(e);
       }, _getProxyProp = function _getProxyProp2(element, property) {
@@ -19833,7 +21627,7 @@ var require_ScrollTrigger = __commonJS({
         }
         return obj;
       }, _getBounds = function _getBounds2(element, withoutTransforms) {
-        var tween = withoutTransforms && _getComputedStyle(element)[_transformProp] !== "matrix(1, 0, 0, 1, 0, 0)" && gsap5.to(element, {
+        var tween = withoutTransforms && _getComputedStyle(element)[_transformProp] !== "matrix(1, 0, 0, 1, 0, 0)" && gsap6.to(element, {
           x: 0,
           y: 0,
           xPercent: 0,
@@ -19858,10 +21652,10 @@ var require_ScrollTrigger = __commonJS({
         return a;
       }, _getClosestLabel = function _getClosestLabel2(animation) {
         return function(value) {
-          return gsap5.utils.snap(_getLabelRatioArray(animation), value);
+          return gsap6.utils.snap(_getLabelRatioArray(animation), value);
         };
       }, _snapDirectional = function _snapDirectional2(snapIncrementOrArray) {
-        var snap = gsap5.utils.snap(snapIncrementOrArray), a = Array.isArray(snapIncrementOrArray) && snapIncrementOrArray.slice(0).sort(function(a2, b) {
+        var snap = gsap6.utils.snap(snapIncrementOrArray), a = Array.isArray(snapIncrementOrArray) && snapIncrementOrArray.slice(0).sort(function(a2, b) {
           return a2 - b;
         });
         return a ? function(value, direction) {
@@ -19932,13 +21726,13 @@ var require_ScrollTrigger = __commonJS({
         return value;
       }, _createMarker = function _createMarker2(type, name, container, direction, _ref5, offset, matchWidthEl, containerAnimation) {
         var startColor = _ref5.startColor, endColor = _ref5.endColor, fontSize = _ref5.fontSize, indent = _ref5.indent, fontWeight = _ref5.fontWeight;
-        var e = _doc.createElement("div"), useFixedPosition = _isViewport(container) || _getProxyProp(container, "pinType") === "fixed", isScroller = type.indexOf("scroller") !== -1, parent = useFixedPosition ? _body : container, isStart = type.indexOf("start") !== -1, color2 = isStart ? startColor : endColor, css23 = "border-color:" + color2 + ";font-size:" + fontSize + ";color:" + color2 + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
-        css23 += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
-        (isScroller || containerAnimation || !useFixedPosition) && (css23 += (direction === _vertical ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
-        matchWidthEl && (css23 += "box-sizing:border-box;text-align:left;width:" + matchWidthEl.offsetWidth + "px;");
+        var e = _doc.createElement("div"), useFixedPosition = _isViewport(container) || _getProxyProp(container, "pinType") === "fixed", isScroller = type.indexOf("scroller") !== -1, parent = useFixedPosition ? _body : container, isStart = type.indexOf("start") !== -1, color2 = isStart ? startColor : endColor, css29 = "border-color:" + color2 + ";font-size:" + fontSize + ";color:" + color2 + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
+        css29 += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
+        (isScroller || containerAnimation || !useFixedPosition) && (css29 += (direction === _vertical ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
+        matchWidthEl && (css29 += "box-sizing:border-box;text-align:left;width:" + matchWidthEl.offsetWidth + "px;");
         e._isStart = isStart;
         e.setAttribute("class", "gsap-marker-" + type + (name ? " marker-" + name : ""));
-        e.style.cssText = css23;
+        e.style.cssText = css29;
         e.innerText = name || name === 0 ? type + "-" + name : type;
         parent.children[0] ? parent.insertBefore(e, parent.children[0]) : parent.appendChild(e);
         e._offset = e["offset" + direction.op.d2];
@@ -19954,7 +21748,7 @@ var require_ScrollTrigger = __commonJS({
         vars["border" + side + _Width] = 1;
         vars["border" + oppositeSide + _Width] = 0;
         vars[direction.p] = start + "px";
-        gsap5.set(marker, vars);
+        gsap6.set(marker, vars);
       }, _triggers = [], _ids = {}, _sync = function _sync2() {
         return _getTime() - _lastScrollTime > 20 && _updateAll();
       }, _onScroll = function _onScroll2() {
@@ -19969,7 +21763,7 @@ var require_ScrollTrigger = __commonJS({
       }, _onResize = function _onResize2() {
         return !_refreshing && !_ignoreResize && !_doc.fullscreenElement && _resizeDelay.restart(true);
       }, _listeners = {}, _emptyArray = [], _media = [], _creatingMedia, _lastMediaTick, _onMediaChange = function _onMediaChange2(e) {
-        var tick = gsap5.ticker.frame, matches = [], i = 0, index;
+        var tick = gsap6.ticker.frame, matches = [], i = 0, index;
         if (_lastMediaTick !== tick || _startup) {
           _revertAll();
           for (; i < _media.length; i += 4) {
@@ -20104,7 +21898,7 @@ var require_ScrollTrigger = __commonJS({
       }, _capsExp = /([A-Z])/g, _setState = function _setState2(state) {
         if (state) {
           var style = state.t.style, l = state.length, i = 0, p, value;
-          (state.t._gsap || gsap5.core.getCache(state.t)).uncache = 1;
+          (state.t._gsap || gsap6.core.getCache(state.t)).uncache = 1;
           for (; i < l; i += 2) {
             value = state[i + 1];
             p = state[i];
@@ -20193,14 +21987,14 @@ var require_ScrollTrigger = __commonJS({
           } else {
             style.cssText = element._stOrig;
           }
-          gsap5.core.getCache(element).uncache = 1;
+          gsap6.core.getCache(element).uncache = 1;
           parent.appendChild(element);
         }
       }, _getTweenCreator = function _getTweenCreator2(scroller, direction) {
-        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, lastScroll1, lastScroll2, getTween = function getTween2(scrollTo, vars, initialValue, change1, change2) {
+        var getScroll = _getScrollFunc(scroller, direction), prop = "_scroll" + direction.p2, lastScroll1, lastScroll2, getTween = function getTween2(scrollTo, vars, initialValue2, change1, change2) {
           var tween = getTween2.tween, onComplete = vars.onComplete, modifiers = {};
           tween && tween.kill();
-          lastScroll1 = Math.round(initialValue);
+          lastScroll1 = Math.round(initialValue2);
           vars[prop] = scrollTo;
           vars.modifiers = modifiers;
           modifiers[prop] = function(value) {
@@ -20209,7 +22003,7 @@ var require_ScrollTrigger = __commonJS({
               tween.kill();
               getTween2.tween = 0;
             } else {
-              value = initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio;
+              value = initialValue2 + change1 * tween.ratio + change2 * tween.ratio * tween.ratio;
             }
             lastScroll2 = lastScroll1;
             return lastScroll1 = _round(value);
@@ -20218,7 +22012,7 @@ var require_ScrollTrigger = __commonJS({
             getTween2.tween = 0;
             onComplete && onComplete.call(tween);
           };
-          tween = getTween2.tween = gsap5.to(scroller, vars);
+          tween = getTween2.tween = gsap6.to(scroller, vars);
           return tween;
         };
         scroller[prop] = getScroll;
@@ -20232,7 +22026,7 @@ var require_ScrollTrigger = __commonJS({
       _horizontal.op = _vertical;
       var ScrollTrigger2 = function() {
         function ScrollTrigger3(vars, animation) {
-          _coreInitted || ScrollTrigger3.register(gsap5) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
+          _coreInitted || ScrollTrigger3.register(gsap6) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
           this.init(vars, animation);
         }
         var _proto = ScrollTrigger3.prototype;
@@ -20246,7 +22040,7 @@ var require_ScrollTrigger = __commonJS({
           vars = _setDefaults(_isString(vars) || _isNumber(vars) || vars.nodeType ? {
             trigger: vars
           } : vars, _defaults);
-          var _vars = vars, onUpdate = _vars.onUpdate, toggleClass = _vars.toggleClass, id = _vars.id, onToggle = _vars.onToggle, onRefresh = _vars.onRefresh, scrub = _vars.scrub, trigger = _vars.trigger, pin = _vars.pin, pinSpacing = _vars.pinSpacing, invalidateOnRefresh = _vars.invalidateOnRefresh, anticipatePin = _vars.anticipatePin, onScrubComplete = _vars.onScrubComplete, onSnapComplete = _vars.onSnapComplete, once = _vars.once, snap = _vars.snap, pinReparent = _vars.pinReparent, pinSpacer = _vars.pinSpacer, containerAnimation = _vars.containerAnimation, fastScrollEnd = _vars.fastScrollEnd, preventOverlaps = _vars.preventOverlaps, direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical, isToggle = !scrub && scrub !== 0, scroller = _getTarget(vars.scroller || _win), scrollerCache = gsap5.core.getCache(scroller), isViewport = _isViewport(scroller), useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed", callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack], toggleActions = isToggle && vars.toggleActions.split(" "), markers = "markers" in vars ? vars.markers : _defaults.markers, borderWidth = isViewport ? 0 : parseFloat(_getComputedStyle(scroller)["border" + direction.p2 + _Width]) || 0, self2 = this, onRefreshInit = vars.onRefreshInit && function() {
+          var _vars = vars, onUpdate = _vars.onUpdate, toggleClass = _vars.toggleClass, id = _vars.id, onToggle = _vars.onToggle, onRefresh = _vars.onRefresh, scrub = _vars.scrub, trigger = _vars.trigger, pin = _vars.pin, pinSpacing = _vars.pinSpacing, invalidateOnRefresh = _vars.invalidateOnRefresh, anticipatePin = _vars.anticipatePin, onScrubComplete = _vars.onScrubComplete, onSnapComplete = _vars.onSnapComplete, once = _vars.once, snap = _vars.snap, pinReparent = _vars.pinReparent, pinSpacer = _vars.pinSpacer, containerAnimation = _vars.containerAnimation, fastScrollEnd = _vars.fastScrollEnd, preventOverlaps = _vars.preventOverlaps, direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical, isToggle = !scrub && scrub !== 0, scroller = _getTarget(vars.scroller || _win), scrollerCache = gsap6.core.getCache(scroller), isViewport = _isViewport(scroller), useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed", callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack], toggleActions = isToggle && vars.toggleActions.split(" "), markers = "markers" in vars ? vars.markers : _defaults.markers, borderWidth = isViewport ? 0 : parseFloat(_getComputedStyle(scroller)["border" + direction.p2 + _Width]) || 0, self2 = this, onRefreshInit = vars.onRefreshInit && function() {
             return vars.onRefreshInit(self2);
           }, getScrollerSize = _getSizeFunc(scroller, isViewport, direction), getScrollerOffsets = _getOffsetsFunc(scroller, isViewport), lastSnap = 0, scrollFunc = _getScrollFunc(scroller, direction), tweenTo, pinCache, snapFunc, scroll1, scroll2, start, end, markerStart, markerEnd, markerStartTrigger, markerEndTrigger, markerVars, change, pinOriginalState, pinActiveState, pinState, spacer, offset, pinGetter, pinSetter, pinStart, pinChange, spacingStart, spacerState, markerStartSetter, markerEndSetter, cs, snap1, snap2, scrubTween, scrubSmooth, snapDurClamp, snapDelayedCall, prevProgress, prevScroll, prevAnimProgress, caMarkerSetter;
           self2.media = _creatingMedia;
@@ -20268,7 +22062,7 @@ var require_ScrollTrigger = __commonJS({
             self2.animation = animation.pause();
             animation.scrollTrigger = self2;
             scrubSmooth = _isNumber(scrub) && scrub;
-            scrubSmooth && (scrubTween = gsap5.to(animation, {
+            scrubSmooth && (scrubTween = gsap6.to(animation, {
               ease: "power3",
               duration: scrubSmooth,
               onComplete: function onComplete() {
@@ -20285,20 +22079,20 @@ var require_ScrollTrigger = __commonJS({
                 snapTo: snap
               };
             }
-            "scrollBehavior" in _body.style && gsap5.set(isViewport ? [_body, _docEl] : scroller, {
+            "scrollBehavior" in _body.style && gsap6.set(isViewport ? [_body, _docEl] : scroller, {
               scrollBehavior: "auto"
             });
             snapFunc = _isFunction(snap.snapTo) ? snap.snapTo : snap.snapTo === "labels" ? _getClosestLabel(animation) : snap.snapTo === "labelsDirectional" ? _getLabelAtDirection(animation) : snap.directional !== false ? function(value, st) {
               return _snapDirectional(snap.snapTo)(value, st.direction);
-            } : gsap5.utils.snap(snap.snapTo);
+            } : gsap6.utils.snap(snap.snapTo);
             snapDurClamp = snap.duration || {
               min: 0.1,
               max: 2
             };
             snapDurClamp = _isObject(snapDurClamp) ? _clamp(snapDurClamp.min, snapDurClamp.max) : _clamp(snapDurClamp, snapDurClamp);
-            snapDelayedCall = gsap5.delayedCall(snap.delay || scrubSmooth / 2 || 0.1, function() {
+            snapDelayedCall = gsap6.delayedCall(snap.delay || scrubSmooth / 2 || 0.1, function() {
               if (Math.abs(self2.getVelocity()) < 10 && !_pointerIsDown && lastSnap !== scrollFunc()) {
-                var totalProgress = animation && !isToggle ? animation.totalProgress() : self2.progress, velocity = (totalProgress - snap2) / (_getTime() - _time2) * 1e3 || 0, change1 = gsap5.utils.clamp(-self2.progress, 1 - self2.progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = self2.progress + (snap.inertia === false ? 0 : change1), endValue = _clamp(0, 1, snapFunc(naturalEnd, self2)), scroll = scrollFunc(), endScroll = Math.round(start + endValue * change), _snap = snap, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete, tween = tweenTo.tween;
+                var totalProgress = animation && !isToggle ? animation.totalProgress() : self2.progress, velocity = (totalProgress - snap2) / (_getTime() - _time2) * 1e3 || 0, change1 = gsap6.utils.clamp(-self2.progress, 1 - self2.progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = self2.progress + (snap.inertia === false ? 0 : change1), endValue = _clamp(0, 1, snapFunc(naturalEnd, self2)), scroll = scrollFunc(), endScroll = Math.round(start + endValue * change), _snap = snap, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete, tween = tweenTo.tween;
                 if (scroll <= end && scroll >= start && endScroll !== scroll) {
                   if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
                     return;
@@ -20337,10 +22131,10 @@ var require_ScrollTrigger = __commonJS({
           if (pin) {
             pinSpacing === false || pinSpacing === _margin || (pinSpacing = !pinSpacing && _getComputedStyle(pin.parentNode).display === "flex" ? false : _padding);
             self2.pin = pin;
-            vars.force3D !== false && gsap5.set(pin, {
+            vars.force3D !== false && gsap6.set(pin, {
               force3D: true
             });
-            pinCache = gsap5.core.getCache(pin);
+            pinCache = gsap6.core.getCache(pin);
             if (!pinCache.spacer) {
               if (pinSpacer) {
                 pinSpacer = _getTarget(pinSpacer);
@@ -20358,8 +22152,8 @@ var require_ScrollTrigger = __commonJS({
             self2.spacer = spacer = pinCache.spacer;
             cs = _getComputedStyle(pin);
             spacingStart = cs[pinSpacing + direction.os2];
-            pinGetter = gsap5.getProperty(pin);
-            pinSetter = gsap5.quickSetter(pin, direction.a, _px);
+            pinGetter = gsap6.getProperty(pin);
+            pinSetter = gsap6.quickSetter(pin, direction.a, _px);
             _swapPinIn(pin, spacer, cs);
             pinState = _getState(pin);
           }
@@ -20370,14 +22164,14 @@ var require_ScrollTrigger = __commonJS({
             offset = markerStartTrigger["offset" + direction.op.d2];
             markerStart = _createMarker("start", id, scroller, direction, markerVars, offset, 0, containerAnimation);
             markerEnd = _createMarker("end", id, scroller, direction, markerVars, offset, 0, containerAnimation);
-            containerAnimation && (caMarkerSetter = gsap5.quickSetter([markerStart, markerEnd], direction.a, _px));
+            containerAnimation && (caMarkerSetter = gsap6.quickSetter([markerStart, markerEnd], direction.a, _px));
             if (!useFixedPosition && !(_proxies.length && _getProxyProp(scroller, "fixedMarkers") === true)) {
               _makePositionable(isViewport ? _body : scroller);
-              gsap5.set([markerStartTrigger, markerEndTrigger], {
+              gsap6.set([markerStartTrigger, markerEndTrigger], {
                 force3D: true
               });
-              markerStartSetter = gsap5.quickSetter(markerStartTrigger, direction.a, _px);
-              markerEndSetter = gsap5.quickSetter(markerEndTrigger, direction.a, _px);
+              markerStartSetter = gsap6.quickSetter(markerStartTrigger, direction.a, _px);
+              markerEndSetter = gsap6.quickSetter(markerEndTrigger, direction.a, _px);
             }
           }
           if (containerAnimation) {
@@ -20467,7 +22261,7 @@ var require_ScrollTrigger = __commonJS({
               cs2 = {};
               cs2[direction.a] = "+=" + offset2;
               pinnedContainer && (cs2[direction.p] = "-=" + scrollFunc());
-              gsap5.set([markerStart, markerEnd], cs2);
+              gsap6.set([markerStart, markerEnd], cs2);
             }
             if (pin) {
               cs2 = _getComputedStyle(pin);
@@ -20733,24 +22527,24 @@ var require_ScrollTrigger = __commonJS({
             }
           };
           self2.enable(false, false);
-          !animation || !animation.add || change ? self2.refresh() : gsap5.delayedCall(0.01, function() {
+          !animation || !animation.add || change ? self2.refresh() : gsap6.delayedCall(0.01, function() {
             return start || end || self2.refresh();
           }) && (change = 0.01) && (start = end = 0);
         };
         ScrollTrigger3.register = function register(core) {
           if (!_coreInitted) {
-            gsap5 = core || _getGSAP();
+            gsap6 = core || _getGSAP();
             if (_windowExists() && window.document) {
               _win = window;
               _doc = document;
               _docEl = _doc.documentElement;
               _body = _doc.body;
             }
-            if (gsap5) {
-              _toArray = gsap5.utils.toArray;
-              _clamp = gsap5.utils.clamp;
-              _suppressOverwrites = gsap5.core.suppressOverwrites || _passThrough;
-              gsap5.core.globals("ScrollTrigger", ScrollTrigger3);
+            if (gsap6) {
+              _toArray = gsap6.utils.toArray;
+              _clamp = gsap6.utils.clamp;
+              _suppressOverwrites = gsap6.core.suppressOverwrites || _passThrough;
+              gsap6.core.globals("ScrollTrigger", ScrollTrigger3);
               if (_body) {
                 _raf = _win.requestAnimationFrame || function(f) {
                   return setTimeout(f, 16);
@@ -20765,7 +22559,7 @@ var require_ScrollTrigger = __commonJS({
                 _horizontal.m = Math.round(bounds.left + _horizontal.sc()) || 0;
                 border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style");
                 _syncInterval = setInterval(_sync, 200);
-                gsap5.delayedCall(0.5, function() {
+                gsap6.delayedCall(0.5, function() {
                   return _startup = 0;
                 });
                 _addListener(_doc, "touchcancel", _passThrough);
@@ -20776,10 +22570,10 @@ var require_ScrollTrigger = __commonJS({
                 _multiListener(_addListener, _doc, "pointerup,touchend,mouseup", function() {
                   return _pointerIsDown = 0;
                 });
-                _transformProp = gsap5.utils.checkPrefix("transform");
+                _transformProp = gsap6.utils.checkPrefix("transform");
                 _stateProps.push(_transformProp);
                 _coreInitted = _getTime();
-                _resizeDelay = gsap5.delayedCall(0.2, _refreshAll).pause();
+                _resizeDelay = gsap6.delayedCall(0.2, _refreshAll).pause();
                 _autoRefresh = [_doc, "visibilitychange", function() {
                   var w = _win.innerWidth, h = _win.innerHeight;
                   if (_doc.hidden) {
@@ -20873,7 +22667,7 @@ var require_ScrollTrigger = __commonJS({
           if (target && target.style) {
             var i = _savedStyles.indexOf(target);
             i >= 0 && _savedStyles.splice(i, 5);
-            _savedStyles.push(target, target.style.cssText, target.getBBox && target.getAttribute("transform"), gsap5.core.getCache(target), _creatingMedia);
+            _savedStyles.push(target, target.style.cssText, target.getBBox && target.getAttribute("transform"), gsap6.core.getCache(target), _creatingMedia);
           }
         }) : _savedStyles;
       };
@@ -20914,7 +22708,7 @@ var require_ScrollTrigger = __commonJS({
       };
       ScrollTrigger2.batch = function(targets, vars) {
         var result = [], varsCopy = {}, interval = vars.interval || 0.016, batchMax = vars.batchMax || 1e9, proxyCallback = function proxyCallback2(type, callback) {
-          var elements = [], triggers = [], delay = gsap5.delayedCall(interval, function() {
+          var elements = [], triggers = [], delay = gsap6.delayedCall(interval, function() {
             callback(elements, triggers);
             elements = [];
             triggers = [];
@@ -20950,7 +22744,7 @@ var require_ScrollTrigger = __commonJS({
           return (a.vars.refreshPriority || 0) * -1e6 + a.start - (b.start + (b.vars.refreshPriority || 0) * -1e6);
         });
       };
-      _getGSAP() && gsap5.registerPlugin(ScrollTrigger2);
+      _getGSAP() && gsap6.registerPlugin(ScrollTrigger2);
       exports2.ScrollTrigger = ScrollTrigger2;
       exports2.default = ScrollTrigger2;
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -20958,21 +22752,21 @@ var require_ScrollTrigger = __commonJS({
   }
 });
 
-// .svelte-kit/output/server/chunks/TransitionInView-c90c9121.js
-var css13, TransitionInView;
-var init_TransitionInView_c90c9121 = __esm({
-  ".svelte-kit/output/server/chunks/TransitionInView-c90c9121.js"() {
+// .svelte-kit/output/server/chunks/TransitionInView-75dc718e.js
+var css19, TransitionInView;
+var init_TransitionInView_75dc718e = __esm({
+  ".svelte-kit/output/server/chunks/TransitionInView-75dc718e.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_IntersectionObserver_4cd4a541();
-    css13 = {
-      code: ".opacity-container.svelte-vb2yke{transition:opacity 1000ms ease 200ms;opacity:0}.intersecting.svelte-vb2yke{opacity:1}div.svelte-vb2yke{height:100%;width:100%}",
+    init_app_89d516be();
+    init_IntersectionObserver_20eeae9e();
+    css19 = {
+      code: "@media(prefers-reduced-motion: no-preference){.transitioning-container.svelte-zf2mv8{transition:opacity 1000ms ease 200ms, transform 1000ms ease;opacity:0;transform:translateX(-5%)}.intersecting.svelte-zf2mv8{opacity:1;transform:none}}div.svelte-zf2mv8{height:100%;width:100%}",
       map: null
     };
     TransitionInView = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let element;
       let intersecting;
-      $$result.css.add(css13);
+      $$result.css.add(css19);
       let $$settled;
       let $$rendered;
       do {
@@ -20983,7 +22777,10 @@ var init_TransitionInView_c90c9121 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<div class="${"svelte-vb2yke"}"${add_attribute("this", element, 0)}><div class="${["opacity-container svelte-vb2yke", intersecting ? "intersecting" : ""].join(" ").trim()}">${slots.default ? slots.default({}) : ``}</div></div>`
+          default: () => `<div class="${"svelte-zf2mv8"}"${add_attribute("this", element, 0)}><div class="${[
+            "transitioning-container svelte-zf2mv8",
+            intersecting ? "intersecting" : ""
+          ].join(" ").trim()}">${slots.default ? slots.default({}) : ``}</div></div>`
         })}`;
       } while (!$$settled);
       return $$rendered;
@@ -20991,38 +22788,71 @@ var init_TransitionInView_c90c9121 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Star-65df41c2.js
-var import_gsap3, import_MorphSVGPlugin2, css14, arrowPath, starPath, Star;
-var init_Star_65df41c2 = __esm({
-  ".svelte-kit/output/server/chunks/Star-65df41c2.js"() {
+// .svelte-kit/output/server/chunks/Project-65892900.js
+var css20, Project;
+var init_Project_65892900 = __esm({
+  ".svelte-kit/output/server/chunks/Project-65892900.js"() {
     init_shims();
-    init_app_9f378dda();
-    import_gsap3 = __toModule(require_gsap());
+    init_app_89d516be();
+    init_device_3e76f971();
+    init_TransitionInView_75dc718e();
+    css20 = {
+      code: ".project-card.svelte-16vzxrt{position:relative;border-radius:5px;box-shadow:1px 1px 4px var(--box-shadow-color);height:100%;height:100%;cursor:pointer;display:block}.project-image.svelte-16vzxrt{width:100%;height:100%;min-height:200px;object-fit:cover;border-radius:5px;filter:blur(0);z-index:0}.hovered-gradient.svelte-16vzxrt{position:absolute;background-image:linear-gradient(\n      to bottom,\n      rgba(0, 0, 0, 0),\n      rgba(0, 0, 0, 1)\n    );width:100%;height:100%;background-size:cover;pointer-events:none;border-radius:5px;z-index:1}.project-text.svelte-16vzxrt{position:absolute;bottom:0;left:0;pointer-events:none;padding:1.5rem;z-index:3}.title.svelte-16vzxrt,.description.svelte-16vzxrt{color:white}.title.svelte-16vzxrt{font-size:1.5rem;line-height:1.15;text-shadow:1px 1px 6px black}.description.svelte-16vzxrt{font-family:var(--font-sans);font-size:1rem;line-height:1.2;font-weight:300;margin-top:12px;letter-spacing:0.64px;text-shadow:1px 1px 6px black}@media screen and (max-width: 600px){.hovered-gradient.svelte-16vzxrt{background:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0))}.project-text.svelte-16vzxrt{padding:1rem}.title.svelte-16vzxrt{font-size:1.2rem}.description.svelte-16vzxrt{font-size:0.8rem;letter-spacing:0.3px;margin-top:6px}}",
+      map: null
+    };
+    Project = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $isTouchscreen, $$unsubscribe_isTouchscreen;
+      $$unsubscribe_isTouchscreen = subscribe(isTouchscreen, (value) => $isTouchscreen = value);
+      let { project } = $$props;
+      let { slug } = $$props;
+      if ($$props.project === void 0 && $$bindings.project && project !== void 0)
+        $$bindings.project(project);
+      if ($$props.slug === void 0 && $$bindings.slug && slug !== void 0)
+        $$bindings.slug(slug);
+      $$result.css.add(css20);
+      $$unsubscribe_isTouchscreen();
+      return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
+        default: () => `<a class="${"project-card no-underline svelte-16vzxrt"}"${add_attribute("href", slug, 0)} sveltekit:prefetch>${$isTouchscreen ? `<div class="${"hovered-gradient svelte-16vzxrt"}"></div>` : ``}
+    <img loading="${"lazy"}" src="${"/images/project/" + escape(project.image)}" alt="${"Project image for " + escape(project.title)}" class="${["project-image svelte-16vzxrt", ""].join(" ").trim()}">
+    ${$isTouchscreen ? `<div class="${"project-text svelte-16vzxrt"}"><h1 class="${"title svelte-16vzxrt"}"><!-- HTML_TAG_START -->${project.title}<!-- HTML_TAG_END --></h1>
+        <h2 class="${"description svelte-16vzxrt"}"><!-- HTML_TAG_START -->${project.description}<!-- HTML_TAG_END --></h2></div>` : ``}</a>`
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/Star-9dfc620a.js
+var import_gsap4, import_MorphSVGPlugin2, css21, arrowPath, starPath, Star;
+var init_Star_9dfc620a = __esm({
+  ".svelte-kit/output/server/chunks/Star-9dfc620a.js"() {
+    init_shims();
+    init_app_89d516be();
+    import_gsap4 = __toModule(require_gsap());
     import_MorphSVGPlugin2 = __toModule(require_MorphSVGPlugin());
-    css14 = {
+    css21 = {
       code: "svg.svelte-1exk3bt{pointer-events:none}",
       map: null
     };
     arrowPath = "M 2.398438 1.414062 L 2.398438 4.320312 C 2.398438 4.441406 2.496094 4.535156 2.617188 4.535156 L 17.015625 4.535156 L 1.152344 20.425781 C 1.054688 20.519531 1.054688 20.664062 1.152344 20.734375 L 3.191406 22.777344 C 3.289062 22.871094 3.433594 22.871094 3.503906 22.777344 L 19.488281 6.792969 L 19.488281 21.433594 C 19.488281 21.550781 19.585938 21.648438 19.703125 21.648438 L 22.609375 21.648438 C 22.726562 21.648438 22.824219 21.550781 22.824219 21.433594 L 22.824219 1.414062 C 22.824219 1.296875 22.726562 1.199219 22.609375 1.199219 L 2.617188 1.199219 C 2.496094 1.199219 2.398438 1.296875 2.398438 1.414062 Z M 2.398438 1.414062";
     starPath = "M 18.523438 12.539062 C 18.523438 12.539062 18.347656 14.273438 17.601562 13.503906 C 16.855469 12.738281 18.613281 9.703125 17.796875 7.945312 C 16.984375 6.1875 14.085938 4.914062 14.085938 4.914062 C 14.085938 4.914062 15.929688 6.671875 15.402344 7.175781 C 14.875 7.683594 12.875 7 11.910156 5.375 C 10.941406 3.75 12.105469 1.199219 12.105469 1.199219 C 12.105469 1.199219 10.171875 2.210938 9.933594 4.058594 C 9.691406 5.902344 10.128906 7.175781 10.347656 9.066406 C 10.570312 10.957031 9.933594 13.503906 8.238281 13.265625 C 6.546875 13.023438 7.535156 10.210938 7.535156 10.210938 C 7.535156 10.210938 2.371094 15.285156 5.558594 19.417969 C 8.746094 23.546875 12.546875 22.734375 12.546875 22.734375 C 13.878906 22.761719 15.265625 22.34375 16.332031 21.535156 C 16.347656 21.523438 16.363281 21.511719 16.378906 21.5 C 21.738281 17.679688 18.523438 12.539062 18.523438 12.539062 Z M 18.523438 12.539062 ";
     Star = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { width = 24 } = $$props;
+      let { width: width2 = 24 } = $$props;
       let { height = 24 } = $$props;
       let { fill = "black" } = $$props;
       let { stroke = "transparent" } = $$props;
       let { hovered } = $$props;
       let { index } = $$props;
-      import_gsap3.gsap.registerPlugin(import_MorphSVGPlugin2.MorphSVGPlugin);
+      import_gsap4.gsap.registerPlugin(import_MorphSVGPlugin2.MorphSVGPlugin);
       let star;
       const changePath = function() {
         if (hovered == true) {
-          import_gsap3.gsap.to(star, { duration: 0.3, morphSVG: arrowPath });
+          import_gsap4.gsap.to(star, { duration: 0.3, morphSVG: arrowPath });
         } else {
-          import_gsap3.gsap.to(star, { duration: 0.3, morphSVG: starPath });
+          import_gsap4.gsap.to(star, { duration: 0.3, morphSVG: starPath });
         }
       };
-      if ($$props.width === void 0 && $$bindings.width && width !== void 0)
-        $$bindings.width(width);
+      if ($$props.width === void 0 && $$bindings.width && width2 !== void 0)
+        $$bindings.width(width2);
       if ($$props.height === void 0 && $$bindings.height && height !== void 0)
         $$bindings.height(height);
       if ($$props.fill === void 0 && $$bindings.fill && fill !== void 0)
@@ -21033,24 +22863,24 @@ var init_Star_65df41c2 = __esm({
         $$bindings.hovered(hovered);
       if ($$props.index === void 0 && $$bindings.index && index !== void 0)
         $$bindings.index(index);
-      $$result.css.add(css14);
+      $$result.css.add(css21);
       {
         changePath();
       }
-      return `<svg xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("width", width, 0)}${add_attribute("height", height, 0)} viewBox="${"0 0 24 24"}"${add_attribute("fill", fill, 0)}${add_attribute("stroke", stroke, 0)} class="${"svelte-1exk3bt"}"><path id="${"star-" + escape(index)}"${add_attribute("d", starPath, 0)}></path></svg>`;
+      return `<svg xmlns="${"http://www.w3.org/2000/svg"}"${add_attribute("width", width2, 0)}${add_attribute("height", height, 0)} viewBox="${"0 0 24 24"}"${add_attribute("fill", fill, 0)}${add_attribute("stroke", stroke, 0)} class="${"svelte-1exk3bt"}"><path id="${"star-" + escape(index)}"${add_attribute("d", starPath, 0)}></path></svg>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/Award-42d31980.js
-var css15, Award;
-var init_Award_42d31980 = __esm({
-  ".svelte-kit/output/server/chunks/Award-42d31980.js"() {
+// .svelte-kit/output/server/chunks/Award-a04c8779.js
+var css22, Award;
+var init_Award_a04c8779 = __esm({
+  ".svelte-kit/output/server/chunks/Award-a04c8779.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_TransitionInView_c90c9121();
-    css15 = {
-      code: '.flex-mobile.svelte-10v4fkf.svelte-10v4fkf{display:none;visibility:hidden}.container.svelte-10v4fkf.svelte-10v4fkf{display:flex;padding:1.25rem 0;filter:none;justify-content:space-between;position:relative;border-bottom-color:rgba(var(--text-color-rgb), 0.05);border-bottom-style:solid;border-bottom-width:2px}.container.svelte-10v4fkf.svelte-10v4fkf::after{content:"";position:absolute;width:100%;transform:scaleX(0);height:1px;bottom:-1px;left:0;background-color:var(--accent-color);transform-origin:bottom left;transition:transform 500ms ease}.container.svelte-10v4fkf.svelte-10v4fkf:hover::after{transform:scaleX(1)}.container.svelte-10v4fkf>.svelte-10v4fkf{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}.title.svelte-10v4fkf.svelte-10v4fkf{flex:1;font-size:1.25rem;font-weight:400;line-height:1.15;font-family:var(--font-sans);letter-spacing:-0.4px;color:var(--text-color)}.organization.svelte-10v4fkf.svelte-10v4fkf{font-size:1.25rem;padding:0 1rem;line-height:1.15;font-family:var(--font-serif);display:flex;place-items:center;justify-content:center;text-align:center;color:var(--accent-color);font-weight:200;letter-spacing:0.025rem}time.svelte-10v4fkf.svelte-10v4fkf{color:var(--text-color);padding:0 1rem;font-family:var(--font-serif);font-weight:200;text-align:right;display:flex;place-items:center;font-size:1.25rem;letter-spacing:1px}.inactive.svelte-10v4fkf>.svelte-10v4fkf{color:transparent;opacity:0.5;text-shadow:0 0 2px rgba(var(--text-color-rgb), 0.8)}.inactive.svelte-10v4fkf.svelte-10v4fkf{border-bottom-color:rgba(var(--text-color-rgb), 0.05)}@media screen and (max-width: 700px){.container.svelte-10v4fkf.svelte-10v4fkf{flex-direction:column;padding:1rem 0;align-items:flex-start}.title.svelte-10v4fkf.svelte-10v4fkf{margin-bottom:0.35rem}.organization.svelte-10v4fkf.svelte-10v4fkf{padding:0;font-size:1.1rem;font-weight:200}time.svelte-10v4fkf.svelte-10v4fkf{padding:0}.hidden-mobile.svelte-10v4fkf.svelte-10v4fkf{display:none;visibility:hidden}.flex-mobile.svelte-10v4fkf.svelte-10v4fkf{width:100%;display:flex;justify-content:space-between;visibility:visible}}',
+    init_app_89d516be();
+    init_TransitionInView_75dc718e();
+    css22 = {
+      code: '.flex-mobile.svelte-1fegd0u.svelte-1fegd0u{display:none;visibility:hidden}.container.svelte-1fegd0u.svelte-1fegd0u{display:flex;padding:1.15rem 0;filter:none;justify-content:space-between;position:relative;border-bottom-color:rgba(var(--text-color-rgb), 0.05);border-bottom-style:solid;border-bottom-width:2px;cursor:pointer}.container.svelte-1fegd0u.svelte-1fegd0u::after{content:"";position:absolute;width:100%;transform:scaleX(0);height:1px;bottom:-1px;left:0;background-color:var(--accent-color);transform-origin:bottom left;transition:transform 500ms ease}.container.svelte-1fegd0u.svelte-1fegd0u:hover::after{transform:scaleX(1)}.container.svelte-1fegd0u>.svelte-1fegd0u{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}.title.svelte-1fegd0u.svelte-1fegd0u{flex:1;font-size:1.25rem;font-weight:400;line-height:1.15;font-family:var(--font-sans);letter-spacing:-0.4px;color:var(--text-color)}.organization.svelte-1fegd0u.svelte-1fegd0u{font-size:1.25rem;padding:0 1rem;line-height:1.3;font-family:var(--font-serif);display:flex;place-items:center;justify-content:center;text-align:center;color:var(--accent-color);font-weight:200;font-style:italic;letter-spacing:0.01rem}time.svelte-1fegd0u.svelte-1fegd0u{color:var(--text-color);padding:0 1rem;font-family:var(--font-serif);font-weight:200;text-align:right;display:flex;place-items:center;font-size:1.25rem;letter-spacing:1px}.inactive.svelte-1fegd0u>.svelte-1fegd0u{color:transparent;opacity:0.5;text-shadow:0 0 2px rgba(var(--text-color-rgb), 0.8)}.inactive.svelte-1fegd0u.svelte-1fegd0u{border-bottom-color:rgba(var(--text-color-rgb), 0.05)}@media screen and (max-width: 700px){.container.svelte-1fegd0u.svelte-1fegd0u{flex-direction:column;padding:1rem 0;align-items:flex-start}.title.svelte-1fegd0u.svelte-1fegd0u{margin-bottom:0.35rem}.organization.svelte-1fegd0u.svelte-1fegd0u{padding:0;font-size:1.1rem}time.svelte-1fegd0u.svelte-1fegd0u{padding:0}.hidden-mobile.svelte-1fegd0u.svelte-1fegd0u{display:none;visibility:hidden}.flex-mobile.svelte-1fegd0u.svelte-1fegd0u{width:100%;display:flex;justify-content:space-between;visibility:visible}}',
       map: null
     };
     Award = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -21064,21 +22894,21 @@ var init_Award_42d31980 = __esm({
         $$bindings.slug(slug);
       if ($$props.anyHovered === void 0 && $$bindings.anyHovered && anyHovered !== void 0)
         $$bindings.anyHovered(anyHovered);
-      $$result.css.add(css15);
+      $$result.css.add(css22);
       return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
-        default: () => `<a class="${"container no-underline " + escape(anyHovered && !active ? "inactive" : "") + " svelte-10v4fkf"}" sveltekit:prefetch${add_attribute("href", slug, 0)}><h2 class="${"title svelte-10v4fkf"}">${escape(award.title)}</h2>
-    <p class="${"organization hidden-mobile svelte-10v4fkf"}">${escape(award.organization)}</p>
-    <time${add_attribute("datetime", award.date, 0)} class="${"hidden-mobile svelte-10v4fkf"}">${escape(award.date.slice(0, 4))}</time>
-    <div class="${"flex-mobile svelte-10v4fkf"}"><p class="${"organization svelte-10v4fkf"}">${escape(award.organization)}</p>
-      <time${add_attribute("datetime", award.date, 0)} class="${"svelte-10v4fkf"}">${escape(award.date.slice(0, 4))}</time></div></a>`
+        default: () => `<a class="${"container no-underline " + escape(anyHovered && !active ? "inactive" : "") + " " + escape(award.place_code) + " svelte-1fegd0u"}"${add_attribute("href", slug, 0)} sveltekit:prefetch><h2 class="${"title svelte-1fegd0u"}">${escape(award.title)}</h2>
+    <p class="${"organization hidden-mobile svelte-1fegd0u"}">${escape(award.organization)}</p>
+    <time${add_attribute("datetime", award.date, 0)} class="${"hidden-mobile svelte-1fegd0u"}">${escape(award.date.slice(0, 4))}</time>
+    <div class="${"flex-mobile svelte-1fegd0u"}"><p class="${"organization svelte-1fegd0u"}">${escape(award.organization)}</p>
+      <time${add_attribute("datetime", award.date, 0)} class="${"svelte-1fegd0u"}">${escape(award.date.slice(0, 4))}</time></div></a>`
       })}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-ec7d7444.js
-var index_ec7d7444_exports = {};
-__export(index_ec7d7444_exports, {
+// .svelte-kit/output/server/chunks/index-f217fafb.js
+var index_f217fafb_exports = {};
+__export(index_f217fafb_exports, {
   default: () => Routes,
   load: () => load2
 });
@@ -21097,89 +22927,109 @@ async function load2({ fetch: fetch2 }) {
     }
   };
 }
-var import_bowser59, import_gsap4, import_ScrollTrigger, import_SplitText2, css$7, Hero, SectionTitle, css$6, HoverVideo, css$52, Projects, css$42, BlogText, css$32, Blog, css$22, Awards, css$12, CircleText, css16, Routes;
-var init_index_ec7d7444 = __esm({
-  ".svelte-kit/output/server/chunks/index-ec7d7444.js"() {
+var import_gsap5, import_ScrollTrigger, import_SplitText3, import_bowser3, css$62, Hero, SectionTitle, css$52, HoverVideo, css$42, Projects, css$32, BlogText, css$23, Blog, css$13, Awards, css23, Routes;
+var init_index_f217fafb = __esm({
+  ".svelte-kit/output/server/chunks/index-f217fafb.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_global_130d3fe3();
-    import_bowser59 = __toModule(require_es5());
-    import_gsap4 = __toModule(require_gsap());
+    init_app_89d516be();
+    init_motion_65df28f6();
+    import_gsap5 = __toModule(require_gsap());
     import_ScrollTrigger = __toModule(require_ScrollTrigger());
-    import_SplitText2 = __toModule(require_SplitText());
-    init_TransitionInView_c90c9121();
-    init_IntersectionObserver_4cd4a541();
-    init_utils_09998264();
-    init_Star_65df41c2();
-    init_Award_42d31980();
-    import_gsap4.gsap.registerPlugin(import_ScrollTrigger.ScrollTrigger, import_SplitText2.SplitText);
-    css$7 = {
-      code: "@keyframes svelte-1m2420z-arrow-line{0%{transform:translate3d(0, -101%, 0)}25%{transform:translate3d(0, 101%, 0)}50%{transform:translate3d(0, 101%, 0)}75%{transform:translate3d(0, 101%, 0)}100%{transform:translate3d(0, -101%, 0)}}@keyframes svelte-1m2420z-arrow{0%{-webkit-transform:translateZ(0) rotate(45deg);transform:translateZ(0) rotate(45deg)}100%{-webkit-transform:translate3d(0, 10px, 0) rotate(45deg);transform:translate3d(0, 10px, 0) rotate(45deg)}}section.svelte-1m2420z{width:95%;margin:auto;display:flex;flex-direction:column;justify-content:center;place-items:center;overflow:hidden;position:relative;transition:height 100ms ease}.year.svelte-1m2420z{position:absolute;bottom:5.35%;left:0.75%;margin-left:1rem;color:rgba(var(--text-color-rgb), 0.35);font-family:var(--font-sans);font-weight:300;font-size:1.5rem;letter-spacing:-0.05rem;user-select:none}.begin-invisible.svelte-1m2420z:not(.transitioned){opacity:0}.hero-container.svelte-1m2420z{line-height:0.85;user-select:none;margin-top:calc(0px - var(--nav-height))}.overline.svelte-1m2420z{font-weight:200;text-align:left;margin-bottom:0.5rem}.title.svelte-1m2420z{margin-bottom:1.25rem}.connor.svelte-1m2420z,.rothschild.svelte-1m2420z{display:block;font-weight:500;letter-spacing:-0.1rem;text-transform:uppercase;overflow-y:hidden}.connor.svelte-1m2420z{font-size:17.55vw}.rothschild.svelte-1m2420z{font-size:12.15vw}.subtitle.svelte-1m2420z{font-size:3vw;max-width:1068px;font-weight:300;margin-bottom:1rem;text-align:right;margin-left:auto;color:rgba(var(--text-color-rgb), 0.9)}.switch.svelte-1m2420z{cursor:pointer;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);transition:border-bottom-color 200ms ease;display:inline-block;padding-bottom:0.5rem}.switch.unclicked.svelte-1m2420z{animation:svelte-1m2420z-wiggle 3000ms infinite}@keyframes svelte-1m2420z-wiggle{0%{transform:rotate(0deg)}25%{transform:rotate(2deg)}50%{transform:rotate(-2deg)}75%{transform:rotate(0deg)}100%{transform:rotate(0deg)}}.switch.svelte-1m2420z:hover{border-bottom-color:rgba(var(--accent-color-rgb), 0.6)}@media screen and (max-width: 768px){.subtitle.svelte-1m2420z{font-size:4vw}}@media screen and (max-width: 468px){section.svelte-1m2420z{place-items:center}.overline.svelte-1m2420z,.subtitle.svelte-1m2420z,.hero-container.svelte-1m2420z{text-align:left}.overline.svelte-1m2420z{font-size:2.25rem;margin-bottom:0.75rem}.subtitle.svelte-1m2420z{font-size:1.4rem}.year.svelte-1m2420z{font-size:1.5rem;left:2.5%}}",
+    import_SplitText3 = __toModule(require_SplitText());
+    init_linear_5e174aa1();
+    init_TransitionInView_75dc718e();
+    init_device_3e76f971();
+    init_Project_65892900();
+    init_IntersectionObserver_20eeae9e();
+    init_utils_4d01bc61();
+    init_Star_9dfc620a();
+    init_Award_a04c8779();
+    import_bowser3 = __toModule(require_es5());
+    import_gsap5.gsap.registerPlugin(import_ScrollTrigger.ScrollTrigger, import_SplitText3.SplitText);
+    css$62 = {
+      code: "section.svelte-lu3vai{width:100%;margin:auto;display:flex;flex-direction:column;justify-content:center;place-items:center;overflow:hidden;position:relative;transition:height 100ms ease}.year.svelte-lu3vai{position:absolute;bottom:calc(20px + 1.5rem / 2);left:20px;margin-left:2rem;color:rgba(var(--text-color-rgb), 0.35);font-family:var(--font-sans);font-weight:300;font-size:1.5rem;letter-spacing:-0.05rem;user-select:none}.hero-container.svelte-lu3vai{line-height:0.85;user-select:none}.overline.svelte-lu3vai{font-weight:200;text-align:left;margin-bottom:0.75rem;font-style:italic;font-size:2.75rem}.title.svelte-lu3vai{margin-bottom:1.5rem}.connor.svelte-lu3vai,.rothschild.svelte-lu3vai{display:block;font-weight:500;letter-spacing:-0.1rem;text-transform:uppercase;text-shadow:1px 1px 2px var(--box-shadow-color);overflow:hidden}.connor *{transform-origin:center bottom;transform-style:preserve-3d;transition:opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),\n      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1)}.rothschild *{transform-origin:center bottom;transform-style:preserve-3d;transition:opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),\n      transform 0s cubic-bezier(0.215, 0.61, 0.355, 1)}.connor.svelte-lu3vai{font-size:20vw}.rothschild.svelte-lu3vai{font-size:13.65vw}.subtitle.svelte-lu3vai{font-size:3vw;max-width:1068px;font-weight:300;margin-bottom:1rem;text-align:right;margin-left:auto;color:rgba(var(--text-color-rgb), 0.9)}.switch.svelte-lu3vai{cursor:pointer;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);transition:border-bottom-color 200ms ease;display:inline-block;padding-bottom:0.5rem;font-style:italic;font-weight:200}@keyframes svelte-lu3vai-wiggle{0%{transform:rotate(0deg)}25%{transform:rotate(2deg)}50%{transform:rotate(-2deg)}75%{transform:rotate(0deg)}100%{transform:rotate(0deg)}}.switch.svelte-lu3vai:hover{border-bottom-color:rgba(var(--accent-color-rgb), 0.6)}@media screen and (max-width: 768px){.overline.svelte-lu3vai{font-size:2rem;margin-bottom:0.75rem}.subtitle.svelte-lu3vai{font-size:1.8rem}.year.svelte-lu3vai{font-size:1.5rem}}@media screen and (max-width: 468px){section.svelte-lu3vai{place-items:center}.overline.svelte-lu3vai{font-size:8vw}.subtitle.svelte-lu3vai{font-size:5.75vw}}",
       map: null
     };
     Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let subtitleString;
-      let $$unsubscribe_pageTransitionDelay;
       let $windowHeight, $$unsubscribe_windowHeight;
-      $$unsubscribe_pageTransitionDelay = subscribe(pageTransitionDelay, (value) => value);
+      let $windowWidth, $$unsubscribe_windowWidth;
+      let $$unsubscribe_prefersReducedMotion;
       $$unsubscribe_windowHeight = subscribe(windowHeight, (value) => $windowHeight = value);
+      $$unsubscribe_windowWidth = subscribe(windowWidth, (value) => $windowWidth = value);
+      $$unsubscribe_prefersReducedMotion = subscribe(prefersReducedMotion, (value) => value);
       let subtitleIndex = 0;
       let subtitleOptions = [
         "on the web.",
         "with data.",
         "like these <span style='vertical-align: top; font-size: .8em;'>&darr;</span>"
       ];
-      $$result.css.add(css$7);
+      let xDeg = 0;
+      let yDeg = 0;
+      $$result.css.add(css$62);
       subtitleString = subtitleOptions[subtitleIndex];
-      $$unsubscribe_pageTransitionDelay();
+      linear().domain([0, $windowWidth]).range([-10, 10]);
+      linear().domain([0, $windowHeight]).range([-10, 10]);
       $$unsubscribe_windowHeight();
-      return `<section id="${"hero"}" style="${"min-height: " + escape($windowHeight ? `calc(${$windowHeight * 1.01}px - var(--nav-height))` : "101vh") + ";"}" class="${"svelte-1m2420z"}">
-  <div class="${"hero-container svelte-1m2420z"}"><h1 class="${["overline begin-invisible svelte-1m2420z", ""].join(" ").trim()}">Hi, I&#39;m</h1>
-    <div class="${"title svelte-1m2420z"}"><h1 class="${[
-        "connor begin-invisible gradient-accented svelte-1m2420z",
+      $$unsubscribe_windowWidth();
+      $$unsubscribe_prefersReducedMotion();
+      return `<section id="${"hero"}" style="${"min-height: " + escape($windowHeight ? `${$windowHeight * 1.01}px` : "101vh") + "; perspective: 100vw;"}" class="${"svelte-lu3vai"}"><div class="${"hero-container svelte-lu3vai"}" style="${"transition: 1000ms cubic-bezier(.3, 1, 1, .3); transform: translateX(" + escape(xDeg) + "px) translateY(" + escape(yDeg) + "px);"}"><h1 class="${["overline begin-invisible svelte-lu3vai", ""].join(" ").trim()}">Hi, I&#39;m</h1>
+    <div class="${"title svelte-lu3vai"}"><h1 class="${[
+        "connor begin-invisible gradient-accented svelte-lu3vai",
         ""
       ].join(" ").trim()}">Connor
       </h1>
       <h1 class="${[
-        "rothschild begin-invisible gradient-accented svelte-1m2420z",
+        "rothschild begin-invisible gradient-accented svelte-lu3vai",
         ""
       ].join(" ").trim()}">Rothschild
       </h1></div>
-    <h2 class="${["subtitle begin-invisible  svelte-1m2420z", ""].join(" ").trim()}">And I tell visual stories <span class="${["switch svelte-1m2420z", "unclicked"].join(" ").trim()}"><!-- HTML_TAG_START -->${subtitleString}<!-- HTML_TAG_END --></span></h2></div>
-  <h1 class="${"year svelte-1m2420z"}">Portfolio 2021</h1>
+    <h2 class="${["subtitle begin-invisible svelte-lu3vai", ""].join(" ").trim()}">And I tell visual stories
+      <span class="${["switch svelte-lu3vai", "unclicked"].join(" ").trim()}"><!-- HTML_TAG_START -->${subtitleString}<!-- HTML_TAG_END --></span></h2></div>
+  <h1 class="${"year svelte-lu3vai"}">Portfolio 2021</h1>
 </section>`;
     });
     SectionTitle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      import_gsap4.gsap.registerPlugin(import_SplitText2.SplitText);
+      let $prefersReducedMotion, $$unsubscribe_prefersReducedMotion;
+      $$unsubscribe_prefersReducedMotion = subscribe(prefersReducedMotion, (value) => $prefersReducedMotion = value);
+      import_gsap5.gsap.registerPlugin(import_SplitText3.SplitText);
       let { intersecting } = $$props;
       let { element } = $$props;
+      let transition = function() {
+        if ($prefersReducedMotion)
+          return;
+        let titleSplit = new import_SplitText3.SplitText(document.querySelector(element), { type: "words,chars" });
+        let titleChars = titleSplit.chars;
+        import_gsap5.gsap.fromTo(titleChars, { y: 100, opacity: 0, rotation: 0 }, {
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          stagger: 0.025,
+          duration: 0.5,
+          delay: 0.25,
+          ease: "backwards"
+        });
+      };
       if ($$props.intersecting === void 0 && $$bindings.intersecting && intersecting !== void 0)
         $$bindings.intersecting(intersecting);
       if ($$props.element === void 0 && $$bindings.element && element !== void 0)
         $$bindings.element(element);
       {
         if (intersecting) {
-          let titleSplit = new import_SplitText2.SplitText(document.querySelector(element), { type: "words,chars" });
-          let titleChars = titleSplit.chars;
-          import_gsap4.gsap.fromTo(titleChars, { y: 100, opacity: 0, rotation: 0 }, {
-            y: 0,
-            opacity: 1,
-            rotation: 0,
-            stagger: 0.025,
-            duration: 0.5,
-            delay: 0.25,
-            ease: "backwards"
-          });
+          transition();
         }
       }
+      $$unsubscribe_prefersReducedMotion();
       return `${slots.default ? slots.default({}) : ``}`;
     });
-    css$6 = {
-      code: ".absolute-container.svelte-1f921ml.svelte-1f921ml{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible}.projects.svelte-1f921ml.svelte-1f921ml{display:flex;flex-direction:column;justify-content:flex-start;width:95%;height:100%;text-align:left;position:relative;max-width:1168px;margin:auto}.project-card.svelte-1f921ml.svelte-1f921ml{height:100%;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);display:inline-flex;width:fit-content;align-items:center;justify-content:space-between;cursor:pointer;transition:all 600ms ease}.section-container.svelte-1f921ml.svelte-1f921ml{position:relative;overflow:hidden}h1.svelte-1f921ml.svelte-1f921ml{font-size:3rem;text-transform:uppercase;font-weight:200;transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}.inactive.svelte-1f921ml.svelte-1f921ml{opacity:1;z-index:1}.inactive.svelte-1f921ml h1.svelte-1f921ml{color:transparent;opacity:0.5;text-shadow:0 0 2px rgba(var(--text-color-rgb), 0.8)}.blurred.svelte-1f921ml h1.svelte-1f921ml{text-shadow:0 0 5px rgba(var(--text-color-rgb), 0.5)}.active.svelte-1f921ml.svelte-1f921ml{z-index:5;border-bottom:1px solid rgba(var(--accent-color-rgb), 0.8)}.active.svelte-1f921ml h1.svelte-1f921ml{color:var(--accent-color)}.absolute-container.svelte-1f921ml.svelte-1f921ml{z-index:2;pointer-events:none;transition:transform 500ms ease}video.svelte-1f921ml.svelte-1f921ml{height:100%;display:block;-o-object-fit:cover;object-fit:cover;margin:auto;position:absolute;top:0;left:0;opacity:1;cursor:pointer;transition:opacity 200ms linear}.videoTransitioning.svelte-1f921ml.svelte-1f921ml{opacity:0}.title-0.svelte-1f921ml.svelte-1f921ml{margin-top:1rem}.title-3.svelte-1f921ml.svelte-1f921ml{transform:scaleY(0.95)}@media screen and (max-height: 600px){.section-container.svelte-1f921ml.svelte-1f921ml{height:auto}}@media screen and (min-width: 1269px){.absolute-container.svelte-1f921ml.svelte-1f921ml{transform:translateX(55%);position:absolute;right:0;left:unset}.title-0.svelte-1f921ml.svelte-1f921ml{font-size:3.75rem}.title-1.svelte-1f921ml.svelte-1f921ml{font-size:4.05rem}.title-2.svelte-1f921ml.svelte-1f921ml{font-size:4.8rem}.title-3.svelte-1f921ml.svelte-1f921ml{font-size:9.1rem}}@media screen and (max-width: 1268px){.absolute-container.svelte-1f921ml.svelte-1f921ml{transform:none}video.svelte-1f921ml.svelte-1f921ml{left:50%;transform:translateX(-50%)}.projects.svelte-1f921ml.svelte-1f921ml{text-align:center;width:100%}.project-card.svelte-1f921ml.svelte-1f921ml{padding:1rem;margin:auto;width:100%}.section-container.svelte-1f921ml.svelte-1f921ml{height:auto;overflow-y:hidden}.inactive.svelte-1f921ml.svelte-1f921ml{border-bottom:1px solid transparent;border-top:1px solid transparent}.active.svelte-1f921ml.svelte-1f921ml{background:rgba(var(--primary-color-rgb), 0.8);border-bottom:1px solid var(--accent-color);border-top:1px solid var(--accent-color)}.project-card.svelte-1f921ml.svelte-1f921ml{display:flex;place-items:center;justify-content:center}.title-0.svelte-1f921ml.svelte-1f921ml{font-size:5.69vw}.title-1.svelte-1f921ml.svelte-1f921ml{font-size:6.2vw}.title-2.svelte-1f921ml.svelte-1f921ml{font-size:7.3vw}.title-3.svelte-1f921ml.svelte-1f921ml{font-size:13.9vw}}",
+    css$52 = {
+      code: '.absolute-container.svelte-1j8n00i.svelte-1j8n00i{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible}.projects.svelte-1j8n00i.svelte-1j8n00i{display:flex;flex-direction:column;justify-content:flex-start;width:95%;height:100%;text-align:left;position:relative;max-width:1168px;margin:auto}.project-card.svelte-1j8n00i.svelte-1j8n00i{height:100%;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);display:inline-flex;width:fit-content;align-items:center;justify-content:space-between;cursor:pointer;transition:all 600ms ease}.section-container.svelte-1j8n00i.svelte-1j8n00i{position:relative;overflow:hidden}h1.svelte-1j8n00i.svelte-1j8n00i{font-size:3rem;text-transform:uppercase;font-weight:200;transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}.inactive.svelte-1j8n00i.svelte-1j8n00i{opacity:1;z-index:1}.inactive.svelte-1j8n00i h1.svelte-1j8n00i{color:transparent;opacity:0.5;text-shadow:0 0 2px rgba(var(--text-color-rgb), 0.8)}.blurred.svelte-1j8n00i h1.svelte-1j8n00i{text-shadow:0 0 5px rgba(var(--text-color-rgb), 0.5)}.blurred.svelte-1j8n00i.svelte-1j8n00i{border-bottom:1px solid rgba(var(--text-color-rgb), 0.1)}.active.svelte-1j8n00i.svelte-1j8n00i{z-index:5;border-bottom:1px solid rgba(var(--accent-color-rgb), 0.8)}.active.svelte-1j8n00i h1.svelte-1j8n00i{color:var(--accent-color)}.absolute-container.svelte-1j8n00i.svelte-1j8n00i{z-index:2;pointer-events:none;transition:transform 500ms ease}video.svelte-1j8n00i.svelte-1j8n00i{height:100%;display:block;-o-object-fit:cover;object-fit:cover;margin:auto;position:absolute;top:0;left:0;opacity:1;cursor:pointer;transition:opacity 200ms linear}.videoTransitioning.svelte-1j8n00i.svelte-1j8n00i{opacity:0}.title-3.svelte-1j8n00i.svelte-1j8n00i{transform:scaleY(0.95)}@media screen and (max-height: 600px){.section-container.svelte-1j8n00i.svelte-1j8n00i{height:auto}}@media screen and (min-width: 1269px){.absolute-container.svelte-1j8n00i.svelte-1j8n00i{transform:translateX(52.5%);position:absolute;right:0;left:unset}.title-0.svelte-1j8n00i.svelte-1j8n00i{font-size:3.75rem}.title-1.svelte-1j8n00i.svelte-1j8n00i{font-size:4.05rem}.title-2.svelte-1j8n00i.svelte-1j8n00i{font-size:4.8rem}.title-3.svelte-1j8n00i.svelte-1j8n00i{font-size:9.1rem}}@media screen and (max-width: 1268px){.absolute-container.svelte-1j8n00i.svelte-1j8n00i{transform:none}video.svelte-1j8n00i.svelte-1j8n00i{left:50%;transform:translateX(-50%)}.projects.svelte-1j8n00i.svelte-1j8n00i{text-align:center;width:100%}.project-card.svelte-1j8n00i.svelte-1j8n00i{padding:1rem;margin:auto;width:100%}.section-container.svelte-1j8n00i.svelte-1j8n00i{height:auto;overflow-y:hidden}.inactive.svelte-1j8n00i.svelte-1j8n00i{border-bottom:1px solid transparent;border-top:1px solid transparent}.active.svelte-1j8n00i.svelte-1j8n00i{background:rgba(var(--primary-color-rgb), 0.8);border-bottom:1px solid var(--accent-color);border-top:1px solid var(--accent-color)}.project-card.svelte-1j8n00i.svelte-1j8n00i{display:flex;place-items:center;justify-content:center}.title-0.svelte-1j8n00i.svelte-1j8n00i{font-size:5.69vw}.title-1.svelte-1j8n00i.svelte-1j8n00i{font-size:6.2vw}.title-2.svelte-1j8n00i.svelte-1j8n00i{font-size:7.3vw}.title-3.svelte-1j8n00i.svelte-1j8n00i{font-size:13.9vw}}@media screen and (max-width: 538px){.title-0.svelte-1j8n00i.svelte-1j8n00i{font-size:8.9vw}.title-1.svelte-1j8n00i.svelte-1j8n00i{font-size:11.2vw}.title-2.svelte-1j8n00i.svelte-1j8n00i{font-size:11.3vw}.title-3.svelte-1j8n00i.svelte-1j8n00i{font-size:14vw}}.loading.svelte-1j8n00i.svelte-1j8n00i{display:inline-block;width:80px;height:80px;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);z-index:1}.loading.svelte-1j8n00i.svelte-1j8n00i:after{content:" ";display:block;width:64px;height:64px;margin:8px;border-radius:50%;border:6px solid #8e8a8a;border-color:#8e8a8a transparent #8e8a8a transparent;animation:svelte-1j8n00i-spin 1.2s ease infinite;z-index:1}@keyframes svelte-1j8n00i-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}',
       map: null
     };
     HoverVideo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $$unsubscribe_isTouchscreen;
       let $windowHeight, $$unsubscribe_windowHeight;
+      $$unsubscribe_isTouchscreen = subscribe(isTouchscreen, (value2) => value2);
       $$unsubscribe_windowHeight = subscribe(windowHeight, (value2) => $windowHeight = value2);
       let { projects } = $$props;
       let { videos } = $$props;
@@ -21191,26 +23041,31 @@ var init_index_ec7d7444 = __esm({
         $$bindings.videos(videos);
       if ($$props.videosLoaded === void 0 && $$bindings.videosLoaded && videosLoaded !== void 0)
         $$bindings.videosLoaded(videosLoaded);
-      $$result.css.add(css$6);
+      $$result.css.add(css$52);
+      $$unsubscribe_isTouchscreen();
       $$unsubscribe_windowHeight();
       return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
-        default: () => `<div class="${"section-container svelte-1f921ml"}" style="${"height: " + escape(Math.max($windowHeight * 0.6, 500)) + "px"}"><div class="${"projects svelte-1f921ml"}">${each(projects, (project, i) => `<a${add_attribute("href", project.path.replace(/\.[^/.]+$/, ""), 0)} sveltekit:prefetch class="${"project-card no-underline " + escape(value === i ? "active" : "inactive") + " " + escape("") + " svelte-1f921ml"}"><h1 class="${"title-" + escape(i) + " svelte-1f921ml"}">${escape(project.metadata.title)}</h1>
-        </a>`)}</div>
-    <div class="${"absolute-container svelte-1f921ml"}"><video preload="${"metadata"}" autoplay muted playsinline id="${"video"}" class="${["svelte-1f921ml", ""].join(" ").trim()}"${add_attribute("this", video, 0)}></video></div></div>`
+        default: () => `<div class="${"section-container svelte-1j8n00i"}" style="${"height: " + escape(Math.max($windowHeight * 0.6, 550)) + "px"}"><div class="${"projects svelte-1j8n00i"}">${each(projects, (project, i) => `<div sveltekit:prefetch class="${"project-card no-underline " + escape(value === i ? "active" : "inactive") + " " + escape("") + " svelte-1j8n00i"}"><h1 class="${"title-" + escape(i) + " svelte-1j8n00i"}">${escape(project.metadata.title)}</h1>
+        </div>`)}</div>
+    <div class="${"absolute-container svelte-1j8n00i"}">${videos[0] ? `<video preload="${"auto"}" autoplay muted playsinline id="${"video"}" class="${["svelte-1j8n00i", ""].join(" ").trim()}"${add_attribute("this", video, 0)}></video>` : `<div class="${"loading svelte-1j8n00i"}"></div>`}</div></div>`
       })}`;
     });
-    css$52 = {
-      code: "section.svelte-18iem3v{margin:auto;margin-bottom:var(--section-margin-bottom);width:100%;overflow:hidden}.see-all-flex.svelte-18iem3v,#projects-title.svelte-18iem3v{width:95%;max-width:1168px;margin-left:auto;margin-right:auto}#projects-title.svelte-18iem3v{margin-bottom:0}section.svelte-18iem3v{overflow:visible}",
+    css$42 = {
+      code: "section.svelte-1wc5mcr{margin:auto;margin-bottom:var(--section-margin-bottom);width:100%;overflow-y:visible}.see-all-flex.svelte-1wc5mcr,#projects-title.svelte-1wc5mcr{width:95%;max-width:1168px;margin-left:auto;margin-right:auto}#projects-title.svelte-1wc5mcr{margin-bottom:0}.projects-container.svelte-1wc5mcr{display:grid;grid-template-columns:repeat(2, 1fr);grid-gap:10px;width:100%;margin:auto;padding:1rem;max-width:1168px}@media screen and (max-width: 700px){.projects-container.svelte-1wc5mcr{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr)}}",
       map: null
     };
     Projects = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $isHEVC, $$unsubscribe_isHEVC;
+      let $isPre1015, $$unsubscribe_isPre1015;
+      $$unsubscribe_isHEVC = subscribe(isHEVC, (value) => $isHEVC = value);
+      $$unsubscribe_isPre1015 = subscribe(isPre1015, (value) => $isPre1015 = value);
       let { projects } = $$props;
       let element;
       let intersecting;
       let filteredProjects = projects.filter((d) => d.metadata.featured == true);
       let videos = [];
       function preload(i) {
-        let videoUrl = `./videos/${i}.webm`;
+        let videoUrl = $isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`;
         let req = fetch(videoUrl).then((response) => response.blob());
         req.then((blob) => {
           videos[i] = blob;
@@ -21219,7 +23074,7 @@ var init_index_ec7d7444 = __esm({
       let videosLoaded = false;
       if ($$props.projects === void 0 && $$bindings.projects && projects !== void 0)
         $$bindings.projects(projects);
-      $$result.css.add(css$52);
+      $$result.css.add(css$42);
       let $$settled;
       let $$rendered;
       do {
@@ -21228,37 +23083,41 @@ var init_index_ec7d7444 = __esm({
           if (intersecting) {
             for (let i = 0; i < filteredProjects.length; i++) {
               preload(i);
-              if (i == filteredProjects.length - 1)
-                videosLoaded = true;
             }
           }
         }
+        videosLoaded = videos.length == 4;
         $$rendered = `${validate_component(IntersectionObserver_1, "IntersectionObserver").$$render($$result, { element, once: true, intersecting }, {
           intersecting: ($$value) => {
             intersecting = $$value;
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"projects"}" class="${"svelte-18iem3v"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"see-all-flex svelte-18iem3v"}"><h1 class="${"page-overline"}">
-          01. Selected projects
-        </h1>
-        <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/project"}">See all projects \u2197
-        </a></div>
-      ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#projects-title" }, {}, {
-            default: () => `<h1 id="${"projects-title"}" class="${"section-title overflow-hidden svelte-18iem3v"}">Projects I\u2019ve
-          <span class="${"gradient-accented bolded"}">built</span></h1>`
-          })}</div>
-    ${`${validate_component(HoverVideo, "HoverVideo").$$render($$result, {
+          default: () => `<section id="${"projects"}" class="${"svelte-1wc5mcr"}"${add_attribute("this", element, 0)}><div class="${"see-all-flex svelte-1wc5mcr"}"><h1 class="${"page-overline"}">
+        01. Selected projects
+      </h1>
+      <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/project"}">See all projects \u2197
+      </a></div>
+    ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#projects-title" }, {}, {
+            default: () => `<h1 id="${"projects-title"}" class="${"section-title overflow-hidden svelte-1wc5mcr"}">Projects I\u2019ve
+        <span class="${"gradient-accented bolded"}">built</span></h1>`
+          })}
+    ${$isPre1015 ? `<div class="${"projects-container svelte-1wc5mcr"}">${each(filteredProjects, (project) => `${validate_component(Project, "ProjectSection").$$render($$result, {
+            project: project.metadata,
+            slug: project.path.replace(/\.[^/.]+$/, "").replace("./", "/")
+          }, {}, {})}`)}</div>` : `${validate_component(HoverVideo, "HoverVideo").$$render($$result, {
             projects: filteredProjects,
             videos,
             videosLoaded
           }, {}, {})}`}</section>`
         })}`;
       } while (!$$settled);
+      $$unsubscribe_isHEVC();
+      $$unsubscribe_isPre1015();
       return $$rendered;
     });
-    css$42 = {
-      code: '.post-container.svelte-137y06u.svelte-137y06u{display:block;width:100%;height:100%;padding:1rem 1rem 2rem 1rem;overflow:hidden;transition:all 100ms linear, border 300ms ease;cursor:pointer;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);position:relative}.post-card.svelte-137y06u.svelte-137y06u{display:flex;flex-direction:column;justify-content:space-between;height:100%;pointer-events:none}.post-date.svelte-137y06u.svelte-137y06u{text-transform:uppercase;letter-spacing:0.34px;font-size:1rem;font-family:var(--font-serif);color:var(--off-text-color);font-weight:200;margin-bottom:0.75rem}.post-title.svelte-137y06u.svelte-137y06u{font-size:1.5rem;margin-bottom:0.75rem;font-family:var(--font-sans);font-weight:500;line-height:1.2}.post-description.svelte-137y06u.svelte-137y06u{font-size:1.2rem;font-family:var(--font-sans);font-weight:200;line-height:1.15}.post-misc.svelte-137y06u.svelte-137y06u{margin-top:1rem;display:flex;justify-content:space-between;place-items:flex-end}.read-more.svelte-137y06u.svelte-137y06u{text-align:left;color:var(--accent-color)}.post-tags.svelte-137y06u.svelte-137y06u{text-align:right}.post-tag.svelte-137y06u.svelte-137y06u{font-family:var(--font-sans);padding:3px 8px;background:rgba(var(--accent-color-rgb), 0.05);margin:2px;margin-right:2px;border-radius:3px;color:rgba(var(--accent-color-rgb), 1);font-size:0.85rem;font-weight:200;text-transform:uppercase;margin-right:0.25rem;letter-spacing:1px}.featured-star.svelte-137y06u.svelte-137y06u{position:absolute;top:0;right:0;padding:6px}.unhovered.svelte-137y06u.svelte-137y06u{filter:grayscale(0.7);border-bottom:1px solid rgba(var(--text-color-rgb), 0.05)}.post-container.svelte-137y06u.svelte-137y06u::after{content:"";position:absolute;width:100%;transform:scaleX(0);height:1px;bottom:0;left:0;background-color:var(--accent-color);transform-origin:bottom left;transition:transform 500ms ease}.post-container.svelte-137y06u.svelte-137y06u:hover::after{transform:scaleX(1)}.unhovered.svelte-137y06u .post-date.svelte-137y06u,.unhovered.svelte-137y06u .post-title.svelte-137y06u,.unhovered.svelte-137y06u .post-description.svelte-137y06u,.unhovered.svelte-137y06u .post-tag.svelte-137y06u,.unhovered.svelte-137y06u .featured-star.svelte-137y06u{color:transparent;opacity:0.5;text-shadow:0 0 2px var(--text-color)}.post-date.svelte-137y06u.svelte-137y06u,.post-title.svelte-137y06u.svelte-137y06u,.post-description.svelte-137y06u.svelte-137y06u,.post-tag.svelte-137y06u.svelte-137y06u,.featured-star.svelte-137y06u.svelte-137y06u{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}@media screen and (max-width: 400px){.post-date.svelte-137y06u.svelte-137y06u{font-size:0.85rem}.post-title.svelte-137y06u.svelte-137y06u{font-size:1.2rem;margin-bottom:1rem}.post-description.svelte-137y06u.svelte-137y06u{font-size:1rem}.post-tag.svelte-137y06u.svelte-137y06u{font-size:0.75rem}}',
+    css$32 = {
+      code: '.post-container.svelte-fibkw1.svelte-fibkw1{display:block;width:100%;height:100%;padding:1rem 1rem 2rem 1rem;overflow:hidden;transition:all 100ms linear, border 300ms ease;cursor:pointer;border-bottom:1px solid rgba(var(--text-color-rgb), 0.2);position:relative}.post-card.svelte-fibkw1.svelte-fibkw1{display:flex;flex-direction:column;justify-content:space-between;height:100%;pointer-events:none}.post-date.svelte-fibkw1.svelte-fibkw1{text-transform:uppercase;letter-spacing:0.34px;font-size:1rem;font-family:var(--font-serif);color:var(--off-text-color);font-weight:200;margin-bottom:0.75rem}.post-title.svelte-fibkw1.svelte-fibkw1{font-size:1.5rem;margin-bottom:0.75rem;font-family:var(--font-sans);font-weight:500;line-height:1.2}.post-description.svelte-fibkw1.svelte-fibkw1{font-size:1.2rem;font-family:var(--font-sans);font-weight:200;line-height:1.15}.post-misc.svelte-fibkw1.svelte-fibkw1{margin-top:1rem;display:flex;justify-content:space-between;place-items:flex-end}.read-more.svelte-fibkw1.svelte-fibkw1{text-align:left;color:var(--accent-color)}.post-tags.svelte-fibkw1.svelte-fibkw1{text-align:right}.post-tag.svelte-fibkw1.svelte-fibkw1{font-family:var(--font-sans);padding:3px 8px;background:rgba(var(--accent-color-rgb), 0.1);margin:2px;margin-right:2px;border-radius:3px;color:rgba(var(--accent-color-rgb), 1);font-size:0.85rem;font-weight:400;text-transform:uppercase;margin-right:0.25rem;letter-spacing:1px}.featured-star.svelte-fibkw1.svelte-fibkw1{position:absolute;top:0;right:0;padding:6px}.unhovered.svelte-fibkw1.svelte-fibkw1{filter:grayscale(0.7);border-bottom:1px solid rgba(var(--text-color-rgb), 0.05)}.post-container.svelte-fibkw1.svelte-fibkw1::after{content:"";position:absolute;width:100%;transform:scaleX(0);height:1px;bottom:0;left:0;background-color:var(--accent-color);transform-origin:bottom left;transition:transform 500ms ease}.post-container.svelte-fibkw1.svelte-fibkw1:hover::after{transform:scaleX(1)}.unhovered.svelte-fibkw1 .post-date.svelte-fibkw1,.unhovered.svelte-fibkw1 .post-title.svelte-fibkw1,.unhovered.svelte-fibkw1 .post-description.svelte-fibkw1,.unhovered.svelte-fibkw1 .post-tag.svelte-fibkw1,.unhovered.svelte-fibkw1 .featured-star.svelte-fibkw1{color:transparent;opacity:0.5;text-shadow:0 0 2px var(--text-color)}.post-date.svelte-fibkw1.svelte-fibkw1,.post-title.svelte-fibkw1.svelte-fibkw1,.post-description.svelte-fibkw1.svelte-fibkw1,.post-tag.svelte-fibkw1.svelte-fibkw1,.featured-star.svelte-fibkw1.svelte-fibkw1{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}@media screen and (max-width: 400px){.post-date.svelte-fibkw1.svelte-fibkw1{font-size:0.85rem}.post-title.svelte-fibkw1.svelte-fibkw1{font-size:1.2rem;margin-bottom:1rem}.post-description.svelte-fibkw1.svelte-fibkw1{font-size:1rem}.post-tag.svelte-fibkw1.svelte-fibkw1{font-size:0.75rem}}',
       map: null
     };
     BlogText = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -21275,9 +23134,9 @@ var init_index_ec7d7444 = __esm({
         $$bindings.anyHovered(anyHovered);
       if ($$props.index === void 0 && $$bindings.index && index !== void 0)
         $$bindings.index(index);
-      $$result.css.add(css$42);
+      $$result.css.add(css$32);
       return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
-        default: () => `<a class="${"post-container no-underline " + escape(post.featured ? "featured" : "") + " " + escape(anyHovered ? "unhovered" : "") + " svelte-137y06u"}" sveltekit:prefetch${add_attribute("href", slug, 0)}>${post.featured ? `<div class="${"featured-star svelte-137y06u"}">${validate_component(Star, "Star").$$render($$result, {
+        default: () => `<a class="${"post-container no-underline " + escape(post.featured ? "featured" : "") + " " + escape(anyHovered ? "unhovered" : "") + " svelte-fibkw1"}" sveltekit:prefetch${add_attribute("href", slug, 0)}>${post.featured ? `<div class="${"featured-star svelte-fibkw1"}">${validate_component(Star, "Star").$$render($$result, {
           width: "20",
           height: "20",
           fill: "var(--accent-color)",
@@ -21285,14 +23144,14 @@ var init_index_ec7d7444 = __esm({
           hovered,
           index
         }, {}, {})}</div>` : ``}
-    <div class="${"post-card svelte-137y06u"}"><div class="${"post-info"}"><h2 class="${"post-date svelte-137y06u"}">${escape(dateFormat(post.date))}</h2>
-        <h1 class="${"post-title svelte-137y06u"}">${escape(post.title)}</h1>
-        <h2 class="${"post-description svelte-137y06u"}">${escape(post.description)}</h2></div>
-      <div class="${"post-misc svelte-137y06u"}">${`<p class="${"placeholder"}">\u200B\u200B</p>`}
-        <div class="${"post-tags svelte-137y06u"}">${each(post.tags, (tag) => `<span class="${"post-tag svelte-137y06u"}">${escape(tag)}</span>`)}</div></div></div></a>`
+    <div class="${"post-card svelte-fibkw1"}"><div class="${"post-info"}"><h2 class="${"post-date svelte-fibkw1"}">${escape(dateFormat(post.date))}</h2>
+        <h1 class="${"post-title svelte-fibkw1"}"><!-- HTML_TAG_START -->${post.title}<!-- HTML_TAG_END --></h1>
+        <h2 class="${"post-description svelte-fibkw1"}"><!-- HTML_TAG_START -->${post.description}<!-- HTML_TAG_END --></h2></div>
+      <div class="${"post-misc svelte-fibkw1"}">${`<p class="${"placeholder"}">\u200B\u200B</p>`}
+        <div class="${"post-tags svelte-fibkw1"}">${each(post.tags, (tag) => `<span class="${"post-tag svelte-fibkw1"}">${escape(tag)}</span>`)}</div></div></div></a>`
       })}`;
     });
-    css$32 = {
+    css$23 = {
       code: "section.svelte-1jgk20q{width:100%;margin-bottom:var(--section-margin-bottom)}.width-container.svelte-1jgk20q{width:95%;max-width:1168px;margin-left:auto;margin-right:auto}.posts-grid.svelte-1jgk20q{display:grid;grid-template-columns:repeat(2, 1fr);grid-column-gap:3rem;justify-items:center;grid-row-gap:1rem}@media screen and (max-width: 1000px){.posts-grid.svelte-1jgk20q{grid-template-columns:repeat(2, 1fr)}}@media screen and (max-width: 700px){.posts-grid.svelte-1jgk20q{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr);grid-auto-rows:auto;width:95%}}",
       map: null
     };
@@ -21301,7 +23160,7 @@ var init_index_ec7d7444 = __esm({
       let { isMobile } = $$props;
       let { posts } = $$props;
       let anyHovered = false;
-      let filteredPosts = posts.filter((d) => !d.metadata.draft && !d.metadata.archived).sort((a, b) => {
+      let filteredPosts = posts.filter((d) => !d.metadata?.draft && !d.metadata?.archived).sort((a, b) => {
         if (b.metadata.featured && !a.metadata.featured)
           return 1;
         if (!b.metadata.featured && a.metadata.featured)
@@ -21317,7 +23176,7 @@ var init_index_ec7d7444 = __esm({
         $$bindings.isMobile(isMobile);
       if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
         $$bindings.posts(posts);
-      $$result.css.add(css$32);
+      $$result.css.add(css$23);
       let $$settled;
       let $$rendered;
       do {
@@ -21329,18 +23188,18 @@ var init_index_ec7d7444 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"blog"}" class="${"svelte-1jgk20q"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"width-container svelte-1jgk20q"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
-            03. Selected blog posts
-          </h1>
-          <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/post"}">See all posts \u2197</a></div>
-        ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#posts-title" }, {}, {
+          default: () => `<section id="${"blog"}" class="${"svelte-1jgk20q"}"${add_attribute("this", element, 0)}><div class="${"width-container svelte-1jgk20q"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
+          03. Selected blog posts
+        </h1>
+        <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/post"}">See all posts \u2197</a></div>
+      ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#posts-title" }, {}, {
             default: () => `<h1 id="${"posts-title"}" class="${"section-title overflow-hidden"}">Posts I\u2019ve
-            <span class="${"gradient-accented bolded"}">written</span>\u200B
-          </h1>`
-          })}</div></div>
+          <span class="${"gradient-accented bolded"}">written</span>\u200B
+        </h1>`
+          })}</div>
     <div class="${"posts-grid width-container svelte-1jgk20q"}">${each(finalPosts, (post, index) => `${validate_component(BlogText, "BlogSection").$$render($$result, {
             post: post.metadata,
-            slug: post.path.replace(/\.[^/.]+$/, ""),
+            slug: post.path.replace(/\.[^/.]+$/, "").replace("./", "/"),
             index,
             anyHovered
           }, {
@@ -21353,7 +23212,7 @@ var init_index_ec7d7444 = __esm({
       } while (!$$settled);
       return $$rendered;
     });
-    css$22 = {
+    css$13 = {
       code: "section.svelte-9nxrt5{width:95%;max-width:1168px;margin:auto;margin-bottom:var(--section-margin-bottom)}",
       map: null
     };
@@ -21374,7 +23233,7 @@ var init_index_ec7d7444 = __esm({
         $$bindings.isMobile(isMobile);
       if ($$props.awards === void 0 && $$bindings.awards && awards !== void 0)
         $$bindings.awards(awards);
-      $$result.css.add(css$22);
+      $$result.css.add(css$13);
       let $$settled;
       let $$rendered;
       do {
@@ -21386,18 +23245,18 @@ var init_index_ec7d7444 = __esm({
             $$settled = false;
           }
         }, {
-          default: () => `<section id="${"awards"}" class="${"svelte-9nxrt5"}"${add_attribute("this", element, 0)}><div class="${"section-title-container"}"><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
-          02. Selected awards
-        </h1>
-        <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/award"}">See all awards \u2197</a></div>
-      ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#awards-title" }, {}, {
+          default: () => `<section id="${"awards"}" class="${"svelte-9nxrt5"}"${add_attribute("this", element, 0)}><div class="${"see-all-flex"}"><h1 class="${"page-overline"}">
+        02. Selected awards
+      </h1>
+      <a class="${"page-overline padding-bottom see-all"}" sveltekit:prefetch href="${"/award"}">See all awards \u2197</a></div>
+    ${validate_component(SectionTitle, "SectionTitle").$$render($$result, { intersecting, element: "#awards-title" }, {}, {
             default: () => `<h1 id="${"awards-title"}" class="${"section-title overflow-hidden"}">Awards I\u2019ve
-          <span class="${"gradient-accented bolded "}">won</span></h1>`
-          })}</div>
+        <span class="${"gradient-accented bolded "}">won</span></h1>`
+          })}
 
-    <div class="${"awards-grid"}">${each(filteredAwards, (award, index) => `${validate_component(Award, "AwardSection").$$render($$result, {
+    <div class="${"awards-grid"}">${each(filteredAwards, (award) => `${validate_component(Award, "AwardSection").$$render($$result, {
             award: award.metadata,
-            slug: award.path.replace(/\.[^/.]+$/, ""),
+            slug: award.path.replace(/\.[^/.]+$/, "").replace("./", "/"),
             anyHovered
           }, {
             anyHovered: ($$value) => {
@@ -21409,20 +23268,8 @@ var init_index_ec7d7444 = __esm({
       } while (!$$settled);
       return $$rendered;
     });
-    css$12 = {
-      code: ".circle.svelte-hfj58p{position:sticky;right:6px;bottom:6px;padding:1rem;z-index:99;overflow:hidden;width:min-content;margin-left:auto;margin-right:6px;transform:translateZ(0);transition:all 600ms ease;cursor:pointer}.circle.svelte-hfj58p:hover{transform:scale3d(1.05, 1.05, 1.05)}img.svelte-hfj58p{position:absolute;border-radius:50%;width:100px;height:100px;object-fit:contain;transform:scale(0.795);z-index:100}text.svelte-hfj58p{fill:var(--text-color);font-family:var(--font-serif);font-weight:200;font-size:63px;letter-spacing:-1px;text-shadow:1px 0px 0px var(--pure-background-color);user-select:none}path.svelte-hfj58p{fill:rgba(var(--accent-color-rgb), 0.2)}.circleText.svelte-hfj58p{width:100px;height:100px;overflow:visible;transform-origin:center center;stroke-opacity:0.75;animation:svelte-hfj58p-rotate 25s linear infinite}@keyframes svelte-hfj58p-rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@media screen and (max-width: 560px){.circle.svelte-hfj58p{display:none}}",
-      map: null
-    };
-    CircleText = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let text;
-      $$result.css.add(css$12);
-      text = "\u{1F44B} Connor \u{1F440} Rothschild \u{1F920} Connor \u{1F525} Rothschild";
-      return `<div class="${"circle svelte-hfj58p"}" sveltekit:prefetch>${``}
-  <svg class="${"circleText svelte-hfj58p"}" viewBox="${"0 0 500 500"}" data-duration="${"5"}"><path id="${"circle"}" fill="${"none"}" data-duration="${"5"}" d="${"M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"}" class="${"svelte-hfj58p"}"></path><text dy="${"-25"}" class="${"svelte-hfj58p"}"><textPath xlink:href="${"#circle"}">${escape(text)}</textPath></text></svg>
-</div>`;
-    });
-    css16 = {
-      code: "main.svelte-anfs99{width:100%;margin:0 auto;display:flex;flex-direction:column;justify-content:center;background-color:var(--primary-color);z-index:100}",
+    css23 = {
+      code: "main.svelte-sllhw3{width:100%;margin:0 auto;display:flex;flex-direction:column;justify-content:center;z-index:100;position:relative}",
       map: null
     };
     Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -21437,23 +23284,21 @@ var init_index_ec7d7444 = __esm({
         $$bindings.posts(posts);
       if ($$props.awards === void 0 && $$bindings.awards && awards !== void 0)
         $$bindings.awards(awards);
-      $$result.css.add(css16);
+      $$result.css.add(css23);
       isMobile = pageWidth < 768;
       return `
-<main id="${"home"}" class="${"svelte-anfs99"}">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}
-  
+<main id="${"home"}" class="${"svelte-sllhw3"}">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}
   ${validate_component(Projects, "Projects").$$render($$result, { projects }, {}, {})}
   ${validate_component(Awards, "Awards").$$render($$result, { awards, isMobile }, {}, {})}
   ${validate_component(Blog, "Blog").$$render($$result, { posts, isMobile }, {}, {})}
-  ${validate_component(CircleText, "Circle").$$render($$result, {}, {}, {})}
 </main>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-1d23e8c8.js
-var index_1d23e8c8_exports = {};
-__export(index_1d23e8c8_exports, {
+// .svelte-kit/output/server/chunks/index-67e3a7e4.js
+var index_67e3a7e4_exports = {};
+__export(index_67e3a7e4_exports, {
   default: () => Experience,
   load: () => load3
 });
@@ -21462,18 +23307,16 @@ async function load3({ fetch: fetch2 }) {
   const jobs = await res.json();
   return { props: { jobs } };
 }
-var import_bowser60, css$13, Job, css17, title, description, Experience;
-var init_index_1d23e8c8 = __esm({
-  ".svelte-kit/output/server/chunks/index-1d23e8c8.js"() {
+var css24, Job, title, description, Experience;
+var init_index_67e3a7e4 = __esm({
+  ".svelte-kit/output/server/chunks/index-67e3a7e4.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_BackTo_d882ed88();
-    init_TransitionInView_c90c9121();
-    init_store_8bf23024();
-    init_global_130d3fe3();
-    import_bowser60 = __toModule(require_es5());
-    init_IntersectionObserver_4cd4a541();
-    css$13 = {
+    init_app_89d516be();
+    init_BackTo_db5abc2d();
+    init_TransitionInView_75dc718e();
+    init_motion_65df28f6();
+    init_IntersectionObserver_20eeae9e();
+    css24 = {
       code: ".job-container.svelte-1unm16i.svelte-1unm16i{padding:2rem 0;border-bottom:1px dashed var(--accent-color);display:flex;align-items:center;justify-content:space-between;cursor:pointer}h2.svelte-1unm16i.svelte-1unm16i{font-size:44px;font-weight:200;text-transform:uppercase;letter-spacing:0.64px;transition:all 300ms linear}@media screen and (max-width: 1168px){.preview.svelte-1unm16i h2.svelte-1unm16i{font-size:2.85vw}}h3.svelte-1unm16i.svelte-1unm16i{color:var(--text-color);font-size:34px;margin-bottom:6px;transition:all 300ms ease}.job-image.svelte-1unm16i.svelte-1unm16i{margin-left:16px;width:40px;transition:width 300ms ease}.job-container.hovered.svelte-1unm16i.svelte-1unm16i{cursor:pointer;border-bottom:1px solid var(--accent-color)}.job-container.hovered.svelte-1unm16i h2.svelte-1unm16i{color:var(--accent-color);text-decoration:none !important;letter-spacing:1px}.job-container.hovered.svelte-1unm16i h3.svelte-1unm16i{color:var(--accent-color);text-decoration:none;transform:translateX(5px)}.flex-container.svelte-1unm16i.svelte-1unm16i{display:flex;width:100%;justify-content:space-between}@keyframes svelte-1unm16i-right{0%{transform:translateX(0px)}50%{transform:translateX(5px)}100%{transform:translateX(0px)}}@media(max-width: 768px){h2.svelte-1unm16i.svelte-1unm16i{font-size:1.75rem !important}.job-container.svelte-1unm16i.svelte-1unm16i{padding:1.5rem 0}.job-image.svelte-1unm16i.svelte-1unm16i{width:28px;margin-left:10px}}@media(max-width: 400px){h2.svelte-1unm16i.svelte-1unm16i{font-size:1.5rem !important}.job-image.svelte-1unm16i.svelte-1unm16i{width:22px}}",
       map: null
     };
@@ -21490,7 +23333,7 @@ var init_index_1d23e8c8 = __esm({
         $$bindings.preview(preview);
       if ($$props.hoveredFromChild === void 0 && $$bindings.hoveredFromChild && hoveredFromChild !== void 0)
         $$bindings.hoveredFromChild(hoveredFromChild);
-      $$result.css.add(css$13);
+      $$result.css.add(css24);
       return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
         default: () => `<a class="${[
           "job-container " + escape(hoveredFromChild == job.name ? "hovered" : "") + " svelte-1unm16i",
@@ -21500,39 +23343,26 @@ var init_index_1d23e8c8 = __esm({
     ${!preview ? `<h3 class="${"svelte-1unm16i"}">\u2192</h3>` : ``}</a>`
       })}`;
     });
-    css17 = {
-      code: "main.svelte-1p4srcu{max-width:860px;margin:0 auto;padding:1rem;width:95%;margin-top:var(--nav-height);margin-bottom:4rem}",
-      map: null
-    };
     title = "Experience | Connor Rothschild";
     description = "Some of my work experience.";
     Experience = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { jobs } = $$props;
       const sortedJobs = jobs.sort((a, b) => a.metadata.order - b.metadata.order);
-      set_store_value(seo, $seo = {
-        title,
-        description,
-        image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`
-      }, $seo);
+      let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
       if ($$props.jobs === void 0 && $$bindings.jobs && jobs !== void 0)
         $$bindings.jobs(jobs);
-      $$result.css.add(css17);
-      $$unsubscribe_seo();
       return `${validate_component(Transition, "Transition").$$render($$result, {}, {}, {})}
-<main class="${"svelte-1p4srcu"}">
-  ${validate_component(BackTo, "BackTo").$$render($$result, {
+${validate_component(Seo, "Seo").$$render($$result, { title, description, image }, {}, {})}
+<main class="${"main"}">${validate_component(BackTo, "BackTo").$$render($$result, {
         href: "/",
         text: "Home",
-        classes: "page-overline transition-subtitle centered"
+        classes: "page-overline transition-content centered"
       }, {}, {})}
-  <h1 class="${"page-title transition-title overflow-hidden"}">Work
-    </h1>
+  <h1 class="${"page-title transition-title overflow-hidden"}">Work</h1>
 
   <div class="${"transition-content"}">${each(sortedJobs, (job) => `${validate_component(Job, "JobSection").$$render($$result, {
         job: job.metadata,
-        slug: job.path.replace(/\.[^/.]+$/, ""),
+        slug: job.path.replace(/\.[^/.]+$/, "").replace("./", "/"),
         preview: false,
         hoveredFromChild: null
       }, {}, {})}`)}</div>
@@ -21541,10 +23371,10 @@ var init_index_1d23e8c8 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-d2625cbc.js
-var index_d2625cbc_exports = {};
-__export(index_d2625cbc_exports, {
-  default: () => Project,
+// .svelte-kit/output/server/chunks/index-acd06dca.js
+var index_acd06dca_exports = {};
+__export(index_acd06dca_exports, {
+  default: () => Project2,
   load: () => load4
 });
 async function load4({ fetch: fetch2 }) {
@@ -21552,44 +23382,25 @@ async function load4({ fetch: fetch2 }) {
   const projects = await res.json();
   return { props: { projects } };
 }
-var import_bowser61, css$14, Project$1, css18, title2, description2, Project;
-var init_index_d2625cbc = __esm({
-  ".svelte-kit/output/server/chunks/index-d2625cbc.js"() {
+var import_bowser4, css25, title2, description2, Project2;
+var init_index_acd06dca = __esm({
+  ".svelte-kit/output/server/chunks/index-acd06dca.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_BackTo_d882ed88();
-    import_bowser61 = __toModule(require_es5());
-    init_TransitionInView_c90c9121();
-    init_store_8bf23024();
-    init_global_130d3fe3();
-    init_IntersectionObserver_4cd4a541();
-    css$14 = {
-      code: ".project-card.svelte-16vzxrt{position:relative;border-radius:5px;box-shadow:1px 1px 4px var(--box-shadow-color);height:100%;height:100%;cursor:pointer;display:block}.project-image.svelte-16vzxrt{width:100%;height:100%;min-height:200px;object-fit:cover;border-radius:5px;filter:blur(0);z-index:0}.hovered-gradient.svelte-16vzxrt{position:absolute;background-image:linear-gradient(\n      to bottom,\n      rgba(0, 0, 0, 0),\n      rgba(0, 0, 0, 1)\n    );width:100%;height:100%;background-size:cover;pointer-events:none;border-radius:5px;z-index:1}.project-text.svelte-16vzxrt{position:absolute;bottom:0;left:0;pointer-events:none;padding:1.5rem;z-index:3}.title.svelte-16vzxrt,.description.svelte-16vzxrt{color:white}.title.svelte-16vzxrt{font-size:1.5rem;line-height:1.15;text-shadow:1px 1px 6px black}.description.svelte-16vzxrt{font-family:var(--font-sans);font-size:1rem;line-height:1.2;font-weight:300;margin-top:12px;letter-spacing:0.64px;text-shadow:1px 1px 6px black}@media screen and (max-width: 600px){.hovered-gradient.svelte-16vzxrt{background:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0))}.project-text.svelte-16vzxrt{padding:1rem}.title.svelte-16vzxrt{font-size:1.2rem}.description.svelte-16vzxrt{font-size:0.8rem;letter-spacing:0.3px;margin-top:6px}}",
-      map: null
-    };
-    Project$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { project } = $$props;
-      let { slug } = $$props;
-      if ($$props.project === void 0 && $$bindings.project && project !== void 0)
-        $$bindings.project(project);
-      if ($$props.slug === void 0 && $$bindings.slug && slug !== void 0)
-        $$bindings.slug(slug);
-      $$result.css.add(css$14);
-      return `${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
-        default: () => `<a class="${"project-card no-underline svelte-16vzxrt"}"${add_attribute("href", slug, 0)} sveltekit:prefetch>${``}
-    <img loading="${"lazy"}" src="${"/images/project/" + escape(project.image)}" alt="${"Project image for " + escape(project.title)}" class="${["project-image svelte-16vzxrt", ""].join(" ").trim()}">
-    ${``}</a>`
-      })}`;
-    });
-    css18 = {
-      code: "main.svelte-6zfycw{max-width:860px;margin:0 auto;padding:1rem;width:95%;margin-bottom:4rem;margin-top:var(--nav-height)}.projects-container.svelte-6zfycw{display:grid;grid-template-columns:repeat(2, 1fr);grid-gap:10px}@media screen and (max-width: 700px){.projects-container.svelte-6zfycw{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr)}}",
+    init_app_89d516be();
+    init_BackTo_db5abc2d();
+    init_Project_65892900();
+    init_motion_65df28f6();
+    init_device_3e76f971();
+    import_bowser4 = __toModule(require_es5());
+    init_TransitionInView_75dc718e();
+    init_IntersectionObserver_20eeae9e();
+    css25 = {
+      code: ".projects-container.svelte-uvasr7{display:grid;grid-template-columns:repeat(2, 1fr);grid-gap:10px}@media screen and (max-width: 700px){.projects-container.svelte-uvasr7{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr)}}",
       map: null
     };
     title2 = "Projects | Connor Rothschild";
     description2 = "Some of my projects.";
-    Project = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
+    Project2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { projects } = $$props;
       let filteredProjects = projects.filter((d) => d.metadata.archived != true).sort((a, b) => {
         if (b.metadata.featured && !a.metadata.featured)
@@ -21601,102 +23412,101 @@ var init_index_d2625cbc = __esm({
         if (Date.parse(b.metadata.date) < Date.parse(a.metadata.date))
           return -1;
       });
-      set_store_value(seo, $seo = {
-        title: title2,
-        description: description2,
-        image: `https://og-image-eight-eta.vercel.app/${title2}.png?subtitle=${description2}&theme=light&md=true&hasImage=true`
-      }, $seo);
+      let image = `https://og-image-eight-eta.vercel.app/${title2}.png?subtitle=${description2}&theme=light&md=true&hasImage=true`;
       if ($$props.projects === void 0 && $$bindings.projects && projects !== void 0)
         $$bindings.projects(projects);
-      $$result.css.add(css18);
-      $$unsubscribe_seo();
+      $$result.css.add(css25);
       return `${validate_component(Transition, "Transition").$$render($$result, {}, {}, {})}
-<main class="${"svelte-6zfycw"}">
-  ${validate_component(BackTo, "BackTo").$$render($$result, {
+${validate_component(Seo, "Seo").$$render($$result, { title: title2, description: description2, image }, {}, {})}
+<main class="${"main"}">${validate_component(BackTo, "BackTo").$$render($$result, {
         href: "/",
         text: "Home",
-        classes: "page-overline transition-subtitle centered"
+        classes: "page-overline transition-content centered"
       }, {}, {})}
-  <h1 class="${"page-title transition-title overflow-hidden"}">Projects
-    </h1>
+  <h1 class="${"page-title transition-title overflow-hidden"}">Projects</h1>
 
-  <div class="${"projects-container transition-content svelte-6zfycw"}">${each(filteredProjects, (project) => `${validate_component(Project$1, "ProjectSection").$$render($$result, {
+  <div class="${"projects-container transition-content svelte-uvasr7"}">${each(filteredProjects, (project) => `${validate_component(Project, "ProjectSection").$$render($$result, {
         project: project.metadata,
-        slug: project.path.replace(/\.[^/.]+$/, "")
+        slug: project.path.replace(/\.[^/.]+$/, "").replace("./", "/")
       }, {}, {})}`)}</div>
 </main>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-ad8386c5.js
-var index_ad8386c5_exports = {};
-__export(index_ad8386c5_exports, {
+// .svelte-kit/output/server/chunks/index-69543b34.js
+var index_69543b34_exports = {};
+__export(index_69543b34_exports, {
   default: () => About
 });
-var import_bowser62, css19, About;
-var init_index_ad8386c5 = __esm({
-  ".svelte-kit/output/server/chunks/index-ad8386c5.js"() {
+var css26, About;
+var init_index_69543b34 = __esm({
+  ".svelte-kit/output/server/chunks/index-69543b34.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_BackTo_d882ed88();
-    init_global_130d3fe3();
-    import_bowser62 = __toModule(require_es5());
-    css19 = {
-      code: "main.svelte-1lfi9v6.svelte-1lfi9v6{max-width:868px;width:95%;margin:0 auto;margin-bottom:4rem;margin-top:var(--nav-height)}p.svelte-1lfi9v6.svelte-1lfi9v6{margin-bottom:1.15rem;line-height:1.5}.conversation-container.svelte-1lfi9v6.svelte-1lfi9v6{display:flex;flex-wrap:wrap;width:100%;justify-content:space-between}.topic.svelte-1lfi9v6.svelte-1lfi9v6{flex:1 1 calc(50% - 1rem);padding:1rem 0;text-align:left}.topic-title.svelte-1lfi9v6.svelte-1lfi9v6{margin-bottom:1rem;font-size:1.75rem;font-weight:300;letter-spacing:0.025rem}li.svelte-1lfi9v6.svelte-1lfi9v6{list-style-type:none;padding-left:0;margin-left:0}.more.svelte-1lfi9v6.svelte-1lfi9v6{border-left:5px solid var(--accent-color);padding-left:1rem}.more.svelte-1lfi9v6 p.svelte-1lfi9v6{line-height:1.35}.else.svelte-1lfi9v6.svelte-1lfi9v6{transition:opacity 300ms ease}.else.showMore.svelte-1lfi9v6.svelte-1lfi9v6{opacity:0.2}.interested.svelte-1lfi9v6.svelte-1lfi9v6{cursor:pointer;border-bottom:1px solid var(--accent-color);padding-bottom:2px;user-select:none}.topic.svelte-1lfi9v6.svelte-1lfi9v6:nth-of-type(even){text-align:right}.abbr.svelte-1lfi9v6.svelte-1lfi9v6{position:relative;border-bottom:1px solid rgba(var(--text-color-rgb), 0.5);cursor:help}.abbr.svelte-1lfi9v6.svelte-1lfi9v6::after{position:absolute;bottom:100%;left:0;display:block;padding:0.75rem 1rem;margin-bottom:0.5rem;border-radius:5px;background:var(--pure-text-color);color:var(--pure-background-color);content:attr(desc);width:320px;line-height:1.25;font-size:1.1rem;font-weight:200;letter-spacing:-0.025rem;opacity:0;pointer-events:none;transition:opacity 0.3s ease-in-out;box-shadow:1px 1px 5px var(--box-shadow-color)}.abbr.svelte-1lfi9v6.svelte-1lfi9v6:hover::after{opacity:1}@media screen and (max-width: 375px){.abbr.svelte-1lfi9v6.svelte-1lfi9v6::after{width:260px}}@media screen and (max-width: 768px){.conversation-container.svelte-1lfi9v6.svelte-1lfi9v6{flex-direction:column}.topic-title.svelte-1lfi9v6.svelte-1lfi9v6{font-weight:400}}",
+    init_app_89d516be();
+    init_BackTo_db5abc2d();
+    init_motion_65df28f6();
+    css26 = {
+      code: "p.svelte-1atmguu{margin-bottom:1.15rem;line-height:1.25}.conversation-container.svelte-1atmguu{display:flex;flex-wrap:wrap;width:100%;justify-content:space-between;padding-bottom:2rem;border-bottom:1px solid rgba(var(--accent-color-rgb), 0.2)}.topic.svelte-1atmguu{flex:1 1 calc(50% - 1rem);padding:1rem 0;text-align:left;margin:1rem 1rem 0 0;border-radius:0.2rem}.topic.svelte-1atmguu:nth-child(even){text-align:right}.topic-title.svelte-1atmguu{margin-bottom:1rem;font-size:1.15rem;font-family:var(--font-sans);text-transform:uppercase;font-weight:700}li.svelte-1atmguu{list-style:none;font-weight:300;font-size:1.1rem;margin-bottom:0;padding-left:0;margin-left:0}.subsection.svelte-1atmguu{margin-top:2.5rem}.subsection-title.svelte-1atmguu{font-size:2.5rem;font-family:var(--font-serif);margin-bottom:1.5rem;text-align:center;text-transform:uppercase;font-weight:200}.larger.svelte-1atmguu{font-size:1.5rem;line-height:1.3;font-weight:400;margin-bottom:2rem;letter-spacing:-0.01rem;color:var(--text-color)}@media screen and (max-width: 768px){.conversation-container.svelte-1atmguu{flex-direction:column}}@media screen and (max-width: 568px){.topic.svelte-1atmguu{max-width:100%;margin:0.5rem 0}li.svelte-1atmguu{width:auto}.larger.svelte-1atmguu{font-size:1.25rem}}",
       map: null
     };
     About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css19);
+      $$result.css.add(css26);
       return `${validate_component(Transition, "Transition").$$render($$result, {}, {}, {})}
-<main class="${"svelte-1lfi9v6"}">${validate_component(BackTo, "BackTo").$$render($$result, {
+${validate_component(Seo, "Seo").$$render($$result, { title: `About | Connor Rothschild` }, {}, {})}
+<main class="${"main"}">${validate_component(BackTo, "BackTo").$$render($$result, {
         href: "/",
         text: "Home",
-        classes: "page-overline transition-subtitle centered"
+        classes: "page-overline transition-content centered"
       }, {}, {})}
-  <h1 class="${"page-title transition-title overflow-hidden"}">About</h1>
-  <div class="${"transition-content"}"><p class="${"svelte-1lfi9v6"}">Hi! I&#39;m Connor. <span class="${["else svelte-1lfi9v6", ""].join(" ").trim()}">I&#39;ll spare you the personal details about my life, unless</span>
-      <span class="${"interested svelte-1lfi9v6"}">${escape("you're")} really interested${escape(".")}</span></p>
-
-    ${``}
-    <div class="${["else svelte-1lfi9v6", ""].join(" ").trim()}"><p class="${"svelte-1lfi9v6"}">
-        Let me use your brief time on my website to say: I love learning from and
-        teaching passionate people, and hope that this site can be an outlet for
-        that.
+  <h1 class="${"page-title transition-title overflow-hidden"}" style="${"border-bottom: none; margin-bottom: 1rem; padding-bottom: 0;"}">Connor Rothschild
+  </h1>
+  <h2 class="${"content-description transition-subtitle centered overflow-hidden"}" style="${"padding-bottom: 2.5rem; margin-bottom: 4rem;"}">is a data scientist, web developer, and designer in Houston, TX.
+  </h2>
+  <div class="${"transition-content main-content"}">
+    
+    <div><p class="${"larger svelte-1atmguu"}">I live in Houston, Texas and work at Moksha Data. There, I lead our data
+        visualization and storytelling team and make microsites, interactives,
+        and visualizations for clients working in the social impact space.
       </p>
-
-      <p class="${"svelte-1lfi9v6"}"><span class="${"abbr svelte-1lfi9v6"}" desc="${"I know everyone says \u201Cplease reach out\u201D on their website, but I actually want you to \u{1F642}"}">Please reach out</span> if you&#39;re interested in talking about design, business strategy, data visualization,
-        or anything else you think I would be interested in. Need a conversation
-        starter? \u{1F447}
+      <p class="${"svelte-1atmguu"}">Please reach out (via <a class="${"link"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://twitter.com/intent/follow?screen_name=CL_Rothschild"}">Twitter</a>
+        or
+        <a class="${"link"}" target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"mailto:connor@connorrothschild.com"}">email</a>) if you\u2019re interested in working together, or just want to chat. Need
+        a conversation starter? \u{1F447}
       </p>
+      
 
-      <div class="${"conversation-container svelte-1lfi9v6"}"><div class="${"topic svelte-1lfi9v6"}"><h1 class="${"topic-title svelte-1lfi9v6"}">Things I&#39;m good at</h1>
-          <ul><li class="${"svelte-1lfi9v6"}">R</li>
-            <li class="${"svelte-1lfi9v6"}">Vue</li>
-            <li class="${"svelte-1lfi9v6"}">D3.js</li>
-            <li class="${"svelte-1lfi9v6"}">Svelte</li></ul></div>
-        <div class="${"topic svelte-1lfi9v6"}"><h1 class="${"topic-title svelte-1lfi9v6"}">Things I&#39;m learning</h1>
-          <ul><li class="${"svelte-1lfi9v6"}">Three.js</li>
-            <li class="${"svelte-1lfi9v6"}">Canvas</li>
-            <li class="${"svelte-1lfi9v6"}">Figma</li>
-            <li class="${"svelte-1lfi9v6"}">Web3</li></ul></div>
-        <div class="${"topic svelte-1lfi9v6"}"><h1 class="${"topic-title svelte-1lfi9v6"}">Ways I can help</h1>
-          <ul><li class="${"svelte-1lfi9v6"}">Early career advice (journalism, government)</li>
-            <li class="${"svelte-1lfi9v6"}">Starting your first personal website</li>
-            <li class="${"svelte-1lfi9v6"}">Technical book recommendations</li>
-            <li class="${"svelte-1lfi9v6"}">Feedback on dataviz</li></ul></div>
-        <div class="${"topic svelte-1lfi9v6"}"><h1 class="${"topic-title svelte-1lfi9v6"}">Miscellaneous</h1>
-          <ul><li class="${"svelte-1lfi9v6"}"><a target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"}">Music</a></li>
-            <li class="${"svelte-1lfi9v6"}"><a target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.are.na/connor-rothschild"}">Anything here</a></li>
-            <li class="${"svelte-1lfi9v6"}">Married at First Sight</li></ul></div></div></div></div>
+      <div class="${"conversation-container svelte-1atmguu"}"><div class="${"topic svelte-1atmguu"}"><h1 class="${"topic-title svelte-1atmguu"}">Things I\u2019m good at</h1>
+          <ul><li class="${"svelte-1atmguu"}">R</li>
+            <li class="${"svelte-1atmguu"}">Vue</li>
+            <li class="${"svelte-1atmguu"}">D3.js</li>
+            <li class="${"svelte-1atmguu"}">Svelte</li></ul></div>
+        <div class="${"topic svelte-1atmguu"}"><h1 class="${"topic-title svelte-1atmguu"}">Things I\u2019m learning</h1>
+          <ul><li class="${"svelte-1atmguu"}">Three.js</li>
+            <li class="${"svelte-1atmguu"}">Canvas</li>
+            <li class="${"svelte-1atmguu"}">Figma</li>
+            <li class="${"svelte-1atmguu"}">Web3</li></ul></div>
+        <div class="${"topic svelte-1atmguu"}"><h1 class="${"topic-title svelte-1atmguu"}">Ways I can help</h1>
+          <ul><li class="${"svelte-1atmguu"}">Starting your first personal website</li>
+            <li class="${"svelte-1atmguu"}">Technical book recommendations</li>
+            <li class="${"svelte-1atmguu"}">Feedback on dataviz</li>
+            <li class="${"svelte-1atmguu"}">Early career advice</li></ul></div>
+        <div class="${"topic svelte-1atmguu"}"><h1 class="${"topic-title svelte-1atmguu"}">Miscellaneous</h1>
+          <ul><li class="${"svelte-1atmguu"}"><a target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://open.spotify.com/user/12127359561?si=d02b4e64af7f420d"}">Music</a></li>
+            <li class="${"svelte-1atmguu"}"><a target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.fontshare.com/"}">Typography</a></li>
+            <li class="${"svelte-1atmguu"}"><a target="${"_blank"}" rel="${"noopener noreferrer"}" href="${"https://www.are.na/connor-rothschild"}">Anything here</a></li>
+            <li class="${"svelte-1atmguu"}">Married at First Sight</li></ul></div></div></div>
+    <div class="${"subsection svelte-1atmguu"}"><h2 class="${"subsection-title svelte-1atmguu"}" style="${"cursor: pointer;"}">(More Personal Stuff${escape("?")})
+      </h2>
+      ${``}</div></div>
 </main>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-11158698.js
-var index_11158698_exports = {};
-__export(index_11158698_exports, {
+// .svelte-kit/output/server/chunks/index-81eec2b9.js
+var index_81eec2b9_exports = {};
+__export(index_81eec2b9_exports, {
   default: () => Award2,
   load: () => load5
 });
@@ -21705,27 +23515,19 @@ async function load5({ fetch: fetch2 }) {
   const awards = await res.json();
   return { props: { awards } };
 }
-var import_bowser63, css20, title3, description3, Award2;
-var init_index_11158698 = __esm({
-  ".svelte-kit/output/server/chunks/index-11158698.js"() {
+var title3, description3, Award2;
+var init_index_81eec2b9 = __esm({
+  ".svelte-kit/output/server/chunks/index-81eec2b9.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_Award_42d31980();
-    init_BackTo_d882ed88();
-    init_store_8bf23024();
-    init_TransitionInView_c90c9121();
-    init_IntersectionObserver_4cd4a541();
-    init_global_130d3fe3();
-    import_bowser63 = __toModule(require_es5());
-    css20 = {
-      code: "main.svelte-10mid94{max-width:860px;margin:0 auto;padding:1rem;width:95%;margin-bottom:4rem;margin-top:var(--nav-height)}",
-      map: null
-    };
+    init_app_89d516be();
+    init_Award_a04c8779();
+    init_BackTo_db5abc2d();
+    init_TransitionInView_75dc718e();
+    init_IntersectionObserver_20eeae9e();
+    init_motion_65df28f6();
     title3 = "Awards | Connor Rothschild";
     description3 = "Some of my awards.";
     Award2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { awards } = $$props;
       awards.sort((a, b) => {
         if (Date.parse(b.metadata.date) > Date.parse(a.metadata.date))
@@ -21734,31 +23536,25 @@ var init_index_11158698 = __esm({
           return -1;
       });
       let anyHovered;
-      set_store_value(seo, $seo = {
-        title: title3,
-        description: description3,
-        image: `https://og-image-eight-eta.vercel.app/${title3}.png?subtitle=${description3}&theme=light&md=true&hasImage=true`
-      }, $seo);
+      let image = `https://og-image-eight-eta.vercel.app/${title3}.png?subtitle=${description3}&theme=light&md=true&hasImage=true`;
       if ($$props.awards === void 0 && $$bindings.awards && awards !== void 0)
         $$bindings.awards(awards);
-      $$result.css.add(css20);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
         $$rendered = `${validate_component(Transition, "Transition").$$render($$result, {}, {}, {})}
-<main class="${"svelte-10mid94"}">
-  ${validate_component(BackTo, "BackTo").$$render($$result, {
+${validate_component(Seo, "Seo").$$render($$result, { title: title3, description: description3, image }, {}, {})}
+<main class="${"main"}">${validate_component(BackTo, "BackTo").$$render($$result, {
           href: "/",
           text: "Home",
-          classes: "page-overline transition-subtitle centered"
+          classes: "page-overline transition-content centered"
         }, {}, {})}
-  <h1 class="${"page-title transition-title overflow-hidden"}">Awards
-    </h1>
+  <h1 class="${"page-title transition-title overflow-hidden"}">Awards</h1>
 
   <div class="${"awards-grid transition-content"}">${each(awards, (award) => `${validate_component(Award, "AwardSection").$$render($$result, {
           award: award.metadata,
-          slug: award.path.replace(/\.[^/.]+$/, ""),
+          slug: award.path.replace(/\.[^/.]+$/, "").replace("./", "/"),
           anyHovered
         }, {
           anyHovered: ($$value) => {
@@ -21768,1027 +23564,36 @@ var init_index_11158698 = __esm({
         }, {})}`)}</div>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-1de0c6e9.js
-var index_1de0c6e9_exports = {};
-__export(index_1de0c6e9_exports, {
+// .svelte-kit/output/server/chunks/index-a24a4714.js
+var index_a24a4714_exports = {};
+__export(index_a24a4714_exports, {
   default: () => Post,
   load: () => load6
 });
-function ascending(a, b) {
-  return a == null || b == null ? NaN : a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
-}
-function bisector(f) {
-  let delta = f;
-  let compare1 = f;
-  let compare2 = f;
-  if (f.length === 1) {
-    delta = (d, x) => f(d) - x;
-    compare1 = ascending;
-    compare2 = (d, x) => ascending(f(d), x);
-  }
-  function left(a, x, lo = 0, hi = a.length) {
-    if (lo < hi) {
-      if (compare1(x, x) !== 0)
-        return hi;
-      do {
-        const mid = lo + hi >>> 1;
-        if (compare2(a[mid], x) < 0)
-          lo = mid + 1;
-        else
-          hi = mid;
-      } while (lo < hi);
-    }
-    return lo;
-  }
-  function right(a, x, lo = 0, hi = a.length) {
-    if (lo < hi) {
-      if (compare1(x, x) !== 0)
-        return hi;
-      do {
-        const mid = lo + hi >>> 1;
-        if (compare2(a[mid], x) <= 0)
-          lo = mid + 1;
-        else
-          hi = mid;
-      } while (lo < hi);
-    }
-    return lo;
-  }
-  function center(a, x, lo = 0, hi = a.length) {
-    const i = left(a, x, lo, hi - 1);
-    return i > lo && delta(a[i - 1], x) > -delta(a[i], x) ? i - 1 : i;
-  }
-  return { left, center, right };
-}
-function number$1(x) {
-  return x === null ? NaN : +x;
-}
-function ticks(start, stop, count) {
-  var reverse, i = -1, n, ticks2, step;
-  stop = +stop, start = +start, count = +count;
-  if (start === stop && count > 0)
-    return [start];
-  if (reverse = stop < start)
-    n = start, start = stop, stop = n;
-  if ((step = tickIncrement(start, stop, count)) === 0 || !isFinite(step))
-    return [];
-  if (step > 0) {
-    let r0 = Math.round(start / step), r1 = Math.round(stop / step);
-    if (r0 * step < start)
-      ++r0;
-    if (r1 * step > stop)
-      --r1;
-    ticks2 = new Array(n = r1 - r0 + 1);
-    while (++i < n)
-      ticks2[i] = (r0 + i) * step;
-  } else {
-    step = -step;
-    let r0 = Math.round(start * step), r1 = Math.round(stop * step);
-    if (r0 / step < start)
-      ++r0;
-    if (r1 / step > stop)
-      --r1;
-    ticks2 = new Array(n = r1 - r0 + 1);
-    while (++i < n)
-      ticks2[i] = (r0 + i) / step;
-  }
-  if (reverse)
-    ticks2.reverse();
-  return ticks2;
-}
-function tickIncrement(start, stop, count) {
-  var step = (stop - start) / Math.max(0, count), power = Math.floor(Math.log(step) / Math.LN10), error2 = step / Math.pow(10, power);
-  return power >= 0 ? (error2 >= e10 ? 10 : error2 >= e5 ? 5 : error2 >= e2 ? 2 : 1) * Math.pow(10, power) : -Math.pow(10, -power) / (error2 >= e10 ? 10 : error2 >= e5 ? 5 : error2 >= e2 ? 2 : 1);
-}
-function tickStep(start, stop, count) {
-  var step0 = Math.abs(stop - start) / Math.max(0, count), step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)), error2 = step0 / step1;
-  if (error2 >= e10)
-    step1 *= 10;
-  else if (error2 >= e5)
-    step1 *= 5;
-  else if (error2 >= e2)
-    step1 *= 2;
-  return stop < start ? -step1 : step1;
-}
-function initRange(domain, range) {
-  switch (arguments.length) {
-    case 0:
-      break;
-    case 1:
-      this.range(domain);
-      break;
-    default:
-      this.range(range).domain(domain);
-      break;
-  }
-  return this;
-}
-function define2(constructor, factory, prototype) {
-  constructor.prototype = factory.prototype = prototype;
-  prototype.constructor = constructor;
-}
-function extend(parent, definition) {
-  var prototype = Object.create(parent.prototype);
-  for (var key in definition)
-    prototype[key] = definition[key];
-  return prototype;
-}
-function Color() {
-}
-function color_formatHex() {
-  return this.rgb().formatHex();
-}
-function color_formatHsl() {
-  return hslConvert(this).formatHsl();
-}
-function color_formatRgb() {
-  return this.rgb().formatRgb();
-}
-function color(format22) {
-  var m, l;
-  format22 = (format22 + "").trim().toLowerCase();
-  return (m = reHex.exec(format22)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) : l === 3 ? new Rgb(m >> 8 & 15 | m >> 4 & 240, m >> 4 & 15 | m & 240, (m & 15) << 4 | m & 15, 1) : l === 8 ? rgba(m >> 24 & 255, m >> 16 & 255, m >> 8 & 255, (m & 255) / 255) : l === 4 ? rgba(m >> 12 & 15 | m >> 8 & 240, m >> 8 & 15 | m >> 4 & 240, m >> 4 & 15 | m & 240, ((m & 15) << 4 | m & 15) / 255) : null) : (m = reRgbInteger.exec(format22)) ? new Rgb(m[1], m[2], m[3], 1) : (m = reRgbPercent.exec(format22)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) : (m = reRgbaInteger.exec(format22)) ? rgba(m[1], m[2], m[3], m[4]) : (m = reRgbaPercent.exec(format22)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) : (m = reHslPercent.exec(format22)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) : (m = reHslaPercent.exec(format22)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) : named.hasOwnProperty(format22) ? rgbn(named[format22]) : format22 === "transparent" ? new Rgb(NaN, NaN, NaN, 0) : null;
-}
-function rgbn(n) {
-  return new Rgb(n >> 16 & 255, n >> 8 & 255, n & 255, 1);
-}
-function rgba(r, g, b, a) {
-  if (a <= 0)
-    r = g = b = NaN;
-  return new Rgb(r, g, b, a);
-}
-function rgbConvert(o) {
-  if (!(o instanceof Color))
-    o = color(o);
-  if (!o)
-    return new Rgb();
-  o = o.rgb();
-  return new Rgb(o.r, o.g, o.b, o.opacity);
-}
-function rgb$1(r, g, b, opacity) {
-  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
-}
-function Rgb(r, g, b, opacity) {
-  this.r = +r;
-  this.g = +g;
-  this.b = +b;
-  this.opacity = +opacity;
-}
-function rgb_formatHex() {
-  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
-}
-function rgb_formatRgb() {
-  var a = this.opacity;
-  a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-  return (a === 1 ? "rgb(" : "rgba(") + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.b) || 0)) + (a === 1 ? ")" : ", " + a + ")");
-}
-function hex(value) {
-  value = Math.max(0, Math.min(255, Math.round(value) || 0));
-  return (value < 16 ? "0" : "") + value.toString(16);
-}
-function hsla(h, s2, l, a) {
-  if (a <= 0)
-    h = s2 = l = NaN;
-  else if (l <= 0 || l >= 1)
-    h = s2 = NaN;
-  else if (s2 <= 0)
-    h = NaN;
-  return new Hsl(h, s2, l, a);
-}
-function hslConvert(o) {
-  if (o instanceof Hsl)
-    return new Hsl(o.h, o.s, o.l, o.opacity);
-  if (!(o instanceof Color))
-    o = color(o);
-  if (!o)
-    return new Hsl();
-  if (o instanceof Hsl)
-    return o;
-  o = o.rgb();
-  var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max = Math.max(r, g, b), h = NaN, s2 = max - min, l = (max + min) / 2;
-  if (s2) {
-    if (r === max)
-      h = (g - b) / s2 + (g < b) * 6;
-    else if (g === max)
-      h = (b - r) / s2 + 2;
-    else
-      h = (r - g) / s2 + 4;
-    s2 /= l < 0.5 ? max + min : 2 - max - min;
-    h *= 60;
-  } else {
-    s2 = l > 0 && l < 1 ? 0 : h;
-  }
-  return new Hsl(h, s2, l, o.opacity);
-}
-function hsl(h, s2, l, opacity) {
-  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s2, l, opacity == null ? 1 : opacity);
-}
-function Hsl(h, s2, l, opacity) {
-  this.h = +h;
-  this.s = +s2;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-function hsl2rgb(h, m1, m2) {
-  return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
-}
-function linear$1(a, d) {
-  return function(t) {
-    return a + t * d;
-  };
-}
-function exponential(a, b, y) {
-  return a = Math.pow(a, y), b = Math.pow(b, y) - a, y = 1 / y, function(t) {
-    return Math.pow(a + t * b, y);
-  };
-}
-function gamma(y) {
-  return (y = +y) === 1 ? nogamma : function(a, b) {
-    return b - a ? exponential(a, b, y) : constant(isNaN(a) ? b : a);
-  };
-}
-function nogamma(a, b) {
-  var d = b - a;
-  return d ? linear$1(a, d) : constant(isNaN(a) ? b : a);
-}
-function numberArray(a, b) {
-  if (!b)
-    b = [];
-  var n = a ? Math.min(b.length, a.length) : 0, c = b.slice(), i;
-  return function(t) {
-    for (i = 0; i < n; ++i)
-      c[i] = a[i] * (1 - t) + b[i] * t;
-    return c;
-  };
-}
-function isNumberArray(x) {
-  return ArrayBuffer.isView(x) && !(x instanceof DataView);
-}
-function genericArray(a, b) {
-  var nb = b ? b.length : 0, na = a ? Math.min(nb, a.length) : 0, x = new Array(na), c = new Array(nb), i;
-  for (i = 0; i < na; ++i)
-    x[i] = interpolate(a[i], b[i]);
-  for (; i < nb; ++i)
-    c[i] = b[i];
-  return function(t) {
-    for (i = 0; i < na; ++i)
-      c[i] = x[i](t);
-    return c;
-  };
-}
-function date(a, b) {
-  var d = new Date();
-  return a = +a, b = +b, function(t) {
-    return d.setTime(a * (1 - t) + b * t), d;
-  };
-}
-function interpolateNumber(a, b) {
-  return a = +a, b = +b, function(t) {
-    return a * (1 - t) + b * t;
-  };
-}
-function object(a, b) {
-  var i = {}, c = {}, k;
-  if (a === null || typeof a !== "object")
-    a = {};
-  if (b === null || typeof b !== "object")
-    b = {};
-  for (k in b) {
-    if (k in a) {
-      i[k] = interpolate(a[k], b[k]);
-    } else {
-      c[k] = b[k];
-    }
-  }
-  return function(t) {
-    for (k in i)
-      c[k] = i[k](t);
-    return c;
-  };
-}
-function zero(b) {
-  return function() {
-    return b;
-  };
-}
-function one(b) {
-  return function(t) {
-    return b(t) + "";
-  };
-}
-function string(a, b) {
-  var bi = reA.lastIndex = reB.lastIndex = 0, am, bm, bs, i = -1, s2 = [], q = [];
-  a = a + "", b = b + "";
-  while ((am = reA.exec(a)) && (bm = reB.exec(b))) {
-    if ((bs = bm.index) > bi) {
-      bs = b.slice(bi, bs);
-      if (s2[i])
-        s2[i] += bs;
-      else
-        s2[++i] = bs;
-    }
-    if ((am = am[0]) === (bm = bm[0])) {
-      if (s2[i])
-        s2[i] += bm;
-      else
-        s2[++i] = bm;
-    } else {
-      s2[++i] = null;
-      q.push({ i, x: interpolateNumber(am, bm) });
-    }
-    bi = reB.lastIndex;
-  }
-  if (bi < b.length) {
-    bs = b.slice(bi);
-    if (s2[i])
-      s2[i] += bs;
-    else
-      s2[++i] = bs;
-  }
-  return s2.length < 2 ? q[0] ? one(q[0].x) : zero(b) : (b = q.length, function(t) {
-    for (var i2 = 0, o; i2 < b; ++i2)
-      s2[(o = q[i2]).i] = o.x(t);
-    return s2.join("");
-  });
-}
-function interpolate(a, b) {
-  var t = typeof b, c;
-  return b == null || t === "boolean" ? constant(b) : (t === "number" ? interpolateNumber : t === "string" ? (c = color(b)) ? (b = c, rgb) : string : b instanceof color ? rgb : b instanceof Date ? date : isNumberArray(b) ? numberArray : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object : interpolateNumber)(a, b);
-}
-function interpolateRound(a, b) {
-  return a = +a, b = +b, function(t) {
-    return Math.round(a * (1 - t) + b * t);
-  };
-}
-function constants(x) {
-  return function() {
-    return x;
-  };
-}
-function number(x) {
-  return +x;
-}
-function identity$1(x) {
-  return x;
-}
-function normalize(a, b) {
-  return (b -= a = +a) ? function(x) {
-    return (x - a) / b;
-  } : constants(isNaN(b) ? NaN : 0.5);
-}
-function clamper(a, b) {
-  var t;
-  if (a > b)
-    t = a, a = b, b = t;
-  return function(x) {
-    return Math.max(a, Math.min(b, x));
-  };
-}
-function bimap(domain, range, interpolate2) {
-  var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
-  if (d1 < d0)
-    d0 = normalize(d1, d0), r0 = interpolate2(r1, r0);
-  else
-    d0 = normalize(d0, d1), r0 = interpolate2(r0, r1);
-  return function(x) {
-    return r0(d0(x));
-  };
-}
-function polymap(domain, range, interpolate2) {
-  var j = Math.min(domain.length, range.length) - 1, d = new Array(j), r = new Array(j), i = -1;
-  if (domain[j] < domain[0]) {
-    domain = domain.slice().reverse();
-    range = range.slice().reverse();
-  }
-  while (++i < j) {
-    d[i] = normalize(domain[i], domain[i + 1]);
-    r[i] = interpolate2(range[i], range[i + 1]);
-  }
-  return function(x) {
-    var i2 = bisect(domain, x, 1, j) - 1;
-    return r[i2](d[i2](x));
-  };
-}
-function copy(source, target) {
-  return target.domain(source.domain()).range(source.range()).interpolate(source.interpolate()).clamp(source.clamp()).unknown(source.unknown());
-}
-function transformer() {
-  var domain = unit, range = unit, interpolate$1 = interpolate, transform, untransform, unknown, clamp = identity$1, piecewise, output, input;
-  function rescale() {
-    var n = Math.min(domain.length, range.length);
-    if (clamp !== identity$1)
-      clamp = clamper(domain[0], domain[n - 1]);
-    piecewise = n > 2 ? polymap : bimap;
-    output = input = null;
-    return scale;
-  }
-  function scale(x) {
-    return x == null || isNaN(x = +x) ? unknown : (output || (output = piecewise(domain.map(transform), range, interpolate$1)))(transform(clamp(x)));
-  }
-  scale.invert = function(y) {
-    return clamp(untransform((input || (input = piecewise(range, domain.map(transform), interpolateNumber)))(y)));
-  };
-  scale.domain = function(_) {
-    return arguments.length ? (domain = Array.from(_, number), rescale()) : domain.slice();
-  };
-  scale.range = function(_) {
-    return arguments.length ? (range = Array.from(_), rescale()) : range.slice();
-  };
-  scale.rangeRound = function(_) {
-    return range = Array.from(_), interpolate$1 = interpolateRound, rescale();
-  };
-  scale.clamp = function(_) {
-    return arguments.length ? (clamp = _ ? true : identity$1, rescale()) : clamp !== identity$1;
-  };
-  scale.interpolate = function(_) {
-    return arguments.length ? (interpolate$1 = _, rescale()) : interpolate$1;
-  };
-  scale.unknown = function(_) {
-    return arguments.length ? (unknown = _, scale) : unknown;
-  };
-  return function(t, u) {
-    transform = t, untransform = u;
-    return rescale();
-  };
-}
-function continuous() {
-  return transformer()(identity$1, identity$1);
-}
-function formatDecimal(x) {
-  return Math.abs(x = Math.round(x)) >= 1e21 ? x.toLocaleString("en").replace(/,/g, "") : x.toString(10);
-}
-function formatDecimalParts(x, p) {
-  if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0)
-    return null;
-  var i, coefficient = x.slice(0, i);
-  return [
-    coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
-    +x.slice(i + 1)
-  ];
-}
-function exponent(x) {
-  return x = formatDecimalParts(Math.abs(x)), x ? x[1] : NaN;
-}
-function formatGroup(grouping, thousands) {
-  return function(value, width) {
-    var i = value.length, t = [], j = 0, g = grouping[0], length = 0;
-    while (i > 0 && g > 0) {
-      if (length + g + 1 > width)
-        g = Math.max(1, width - length);
-      t.push(value.substring(i -= g, i + g));
-      if ((length += g + 1) > width)
-        break;
-      g = grouping[j = (j + 1) % grouping.length];
-    }
-    return t.reverse().join(thousands);
-  };
-}
-function formatNumerals(numerals) {
-  return function(value) {
-    return value.replace(/[0-9]/g, function(i) {
-      return numerals[+i];
-    });
-  };
-}
-function formatSpecifier(specifier) {
-  if (!(match = re.exec(specifier)))
-    throw new Error("invalid format: " + specifier);
-  var match;
-  return new FormatSpecifier({
-    fill: match[1],
-    align: match[2],
-    sign: match[3],
-    symbol: match[4],
-    zero: match[5],
-    width: match[6],
-    comma: match[7],
-    precision: match[8] && match[8].slice(1),
-    trim: match[9],
-    type: match[10]
-  });
-}
-function FormatSpecifier(specifier) {
-  this.fill = specifier.fill === void 0 ? " " : specifier.fill + "";
-  this.align = specifier.align === void 0 ? ">" : specifier.align + "";
-  this.sign = specifier.sign === void 0 ? "-" : specifier.sign + "";
-  this.symbol = specifier.symbol === void 0 ? "" : specifier.symbol + "";
-  this.zero = !!specifier.zero;
-  this.width = specifier.width === void 0 ? void 0 : +specifier.width;
-  this.comma = !!specifier.comma;
-  this.precision = specifier.precision === void 0 ? void 0 : +specifier.precision;
-  this.trim = !!specifier.trim;
-  this.type = specifier.type === void 0 ? "" : specifier.type + "";
-}
-function formatTrim(s2) {
-  out:
-    for (var n = s2.length, i = 1, i0 = -1, i1; i < n; ++i) {
-      switch (s2[i]) {
-        case ".":
-          i0 = i1 = i;
-          break;
-        case "0":
-          if (i0 === 0)
-            i0 = i;
-          i1 = i;
-          break;
-        default:
-          if (!+s2[i])
-            break out;
-          if (i0 > 0)
-            i0 = 0;
-          break;
-      }
-    }
-  return i0 > 0 ? s2.slice(0, i0) + s2.slice(i1 + 1) : s2;
-}
-function formatPrefixAuto(x, p) {
-  var d = formatDecimalParts(x, p);
-  if (!d)
-    return x + "";
-  var coefficient = d[0], exponent2 = d[1], i = exponent2 - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent2 / 3))) * 3) + 1, n = coefficient.length;
-  return i === n ? coefficient : i > n ? coefficient + new Array(i - n + 1).join("0") : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i) : "0." + new Array(1 - i).join("0") + formatDecimalParts(x, Math.max(0, p + i - 1))[0];
-}
-function formatRounded(x, p) {
-  var d = formatDecimalParts(x, p);
-  if (!d)
-    return x + "";
-  var coefficient = d[0], exponent2 = d[1];
-  return exponent2 < 0 ? "0." + new Array(-exponent2).join("0") + coefficient : coefficient.length > exponent2 + 1 ? coefficient.slice(0, exponent2 + 1) + "." + coefficient.slice(exponent2 + 1) : coefficient + new Array(exponent2 - coefficient.length + 2).join("0");
-}
-function identity2(x) {
-  return x;
-}
-function formatLocale(locale2) {
-  var group = locale2.grouping === void 0 || locale2.thousands === void 0 ? identity2 : formatGroup(map.call(locale2.grouping, Number), locale2.thousands + ""), currencyPrefix = locale2.currency === void 0 ? "" : locale2.currency[0] + "", currencySuffix = locale2.currency === void 0 ? "" : locale2.currency[1] + "", decimal = locale2.decimal === void 0 ? "." : locale2.decimal + "", numerals = locale2.numerals === void 0 ? identity2 : formatNumerals(map.call(locale2.numerals, String)), percent = locale2.percent === void 0 ? "%" : locale2.percent + "", minus = locale2.minus === void 0 ? "\u2212" : locale2.minus + "", nan = locale2.nan === void 0 ? "NaN" : locale2.nan + "";
-  function newFormat(specifier) {
-    specifier = formatSpecifier(specifier);
-    var fill = specifier.fill, align = specifier.align, sign = specifier.sign, symbol = specifier.symbol, zero2 = specifier.zero, width = specifier.width, comma = specifier.comma, precision = specifier.precision, trim = specifier.trim, type = specifier.type;
-    if (type === "n")
-      comma = true, type = "g";
-    else if (!formatTypes[type])
-      precision === void 0 && (precision = 12), trim = true, type = "g";
-    if (zero2 || fill === "0" && align === "=")
-      zero2 = true, fill = "0", align = "=";
-    var prefix = symbol === "$" ? currencyPrefix : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "", suffix = symbol === "$" ? currencySuffix : /[%p]/.test(type) ? percent : "";
-    var formatType = formatTypes[type], maybeSuffix = /[defgprs%]/.test(type);
-    precision = precision === void 0 ? 6 : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision)) : Math.max(0, Math.min(20, precision));
-    function format22(value) {
-      var valuePrefix = prefix, valueSuffix = suffix, i, n, c;
-      if (type === "c") {
-        valueSuffix = formatType(value) + valueSuffix;
-        value = "";
-      } else {
-        value = +value;
-        var valueNegative = value < 0 || 1 / value < 0;
-        value = isNaN(value) ? nan : formatType(Math.abs(value), precision);
-        if (trim)
-          value = formatTrim(value);
-        if (valueNegative && +value === 0 && sign !== "+")
-          valueNegative = false;
-        valuePrefix = (valueNegative ? sign === "(" ? sign : minus : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
-        valueSuffix = (type === "s" ? prefixes[8 + prefixExponent / 3] : "") + valueSuffix + (valueNegative && sign === "(" ? ")" : "");
-        if (maybeSuffix) {
-          i = -1, n = value.length;
-          while (++i < n) {
-            if (c = value.charCodeAt(i), 48 > c || c > 57) {
-              valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
-              value = value.slice(0, i);
-              break;
-            }
-          }
-        }
-      }
-      if (comma && !zero2)
-        value = group(value, Infinity);
-      var length = valuePrefix.length + value.length + valueSuffix.length, padding = length < width ? new Array(width - length + 1).join(fill) : "";
-      if (comma && zero2)
-        value = group(padding + value, padding.length ? width - valueSuffix.length : Infinity), padding = "";
-      switch (align) {
-        case "<":
-          value = valuePrefix + value + valueSuffix + padding;
-          break;
-        case "=":
-          value = valuePrefix + padding + value + valueSuffix;
-          break;
-        case "^":
-          value = padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length);
-          break;
-        default:
-          value = padding + valuePrefix + value + valueSuffix;
-          break;
-      }
-      return numerals(value);
-    }
-    format22.toString = function() {
-      return specifier + "";
-    };
-    return format22;
-  }
-  function formatPrefix2(specifier, value) {
-    var f = newFormat((specifier = formatSpecifier(specifier), specifier.type = "f", specifier)), e = Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3, k = Math.pow(10, -e), prefix = prefixes[8 + e / 3];
-    return function(value2) {
-      return f(k * value2) + prefix;
-    };
-  }
-  return {
-    format: newFormat,
-    formatPrefix: formatPrefix2
-  };
-}
-function defaultLocale(definition) {
-  locale = formatLocale(definition);
-  format2 = locale.format;
-  formatPrefix = locale.formatPrefix;
-  return locale;
-}
-function precisionFixed(step) {
-  return Math.max(0, -exponent(Math.abs(step)));
-}
-function precisionPrefix(step, value) {
-  return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3 - exponent(Math.abs(step)));
-}
-function precisionRound(step, max) {
-  step = Math.abs(step), max = Math.abs(max) - step;
-  return Math.max(0, exponent(max) - exponent(step)) + 1;
-}
-function tickFormat(start, stop, count, specifier) {
-  var step = tickStep(start, stop, count), precision;
-  specifier = formatSpecifier(specifier == null ? ",f" : specifier);
-  switch (specifier.type) {
-    case "s": {
-      var value = Math.max(Math.abs(start), Math.abs(stop));
-      if (specifier.precision == null && !isNaN(precision = precisionPrefix(step, value)))
-        specifier.precision = precision;
-      return formatPrefix(specifier, value);
-    }
-    case "":
-    case "e":
-    case "g":
-    case "p":
-    case "r": {
-      if (specifier.precision == null && !isNaN(precision = precisionRound(step, Math.max(Math.abs(start), Math.abs(stop)))))
-        specifier.precision = precision - (specifier.type === "e");
-      break;
-    }
-    case "f":
-    case "%": {
-      if (specifier.precision == null && !isNaN(precision = precisionFixed(step)))
-        specifier.precision = precision - (specifier.type === "%") * 2;
-      break;
-    }
-  }
-  return format2(specifier);
-}
-function linearish(scale) {
-  var domain = scale.domain;
-  scale.ticks = function(count) {
-    var d = domain();
-    return ticks(d[0], d[d.length - 1], count == null ? 10 : count);
-  };
-  scale.tickFormat = function(count, specifier) {
-    var d = domain();
-    return tickFormat(d[0], d[d.length - 1], count == null ? 10 : count, specifier);
-  };
-  scale.nice = function(count) {
-    if (count == null)
-      count = 10;
-    var d = domain();
-    var i0 = 0;
-    var i1 = d.length - 1;
-    var start = d[i0];
-    var stop = d[i1];
-    var prestep;
-    var step;
-    var maxIter = 10;
-    if (stop < start) {
-      step = start, start = stop, stop = step;
-      step = i0, i0 = i1, i1 = step;
-    }
-    while (maxIter-- > 0) {
-      step = tickIncrement(start, stop, count);
-      if (step === prestep) {
-        d[i0] = start;
-        d[i1] = stop;
-        return domain(d);
-      } else if (step > 0) {
-        start = Math.floor(start / step) * step;
-        stop = Math.ceil(stop / step) * step;
-      } else if (step < 0) {
-        start = Math.ceil(start * step) / step;
-        stop = Math.floor(stop * step) / step;
-      } else {
-        break;
-      }
-      prestep = step;
-    }
-    return scale;
-  };
-  return scale;
-}
-function linear() {
-  var scale = continuous();
-  scale.copy = function() {
-    return copy(scale, linear());
-  };
-  initRange.apply(scale, arguments);
-  return linearish(scale);
-}
 async function load6({ fetch: fetch2 }) {
   const res = await fetch2(`/posts.json`);
   const posts = await res.json();
   return { props: { posts } };
 }
-var import_bowser64, ascendingBisect, bisectRight, bisect, e10, e5, e2, darker, brighter, reI, reN, reP, reHex, reRgbInteger, reRgbPercent, reRgbaInteger, reRgbaPercent, reHslPercent, reHslaPercent, named, constant, rgb, reA, reB, unit, re, prefixExponent, formatTypes, map, prefixes, locale, format2, formatPrefix, css$15, Blog2, css21, title4, description4, Post;
-var init_index_1de0c6e9 = __esm({
-  ".svelte-kit/output/server/chunks/index-1de0c6e9.js"() {
+var css$14, Blog2, css27, title4, description4, Post;
+var init_index_a24a4714 = __esm({
+  ".svelte-kit/output/server/chunks/index-a24a4714.js"() {
     init_shims();
-    init_app_9f378dda();
-    init_utils_09998264();
-    init_Star_65df41c2();
-    init_global_130d3fe3();
-    init_TransitionInView_c90c9121();
-    init_BackTo_d882ed88();
-    init_store_8bf23024();
-    import_bowser64 = __toModule(require_es5());
-    init_IntersectionObserver_4cd4a541();
-    ascendingBisect = bisector(ascending);
-    bisectRight = ascendingBisect.right;
-    bisector(number$1).center;
-    bisect = bisectRight;
-    e10 = Math.sqrt(50);
-    e5 = Math.sqrt(10);
-    e2 = Math.sqrt(2);
-    darker = 0.7;
-    brighter = 1 / darker;
-    reI = "\\s*([+-]?\\d+)\\s*";
-    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*";
-    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*";
-    reHex = /^#([0-9a-f]{3,8})$/;
-    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$");
-    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$");
-    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$");
-    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$");
-    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$");
-    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
-    named = {
-      aliceblue: 15792383,
-      antiquewhite: 16444375,
-      aqua: 65535,
-      aquamarine: 8388564,
-      azure: 15794175,
-      beige: 16119260,
-      bisque: 16770244,
-      black: 0,
-      blanchedalmond: 16772045,
-      blue: 255,
-      blueviolet: 9055202,
-      brown: 10824234,
-      burlywood: 14596231,
-      cadetblue: 6266528,
-      chartreuse: 8388352,
-      chocolate: 13789470,
-      coral: 16744272,
-      cornflowerblue: 6591981,
-      cornsilk: 16775388,
-      crimson: 14423100,
-      cyan: 65535,
-      darkblue: 139,
-      darkcyan: 35723,
-      darkgoldenrod: 12092939,
-      darkgray: 11119017,
-      darkgreen: 25600,
-      darkgrey: 11119017,
-      darkkhaki: 12433259,
-      darkmagenta: 9109643,
-      darkolivegreen: 5597999,
-      darkorange: 16747520,
-      darkorchid: 10040012,
-      darkred: 9109504,
-      darksalmon: 15308410,
-      darkseagreen: 9419919,
-      darkslateblue: 4734347,
-      darkslategray: 3100495,
-      darkslategrey: 3100495,
-      darkturquoise: 52945,
-      darkviolet: 9699539,
-      deeppink: 16716947,
-      deepskyblue: 49151,
-      dimgray: 6908265,
-      dimgrey: 6908265,
-      dodgerblue: 2003199,
-      firebrick: 11674146,
-      floralwhite: 16775920,
-      forestgreen: 2263842,
-      fuchsia: 16711935,
-      gainsboro: 14474460,
-      ghostwhite: 16316671,
-      gold: 16766720,
-      goldenrod: 14329120,
-      gray: 8421504,
-      green: 32768,
-      greenyellow: 11403055,
-      grey: 8421504,
-      honeydew: 15794160,
-      hotpink: 16738740,
-      indianred: 13458524,
-      indigo: 4915330,
-      ivory: 16777200,
-      khaki: 15787660,
-      lavender: 15132410,
-      lavenderblush: 16773365,
-      lawngreen: 8190976,
-      lemonchiffon: 16775885,
-      lightblue: 11393254,
-      lightcoral: 15761536,
-      lightcyan: 14745599,
-      lightgoldenrodyellow: 16448210,
-      lightgray: 13882323,
-      lightgreen: 9498256,
-      lightgrey: 13882323,
-      lightpink: 16758465,
-      lightsalmon: 16752762,
-      lightseagreen: 2142890,
-      lightskyblue: 8900346,
-      lightslategray: 7833753,
-      lightslategrey: 7833753,
-      lightsteelblue: 11584734,
-      lightyellow: 16777184,
-      lime: 65280,
-      limegreen: 3329330,
-      linen: 16445670,
-      magenta: 16711935,
-      maroon: 8388608,
-      mediumaquamarine: 6737322,
-      mediumblue: 205,
-      mediumorchid: 12211667,
-      mediumpurple: 9662683,
-      mediumseagreen: 3978097,
-      mediumslateblue: 8087790,
-      mediumspringgreen: 64154,
-      mediumturquoise: 4772300,
-      mediumvioletred: 13047173,
-      midnightblue: 1644912,
-      mintcream: 16121850,
-      mistyrose: 16770273,
-      moccasin: 16770229,
-      navajowhite: 16768685,
-      navy: 128,
-      oldlace: 16643558,
-      olive: 8421376,
-      olivedrab: 7048739,
-      orange: 16753920,
-      orangered: 16729344,
-      orchid: 14315734,
-      palegoldenrod: 15657130,
-      palegreen: 10025880,
-      paleturquoise: 11529966,
-      palevioletred: 14381203,
-      papayawhip: 16773077,
-      peachpuff: 16767673,
-      peru: 13468991,
-      pink: 16761035,
-      plum: 14524637,
-      powderblue: 11591910,
-      purple: 8388736,
-      rebeccapurple: 6697881,
-      red: 16711680,
-      rosybrown: 12357519,
-      royalblue: 4286945,
-      saddlebrown: 9127187,
-      salmon: 16416882,
-      sandybrown: 16032864,
-      seagreen: 3050327,
-      seashell: 16774638,
-      sienna: 10506797,
-      silver: 12632256,
-      skyblue: 8900331,
-      slateblue: 6970061,
-      slategray: 7372944,
-      slategrey: 7372944,
-      snow: 16775930,
-      springgreen: 65407,
-      steelblue: 4620980,
-      tan: 13808780,
-      teal: 32896,
-      thistle: 14204888,
-      tomato: 16737095,
-      turquoise: 4251856,
-      violet: 15631086,
-      wheat: 16113331,
-      white: 16777215,
-      whitesmoke: 16119285,
-      yellow: 16776960,
-      yellowgreen: 10145074
-    };
-    define2(Color, color, {
-      copy: function(channels) {
-        return Object.assign(new this.constructor(), this, channels);
-      },
-      displayable: function() {
-        return this.rgb().displayable();
-      },
-      hex: color_formatHex,
-      formatHex: color_formatHex,
-      formatHsl: color_formatHsl,
-      formatRgb: color_formatRgb,
-      toString: color_formatRgb
-    });
-    define2(Rgb, rgb$1, extend(Color, {
-      brighter: function(k) {
-        k = k == null ? brighter : Math.pow(brighter, k);
-        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-      },
-      darker: function(k) {
-        k = k == null ? darker : Math.pow(darker, k);
-        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-      },
-      rgb: function() {
-        return this;
-      },
-      displayable: function() {
-        return -0.5 <= this.r && this.r < 255.5 && (-0.5 <= this.g && this.g < 255.5) && (-0.5 <= this.b && this.b < 255.5) && (0 <= this.opacity && this.opacity <= 1);
-      },
-      hex: rgb_formatHex,
-      formatHex: rgb_formatHex,
-      formatRgb: rgb_formatRgb,
-      toString: rgb_formatRgb
-    }));
-    define2(Hsl, hsl, extend(Color, {
-      brighter: function(k) {
-        k = k == null ? brighter : Math.pow(brighter, k);
-        return new Hsl(this.h, this.s, this.l * k, this.opacity);
-      },
-      darker: function(k) {
-        k = k == null ? darker : Math.pow(darker, k);
-        return new Hsl(this.h, this.s, this.l * k, this.opacity);
-      },
-      rgb: function() {
-        var h = this.h % 360 + (this.h < 0) * 360, s2 = isNaN(h) || isNaN(this.s) ? 0 : this.s, l = this.l, m2 = l + (l < 0.5 ? l : 1 - l) * s2, m1 = 2 * l - m2;
-        return new Rgb(hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2), hsl2rgb(h, m1, m2), hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2), this.opacity);
-      },
-      displayable: function() {
-        return (0 <= this.s && this.s <= 1 || isNaN(this.s)) && (0 <= this.l && this.l <= 1) && (0 <= this.opacity && this.opacity <= 1);
-      },
-      formatHsl: function() {
-        var a = this.opacity;
-        a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-        return (a === 1 ? "hsl(" : "hsla(") + (this.h || 0) + ", " + (this.s || 0) * 100 + "%, " + (this.l || 0) * 100 + "%" + (a === 1 ? ")" : ", " + a + ")");
-      }
-    }));
-    constant = (x) => () => x;
-    rgb = function rgbGamma(y) {
-      var color2 = gamma(y);
-      function rgb2(start, end) {
-        var r = color2((start = rgb$1(start)).r, (end = rgb$1(end)).r), g = color2(start.g, end.g), b = color2(start.b, end.b), opacity = nogamma(start.opacity, end.opacity);
-        return function(t) {
-          start.r = r(t);
-          start.g = g(t);
-          start.b = b(t);
-          start.opacity = opacity(t);
-          return start + "";
-        };
-      }
-      rgb2.gamma = rgbGamma;
-      return rgb2;
-    }(1);
-    reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g;
-    reB = new RegExp(reA.source, "g");
-    unit = [0, 1];
-    re = /^(?:(.)?([<>=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;
-    formatSpecifier.prototype = FormatSpecifier.prototype;
-    FormatSpecifier.prototype.toString = function() {
-      return this.fill + this.align + this.sign + this.symbol + (this.zero ? "0" : "") + (this.width === void 0 ? "" : Math.max(1, this.width | 0)) + (this.comma ? "," : "") + (this.precision === void 0 ? "" : "." + Math.max(0, this.precision | 0)) + (this.trim ? "~" : "") + this.type;
-    };
-    formatTypes = {
-      "%": (x, p) => (x * 100).toFixed(p),
-      "b": (x) => Math.round(x).toString(2),
-      "c": (x) => x + "",
-      "d": formatDecimal,
-      "e": (x, p) => x.toExponential(p),
-      "f": (x, p) => x.toFixed(p),
-      "g": (x, p) => x.toPrecision(p),
-      "o": (x) => Math.round(x).toString(8),
-      "p": (x, p) => formatRounded(x * 100, p),
-      "r": formatRounded,
-      "s": formatPrefixAuto,
-      "X": (x) => Math.round(x).toString(16).toUpperCase(),
-      "x": (x) => Math.round(x).toString(16)
-    };
-    map = Array.prototype.map;
-    prefixes = ["y", "z", "a", "f", "p", "n", "\xB5", "m", "", "k", "M", "G", "T", "P", "E", "Z", "Y"];
-    defaultLocale({
-      thousands: ",",
-      grouping: [3],
-      currency: ["$", ""]
-    });
-    css$15 = {
-      code: ".post-container.svelte-1pm8o92.svelte-1pm8o92{display:block;width:100%;height:100%;border-radius:10px;background:var(--semitransparent-bg);padding:20px;margin:6px;overflow:hidden;border:1px solid var(--primary-color);transition:all 100ms linear, border 300ms ease;cursor:pointer}.perspective-container.svelte-1pm8o92.svelte-1pm8o92{display:block;height:100%;display:flex;position:relative;margin:-4px}.card-highlight.svelte-1pm8o92.svelte-1pm8o92{position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(0, 0, 0, 0.01);filter:blur(20px);z-index:1;pointer-events:none}.post-card.svelte-1pm8o92.svelte-1pm8o92{display:flex;flex-direction:column;justify-content:space-between;height:100%;pointer-events:none}.post-date.svelte-1pm8o92.svelte-1pm8o92{text-transform:uppercase;letter-spacing:0.34px;font-size:1rem;font-family:var(--font-serif);color:var(--off-text-color);font-weight:200;margin-bottom:0.75rem}.post-title.svelte-1pm8o92.svelte-1pm8o92{font-size:1.5rem;margin-bottom:0.75rem;font-family:var(--font-sans);font-weight:500;line-height:1.2}.post-description.svelte-1pm8o92.svelte-1pm8o92{font-size:1.2rem;font-family:var(--font-sans);font-weight:200;line-height:1.15}.post-tags.svelte-1pm8o92.svelte-1pm8o92{margin-top:1rem;text-align:right}.post-tag.svelte-1pm8o92.svelte-1pm8o92{font-family:var(--font-sans);padding:3px 8px;background:rgba(var(--accent-color-rgb), 0.1);margin:2px;margin-right:2px;border-radius:3px;color:rgba(var(--accent-color-rgb), 1);font-size:0.85rem;font-weight:200;text-transform:uppercase;margin-right:0.25rem;letter-spacing:1px}.featured-star.svelte-1pm8o92.svelte-1pm8o92{position:absolute;top:0;right:0;padding:6px}.hovered.svelte-1pm8o92.svelte-1pm8o92{border:1px solid var(--accent-color)}.unhovered.svelte-1pm8o92.svelte-1pm8o92{filter:grayscale(1)}.unhovered.svelte-1pm8o92 .post-date.svelte-1pm8o92,.unhovered.svelte-1pm8o92 .post-title.svelte-1pm8o92,.unhovered.svelte-1pm8o92 .post-description.svelte-1pm8o92,.unhovered.svelte-1pm8o92 .post-tag.svelte-1pm8o92,.unhovered.svelte-1pm8o92 .featured-star.svelte-1pm8o92{color:transparent;opacity:0.5;text-shadow:0 0 2px var(--text-color)}.post-date.svelte-1pm8o92.svelte-1pm8o92,.post-title.svelte-1pm8o92.svelte-1pm8o92,.post-description.svelte-1pm8o92.svelte-1pm8o92,.post-tag.svelte-1pm8o92.svelte-1pm8o92,.featured-star.svelte-1pm8o92.svelte-1pm8o92{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}@media screen and (max-width: 400px){.post-date.svelte-1pm8o92.svelte-1pm8o92{font-size:0.85rem}.post-title.svelte-1pm8o92.svelte-1pm8o92{font-size:1.2rem;margin-bottom:1rem}.post-description.svelte-1pm8o92.svelte-1pm8o92{font-size:1rem}.post-tag.svelte-1pm8o92.svelte-1pm8o92{font-size:0.75rem}}",
+    init_app_89d516be();
+    init_utils_4d01bc61();
+    init_Star_9dfc620a();
+    init_motion_65df28f6();
+    init_TransitionInView_75dc718e();
+    init_linear_5e174aa1();
+    init_BackTo_db5abc2d();
+    init_IntersectionObserver_20eeae9e();
+    css$14 = {
+      code: ".post-container.svelte-1uw1sgh.svelte-1uw1sgh{display:block;width:100%;height:100%;border-radius:10px;background:var(--semitransparent-bg);padding:20px;margin:6px;overflow:hidden;border:1px solid transparent;transition:all 100ms linear, border 300ms ease;cursor:pointer}.perspective-container.svelte-1uw1sgh.svelte-1uw1sgh{display:block;height:100%;display:flex;position:relative;margin:-4px}.card-highlight.svelte-1uw1sgh.svelte-1uw1sgh{position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(0, 0, 0, 0.01);filter:blur(20px);z-index:1;pointer-events:none}.post-card.svelte-1uw1sgh.svelte-1uw1sgh{display:flex;flex-direction:column;justify-content:space-between;height:100%;pointer-events:none}.post-date.svelte-1uw1sgh.svelte-1uw1sgh{text-transform:uppercase;letter-spacing:0.34px;font-size:1rem;font-family:var(--font-serif);color:var(--off-text-color);font-weight:200;margin-bottom:0.75rem}.post-title.svelte-1uw1sgh.svelte-1uw1sgh{font-size:1.5rem;margin-bottom:0.75rem;font-family:var(--font-sans);font-weight:500;line-height:1.2}.post-description.svelte-1uw1sgh.svelte-1uw1sgh{font-size:1.2rem;font-family:var(--font-sans);font-weight:200;line-height:1.15}.post-tags.svelte-1uw1sgh.svelte-1uw1sgh{margin-top:1rem;text-align:right}.post-tag.svelte-1uw1sgh.svelte-1uw1sgh{font-family:var(--font-sans);padding:3px 8px;background:rgba(var(--accent-color-rgb), 0.1);margin:2px;margin-right:2px;border-radius:3px;color:rgba(var(--accent-color-rgb), 1);font-size:0.85rem;font-weight:200;text-transform:uppercase;margin-right:0.25rem;letter-spacing:1px}.featured-star.svelte-1uw1sgh.svelte-1uw1sgh{position:absolute;top:0;right:0;padding:6px}.hovered.svelte-1uw1sgh.svelte-1uw1sgh{border:1px solid var(--accent-color)}.unhovered.svelte-1uw1sgh.svelte-1uw1sgh{filter:grayscale(1)}.unhovered.svelte-1uw1sgh .post-date.svelte-1uw1sgh,.unhovered.svelte-1uw1sgh .post-title.svelte-1uw1sgh,.unhovered.svelte-1uw1sgh .post-description.svelte-1uw1sgh,.unhovered.svelte-1uw1sgh .post-tag.svelte-1uw1sgh,.unhovered.svelte-1uw1sgh .featured-star.svelte-1uw1sgh{color:transparent;opacity:0.5;text-shadow:0 0 2px var(--text-color)}.post-date.svelte-1uw1sgh.svelte-1uw1sgh,.post-title.svelte-1uw1sgh.svelte-1uw1sgh,.post-description.svelte-1uw1sgh.svelte-1uw1sgh,.post-tag.svelte-1uw1sgh.svelte-1uw1sgh,.featured-star.svelte-1uw1sgh.svelte-1uw1sgh{transition:opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),\n      text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99)}@media screen and (max-width: 400px){.post-date.svelte-1uw1sgh.svelte-1uw1sgh{font-size:0.85rem}.post-title.svelte-1uw1sgh.svelte-1uw1sgh{font-size:1.2rem;margin-bottom:1rem}.post-description.svelte-1uw1sgh.svelte-1uw1sgh{font-size:1rem}.post-tag.svelte-1uw1sgh.svelte-1uw1sgh{font-size:0.75rem}}",
       map: null
     };
     Blog2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -22816,7 +23621,7 @@ var init_index_1de0c6e9 = __esm({
         $$bindings.anyHovered(anyHovered);
       if ($$props.index === void 0 && $$bindings.index && index !== void 0)
         $$bindings.index(index);
-      $$result.css.add(css$15);
+      $$result.css.add(css$14);
       getCardDimensions = function(card2) {
         card2 ? card2.getBoundingClientRect().left : 0;
         card2 ? card2.getBoundingClientRect().top + scrollYPosition : 0;
@@ -22842,7 +23647,7 @@ var init_index_1de0c6e9 = __esm({
       return `
 
 ${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}, {}, {
-        default: () => `<a class="${"perspective-container no-underline svelte-1pm8o92"}" style="${"perspective: " + escape(cardWidth) + "px"}"${add_attribute("href", slug, 0)} sveltekit:prefetch${add_attribute("this", card, 0)}><div style="${"transform: rotateY(" + escape(rotationX) + "deg) rotateX(" + escape(rotationY) + "deg) scale3d(" + escape(scale3dVal) + ", " + escape(scale3dVal) + ", " + escape(scale3dVal) + "); box-shadow: " + escape(shadowX) + "px " + escape(shadowY) + "px 15px rgba(0, 0, 0, 0.1);"}" class="${"post-container no-underline " + escape(post.featured ? "featured" : "") + " " + escape(anyHovered ? "unhovered" : "") + " svelte-1pm8o92"}">${post.featured ? `<div class="${"featured-star svelte-1pm8o92"}">${validate_component(Star, "Star").$$render($$result, {
+        default: () => `<a class="${"perspective-container no-underline svelte-1uw1sgh"}" style="${"perspective: " + escape(cardWidth) + "px"}"${add_attribute("href", slug, 0)} sveltekit:prefetch${add_attribute("this", card, 0)}><div style="${"transform: rotateY(" + escape(rotationX) + "deg) rotateX(" + escape(rotationY) + "deg) scale3d(" + escape(scale3dVal) + ", " + escape(scale3dVal) + ", " + escape(scale3dVal) + "); box-shadow: " + escape(shadowX) + "px " + escape(shadowY) + "px 15px rgba(0, 0, 0, 0.1);"}" class="${"post-container no-underline " + escape(post.featured ? "featured" : "") + " " + escape(anyHovered ? "unhovered" : "") + " svelte-1uw1sgh"}">${post.featured ? `<div class="${"featured-star svelte-1uw1sgh"}">${validate_component(Star, "Star").$$render($$result, {
           width: "20",
           height: "20",
           fill: "var(--accent-color)",
@@ -22850,24 +23655,22 @@ ${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}
           hovered,
           index
         }, {}, {})}</div>` : ``}
-      <div class="${"card-highlight svelte-1pm8o92"}" style="${"left: " + escape(circleXPosition) + "%; top: " + escape(circleYPosition) + "%"}"></div>
-      <div class="${"post-card svelte-1pm8o92"}"><div class="${"post-info"}"><h2 class="${"post-date svelte-1pm8o92"}">${escape(dateFormat(post.date))}</h2>
-          <h1 class="${"post-title svelte-1pm8o92"}">${escape(post.title)}</h1>
-          <h2 class="${"post-description svelte-1pm8o92"}">${escape(post.description)}</h2></div>
-        <div class="${"post-tags svelte-1pm8o92"}">${each(post.tags, (tag) => `<span class="${"post-tag svelte-1pm8o92"}">${escape(tag)}</span>`)}</div></div></div></a>`
+      <div class="${"card-highlight svelte-1uw1sgh"}" style="${"left: " + escape(circleXPosition) + "%; top: " + escape(circleYPosition) + "%"}"></div>
+      <div class="${"post-card svelte-1uw1sgh"}"><div class="${"post-info"}"><h2 class="${"post-date svelte-1uw1sgh"}">${escape(dateFormat(post.date))}</h2>
+          <h1 class="${"post-title svelte-1uw1sgh"}"><!-- HTML_TAG_START -->${post.title}<!-- HTML_TAG_END --></h1>
+          <h2 class="${"post-description svelte-1uw1sgh"}"><!-- HTML_TAG_START -->${post.description}<!-- HTML_TAG_END --></h2></div>
+        <div class="${"post-tags svelte-1uw1sgh"}">${each(post.tags, (tag) => `<span class="${"post-tag svelte-1uw1sgh"}">${escape(tag)}</span>`)}</div></div></div></a>`
       })}`;
     });
-    css21 = {
-      code: "main.svelte-l5v6ru{max-width:860px;margin:0 auto;padding:1rem;width:95%;margin-bottom:4rem;margin-top:var(--nav-height)}.posts-grid.svelte-l5v6ru{display:grid;grid-template-columns:repeat(2, 1fr);grid-auto-rows:1fr;grid-gap:10px}.button.svelte-l5v6ru{margin:12px 0 12px auto}.archives-title.svelte-l5v6ru{font-size:3rem;margin:1.5rem 1rem 1rem 1rem;border-top:1px solid rgba(var(--accent-color-rgb), 0.5);padding:2rem 0 0.5rem 0;font-weight:100;color:var(--pure-text-color);text-transform:uppercase;text-align:center}@media screen and (max-width: 668px){.posts-grid.svelte-l5v6ru{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr);grid-auto-rows:auto}.archives-title.svelte-l5v6ru{font-size:9vw}}",
+    css27 = {
+      code: ".posts-grid.svelte-1ge7og7{display:grid;grid-template-columns:repeat(2, 1fr);grid-auto-rows:1fr;grid-gap:10px}.button.svelte-1ge7og7{margin:12px 0 12px auto}.archives-title.svelte-1ge7og7{font-size:3rem;margin:1.5rem 1rem 1rem 1rem;border-top:1px solid rgba(var(--accent-color-rgb), 0.5);padding:2rem 0 0.5rem 0;font-weight:100;color:var(--pure-text-color);text-transform:uppercase;text-align:center}@media screen and (max-width: 668px){.posts-grid.svelte-1ge7og7{grid-template-columns:auto;grid-template-rows:repeat(1, 1fr);grid-auto-rows:auto}.archives-title.svelte-1ge7og7{font-size:9vw}}",
       map: null
     };
     title4 = "Blog | Connor Rothschild";
     description4 = "Some of my writing.";
     Post = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $seo, $$unsubscribe_seo;
-      $$unsubscribe_seo = subscribe(seo, (value) => $seo = value);
       let { posts } = $$props;
-      let filteredPosts = posts.filter((d) => !d.metadata.draft && !d.metadata.archived).sort((a, b) => {
+      let filteredPosts = posts.filter((d) => !d.metadata?.draft && !d.metadata?.archived).sort((a, b) => {
         if (b.metadata.featured && !a.metadata.featured)
           return 1;
         if (!b.metadata.featured && a.metadata.featured)
@@ -22878,31 +23681,26 @@ ${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}
           return -1;
       });
       posts.filter((d) => d.metadata.archived == true).sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
-      set_store_value(seo, $seo = {
-        title: title4,
-        description: description4,
-        image: `https://og-image-eight-eta.vercel.app/${title4}.png?subtitle=${description4}&theme=light&md=true&hasImage=true`
-      }, $seo);
+      let image = `https://og-image-eight-eta.vercel.app/${title4}.png?subtitle=${description4}&theme=light&md=true&hasImage=true`;
       let anyHovered = false;
       if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
         $$bindings.posts(posts);
-      $$result.css.add(css21);
+      $$result.css.add(css27);
       let $$settled;
       let $$rendered;
       do {
         $$settled = true;
         $$rendered = `${validate_component(Transition, "Transition").$$render($$result, {}, {}, {})}
-<main class="${"svelte-l5v6ru"}">
-  ${validate_component(BackTo, "BackTo").$$render($$result, {
+${validate_component(Seo, "Seo").$$render($$result, { title: title4, description: description4, image }, {}, {})}
+<main class="${"main"}">${validate_component(BackTo, "BackTo").$$render($$result, {
           href: "/",
           text: "Home",
-          classes: "page-overline transition-subtitle centered"
+          classes: "page-overline transition-content centered"
         }, {}, {})}
-  <h1 class="${"page-title transition-title overflow-hidden"}">Writing
-    </h1>
-  <div class="${"transition-content posts-grid svelte-l5v6ru"}">${each(filteredPosts, (post, index) => `${validate_component(Blog2, "BlogSection").$$render($$result, {
+  <h1 class="${"page-title transition-title overflow-hidden"}">Writing</h1>
+  <div class="${"transition-content posts-grid svelte-1ge7og7"}">${each(filteredPosts, (post, index) => `${validate_component(Blog2, "BlogSection").$$render($$result, {
           post: post.metadata,
-          slug: post.path.replace(/\.[^/.]+$/, ""),
+          slug: post.path.replace(/\.[^/.]+$/, "").replace("./", "/"),
           index,
           anyHovered
         }, {
@@ -22912,16 +23710,15 @@ ${validate_component(TransitionInView, "TransitionInView").$$render($$result, {}
           }
         }, {})}`)}</div>
   ${``}
-  <button class="${"button pulled-right block transition-content svelte-l5v6ru"}">${escape("Show the archives \u{1F62C}")}</button>
+  <button class="${"button pulled-right block transition-content svelte-1ge7og7"}">${escape("Show the archives \u{1F62C}")}</button>
 </main>`;
       } while (!$$settled);
-      $$unsubscribe_seo();
       return $$rendered;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/app-9f378dda.js
+// .svelte-kit/output/server/chunks/app-89d516be.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -23289,7 +24086,7 @@ async function render_response({
   error: error2,
   page: page2
 }) {
-  const css23 = new Set(options2.entry.css);
+  const css29 = new Set(options2.entry.css);
   const js = new Set(options2.entry.js);
   const styles = new Set();
   const serialized_data = [];
@@ -23302,7 +24099,7 @@ async function render_response({
   if (page_config.ssr) {
     branch.forEach(({ node, loaded, fetched, uses_credentials }) => {
       if (node.css)
-        node.css.forEach((url) => css23.add(url));
+        node.css.forEach((url) => css29.add(url));
       if (node.js)
         node.js.forEach((url) => js.add(url));
       if (node.styles)
@@ -23345,7 +24142,7 @@ async function render_response({
     js.clear();
   const links = options2.amp ? styles.size > 0 || rendered.css.code.length > 0 ? `<style amp-custom>${Array.from(styles).concat(rendered.css.code).join("\n")}</style>` : "" : [
     ...Array.from(js).map((dep) => `<link rel="modulepreload" href="${dep}">`),
-    ...Array.from(css23).map((dep) => `<link rel="stylesheet" href="${dep}">`)
+    ...Array.from(css29).map((dep) => `<link rel="stylesheet" href="${dep}">`)
   ].join("\n		");
   let init2 = "";
   if (options2.amp) {
@@ -24143,10 +24940,6 @@ function compute_rest_props(props, keys) {
 function null_to_empty(value) {
   return value == null ? "" : value;
 }
-function set_store_value(store, ret, value) {
-  store.set(value);
-  return ret;
-}
 function run_tasks(now2) {
   tasks.forEach((task) => {
     if (!task.c(now2)) {
@@ -24279,7 +25072,7 @@ function create_ssr_component(fn) {
       return {
         html,
         css: {
-          code: Array.from(result.css).map((css23) => css23.code).join("\n"),
+          code: Array.from(result.css).map((css29) => css29.code).join("\n"),
           map: null
         },
         head: result.title + result.head
@@ -24309,9 +25102,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-fb998a10.js",
+      file: assets + "/_app/start-e386c456.js",
       css: [assets + "/_app/assets/start-d977ffc4.css"],
-      js: [assets + "/_app/start-fb998a10.js", assets + "/_app/chunks/vendor-dfb9df3e.js"]
+      js: [assets + "/_app/start-e386c456.js", assets + "/_app/chunks/vendor-1dbd9a84.js", assets + "/_app/chunks/singletons-12a22614.js"]
     },
     fetched: void 0,
     floc: false,
@@ -24339,11 +25132,11 @@ function init(settings = default_settings) {
   };
 }
 async function load_component(file) {
-  const { entry, css: css23, js, styles } = metadata_lookup[file];
+  const { entry, css: css29, js, styles } = metadata_lookup[file];
   return {
     module: await module_lookup[file](),
     entry: assets + "/_app/" + entry,
-    css: css23.map((dep) => assets + "/_app/" + dep),
+    css: css29.map((dep) => assets + "/_app/" + dep),
     js: js.map((dep) => assets + "/_app/" + dep),
     styles
   };
@@ -24354,9 +25147,9 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, boolean_attributes, invalid_attribute_name_character, escaped, missing_component, on_destroy, css22, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_9f378dda = __esm({
-  ".svelte-kit/output/server/chunks/app-9f378dda.js"() {
+var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, identity2, is_client, now, raf, tasks, current_component, boolean_attributes, invalid_attribute_name_character, escaped, missing_component, on_destroy, css28, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
+var init_app_89d516be = __esm({
+  ".svelte-kit/output/server/chunks/app-89d516be.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -24461,7 +25254,7 @@ var init_app_9f378dda = __esm({
       }
     };
     _map = new WeakMap();
-    identity = (x) => x;
+    identity2 = (x) => x;
     is_client = typeof window !== "undefined";
     now = is_client ? () => window.performance.now() : () => Date.now();
     raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
@@ -24504,7 +25297,7 @@ var init_app_9f378dda = __esm({
     missing_component = {
       $$render: () => ""
     };
-    css22 = {
+    css28 = {
       code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
       map: null
     };
@@ -24529,7 +25322,7 @@ var init_app_9f378dda = __esm({
         $$bindings.props_1(props_1);
       if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
         $$bindings.props_2(props_2);
-      $$result.css.add(css22);
+      $$result.css.add(css28);
       {
         stores.page.set(page2);
       }
@@ -24550,12 +25343,12 @@ ${``}`;
       __proto__: null,
       [Symbol.toStringTag]: "Module"
     });
-    template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <!-- <link rel="icon" href="/favicon.png" /> -->\n    <link rel="icon" href="data:image/svg+xml, \n                          <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>\n                            <text y=%221em%22 font-size=%2285%22>\u{1F642}</text>\n                          </svg>">\n\n    <link rel="preload" href="https://use.typekit.net/mhr2lku.css" as="style">\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    \n    <link rel="stylesheet" href="https://use.typekit.net/mhr2lku.css">\n\n    ' + head + '\n  </head>\n  <body>\n    <div id="svelte">' + body + "</div>\n  </body>\n</html>\n";
+    template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <link rel="icon" href="/favicon.png" />\n    \n    <link rel="preload" href="https://use.typekit.net/mhr2lku.css" as="style">\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    \n    <link rel="stylesheet" href="https://use.typekit.net/mhr2lku.css">\n\n    ' + head + '\n  </head>\n  <body>\n    <div id="svelte">' + body + "</div>\n  </body>\n</html>\n";
     options = null;
     default_settings = { paths: { "base": "", "assets": "" } };
     empty = () => ({});
     manifest = {
-      assets: [{ "file": ".DS_Store", "size": 10244, "type": null }, { "file": "favicon.svg", "size": 110, "type": "image/svg+xml" }, { "file": "fonts/.DS_Store", "size": 6148, "type": null }, { "file": "fonts/Satoshi-Black.eot", "size": 73352, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Black.ttf", "size": 73176, "type": "font/ttf" }, { "file": "fonts/Satoshi-Black.woff", "size": 30376, "type": "font/woff" }, { "file": "fonts/Satoshi-Black.woff2", "size": 23484, "type": "font/woff2" }, { "file": "fonts/Satoshi-BlackItalic.eot", "size": 75950, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-BlackItalic.ttf", "size": 75760, "type": "font/ttf" }, { "file": "fonts/Satoshi-BlackItalic.woff", "size": 31364, "type": "font/woff" }, { "file": "fonts/Satoshi-BlackItalic.woff2", "size": 24276, "type": "font/woff2" }, { "file": "fonts/Satoshi-Bold.eot", "size": 73532, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Bold.ttf", "size": 73368, "type": "font/ttf" }, { "file": "fonts/Satoshi-Bold.woff", "size": 32972, "type": "font/woff" }, { "file": "fonts/Satoshi-Bold.woff2", "size": 25328, "type": "font/woff2" }, { "file": "fonts/Satoshi-BoldItalic.eot", "size": 76620, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-BoldItalic.ttf", "size": 76452, "type": "font/ttf" }, { "file": "fonts/Satoshi-BoldItalic.woff", "size": 34336, "type": "font/woff" }, { "file": "fonts/Satoshi-BoldItalic.woff2", "size": 26300, "type": "font/woff2" }, { "file": "fonts/Satoshi-Italic.eot", "size": 76762, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Italic.ttf", "size": 76604, "type": "font/ttf" }, { "file": "fonts/Satoshi-Italic.woff", "size": 34336, "type": "font/woff" }, { "file": "fonts/Satoshi-Italic.woff2", "size": 26456, "type": "font/woff2" }, { "file": "fonts/Satoshi-Light.eot", "size": 71860, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Light.ttf", "size": 71684, "type": "font/ttf" }, { "file": "fonts/Satoshi-Light.woff", "size": 29276, "type": "font/woff" }, { "file": "fonts/Satoshi-Light.woff2", "size": 22800, "type": "font/woff2" }, { "file": "fonts/Satoshi-LightItalic.eot", "size": 75590, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-LightItalic.ttf", "size": 75400, "type": "font/ttf" }, { "file": "fonts/Satoshi-LightItalic.woff", "size": 30336, "type": "font/woff" }, { "file": "fonts/Satoshi-LightItalic.woff2", "size": 23408, "type": "font/woff2" }, { "file": "fonts/Satoshi-Medium.eot", "size": 73934, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Medium.ttf", "size": 73756, "type": "font/ttf" }, { "file": "fonts/Satoshi-Medium.woff", "size": 33272, "type": "font/woff" }, { "file": "fonts/Satoshi-Medium.woff2", "size": 25596, "type": "font/woff2" }, { "file": "fonts/Satoshi-MediumItalic.eot", "size": 76888, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-MediumItalic.ttf", "size": 76696, "type": "font/ttf" }, { "file": "fonts/Satoshi-MediumItalic.woff", "size": 34576, "type": "font/woff" }, { "file": "fonts/Satoshi-MediumItalic.woff2", "size": 26696, "type": "font/woff2" }, { "file": "fonts/Satoshi-Regular.eot", "size": 73634, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Regular.ttf", "size": 73476, "type": "font/ttf" }, { "file": "fonts/Satoshi-Regular.woff", "size": 33024, "type": "font/woff" }, { "file": "fonts/Satoshi-Regular.woff2", "size": 25516, "type": "font/woff2" }, { "file": "fonts/Satoshi-Variable.eot", "size": 127628, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Variable.ttf", "size": 127420, "type": "font/ttf" }, { "file": "fonts/Satoshi-Variable.woff", "size": 35160, "type": "font/woff" }, { "file": "fonts/Satoshi-Variable.woff2", "size": 42588, "type": "font/woff2" }, { "file": "fonts/Satoshi-VariableItalic.eot", "size": 129984, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-VariableItalic.ttf", "size": 129748, "type": "font/ttf" }, { "file": "fonts/Satoshi-VariableItalic.woff", "size": 36472, "type": "font/woff" }, { "file": "fonts/Satoshi-VariableItalic.woff2", "size": 43844, "type": "font/woff2" }, { "file": "g/images/post/covid-gun-spikes/featured-1200.png", "size": 335200, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-1200.webp", "size": 74794, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/featured-400.png", "size": 62998, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-400.webp", "size": 11600, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/featured-800.png", "size": 186980, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-800.webp", "size": 38156, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-1200.png", "size": 187606, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-1200.webp", "size": 29142, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-400.png", "size": 38284, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-400.webp", "size": 7280, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-800.png", "size": 103448, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-800.webp", "size": 17742, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-1200.png", "size": 67151, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-1200.webp", "size": 21026, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-400.png", "size": 21350, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-400.webp", "size": 6202, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-800.png", "size": 45216, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-800.webp", "size": 13876, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-1200.png", "size": 143144, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-1200.webp", "size": 34192, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-400.png", "size": 36205, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-400.webp", "size": 9086, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-800.png", "size": 88862, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-800.webp", "size": 21660, "type": "image/webp" }, { "file": "g/images/project/atus/header-1200.png", "size": 117468, "type": "image/png" }, { "file": "g/images/project/atus/header-1200.webp", "size": 32554, "type": "image/webp" }, { "file": "g/images/project/atus/header-400.png", "size": 24438, "type": "image/png" }, { "file": "g/images/project/atus/header-400.webp", "size": 5824, "type": "image/webp" }, { "file": "g/images/project/atus/header-800.png", "size": 67372, "type": "image/png" }, { "file": "g/images/project/atus/header-800.webp", "size": 18774, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-1200.png", "size": 143023, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-1200.webp", "size": 24644, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-400.png", "size": 28398, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-400.webp", "size": 4934, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-800.png", "size": 78494, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-800.webp", "size": 14538, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-1200.png", "size": 155159, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-1200.webp", "size": 29006, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-400.png", "size": 29767, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-400.webp", "size": 4998, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-800.png", "size": 84722, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-800.webp", "size": 15280, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-1200.png", "size": 480445, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-1200.webp", "size": 79350, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-400.png", "size": 87608, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-400.webp", "size": 20558, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-800.png", "size": 252859, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-800.webp", "size": 50868, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-1200.png", "size": 534391, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-1200.webp", "size": 94984, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-400.png", "size": 96268, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-400.webp", "size": 22660, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-800.png", "size": 280005, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-800.webp", "size": 59932, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-1200.png", "size": 659167, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-1200.webp", "size": 23092, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-400.png", "size": 82475, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-400.webp", "size": 5700, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-800.png", "size": 314202, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-800.webp", "size": 12684, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-400.png", "size": 99969, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-400.webp", "size": 18320, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-800.png", "size": 283987, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-800.webp", "size": 41218, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-400.png", "size": 101625, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-400.webp", "size": 17096, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-800.png", "size": 295392, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-800.webp", "size": 38990, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-400.png", "size": 116485, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-400.webp", "size": 21446, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-800.png", "size": 335388, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-800.webp", "size": 49034, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-400.png", "size": 227477, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-400.webp", "size": 25014, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-800.png", "size": 679086, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-800.webp", "size": 61190, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-1200.png", "size": 127931, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-1200.webp", "size": 16534, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-400.png", "size": 31724, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-400.webp", "size": 3498, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-800.png", "size": 72757, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-800.webp", "size": 9526, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-1200.png", "size": 127937, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-1200.webp", "size": 16030, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-400.png", "size": 25287, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-400.webp", "size": 3426, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-800.png", "size": 68795, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-800.webp", "size": 9310, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-1200.png", "size": 127950, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-1200.webp", "size": 18116, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-400.png", "size": 27536, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-400.webp", "size": 4358, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-800.png", "size": 69585, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-800.webp", "size": 10800, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-1200.png", "size": 205667, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-1200.webp", "size": 26798, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-400.png", "size": 55327, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-400.webp", "size": 5990, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-800.png", "size": 121104, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-800.webp", "size": 16176, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-1200.png", "size": 444597, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-1200.webp", "size": 35422, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-400.png", "size": 68211, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-400.webp", "size": 6964, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-800.png", "size": 218593, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-800.webp", "size": 20210, "type": "image/webp" }, { "file": "g/images/project/compas/header-1200.png", "size": 85793, "type": "image/png" }, { "file": "g/images/project/compas/header-1200.webp", "size": 18064, "type": "image/webp" }, { "file": "g/images/project/compas/header-400.png", "size": 19742, "type": "image/png" }, { "file": "g/images/project/compas/header-400.webp", "size": 3934, "type": "image/webp" }, { "file": "g/images/project/compas/header-800.png", "size": 50125, "type": "image/png" }, { "file": "g/images/project/compas/header-800.webp", "size": 10854, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-1200.png", "size": 210308, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-1200.webp", "size": 42762, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-400.png", "size": 36848, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-400.webp", "size": 6446, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-800.png", "size": 110550, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-800.webp", "size": 22602, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-1200.png", "size": 121883, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-1200.webp", "size": 16868, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-400.png", "size": 25051, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-400.webp", "size": 3898, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-800.png", "size": 66851, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-800.webp", "size": 9740, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-1200.png", "size": 732708, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-1200.webp", "size": 155076, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-400.png", "size": 133246, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-400.webp", "size": 35600, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-800.png", "size": 392407, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-800.webp", "size": 98604, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-1200.png", "size": 387380, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-1200.webp", "size": 52924, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-400.png", "size": 68316, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-400.webp", "size": 13868, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-800.png", "size": 200114, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-800.webp", "size": 33838, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-1200.png", "size": 122351, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-1200.webp", "size": 30042, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-400.png", "size": 24782, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-400.webp", "size": 6154, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-800.png", "size": 66289, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-800.webp", "size": 18276, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-1200.png", "size": 148531, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-1200.webp", "size": 23256, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-400.png", "size": 29247, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-400.webp", "size": 5018, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-800.png", "size": 80753, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-800.webp", "size": 13864, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-1200.png", "size": 222640, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-1200.webp", "size": 34498, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-400.png", "size": 39260, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-400.webp", "size": 6626, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-800.png", "size": 114679, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-800.webp", "size": 19234, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-1200.png", "size": 136848, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-1200.webp", "size": 19628, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-400.png", "size": 29505, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-400.webp", "size": 4690, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-800.png", "size": 75692, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-800.webp", "size": 11500, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-1200.png", "size": 203112, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-1200.webp", "size": 31536, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-400.png", "size": 39083, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-400.webp", "size": 6538, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-800.png", "size": 108673, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-800.webp", "size": 18250, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-1200.png", "size": 438462, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-1200.webp", "size": 49144, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-400.png", "size": 75773, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-400.webp", "size": 9996, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-800.png", "size": 229909, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-800.webp", "size": 28456, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-1200.png", "size": 666371, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-1200.webp", "size": 103550, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-400.png", "size": 126836, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-400.webp", "size": 31446, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-800.png", "size": 355371, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-800.webp", "size": 70310, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-1200.png", "size": 633800, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-1200.webp", "size": 92872, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-400.png", "size": 116944, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-400.webp", "size": 27282, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-800.png", "size": 333035, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-800.webp", "size": 61460, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-1200.png", "size": 1115402, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-1200.webp", "size": 0, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-400.png", "size": 192810, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-400.webp", "size": 40650, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-800.png", "size": 582363, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-800.webp", "size": 94796, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-1200.png", "size": 190449, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-1200.webp", "size": 22720, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-400.png", "size": 34996, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-400.webp", "size": 4866, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-800.png", "size": 98209, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-800.webp", "size": 12454, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-1200.png", "size": 399353, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-1200.webp", "size": 40044, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-400.png", "size": 62996, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-400.webp", "size": 9586, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-800.png", "size": 195567, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-800.webp", "size": 24588, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-1200.png", "size": 144746, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-1200.webp", "size": 17600, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-400.png", "size": 36882, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-400.webp", "size": 5518, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-800.png", "size": 85053, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-800.webp", "size": 11160, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-1200.png", "size": 303610, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-1200.webp", "size": 35528, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-400.png", "size": 57013, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-400.webp", "size": 10072, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-800.png", "size": 175764, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-800.webp", "size": 22504, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-1200.png", "size": 189570, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-1200.webp", "size": 21870, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-400.png", "size": 36678, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-400.webp", "size": 4688, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-800.png", "size": 104622, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-800.webp", "size": 12756, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-1200.png", "size": 429873, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-1200.webp", "size": 49408, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-400.png", "size": 86039, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-400.webp", "size": 12262, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-800.png", "size": 227852, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-800.webp", "size": 30830, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-1200.png", "size": 703752, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-1200.webp", "size": 131896, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-400.png", "size": 135657, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-400.webp", "size": 31680, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-800.png", "size": 383870, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-800.webp", "size": 83944, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-1200.png", "size": 181593, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-1200.webp", "size": 21186, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-400.png", "size": 33630, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-400.webp", "size": 4526, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-800.png", "size": 95938, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-800.webp", "size": 11792, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-1200.png", "size": 615707, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-1200.webp", "size": 68988, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-400.png", "size": 99889, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-400.webp", "size": 15554, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-800.png", "size": 306600, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-800.webp", "size": 40562, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-1200.png", "size": 91438, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-1200.webp", "size": 20980, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-400.png", "size": 22929, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-400.webp", "size": 4158, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-800.png", "size": 55545, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-800.webp", "size": 12292, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-1200.png", "size": 160499, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-1200.webp", "size": 27148, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-400.png", "size": 34102, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-400.webp", "size": 5994, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-800.png", "size": 90031, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-800.webp", "size": 16414, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-1200.png", "size": 188707, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-1200.webp", "size": 33948, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-400.png", "size": 41018, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-400.webp", "size": 7264, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-800.png", "size": 106120, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-800.webp", "size": 19634, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-1200.png", "size": 515914, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-1200.webp", "size": 85424, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-400.png", "size": 101283, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-400.webp", "size": 21960, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-800.png", "size": 280972, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-800.webp", "size": 52784, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-1200.png", "size": 450117, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-1200.webp", "size": 69870, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-400.png", "size": 85569, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-400.webp", "size": 17768, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-800.png", "size": 239868, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-800.webp", "size": 43586, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-1200.png", "size": 460621, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-1200.webp", "size": 62090, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-400.png", "size": 78213, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-400.webp", "size": 11710, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-800.png", "size": 243964, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-800.webp", "size": 35180, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-1200.png", "size": 360596, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-1200.webp", "size": 41700, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-400.png", "size": 61926, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-400.webp", "size": 8048, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-800.png", "size": 186879, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-800.webp", "size": 23396, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-1200.png", "size": 395093, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-1200.webp", "size": 33060, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-400.png", "size": 62816, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-400.webp", "size": 5866, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-800.png", "size": 197628, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-800.webp", "size": 17554, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-1200.png", "size": 484007, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-1200.webp", "size": 55020, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-400.png", "size": 78400, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-400.webp", "size": 9206, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-800.png", "size": 247347, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-800.webp", "size": 28922, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-1200.png", "size": 507630, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-1200.webp", "size": 36226, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-400.png", "size": 77780, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-400.webp", "size": 7438, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-800.png", "size": 252026, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-800.webp", "size": 20442, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-1200.png", "size": 1190882, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-1200.webp", "size": 123630, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-400.png", "size": 201162, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-400.webp", "size": 26462, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-800.png", "size": 616721, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-800.webp", "size": 73688, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-1200.png", "size": 1164599, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-1200.webp", "size": 117774, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-400.png", "size": 196132, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-400.webp", "size": 25220, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-800.png", "size": 603748, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-800.webp", "size": 70492, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-1200.png", "size": 1191236, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-1200.webp", "size": 120498, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-400.png", "size": 200316, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-400.webp", "size": 24888, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-800.png", "size": 615912, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-800.webp", "size": 70994, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-1200.png", "size": 1292482, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-1200.webp", "size": 72362, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-400.png", "size": 182128, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-400.webp", "size": 14084, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-800.png", "size": 627427, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-800.webp", "size": 41082, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-1200.png", "size": 749200, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-1200.webp", "size": 48070, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-400.png", "size": 108441, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-400.webp", "size": 9754, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-800.png", "size": 364911, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-800.webp", "size": 27312, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-1200.png", "size": 1031852, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-1200.webp", "size": 68694, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-400.png", "size": 138799, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-400.webp", "size": 12486, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-800.png", "size": 488234, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-800.webp", "size": 37384, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-1200.png", "size": 791258, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-1200.webp", "size": 48976, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-400.png", "size": 120093, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-400.webp", "size": 9640, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-800.png", "size": 392959, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-800.webp", "size": 27322, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-1200.png", "size": 924966, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-1200.webp", "size": 58734, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-400.png", "size": 121300, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-400.webp", "size": 10604, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-800.png", "size": 432066, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-800.webp", "size": 32074, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-1200.png", "size": 1150565, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-1200.webp", "size": 64822, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-400.png", "size": 149677, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-400.webp", "size": 11730, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-800.png", "size": 537329, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-800.webp", "size": 35056, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-1200.png", "size": 1666998, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-1200.webp", "size": 91170, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-400.png", "size": 249103, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-400.webp", "size": 16374, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-800.png", "size": 822581, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-800.webp", "size": 50644, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-1200.png", "size": 2546336, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-1200.webp", "size": 137424, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-400.png", "size": 327091, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-400.webp", "size": 25134, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-800.png", "size": 1186624, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-800.webp", "size": 74950, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-1200.png", "size": 4334509, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-1200.webp", "size": 236046, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-400.png", "size": 520979, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-400.webp", "size": 35046, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-800.png", "size": 1975269, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-800.webp", "size": 121258, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-1200.png", "size": 81134, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-1200.webp", "size": 16844, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-400.png", "size": 21335, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-400.webp", "size": 3902, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-800.png", "size": 48480, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-800.webp", "size": 10440, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-1200.png", "size": 134195, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-1200.webp", "size": 17176, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-400.png", "size": 29384, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-400.webp", "size": 3984, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-800.png", "size": 73675, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-800.webp", "size": 9774, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-1200.png", "size": 555295, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-1200.webp", "size": 81074, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-400.png", "size": 101995, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-400.webp", "size": 18496, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-800.png", "size": 293436, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-800.webp", "size": 49808, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-1200.png", "size": 156494, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-1200.webp", "size": 36884, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-400.png", "size": 31575, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-400.webp", "size": 6290, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-800.png", "size": 88840, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-800.webp", "size": 20916, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-1200.png", "size": 174252, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-1200.webp", "size": 29964, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-400.png", "size": 32700, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-400.webp", "size": 5884, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-800.png", "size": 93818, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-800.webp", "size": 17566, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-1200.png", "size": 596101, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-1200.webp", "size": 95680, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-400.png", "size": 119865, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-400.webp", "size": 29230, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-800.png", "size": 317704, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-800.webp", "size": 64200, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-1200.png", "size": 162659, "type": "image/png" }, { "file": "g/images/project/police-killings/header-1200.webp", "size": 35494, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-400.png", "size": 29021, "type": "image/png" }, { "file": "g/images/project/police-killings/header-400.webp", "size": 5618, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-800.png", "size": 87968, "type": "image/png" }, { "file": "g/images/project/police-killings/header-800.webp", "size": 18942, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-1200.png", "size": 122068, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-1200.webp", "size": 18578, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-400.png", "size": 24624, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-400.webp", "size": 4004, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-800.png", "size": 67715, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-800.webp", "size": 10664, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-1200.png", "size": 164025, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-1200.webp", "size": 26084, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-400.png", "size": 29493, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-400.webp", "size": 4766, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-800.png", "size": 86076, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-800.webp", "size": 13862, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-1200.png", "size": 336074, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-1200.webp", "size": 47172, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-400.png", "size": 57992, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-400.webp", "size": 11556, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-800.png", "size": 171346, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-800.webp", "size": 29588, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-1200.png", "size": 338723, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-1200.webp", "size": 48850, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-400.png", "size": 56370, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-400.webp", "size": 11368, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-800.png", "size": 171481, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-800.webp", "size": 29710, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-1200.png", "size": 161815, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-1200.webp", "size": 9446, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-400.png", "size": 20500, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-400.webp", "size": 3042, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-800.png", "size": 82552, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-800.webp", "size": 6272, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-1200.png", "size": 210362, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-1200.webp", "size": 25024, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-400.png", "size": 38314, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-400.webp", "size": 5658, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-800.png", "size": 107325, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-800.webp", "size": 14412, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-1200.png", "size": 375514, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-1200.webp", "size": 45866, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-400.png", "size": 69658, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-400.webp", "size": 9642, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-800.png", "size": 197283, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-800.webp", "size": 26042, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-1200.png", "size": 135264, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-1200.webp", "size": 44216, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-400.png", "size": 28375, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-400.webp", "size": 8214, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-800.png", "size": 80460, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-800.webp", "size": 25376, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-1200.png", "size": 156427, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-1200.webp", "size": 32678, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-400.png", "size": 30019, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-400.webp", "size": 5980, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-800.png", "size": 84702, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-800.webp", "size": 18e3, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-1200.png", "size": 432908, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-1200.webp", "size": 92418, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-400.png", "size": 81919, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-400.webp", "size": 23380, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-800.png", "size": 232037, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-800.webp", "size": 58732, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-1200.png", "size": 278547, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-1200.webp", "size": 75976, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-400.png", "size": 54293, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-400.webp", "size": 13e3, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-800.png", "size": 156165, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-800.webp", "size": 42142, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-1-400.png", "size": 137376, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-1-400.webp", "size": 27768, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-1-800.png", "size": 432867, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-1-800.webp", "size": 63302, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-2-400.png", "size": 116068, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-2-400.webp", "size": 23716, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-2-800.png", "size": 362804, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-2-800.webp", "size": 55420, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-3-400.png", "size": 171752, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-3-400.webp", "size": 26424, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-3-800.png", "size": 509518, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-3-800.webp", "size": 58088, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-1200.png", "size": 250051, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-1200.webp", "size": 50024, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-400.png", "size": 47957, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-400.webp", "size": 8780, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-800.png", "size": 132130, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-800.webp", "size": 26420, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-1200.png", "size": 222268, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-1200.webp", "size": 27344, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-400.png", "size": 42871, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-400.webp", "size": 5920, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-800.png", "size": 120192, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-800.webp", "size": 15862, "type": "image/webp" }, { "file": "images/.DS_Store", "size": 10244, "type": null }, { "file": "images/icons/shuffle.svg", "size": 1574, "type": "image/svg+xml" }, { "file": "images/jobs/axios.svg", "size": 455, "type": "image/svg+xml" }, { "file": "images/jobs/moksha.svg", "size": 1261, "type": "image/svg+xml" }, { "file": "images/jobs/socom.svg", "size": 77530, "type": "image/svg+xml" }, { "file": "images/jobs/tpl.svg", "size": 709, "type": "image/svg+xml" }, { "file": "images/me/.DS_Store", "size": 6148, "type": null }, { "file": "images/me/1.png", "size": 67675, "type": "image/png" }, { "file": "images/me/2.png", "size": 286158, "type": "image/png" }, { "file": "images/me/3.png", "size": 46710, "type": "image/png" }, { "file": "images/me/4.png", "size": 479542, "type": "image/png" }, { "file": "images/post/.DS_Store", "size": 16388, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/header.png", "size": 222355, "type": "image/png" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif", "size": 1394285, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif", "size": 1828083, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg", "size": 96852, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/about.png", "size": 171201, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/after-demo-hero-remove.png", "size": 274988, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/before-demo-hero-remove.png", "size": 996449, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/bg-red.png", "size": 247553, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/double-slide.gif", "size": 4049647, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/final.gif", "size": 4711318, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/font-red.png", "size": 274418, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/header.jpg", "size": 272081, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/header.png", "size": 502097, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/left-and-right.gif", "size": 7187557, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/red.gif", "size": 6389199, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/slide-from-right.gif", "size": 5650648, "type": "image/gif" }, { "file": "images/post/automation-scrollytell/header.png", "size": 347231, "type": "image/png" }, { "file": "images/post/bible-babies/boys.gif", "size": 3320504, "type": "image/gif" }, { "file": "images/post/bible-babies/combined.gif", "size": 2500209, "type": "image/gif" }, { "file": "images/post/bible-babies/girls.gif", "size": 3171023, "type": "image/gif" }, { "file": "images/post/bible-babies/header.png", "size": 207384, "type": "image/png" }, { "file": "images/post/bible-babies/line.png", "size": 88209, "type": "image/png" }, { "file": "images/post/bible-babies/male-female-line.png", "size": 103538, "type": "image/png" }, { "file": "images/post/color-in-data-vis/.DS_Store", "size": 8196, "type": null }, { "file": "images/post/color-in-data-vis/all-color.jpg", "size": 48568, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/all-grey.jpg", "size": 25976, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-and-better.jpg", "size": 41594, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-chart.jpg", "size": 144491, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-1.jpg", "size": 25638, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-2.jpg", "size": 462044, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/better-chart1.png", "size": 102932, "type": "image/png" }, { "file": "images/post/color-in-data-vis/betterchart-1.jpg", "size": 102932, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/choropleth-ex.jpg", "size": 116015, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emotion-guide-lol.jpg", "size": 142938, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emphasized.png", "size": 88831, "type": "image/png" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate1.jpg", "size": 388831, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate2.jpg", "size": 292758, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color.jpg", "size": 281680, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/header-old.png", "size": 1500611, "type": "image/png" }, { "file": "images/post/color-in-data-vis/header.png", "size": 142938, "type": "image/png" }, { "file": "images/post/color-in-data-vis/map-Texas-rainbow-1.jpg", "size": 125882, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/popgrowth-vs-popsize-bw-1.png", "size": 102932, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/featured.png", "size": 708910, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/header.png", "size": 960654, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/table-replacement.png", "size": 37277, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-4-1.png", "size": 157047, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-5-1.png", "size": 55822, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-6-1.png", "size": 124650, "type": "image/png" }, { "file": "images/post/covid-on-campus/featured.png", "size": 144039, "type": "image/png" }, { "file": "images/post/covid-on-campus/geofacet_processed.png", "size": 233674, "type": "image/png" }, { "file": "images/post/covid-on-campus/header.png", "size": 246566, "type": "image/png" }, { "file": "images/post/covid-on-campus/table1.png", "size": 111521, "type": "image/png" }, { "file": "images/post/covid-on-campus/table2.png", "size": 49261, "type": "image/png" }, { "file": "images/post/covid-on-campus/table3.png", "size": 46864, "type": "image/png" }, { "file": "images/post/covid-posts/authorVer2-1.png", "size": 66037, "type": "image/png" }, { "file": "images/post/covid-posts/dataTable-1.png", "size": 123935, "type": "image/png" }, { "file": "images/post/covid-posts/featured.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/header.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/prolificVer2-1.png", "size": 178507, "type": "image/png" }, { "file": "images/post/covid-posts/topicsVer2-1.png", "size": 142943, "type": "image/png" }, { "file": "images/post/covid-posts/weekly-1.png", "size": 66718, "type": "image/png" }, { "file": "images/post/do-something-else/startup-faang-satisfaction.png", "size": 128566, "type": "image/png" }, { "file": "images/post/dumbbell-plots/age-disrupt.jpg", "size": 127112, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/age-worry.jpg", "size": 133455, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/axios.jpg", "size": 94024, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/featured.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/header.png", "size": 211763, "type": "image/png" }, { "file": "images/post/dumbbell-plots/partisan-disrupt.jpg", "size": 139913, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/partisan-worry.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/pew.jpg", "size": 83415, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-0.jpg", "size": 79993, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-1.jpg", "size": 86350, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-2.jpg", "size": 93592, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-3.jpg", "size": 101971, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-4.jpg", "size": 96114, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-5.jpg", "size": 160258, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-6.jpg", "size": 146966, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-gif.gif", "size": 670401, "type": "image/gif" }, { "file": "images/post/dumbbell-plots/table.jpg", "size": 27809, "type": "image/jpeg" }, { "file": "images/post/economist-table-replication-using-reactable/featured.png", "size": 107802, "type": "image/png" }, { "file": "images/post/economist-table-replication-using-reactable/header.png", "size": 207227, "type": "image/png" }, { "file": "images/post/flat-data-r/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/flat-data-r/flat-diagram.png", "size": 739814, "type": "image/png" }, { "file": "images/post/flat-data-r/header.png", "size": 1651665, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/featured.png", "size": 60896, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/header.png", "size": 82172, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-10-1.png", "size": 156710, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-11-1.png", "size": 69452, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-12-1.png", "size": 146481, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-13-1.png", "size": 155022, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-14-1.png", "size": 79963, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-15-1.png", "size": 76710, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-16-1.png", "size": 151633, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-17-1.png", "size": 168762, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-18-1.png", "size": 147878, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-3-1.png", "size": 44351, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-5-1.png", "size": 146995, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-6-1.png", "size": 259141, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-7-1.png", "size": 208134, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-8-1.png", "size": 262530, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-9-1.png", "size": 60075, "type": "image/png" }, { "file": "images/post/map-springfield/bw_map_springfield.png", "size": 374640, "type": "image/png" }, { "file": "images/post/map-springfield/gold_map_springfield.png", "size": 673257, "type": "image/png" }, { "file": "images/post/map-springfield/header.png", "size": 220711, "type": "image/png" }, { "file": "images/post/media-mentions/header.png", "size": 311367, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-2-1.png", "size": 80891, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-3-1.png", "size": 192170, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-4-1.png", "size": 137279, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-5-1.png", "size": 86116, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-6-1.png", "size": 503911, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-7-1.png", "size": 349985, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/blog-card.png", "size": 317721, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/dark.png", "size": 86381, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/header.png", "size": 160358, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/home-card.png", "size": 245943, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/light.png", "size": 88342, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/new-site-perf.png", "size": 729480, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/old-site-perf.png", "size": 891912, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/transitions.gif", "size": 1269461, "type": "image/gif" }, { "file": "images/post/refugee-trends/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/refugee-trends/featured.png", "size": 96723, "type": "image/png" }, { "file": "images/post/refugee-trends/final.svg", "size": 339820, "type": "image/svg+xml" }, { "file": "images/post/refugee-trends/firsttry.jpg", "size": 249381, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/header.png", "size": 209771, "type": "image/png" }, { "file": "images/post/refugee-trends/macro.jpg", "size": 59219, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/policyviz.jpg", "size": 62077, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/ref.png", "size": 77965, "type": "image/png" }, { "file": "images/post/refugee-trends/secondtry.jpg", "size": 220813, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/wapo.png", "size": 254826, "type": "image/png" }, { "file": "images/post/svelte-and-d3/header-old.png", "size": 1916771, "type": "image/png" }, { "file": "images/post/svelte-and-d3/header.png", "size": 143947, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/featured.png", "size": 395928, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/header.png", "size": 609028, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/table.png", "size": 39430, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif", "size": 2045058, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif", "size": 3152748, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png", "size": 80022, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif", "size": 1471396, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-replication/bloomberg.png", "size": 286679, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/featured.png", "size": 220110, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/header.png", "size": 391425, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/replication.png", "size": 220110, "type": "image/png" }, { "file": "images/project/.DS_Store", "size": 14340, "type": null }, { "file": "images/project/atus/header.png", "size": 196112, "type": "image/png" }, { "file": "images/project/atus/mac-1.png", "size": 324392, "type": "image/png" }, { "file": "images/project/atus/mac-2.png", "size": 358160, "type": "image/png" }, { "file": "images/project/atus/phone-1.png", "size": 566129, "type": "image/png" }, { "file": "images/project/atus/phone-2.png", "size": 650612, "type": "image/png" }, { "file": "images/project/atus/thumbnail.png", "size": 324392, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/header.png", "size": 522077, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-1.png", "size": 344053, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-2.png", "size": 351424, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-3.png", "size": 428163, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-4.png", "size": 717046, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-1.png", "size": 289518, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-2.png", "size": 281759, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-3.png", "size": 302161, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-4.png", "size": 490020, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-5.png", "size": 856991, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/thumbnail.png", "size": 856991, "type": "image/png" }, { "file": "images/project/compas/header.png", "size": 142488, "type": "image/png" }, { "file": "images/project/compas/mac-1.png", "size": 472868, "type": "image/png" }, { "file": "images/project/compas/mac-2.png", "size": 280729, "type": "image/png" }, { "file": "images/project/compas/phone-1.png", "size": 920374, "type": "image/png" }, { "file": "images/project/compas/phone-2.png", "size": 426156, "type": "image/png" }, { "file": "images/project/compas/thumbnail.png", "size": 280729, "type": "image/png" }, { "file": "images/project/covid-masking/header.png", "size": 162235, "type": "image/png" }, { "file": "images/project/covid-masking/mac-1.png", "size": 309479, "type": "image/png" }, { "file": "images/project/covid-masking/mac-2.png", "size": 499158, "type": "image/png" }, { "file": "images/project/covid-masking/mac-3.png", "size": 259141, "type": "image/png" }, { "file": "images/project/covid-masking/mac-4.png", "size": 422151, "type": "image/png" }, { "file": "images/project/covid-masking/mac-5.png", "size": 889689, "type": "image/png" }, { "file": "images/project/covid-masking/phone-1.png", "size": 876488, "type": "image/png" }, { "file": "images/project/covid-masking/phone-2.png", "size": 793978, "type": "image/png" }, { "file": "images/project/covid-masking/phone-3.png", "size": 1382827, "type": "image/png" }, { "file": "images/project/covid-masking/thumbnail.png", "size": 889689, "type": "image/png" }, { "file": "images/project/cudi-hums/albums-mac.png", "size": 436737, "type": "image/png" }, { "file": "images/project/cudi-hums/albums-phone.png", "size": 434100, "type": "image/png" }, { "file": "images/project/cudi-hums/header.png", "size": 387992, "type": "image/png" }, { "file": "images/project/cudi-hums/intro-phone.png", "size": 344442, "type": "image/png" }, { "file": "images/project/cudi-hums/lyrics-mac.png", "size": 391896, "type": "image/png" }, { "file": "images/project/cudi-hums/lyrics-phone.png", "size": 391041, "type": "image/png" }, { "file": "images/project/cudi-hums/outro-phone.png", "size": 839368, "type": "image/png" }, { "file": "images/project/cudi-hums/thumbnail.png", "size": 436910, "type": "image/png" }, { "file": "images/project/cudi-hums/tracks-mac.png", "size": 409045, "type": "image/png" }, { "file": "images/project/cudi-hums/tracks-phone.png", "size": 702731, "type": "image/png" }, { "file": "images/project/how-many-people/header.png", "size": 279507, "type": "image/png" }, { "file": "images/project/how-many-people/mac-1.png", "size": 344834, "type": "image/png" }, { "file": "images/project/how-many-people/mac-2.png", "size": 419217, "type": "image/png" }, { "file": "images/project/how-many-people/phone-1.png", "size": 539341, "type": "image/png" }, { "file": "images/project/how-many-people/phone-2.png", "size": 480652, "type": "image/png" }, { "file": "images/project/how-many-people/thumbnail.png", "size": 419044, "type": "image/png" }, { "file": "images/project/map-houston-homicides/header.png", "size": 940867, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-1.png", "size": 686069, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-2.png", "size": 763418, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-3.png", "size": 993711, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-4.png", "size": 1095083, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-1.png", "size": 1357800, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-2.png", "size": 1322563, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-3.png", "size": 1366588, "type": "image/png" }, { "file": "images/project/map-houston-homicides/thumbnail.png", "size": 686069, "type": "image/png" }, { "file": "images/project/map-missing-migrants/header.png", "size": 2595176, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-1.png", "size": 1686366, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-2.png", "size": 2525417, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-3.png", "size": 1666740, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-4.png", "size": 2408824, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-5.png", "size": 2937636, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-1.png", "size": 1593964, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-2.png", "size": 2671671, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-3.png", "size": 4814414, "type": "image/png" }, { "file": "images/project/map-missing-migrants/thumbnail.png", "size": 1686366, "type": "image/png" }, { "file": "images/project/media-mentions/header.png", "size": 118535, "type": "image/png" }, { "file": "images/project/media-mentions/mac.png", "size": 306203, "type": "image/png" }, { "file": "images/project/media-mentions/phone.png", "size": 582627, "type": "image/png" }, { "file": "images/project/media-mentions/thumbnail.png", "size": 306203, "type": "image/png" }, { "file": "images/project/one-line-hacks/.DS_Store", "size": 6148, "type": null }, { "file": "images/project/one-line-hacks/header-old.png", "size": 490537, "type": "image/png" }, { "file": "images/project/one-line-hacks/header.png", "size": 117340, "type": "image/png" }, { "file": "images/project/one-line-hacks/mac-1.png", "size": 383847, "type": "image/png" }, { "file": "images/project/one-line-hacks/phone-1.png", "size": 769617, "type": "image/png" }, { "file": "images/project/one-line-hacks/thumbnail.png", "size": 383847, "type": "image/png" }, { "file": "images/project/police-killings/header.png", "size": 250166, "type": "image/png" }, { "file": "images/project/police-killings/mac-1.png", "size": 279769, "type": "image/png" }, { "file": "images/project/police-killings/mac-2.png", "size": 391676, "type": "image/png" }, { "file": "images/project/police-killings/phone-1.png", "size": 381385, "type": "image/png" }, { "file": "images/project/police-killings/phone-2.png", "size": 391569, "type": "image/png" }, { "file": "images/project/police-killings/thumbnail.png", "size": 391676, "type": "image/png" }, { "file": "images/project/quarantunes/header.png", "size": 214359, "type": "image/png" }, { "file": "images/project/quarantunes/macbook.png", "size": 454223, "type": "image/png" }, { "file": "images/project/quarantunes/phone.png", "size": 779131, "type": "image/png" }, { "file": "images/project/quarantunes/side-by-side.png", "size": 667703, "type": "image/png" }, { "file": "images/project/quarantunes/tablet.png", "size": 404682, "type": "image/png" }, { "file": "images/project/quarantunes/thumbnail.png", "size": 454223, "type": "image/png" }, { "file": "images/project/state-police-spending/header.png", "size": 229693, "type": "image/png" }, { "file": "images/project/state-police-spending/mac.png", "size": 365809, "type": "image/png" }, { "file": "images/project/state-police-spending/phone.png", "size": 549873, "type": "image/png" }, { "file": "images/project/state-police-spending/thumbnail.png", "size": 365809, "type": "image/png" }, { "file": "images/project/tpl-schools-db/.DS_Store", "size": 6148, "type": null }, { "file": "images/project/tpl-schools-db/header.png", "size": 437453, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-1.png", "size": 603447, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-2.png", "size": 505851, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-3.png", "size": 596795, "type": "image/png" }, { "file": "images/project/tpl-schools-db/mac-1.png", "size": 562424, "type": "image/png" }, { "file": "images/project/tpl-schools-db/mac-2.png", "size": 470837, "type": "image/png" }, { "file": "images/project/tpl-schools-db/thumbnail.png", "size": 562424, "type": "image/png" }, { "file": "plugins/MorphSVGPlugin.min.js", "size": 16715, "type": "application/javascript" }, { "file": "videos/.DS_Store", "size": 6148, "type": null }, { "file": "videos/0.mov", "size": 2530263, "type": "video/quicktime" }, { "file": "videos/0.webm", "size": 2255719, "type": "video/webm" }, { "file": "videos/1.mov", "size": 1620978, "type": "video/quicktime" }, { "file": "videos/1.webm", "size": 1775726, "type": "video/webm" }, { "file": "videos/2.mov", "size": 2352553, "type": "video/quicktime" }, { "file": "videos/2.webm", "size": 1768475, "type": "video/webm" }, { "file": "videos/3.mov", "size": 1687563, "type": "video/quicktime" }, { "file": "videos/3.webm", "size": 1814469, "type": "video/webm" }, { "file": "videos/raw/.DS_Store", "size": 6148, "type": null }, { "file": "videos/raw/0-prores.mov", "size": 104966007, "type": "video/quicktime" }, { "file": "videos/raw/0.mov", "size": 2530263, "type": "video/quicktime" }, { "file": "videos/raw/0.webm", "size": 2255719, "type": "video/webm" }, { "file": "videos/raw/1-prores.mov", "size": 51115571, "type": "video/quicktime" }, { "file": "videos/raw/1.mov", "size": 1620978, "type": "video/quicktime" }, { "file": "videos/raw/1.webm", "size": 1775726, "type": "video/webm" }, { "file": "videos/raw/2-prores.mov", "size": 106541251, "type": "video/quicktime" }, { "file": "videos/raw/2.mov", "size": 2352553, "type": "video/quicktime" }, { "file": "videos/raw/2.webm", "size": 1768475, "type": "video/webm" }, { "file": "videos/raw/3-prores.mov", "size": 52868467, "type": "video/quicktime" }, { "file": "videos/raw/3.mov", "size": 1687563, "type": "video/quicktime" }, { "file": "videos/raw/3.webm", "size": 1814469, "type": "video/webm" }, { "file": "workers/bundler.js", "size": 468912, "type": "application/javascript" }, { "file": "workers/compiler.js", "size": 605, "type": "application/javascript" }],
+      assets: [{ "file": ".DS_Store", "size": 10244, "type": null }, { "file": "favicon-fill.png", "size": 25690, "type": "image/png" }, { "file": "favicon.png", "size": 1719, "type": "image/png" }, { "file": "fonts/.DS_Store", "size": 10244, "type": null }, { "file": "fonts/Satoshi-Black.eot", "size": 73352, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Black.ttf", "size": 73176, "type": "font/ttf" }, { "file": "fonts/Satoshi-Black.woff", "size": 30376, "type": "font/woff" }, { "file": "fonts/Satoshi-Black.woff2", "size": 23484, "type": "font/woff2" }, { "file": "fonts/Satoshi-BlackItalic.eot", "size": 75950, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-BlackItalic.ttf", "size": 75760, "type": "font/ttf" }, { "file": "fonts/Satoshi-BlackItalic.woff", "size": 31364, "type": "font/woff" }, { "file": "fonts/Satoshi-BlackItalic.woff2", "size": 24276, "type": "font/woff2" }, { "file": "fonts/Satoshi-Bold.eot", "size": 73532, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Bold.ttf", "size": 73368, "type": "font/ttf" }, { "file": "fonts/Satoshi-Bold.woff", "size": 32972, "type": "font/woff" }, { "file": "fonts/Satoshi-Bold.woff2", "size": 25328, "type": "font/woff2" }, { "file": "fonts/Satoshi-BoldItalic.eot", "size": 76620, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-BoldItalic.ttf", "size": 76452, "type": "font/ttf" }, { "file": "fonts/Satoshi-BoldItalic.woff", "size": 34336, "type": "font/woff" }, { "file": "fonts/Satoshi-BoldItalic.woff2", "size": 26300, "type": "font/woff2" }, { "file": "fonts/Satoshi-Italic.eot", "size": 76762, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Italic.ttf", "size": 76604, "type": "font/ttf" }, { "file": "fonts/Satoshi-Italic.woff", "size": 34336, "type": "font/woff" }, { "file": "fonts/Satoshi-Italic.woff2", "size": 26456, "type": "font/woff2" }, { "file": "fonts/Satoshi-Light.eot", "size": 71860, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Light.ttf", "size": 71684, "type": "font/ttf" }, { "file": "fonts/Satoshi-Light.woff", "size": 29276, "type": "font/woff" }, { "file": "fonts/Satoshi-Light.woff2", "size": 22800, "type": "font/woff2" }, { "file": "fonts/Satoshi-LightItalic.eot", "size": 75590, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-LightItalic.ttf", "size": 75400, "type": "font/ttf" }, { "file": "fonts/Satoshi-LightItalic.woff", "size": 30336, "type": "font/woff" }, { "file": "fonts/Satoshi-LightItalic.woff2", "size": 23408, "type": "font/woff2" }, { "file": "fonts/Satoshi-Medium.eot", "size": 73934, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Medium.ttf", "size": 73756, "type": "font/ttf" }, { "file": "fonts/Satoshi-Medium.woff", "size": 33272, "type": "font/woff" }, { "file": "fonts/Satoshi-Medium.woff2", "size": 25596, "type": "font/woff2" }, { "file": "fonts/Satoshi-MediumItalic.eot", "size": 76888, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-MediumItalic.ttf", "size": 76696, "type": "font/ttf" }, { "file": "fonts/Satoshi-MediumItalic.woff", "size": 34576, "type": "font/woff" }, { "file": "fonts/Satoshi-MediumItalic.woff2", "size": 26696, "type": "font/woff2" }, { "file": "fonts/Satoshi-Regular.eot", "size": 73634, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Regular.ttf", "size": 73476, "type": "font/ttf" }, { "file": "fonts/Satoshi-Regular.woff", "size": 33024, "type": "font/woff" }, { "file": "fonts/Satoshi-Regular.woff2", "size": 25516, "type": "font/woff2" }, { "file": "fonts/Satoshi-Variable.eot", "size": 127628, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-Variable.ttf", "size": 127420, "type": "font/ttf" }, { "file": "fonts/Satoshi-Variable.woff", "size": 35160, "type": "font/woff" }, { "file": "fonts/Satoshi-Variable.woff2", "size": 42588, "type": "font/woff2" }, { "file": "fonts/Satoshi-VariableItalic.eot", "size": 129984, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Satoshi-VariableItalic.ttf", "size": 129748, "type": "font/ttf" }, { "file": "fonts/Satoshi-VariableItalic.woff", "size": 36472, "type": "font/woff" }, { "file": "fonts/Satoshi-VariableItalic.woff2", "size": 43844, "type": "font/woff2" }, { "file": "g/images/post/covid-gun-spikes/featured-1200.png", "size": 335200, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-1200.webp", "size": 74794, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/featured-400.png", "size": 62998, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-400.webp", "size": 11600, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/featured-800.png", "size": 186980, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/featured-800.webp", "size": 38156, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-1200.png", "size": 187606, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-1200.webp", "size": 29142, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-400.png", "size": 38284, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-400.webp", "size": 7280, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-800.png", "size": 103448, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-4-1-800.webp", "size": 17742, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-1200.png", "size": 67151, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-1200.webp", "size": 21026, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-400.png", "size": 21350, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-400.webp", "size": 6202, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-800.png", "size": 45216, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-5-1-800.webp", "size": 13876, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-1200.png", "size": 143144, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-1200.webp", "size": 34192, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-400.png", "size": 36205, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-400.webp", "size": 9086, "type": "image/webp" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-800.png", "size": 88862, "type": "image/png" }, { "file": "g/images/post/covid-gun-spikes/unnamed-chunk-6-1-800.webp", "size": 21660, "type": "image/webp" }, { "file": "g/images/project/atus/header-1200.png", "size": 117468, "type": "image/png" }, { "file": "g/images/project/atus/header-1200.webp", "size": 32554, "type": "image/webp" }, { "file": "g/images/project/atus/header-400.png", "size": 24438, "type": "image/png" }, { "file": "g/images/project/atus/header-400.webp", "size": 5824, "type": "image/webp" }, { "file": "g/images/project/atus/header-800.png", "size": 67372, "type": "image/png" }, { "file": "g/images/project/atus/header-800.webp", "size": 18774, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-1200.png", "size": 143023, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-1200.webp", "size": 24644, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-400.png", "size": 28398, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-400.webp", "size": 4934, "type": "image/webp" }, { "file": "g/images/project/atus/mac-1-800.png", "size": 78494, "type": "image/png" }, { "file": "g/images/project/atus/mac-1-800.webp", "size": 14538, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-1200.png", "size": 155159, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-1200.webp", "size": 29006, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-400.png", "size": 29767, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-400.webp", "size": 4998, "type": "image/webp" }, { "file": "g/images/project/atus/mac-2-800.png", "size": 84722, "type": "image/png" }, { "file": "g/images/project/atus/mac-2-800.webp", "size": 15280, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-1200.png", "size": 480445, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-1200.webp", "size": 79350, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-400.png", "size": 87608, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-400.webp", "size": 20558, "type": "image/webp" }, { "file": "g/images/project/atus/phone-1-800.png", "size": 252859, "type": "image/png" }, { "file": "g/images/project/atus/phone-1-800.webp", "size": 50868, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-1200.png", "size": 534391, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-1200.webp", "size": 94984, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-400.png", "size": 96268, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-400.webp", "size": 22660, "type": "image/webp" }, { "file": "g/images/project/atus/phone-2-800.png", "size": 280005, "type": "image/png" }, { "file": "g/images/project/atus/phone-2-800.webp", "size": 59932, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-1200.png", "size": 659167, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-1200.webp", "size": 23092, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-400.png", "size": 82475, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-400.webp", "size": 5700, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/header-800.png", "size": 314202, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/header-800.webp", "size": 12684, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-400.png", "size": 99969, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-400.webp", "size": 18320, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-800.png", "size": 283987, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-1-800.webp", "size": 41218, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-400.png", "size": 101625, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-400.webp", "size": 17096, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-800.png", "size": 295392, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-2-800.webp", "size": 38990, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-400.png", "size": 116485, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-400.webp", "size": 21446, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-800.png", "size": 335388, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-3-800.webp", "size": 49034, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-400.png", "size": 227477, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-400.webp", "size": 25014, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-800.png", "size": 679086, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/iphone-4-800.webp", "size": 61190, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-1200.png", "size": 127931, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-1200.webp", "size": 16534, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-400.png", "size": 31724, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-400.webp", "size": 3498, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-800.png", "size": 72757, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-1-800.webp", "size": 9526, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-1200.png", "size": 127937, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-1200.webp", "size": 16030, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-400.png", "size": 25287, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-400.webp", "size": 3426, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-800.png", "size": 68795, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-2-800.webp", "size": 9310, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-1200.png", "size": 127950, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-1200.webp", "size": 18116, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-400.png", "size": 27536, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-400.webp", "size": 4358, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-800.png", "size": 69585, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-3-800.webp", "size": 10800, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-1200.png", "size": 205667, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-1200.webp", "size": 26798, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-400.png", "size": 55327, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-400.webp", "size": 5990, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-800.png", "size": 121104, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-4-800.webp", "size": 16176, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-1200.png", "size": 444597, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-1200.webp", "size": 35422, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-400.png", "size": 68211, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-400.webp", "size": 6964, "type": "image/webp" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-800.png", "size": 218593, "type": "image/png" }, { "file": "g/images/project/bob-ross-art-gallery/mac-5-800.webp", "size": 20210, "type": "image/webp" }, { "file": "g/images/project/compas/header-1200.png", "size": 85793, "type": "image/png" }, { "file": "g/images/project/compas/header-1200.webp", "size": 18064, "type": "image/webp" }, { "file": "g/images/project/compas/header-400.png", "size": 19742, "type": "image/png" }, { "file": "g/images/project/compas/header-400.webp", "size": 3934, "type": "image/webp" }, { "file": "g/images/project/compas/header-800.png", "size": 50125, "type": "image/png" }, { "file": "g/images/project/compas/header-800.webp", "size": 10854, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-1200.png", "size": 210308, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-1200.webp", "size": 42762, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-400.png", "size": 36848, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-400.webp", "size": 6446, "type": "image/webp" }, { "file": "g/images/project/compas/mac-1-800.png", "size": 110550, "type": "image/png" }, { "file": "g/images/project/compas/mac-1-800.webp", "size": 22602, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-1200.png", "size": 121883, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-1200.webp", "size": 16868, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-400.png", "size": 25051, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-400.webp", "size": 3898, "type": "image/webp" }, { "file": "g/images/project/compas/mac-2-800.png", "size": 66851, "type": "image/png" }, { "file": "g/images/project/compas/mac-2-800.webp", "size": 9740, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-1200.png", "size": 732708, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-1200.webp", "size": 155076, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-400.png", "size": 133246, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-400.webp", "size": 35600, "type": "image/webp" }, { "file": "g/images/project/compas/phone-1-800.png", "size": 392407, "type": "image/png" }, { "file": "g/images/project/compas/phone-1-800.webp", "size": 98604, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-1200.png", "size": 387380, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-1200.webp", "size": 52924, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-400.png", "size": 68316, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-400.webp", "size": 13868, "type": "image/webp" }, { "file": "g/images/project/compas/phone-2-800.png", "size": 200114, "type": "image/png" }, { "file": "g/images/project/compas/phone-2-800.webp", "size": 33838, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-1200.png", "size": 122351, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-1200.webp", "size": 30042, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-400.png", "size": 24782, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-400.webp", "size": 6154, "type": "image/webp" }, { "file": "g/images/project/covid-masking/header-800.png", "size": 66289, "type": "image/png" }, { "file": "g/images/project/covid-masking/header-800.webp", "size": 18276, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-1200.png", "size": 148531, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-1200.webp", "size": 23256, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-400.png", "size": 29247, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-400.webp", "size": 5018, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-1-800.png", "size": 80753, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-1-800.webp", "size": 13864, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-1200.png", "size": 222640, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-1200.webp", "size": 34498, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-400.png", "size": 39260, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-400.webp", "size": 6626, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-2-800.png", "size": 114679, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-2-800.webp", "size": 19234, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-1200.png", "size": 136848, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-1200.webp", "size": 19628, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-400.png", "size": 29505, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-400.webp", "size": 4690, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-3-800.png", "size": 75692, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-3-800.webp", "size": 11500, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-1200.png", "size": 203112, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-1200.webp", "size": 31536, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-400.png", "size": 39083, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-400.webp", "size": 6538, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-4-800.png", "size": 108673, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-4-800.webp", "size": 18250, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-1200.png", "size": 438462, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-1200.webp", "size": 49144, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-400.png", "size": 75773, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-400.webp", "size": 9996, "type": "image/webp" }, { "file": "g/images/project/covid-masking/mac-5-800.png", "size": 229909, "type": "image/png" }, { "file": "g/images/project/covid-masking/mac-5-800.webp", "size": 28456, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-1200.png", "size": 666371, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-1200.webp", "size": 103550, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-400.png", "size": 126836, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-400.webp", "size": 31446, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-1-800.png", "size": 355371, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-1-800.webp", "size": 70310, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-1200.png", "size": 633800, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-1200.webp", "size": 92872, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-400.png", "size": 116944, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-400.webp", "size": 27282, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-2-800.png", "size": 333035, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-2-800.webp", "size": 61460, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-1200.png", "size": 1115402, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-1200.webp", "size": 0, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-400.png", "size": 192810, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-400.webp", "size": 40650, "type": "image/webp" }, { "file": "g/images/project/covid-masking/phone-3-800.png", "size": 582363, "type": "image/png" }, { "file": "g/images/project/covid-masking/phone-3-800.webp", "size": 94796, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-1200.png", "size": 190449, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-1200.webp", "size": 22720, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-400.png", "size": 34996, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-400.webp", "size": 4866, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-mac-800.png", "size": 98209, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-mac-800.webp", "size": 12454, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-1200.png", "size": 399353, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-1200.webp", "size": 40044, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-400.png", "size": 62996, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-400.webp", "size": 9586, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/albums-phone-800.png", "size": 195567, "type": "image/png" }, { "file": "g/images/project/cudi-hums/albums-phone-800.webp", "size": 24588, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-1200.png", "size": 144746, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-1200.webp", "size": 17600, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-400.png", "size": 36882, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-400.webp", "size": 5518, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/header-800.png", "size": 85053, "type": "image/png" }, { "file": "g/images/project/cudi-hums/header-800.webp", "size": 11160, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-1200.png", "size": 303610, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-1200.webp", "size": 35528, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-400.png", "size": 57013, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-400.webp", "size": 10072, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/intro-phone-800.png", "size": 175764, "type": "image/png" }, { "file": "g/images/project/cudi-hums/intro-phone-800.webp", "size": 22504, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-1200.png", "size": 189570, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-1200.webp", "size": 21870, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-400.png", "size": 36678, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-400.webp", "size": 4688, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-mac-800.png", "size": 104622, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-mac-800.webp", "size": 12756, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-1200.png", "size": 429873, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-1200.webp", "size": 49408, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-400.png", "size": 86039, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-400.webp", "size": 12262, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/lyrics-phone-800.png", "size": 227852, "type": "image/png" }, { "file": "g/images/project/cudi-hums/lyrics-phone-800.webp", "size": 30830, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-1200.png", "size": 703752, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-1200.webp", "size": 131896, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-400.png", "size": 135657, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-400.webp", "size": 31680, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/outro-phone-800.png", "size": 383870, "type": "image/png" }, { "file": "g/images/project/cudi-hums/outro-phone-800.webp", "size": 83944, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-1200.png", "size": 181593, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-1200.webp", "size": 21186, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-400.png", "size": 33630, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-400.webp", "size": 4526, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-mac-800.png", "size": 95938, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-mac-800.webp", "size": 11792, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-1200.png", "size": 615707, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-1200.webp", "size": 68988, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-400.png", "size": 99889, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-400.webp", "size": 15554, "type": "image/webp" }, { "file": "g/images/project/cudi-hums/tracks-phone-800.png", "size": 306600, "type": "image/png" }, { "file": "g/images/project/cudi-hums/tracks-phone-800.webp", "size": 40562, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-1200.png", "size": 91438, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-1200.webp", "size": 20980, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-400.png", "size": 22929, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-400.webp", "size": 4158, "type": "image/webp" }, { "file": "g/images/project/how-many-people/header-800.png", "size": 55545, "type": "image/png" }, { "file": "g/images/project/how-many-people/header-800.webp", "size": 12292, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-1200.png", "size": 160499, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-1200.webp", "size": 27148, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-400.png", "size": 34102, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-400.webp", "size": 5994, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-1-800.png", "size": 90031, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-1-800.webp", "size": 16414, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-1200.png", "size": 188707, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-1200.webp", "size": 33948, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-400.png", "size": 41018, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-400.webp", "size": 7264, "type": "image/webp" }, { "file": "g/images/project/how-many-people/mac-2-800.png", "size": 106120, "type": "image/png" }, { "file": "g/images/project/how-many-people/mac-2-800.webp", "size": 19634, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-1200.png", "size": 515914, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-1200.webp", "size": 85424, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-400.png", "size": 101283, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-400.webp", "size": 21960, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-1-800.png", "size": 280972, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-1-800.webp", "size": 52784, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-1200.png", "size": 450117, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-1200.webp", "size": 69870, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-400.png", "size": 85569, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-400.webp", "size": 17768, "type": "image/webp" }, { "file": "g/images/project/how-many-people/phone-2-800.png", "size": 239868, "type": "image/png" }, { "file": "g/images/project/how-many-people/phone-2-800.webp", "size": 43586, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-1200.png", "size": 460621, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-1200.webp", "size": 62090, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-400.png", "size": 78213, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-400.webp", "size": 11710, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/header-800.png", "size": 243964, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/header-800.webp", "size": 35180, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-1200.png", "size": 360596, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-1200.webp", "size": 41700, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-400.png", "size": 61926, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-400.webp", "size": 8048, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-1-800.png", "size": 186879, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-1-800.webp", "size": 23396, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-1200.png", "size": 395093, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-1200.webp", "size": 33060, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-400.png", "size": 62816, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-400.webp", "size": 5866, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-2-800.png", "size": 197628, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-2-800.webp", "size": 17554, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-1200.png", "size": 484007, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-1200.webp", "size": 55020, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-400.png", "size": 78400, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-400.webp", "size": 9206, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-3-800.png", "size": 247347, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-3-800.webp", "size": 28922, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-1200.png", "size": 507630, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-1200.webp", "size": 36226, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-400.png", "size": 77780, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-400.webp", "size": 7438, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/mac-4-800.png", "size": 252026, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/mac-4-800.webp", "size": 20442, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-1200.png", "size": 1190882, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-1200.webp", "size": 123630, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-400.png", "size": 201162, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-400.webp", "size": 26462, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-1-800.png", "size": 616721, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-1-800.webp", "size": 73688, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-1200.png", "size": 1164599, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-1200.webp", "size": 117774, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-400.png", "size": 196132, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-400.webp", "size": 25220, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-2-800.png", "size": 603748, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-2-800.webp", "size": 70492, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-1200.png", "size": 1191236, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-1200.webp", "size": 120498, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-400.png", "size": 200316, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-400.webp", "size": 24888, "type": "image/webp" }, { "file": "g/images/project/map-houston-homicides/phone-3-800.png", "size": 615912, "type": "image/png" }, { "file": "g/images/project/map-houston-homicides/phone-3-800.webp", "size": 70994, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-1200.png", "size": 1292482, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-1200.webp", "size": 72362, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-400.png", "size": 182128, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-400.webp", "size": 14084, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/header-800.png", "size": 627427, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/header-800.webp", "size": 41082, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-1200.png", "size": 749200, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-1200.webp", "size": 48070, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-400.png", "size": 108441, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-400.webp", "size": 9754, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-1-800.png", "size": 364911, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-1-800.webp", "size": 27312, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-1200.png", "size": 1031852, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-1200.webp", "size": 68694, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-400.png", "size": 138799, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-400.webp", "size": 12486, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-2-800.png", "size": 488234, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-2-800.webp", "size": 37384, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-1200.png", "size": 791258, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-1200.webp", "size": 48976, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-400.png", "size": 120093, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-400.webp", "size": 9640, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-3-800.png", "size": 392959, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-3-800.webp", "size": 27322, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-1200.png", "size": 924966, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-1200.webp", "size": 58734, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-400.png", "size": 121300, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-400.webp", "size": 10604, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-4-800.png", "size": 432066, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-4-800.webp", "size": 32074, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-1200.png", "size": 1150565, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-1200.webp", "size": 64822, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-400.png", "size": 149677, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-400.webp", "size": 11730, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/mac-5-800.png", "size": 537329, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/mac-5-800.webp", "size": 35056, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-1200.png", "size": 1666998, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-1200.webp", "size": 91170, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-400.png", "size": 249103, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-400.webp", "size": 16374, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-1-800.png", "size": 822581, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-1-800.webp", "size": 50644, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-1200.png", "size": 2546336, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-1200.webp", "size": 137424, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-400.png", "size": 327091, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-400.webp", "size": 25134, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-2-800.png", "size": 1186624, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-2-800.webp", "size": 74950, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-1200.png", "size": 4334509, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-1200.webp", "size": 236046, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-400.png", "size": 520979, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-400.webp", "size": 35046, "type": "image/webp" }, { "file": "g/images/project/map-missing-migrants/phone-3-800.png", "size": 1975269, "type": "image/png" }, { "file": "g/images/project/map-missing-migrants/phone-3-800.webp", "size": 121258, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-1200.png", "size": 81134, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-1200.webp", "size": 16844, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-400.png", "size": 21335, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-400.webp", "size": 3902, "type": "image/webp" }, { "file": "g/images/project/media-mentions/header-800.png", "size": 48480, "type": "image/png" }, { "file": "g/images/project/media-mentions/header-800.webp", "size": 10440, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-1200.png", "size": 134195, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-1200.webp", "size": 17176, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-400.png", "size": 29384, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-400.webp", "size": 3984, "type": "image/webp" }, { "file": "g/images/project/media-mentions/mac-800.png", "size": 73675, "type": "image/png" }, { "file": "g/images/project/media-mentions/mac-800.webp", "size": 9774, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-1200.png", "size": 555295, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-1200.webp", "size": 81074, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-400.png", "size": 101995, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-400.webp", "size": 18496, "type": "image/webp" }, { "file": "g/images/project/media-mentions/phone-800.png", "size": 293436, "type": "image/png" }, { "file": "g/images/project/media-mentions/phone-800.webp", "size": 49808, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-1200.png", "size": 156494, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-1200.webp", "size": 36884, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-400.png", "size": 31575, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-400.webp", "size": 6290, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/header-800.png", "size": 88840, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/header-800.webp", "size": 20916, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-1200.png", "size": 174252, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-1200.webp", "size": 29964, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-400.png", "size": 32700, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-400.webp", "size": 5884, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/mac-1-800.png", "size": 93818, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/mac-1-800.webp", "size": 17566, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-1200.png", "size": 596101, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-1200.webp", "size": 95680, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-400.png", "size": 119865, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-400.webp", "size": 29230, "type": "image/webp" }, { "file": "g/images/project/one-line-hacks/phone-1-800.png", "size": 317704, "type": "image/png" }, { "file": "g/images/project/one-line-hacks/phone-1-800.webp", "size": 64200, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-1200.png", "size": 162659, "type": "image/png" }, { "file": "g/images/project/police-killings/header-1200.webp", "size": 35494, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-400.png", "size": 29021, "type": "image/png" }, { "file": "g/images/project/police-killings/header-400.webp", "size": 5618, "type": "image/webp" }, { "file": "g/images/project/police-killings/header-800.png", "size": 87968, "type": "image/png" }, { "file": "g/images/project/police-killings/header-800.webp", "size": 18942, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-1200.png", "size": 122068, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-1200.webp", "size": 18578, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-400.png", "size": 24624, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-400.webp", "size": 4004, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-1-800.png", "size": 67715, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-1-800.webp", "size": 10664, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-1200.png", "size": 164025, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-1200.webp", "size": 26084, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-400.png", "size": 29493, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-400.webp", "size": 4766, "type": "image/webp" }, { "file": "g/images/project/police-killings/mac-2-800.png", "size": 86076, "type": "image/png" }, { "file": "g/images/project/police-killings/mac-2-800.webp", "size": 13862, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-1200.png", "size": 336074, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-1200.webp", "size": 47172, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-400.png", "size": 57992, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-400.webp", "size": 11556, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-1-800.png", "size": 171346, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-1-800.webp", "size": 29588, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-1200.png", "size": 338723, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-1200.webp", "size": 48850, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-400.png", "size": 56370, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-400.webp", "size": 11368, "type": "image/webp" }, { "file": "g/images/project/police-killings/phone-2-800.png", "size": 171481, "type": "image/png" }, { "file": "g/images/project/police-killings/phone-2-800.webp", "size": 29710, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-1200.png", "size": 161815, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-1200.webp", "size": 9446, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-400.png", "size": 20500, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-400.webp", "size": 3042, "type": "image/webp" }, { "file": "g/images/project/quarantunes/header-800.png", "size": 82552, "type": "image/png" }, { "file": "g/images/project/quarantunes/header-800.webp", "size": 6272, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-1200.png", "size": 210362, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-1200.webp", "size": 25024, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-400.png", "size": 38314, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-400.webp", "size": 5658, "type": "image/webp" }, { "file": "g/images/project/quarantunes/macbook-800.png", "size": 107325, "type": "image/png" }, { "file": "g/images/project/quarantunes/macbook-800.webp", "size": 14412, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-1200.png", "size": 375514, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-1200.webp", "size": 45866, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-400.png", "size": 69658, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-400.webp", "size": 9642, "type": "image/webp" }, { "file": "g/images/project/quarantunes/side-by-side-800.png", "size": 197283, "type": "image/png" }, { "file": "g/images/project/quarantunes/side-by-side-800.webp", "size": 26042, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-1200.png", "size": 135264, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-1200.webp", "size": 44216, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-400.png", "size": 28375, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-400.webp", "size": 8214, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/header-800.png", "size": 80460, "type": "image/png" }, { "file": "g/images/project/state-police-spending/header-800.webp", "size": 25376, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-1200.png", "size": 156427, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-1200.webp", "size": 32678, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-400.png", "size": 30019, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-400.webp", "size": 5980, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/mac-800.png", "size": 84702, "type": "image/png" }, { "file": "g/images/project/state-police-spending/mac-800.webp", "size": 18e3, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-1200.png", "size": 432908, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-1200.webp", "size": 92418, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-400.png", "size": 81919, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-400.webp", "size": 23380, "type": "image/webp" }, { "file": "g/images/project/state-police-spending/phone-800.png", "size": 232037, "type": "image/png" }, { "file": "g/images/project/state-police-spending/phone-800.webp", "size": 58732, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-1200.png", "size": 278547, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-1200.webp", "size": 75976, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-400.png", "size": 54293, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-400.webp", "size": 13e3, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/header-800.png", "size": 156165, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/header-800.webp", "size": 42142, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-1-400.png", "size": 137376, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-1-400.webp", "size": 27768, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-1-800.png", "size": 432867, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-1-800.webp", "size": 63302, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-2-400.png", "size": 116068, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-2-400.webp", "size": 23716, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-2-800.png", "size": 362804, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-2-800.webp", "size": 55420, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-3-400.png", "size": 171752, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-3-400.webp", "size": 26424, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/iphone-3-800.png", "size": 509518, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/iphone-3-800.webp", "size": 58088, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-1200.png", "size": 250051, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-1200.webp", "size": 50024, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-400.png", "size": 47957, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-400.webp", "size": 8780, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-1-800.png", "size": 132130, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-1-800.webp", "size": 26420, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-1200.png", "size": 222268, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-1200.webp", "size": 27344, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-400.png", "size": 42871, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-400.webp", "size": 5920, "type": "image/webp" }, { "file": "g/images/project/tpl-schools-db/mac-2-800.png", "size": 120192, "type": "image/png" }, { "file": "g/images/project/tpl-schools-db/mac-2-800.webp", "size": 15862, "type": "image/webp" }, { "file": "images/.DS_Store", "size": 10244, "type": null }, { "file": "images/icons/shuffle.svg", "size": 972, "type": "image/svg+xml" }, { "file": "images/jobs/axios.svg", "size": 455, "type": "image/svg+xml" }, { "file": "images/jobs/moksha.svg", "size": 488, "type": "image/svg+xml" }, { "file": "images/jobs/socom.svg", "size": 50538, "type": "image/svg+xml" }, { "file": "images/jobs/tpl.svg", "size": 328, "type": "image/svg+xml" }, { "file": "images/me/.DS_Store", "size": 6148, "type": null }, { "file": "images/me/1.png", "size": 57948, "type": "image/png" }, { "file": "images/me/2.png", "size": 80201, "type": "image/png" }, { "file": "images/me/3.png", "size": 38576, "type": "image/png" }, { "file": "images/me/4.png", "size": 251802, "type": "image/png" }, { "file": "images/noise/.DS_Store", "size": 6148, "type": null }, { "file": "images/noise/basic.png", "size": 1758, "type": "image/png" }, { "file": "images/noise/grid.png", "size": 646, "type": "image/png" }, { "file": "images/noise/groovy.png", "size": 56033, "type": "image/png" }, { "file": "images/post/.DS_Store", "size": 20484, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/header.png", "size": 56651, "type": "image/png" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/new-tooltip.gif", "size": 1394285, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/old-tooltip.gif", "size": 1828083, "type": "image/gif" }, { "file": "images/post/adding-a-chart-to-your-d3-tooltip/west-virginia.jpg", "size": 56651, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/about.png", "size": 81540, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/after-demo-hero-remove.png", "size": 142225, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/before-demo-hero-remove.png", "size": 550815, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/bg-red.png", "size": 137859, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/double-slide.gif", "size": 4049647, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/final.gif", "size": 3809339, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/font-red.png", "size": 140844, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/header.jpg", "size": 139713, "type": "image/jpeg" }, { "file": "images/post/animate-hugo-academic/header.png", "size": 139713, "type": "image/png" }, { "file": "images/post/animate-hugo-academic/left-and-right.gif", "size": 7187557, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/red.gif", "size": 6389199, "type": "image/gif" }, { "file": "images/post/animate-hugo-academic/slide-from-right.gif", "size": 5650648, "type": "image/gif" }, { "file": "images/post/automation-scrollytell/header.png", "size": 88714, "type": "image/png" }, { "file": "images/post/bible-babies/boys.gif", "size": 3320504, "type": "image/gif" }, { "file": "images/post/bible-babies/combined.gif", "size": 2500209, "type": "image/gif" }, { "file": "images/post/bible-babies/girls.gif", "size": 3171023, "type": "image/gif" }, { "file": "images/post/bible-babies/header.png", "size": 48736, "type": "image/png" }, { "file": "images/post/bible-babies/line.png", "size": 42380, "type": "image/png" }, { "file": "images/post/bible-babies/male-female-line.png", "size": 48736, "type": "image/png" }, { "file": "images/post/color-in-data-vis/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/color-in-data-vis/all-color.jpg", "size": 22918, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/all-grey.jpg", "size": 25961, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-and-better.jpg", "size": 19309, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-chart.jpg", "size": 67801, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-1.jpg", "size": 15622, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/bad-color-use-2.jpg", "size": 171044, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/better-chart1.png", "size": 47961, "type": "image/png" }, { "file": "images/post/color-in-data-vis/betterchart-1.jpg", "size": 47961, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/choropleth-ex.jpg", "size": 64698, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emotion-guide-lol.jpg", "size": 142917, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/color-emphasized.png", "size": 41279, "type": "image/png" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate1.jpg", "size": 132001, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color-annotate2.jpg", "size": 167758, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/flipping-points-color.jpg", "size": 159253, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/header-old.png", "size": 612185, "type": "image/png" }, { "file": "images/post/color-in-data-vis/header.png", "size": 142917, "type": "image/png" }, { "file": "images/post/color-in-data-vis/map-Texas-rainbow-1.jpg", "size": 65444, "type": "image/jpeg" }, { "file": "images/post/color-in-data-vis/popgrowth-vs-popsize-bw-1.png", "size": 47961, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/featured.png", "size": 450408, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/header.png", "size": 450408, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/table-replacement.png", "size": 37277, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-4-1.png", "size": 83189, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-5-1.png", "size": 27771, "type": "image/png" }, { "file": "images/post/covid-gun-spikes/unnamed-chunk-6-1.png", "size": 74214, "type": "image/png" }, { "file": "images/post/covid-on-campus/featured.png", "size": 82569, "type": "image/png" }, { "file": "images/post/covid-on-campus/geofacet_processed.png", "size": 129990, "type": "image/png" }, { "file": "images/post/covid-on-campus/header.png", "size": 82569, "type": "image/png" }, { "file": "images/post/covid-on-campus/table1.png", "size": 68223, "type": "image/png" }, { "file": "images/post/covid-on-campus/table2.png", "size": 49261, "type": "image/png" }, { "file": "images/post/covid-on-campus/table3.png", "size": 46853, "type": "image/png" }, { "file": "images/post/covid-posts/authorVer2-1.png", "size": 34403, "type": "image/png" }, { "file": "images/post/covid-posts/dataTable-1.png", "size": 65373, "type": "image/png" }, { "file": "images/post/covid-posts/featured.png", "size": 66350, "type": "image/png" }, { "file": "images/post/covid-posts/header.png", "size": 66350, "type": "image/png" }, { "file": "images/post/covid-posts/prolificVer2-1.png", "size": 77842, "type": "image/png" }, { "file": "images/post/covid-posts/topicsVer2-1.png", "size": 66350, "type": "image/png" }, { "file": "images/post/covid-posts/weekly-1.png", "size": 34140, "type": "image/png" }, { "file": "images/post/do-something-else/startup-faang-satisfaction.png", "size": 31310, "type": "image/png" }, { "file": "images/post/dumbbell-plots/age-disrupt.jpg", "size": 89313, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/age-worry.jpg", "size": 93475, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/axios.jpg", "size": 41650, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/featured.jpg", "size": 102539, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/header.png", "size": 102539, "type": "image/png" }, { "file": "images/post/dumbbell-plots/partisan-disrupt.jpg", "size": 98298, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/partisan-worry.jpg", "size": 102539, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/pew.jpg", "size": 73048, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-0.jpg", "size": 60557, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-1.jpg", "size": 64751, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-2.jpg", "size": 69818, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-3.jpg", "size": 75405, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-4.jpg", "size": 70535, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-5.jpg", "size": 109722, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-6.jpg", "size": 102539, "type": "image/jpeg" }, { "file": "images/post/dumbbell-plots/process-gif.gif", "size": 459415, "type": "image/gif" }, { "file": "images/post/dumbbell-plots/table.jpg", "size": 12921, "type": "image/jpeg" }, { "file": "images/post/economist-table-replication-using-reactable/featured.png", "size": 58562, "type": "image/png" }, { "file": "images/post/economist-table-replication-using-reactable/header.png", "size": 58562, "type": "image/png" }, { "file": "images/post/flat-data-r/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/flat-data-r/flat-diagram.png", "size": 94671, "type": "image/png" }, { "file": "images/post/flat-data-r/header.png", "size": 768610, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/featured.png", "size": 27404, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/header.png", "size": 27404, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-10-1.png", "size": 71239, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-11-1.png", "size": 32715, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-12-1.png", "size": 65438, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-13-1.png", "size": 71141, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-14-1.png", "size": 34266, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-15-1.png", "size": 34096, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-16-1.png", "size": 59268, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-17-1.png", "size": 78529, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-18-1.png", "size": 67167, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-3-1.png", "size": 19281, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-5-1.png", "size": 65811, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-6-1.png", "size": 110774, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-7-1.png", "size": 104247, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-8-1.png", "size": 134547, "type": "image/png" }, { "file": "images/post/introducing-tpltheme/unnamed-chunk-9-1.png", "size": 26962, "type": "image/png" }, { "file": "images/post/map-springfield/bw_map_springfield.png", "size": 374639, "type": "image/png" }, { "file": "images/post/map-springfield/gold_map_springfield.png", "size": 343427, "type": "image/png" }, { "file": "images/post/map-springfield/header.png", "size": 84506, "type": "image/png" }, { "file": "images/post/media-mentions/header.png", "size": 101936, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-2-1.png", "size": 40293, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-3-1.png", "size": 85472, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-4-1.png", "size": 66403, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-5-1.png", "size": 41581, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-6-1.png", "size": 188108, "type": "image/png" }, { "file": "images/post/media-mentions/unnamed-chunk-7-1.png", "size": 173594, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/blog-card.png", "size": 83080, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/dark.png", "size": 33349, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/header.png", "size": 60016, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/home-card.png", "size": 89979, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/light.png", "size": 29618, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/new-site-perf.png", "size": 102700, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/old-site-perf.png", "size": 125410, "type": "image/png" }, { "file": "images/post/nuxt-blog-starter/transitions.gif", "size": 1269461, "type": "image/gif" }, { "file": "images/post/refugee-trends/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/refugee-trends/featured.png", "size": 53037, "type": "image/png" }, { "file": "images/post/refugee-trends/final.svg", "size": 335256, "type": "image/svg+xml" }, { "file": "images/post/refugee-trends/firsttry.jpg", "size": 133424, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/header.png", "size": 53037, "type": "image/png" }, { "file": "images/post/refugee-trends/macro.jpg", "size": 28248, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/policyviz.jpg", "size": 62077, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/ref.png", "size": 39108, "type": "image/png" }, { "file": "images/post/refugee-trends/secondtry.jpg", "size": 119761, "type": "image/jpeg" }, { "file": "images/post/refugee-trends/wapo.png", "size": 122412, "type": "image/png" }, { "file": "images/post/svelte-and-d3/header-old.png", "size": 452126, "type": "image/png" }, { "file": "images/post/svelte-and-d3/header.png", "size": 53552, "type": "image/png" }, { "file": "images/post/svelte-scrollytelling/map.gif", "size": 2686913, "type": "image/gif" }, { "file": "images/post/this-site/.DS_Store", "size": 6148, "type": null }, { "file": "images/post/this-site/award-example.png", "size": 1314152, "type": "image/png" }, { "file": "images/post/this-site/blog-example.png", "size": 1182778, "type": "image/png" }, { "file": "images/post/this-site/commits.png", "size": 79061, "type": "image/png" }, { "file": "images/post/this-site/flayks-project.png", "size": 2799719, "type": "image/png" }, { "file": "images/post/this-site/hero.mp4", "size": 261268, "type": "video/mp4" }, { "file": "images/post/this-site/inview.mp4", "size": 1499897, "type": "video/mp4" }, { "file": "images/post/this-site/niccolo-tweet-1.png", "size": 404481, "type": "image/png" }, { "file": "images/post/this-site/niccolo-tweet-2.png", "size": 397317, "type": "image/png" }, { "file": "images/post/this-site/paul-graham.png", "size": 216629, "type": "image/png" }, { "file": "images/post/this-site/project-example.png", "size": 1088900, "type": "image/png" }, { "file": "images/post/this-site/projects.mp4", "size": 757512, "type": "video/mp4" }, { "file": "images/post/tidy-tuesday-powerlifting/featured.png", "size": 184895, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/header.png", "size": 184895, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/table.png", "size": 39407, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif", "size": 2045058, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif", "size": 3152748, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png", "size": 39335, "type": "image/png" }, { "file": "images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif", "size": 1471396, "type": "image/gif" }, { "file": "images/post/tidy-tuesday-replication/bloomberg.png", "size": 135971, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/featured.png", "size": 101407, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/header.png", "size": 101407, "type": "image/png" }, { "file": "images/post/tidy-tuesday-replication/replication.png", "size": 101407, "type": "image/png" }, { "file": "images/project/.DS_Store", "size": 14340, "type": null }, { "file": "images/project/atus/header.png", "size": 79301, "type": "image/png" }, { "file": "images/project/atus/mac-1.png", "size": 96127, "type": "image/png" }, { "file": "images/project/atus/mac-2.png", "size": 108682, "type": "image/png" }, { "file": "images/project/atus/phone-1.png", "size": 195449, "type": "image/png" }, { "file": "images/project/atus/phone-2.png", "size": 223265, "type": "image/png" }, { "file": "images/project/atus/thumbnail.png", "size": 96127, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/header.png", "size": 95753, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-1.png", "size": 137500, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-2.png", "size": 127697, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-3.png", "size": 145736, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/iphone-4.png", "size": 202171, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-1.png", "size": 68833, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-2.png", "size": 65562, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-3.png", "size": 61233, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-4.png", "size": 83655, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/mac-5.png", "size": 190533, "type": "image/png" }, { "file": "images/project/bob-ross-art-gallery/thumbnail.png", "size": 190533, "type": "image/png" }, { "file": "images/project/compas/header.png", "size": 51244, "type": "image/png" }, { "file": "images/project/compas/mac-1.png", "size": 159150, "type": "image/png" }, { "file": "images/project/compas/mac-2.png", "size": 68082, "type": "image/png" }, { "file": "images/project/compas/phone-1.png", "size": 323027, "type": "image/png" }, { "file": "images/project/compas/phone-2.png", "size": 144216, "type": "image/png" }, { "file": "images/project/compas/thumbnail.png", "size": 68082, "type": "image/png" }, { "file": "images/project/covid-masking/header.png", "size": 66149, "type": "image/png" }, { "file": "images/project/covid-masking/mac-1.png", "size": 90840, "type": "image/png" }, { "file": "images/project/covid-masking/mac-2.png", "size": 147749, "type": "image/png" }, { "file": "images/project/covid-masking/mac-3.png", "size": 73289, "type": "image/png" }, { "file": "images/project/covid-masking/mac-4.png", "size": 125071, "type": "image/png" }, { "file": "images/project/covid-masking/mac-5.png", "size": 249967, "type": "image/png" }, { "file": "images/project/covid-masking/phone-1.png", "size": 289610, "type": "image/png" }, { "file": "images/project/covid-masking/phone-2.png", "size": 254612, "type": "image/png" }, { "file": "images/project/covid-masking/phone-3.png", "size": 431755, "type": "image/png" }, { "file": "images/project/covid-masking/thumbnail.png", "size": 249967, "type": "image/png" }, { "file": "images/project/cudi-hums/.DS_Store", "size": 6148, "type": null }, { "file": "images/project/cudi-hums/albums-mac.png", "size": 102304, "type": "image/png" }, { "file": "images/project/cudi-hums/albums-phone.png", "size": 152940, "type": "image/png" }, { "file": "images/project/cudi-hums/header.png", "size": 347172, "type": "image/png" }, { "file": "images/project/cudi-hums/intro-phone.png", "size": 120192, "type": "image/png" }, { "file": "images/project/cudi-hums/lyrics-mac.png", "size": 97771, "type": "image/png" }, { "file": "images/project/cudi-hums/lyrics-phone.png", "size": 139225, "type": "image/png" }, { "file": "images/project/cudi-hums/outro-phone.png", "size": 264174, "type": "image/png" }, { "file": "images/project/cudi-hums/thumbnail.png", "size": 102304, "type": "image/png" }, { "file": "images/project/cudi-hums/tracks-mac.png", "size": 93245, "type": "image/png" }, { "file": "images/project/cudi-hums/tracks-phone.png", "size": 187468, "type": "image/png" }, { "file": "images/project/how-many-people/header.png", "size": 62414, "type": "image/png" }, { "file": "images/project/how-many-people/mac-1.png", "size": 104041, "type": "image/png" }, { "file": "images/project/how-many-people/mac-2.png", "size": 112205, "type": "image/png" }, { "file": "images/project/how-many-people/phone-1.png", "size": 182713, "type": "image/png" }, { "file": "images/project/how-many-people/phone-2.png", "size": 163183, "type": "image/png" }, { "file": "images/project/how-many-people/thumbnail.png", "size": 112205, "type": "image/png" }, { "file": "images/project/map-houston-homicides/header.png", "size": 372289, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-1.png", "size": 239196, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-2.png", "size": 307187, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-3.png", "size": 360301, "type": "image/png" }, { "file": "images/project/map-houston-homicides/mac-4.png", "size": 326151, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-1.png", "size": 495510, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-2.png", "size": 482629, "type": "image/png" }, { "file": "images/project/map-houston-homicides/phone-3.png", "size": 477690, "type": "image/png" }, { "file": "images/project/map-houston-homicides/thumbnail.png", "size": 239196, "type": "image/png" }, { "file": "images/project/map-missing-migrants/header.png", "size": 582536, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-1.png", "size": 379646, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-2.png", "size": 504859, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-3.png", "size": 376023, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-4.png", "size": 512686, "type": "image/png" }, { "file": "images/project/map-missing-migrants/mac-5.png", "size": 614474, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-1.png", "size": 595337, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-2.png", "size": 750633, "type": "image/png" }, { "file": "images/project/map-missing-migrants/phone-3.png", "size": 1472804, "type": "image/png" }, { "file": "images/project/map-missing-migrants/thumbnail.png", "size": 379646, "type": "image/png" }, { "file": "images/project/media-mentions/header.png", "size": 25812, "type": "image/png" }, { "file": "images/project/media-mentions/mac.png", "size": 62352, "type": "image/png" }, { "file": "images/project/media-mentions/phone.png", "size": 173091, "type": "image/png" }, { "file": "images/project/media-mentions/thumbnail.png", "size": 62352, "type": "image/png" }, { "file": "images/project/one-line-hacks/.DS_Store", "size": 6148, "type": null }, { "file": "images/project/one-line-hacks/header-old.png", "size": 383240, "type": "image/png" }, { "file": "images/project/one-line-hacks/header.png", "size": 29186, "type": "image/png" }, { "file": "images/project/one-line-hacks/mac-1.png", "size": 91804, "type": "image/png" }, { "file": "images/project/one-line-hacks/phone-1.png", "size": 234037, "type": "image/png" }, { "file": "images/project/one-line-hacks/thumbnail.png", "size": 91804, "type": "image/png" }, { "file": "images/project/police-killings/header.png", "size": 100378, "type": "image/png" }, { "file": "images/project/police-killings/mac-1.png", "size": 71574, "type": "image/png" }, { "file": "images/project/police-killings/mac-2.png", "size": 99770, "type": "image/png" }, { "file": "images/project/police-killings/phone-1.png", "size": 124463, "type": "image/png" }, { "file": "images/project/police-killings/phone-2.png", "size": 127452, "type": "image/png" }, { "file": "images/project/police-killings/thumbnail.png", "size": 99770, "type": "image/png" }, { "file": "images/project/quarantunes/header.png", "size": 101020, "type": "image/png" }, { "file": "images/project/quarantunes/macbook.png", "size": 102460, "type": "image/png" }, { "file": "images/project/quarantunes/phone.png", "size": 258241, "type": "image/png" }, { "file": "images/project/quarantunes/side-by-side.png", "size": 213624, "type": "image/png" }, { "file": "images/project/quarantunes/tablet.png", "size": 136270, "type": "image/png" }, { "file": "images/project/quarantunes/thumbnail.png", "size": 102460, "type": "image/png" }, { "file": "images/project/state-police-spending/header.png", "size": 97650, "type": "image/png" }, { "file": "images/project/state-police-spending/mac.png", "size": 114378, "type": "image/png" }, { "file": "images/project/state-police-spending/phone.png", "size": 194872, "type": "image/png" }, { "file": "images/project/state-police-spending/thumbnail.png", "size": 114378, "type": "image/png" }, { "file": "images/project/tpl-schools-db/.DS_Store", "size": 6148, "type": null }, { "file": "images/project/tpl-schools-db/header.png", "size": 176477, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-1.png", "size": 204378, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-2.png", "size": 155163, "type": "image/png" }, { "file": "images/project/tpl-schools-db/iphone-3.png", "size": 185470, "type": "image/png" }, { "file": "images/project/tpl-schools-db/mac-1.png", "size": 171468, "type": "image/png" }, { "file": "images/project/tpl-schools-db/mac-2.png", "size": 115599, "type": "image/png" }, { "file": "images/project/tpl-schools-db/thumbnail.png", "size": 171468, "type": "image/png" }, { "file": "plugins/MorphSVGPlugin.min.js", "size": 16715, "type": "application/javascript" }, { "file": "social.png", "size": 989781, "type": "image/png" }, { "file": "videos/.DS_Store", "size": 6148, "type": null }, { "file": "videos/0.mov", "size": 2530263, "type": "video/quicktime" }, { "file": "videos/0.webm", "size": 2255719, "type": "video/webm" }, { "file": "videos/1.mov", "size": 1620978, "type": "video/quicktime" }, { "file": "videos/1.webm", "size": 1775726, "type": "video/webm" }, { "file": "videos/2.mov", "size": 2352553, "type": "video/quicktime" }, { "file": "videos/2.webm", "size": 1768475, "type": "video/webm" }, { "file": "videos/3.mov", "size": 1687563, "type": "video/quicktime" }, { "file": "videos/3.webm", "size": 1814469, "type": "video/webm" }, { "file": "videos/raw/.DS_Store", "size": 6148, "type": null }, { "file": "videos/raw/0-prores.mov", "size": 104966007, "type": "video/quicktime" }, { "file": "videos/raw/0.mov", "size": 2530263, "type": "video/quicktime" }, { "file": "videos/raw/0.webm", "size": 2255719, "type": "video/webm" }, { "file": "videos/raw/1-prores.mov", "size": 51115571, "type": "video/quicktime" }, { "file": "videos/raw/1.mov", "size": 1620978, "type": "video/quicktime" }, { "file": "videos/raw/1.webm", "size": 1775726, "type": "video/webm" }, { "file": "videos/raw/2-prores.mov", "size": 106541251, "type": "video/quicktime" }, { "file": "videos/raw/2.mov", "size": 2352553, "type": "video/quicktime" }, { "file": "videos/raw/2.webm", "size": 1768475, "type": "video/webm" }, { "file": "videos/raw/3-prores.mov", "size": 52868467, "type": "video/quicktime" }, { "file": "videos/raw/3.mov", "size": 1687563, "type": "video/quicktime" }, { "file": "videos/raw/3.webm", "size": 1814469, "type": "video/webm" }, { "file": "workers/bundler.js", "size": 468912, "type": "application/javascript" }, { "file": "workers/compiler.js", "size": 605, "type": "application/javascript" }],
       layout: "src/routes/__layout.svelte",
       error: "src/routes/__error.svelte",
       routes: [
@@ -24570,32 +25363,25 @@ ${``}`;
           type: "endpoint",
           pattern: /^\/experience\.json$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_experience_json_eeaf338a(), experience_json_eeaf338a_exports))
+          load: () => Promise.resolve().then(() => (init_experience_json_2c7ac6eb(), experience_json_2c7ac6eb_exports))
         },
         {
           type: "endpoint",
           pattern: /^\/projects\.json$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_projects_json_5153e243(), projects_json_5153e243_exports))
+          load: () => Promise.resolve().then(() => (init_projects_json_8acfcd9d(), projects_json_8acfcd9d_exports))
         },
         {
           type: "endpoint",
           pattern: /^\/awards\.json$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_awards_json_2a867850(), awards_json_2a867850_exports))
+          load: () => Promise.resolve().then(() => (init_awards_json_5d79fe43(), awards_json_5d79fe43_exports))
         },
         {
           type: "page",
           pattern: /^\/experience\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/experience/index.svelte"],
-          b: ["src/routes/__error.svelte"]
-        },
-        {
-          type: "page",
-          pattern: /^\/experience\/layout\/?$/,
-          params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/experience/layout.svelte"],
           b: ["src/routes/__error.svelte"]
         },
         {
@@ -24630,7 +25416,7 @@ ${``}`;
           type: "endpoint",
           pattern: /^\/posts\.json$/,
           params: empty,
-          load: () => Promise.resolve().then(() => (init_posts_json_c9cb5aa2(), posts_json_c9cb5aa2_exports))
+          load: () => Promise.resolve().then(() => (init_posts_json_f85adb07(), posts_json_f85adb07_exports))
         },
         {
           type: "page",
@@ -24728,13 +25514,6 @@ ${``}`;
           pattern: /^\/project\/compas\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/project/compas.md"],
-          b: ["src/routes/__error.svelte"]
-        },
-        {
-          type: "page",
-          pattern: /^\/project\/layout\/?$/,
-          params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/project/layout.svelte"],
           b: ["src/routes/__error.svelte"]
         },
         {
@@ -24865,13 +25644,6 @@ ${``}`;
         },
         {
           type: "page",
-          pattern: /^\/award\/layout\/?$/,
-          params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/award/layout.svelte"],
-          b: ["src/routes/__error.svelte"]
-        },
-        {
-          type: "page",
           pattern: /^\/post\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/post/index.svelte"],
@@ -24917,6 +25689,13 @@ ${``}`;
           pattern: /^\/post\/animate-hugo-academic\/?$/,
           params: empty,
           a: ["src/routes/__layout.svelte", "src/routes/post/animate-hugo-academic.md"],
+          b: ["src/routes/__error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/post\/svelte-scrollytelling\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/post/svelte-scrollytelling.md"],
           b: ["src/routes/__error.svelte"]
         },
         {
@@ -25012,9 +25791,23 @@ ${``}`;
         },
         {
           type: "page",
-          pattern: /^\/post\/layout\/?$/,
+          pattern: /^\/post\/following\/?$/,
           params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/post/layout.svelte"],
+          a: ["src/routes/__layout.svelte", "src/routes/post/following.md"],
+          b: ["src/routes/__error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/post\/this-site\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/post/this-site.md"],
+          b: ["src/routes/__error.svelte"]
+        },
+        {
+          type: "page",
+          pattern: /^\/post\/learning\/?$/,
+          params: empty,
+          a: ["src/routes/__layout.svelte", "src/routes/post/learning.md"],
           b: ["src/routes/__error.svelte"]
         }
       ]
@@ -25026,72 +25819,72 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_f4d524c8(), layout_f4d524c8_exports)),
-      "src/routes/__error.svelte": () => Promise.resolve().then(() => (init_error_e9146f31(), error_e9146f31_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_ec7d7444(), index_ec7d7444_exports)),
-      "src/routes/experience/index.svelte": () => Promise.resolve().then(() => (init_index_1d23e8c8(), index_1d23e8c8_exports)),
-      "src/routes/experience/layout.svelte": () => Promise.resolve().then(() => (init_layout_720789ab(), layout_720789ab_exports)),
-      "src/routes/experience/moksha.md": () => Promise.resolve().then(() => (init_moksha_36761011(), moksha_36761011_exports)),
-      "src/routes/experience/axios.md": () => Promise.resolve().then(() => (init_axios_c62f5b73(), axios_c62f5b73_exports)),
-      "src/routes/experience/socom.md": () => Promise.resolve().then(() => (init_socom_928a555d(), socom_928a555d_exports)),
-      "src/routes/experience/tpl.md": () => Promise.resolve().then(() => (init_tpl_a65e72fb(), tpl_a65e72fb_exports)),
-      "src/routes/project/index.svelte": () => Promise.resolve().then(() => (init_index_d2625cbc(), index_d2625cbc_exports)),
-      "src/routes/project/map-houston-homicides.md": () => Promise.resolve().then(() => (init_map_houston_homicides_fb5e3c63(), map_houston_homicides_fb5e3c63_exports)),
-      "src/routes/project/state-police-spending.md": () => Promise.resolve().then(() => (init_state_police_spending_3f7bcce7(), state_police_spending_3f7bcce7_exports)),
-      "src/routes/project/bob-ross-art-gallery.md": () => Promise.resolve().then(() => (init_bob_ross_art_gallery_9eeb337a(), bob_ross_art_gallery_9eeb337a_exports)),
-      "src/routes/project/map-missing-migrants.md": () => Promise.resolve().then(() => (init_map_missing_migrants_1cf10cfb(), map_missing_migrants_1cf10cfb_exports)),
-      "src/routes/project/how-many-people.md": () => Promise.resolve().then(() => (init_how_many_people_3ca8cf42(), how_many_people_3ca8cf42_exports)),
-      "src/routes/project/police-killings.md": () => Promise.resolve().then(() => (init_police_killings_c1167173(), police_killings_c1167173_exports)),
-      "src/routes/project/media-mentions.md": () => Promise.resolve().then(() => (init_media_mentions_37dc09b6(), media_mentions_37dc09b6_exports)),
-      "src/routes/project/one-line-hacks.md": () => Promise.resolve().then(() => (init_one_line_hacks_8cd8beed(), one_line_hacks_8cd8beed_exports)),
-      "src/routes/project/tpl-schools-db.md": () => Promise.resolve().then(() => (init_tpl_schools_db_e581ff12(), tpl_schools_db_e581ff12_exports)),
-      "src/routes/project/covid-masking.md": () => Promise.resolve().then(() => (init_covid_masking_556f2090(), covid_masking_556f2090_exports)),
-      "src/routes/project/quarantunes.md": () => Promise.resolve().then(() => (init_quarantunes_4fd849e9(), quarantunes_4fd849e9_exports)),
-      "src/routes/project/cudi-hums.md": () => Promise.resolve().then(() => (init_cudi_hums_00d50d13(), cudi_hums_00d50d13_exports)),
-      "src/routes/project/compas.md": () => Promise.resolve().then(() => (init_compas_720ac1d2(), compas_720ac1d2_exports)),
-      "src/routes/project/layout.svelte": () => Promise.resolve().then(() => (init_layout_3f1c4dcc(), layout_3f1c4dcc_exports)),
-      "src/routes/project/atus.md": () => Promise.resolve().then(() => (init_atus_5ac17a29(), atus_5ac17a29_exports)),
-      "src/routes/about/index.svelte": () => Promise.resolve().then(() => (init_index_ad8386c5(), index_ad8386c5_exports)),
-      "src/routes/award/index.svelte": () => Promise.resolve().then(() => (init_index_11158698(), index_11158698_exports)),
-      "src/routes/award/rstudio-table-contest-2021.md": () => Promise.resolve().then(() => (init_rstudio_table_contest_2021_1dd07ccb(), rstudio_table_contest_2021_1dd07ccb_exports)),
-      "src/routes/award/d2k-showcase-2020.md": () => Promise.resolve().then(() => (init_d2k_showcase_2020_6103b3a1(), d2k_showcase_2020_6103b3a1_exports)),
-      "src/routes/award/northeastern-2020.md": () => Promise.resolve().then(() => (init_northeastern_2020_6cc1f185(), northeastern_2020_6cc1f185_exports)),
-      "src/routes/award/pudding-cup-2020.md": () => Promise.resolve().then(() => (init_pudding_cup_2020_f7625164(), pudding_cup_2020_f7625164_exports)),
-      "src/routes/award/nationals-2017.md": () => Promise.resolve().then(() => (init_nationals_2017_ef86cfd7(), nationals_2017_ef86cfd7_exports)),
-      "src/routes/award/datathon-2020.md": () => Promise.resolve().then(() => (init_datathon_2020_417f5796(), datathon_2020_417f5796_exports)),
-      "src/routes/award/hudspeth-2020.md": () => Promise.resolve().then(() => (init_hudspeth_2020_05fcf5b9(), hudspeth_2020_05fcf5b9_exports)),
-      "src/routes/award/malofiej-2020.md": () => Promise.resolve().then(() => (init_malofiej_2020_fa078526(), malofiej_2020_fa078526_exports)),
-      "src/routes/award/malofiej-2021.md": () => Promise.resolve().then(() => (init_malofiej_2021_adbb9a9b(), malofiej_2021_adbb9a9b_exports)),
-      "src/routes/award/bipp-2018.md": () => Promise.resolve().then(() => (init_bipp_2018_2f226335(), bipp_2018_2f226335_exports)),
-      "src/routes/award/chrp-2020.md": () => Promise.resolve().then(() => (init_chrp_2020_7675f653(), chrp_2020_7675f653_exports)),
-      "src/routes/award/hpc-2018.md": () => Promise.resolve().then(() => (init_hpc_2018_3b361fa0(), hpc_2018_3b361fa0_exports)),
-      "src/routes/award/hpc-2019.md": () => Promise.resolve().then(() => (init_hpc_2019_ea0c7b04(), hpc_2019_ea0c7b04_exports)),
-      "src/routes/award/hpc-2020.md": () => Promise.resolve().then(() => (init_hpc_2020_8d2ea241(), hpc_2020_8d2ea241_exports)),
-      "src/routes/award/snd-2021.md": () => Promise.resolve().then(() => (init_snd_2021_b57846b6(), snd_2021_b57846b6_exports)),
-      "src/routes/award/layout.svelte": () => Promise.resolve().then(() => (init_layout_f08d1a0d(), layout_f08d1a0d_exports)),
-      "src/routes/post/index.svelte": () => Promise.resolve().then(() => (init_index_1de0c6e9(), index_1de0c6e9_exports)),
-      "src/routes/post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(() => (init_economist_table_replication_using_reactable_d59c42a0(), economist_table_replication_using_reactable_d59c42a0_exports)),
-      "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(() => (init_adding_a_chart_to_your_d3_tooltip_67831f20(), adding_a_chart_to_your_d3_tooltip_67831f20_exports)),
-      "src/routes/post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(() => (init_tidy_tuesday_powerlifting_56cc77f6(), tidy_tuesday_powerlifting_56cc77f6_exports)),
-      "src/routes/post/tidy-tuesday-replication.md": () => Promise.resolve().then(() => (init_tidy_tuesday_replication_27e2426e(), tidy_tuesday_replication_27e2426e_exports)),
-      "src/routes/post/automation-scrollytell.md": () => Promise.resolve().then(() => (init_automation_scrollytell_6d42332b(), automation_scrollytell_6d42332b_exports)),
-      "src/routes/post/animate-hugo-academic.md": () => Promise.resolve().then(() => (init_animate_hugo_academic_123d84a8(), animate_hugo_academic_123d84a8_exports)),
-      "src/routes/post/introducing-tpltheme.md": () => Promise.resolve().then(() => (init_introducing_tpltheme_70118bb6(), introducing_tpltheme_70118bb6_exports)),
-      "src/routes/post/color-in-data-vis.md": () => Promise.resolve().then(() => (init_color_in_data_vis_3bd4b890(), color_in_data_vis_3bd4b890_exports)),
-      "src/routes/post/do-something-else.md": () => Promise.resolve().then(() => (init_do_something_else_1f16f77a(), do_something_else_1f16f77a_exports)),
-      "src/routes/post/nuxt-blog-starter.md": () => Promise.resolve().then(() => (init_nuxt_blog_starter_99b71689(), nuxt_blog_starter_99b71689_exports)),
-      "src/routes/post/covid-gun-spikes.md": () => Promise.resolve().then(() => (init_covid_gun_spikes_595c3f78(), covid_gun_spikes_595c3f78_exports)),
-      "src/routes/post/covid-on-campus.md": () => Promise.resolve().then(() => (init_covid_on_campus_09e3e28f(), covid_on_campus_09e3e28f_exports)),
-      "src/routes/post/map-springfield.md": () => Promise.resolve().then(() => (init_map_springfield_65bdac35(), map_springfield_65bdac35_exports)),
-      "src/routes/post/dumbbell-plots.md": () => Promise.resolve().then(() => (init_dumbbell_plots_da9731c3(), dumbbell_plots_da9731c3_exports)),
-      "src/routes/post/refugee-trends.md": () => Promise.resolve().then(() => (init_refugee_trends_97b67ae7(), refugee_trends_97b67ae7_exports)),
-      "src/routes/post/svelte-scatter.md": () => Promise.resolve().then(() => (init_svelte_scatter_f5d4a79a(), svelte_scatter_f5d4a79a_exports)),
-      "src/routes/post/svelte-and-d3.md": () => Promise.resolve().then(() => (init_svelte_and_d3_81974204(), svelte_and_d3_81974204_exports)),
-      "src/routes/post/covid-posts.md": () => Promise.resolve().then(() => (init_covid_posts_32b068ed(), covid_posts_32b068ed_exports)),
-      "src/routes/post/flat-data-r.md": () => Promise.resolve().then(() => (init_flat_data_r_0a30bdaf(), flat_data_r_0a30bdaf_exports)),
-      "src/routes/post/layout.svelte": () => Promise.resolve().then(() => (init_layout_ef610ed1(), layout_ef610ed1_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_7eb5ccfd(), layout_7eb5ccfd_exports)),
+      "src/routes/__error.svelte": () => Promise.resolve().then(() => (init_error_1846c7c6(), error_1846c7c6_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_f217fafb(), index_f217fafb_exports)),
+      "src/routes/experience/index.svelte": () => Promise.resolve().then(() => (init_index_67e3a7e4(), index_67e3a7e4_exports)),
+      "src/routes/experience/moksha.md": () => Promise.resolve().then(() => (init_moksha_082acc3d(), moksha_082acc3d_exports)),
+      "src/routes/experience/axios.md": () => Promise.resolve().then(() => (init_axios_b77e1fc3(), axios_b77e1fc3_exports)),
+      "src/routes/experience/socom.md": () => Promise.resolve().then(() => (init_socom_e51f48c0(), socom_e51f48c0_exports)),
+      "src/routes/experience/tpl.md": () => Promise.resolve().then(() => (init_tpl_05d608d7(), tpl_05d608d7_exports)),
+      "src/routes/project/index.svelte": () => Promise.resolve().then(() => (init_index_acd06dca(), index_acd06dca_exports)),
+      "src/routes/project/map-houston-homicides.md": () => Promise.resolve().then(() => (init_map_houston_homicides_63947bcb(), map_houston_homicides_63947bcb_exports)),
+      "src/routes/project/state-police-spending.md": () => Promise.resolve().then(() => (init_state_police_spending_4d9a5190(), state_police_spending_4d9a5190_exports)),
+      "src/routes/project/bob-ross-art-gallery.md": () => Promise.resolve().then(() => (init_bob_ross_art_gallery_c7277cdf(), bob_ross_art_gallery_c7277cdf_exports)),
+      "src/routes/project/map-missing-migrants.md": () => Promise.resolve().then(() => (init_map_missing_migrants_ce5ab402(), map_missing_migrants_ce5ab402_exports)),
+      "src/routes/project/how-many-people.md": () => Promise.resolve().then(() => (init_how_many_people_f50c1eba(), how_many_people_f50c1eba_exports)),
+      "src/routes/project/police-killings.md": () => Promise.resolve().then(() => (init_police_killings_1e479bac(), police_killings_1e479bac_exports)),
+      "src/routes/project/media-mentions.md": () => Promise.resolve().then(() => (init_media_mentions_770927e8(), media_mentions_770927e8_exports)),
+      "src/routes/project/one-line-hacks.md": () => Promise.resolve().then(() => (init_one_line_hacks_8e7deae4(), one_line_hacks_8e7deae4_exports)),
+      "src/routes/project/tpl-schools-db.md": () => Promise.resolve().then(() => (init_tpl_schools_db_a0517ade(), tpl_schools_db_a0517ade_exports)),
+      "src/routes/project/covid-masking.md": () => Promise.resolve().then(() => (init_covid_masking_106cf7ec(), covid_masking_106cf7ec_exports)),
+      "src/routes/project/quarantunes.md": () => Promise.resolve().then(() => (init_quarantunes_762c4e23(), quarantunes_762c4e23_exports)),
+      "src/routes/project/cudi-hums.md": () => Promise.resolve().then(() => (init_cudi_hums_a1b23a97(), cudi_hums_a1b23a97_exports)),
+      "src/routes/project/compas.md": () => Promise.resolve().then(() => (init_compas_f83e985b(), compas_f83e985b_exports)),
+      "src/routes/project/atus.md": () => Promise.resolve().then(() => (init_atus_8db468e8(), atus_8db468e8_exports)),
+      "src/routes/about/index.svelte": () => Promise.resolve().then(() => (init_index_69543b34(), index_69543b34_exports)),
+      "src/routes/award/index.svelte": () => Promise.resolve().then(() => (init_index_81eec2b9(), index_81eec2b9_exports)),
+      "src/routes/award/rstudio-table-contest-2021.md": () => Promise.resolve().then(() => (init_rstudio_table_contest_2021_11773f41(), rstudio_table_contest_2021_11773f41_exports)),
+      "src/routes/award/d2k-showcase-2020.md": () => Promise.resolve().then(() => (init_d2k_showcase_2020_3b3c4038(), d2k_showcase_2020_3b3c4038_exports)),
+      "src/routes/award/northeastern-2020.md": () => Promise.resolve().then(() => (init_northeastern_2020_23db5f27(), northeastern_2020_23db5f27_exports)),
+      "src/routes/award/pudding-cup-2020.md": () => Promise.resolve().then(() => (init_pudding_cup_2020_62e7907e(), pudding_cup_2020_62e7907e_exports)),
+      "src/routes/award/nationals-2017.md": () => Promise.resolve().then(() => (init_nationals_2017_649788f2(), nationals_2017_649788f2_exports)),
+      "src/routes/award/datathon-2020.md": () => Promise.resolve().then(() => (init_datathon_2020_e3d2886a(), datathon_2020_e3d2886a_exports)),
+      "src/routes/award/hudspeth-2020.md": () => Promise.resolve().then(() => (init_hudspeth_2020_16a4895c(), hudspeth_2020_16a4895c_exports)),
+      "src/routes/award/malofiej-2020.md": () => Promise.resolve().then(() => (init_malofiej_2020_f6b8429e(), malofiej_2020_f6b8429e_exports)),
+      "src/routes/award/malofiej-2021.md": () => Promise.resolve().then(() => (init_malofiej_2021_6ae90f6e(), malofiej_2021_6ae90f6e_exports)),
+      "src/routes/award/bipp-2018.md": () => Promise.resolve().then(() => (init_bipp_2018_c080feec(), bipp_2018_c080feec_exports)),
+      "src/routes/award/chrp-2020.md": () => Promise.resolve().then(() => (init_chrp_2020_f189a67d(), chrp_2020_f189a67d_exports)),
+      "src/routes/award/hpc-2018.md": () => Promise.resolve().then(() => (init_hpc_2018_46236bea(), hpc_2018_46236bea_exports)),
+      "src/routes/award/hpc-2019.md": () => Promise.resolve().then(() => (init_hpc_2019_80ad0609(), hpc_2019_80ad0609_exports)),
+      "src/routes/award/hpc-2020.md": () => Promise.resolve().then(() => (init_hpc_2020_8d547883(), hpc_2020_8d547883_exports)),
+      "src/routes/award/snd-2021.md": () => Promise.resolve().then(() => (init_snd_2021_9e5cb3e9(), snd_2021_9e5cb3e9_exports)),
+      "src/routes/post/index.svelte": () => Promise.resolve().then(() => (init_index_a24a4714(), index_a24a4714_exports)),
+      "src/routes/post/economist-table-replication-using-reactable.md": () => Promise.resolve().then(() => (init_economist_table_replication_using_reactable_4c40e42b(), economist_table_replication_using_reactable_4c40e42b_exports)),
+      "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": () => Promise.resolve().then(() => (init_adding_a_chart_to_your_d3_tooltip_47b265d1(), adding_a_chart_to_your_d3_tooltip_47b265d1_exports)),
+      "src/routes/post/tidy-tuesday-powerlifting.md": () => Promise.resolve().then(() => (init_tidy_tuesday_powerlifting_54ec12d9(), tidy_tuesday_powerlifting_54ec12d9_exports)),
+      "src/routes/post/tidy-tuesday-replication.md": () => Promise.resolve().then(() => (init_tidy_tuesday_replication_55010e0c(), tidy_tuesday_replication_55010e0c_exports)),
+      "src/routes/post/automation-scrollytell.md": () => Promise.resolve().then(() => (init_automation_scrollytell_b70f7f0c(), automation_scrollytell_b70f7f0c_exports)),
+      "src/routes/post/animate-hugo-academic.md": () => Promise.resolve().then(() => (init_animate_hugo_academic_8d202400(), animate_hugo_academic_8d202400_exports)),
+      "src/routes/post/svelte-scrollytelling.md": () => Promise.resolve().then(() => (init_svelte_scrollytelling_820b0a14(), svelte_scrollytelling_820b0a14_exports)),
+      "src/routes/post/introducing-tpltheme.md": () => Promise.resolve().then(() => (init_introducing_tpltheme_b315a3b4(), introducing_tpltheme_b315a3b4_exports)),
+      "src/routes/post/color-in-data-vis.md": () => Promise.resolve().then(() => (init_color_in_data_vis_d49b9294(), color_in_data_vis_d49b9294_exports)),
+      "src/routes/post/do-something-else.md": () => Promise.resolve().then(() => (init_do_something_else_12627b95(), do_something_else_12627b95_exports)),
+      "src/routes/post/nuxt-blog-starter.md": () => Promise.resolve().then(() => (init_nuxt_blog_starter_6daf543b(), nuxt_blog_starter_6daf543b_exports)),
+      "src/routes/post/covid-gun-spikes.md": () => Promise.resolve().then(() => (init_covid_gun_spikes_cb167433(), covid_gun_spikes_cb167433_exports)),
+      "src/routes/post/covid-on-campus.md": () => Promise.resolve().then(() => (init_covid_on_campus_e998c76c(), covid_on_campus_e998c76c_exports)),
+      "src/routes/post/map-springfield.md": () => Promise.resolve().then(() => (init_map_springfield_27529194(), map_springfield_27529194_exports)),
+      "src/routes/post/dumbbell-plots.md": () => Promise.resolve().then(() => (init_dumbbell_plots_82c51849(), dumbbell_plots_82c51849_exports)),
+      "src/routes/post/refugee-trends.md": () => Promise.resolve().then(() => (init_refugee_trends_479ad85d(), refugee_trends_479ad85d_exports)),
+      "src/routes/post/svelte-scatter.md": () => Promise.resolve().then(() => (init_svelte_scatter_811ff131(), svelte_scatter_811ff131_exports)),
+      "src/routes/post/svelte-and-d3.md": () => Promise.resolve().then(() => (init_svelte_and_d3_5f409860(), svelte_and_d3_5f409860_exports)),
+      "src/routes/post/covid-posts.md": () => Promise.resolve().then(() => (init_covid_posts_f2563c6d(), covid_posts_f2563c6d_exports)),
+      "src/routes/post/flat-data-r.md": () => Promise.resolve().then(() => (init_flat_data_r_f9cd9da9(), flat_data_r_f9cd9da9_exports)),
+      "src/routes/post/following.md": () => Promise.resolve().then(() => (init_following_8ff919a6(), following_8ff919a6_exports)),
+      "src/routes/post/this-site.md": () => Promise.resolve().then(() => (init_this_site_88216723(), this_site_88216723_exports)),
+      "src/routes/post/learning.md": () => Promise.resolve().then(() => (init_learning_6eef23d0(), learning_6eef23d0_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-6473699b.js", "css": ["assets/pages/__layout.svelte-431b68d6.css"], "js": ["pages/__layout.svelte-6473699b.js", "chunks/vendor-dfb9df3e.js", "chunks/global-164a8ca5.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "pages/__error.svelte-0b036aa0.js", "css": ["assets/pages/__error.svelte-79081d85.css"], "js": ["pages/__error.svelte-0b036aa0.js", "chunks/vendor-dfb9df3e.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-15dee25f.js", "css": ["assets/pages/index.svelte-d10f607e.css", "assets/TransitionInView-36466010.css", "assets/Star-4c3ba909.css", "assets/Award-3545467f.css"], "js": ["pages/index.svelte-15dee25f.js", "chunks/vendor-dfb9df3e.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/TransitionInView-b5bbebe8.js", "chunks/Star-6bfb9ffc.js", "chunks/Award-eea2e85e.js"], "styles": [] }, "src/routes/experience/index.svelte": { "entry": "pages/experience/index.svelte-c172f2a0.js", "css": ["assets/pages/experience/index.svelte-4f98499e.css", "assets/BackTo-02f76bde.css", "assets/TransitionInView-36466010.css"], "js": ["pages/experience/index.svelte-c172f2a0.js", "chunks/vendor-dfb9df3e.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/TransitionInView-b5bbebe8.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/experience/layout.svelte": { "entry": "pages/experience/layout.svelte-99c48cf7.js", "css": ["assets/pages/experience/layout.svelte-35e46340.css", "assets/BackTo-02f76bde.css"], "js": ["pages/experience/layout.svelte-99c48cf7.js", "chunks/vendor-dfb9df3e.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/experience/moksha.md": { "entry": "pages/experience/moksha.md-cf68674c.js", "css": ["assets/pages/experience/layout.svelte-35e46340.css", "assets/BackTo-02f76bde.css"], "js": ["pages/experience/moksha.md-cf68674c.js", "chunks/vendor-dfb9df3e.js", "pages/experience/layout.svelte-99c48cf7.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/experience/axios.md": { "entry": "pages/experience/axios.md-fb6e5245.js", "css": ["assets/pages/experience/layout.svelte-35e46340.css", "assets/BackTo-02f76bde.css"], "js": ["pages/experience/axios.md-fb6e5245.js", "chunks/vendor-dfb9df3e.js", "pages/experience/layout.svelte-99c48cf7.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/experience/socom.md": { "entry": "pages/experience/socom.md-65b5481c.js", "css": ["assets/pages/experience/layout.svelte-35e46340.css", "assets/BackTo-02f76bde.css"], "js": ["pages/experience/socom.md-65b5481c.js", "chunks/vendor-dfb9df3e.js", "pages/experience/layout.svelte-99c48cf7.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/experience/tpl.md": { "entry": "pages/experience/tpl.md-38e2b1b9.js", "css": ["assets/pages/experience/layout.svelte-35e46340.css", "assets/BackTo-02f76bde.css"], "js": ["pages/experience/tpl.md-38e2b1b9.js", "chunks/vendor-dfb9df3e.js", "pages/experience/layout.svelte-99c48cf7.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/project/index.svelte": { "entry": "pages/project/index.svelte-b48403fa.js", "css": ["assets/pages/project/index.svelte-11ccdf9b.css", "assets/BackTo-02f76bde.css", "assets/TransitionInView-36466010.css"], "js": ["pages/project/index.svelte-b48403fa.js", "chunks/vendor-dfb9df3e.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/TransitionInView-b5bbebe8.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/project/map-houston-homicides.md": { "entry": "pages/project/map-houston-homicides.md-96cb682a.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/map-houston-homicides.md-96cb682a.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/state-police-spending.md": { "entry": "pages/project/state-police-spending.md-c7fa242d.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/state-police-spending.md-c7fa242d.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/bob-ross-art-gallery.md": { "entry": "pages/project/bob-ross-art-gallery.md-1f643dcb.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/bob-ross-art-gallery.md-1f643dcb.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/map-missing-migrants.md": { "entry": "pages/project/map-missing-migrants.md-5796f0d5.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/map-missing-migrants.md-5796f0d5.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/how-many-people.md": { "entry": "pages/project/how-many-people.md-295c2b83.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/how-many-people.md-295c2b83.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/police-killings.md": { "entry": "pages/project/police-killings.md-f04b883b.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/police-killings.md-f04b883b.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/media-mentions.md": { "entry": "pages/project/media-mentions.md-8df97392.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/media-mentions.md-8df97392.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/one-line-hacks.md": { "entry": "pages/project/one-line-hacks.md-44577a09.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/one-line-hacks.md-44577a09.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/tpl-schools-db.md": { "entry": "pages/project/tpl-schools-db.md-39d097b8.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/tpl-schools-db.md-39d097b8.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/covid-masking.md": { "entry": "pages/project/covid-masking.md-270fe9bd.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/covid-masking.md-270fe9bd.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/quarantunes.md": { "entry": "pages/project/quarantunes.md-08f873c5.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/quarantunes.md-08f873c5.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/cudi-hums.md": { "entry": "pages/project/cudi-hums.md-f192b5b9.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/cudi-hums.md-f192b5b9.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/compas.md": { "entry": "pages/project/compas.md-e6dbc74d.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/compas.md-e6dbc74d.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/project/layout.svelte": { "entry": "pages/project/layout.svelte-0fd35314.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/layout.svelte-0fd35314.js", "chunks/vendor-dfb9df3e.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/project/atus.md": { "entry": "pages/project/atus.md-d2609d04.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/project/atus.md-d2609d04.js", "chunks/vendor-dfb9df3e.js", "pages/project/layout.svelte-0fd35314.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/about/index.svelte": { "entry": "pages/about/index.svelte-0307c3c8.js", "css": ["assets/pages/about/index.svelte-e794dbec.css", "assets/BackTo-02f76bde.css"], "js": ["pages/about/index.svelte-0307c3c8.js", "chunks/vendor-dfb9df3e.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js"], "styles": [] }, "src/routes/award/index.svelte": { "entry": "pages/award/index.svelte-f09329d5.js", "css": ["assets/pages/award/index.svelte-84333ddc.css", "assets/Award-3545467f.css", "assets/TransitionInView-36466010.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/index.svelte-f09329d5.js", "chunks/vendor-dfb9df3e.js", "chunks/Award-eea2e85e.js", "chunks/TransitionInView-b5bbebe8.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/rstudio-table-contest-2021.md": { "entry": "pages/award/rstudio-table-contest-2021.md-84005dbd.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/rstudio-table-contest-2021.md-84005dbd.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/d2k-showcase-2020.md": { "entry": "pages/award/d2k-showcase-2020.md-34462170.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/d2k-showcase-2020.md-34462170.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/northeastern-2020.md": { "entry": "pages/award/northeastern-2020.md-ebc3ce19.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/northeastern-2020.md-ebc3ce19.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/pudding-cup-2020.md": { "entry": "pages/award/pudding-cup-2020.md-404cdb9b.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/pudding-cup-2020.md-404cdb9b.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/nationals-2017.md": { "entry": "pages/award/nationals-2017.md-b0a17a33.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/nationals-2017.md-b0a17a33.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/datathon-2020.md": { "entry": "pages/award/datathon-2020.md-47ec0d40.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/datathon-2020.md-47ec0d40.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/hudspeth-2020.md": { "entry": "pages/award/hudspeth-2020.md-748c5866.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/hudspeth-2020.md-748c5866.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/malofiej-2020.md": { "entry": "pages/award/malofiej-2020.md-4e6ac535.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/malofiej-2020.md-4e6ac535.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/malofiej-2021.md": { "entry": "pages/award/malofiej-2021.md-b88e1ce1.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/malofiej-2021.md-b88e1ce1.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/bipp-2018.md": { "entry": "pages/award/bipp-2018.md-5eefde65.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/bipp-2018.md-5eefde65.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/chrp-2020.md": { "entry": "pages/award/chrp-2020.md-ad24c52d.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/chrp-2020.md-ad24c52d.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/hpc-2018.md": { "entry": "pages/award/hpc-2018.md-4a9ffdd1.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/hpc-2018.md-4a9ffdd1.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/hpc-2019.md": { "entry": "pages/award/hpc-2019.md-a20b96a4.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/hpc-2019.md-a20b96a4.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/hpc-2020.md": { "entry": "pages/award/hpc-2020.md-da7b5518.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/hpc-2020.md-da7b5518.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/snd-2021.md": { "entry": "pages/award/snd-2021.md-bdec5480.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/snd-2021.md-bdec5480.js", "chunks/vendor-dfb9df3e.js", "pages/award/layout.svelte-633b925c.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/award/layout.svelte": { "entry": "pages/award/layout.svelte-633b925c.js", "css": ["assets/CornerTitle-85b81caa.css", "assets/BackTo-02f76bde.css"], "js": ["pages/award/layout.svelte-633b925c.js", "chunks/vendor-dfb9df3e.js", "chunks/CornerTitle-3a53cda1.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/post/index.svelte": { "entry": "pages/post/index.svelte-94cafe6a.js", "css": ["assets/pages/post/index.svelte-690c2c55.css", "assets/Star-4c3ba909.css", "assets/TransitionInView-36466010.css", "assets/BackTo-02f76bde.css"], "js": ["pages/post/index.svelte-94cafe6a.js", "chunks/vendor-dfb9df3e.js", "chunks/utils-419e8671.js", "chunks/Star-6bfb9ffc.js", "chunks/global-164a8ca5.js", "chunks/TransitionInView-b5bbebe8.js", "chunks/BackTo-f09ad798.js", "chunks/store-b0ba4c19.js"], "styles": [] }, "src/routes/post/economist-table-replication-using-reactable.md": { "entry": "pages/post/economist-table-replication-using-reactable.md-1953a285.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/economist-table-replication-using-reactable.md-1953a285.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": { "entry": "pages/post/adding-a-chart-to-your-d3-tooltip.md-08a0de4e.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css", "assets/HighlightFromProp-c6af3753.css"], "js": ["pages/post/adding-a-chart-to-your-d3-tooltip.md-08a0de4e.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/Code-46ee5f1b.js", "chunks/HighlightFromProp-a3212567.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/tidy-tuesday-powerlifting.md": { "entry": "pages/post/tidy-tuesday-powerlifting.md-2d8d0a55.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/tidy-tuesday-powerlifting.md-2d8d0a55.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/tidy-tuesday-replication.md": { "entry": "pages/post/tidy-tuesday-replication.md-e686fc67.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/tidy-tuesday-replication.md-e686fc67.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/automation-scrollytell.md": { "entry": "pages/post/automation-scrollytell.md-985086b6.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css", "assets/HighlightFromProp-c6af3753.css"], "js": ["pages/post/automation-scrollytell.md-985086b6.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Code-46ee5f1b.js", "chunks/HighlightFromProp-a3212567.js"], "styles": [] }, "src/routes/post/animate-hugo-academic.md": { "entry": "pages/post/animate-hugo-academic.md-d1d9f140.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css"], "js": ["pages/post/animate-hugo-academic.md-d1d9f140.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/Code-46ee5f1b.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/introducing-tpltheme.md": { "entry": "pages/post/introducing-tpltheme.md-762ac090.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/introducing-tpltheme.md-762ac090.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/color-in-data-vis.md": { "entry": "pages/post/color-in-data-vis.md-7598503c.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/color-in-data-vis.md-7598503c.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/do-something-else.md": { "entry": "pages/post/do-something-else.md-4e81b03b.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/do-something-else.md-4e81b03b.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/nuxt-blog-starter.md": { "entry": "pages/post/nuxt-blog-starter.md-92a719a5.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css"], "js": ["pages/post/nuxt-blog-starter.md-92a719a5.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/Info-a85e8c05.js", "chunks/Code-46ee5f1b.js"], "styles": [] }, "src/routes/post/covid-gun-spikes.md": { "entry": "pages/post/covid-gun-spikes.md-c9fdf934.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/TableHandler-cb54b39c.css", "assets/Code-304e9aa7.css"], "js": ["pages/post/covid-gun-spikes.md-c9fdf934.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/TableHandler-d5a8eb42.js", "chunks/Code-46ee5f1b.js"], "styles": [] }, "src/routes/post/covid-on-campus.md": { "entry": "pages/post/covid-on-campus.md-43682325.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/TableHandler-cb54b39c.css"], "js": ["pages/post/covid-on-campus.md-43682325.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js", "chunks/TableHandler-d5a8eb42.js"], "styles": [] }, "src/routes/post/map-springfield.md": { "entry": "pages/post/map-springfield.md-cbbe4e88.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/map-springfield.md-cbbe4e88.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/dumbbell-plots.md": { "entry": "pages/post/dumbbell-plots.md-f626ff29.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/dumbbell-plots.md-f626ff29.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/refugee-trends.md": { "entry": "pages/post/refugee-trends.md-06f3ced7.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/refugee-trends.md-06f3ced7.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/svelte-scatter.md": { "entry": "pages/post/svelte-scatter.md-41e9957b.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/svelte-scatter.md-41e9957b.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/svelte-and-d3.md": { "entry": "pages/post/svelte-and-d3.md-7b255dd3.js", "css": ["assets/pages/post/svelte-and-d3.md-829f18dc.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css"], "js": ["pages/post/svelte-and-d3.md-7b255dd3.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Code-46ee5f1b.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/covid-posts.md": { "entry": "pages/post/covid-posts.md-34be9cac.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/covid-posts.md-34be9cac.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Image-4d50732f.js"], "styles": [] }, "src/routes/post/flat-data-r.md": { "entry": "pages/post/flat-data-r.md-ff4dd269.js", "css": ["assets/Image.svelte_svelte&type=style&lang-a3a01521.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css", "assets/Code-304e9aa7.css"], "js": ["pages/post/flat-data-r.md-ff4dd269.js", "chunks/vendor-dfb9df3e.js", "pages/post/layout.svelte-0511337f.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js", "chunks/Code-46ee5f1b.js", "chunks/Image-4d50732f.js", "chunks/Info-a85e8c05.js"], "styles": [] }, "src/routes/post/layout.svelte": { "entry": "pages/post/layout.svelte-0511337f.js", "css": ["assets/pages/post/layout.svelte-745e8606.css", "assets/BackTo-02f76bde.css", "assets/CornerTitle-85b81caa.css"], "js": ["pages/post/layout.svelte-0511337f.js", "chunks/vendor-dfb9df3e.js", "chunks/BackTo-f09ad798.js", "chunks/global-164a8ca5.js", "chunks/utils-419e8671.js", "chunks/CornerTitle-3a53cda1.js", "chunks/store-b0ba4c19.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-618879a2.js", "css": ["assets/pages/__layout.svelte-8efe0a83.css"], "js": ["pages/__layout.svelte-618879a2.js", "chunks/vendor-1dbd9a84.js", "chunks/utils-2dad63af.js", "chunks/Transition-0d9d4b16.js", "chunks/device-b6c0108f.js"], "styles": [] }, "src/routes/__error.svelte": { "entry": "pages/__error.svelte-f0d22b08.js", "css": ["assets/pages/__error.svelte-6f2bd3ef.css"], "js": ["pages/__error.svelte-f0d22b08.js", "chunks/vendor-1dbd9a84.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-a5515c1d.js", "css": ["assets/pages/index.svelte-efb2148c.css", "assets/TransitionInView-c3300d6c.css", "assets/Project-489fce82.css", "assets/Star-4c3ba909.css", "assets/Award-35f0e5ca.css"], "js": ["pages/index.svelte-a5515c1d.js", "chunks/vendor-1dbd9a84.js", "chunks/utils-2dad63af.js", "chunks/TransitionInView-efa39d0a.js", "chunks/device-b6c0108f.js", "chunks/singletons-12a22614.js", "chunks/Project-783acdc2.js", "chunks/Star-faae2680.js", "chunks/Award-3770ab30.js"], "styles": [] }, "src/routes/experience/index.svelte": { "entry": "pages/experience/index.svelte-69d5c746.js", "css": ["assets/pages/experience/index.svelte-a2e9f5af.css", "assets/TransitionInView-c3300d6c.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/experience/index.svelte-69d5c746.js", "chunks/vendor-1dbd9a84.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/TransitionInView-efa39d0a.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/experience/moksha.md": { "entry": "pages/experience/moksha.md-d5efdcba.js", "css": ["assets/_layout-d4117a87.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/experience/moksha.md-d5efdcba.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-b5d579b4.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/experience/axios.md": { "entry": "pages/experience/axios.md-09b5c8c0.js", "css": ["assets/_layout-d4117a87.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/experience/axios.md-09b5c8c0.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-b5d579b4.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/experience/socom.md": { "entry": "pages/experience/socom.md-84ce8de1.js", "css": ["assets/_layout-d4117a87.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/experience/socom.md-84ce8de1.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-b5d579b4.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/experience/tpl.md": { "entry": "pages/experience/tpl.md-25ecd0c2.js", "css": ["assets/_layout-d4117a87.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/experience/tpl.md-25ecd0c2.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-b5d579b4.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/project/index.svelte": { "entry": "pages/project/index.svelte-318cec27.js", "css": ["assets/pages/project/index.svelte-487aed74.css", "assets/Project-489fce82.css", "assets/TransitionInView-c3300d6c.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/index.svelte-318cec27.js", "chunks/vendor-1dbd9a84.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/Project-783acdc2.js", "chunks/device-b6c0108f.js", "chunks/TransitionInView-efa39d0a.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/project/map-houston-homicides.md": { "entry": "pages/project/map-houston-homicides.md-abd1c328.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/map-houston-homicides.md-abd1c328.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/state-police-spending.md": { "entry": "pages/project/state-police-spending.md-e571a6bb.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/state-police-spending.md-e571a6bb.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/bob-ross-art-gallery.md": { "entry": "pages/project/bob-ross-art-gallery.md-17bf9bc1.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/bob-ross-art-gallery.md-17bf9bc1.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/map-missing-migrants.md": { "entry": "pages/project/map-missing-migrants.md-e501c7d9.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/map-missing-migrants.md-e501c7d9.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/how-many-people.md": { "entry": "pages/project/how-many-people.md-c84d56df.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/how-many-people.md-c84d56df.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/police-killings.md": { "entry": "pages/project/police-killings.md-4f5b23af.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/police-killings.md-4f5b23af.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/media-mentions.md": { "entry": "pages/project/media-mentions.md-b02638f9.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/media-mentions.md-b02638f9.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/one-line-hacks.md": { "entry": "pages/project/one-line-hacks.md-d3ea1c48.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/one-line-hacks.md-d3ea1c48.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/tpl-schools-db.md": { "entry": "pages/project/tpl-schools-db.md-4055135d.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/tpl-schools-db.md-4055135d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/covid-masking.md": { "entry": "pages/project/covid-masking.md-fff8c32e.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/covid-masking.md-fff8c32e.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/quarantunes.md": { "entry": "pages/project/quarantunes.md-2ca1372c.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/quarantunes.md-2ca1372c.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/cudi-hums.md": { "entry": "pages/project/cudi-hums.md-824d438d.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/cudi-hums.md-824d438d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/compas.md": { "entry": "pages/project/compas.md-80347a36.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/compas.md-80347a36.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/project/atus.md": { "entry": "pages/project/atus.md-6ae0f2b5.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f1bb5bb.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/project/atus.md-6ae0f2b5.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-2380d7eb.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/about/index.svelte": { "entry": "pages/about/index.svelte-3f5c1189.js", "css": ["assets/pages/about/index.svelte-814ad1ad.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/about/index.svelte-3f5c1189.js", "chunks/vendor-1dbd9a84.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/index.svelte": { "entry": "pages/award/index.svelte-77df7769.js", "css": ["assets/Award-35f0e5ca.css", "assets/TransitionInView-c3300d6c.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/index.svelte-77df7769.js", "chunks/vendor-1dbd9a84.js", "chunks/Award-3770ab30.js", "chunks/TransitionInView-efa39d0a.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/rstudio-table-contest-2021.md": { "entry": "pages/award/rstudio-table-contest-2021.md-f8dfcd57.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/rstudio-table-contest-2021.md-f8dfcd57.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/d2k-showcase-2020.md": { "entry": "pages/award/d2k-showcase-2020.md-8fc63583.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/d2k-showcase-2020.md-8fc63583.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/northeastern-2020.md": { "entry": "pages/award/northeastern-2020.md-f15345ed.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/northeastern-2020.md-f15345ed.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/pudding-cup-2020.md": { "entry": "pages/award/pudding-cup-2020.md-160a07f5.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/pudding-cup-2020.md-160a07f5.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/nationals-2017.md": { "entry": "pages/award/nationals-2017.md-861022cb.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/nationals-2017.md-861022cb.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/datathon-2020.md": { "entry": "pages/award/datathon-2020.md-15683b5a.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/datathon-2020.md-15683b5a.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/hudspeth-2020.md": { "entry": "pages/award/hudspeth-2020.md-96017b2e.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/hudspeth-2020.md-96017b2e.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/malofiej-2020.md": { "entry": "pages/award/malofiej-2020.md-beb7cd61.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/malofiej-2020.md-beb7cd61.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/malofiej-2021.md": { "entry": "pages/award/malofiej-2021.md-453f6d0d.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/malofiej-2021.md-453f6d0d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/bipp-2018.md": { "entry": "pages/award/bipp-2018.md-9a312827.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/bipp-2018.md-9a312827.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/chrp-2020.md": { "entry": "pages/award/chrp-2020.md-5648d904.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/chrp-2020.md-5648d904.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/hpc-2018.md": { "entry": "pages/award/hpc-2018.md-5294ecdd.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/hpc-2018.md-5294ecdd.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/hpc-2019.md": { "entry": "pages/award/hpc-2019.md-57a60ade.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/hpc-2019.md-57a60ade.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/hpc-2020.md": { "entry": "pages/award/hpc-2020.md-0996ec64.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/hpc-2020.md-0996ec64.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/award/snd-2021.md": { "entry": "pages/award/snd-2021.md-3ee93c3a.js", "css": ["assets/_layout-f51f5020.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/award/snd-2021.md-3ee93c3a.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-469e1ce7.js", "chunks/CornerTitle-ad222e21.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/post/index.svelte": { "entry": "pages/post/index.svelte-7733204c.js", "css": ["assets/pages/post/index.svelte-306ec32f.css", "assets/Star-4c3ba909.css", "assets/TransitionInView-c3300d6c.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/index.svelte-7733204c.js", "chunks/vendor-1dbd9a84.js", "chunks/utils-2dad63af.js", "chunks/Star-faae2680.js", "chunks/TransitionInView-efa39d0a.js", "chunks/Transition-0d9d4b16.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/post/economist-table-replication-using-reactable.md": { "entry": "pages/post/economist-table-replication-using-reactable.md-93d3193a.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/economist-table-replication-using-reactable.md-93d3193a.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/adding-a-chart-to-your-d3-tooltip.md": { "entry": "pages/post/adding-a-chart-to-your-d3-tooltip.md-0a9bd028.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css", "assets/HighlightFromProp-c6af3753.css"], "js": ["pages/post/adding-a-chart-to-your-d3-tooltip.md-0a9bd028.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/Code-b9216657.js", "chunks/HighlightFromProp-755db368.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/tidy-tuesday-powerlifting.md": { "entry": "pages/post/tidy-tuesday-powerlifting.md-4270cb6e.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/tidy-tuesday-powerlifting.md-4270cb6e.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/tidy-tuesday-replication.md": { "entry": "pages/post/tidy-tuesday-replication.md-0649f6fd.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/tidy-tuesday-replication.md-0649f6fd.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/automation-scrollytell.md": { "entry": "pages/post/automation-scrollytell.md-371a8dbc.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css", "assets/HighlightFromProp-c6af3753.css"], "js": ["pages/post/automation-scrollytell.md-371a8dbc.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Code-b9216657.js", "chunks/HighlightFromProp-755db368.js"], "styles": [] }, "src/routes/post/animate-hugo-academic.md": { "entry": "pages/post/animate-hugo-academic.md-4fb99db5.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/animate-hugo-academic.md-4fb99db5.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/Code-b9216657.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/svelte-scrollytelling.md": { "entry": "pages/post/svelte-scrollytelling.md-28f342dd.js", "css": ["assets/pages/post/svelte-scrollytelling.md-37034ce6.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/svelte-scrollytelling.md-28f342dd.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Code-b9216657.js", "chunks/Image-dcc400f6.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/introducing-tpltheme.md": { "entry": "pages/post/introducing-tpltheme.md-54fcfb8d.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/introducing-tpltheme.md-54fcfb8d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/color-in-data-vis.md": { "entry": "pages/post/color-in-data-vis.md-9f917e66.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/color-in-data-vis.md-9f917e66.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/do-something-else.md": { "entry": "pages/post/do-something-else.md-94bd8a26.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/do-something-else.md-94bd8a26.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/nuxt-blog-starter.md": { "entry": "pages/post/nuxt-blog-starter.md-6dce5012.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/nuxt-blog-starter.md-6dce5012.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/Info-4429d32a.js", "chunks/Code-b9216657.js"], "styles": [] }, "src/routes/post/covid-gun-spikes.md": { "entry": "pages/post/covid-gun-spikes.md-9aad283d.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/TableHandler-6ad005c3.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/covid-gun-spikes.md-9aad283d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/TableHandler-897ab293.js", "chunks/Code-b9216657.js"], "styles": [] }, "src/routes/post/covid-on-campus.md": { "entry": "pages/post/covid-on-campus.md-496022f1.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/TableHandler-6ad005c3.css"], "js": ["pages/post/covid-on-campus.md-496022f1.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/TableHandler-897ab293.js"], "styles": [] }, "src/routes/post/map-springfield.md": { "entry": "pages/post/map-springfield.md-2f71f2e0.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/map-springfield.md-2f71f2e0.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/dumbbell-plots.md": { "entry": "pages/post/dumbbell-plots.md-3ca0a876.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/dumbbell-plots.md-3ca0a876.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/refugee-trends.md": { "entry": "pages/post/refugee-trends.md-9223487e.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/refugee-trends.md-9223487e.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/svelte-scatter.md": { "entry": "pages/post/svelte-scatter.md-46874ea6.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/svelte-scatter.md-46874ea6.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/svelte-and-d3.md": { "entry": "pages/post/svelte-and-d3.md-039f764d.js", "css": ["assets/pages/post/svelte-and-d3.md-829f18dc.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/svelte-and-d3.md-039f764d.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Code-b9216657.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/covid-posts.md": { "entry": "pages/post/covid-posts.md-4527d5f9.js", "css": ["assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/covid-posts.md-4527d5f9.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js"], "styles": [] }, "src/routes/post/flat-data-r.md": { "entry": "pages/post/flat-data-r.md-9fcc95de.js", "css": ["assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/flat-data-r.md-9fcc95de.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Code-b9216657.js", "chunks/Image-dcc400f6.js", "chunks/Info-4429d32a.js"], "styles": [] }, "src/routes/post/following.md": { "entry": "pages/post/following.md-3bf9ac15.js", "css": ["assets/pages/post/following.md-381a741f.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/following.md-3bf9ac15.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js"], "styles": [] }, "src/routes/post/this-site.md": { "entry": "pages/post/this-site.md-ed0c2fa5.js", "css": ["assets/pages/post/this-site.md-08ff546b.css", "assets/Image.svelte_svelte&type=style&lang-45a4fcd5.css", "assets/Info.svelte_svelte&type=style&lang-4136c559.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css", "assets/Code-52f67dfa.css"], "js": ["pages/post/this-site.md-ed0c2fa5.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js", "chunks/Image-dcc400f6.js", "chunks/Info-4429d32a.js", "chunks/Code-b9216657.js"], "styles": [] }, "src/routes/post/learning.md": { "entry": "pages/post/learning.md-6e4ca969.js", "css": ["assets/pages/post/learning.md-6bd64149.css", "assets/_layout-2f4a1b15.css", "assets/CornerTitle-46353616.css", "assets/BackTo-524f5ccd.css"], "js": ["pages/post/learning.md-6e4ca969.js", "chunks/vendor-1dbd9a84.js", "chunks/_layout-ec424735.js", "chunks/Transition-0d9d4b16.js", "chunks/utils-2dad63af.js", "chunks/CornerTitle-ad222e21.js", "chunks/BackTo-50dcaa72.js"], "styles": [] } };
   }
 });
 
@@ -25103,7 +25896,7 @@ init_shims();
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_9f378dda();
+init_app_89d516be();
 
 // .svelte-kit/netlify/entry.js
 init();

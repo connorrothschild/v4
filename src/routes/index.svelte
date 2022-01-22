@@ -29,6 +29,7 @@
   export let posts;
   export let awards;
 
+  import Seo from "$lib/Seo.svelte";
   import Hero from "$lib/Sections/Hero.svelte";
   import Projects from "$lib/Sections/Projects.svelte";
   import Blog from "$lib/Sections/Blog.svelte";
@@ -39,6 +40,7 @@
 </script>
 
 <svelte:window bind:innerWidth={pageWidth} />
+<Seo />
 <main id="home">
   <Hero />
   <Projects {projects} />

@@ -3,20 +3,13 @@
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/seo.js";
-
   export let title;
   export let organization;
   export let media_url;
   export let date;
 
+  import Seo from "$lib/Seo.svelte";
   let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${organization}, ${date}&theme=light&md=true&hasImage=true`;
-
-  // META TAGS
-  $seo = {
-    title: title,
-    image: image,
-  };
 
   import { dateFormat } from "../../scripts/utils.js";
 
@@ -25,6 +18,11 @@
 </script>
 
 <Transition split={"words"} stagger={0.07} />
+<Seo
+  title={`${title} | Connor Rothschild`}
+  description={`${organization}, ${date}`}
+  {image}
+/>
 <CornerTitle {title} subtitle={dateFormat(date)} {intersecting} />
 <main>
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">

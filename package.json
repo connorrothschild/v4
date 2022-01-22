@@ -43,6 +43,7 @@
     "@tiptap/starter-kit": "^2.0.0-beta.119",
     "bowser": "^2.11.0",
     "codemirror": "^5.63.1",
+    "esbuild-darwin-arm64": "^0.14.13",
     "gsap": "file:gsap-bonus.tgz",
     "highlight.js": "^11.2.0",
     "intersection-observer": "^0.12.0",

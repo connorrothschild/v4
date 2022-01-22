@@ -2,26 +2,19 @@
   import Transition from "$lib/Transition.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/seo.js";
-
   export let name;
   export let description;
   export let imageUrl;
 
+  import Seo from "$lib/Seo.svelte";
   let image = `https://og-image-eight-eta.vercel.app/Connor Rothschild | ${name}.png?subtitle=Some details about my work experience at ${name}.&theme=light&md=true&hasImage=true`;
-
-  // META TAGS
-  $seo = {
-    title: name,
-    description: description,
-    image: image,
-  };
 
   import IntersectionObserver from "svelte-intersection-observer";
   let element, intersecting;
 </script>
 
 <Transition split={"words"} stagger={0.07} />
+<Seo title={name} {description} {image} />
 <main>
   <IntersectionObserver {element} bind:intersecting>
     <div class="top-level" bind:this={element}>

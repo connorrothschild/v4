@@ -38,21 +38,18 @@
     .filter((d) => d.metadata.archived == true)
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
-  import { seo } from "$lib/seo.js";
-  let title = "Blog • Connor Rothschild";
-  let description = "Some of my writing.";
+  import Seo from "$lib/Seo.svelte";
 
-  $seo = {
-    title: title,
-    description: description,
-    image: `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`,
-  };
+  let title = "Blog | Connor Rothschild";
+  let description = "Some of my writing.";
+  let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
 
   let anyHovered = false;
   let showAll = false;
 </script>
 
 <Transition />
+<Seo {title} {description} {image} />
 <main class="main">
   <BackTo
     href="/"

@@ -3,7 +3,6 @@
   import CornerTitle from "$lib/Text/CornerTitle.svelte";
   import BackTo from "$lib/BackTo.svelte";
 
-  import { seo } from "$lib/seo.js";
   import { dateFormat } from "../../scripts/utils.js";
 
   export let title;
@@ -13,18 +12,14 @@
 
   let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
 
-  // META TAGS
-  $seo = {
-    title: `${title} | Connor Rothschild`,
-    description: description,
-    image: image,
-  };
+  import Seo from "$lib/Seo.svelte";
 
   import IntersectionObserver from "svelte-intersection-observer";
   let element, intersecting;
 </script>
 
 <Transition split={"words"} stagger={0.07} />
+<Seo title={`${title} | Connor Rothschild`} {description} {image} />
 <CornerTitle {title} subtitle={dateFormat(date)} {intersecting} />
 <main>
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
