@@ -6,13 +6,13 @@
 
   // When page loads, trigger page transition
   onMount(() => {
-    if ($page.path != "/") initTransition();
+    if ($page.url.pathname != "/") initTransition();
   });
 
   let transitioning = false;
 
   let initTransition = function () {
-    let transitionDur = $page.path == "/" ? 0 : $pageTransitionDelay;
+    let transitionDur = $page.url.pathname == "/" ? 0 : $pageTransitionDelay;
     transitioning = true;
 
     setTimeout(() => {

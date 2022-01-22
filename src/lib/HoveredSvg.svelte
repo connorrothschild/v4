@@ -9,7 +9,7 @@
 
   import { page } from "$app/stores";
 
-  $: currentSlug = $page.path.replace(/^\/([^\/]*).*$/, "$1");
+  $: currentSlug = $page.url.pathname.replace(/^\/([^\/]*).*$/, "$1");
   $: activePage = currentSlug == "" ? "home" : currentSlug;
 
   const paths = {

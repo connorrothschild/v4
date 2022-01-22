@@ -21454,7 +21454,7 @@ ${``}`;
       async function scrollTop() {
       }
       {
-        $page.path, $page.path ? scrollTop() : null;
+        $page.url.pathname, $page.url.pathname ? scrollTop() : null;
       }
       $$unsubscribe_theme();
       $$unsubscribe_page();
@@ -24172,7 +24172,7 @@ async function render_response({
 					page: {
 						host: ${page2 && page2.host ? s$1(page2.host) : "location.host"}, // TODO this is redundant
 						path: ${page2 && page2.path ? try_serialize(page2.path, (error3) => {
-      throw new Error(`Failed to serialize page.path: ${error3.message}`);
+      throw new Error(`Failed to serialize page.url.pathname: ${error3.message}`);
     }) : null},
 						query: new URLSearchParams(${page2 && page2.query ? s$1(page2.query.toString()) : ""}),
 						params: ${page2 && page2.params ? try_serialize(page2.params, (error3) => {

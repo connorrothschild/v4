@@ -29,7 +29,7 @@
 
   // When current page path changes, scroll to top (fixes https://github.com/sveltejs/kit/issues/2794)
   import { page } from "$app/stores";
-  $: $page.path, $page.path ? scrollTop() : null;
+  $: $page.url.pathname, $page.url.pathname ? scrollTop() : null;
 
   async function scrollTop() {
     if (mounted) {
