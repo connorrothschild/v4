@@ -8,8 +8,8 @@ export const transition = async function (connor, rothschild, subtitle, overline
     connor = document.querySelector(".connor");
     rothschild = document.querySelector(".rothschild");
     subtitle = document.querySelector(".subtitle");
-    overline = document.querySelector(".overline");
-
+  overline = document.querySelector(".overline");
+  
     let overlineSplit = new SplitText(overline, { type: "words" });
     let connorSplit = new SplitText(connor, { type: "words" });
     let rothschildSplit = new SplitText(rothschild, { type: "words" });
@@ -23,7 +23,6 @@ export const transition = async function (connor, rothschild, subtitle, overline
     gsap.fromTo(connor, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.set(subtitle, { opacity: 0 }, { opacity: 1, duration: 1.25 });
     gsap.fromTo(rothschild, { opacity: 0 }, { opacity: 1, duration: 1.25 });
-
 
     gsap.fromTo(
       overlineSplit.words,

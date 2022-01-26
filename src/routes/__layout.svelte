@@ -3,7 +3,6 @@
   import { theme } from "../stores/theme.js";
 
   import Window from "$lib/Window.svelte";
-  // import Seo from "$lib/Seo.svelte";
   import Nav from "$lib/Nav/Nav.svelte";
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
@@ -25,11 +24,12 @@
   });
 
   // This implements fade-in and out on the page level (smooth transitions)
-  import Loading from "../lib/Loading.svelte";
+  import Loading from "$lib/Loading.svelte";
 
   // When current page path changes, scroll to top (fixes https://github.com/sveltejs/kit/issues/2794)
   import { page } from "$app/stores";
-  $: $page.url.pathname, $page.url.pathname ? scrollTop() : null;
+  $: path = $page.url.pathname;
+  $: path, scrollTop();
 
   async function scrollTop() {
     if (mounted) {
