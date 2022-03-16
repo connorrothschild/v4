@@ -106,7 +106,7 @@
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.are.na/connor-rothschild">Anything here</a
+                href="https://www.are.na/connor/">Anything here</a
               >
             </li>
             <li>Married at First Sight</li>
