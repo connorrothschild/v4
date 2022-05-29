@@ -37,7 +37,7 @@ In this post, I'll talk a bit about the dollar label operator `$:`, a hidden gem
 
 ## Side note: A label with multiple meanings
 
-One quirk of `$` in Svelte is that it can mean totally different things in different contexts. In particular, `$` could be used to:
+One quirk of the dollar sign in Svelte is that it can mean totally different things in different contexts. In particular, `$` could be used to:
 
 1. Access a store value (e.g. `$myStore`)
 2. Insert a variable into a template literal string (e.g. 
@@ -56,6 +56,8 @@ My goal in this post is to show you three levels of depth at which you can use t
 3. [Separate-context reactivity](#03-separate-context-reactivity)
 
 *Please note I am making up these terms.*
+
+---
 
 ## 01. Same-line reactivity
 
@@ -84,11 +86,9 @@ Here, the declaration on line 3 assigns `doubled` to **always** be equal to `cou
 
 ### A use-case: Constructing responsive D3 scales
 
-scaleLinear etc.
+A common use-case for `$:` is to construct a responsive [D3 scale](https://www.d3indepth.com/scales/); we want to keep track of the window width and/or height so that we can scale datapoints to fit the screen. The dollar label operator allows us to update our existing scales automatically whenever the window size changes.
 
-A common use-case for `$:` is to construct a responsive [D3 scale](https://www.d3indepth.com/scales/). We want to keep track of the window width and/or height so that we can scale datapoints to fit the screen. The dollar label operator allows us to update our existing scales automatically whenever the window size changes.
-
-For example, here's a scale that reactivty updates when its domain updates, thanks to `width` changing:
+For example, here's a scale that reactively updates when its range changes, thanks to `width` being reactive:
 
 <Code language="Svelte">
 
@@ -108,6 +108,8 @@ For example, here's a scale that reactivty updates when its domain updates, than
 </Code>
 
 <Scales />
+
+Notice how `xScale(50)` will always return **half the width** of the corresponding `div`, because it is linked reactively.
 
 Practically, this makes for some awesome, responsive data visualizations, as this [REPL](https://svelte.dev/repl/a5f22cf3df8040b29fc128d969059125?version=3.38.3) demonstrates (resize the window to see the effect!):
 
@@ -264,7 +266,7 @@ Although in my view, the first approach is more intuitive and idiomatic. It lite
 
 Imagine you run a very simple eCommerce site that has one purpose: to sell shirts. Your entire website is straight to the point: the user can select any number of shirts to buy, **but you need to make sure they don't exceed the current supply in your warehouse**. In order to solve this problem, we need to ping *an endpoint* that returns the number of shirts remaining. 
 
-And so in this case, we will keep track of two elements that are characteristically related to one another but have no connection in our code: the state of the **user's cart** (frontend) and the **available remaining supply** (backend). When the user adds or removes a shirt from their cart, we want to ping the backend to update the remaining supply.
+And so in this case, we will keep track of two elements that are characteristically related to one another but have no connection in our code: the state of the **user's cart** (frontend) and the **available remaining supply** (backend). When the user adds or removes a shirt from their cart, we want to ping the backend to check the remaining supply (accounting for all those other purchases that are coming in, since you run such a successful shop).
 
 Here's a minimal example:
 
@@ -311,7 +313,7 @@ We could add the following lines to our above code to achieve this quite easily 
 
 </Code>
 
-Quick bonus tip: you can actually combine each of these conditions into one line because the [comma operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator) evaluates **each** of its operands and returns the value of the last.
+But here's a quick bonus tip: you can actually combine each of these conditions into one line because the [comma operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator) evaluates **each** of its operands and returns the value of the last.
 
 <Code language="Svelte">
 
@@ -337,6 +339,8 @@ Here's a more complete [REPL](https://svelte.dev/repl/c30c5e28c4c8471bb515bd65a6
 Obviously, this is not how eCommerce sites really work. This is just one example of connecting otherwise-unrelated bits of state, sort of akin to triggering [side effects in React](https://reactjs.org/docs/hooks-effect.html). 
 
 </Info>
+
+---
 
 ## Wrapping up
 
