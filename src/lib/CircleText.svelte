@@ -28,7 +28,7 @@
     }}
     on:mouseleave={() => {
       hovered = false;
-      imageIndex = imageIndex == 4 ? 1 : imageIndex + 1;
+      imageIndex = imageIndex == 5 ? 1 : imageIndex + 1;
     }}
   >
     {#if hovered}

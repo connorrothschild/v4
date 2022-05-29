@@ -88,7 +88,7 @@ Here, the declaration on line 3 assigns `doubled` to **always** be equal to `cou
 
 A common use-case for `$:` is to construct a responsive [D3 scale](https://www.d3indepth.com/scales/); we want to keep track of the window width and/or height so that we can scale datapoints to fit the screen. The dollar label operator allows us to update our existing scales automatically whenever the window size changes.
 
-For example, here's a scale that reactively updates when its range changes, thanks to `width` being reactive:
+For example, here's a scale that updates when its range changes, in particular tracking changes in `width`.
 
 <Code language="Svelte">
 
@@ -101,7 +101,7 @@ For example, here's a scale that reactively updates when its range changes, than
 </script>
 
 <div bind:clientWidth={width}>
-  <p><code>xScale(50)</code> is equal to: {Math.round(xScale(50))}px.</p>
+  <p><code>xScale(50)</code> is equal to: {xScale(50)}px.</p>
 </div>
 ```
 
