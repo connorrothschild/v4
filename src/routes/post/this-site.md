@@ -83,7 +83,7 @@ Alternatively, I could have designed each of these sections with their own quirk
 
 I chose not to do that, for two reasons.
 
-First, to build a consistent user experience across different types of content, so that users spent less time getting 'onboarded' to my site, and more time spent engaging with the content. For certain developers (e.g., self-described creative coders), the creativity within project pages is something to showcase—for others, its nota s important.
+First, to build a consistent user experience across different types of content, so that users spent less time getting 'onboarded' to my site, and more time spent engaging with the content. For certain developers (e.g., self-described creative coders), the creativity within project pages is something to showcase—for others, its not as important.
 
 Second, because I'm not as good at design as Félix. 😆
 
