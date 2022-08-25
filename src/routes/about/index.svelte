@@ -33,9 +33,22 @@
     <!-- <h2 class="subsection-title">A brief bio</h2> -->
     <div>
       <p class="larger">
-        I live in Houston, Texas and work at Moksha Data. There, I lead our data
-        visualization and storytelling team and make microsites, interactives,
-        and visualizations for clients working in the social impact space.
+        I live in Houston, Texas and help run <a
+          href="https://mokshadata.studio"
+          target="_blank"
+          rel="noopener noreferrer">Moksha Data Studio.</a
+        > We build microsites, interactives, and visualizations for clients working
+        in the social impact space.
+      </p>
+      <p>
+        I also have experience working with data in newsrooms (at Axios) and the
+        federal government (at USSOCOM). A more comprehensive overview of my
+        work experience can be found
+        <a
+          href="https://read.cv/connorr"
+          target="_blank"
+          rel="noopener noreferrer">here.</a
+        >
       </p>
       <p>
         Please reach out (via <a
@@ -61,7 +74,7 @@
           <h1 class="topic-title">Things I’m good at</h1>
           <ul>
             <li>R</li>
-            <li>Vue</li>
+            <li>SVG</li>
             <li>D3.js</li>
             <li>Svelte</li>
           </ul>
@@ -109,7 +122,7 @@
                 href="https://www.are.na/connor/">Anything here</a
               >
             </li>
-            <li>Married at First Sight</li>
+            <li>Reality TV</li>
           </ul>
         </div>
       </div>

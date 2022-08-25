@@ -24,7 +24,7 @@ tags: ['svelte', 'tutorial']
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </svelte:head>
 
-Svelte remains my framework of choice for building web applications; it is lean, intuitive, and powerful. One game-changing tool in my experience working with Svelte has been the `$:`, or dollar label, operator. Although confusing at first, ... etc etc..
+Svelte remains my framework of choice for building web applications; it is lean, intuitive, and powerful. One tool I see beginners struggle with is the `$:`, or dollar label, operator—a tool that is confusing at first but ends up making reactivity a breeze.
 
 In this post, I'll talk a bit about the dollar label operator `$:`, a hidden gem in the Svelte ecosystem that I bet you're underutilizing. 
 
@@ -216,7 +216,7 @@ By combining these two operators, we're able to make statements and variables re
 
 </Code>
 
-Now, anytime `x` changes, the console will log "Hello!". This is a bit of a hidden gem. As far as I can tell, it's not covered in official Svelte documentation; but Rich Harris has mentioned it as a tool:
+Now, anytime `x` changes, the console will log "Hello!". As far as I can tell, this is not covered in official Svelte documentation; but Rich Harris has mentioned it as a tool:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The most common way to handle that situation is <br><br>$: c, console.log(&#39;yes&#39;);<br><br>It does feel a bit weird, I know :)</p>&mdash; Rich Harris (@Rich_Harris) <a href="https://twitter.com/Rich_Harris/status/1149265270495727617?ref_src=twsrc%5Etfw">July 11, 2019</a></blockquote> 
 
@@ -338,13 +338,15 @@ Here's a more complete [REPL](https://svelte.dev/repl/c30c5e28c4c8471bb515bd65a6
 <!-- FIXME Verify this is accurate -->
 Obviously, this is not how eCommerce sites really work. This is just one example of connecting otherwise-unrelated bits of state, sort of akin to triggering [side effects in React](https://reactjs.org/docs/hooks-effect.html). 
 
+[Here's another example](https://svelte.dev/repl/83dfbc08c2fd4e20868c858ec5cddd4e?version=3.6.7) provided by [@opensas](https://twitter.com/opensas/status/1152119549053100032).
+
 </Info>
 
 ---
 
 ## Wrapping up
 
-The dollar label operator makes it easy to keep track of and update variables in our Svelte applications. It can be confusing at first, but once you learn to use it effectively, it makes more leaner, simpler, and more powerful applications.
+The dollar label operator makes it easy to keep track of and update variables in our Svelte applications. It can be confusing at first, but once you learn to use it effectively, it makes for leaner, simpler, and more powerful applications.
 
 Feel free to reach out on [Twitter](https://twitter.com/CL_Rothschild) with your thoughts, questions, or anything you think I got wrong 🙂. 
 
