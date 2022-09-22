@@ -24,6 +24,7 @@
     : awards;
 
   let anyHovered;
+  console.log(awards);
 </script>
 
 <IntersectionObserver {element} bind:intersecting>
@@ -50,7 +51,10 @@
       {#each filteredAwards as award}
         <AwardSection
           award={award.metadata}
-          slug={award.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
+          slug={award.path
+            .replace(/\.[^/.]+$/, "")
+            .replace("./", "/")
+            .replace("+page", "")}
           bind:anyHovered
         />
       {/each}

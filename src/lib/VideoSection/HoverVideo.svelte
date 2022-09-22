@@ -70,7 +70,10 @@
     <div class="projects">
       {#each projects as project, i}
         <div
-          on:click={navigate(project.path.replace(/\.[^/.]+$/, ""), i)}
+          on:click={navigate(
+            project.path.replace(/\.[^/.]+$/, "").replace("+page", ""),
+            i
+          )}
           sveltekit:prefetch
           class="project-card no-underline 
         {value === i ? 'active' : 'inactive'} {typeof literallyHovered ==

@@ -62,7 +62,10 @@
         {#each filteredProjects as project}
           <ProjectSection
             project={project.metadata}
-            slug={project.path.replace(/\.[^/.]+$/, "").replace("./", "/")}
+            slug={project.path
+              .replace(/\.[^/.]+$/, "")
+              .replace("./", "/")
+              .replace("+page", "")}
           />
         {/each}
       </div>

@@ -2,17 +2,16 @@
   "name": "personal-site",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "start": "svelte-kit start",
-    "preview": "svelte-kit preview",
-    "postinstall": "patch-package"
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/adapter-vercel": "next",
-    "@sveltejs/kit": "^1.0.0-next.233",
+    "@sveltejs/kit": "1.0.0-next.434",
     "@sveltejs/svelte-repl": "^0.3.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.1",
@@ -29,10 +28,11 @@
     "stream": "^0.0.2",
     "svelte": "^3.34.0",
     "svelte-highlight": "^3.2.0",
-    "svelte-image": "^0.2.9",
+    "svelte-image": "^0.0.1",
     "svelte-intersection-observer": "^0.9.1",
     "svelte-preprocess": "^4.7.1",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.1.1",
+    "vite": "^3.0.9"
   },
   "type": "module",
   "dependencies": {
@@ -49,7 +49,7 @@
     "node-fetch": "^2.6.5",
     "patch-package": "^6.4.7",
     "prismjs": "^1.25.0",
-    "svelte-markdown": "^0.1.12",
+    "svelte-markdown": "^0.2.3",
     "svelte-paginate": "^0.0.1",
     "swiper": "^7.2.0"
   }

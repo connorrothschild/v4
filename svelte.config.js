@@ -2,20 +2,23 @@ import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 // import adapter from "@sveltejs/adapter-netlify";
 import adapter from '@sveltejs/adapter-static';
+import { sveltekit } from '@sveltejs/kit/vite';
 
 const dev = process.env.NODE_ENV === 'development';
 
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('vite').UserConfig} */
 const config = {
-  extensions: [".svelte", ...mdsvexConfig.extensions],
-  preprocess: [
-    mdsvex(mdsvexConfig),
-  ],
-	kit: {
-    target: "#svelte",
-		adapter: adapter(),
-    trailingSlash: 'never',
-	}
+    plugins: [sveltekit()],
+    extensions: [".svelte", ...mdsvexConfig.extensions],
+    preprocess: [
+        mdsvex(mdsvexConfig),
+    ],
+    kit: {
+        // target: "#svelte",
+        adapter: adapter(),
+        trailingSlash: 'never',
+        browser: { hydrate: true }
+    }
 };
 
 export default config;
