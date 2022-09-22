@@ -13,9 +13,9 @@ export async function GET() {
         );
     }
     
-    const posts = await Promise.all(body);
+    const jobs = await Promise.all(body);
 
-    return {
-        body: JSON.stringify(posts)
-    }
+    return new Response(
+        JSON.stringify(jobs)
+    )
 }

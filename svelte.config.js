@@ -17,7 +17,10 @@ const config = {
         // target: "#svelte",
         adapter: adapter(),
         trailingSlash: 'never',
-        browser: { hydrate: true }
+        browser: { hydrate: true },
+        prerender: {
+            default: true
+        }
     }
 };
 

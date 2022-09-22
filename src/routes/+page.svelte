@@ -1,6 +1,5 @@
 <script>
   export let data;
-  $: console.log(data);
 
   import Seo from "$lib/Seo.svelte";
   import Hero from "$lib/Sections/Hero.svelte";

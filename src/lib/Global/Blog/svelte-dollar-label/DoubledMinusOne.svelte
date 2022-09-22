@@ -5,7 +5,6 @@
   $: {
     doubled = count * 2;
     doubledMinusOne = doubled - 1;
-    // console.log(doubledMinusOne);
   }
 </script>
 

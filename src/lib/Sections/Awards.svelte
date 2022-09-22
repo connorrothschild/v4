@@ -24,7 +24,6 @@
     : awards;
 
   let anyHovered;
-  console.log(awards);
 </script>
 
 <IntersectionObserver {element} bind:intersecting>

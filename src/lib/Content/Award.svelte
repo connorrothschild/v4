@@ -3,7 +3,6 @@
   export let slug;
   export let anyHovered = false;
 
-  console.log(slug);
   import TransitionInView from "$lib/TransitionInView.svelte";
 
   let active = false;
