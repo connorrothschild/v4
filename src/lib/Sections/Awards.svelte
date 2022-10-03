@@ -48,6 +48,7 @@
 
     <div class="awards-grid">
       {#each filteredAwards as award}
+      <div>
         <AwardSection
           award={award.metadata}
           slug={award.path
@@ -56,6 +57,7 @@
             .replace("+page", "")}
           bind:anyHovered
         />
+      </div>
       {/each}
     </div>
   </section>

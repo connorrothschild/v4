@@ -52,6 +52,7 @@
     </div>
     <div class="posts-grid width-container">
       {#each finalPosts as post, index}
+      <div>
         <BlogSection
           post={post.metadata}
           slug={post.path
@@ -61,6 +62,7 @@
           {index}
           bind:anyHovered
         />
+      </div>
       {/each}
     </div>
   </section>

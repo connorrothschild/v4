@@ -37,13 +37,15 @@
 
   <div class="projects-container transition-content">
     {#each filteredProjects as project}
-      <ProjectSection
-        project={project.metadata}
-        slug={project.path
-          .replace(/\.[^/.]+$/, "")
-          .replace("./", "/")
-          .replace("+page", "")}
-      />
+      <div>
+        <ProjectSection
+          project={project.metadata}
+          slug={project.path
+            .replace(/\.[^/.]+$/, "")
+            .replace("./", "/")
+            .replace("+page", "")}
+        />
+      </div>
     {/each}
   </div>
 </main>

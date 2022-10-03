@@ -38,14 +38,16 @@
 
   <div class="awards-grid transition-content">
     {#each data.awards as award}
-      <AwardSection
-        award={award.metadata}
-        slug={award.path
-          .replace(/\.[^/.]+$/, "")
-          .replace("./", "/")
-          .replace("+page", "")}
-        bind:anyHovered
-      />
+      <div>
+        <AwardSection
+          award={award.metadata}
+          slug={award.path
+            .replace(/\.[^/.]+$/, "")
+            .replace("./", "/")
+            .replace("+page", "")}
+          bind:anyHovered
+        />
+      </div>
     {/each}
   </div>
 </main>

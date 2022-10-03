@@ -60,6 +60,7 @@
     {#if $isPre1015}
       <div class="projects-container">
         {#each filteredProjects as project}
+        <div>
           <ProjectSection
             project={project.metadata}
             slug={project.path
@@ -67,6 +68,7 @@
               .replace("./", "/")
               .replace("+page", "")}
           />
+        </div>
         {/each}
       </div>
     {:else}

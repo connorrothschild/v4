@@ -46,6 +46,7 @@
   <h1 class="page-title transition-title overflow-hidden">Writing</h1>
   <div class="transition-content posts-grid">
     {#each filteredPosts as post, index}
+    <div>
       <BlogSection
         post={post.metadata}
         slug={post.path
@@ -55,6 +56,7 @@
         {index}
         bind:anyHovered
       />
+        </div>
     {/each}
   </div>
   {#if showAll}
@@ -62,15 +64,17 @@
       <h1 class="archives-title">😬 The archives 😬</h1>
       <div class="posts-grid">
         {#each otherPosts as post, index}
-          <BlogSection
-            post={post.metadata}
-            slug={post.path
-              .replace(/\.[^/.]+$/, "")
-              .replace("./", "/")
-              .replace("+page", "")}
-            {index}
-            bind:anyHovered
-          />
+          <div>
+            <BlogSection
+              post={post.metadata}
+              slug={post.path
+                .replace(/\.[^/.]+$/, "")
+                .replace("./", "/")
+                .replace("+page", "")}
+              {index}
+              bind:anyHovered
+            />
+          </div>
         {/each}
       </div>
     </div>

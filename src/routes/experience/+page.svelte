@@ -32,15 +32,17 @@
 
   <div class="transition-content">
     {#each sortedJobs as job}
-      <JobSection
-        job={job.metadata}
-        slug={job.path
-          .replace(/\.[^/.]+$/, "")
-          .replace("./", "/")
-          .replace("+page", "")}
-        preview={false}
-        hoveredFromChild={null}
-      />
+      <div>
+        <JobSection
+          job={job.metadata}
+          slug={job.path
+            .replace(/\.[^/.]+$/, "")
+            .replace("./", "/")
+            .replace("+page", "")}
+          preview={false}
+          hoveredFromChild={null}
+        />
+      </div>
     {/each}
   </div>
 </main>
