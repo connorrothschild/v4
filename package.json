@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.32",
+    "@sveltejs/adapter-node": "^1.0.0-next.96",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "1.0.0-next.434",
@@ -37,7 +38,6 @@
   "type": "module",
   "dependencies": {
     "@svelte-parts/editor": "^0.0.20",
-    "@sveltejs/adapter-node": "^1.0.0-next.0",
     "@tiptap/core": "^2.0.0-beta.120",
     "@tiptap/starter-kit": "^2.0.0-beta.119",
     "bowser": "^2.11.0",

@@ -334,14 +334,14 @@ button:focus:not(:focus-visible) {
 /* We set opacity of transitioning elements to 0 to prevent brief paint before opacity transitions 
 But for users who prefer reduced motion, we don't want to apply this 
 (they would never become visible because transitions never trigger) */
-/* @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .transition-title,
   .transition-subtitle,
   .transition-content,
   .begin-invisible:not(.transitioned) {
     opacity: 0;
   }
-} */
+}
 
 .overflow-hidden {
   overflow: hidden;
