@@ -1,6 +1,5 @@
 <script>
-  import { gsap } from "gsap";
-  import { MorphSVGPlugin } from "gsap/dist/MorphSVGPlugin.js";
+  import { gsap, MorphSVGPlugin } from "../scripts/gsap.js"
 
   import { onMount } from "svelte";
   import { currentIcon } from "../stores/global.js";

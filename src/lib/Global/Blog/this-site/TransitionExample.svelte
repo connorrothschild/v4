@@ -1,8 +1,5 @@
 <script>
-  import { gsap } from "gsap";
-  import { SplitText } from "gsap/dist/SplitText.js";
-
-  gsap.registerPlugin(SplitText);
+  import { gsap, SplitText } from "../../../../scripts/gsap.js"
 
   let title;
 

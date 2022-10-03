@@ -1,9 +1,7 @@
 <script>
-  import { gsap } from "gsap";
-  import { SplitText } from "gsap/dist/SplitText.js";
-  import { prefersReducedMotion } from "../../stores/motion";
 
-  gsap.registerPlugin(SplitText);
+  import { gsap, SplitText } from "../../scripts/gsap";
+  import { prefersReducedMotion } from "../../stores/motion";
 
   export let intersecting;
   export let element;

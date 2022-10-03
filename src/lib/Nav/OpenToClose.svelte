@@ -1,11 +1,9 @@
 <script>
   export let expanded;
 
-  import { gsap } from "gsap";
-  import { MorphSVGPlugin } from "gsap/dist/MorphSVGPlugin.js";
+  import { gsap, MorphSVGPlugin } from "../../scripts/gsap";
   import { onMount } from "svelte";
 
-  gsap.registerPlugin(MorphSVGPlugin);
   const colors = ["#46a4cc", "#50a39e", "#a63e4b", "#e3aa59", "#a63ba0"];
 
   let icon;

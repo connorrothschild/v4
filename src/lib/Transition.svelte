@@ -4,8 +4,8 @@
   export let startingOpacity = 0;
 
   import { onMount } from "svelte";
-  import { gsap } from "gsap";
   import { SplitText } from "gsap/dist/SplitText.js";
+  import { gsap, MorphSVGPlugin } from "../scripts/gsap.js";
   import { pageTransitionDelay } from "../stores/global.js";
   import { prefersReducedMotion } from "../stores/motion.js";
 
