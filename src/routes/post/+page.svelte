@@ -59,26 +59,28 @@
         </div>
     {/each}
   </div>
-  {#if showAll}
-    <div in:slide|local={{ duration: 300, easing: linear }}>
-      <h1 class="archives-title">😬 The archives 😬</h1>
-      <div class="posts-grid">
-        {#each otherPosts as post, index}
-          <div>
-            <BlogSection
-              post={post.metadata}
-              slug={post.path
-                .replace(/\.[^/.]+$/, "")
-                .replace("./", "/")
-                .replace("+page", "")}
-              {index}
-              bind:anyHovered
-            />
-          </div>
-        {/each}
+  <div>
+    {#if showAll}
+      <div in:slide|local={{ duration: 300, easing: linear }}>
+        <h1 class="archives-title">😬 The archives 😬</h1>
+        <div class="posts-grid">
+          {#each otherPosts as post, index}
+            <div>
+              <BlogSection
+                post={post.metadata}
+                slug={post.path
+                  .replace(/\.[^/.]+$/, "")
+                  .replace("./", "/")
+                  .replace("+page", "")}
+                {index}
+                bind:anyHovered
+              />
+            </div>
+          {/each}
+        </div>
       </div>
-    </div>
-  {/if}
+    {/if}
+  </div>
   <button
     class="button pulled-right block transition-content"
     on:click={() => {

@@ -28,7 +28,7 @@
     class="corner"
     style="max-width: {cornerTitleWidth}px"
   >
-    <p class="corner-title">{title}</p>
+    <p class="corner-title">{@html title}</p>
     <p class="corner-subtitle">{subtitle}</p>
     <p
       class="scroll-to-top"
