@@ -20,6 +20,8 @@
   import "prismjs/components/prism-json.js";
   import "prismjs/components/prism-yaml.js";
 
+  export let includesOutput = false;
+
   // The code being used
   export let code = "";
 
@@ -116,6 +118,12 @@
   </code>
 </pre>
 
+{#if includesOutput}
+  <div class="output">
+    {@html code}
+  </div>
+{/if}
+
 <style>
   .filename-container {
     text-align: right;
@@ -152,5 +160,12 @@
 
   .has-filename {
     padding-top: calc(1rem + 30px) !important;
+  }
+
+  .output {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    margin-bottom: 1rem;
   }
 </style>
