@@ -5,14 +5,12 @@
 
   import ToggleableFramework from "./ToggleableFramework.svelte";
   import Code from "$lib/Global/Code.svelte";
+  import Info from "$lib/Global/Info.svelte";
   import ScrollySection from "./ScrollySection.svelte";
 
   let userSelectedFramework; // = "Svelte";
 </script>
 
-<svelte:head>
-  <script src="src/scripts/drawArrow.js"></script>
-</svelte:head>
 <Nav />
 <main>
   <Title>How to &quot;learn D3&quot; in 2023</Title>
@@ -34,25 +32,37 @@
       </p>
     </blockquote>
 
-    <SectionTitle number="1">Who really wants to learn D3?</SectionTitle>
+    <SectionTitle number="1">Do you really want to learn D3?</SectionTitle>
     <p>
       Let&rsquo;s clarify one important concept up front. When most people say
       they &quot;want to learn D3&quot;, they actually mean they <strong
         >want to learn interactive data visualization</strong
       >, and they think D3 is the tool they need to use for that (change
-      language?). No one really wants to &quot;learn D3,&quot; they just want to
+      language?). Few beginners actually want to &quot;learn D3,&quot; they just want to
       learn how to make those beautiful and complex &quot;D3&quot; projects.
     </p>
-    <p>
-      But I&rsquo;m fairly confident that in 2023 and beyond, learning data
-      visualization on the web will, or <em>should</em>, look a bit different
+    <!-- <p>
+      With that in mind, the roadmap for learning data
+      visualization on the web will look a bit different
       than it has in years&rsquo; past, as the rising prevalence of JavaScript
       frameworks will make for a more declarative and intuitive coding style.
-      Rather than learning D3, we should be asking how to learn interactive data
-      visualization, which requires us to rethink the initial question.
+      Rather than asking "how to learn D3," we should be asking how to learn interactive data
+      visualization.
+    </p> -->
+
+    <p>But D3 is far too expansive to be the only tool beginners use, and far too complex to be the first tool beginners start with. D3 is a collection of modules that vary widely in their purposes, ranging from 
+      <abbr data-title="Document Object Model">DOM</abbr> manipulation, to array manipulation, to <abbr data-title="Scalable Vector Graphics">SVG</abbr> path construction.
+      In the future, beginners ought to think of D3 as a tool in their interactive toolkit, and only reach for it when it is the best tool for the job.
     </p>
 
-    <blockquote>
+    <p>This new approach will reframe D3 from an all-expansive data visualization library to a tool that best handles specific components of a project, like scaling data and array manipulation. Meanwhile, a JavaScript framework can take on the heavy work of DOM manipulation. I call this <strong>framework-first approach to data visualization</strong>.</p>
+
+    <Info color="rgb(45, 45, 45)">
+      <p style="color: white;">
+        Some JavaScript frameworks you might have heard of inlude React, Vue, Angular, or Svelte. 
+      </p>
+    </Info>
+    <!-- <blockquote>
       <p>
         What do I mean by a framework? And what is a &quot;framework-first&quot;
         approach to data visualization? Are we just using more big words for the
@@ -78,7 +88,17 @@
           {userSelectedFramework || "a JavaScript framework"}
         </ToggleableFramework>).
       </p>
-    </blockquote>
+    </blockquote> -->
+
+
+    <p>This conversation started when Elijah Meeks wrote <a href="https://medium.com/@Elijah_Meeks/d3-is-not-a-data-visualization-library-67ba549e8520" 
+      target="_blank" rel='noopener noreferrer'>D3 is not a Data Visualization Library</a> in 2018. Despite his prescience, it wasn't until a few years later that the conversation hit the mainstream, as
+     folks like <a href="https://wattenberger.com/blog/react-and-d3" target="_blank" rel="noopener noreferrer">Amelia Wattenberger</a> and 
+      <a href="https://www.youtube.com/watch?v=bnd64ZrHC0U" target="_blank" rel="noopener noreferrer">Matthias Stahl</a> published impressive graphics using JavaScript frameworks like React and Svelte.
+      And behind the scenes, this framework-first approach has taken the visualization world by storm—most recently evinced by <a href="https://twitter.com/dummdidumm_/status/1590367862920994816" target="_blank" rel="noopener noreferrer">the near-universal usage of Svelte in election graphics in 2022</a>.
+    </p>
+    
+    <p>This blog post is my contribution to the conversation, with the ultimate goal of reframing the conversation around learning interactive data visualization.</p>
 
     <SectionTitle number="2">Why is D3 hard to learn?</SectionTitle>
     <p>
@@ -92,8 +112,9 @@
     </p>
     <p>
       When folks that are brand new to the web start &quot;learning D3,&quot;
-      they rarely understand what in their curriculum is D3, what is HTML, what
-      is CSS, and what is JavaScript. And it&rsquo;s not really their fault—D3
+      they rarely understand what in their curriculum is <abbr data-title='Data-Driven Documents'>D3</abbr>, what is <abbr data-title='HyperText Markup Language'>HTML</abbr>, what
+      is <abbr data-title='Cascading Stylesheets'>CSS</abbr>, what
+      is <abbr data-title='Scalable Vector Graphics'>SVG</abbr>, and what is <abbr data-title='JavaScript'>JS</abbr>. And it&rsquo;s not really their fault—D3
       trying to subsume each of these individual languages (creating markup from <code
         >select()</code
       >
@@ -115,14 +136,19 @@
     <!-- Introducing a framework-first approach. -->
     <!-- Maybe add a para here, this could be like "a framework-first approach makes things better..." Do code examples live here? -->
 
-    <SectionTitle number="3"
+    <!-- <SectionTitle number="3"
       >Would {userSelectedFramework || "a framework"} be any better?</SectionTitle
+    > -->
+    <SectionTitle number="3"
+      >The framework-first approach</SectionTitle
     >
+    <p>Introducing...</p>
+
     <p>
       So, would <ToggleableFramework bind:userSelectedFramework>
         {userSelectedFramework || "Svelte, React, et al."}
-      </ToggleableFramework> make things that much better? The answer
-      is yes, not because <ToggleableFramework bind:userSelectedFramework>
+      </ToggleableFramework> make things that much better? The answer is yes, not
+      because <ToggleableFramework bind:userSelectedFramework>
         {userSelectedFramework || "a framework"}
       </ToggleableFramework> makes things
       <em>easy</em>
@@ -134,15 +160,21 @@
       [FIXME: Add same for React, and Vue.] Yes, you are learning three new tools,
       but you&rsquo;re not trying to learn them through the lens of D3.
     </p>
-    <p>Let's consider a trivial example to illustrate this point: a simple scatterplot. 
-      Recall that in most "D3" data visualizations, your eventual output will be SVG.
+    <p>
+      Let's consider a trivial example to illustrate this point: a simple
+      scatterplot. We'll compare the code needed to produce this scatterplot, in
+      <span class="label d3">D3</span> and in
+      <span class="label svelte">Svelte</span>. (Feel free to just glance for now, as we'll dive in more deeply in a moment.)
     </p>
-    
-    <p>In a D3-first approach, you might write something like this:</p>
-    <Code language='js'>
 
-    {`
-import * as d3 from "d3";
+    <div class="examples baadsfhjsdbfdhs">
+      <div class="example">
+        <div class="filename-container d3-file">
+          <span class="filename">D3 input</span>
+        </div>
+        <Code language="js" showLanguage={false}>
+          {`
+  import * as d3 from "d3";
 
 // 1. Create data
 const data = [
@@ -186,13 +218,68 @@ svg
   .attr("fill", "plum")
   .attr("stroke", "black");
     `}
+        </Code>
+      </div>
+      <div class="example">
+        <div class="filename-container svelte-file">
+          <span class="filename">Svelte input</span>
+        </div>
+        <Code language="svelte" showLanguage={false}>
+          {`
+<script>
+  import * as d3 from "d3";
 
-    </Code>
+  // 1. Create data
+  const data = [
+    { x: 50, y: 50, r: 25 },
+    { x: 100, y: 100, r: 25 },
+    { x: 150, y: 150, r: 25 },
+    { x: 200, y: 200, r: 25 },
+    { x: 250, y: 250, r: 25 }
+  ];
 
-    <p>The result of that D3 code would be a chunk of SVG code that, when embedded in a document, would render five circles.</p>
+  // 2. Instantiate dimensions
+  const width = 300;
+  const height = 300;
 
-        <Code language='html' includesOutput={true}>
+  // 3. Create scaling functions
+  const xScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(data, (d) => d.x)])
+    .range([0, width - 30]);
 
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(data, (d) => d.y)])
+    .range([height, 30]);
+</script>
+
+<!-- 4. Create SVG element, append dimensions -->
+<svg width="300" height="300">
+  <!-- 5. Create a circle for each datapoint -->
+    {#each data as d}
+        <circle
+            cx={xScale(d.x)}
+            cy={yScale(d.y)}
+            r={d.r}
+            fill='plum'
+            stroke='black'
+         />
+    {/each}
+</svg>
+      `}
+        </Code>
+      </div>
+    </div>
+
+    <p>
+      The result of that code, in either context, would be a chunk of SVG code
+      that, when embedded in a document, would render five circles.
+    </p>
+
+    <div style="max-width: 610px;
+    margin: auto;">
+    <Code language="html" includesOutput={true}>
       {`
 <svg width="300" height="300">
   <circle cx="54" cy="246" r="25" fill="plum" stroke="black"/>
@@ -202,16 +289,33 @@ svg
   <circle cx="270" cy="30" r="25" fill="plum" stroke="black"/>
 </svg>
       `}
-    </Code>
+    </Code></div>
 
-    <p>Let's dive deep into the above code to understand what D3 is doing behind the scenes.</p>
+    <p>
+      You might notice that steps 1 through 3 are identical between the two
+      apps. That's because, in both instances, the basic setup is the same: we
+      create some data, get the dimensions of our chart, and then use D3 (in
+      particular, <code>d3-scale</code> to map raw data to our dimensions.
+    </p>
+    <p>
+      The examples diverge in steps 4 and 5, which are our DOM manipulation
+      steps. Let's dive deeper into those steps to understand what D3 is doing behind
+      the scenes, and why a framework-first approach is so much more intuitive.
+    </p>
 
     <ScrollySection />
 
     <p>
+      The Svelte code above is what I call "literal programming": you're literally authoring the DOM. 
+      Rather than writing code that says, "select this
+      element, and then append this other element to it," You're writing those elements directly.
+      And rather than writing code that says, "select this element, and then set this attribute on it," you're setting those attributes directly.
+    </p>
+    
+    <p>
       In a <ToggleableFramework bind:userSelectedFramework>
         {userSelectedFramework || "framework-first"}
-      </ToggleableFramework> application, someone will be able to tell if a bug lies
+      </ToggleableFramework> application, a student will be able to tell if a bug lies
       in their markup by
       <strong>directly changing their markup</strong>, whereas a developer
       working in a pure-D3 application might not know (without doing some
@@ -246,9 +350,8 @@ svg
       And so in some ways, this new framework-first approach forces us to use D3
       more intentionally. Rather than acting as a hammer searching for nails <em
         >(how can I solve this problem using D3?)</em
-      >, we only reach for the hammer when we need it <em
-        >(would D3 be best-suited to solve this problem, and how so?)</em
-      >.
+      >, we only reach for the hammer when we need it
+      <em>(would D3 be best-suited to solve this problem, and how so?)</em>.
     </p>
     <h3 id="d3-for-the-data-frameworks-for-the-dom">
       D3 for the data, frameworks for the DOM
@@ -313,8 +416,8 @@ svg
     </p>
     <h3 id="3-learn-svg">3. Learn SVG</h3>
     <p>
-      In every D3 project, you're giving JavaScript instructions to write
-      SVG (or whatever your output is) to the DOM. And in your framework-first
+      In every D3 project, you're giving JavaScript instructions to write SVG
+      (or whatever your output is) to the DOM. And in your framework-first
       approach, you will write the DOM directly. (The difference, in simple
       terms is as follows: where D3 would require you to write <code
         >d3.select("body").append("svg")</code
@@ -330,8 +433,9 @@ svg
       visualizations.
     </p>
     <p>
-      Syntactically, SVG is like HTML (which is another reason it&rsquo;s worth learning
-      HTML first), except it produces <strong>images</strong> rather than
+      Syntactically, SVG is like HTML (which is another reason it&rsquo;s worth
+      learning HTML first), except it produces <strong>images</strong> rather
+      than
       <strong>text</strong>. Once you begin to understand SVG, you can write it
       directly in your framework-first application, and embed data inline as
       needed.
@@ -400,13 +504,13 @@ svg
   }
 
   :global(.viz-article-body *::selection) {
-      text-shadow: none;
-      background:rgb(99 140 255 / 90%);
-      color: white;
+    text-shadow: none;
+    background: rgb(99 140 255 / 90%);
+    color: white;
   }
 
   :global(.viz-article-body h1::selection) {
-    background: none
+    background: none;
   }
 
   p {
@@ -427,7 +531,7 @@ svg
     font-weight: 500;
     color: rgb(25, 25, 25);
     font-family: GT, Satoshi;
-    letter-spacing: -.25px;
+    letter-spacing: -0.25px;
   }
 
   strong {
@@ -457,5 +561,106 @@ svg
     font-size: 2rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
+  }
+
+  .label {
+    padding: 1px 4px;
+    font-weight: 400;
+    color: white;
+    border-radius: 3px;
+  }
+
+  .label.d3 {
+    background: #004e82;
+  }
+
+  .label.svelte {
+    background: #ff3e00;
+  }
+
+  .examples {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    position: relative;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    max-width: none;
+  }
+
+  .example {
+    width: 49%;
+    position: relative;
+
+    padding-top: 30px;
+  }
+
+  :global(.baadsfhjsdbfdhs pre) {
+    margin-top: 0 !important;
+  }
+
+  .filename-container {
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px 3px 0 0;
+    background: black;
+    display: flex;
+    justify-content: flex-start;
+    place-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .filename-container.d3-file {
+    background: #004e82;
+  }
+
+  .filename-container.svelte-file {
+    background: #ff3e00;
+  }
+
+  .filename {
+    color: white;
+    padding: 0.5rem;
+    font-weight: 400;
+  }
+
+  abbr:hover {
+    text-decoration: none;
+  }
+
+  abbr {
+    position: relative;
+    border-bottom: 1px dotted black;
+  }
+
+  abbr::after {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    content: attr(data-title);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: max-content;
+    max-width: 300px;
+    background: black;
+    color: white;
+    z-index: 2;
+  }
+
+  abbr:hover::after {
+    opacity: 1;
+  }
+
+  blockquote {
+    margin-top: 1rem;
   }
 </style>

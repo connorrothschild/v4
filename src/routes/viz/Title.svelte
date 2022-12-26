@@ -20,7 +20,7 @@
     >
   </h1>
   <h2>By Connor Rothschild</h2>
-  <Phrases />
+  <!-- <Phrases /> -->
   <h3>The complete roadmap for interactive data visualization</h3>
 </div>
 

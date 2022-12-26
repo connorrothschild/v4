@@ -18,16 +18,13 @@
       },
       {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
+        rootMargin: "50% 0px 0px 0px", // This makes the element visible while scrolling below (the element disappears when it is out of the viewport)
+        threshold: .8,
       }
     );
 
     observer.observe(element);
   });
-  // Make the element slightly transformed horizontally, linked to user scroll , but account for overall scroll position and element scroll top
-  // $: element.style.transform = `translateX(${(scrollY - elementScrollTop) * 0.1}px)`;
-
 </script>
 
 <svelte:window bind:scrollY={scrollY} />

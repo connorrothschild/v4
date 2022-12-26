@@ -20,13 +20,15 @@
   export let bottom = 0;
   export let increments = 100;
   export let value = undefined;
+  export let elementWidth;
+  
+  let container;
 
   const steps = [];
   const threshold = [];
 
   let nodes = [];
   let intersectionObservers = [];
-  let container;
 
   $: top, bottom, update();
 
@@ -74,11 +76,13 @@
       threshold.push(i / increments);
     }
     nodes = container.querySelectorAll(":scope > *");
+    // Exclude the Svelte-created iframe from the list of nodes
+    nodes = Array.from(nodes).filter((node) => node.nodeName !== "IFRAME");
     update();
   });
 </script>
 
-<div bind:this={container} id="steps-container">
+<div bind:this={container} id="steps-container" bind:clientWidth={elementWidth}>
   <slot />
 </div>
 
@@ -88,10 +92,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        overflow-x: auto;
+        /* overflow-x: auto; */
+        overflow-y: hidden;
         place-items: flex-end;
         height: 100%;
-    padding: 1rem 2rem;
+        padding: 1rem 2rem;
     }
 
     div::-webkit-scrollbar {
