@@ -66,6 +66,7 @@ bottom: 0;
     margin: 0;
     transform-origin: center;
     width: max-content;
+    padding: 1px;
   }
 
   .playing .icon {
@@ -80,10 +81,6 @@ bottom: 0;
     to {
       transform: rotate(360deg);
     }
-  }
-
-  .playing-line .icon {
-    z-index: 1;
   }
 
   .playing-line .marquee-text {
