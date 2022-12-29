@@ -52,6 +52,15 @@
     cursor: pointer;
   }
 
+  @media screen and (max-width: 967px) {
+    .jukebox {
+bottom: 0;
+    right: 6px;
+    transform: none;
+    left: unset;
+    }
+  }
+
   .icon {
     font-size: 2rem;
     margin: 0;
@@ -87,6 +96,21 @@
     overflow: hidden;
     /* animation: marquee 10s linear infinite; */
     z-index: -1;
+  }
+
+  @media screen and (max-width: 967px) {
+    .playing-line .marquee-text {
+      /* width: 100%; */
+      text-align: right;
+      left: -3px;
+      transform: translateY(-50%) translateX(-100%);
+    }
+  }
+
+  @media screen and (max-width: 528px) {
+    .playing-line .marquee-text {
+      display: none;
+    }
   }
 
   /* @keyframes marquee {
