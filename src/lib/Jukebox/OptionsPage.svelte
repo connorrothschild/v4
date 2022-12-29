@@ -163,10 +163,6 @@
       padding-left: 0;
     }
 
-    ul {
-      text-align: center;
-    }
-
     .massive-word {
       font-size: 13vw;
     }

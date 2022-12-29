@@ -59,16 +59,13 @@
     hovered = artist;
     expanded = false;
 
-    // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.
-    closedViaX =
-      $page.url.pathname.replace(/^\/([^\/]*).*$/, "$1") == `${code}`;
     paused = !paused;
   }}
   class="transition-title overflow-hidden no-underline 
     link link-{index} 
-    {paused ? 'paused' : 'playing'}
+    {isPlaying ? (paused ? 'not-playing' : 'playing') : ''}
     {anyHovered ? (hovered == title ? 'active' : 'inactive') : ''}
-      {isPlaying ? (paused ? 'not-current-page' : 'current-page') : ''}"
+    "
 >
   {title}
 </li>
@@ -124,6 +121,7 @@
     transition: color 600ms ease;
     width: 100%;
     display: block;
+    width: max-content;
   }
 
   .link:hover {
@@ -146,15 +144,18 @@
     color: rgba(var(--text-color-rgb), 0.3);
   }
 
-  .current-page {
+  .playing {
     color: var(--accent-color);
     background: rgba(var(--primary-color-rgb), 0.9);
     backdrop-filter: blur(6px);
+    z-index: 4;
   }
 
   @media screen and (max-width: 768px) {
     .link {
       line-height: 0.9;
+      text-align: center;
+      margin: auto;
     }
     .link-1 {
       font-size: 21.4vw;
@@ -171,9 +172,5 @@
     .link-5 {
       font-size: 10.9vw;
     }
-  }
-
-  li.playing {
-    z-index: 4;
   }
 </style>
