@@ -3,17 +3,17 @@
   import { windowWidth } from "../../stores/global.js";
   import OptionsPage from "./OptionsPage.svelte";
 
-  let isPlaying = false;
+  let currentVideo = false;
   let isOpen = false;
   let isHovered = false;
 </script>
 
-{#if isOpen || isPlaying}
-  <OptionsPage bind:isPlaying {isOpen} />
+{#if isOpen || currentVideo}
+  <OptionsPage bind:currentVideo {isOpen} />
 {/if}
 <div
   class="jukebox"
-  class:playing={isPlaying}
+  class:playing={currentVideo}
   on:click={() => {
     isOpen = !isOpen;
   }}
@@ -28,10 +28,10 @@
   }}
 >
   <div class="playing-line">
-    <div class="icon">{isPlaying ? "📀" : "🔇"}</div>
-    {#if isPlaying && !isOpen && isHovered}
+    <div class="icon">{currentVideo ? "📀" : "🔇"}</div>
+    {#if currentVideo && !isOpen && isHovered}
       <p class="marquee-text" transition:fade>
-        <span>{isPlaying}</span>
+        <span>{currentVideo}</span>
       </p>
     {/if}
   </div>

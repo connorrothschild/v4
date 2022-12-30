@@ -1,5 +1,5 @@
 <script>
-  export let isPlaying;
+  export let currentVideo;
   export let styles = "";
   export let isOpen;
 
@@ -22,12 +22,12 @@
   $: expanded, menuExpanded.set(expanded);
 
   import { fly, fade } from "svelte/transition";
-  import { onMount } from "svelte";
   import { expoInOut } from "svelte/easing";
-
-  onMount(() => {
-    mounted = true;
-  });
+  
+//   import { onMount } from "svelte";
+//   onMount(() => {
+//     mounted = true;
+//   });
 
   // Transition params (responsive)
   $: inParams = {
@@ -52,44 +52,186 @@
   let options = [
     {
       src: "audio/babygirl.mp3",
-      code: "babygirl",
       title: "Always",
       artist: "Babygirl",
+      id: "babygirl",
     },
     {
       src: "audio/fred.mp3",
-      code: "fred",
-      title: "Danielle",
+      title: "Delilah",
       artist: "Fred again..",
+      id: "YPlR8gyVtWs",
     },
     {
       src: "audio/ecco.mp3",
-      code: "ecco",
-      title: "Peroxide",
-      artist: "Ecco2k",
+      title: "Victim",
+      artist: "Drain Gang",
+      id: "HDajKZ3ytdY",
     },
     {
       src: "audio/vansire.mp3",
-      code: "vansire",
-      title: "Evening Light",
+      title: "That I Miss You",
       artist: "Vansire",
+      id: "CG-Qco4zs_s",
+    },
+    {
+        src: '...',
+        title: 'Bad Habit',
+        artist: 'Steve Lacy',
+        id: 'VF-FGf_ZZiI'
     },
     {
       src: "audio/yves.mp3",
-      code: "yves",
-      title: "Dream Palette",
+      title: "Jackie",
       artist: "Yves Tumor",
+      id: "FQMXhQCxvX0",
+    },
+    {
+      src: "audio/yves.mp3",
+      title: "Freelance",
+      artist: "Toro y Moi",
+      id: 'Jm6hDWBZXc4'
     },
   ];
+
+  let youTubePlayer,
+  throttle = true,
+  isInitialLoad = true,
+  isPreview = true,
+  isFirst = true,
+  loadedTime;
+
+  import {onMount} from 'svelte'
+
+const createPlayer = () => {
+    youTubePlayer = new YT.Player('player', {
+        // videoId: 'Jm6hDWBZXc4',
+        playerVars: {
+            'controls': 0,
+            'modestbranding': 1,
+            'playsinline': 1,
+            'disablekb': 1,
+            'iv_load_policy': 3
+        },
+        events: {
+            'onReady': onReady,
+            'onStateChange': onStateChange,
+            'onError': onError
+        }
+    });
+    // return youTubePlayer
+}
+    
+const createYouTubeAPI = () => {
+    window.onYouTubePlayerAPIReady = () => {
+        createPlayer();
+    }
+}
+
+const onReady = () => {
+    // youTubePlayer.loadVideoById({videoId: 'Jm6hDWBZXc4'});
+    // youTubePlayer.mute();
+    // youTubePlayer.setVolume(0);
+}  
+
+const updateId = (id) => {
+    youTubePlayer.loadVideoById({videoId: id});
+    console.log('loaded', id)
+}
+
+// When user changes selected video, update the player
+$: currentVideo && youTubePlayer && currentVideo ? updateId(currentVideo) : null;
+
+let paused;
+const playOrPause = (paused) => {
+    if (!youTubePlayer) return
+    if (paused) {
+        youTubePlayer.pauseVideo();
+    } else {
+        youTubePlayer.playVideo();
+    }
+}
+
+$: paused ? playOrPause(paused) : null;
+
+const onStateChange = event => {
+    if (event.data === 0) {
+        console.log('here')
+        // throttled because YT fires 'ended' event twice
+        if (throttle) {
+            if (isPreview) {
+                loadedTime = new Date();
+                youTubePlayer.seekTo(0);
+            } else {
+                // mediator.publish('play', helpers.getNextId());
+            }
+
+            throttle = false;
+
+            setTimeout(function() {
+                throttle = true;
+            }, 100);
+        }
+    }
+
+    if (event.data === 1 && isInitialLoad) {
+        // mediator.publish('ready');
+        loadedTime = new Date();
+        isInitialLoad = false;
+    }
+
+    if (event.data === 1) {
+        updateProgress();
+    }
+}
+
+const onError = () => {
+    // This should maybe flag something to the listener?
+    // mediator.publish('play', helpers.getNextId());
+}
+
+let progress;
+
+const updateProgress = () => {
+    if (youTubePlayer.getPlayerState() === 1) {
+        const currentTime = youTubePlayer.getCurrentTime();
+        const duration = youTubePlayer.getDuration();
+        const percentage = currentTime / duration;
+        // document.querySelector('.controls__progression').setAttribute('style', 'width: ' + percentage + '%;');
+        progress = percentage;
+
+        setTimeout(updateProgress, 100);
+    }
+}
+
+onMount(() => {
+    createYouTubeAPI();
+})
+  
 </script>
 
+<svelte:head>
+  <script
+    type="text/javascript"
+    id="www-widgetapi-script"
+    src="https://www.youtube.com/s/player/21149d65/www-widgetapi.vflset/www-widgetapi.js"
+    async=""
+  ></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</svelte:head>
+
 <Transition split={"chars"} stagger={0.05} startingOpacity={0} />
+
 <div
   class="fullpage-nav {isOpen ? '' : 'hidden'}"
   in:fly={inParams}
   out:fly={outParams}
   style={styles}
 >
+    <div class="video">
+        <div id="player" />
+    </div>
+
   {#if !$isTouchscreen}
     {#key hovered}
       <h1
@@ -114,8 +256,9 @@
         bind:anyHovered
         bind:hovered
         bind:closedViaX
-        bind:isPlaying
-        code={option.code}
+        bind:currentVideo
+        bind:paused
+        id={option.id}
         title={option.title}
         artist={option.artist}
         src={option.src}
@@ -123,6 +266,9 @@
       />
     {/each}
   </ul>
+
+
+  <span style="width: {progress * 100}%" />
 </div>
 
 <style>
@@ -170,6 +316,60 @@
 
   .hidden {
     opacity: 0;
+    pointer-events: none;
+  }
+
+  #player {
+    pointer-events: none;
+    position: absolute;
+    /* left: -9999px;
+    right: -9999px;
+    top: -9999px;
+    bottom: -9999px; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    height: calc(100% + 340px);
+    width: 177.77777778vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    opacity: 0.3;
+    transition: opacity 1s linear, filter 0.5s linear, transform 0.5s linear;
+    transition-delay: 0.5s;
+  }
+
+  .video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #000;
+  }
+
+  :global(#movie_player > div.html5-video-container > video) {
+    width: 100% !important;
+  }
+
+  :global(.ytp-cued-thumbnail-overlay *) {
+    display: none !important;
+  }
+
+
+  span {
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(var(--primary-color-rgb), 0.8);
+    backdrop-filter: blur(5px);
+    width: 0;
+    transition: width 0.3s;
+    z-index: 1;
+    border-right: 4px solid rgba(var(--accent-color-rgb), 0.8);
     pointer-events: none;
   }
 </style>
