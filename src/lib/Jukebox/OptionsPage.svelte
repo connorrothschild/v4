@@ -23,11 +23,11 @@
 
   import { fly, fade } from "svelte/transition";
   import { expoInOut } from "svelte/easing";
-  
-//   import { onMount } from "svelte";
-//   onMount(() => {
-//     mounted = true;
-//   });
+
+  //   import { onMount } from "svelte";
+  //   onMount(() => {
+  //     mounted = true;
+  //   });
 
   // Transition params (responsive)
   $: inParams = {
@@ -51,163 +51,149 @@
 
   let options = [
     {
-      src: "audio/babygirl.mp3",
       title: "Always",
       artist: "Babygirl",
       id: "babygirl",
     },
     {
-      src: "audio/fred.mp3",
-      title: "Delilah",
+      title: "Danielle",
       artist: "Fred again..",
-      id: "YPlR8gyVtWs",
+      id: "gVBcX1Sd228",
     },
     {
-      src: "audio/ecco.mp3",
       title: "Victim",
       artist: "Drain Gang",
       id: "HDajKZ3ytdY",
     },
     {
-      src: "audio/vansire.mp3",
+      title: "Peroxide",
+      artist: "Ecco2k",
+      id: "Rs_kavGKeHI",
+    },
+    {
       title: "That I Miss You",
       artist: "Vansire",
       id: "CG-Qco4zs_s",
     },
     {
-        src: '...',
-        title: 'Bad Habit',
-        artist: 'Steve Lacy',
-        id: 'VF-FGf_ZZiI'
+      title: "Bad Habit",
+      artist: "Steve Lacy",
+      id: "VF-FGf_ZZiI",
     },
     {
-      src: "audio/yves.mp3",
       title: "Jackie",
       artist: "Yves Tumor",
-      id: "FQMXhQCxvX0",
+      id: "bQpaWvPFx8A",
     },
     {
-      src: "audio/yves.mp3",
       title: "Freelance",
       artist: "Toro y Moi",
-      id: 'Jm6hDWBZXc4'
+      id: "Jm6hDWBZXc4",
     },
   ];
 
   let youTubePlayer,
-  throttle = true,
-  isInitialLoad = true,
-  isPreview = true,
-  isFirst = true,
-  loadedTime;
+    throttle = true,
+    isInitialLoad = true,
+    isPreview = true,
+    isFirst = true,
+    loadedTime;
 
-  import {onMount} from 'svelte'
+  import { onMount } from "svelte";
 
-const createPlayer = () => {
-    youTubePlayer = new YT.Player('player', {
-        // videoId: 'Jm6hDWBZXc4',
-        playerVars: {
-            'controls': 0,
-            'modestbranding': 1,
-            'playsinline': 1,
-            'disablekb': 1,
-            'iv_load_policy': 3
-        },
-        events: {
-            'onReady': onReady,
-            'onStateChange': onStateChange,
-            'onError': onError
-        }
+  const createPlayer = () => {
+    youTubePlayer = new YT.Player("player", {
+      playerVars: {
+        controls: 0,
+        modestbranding: 1,
+        playsinline: 1,
+        disablekb: 1,
+        iv_load_policy: 3,
+      },
+      events: {
+        onReady: onReady,
+        onStateChange: onStateChange,
+        onError: onError,
+      },
     });
-    // return youTubePlayer
-}
-    
-const createYouTubeAPI = () => {
+  };
+
+  const createYouTubeAPI = () => {
     window.onYouTubePlayerAPIReady = () => {
-        createPlayer();
-    }
-}
+      createPlayer();
+    };
+  };
 
-const onReady = () => {
-    // youTubePlayer.loadVideoById({videoId: 'Jm6hDWBZXc4'});
-    // youTubePlayer.mute();
-    // youTubePlayer.setVolume(0);
-}  
+  let playerIsReady = false
+  const onReady = () => {
+    playerIsReady = true;
+  };
 
-const updateId = (id) => {
-    youTubePlayer.loadVideoById({videoId: id});
-    console.log('loaded', id)
-}
+  const updateId = (id) => {
+    youTubePlayer.loadVideoById({ videoId: id });
+  };
 
-// When user changes selected video, update the player
-$: currentVideo && youTubePlayer && currentVideo ? updateId(currentVideo) : null;
+  // When user changes selected video, update the player
+  $: currentVideo && youTubePlayer && currentVideo
+    ? updateId(currentVideo)
+    : null;
 
-let paused;
-const playOrPause = (paused) => {
-    if (!youTubePlayer) return
+  let paused;
+  const playOrPause = (paused) => {
+    if (!youTubePlayer) return;
     if (paused) {
-        youTubePlayer.pauseVideo();
+      youTubePlayer.pauseVideo();
     } else {
-        youTubePlayer.playVideo();
+      youTubePlayer.playVideo();
     }
-}
+  };
 
-$: paused ? playOrPause(paused) : null;
+  $: paused, playOrPause(paused);
 
-const onStateChange = event => {
+  const onStateChange = (event) => {
     if (event.data === 0) {
-        console.log('here')
-        // throttled because YT fires 'ended' event twice
-        if (throttle) {
-            if (isPreview) {
-                loadedTime = new Date();
-                youTubePlayer.seekTo(0);
-            } else {
-                // mediator.publish('play', helpers.getNextId());
-            }
-
-            throttle = false;
-
-            setTimeout(function() {
-                throttle = true;
-            }, 100);
+      if (throttle) {
+        if (isPreview) {
+          loadedTime = new Date();
+          youTubePlayer.seekTo(0);
         }
+
+        throttle = false;
+
+        setTimeout(function () {
+          throttle = true;
+        }, 100);
+      }
     }
 
     if (event.data === 1 && isInitialLoad) {
-        // mediator.publish('ready');
-        loadedTime = new Date();
-        isInitialLoad = false;
+      loadedTime = new Date();
+      isInitialLoad = false;
     }
 
     if (event.data === 1) {
-        updateProgress();
+      updateProgress();
     }
-}
+  };
 
-const onError = () => {
-    // This should maybe flag something to the listener?
-    // mediator.publish('play', helpers.getNextId());
-}
+  const onError = () => {};
 
-let progress;
+  let progress;
 
-const updateProgress = () => {
+  const updateProgress = () => {
     if (youTubePlayer.getPlayerState() === 1) {
-        const currentTime = youTubePlayer.getCurrentTime();
-        const duration = youTubePlayer.getDuration();
-        const percentage = currentTime / duration;
-        // document.querySelector('.controls__progression').setAttribute('style', 'width: ' + percentage + '%;');
-        progress = percentage;
+      const currentTime = youTubePlayer.getCurrentTime();
+      const duration = youTubePlayer.getDuration();
+      const percentage = currentTime / duration;
+      progress = percentage;
 
-        setTimeout(updateProgress, 100);
+      setTimeout(updateProgress, 100);
     }
-}
+  };
 
-onMount(() => {
+  onMount(() => {
     createYouTubeAPI();
-})
-  
+  });
 </script>
 
 <svelte:head>
@@ -228,9 +214,9 @@ onMount(() => {
   out:fly={outParams}
   style={styles}
 >
-    <div class="video">
-        <div id="player" />
-    </div>
+  <div class="video" class:playing={playerIsReady && currentVideo && !paused}>
+    <div id="player" />
+  </div>
 
   {#if !$isTouchscreen}
     {#key hovered}
@@ -261,12 +247,10 @@ onMount(() => {
         id={option.id}
         title={option.title}
         artist={option.artist}
-        src={option.src}
         index={index + 1}
       />
     {/each}
   </ul>
-
 
   <span style="width: {progress * 100}%" />
 </div>
@@ -346,17 +330,21 @@ onMount(() => {
     bottom: 0;
     right: 0;
     z-index: -1;
-    background-color: #000;
-  }
+    /* background-color: #000; */
+    transition: opacity 0.5s linear;
+}
+
+.video:not(.playing) {
+    opacity: 0;
+}
+
+.video.playing {
+    opacity: 1;
+}
 
   :global(#movie_player > div.html5-video-container > video) {
     width: 100% !important;
   }
-
-  :global(.ytp-cued-thumbnail-overlay *) {
-    display: none !important;
-  }
-
 
   span {
     display: block;

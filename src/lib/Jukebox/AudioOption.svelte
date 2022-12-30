@@ -1,7 +1,3 @@
-<script context="module">
-  let current;
-</script>
-
 <script>
   export let id;
   export let title;
@@ -10,11 +6,9 @@
   export let anyHovered = false;
   export let expanded = true;
   export let hovered = null;
-  export let closedViaX = false;
   export let currentVideo;
 
   import { page } from "$app/stores";
-
   import { onMount } from "svelte";
 
   let hoverReady = false;
@@ -25,19 +19,7 @@
     }, 1000);
   });
 
-  export let src;
   export let artist;
-
-  let audio;
-
-  function stopOthers() {
-    // if (current && current !== audio) current.pause();
-    // current = audio;
-
-    // currentVideo = paused ? false : id;
-  }
-
-  let progress;
 </script>
 
 <li
@@ -65,18 +47,16 @@
       paused = false;
       currentVideo = id;
     }
-    console.log({currentVideo})
   }}
   class="transition-title overflow-hidden no-underline 
     link link-{index} 
-    {currentVideo ? (currentVideo == id ? 'playing' : 'not-playing') : ''}
+    {currentVideo ? (currentVideo == id ? 'playing active' : 'inactive') : ''}
     {anyHovered ? (hovered == id ? 'active' : 'inactive') : ''}
     "
 >
   {title}
 </li>
 
-<!-- </article> -->
 <style>
   .current {
     opacity: 1;
