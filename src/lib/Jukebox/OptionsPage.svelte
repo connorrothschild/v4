@@ -4,7 +4,7 @@
   export let styles = "";
   export let isOpen;
 
-  import AudioOption from "./AudioOption.svelte";
+  import Option from "./Option.svelte";
 
   import {
     menuExpanded,
@@ -119,52 +119,43 @@
     },
   ];
 
-  $: currentVideoTitle = currentVideo ? options.find((video) => video.id === currentVideo).title : null;
-
-  let youTubePlayer;
-    // throttle = true,
-    // isInitialLoad = true,
-    // isPreview = true,
-    // loadedTime;
-
-  import { onMount } from "svelte";
-
-  const createPlayer = () => {
-    youTubePlayer = new YT.Player("player", {
-      playerVars: {
-        controls: 0,
-        modestbranding: 1,
-        playsinline: 1,
-        disablekb: 1,
-        iv_load_policy: 3,
-      },
-      events: {
-        onReady: onReady,
-        onStateChange: onStateChange,
-        onError: onError,
-      },
-    });
-  };
-
-  const createYouTubeAPI = () => {
-    window.onYouTubePlayerAPIReady = () => {
-      createPlayer();
-    };
-  };
+  $: currentVideoTitle = currentVideo
+    ? options.find((video) => video.id === currentVideo).title
+    : null;
 
   let playerIsReady = false;
   const onReady = () => {
     playerIsReady = true;
   };
 
+  import { onMount } from "svelte";
+    
+  let youTubePlayer;
+  onMount(() => {
+    window.onYouTubePlayerAPIReady = () => {
+      youTubePlayer = new YT.Player("player", {
+        playerVars: {
+          controls: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          disablekb: 1,
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: onReady,
+          onStateChange: onStateChange,
+          onError: onError,
+        },
+      });
+    };
+  });
+
   const updateId = (id) => {
     youTubePlayer.loadVideoById({ videoId: id });
   };
 
   // When user changes selected video, update the player
-  $: currentVideo && youTubePlayer
-    ? updateId(currentVideo)
-    : null;
+  $: currentVideo && youTubePlayer ? updateId(currentVideo) : null;
 
   let paused;
   const playOrPause = (paused) => {
@@ -178,41 +169,34 @@
 
   $: paused, playOrPause(paused);
 
+  const nextVideo = () => {
+    const thisVideo = options.find((video) => video.id === currentVideo);
+    const thisVideoIndex = options.indexOf(thisVideo);
+    const nextVideo = options[thisVideoIndex + 1];
+    if (nextVideo) {
+      currentVideo = nextVideo.id;
+    } else {
+      currentVideo = options[0].id;
+    }
+  };
+
+  let videoEndedThrottle = true;
   const onStateChange = (event) => {
-    // event.data === 1 means video is playing
-    // event.data === 0 means video has ended
-    // event.data === 2 means video is paused
-    // event.data === 3 means video is buffering
-    // event.data === -1 means video errored
-    console.log(event.data);
+    // 1 === video playing
+    // 0 === video has ended
+    // 2 === video is paused
+    // 3 === video is buffering
+    // -1 === video errored
     if (event.data === 0) {
-    //   if (throttle) {
-    //     if (isPreview) {
-    //       loadedTime = new Date();
-    //       youTubePlayer.seekTo(0);
-    //     }
-
-    //     throttle = false;
-
-    //     setTimeout(function () {
-    //       throttle = true;
-    //     }, 100);
-    //   }
-      // Go to next video
-      const thisVideo = options.find((video) => video.id === currentVideo);
-      const thisVideoIndex = options.indexOf(thisVideo);
-      const nextVideo = options[thisVideoIndex + 1]; 
-      if (nextVideo) {
-        currentVideo = nextVideo.id;
-      } else {
-        currentVideo = options[0].id;
+      // Video ended triggers twice?
+      if (videoEndedThrottle) {
+        nextVideo();
+        videoEndedThrottle = false;
+        setTimeout(function () {
+          videoEndedThrottle = true;
+        }, 100);
       }
     }
-
-    // if (event.data === 1 && isInitialLoad) {
-    //   loadedTime = new Date();
-    //   isInitialLoad = false;
-    // }
 
     if (event.data === 1) {
       updateProgress();
@@ -233,10 +217,6 @@
       setTimeout(updateProgress, 100);
     }
   };
-
-  onMount(() => {
-    createYouTubeAPI();
-  });
 </script>
 
 <svelte:head>
@@ -268,7 +248,7 @@
     }}
   >
     {#each options as option}
-      <AudioOption
+      <Option
         bind:expanded
         bind:anyHovered
         bind:hovered

@@ -7,7 +7,7 @@
   import ColorSwitcher from "$lib/ColorSwitcher.svelte";
   import Footer from "$lib/Footer.svelte";
   import Circle from "$lib/CircleText.svelte";
-  import Music from "$lib/Jukebox/Music.svelte";
+  import Jukebox from "$lib/Jukebox/Jukebox.svelte";
   import Noise from "$lib/Noise.svelte";
 
   import "../styles/fonts.css";
@@ -103,7 +103,7 @@
 <slot />
 <Loading />
 <Circle />
-<Music />
+<Jukebox />
 <Footer />
 
 <style>
