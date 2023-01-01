@@ -201,7 +201,7 @@
       // Go to next video
       const thisVideo = options.find((video) => video.id === currentVideo);
       const thisVideoIndex = options.indexOf(thisVideo);
-      const nextVideo = options[thisVideoIndex]; // + 1 here would skip two, not sure why
+      const nextVideo = options[thisVideoIndex + 1]; 
       if (nextVideo) {
         currentVideo = nextVideo.id;
       } else {
