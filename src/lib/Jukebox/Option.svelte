@@ -132,7 +132,6 @@
     .the-kiss-of-venus {
       font-size: 9.5vw;
     }
-
     .dreams-tonite {
       font-size: 10.9vw;
     }
@@ -145,11 +144,9 @@
     .wusyaname {
       font-size: 13.4vw;
     }
-
     .freelance {
       font-size: 14.6vw;
     }
-
     .グッドバイ {
       font-size: 15.8vw;
     }
