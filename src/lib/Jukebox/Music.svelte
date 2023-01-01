@@ -1,11 +1,23 @@
 <script>
-  import { fade, fly } from "svelte/transition";
-  import { windowWidth } from "../../stores/global.js";
+  import { fade } from "svelte/transition";
   import OptionsPage from "./OptionsPage.svelte";
 
   let currentVideo = false;
   let isOpen = false;
   let isHovered = false;
+
+
+  let mounted = false;
+  import { onMount } from "svelte";
+  onMount(() => {
+    mounted = true;
+  });
+
+  $: if (mounted) {
+    isOpen
+      ? document.documentElement.classList.add("disable-scroll")
+      : document.documentElement.classList.remove("disable-scroll");
+  }
 </script>
 
 {#if isOpen || currentVideo}

@@ -16,18 +16,12 @@
   let anyHovered,
     hovered = null,
     expanded = false,
-    closedViaX = false,
-    mounted = false;
+    closedViaX = false;
 
   $: expanded, menuExpanded.set(expanded);
 
   import { fly, fade } from "svelte/transition";
   import { expoInOut } from "svelte/easing";
-
-  //   import { onMount } from "svelte";
-  //   onMount(() => {
-  //     mounted = true;
-  //   });
 
   // Transition params (responsive)
   $: inParams = {
@@ -51,24 +45,14 @@
 
   let options = [
     {
-      title: "Always",
-      artist: "Babygirl",
-      id: "babygirl",
+      title: "The Kiss of Venus",
+      artist: "Dominic Fike",
+      id: "L2IJzVAOvaU",
     },
     {
-      title: "Danielle",
-      artist: "Fred again..",
-      id: "gVBcX1Sd228",
-    },
-    {
-      title: "Victim",
-      artist: "Drain Gang",
-      id: "HDajKZ3ytdY",
-    },
-    {
-      title: "Peroxide",
-      artist: "Ecco2k",
-      id: "Rs_kavGKeHI",
+      title: "Dreams Tonite",
+      artist: "Alvvays",
+      id: "ZXu6q-6JKjA",
     },
     {
       title: "That I Miss You",
@@ -76,9 +60,54 @@
       id: "CG-Qco4zs_s",
     },
     {
+      title: "Show Me How",
+      artist: "Men I Trust",
+      id: "OZRYzH0Q0pU",
+    },
+    {
+      title: "WUSYANAME",
+      artist: "Tyler, The Creator",
+      id: "NJea386275c",
+    },
+    {
+      title: "Freelance",
+      artist: "Toro y Moi",
+      id: "Jm6hDWBZXc4",
+    },
+    {
+      title: "グッドバイ",
+      artist: "toe",
+      id: "e1pZIfretEs",
+    },
+    {
       title: "Bad Habit",
       artist: "Steve Lacy",
       id: "VF-FGf_ZZiI",
+    },
+    {
+      title: "Peroxide",
+      artist: "Ecco2k",
+      id: "Rs_kavGKeHI",
+    },
+    {
+      title: "Danielle",
+      artist: "Fred again..",
+      id: "gVBcX1Sd228",
+    },
+    {
+      title: "Always",
+      artist: "Babygirl",
+      id: "xzksOwHDkUQ",
+    },
+    {
+      title: "Victim",
+      artist: "Drain Gang",
+      id: "HDajKZ3ytdY",
+    },
+    {
+      title: "Kyoto",
+      artist: "Phoebe Bridgers",
+      id: "Tw0zYd0eIlk",
     },
     {
       title: "Jackie",
@@ -86,9 +115,9 @@
       id: "bQpaWvPFx8A",
     },
     {
-      title: "Freelance",
-      artist: "Toro y Moi",
-      id: "Jm6hDWBZXc4",
+      title: "Bags",
+      artist: "Clairo",
+      id: "Da3FBTjOwVM",
     },
   ];
 
@@ -96,7 +125,6 @@
     throttle = true,
     isInitialLoad = true,
     isPreview = true,
-    isFirst = true,
     loadedTime;
 
   import { onMount } from "svelte";
@@ -124,7 +152,7 @@
     };
   };
 
-  let playerIsReady = false
+  let playerIsReady = false;
   const onReady = () => {
     playerIsReady = true;
   };
@@ -151,6 +179,12 @@
   $: paused, playOrPause(paused);
 
   const onStateChange = (event) => {
+    // event.data === 1 means video is playing
+    // event.data === 0 means video has ended
+    // event.data === 2 means video is paused
+    // event.data === 3 means video is buffering
+    // event.data === -1 means video errored
+    console.log(event.data);
     if (event.data === 0) {
       if (throttle) {
         if (isPreview) {
@@ -164,12 +198,21 @@
           throttle = true;
         }, 100);
       }
+      // Go to next video
+      const thisVideo = options.find((video) => video.id === currentVideo);
+      const thisVideoIndex = options.indexOf(thisVideo);
+      const nextVideo = options[thisVideoIndex + 1];
+      if (nextVideo) {
+        currentVideo = nextVideo.id;
+      } else {
+        currentVideo = options[0].id;
+      }
     }
 
-    if (event.data === 1 && isInitialLoad) {
-      loadedTime = new Date();
-      isInitialLoad = false;
-    }
+    // if (event.data === 1 && isInitialLoad) {
+    //   loadedTime = new Date();
+    //   isInitialLoad = false;
+    // }
 
     if (event.data === 1) {
       updateProgress();
@@ -209,7 +252,7 @@
 <Transition split={"chars"} stagger={0.05} startingOpacity={0} />
 
 <div
-  class="fullpage-nav {isOpen ? '' : 'hidden'}"
+  class="fullpage {isOpen ? '' : 'hidden'}"
   in:fly={inParams}
   out:fly={outParams}
   style={styles}
@@ -217,18 +260,6 @@
   <div class="video" class:playing={playerIsReady && currentVideo && !paused}>
     <div id="player" />
   </div>
-
-  {#if !$isTouchscreen}
-    {#key hovered}
-      <h1
-        in:fade={{ delay: 100, duration: 300 }}
-        out:fade={{ duration: 300 }}
-        class="massive-word"
-      >
-        {hovered != null ? `by ${hovered}` : ""}
-      </h1>
-    {/key}
-  {/if}
   <ul
     class="nav-items"
     on:mouseleave={() => {
@@ -236,7 +267,7 @@
       anyHovered = false;
     }}
   >
-    {#each options as option, index}
+    {#each options as option}
       <AudioOption
         bind:expanded
         bind:anyHovered
@@ -247,27 +278,18 @@
         id={option.id}
         title={option.title}
         artist={option.artist}
-        index={index + 1}
       />
     {/each}
   </ul>
 
-  <span style="width: {progress * 100}%" />
+  {#if progress}
+    <span style="width: {progress * 100}%" />
+  {/if}
 </div>
 
 <style>
-  .massive-word {
-    position: absolute;
-    font-size: 9vw;
-    right: 1vw;
-    bottom: 0;
-    opacity: 0.15;
-    user-select: none;
-    pointer-events: none;
-  }
-
   /* FULLPAGE NAV */
-  .fullpage-nav {
+  .fullpage {
     position: fixed;
     z-index: 101;
     display: flex;
@@ -280,21 +302,25 @@
     width: 100vw;
     height: 100%;
     transition: opacity 500ms ease-in-out;
+
+    height: 100vh;
+    overflow-y: auto;
   }
 
   .nav-items {
     display: flex;
     flex-direction: column;
+    height: 100%;
     width: 100%;
+    justify-content: flex-start;
+    padding: 10vh 0;
+    /* height: 100vh;
+    overflow-y: auto; */
   }
 
   @media screen and (max-width: 768px) {
-    .fullpage-nav {
+    .fullpage {
       padding-left: 0;
-    }
-
-    .massive-word {
-      font-size: 13vw;
     }
   }
 
@@ -306,10 +332,6 @@
   #player {
     pointer-events: none;
     position: absolute;
-    /* left: -9999px;
-    right: -9999px;
-    top: -9999px;
-    bottom: -9999px; */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -318,9 +340,6 @@
     width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
-    opacity: 0.3;
-    transition: opacity 1s linear, filter 0.5s linear, transform 0.5s linear;
-    transition-delay: 0.5s;
   }
 
   .video {
@@ -329,18 +348,19 @@
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: -1;
-    /* background-color: #000; */
+    z-index: 2;
+    pointer-events: none;
+    background-color: #000;
     transition: opacity 0.5s linear;
-}
+  }
 
-.video:not(.playing) {
+  .video:not(.playing) {
     opacity: 0;
-}
+  }
 
-.video.playing {
-    opacity: 1;
-}
+  .video.playing {
+    opacity: 0.5;
+  }
 
   :global(#movie_player > div.html5-video-container > video) {
     width: 100% !important;
@@ -348,16 +368,16 @@
 
   span {
     display: block;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
-    background: rgba(var(--primary-color-rgb), 0.8);
-    backdrop-filter: blur(5px);
+    background: rgba(var(--primary-color-rgb), 0.5);
+    backdrop-filter: blur(3px);
     width: 0;
     transition: width 0.3s;
-    z-index: 1;
-    border-right: 4px solid rgba(var(--accent-color-rgb), 0.8);
+    z-index: 3;
+    border-right: 5px solid black;
     pointer-events: none;
   }
 </style>
