@@ -1,6 +1,6 @@
 [![Connor Rothschild](./static/social.png)](https://www.connorrothschild.com)
 
-This repository contains the code for my 2021/2022 personal portfolio site.
+This repository contains the code for my personal portfolio site.
 
 The site was described ([by one Twitter user](https://twitter.com/fubits/status/1469395932026486789?s=20)) as the "new benchmark for individual portfolio websites."
 

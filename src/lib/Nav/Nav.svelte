@@ -159,7 +159,7 @@
     margin: 0 auto;
     width: 100%;
     height: var(--nav-height);
-    z-index: 102;
+    z-index: 103;
     justify-content: space-between;
     pointer-events: none;
   }
@@ -228,7 +228,7 @@
   /* FULLPAGE NAV */
   .fullpage-nav {
     position: fixed;
-    z-index: 101;
+    z-index: 102;
     display: flex;
     flex-direction: column;
     place-items: flex-start;
