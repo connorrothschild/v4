@@ -51,8 +51,8 @@
   }}
   class="transition-title overflow-hidden {classify(title)}
     {currentVideo
-    ? currentVideo == id && !paused
-      ? 'playing'
+    ? currentVideo == id
+      ? 'active' + (paused ? ' paused' : '')
       : 'inactive'
     : ''}
     {anyHovered ? (hovered == id ? 'hovered' : 'inactive') : ''}
@@ -108,10 +108,15 @@
     z-index: 4;
   }
 
-  .playing {
+  .active {
     color: var(--accent-color);
     z-index: 4;
     text-shadow: 0 0 4px var(--accent-color);
+  }
+
+  .active.paused {
+    color: rgba(var(--text-color-rgb), 0.8);
+    text-shadow: none;
   }
 
   @media screen and (max-width: 768px) {
