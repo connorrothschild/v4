@@ -129,7 +129,7 @@
   };
 
   import { onMount } from "svelte";
-    
+
   let youTubePlayer;
   onMount(() => {
     window.onYouTubePlayerAPIReady = () => {
@@ -200,6 +200,11 @@
 
     if (event.data === 1) {
       updateProgress();
+      playerIsReady = true;
+    }
+
+    if (event.data === 3) {
+      playerIsReady = false;
     }
   };
 
@@ -220,12 +225,6 @@
 </script>
 
 <svelte:head>
-  <script
-    type="text/javascript"
-    id="www-widgetapi-script"
-    src="https://www.youtube.com/s/player/21149d65/www-widgetapi.vflset/www-widgetapi.js"
-    async=""
-  ></script>
   <script src="https://www.youtube.com/iframe_api"></script>
 </svelte:head>
 
