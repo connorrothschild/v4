@@ -6,9 +6,7 @@
   export let hovered = null;
   export let currentVideo;
 
-  import { page } from "$app/stores";
   import { onMount } from "svelte";
-
   import { fade } from "svelte/transition";
 
   let hoverReady = false;
@@ -102,13 +100,12 @@
   }
 
   .inactive {
-    color: rgba(var(--text-color-rgb), 0.4);
+    color: rgba(var(--text-color-rgb), 0.2);
   }
 
   .hovered {
     color: rgba(var(--text-color-rgb), 0.85);
-    /* z-index: 2; */
-    /* text-shadow: 0 0 2px var(--text-color); */
+    z-index: 4;
   }
 
   .playing {

@@ -1,5 +1,6 @@
 <script>
   export let currentVideo;
+  export let currentVideoTitle;
   export let styles = "";
   export let isOpen;
 
@@ -39,9 +40,6 @@
     delay: closedViaX ? 0 : 200,
     easing: expoInOut,
   };
-
-  import { page } from "$app/stores";
-  import { isTouchscreen } from "../../stores/device.js";
 
   let options = [
     {
@@ -121,11 +119,13 @@
     },
   ];
 
-  let youTubePlayer,
-    throttle = true,
-    isInitialLoad = true,
-    isPreview = true,
-    loadedTime;
+  $: currentVideoTitle = currentVideo ? options.find((video) => video.id === currentVideo).title : null;
+
+  let youTubePlayer;
+    // throttle = true,
+    // isInitialLoad = true,
+    // isPreview = true,
+    // loadedTime;
 
   import { onMount } from "svelte";
 
@@ -162,7 +162,7 @@
   };
 
   // When user changes selected video, update the player
-  $: currentVideo && youTubePlayer && currentVideo
+  $: currentVideo && youTubePlayer
     ? updateId(currentVideo)
     : null;
 
@@ -186,22 +186,22 @@
     // event.data === -1 means video errored
     console.log(event.data);
     if (event.data === 0) {
-      if (throttle) {
-        if (isPreview) {
-          loadedTime = new Date();
-          youTubePlayer.seekTo(0);
-        }
+    //   if (throttle) {
+    //     if (isPreview) {
+    //       loadedTime = new Date();
+    //       youTubePlayer.seekTo(0);
+    //     }
 
-        throttle = false;
+    //     throttle = false;
 
-        setTimeout(function () {
-          throttle = true;
-        }, 100);
-      }
+    //     setTimeout(function () {
+    //       throttle = true;
+    //     }, 100);
+    //   }
       // Go to next video
       const thisVideo = options.find((video) => video.id === currentVideo);
       const thisVideoIndex = options.indexOf(thisVideo);
-      const nextVideo = options[thisVideoIndex + 1];
+      const nextVideo = options[thisVideoIndex]; // + 1 here would skip two, not sure why
       if (nextVideo) {
         currentVideo = nextVideo.id;
       } else {
@@ -377,7 +377,7 @@
     width: 0;
     transition: width 0.3s;
     z-index: 3;
-    border-right: 5px solid black;
+    border-right: 5px solid var(--primary-color);
     pointer-events: none;
   }
 </style>

@@ -3,9 +3,9 @@
   import OptionsPage from "./OptionsPage.svelte";
 
   let currentVideo = false;
+  let currentVideoTitle;
   let isOpen = false;
   let isHovered = false;
-
 
   let mounted = false;
   import { onMount } from "svelte";
@@ -21,7 +21,7 @@
 </script>
 
 {#if isOpen || currentVideo}
-  <OptionsPage bind:currentVideo {isOpen} />
+  <OptionsPage bind:currentVideo bind:currentVideoTitle {isOpen} />
 {/if}
 <div
   class="jukebox"
@@ -41,9 +41,9 @@
 >
   <div class="playing-line">
     <div class="icon">{currentVideo ? "📀" : "🔇"}</div>
-    {#if currentVideo && !isOpen && isHovered}
+    {#if currentVideoTitle && !isOpen && isHovered}
       <p class="marquee-text" transition:fade>
-        <span>{currentVideo}</span>
+        <span>{currentVideoTitle}</span>
       </p>
     {/if}
   </div>
@@ -66,10 +66,10 @@
 
   @media screen and (max-width: 967px) {
     .jukebox {
-bottom: 0;
-    right: 6px;
-    transform: none;
-    left: unset;
+      bottom: 0;
+      right: 6px;
+      transform: none;
+      left: unset;
     }
   }
 
