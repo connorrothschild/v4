@@ -13,11 +13,11 @@
     mounted = true;
   });
 
-  // $: if (mounted) {
-  //   isOpen
-  //     ? document.documentElement.classList.add("disable-scroll")
-  //     : document.documentElement.classList.remove("disable-scroll");
-  // }
+  $: if (mounted) {
+    isOpen
+      ? document.documentElement.classList.add("disable-scroll")
+      : document.documentElement.classList.remove("disable-scroll");
+  }
 </script>
 
 {#if isOpen || currentVideo}
@@ -130,4 +130,11 @@
       transform: translateY(-50%) translateX(-100%);
     }
   } */
+
+  /* TMP: Hide jukebox on mobile for performance */
+  @media screen and (max-width: 567px) {
+    .jukebox {
+      display: none;
+    }
+  }
 </style>
