@@ -13,11 +13,11 @@
     mounted = true;
   });
 
-  $: if (mounted) {
-    isOpen
-      ? document.documentElement.classList.add("disable-scroll")
-      : document.documentElement.classList.remove("disable-scroll");
-  }
+  // $: if (mounted) {
+  //   isOpen
+  //     ? document.documentElement.classList.add("disable-scroll")
+  //     : document.documentElement.classList.remove("disable-scroll");
+  // }
 </script>
 
 {#if isOpen || currentVideo}
