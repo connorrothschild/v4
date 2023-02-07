@@ -63,6 +63,8 @@ Go ahead and see how `exactTicks` works in action, compared to the default `scal
 
 Obviously, the tradeoff here is that we're not getting nicely-rounded values. And so this isn't a replacement for `scale.ticks`. But it's a useful utility function to have in your toolbox. Optionally, you could also format the returned values using some other method, like `d3.format`.
 
+You can play around with the code for yourself in this [Svelte REPL](https://svelte.dev/repl/8c96f0bd743449b08b0d2fe15e97854e?version=3.55.1). Have fun!
+
 <div class='note' style="margin-top: 3rem; font-style:italic;">
 Psst: thanks for reading. In 2023, I'm trying to blog more often with quickly-useful tutorials like this one. I hope you found it helpful!</div>
 
