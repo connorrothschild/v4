@@ -4,16 +4,18 @@
 
   let showMenu = false;
 
-  import { slide } from 'svelte/transition'
+  import { slide } from "svelte/transition";
 </script>
 
-<div>
+<span><slot /></span>
+
+<!-- <div>
   <span
     class={`${userSelectedFramework} ${
       userSelectedFramework ? "selected" : "not-selected"
     }`}
     on:click={() => {
-      showMenu = !showMenu;
+      // showMenu = !showMenu;
     }}
   >
     <slot />
@@ -33,7 +35,7 @@
       </ul>
     {/if}
   </span>
-</div>
+</div> -->
 
 <style>
   div {
@@ -42,7 +44,7 @@
     cursor: pointer;
   }
 
-  span {
+  /* span {
     padding: 0.15rem 0.35rem;
     border-radius: 0.25rem;
     display: inline-block;
@@ -77,14 +79,11 @@
     z-index: 1;
     transform: translateX(-50%);
     background: white;
-    /* border: 1px solid black; */
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-    /* border-radius: 5px; */
     padding: 0;
     margin: 0;
     z-index: 1;
     list-style: none;
-    /* padding: 0.5rem; */
     width: 100px;
     text-align: center;
   }
@@ -95,5 +94,5 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
+  } */
 </style>

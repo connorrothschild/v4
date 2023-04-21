@@ -388,4 +388,10 @@
   /* .input .token:not(.active) {
     color: rgba(0, 0, 0, 0);
   } */
+
+  @media screen and (max-width: 868px) {
+    .output {
+      display: none;
+    }
+  }
 </style>

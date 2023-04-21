@@ -63,6 +63,25 @@
         toolkit, and only reach for it when it is the best tool for the job.
       </p>
 
+      <div
+        style="display: flex; flex-direction: column; place-items: center; justify-content: center; margin-bottom: 2rem;"
+      >
+        <img
+          style:width="100%"
+          src="/images/post/viz/wattenberger.png"
+          alt="A circle pack diagram visualizing all D3 modules, by Amelia Wattenberger"
+        />
+        <a
+          href="https://wattenberger.com/blog/d3"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-top: .5rem; font-family: var(--font-mono); font-size: .8rem; text-align: right; margin-left: auto; display: block; color: black;"
+        >
+          A circle pack diagram visualizing all D3 modules, by Amelia
+          Wattenberger
+        </a>
+      </div>
+
       <p>
         This new approach will reframe D3 from an all-expansive data
         visualization library to a tool that best handles specific components of
@@ -191,8 +210,20 @@
       >Would {userSelectedFramework || "a framework"} be any better?</SectionTitle
     > -->
       <SectionTitle number="3">The framework-first approach</SectionTitle>
-      <p>Introducing...</p>
+      <p>
+        Instead of overusing D3, we should adopt a framework-first approach.
+        Rather than using D3 for all parts of visualization on the web, we use
+        it for what it's best suited for (data manipulation, SVG path
+        construction, etc.) and use the web's native tools for everything else.
+      </p>
 
+      <p>
+        When I say &quot;framework-first,&quot; I mean that we should use
+        JavaScript frameworks like React, Svelte, Vue, and others to build our
+        interactive data visualizations. These frameworks are designed to make
+        building web applications easier, and they offer the same benefits for
+        data visualization.
+      </p>
       <p>
         So, would <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "Svelte, React, et al."}
@@ -201,13 +232,13 @@
           {userSelectedFramework || "a framework"}
         </ToggleableFramework> makes things
         <em>easy</em>
-        but because it makes things <strong>clear</strong> (direct? other word
-        here?). If you were learning Svelte, for example, you would learn the
-        discrete purposes of a <code>&lt;script /&gt;</code> tag, of your
-        markup, and of your
+        but because it makes things <strong>clear</strong>. If you were learning
+        Svelte, for example, you would learn the discrete purposes of a
+        <code>&lt;script /&gt;</code>
+        tag, of your markup, and of your
         <code>&lt;style /&gt;</code> tag: JavaScript, HTML/SVG, and CSS, respectively.
-        [FIXME: Add same for React, and Vue.] Yes, you are learning three new tools,
-        but you&rsquo;re not trying to learn them through the lens of D3.
+        Yes, you are learning three new tools, but you&rsquo;re not trying to learn
+        them through the lens of D3.
       </p>
       <p>
         Let's consider a trivial example to illustrate this point: a simple
@@ -345,6 +376,15 @@ svg
         </Code>
       </div>
 
+      <Info color="rgb(45, 45, 45)">
+        <p style="color: white;">
+          This an important lesson many beginners forget: whether you're using
+          D3 or some framework, your output will usually be SVG. (Unless you're
+          using <code>canvas</code> or something else.) The question is just how
+          you get there.
+        </p>
+      </Info>
+
       <p>
         You might notice that steps 1 through 3 are identical between the two
         apps. That's because, in both instances, the basic setup is the same: we
@@ -354,7 +394,7 @@ svg
       <p>
         The examples diverge in steps 4 and 5, which are our DOM manipulation
         steps. Let's dive deeper into those steps to understand what D3 is doing
-        behind the scenes, and why a framework-first approach is so much more
+        behind the scenes, and why a framework-first approach is much more
         intuitive.
       </p>
 
@@ -377,10 +417,10 @@ svg
         <strong>directly changing their markup</strong>, whereas a developer
         working in a pure-D3 application might not know (without doing some
         intentional debugging) if their issue lies in their selection method
-        chaining, in their SVG, or in their JavaScript. Of course, advanced
-        practitioners will know how to solve these sorts of problems. But for
-        those <strong>learning</strong> interactive data visualization, D3 confuses
-        more than it elucidates.
+        chaining, in their SVG syntax, or in some JavaScript function. Of
+        course, advanced practitioners will know how to solve these sorts of
+        problems. But for those <strong>learning</strong> interactive data visualization,
+        D3 confuses more than it elucidates.
       </p>
       <p>
         If interactive data visualizations live on the web, they should leverage
@@ -414,6 +454,47 @@ svg
       <h3 id="d3-for-the-data-frameworks-for-the-dom">
         D3 for the data, frameworks for the DOM
       </h3>
+      <p>
+        The greatest relief a framework-first approach offers is its ability to
+        manage the DOM in a more intuitive way. (When I say, "manage the DOM", I
+        mean, "control what exactly appears, disappears, and moves on the
+        screen.") Rather than using long chains of D3 selection methods, we can
+        write our markup directly.
+      </p>
+      <p>
+        But there are obviously other steps in the data visualization process,
+        that occur before we even get to the DOM. For example, we need to 1) <em
+          >import</em
+        >
+        and <em>transform</em> our data, and 2) <em>scale</em> our data to positions
+        on the chart. These steps are still best suited for D3, because D3 is great
+        at array manipulation and scaling.
+      </p>
+      <p>
+        A common workflow for a modern interactive visualization might follow
+        this pattern:
+      </p>
+      <ol style="margin-bottom: 1rem;">
+        <li>
+          Import and transform data. (
+          <code>d3-array</code>)
+        </li>
+        <li>
+          Scale data to positions on the chart. (<code>d3-scale</code>)
+        </li>
+        <li>Write markup directly. (A framework)</li>
+        <li>Bind data to DOM elements. (A framework)</li>
+        <li>Add interactivity. (A framework)</li>
+      </ol>
+      <p>
+        Occasionally, your project also might require other specialized D3
+        modules to help generate SVG paths. For example, you would reach for
+        <code>d3-geo</code> or <code>d3-shape</code> to generate paths for a map
+        or an area chart, respectively. But the more cleanly you can "hand off" from
+        D3 for the data, to frameworks for the DOM, the smoother your workflow will
+        be.
+      </p>
+
       <SectionTitle number="5">The actual roadmap</SectionTitle>
       <p>
         Enough about theory. If I haven&rsquo;t convinced you, [reach out]. If I
@@ -424,16 +505,46 @@ svg
         1. Learn the fundamentals of the web
       </h3>
       <p>
-        Learn HTML, CSS, and beginner JavaScript. The best resources for this
-        include:
+        Learn HTML, CSS, and beginner JavaScript. There are plenty of resources
+        online, but here are some good starting points:
       </p>
-      <p>...</p>
+      <ul style="margin-bottom: 2rem;">
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web"
+            target="_blank"
+            rel="noopener noreferrer">Getting Started with the Web</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://www.dontfeartheinternet.com/"
+            target="_blank"
+            rel="noopener noreferrer">Basic HTML & CSS for Non-Web Designers</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://javascript30.com/"
+            target="_blank"
+            rel="noopener noreferrer">30 Days of JavaScript</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.learn-js.org/"
+            target="_blank"
+            rel="noopener noreferrer">Learn JavaScript</a
+          >
+        </li>
+      </ul>
       <p>
-        But don&rsquo;t commit too heavily to these tools. In step 2,
-        you&rsquo;ll find a JavaScript framework which makes authoring complex
-        applications more simple. It&rsquo;s important you understand the main
-        concepts of HTML, CSS, and JavaScript, but you&rsquo;ll continue to
-        learn them as you dive into a framework.
+        But don&rsquo;t commit too heavily to these tutorials and <em
+          >mastering</em
+        > these tools. In step 2, you&rsquo;ll find a JavaScript framework which
+        makes authoring complex applications more simple. It&rsquo;s important you
+        understand the main concepts of HTML, CSS, and JavaScript, but you&rsquo;ll
+        continue to learn them as you dive into a framework.
       </p>
       <h3 id="2-choose-a-javascript-framework-and-learn-it">
         2. Choose a JavaScript framework, and learn it
@@ -448,36 +559,69 @@ svg
       <p>
         <strong
           >The most popular and fastest-growing framework within the
-          visualization community in particular is [Svelte]</strong
-        >, but [React] is another great choice because it has 1) an incredibly
-        large user base, 2) an existing ecosystem of packages and libraries, and
-        3) great employability prospects beyond visualization. (React is sort of
-        the GOAT, and Svelte is the new kid on the block (baby goat?) that is
-        growing in prominence.)
+          visualization community in particular is <a
+            href="https://svelte.dev/"
+            target="_blank"
+            rel="noopener noreferrer">Svelte</a
+          ></strong
+        >, but
+        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer"
+          >React</a
+        > is another great choice because it has 1) an incredibly large user base,
+        2) an existing ecosystem of packages and libraries, and 3) great employability
+        prospects beyond visualization. (React is sort of the GOAT, and Svelte is
+        the new kid on the block (baby goat?) that is growing in prominence.)
       </p>
       <p>
-        Another honorable mention is [Vue], which is left out of the
-        conversation lately but still very promising.
+        Another honorable mention is <a
+          href="https://vuejs.org/"
+          target="_blank"
+          rel="noopener noreferrer">Vue</a
+        >, which is left out of the conversation lately but still very
+        promising.
       </p>
-      <p>Avoid Angular.</p>
+      <!-- <p>Avoid Angular.</p> -->
       <hr />
       <p>
-        If you do choose Svelte, I would recommend following a few key people:
+        If you do choose Svelte, I have a few existing resources, including
+        <a
+          href="https://www.youtube.com/live/-THp2YVYEFc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          this workshop
+        </a>
+        and
+        <a
+          href="https://www.connorrothschild.com/post/svelte-and-d3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          this blog post
+        </a>. Matthias Stahl has also put together some great resources for
+        learning Svelte, including
+        <a
+          href="https://youtu.be/5focjEPJUJs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          this conference talk.</a
+        >
       </p>
-      <ul>
+      <!-- <ul>
         <li><a href="">Connor Rothschild (lol)</a></li>
         <li><a href="">Matthias Stahl</a></li>
         <li>?</li>
         <li>?</li>
-      </ul>
+      </ul> -->
       <!-- {/if}
       </p> -->
       <h3 id="3-learn-svg">3. Learn SVG</h3>
       <p>
         In every D3 project, you're giving JavaScript instructions to write SVG
         (or whatever your output is) to the DOM. And in your framework-first
-        approach, you will write the DOM directly. (The difference, in simple
-        terms is as follows: where D3 would require you to write <code
+        approach, you will write the DOM directly. (The difference, as we've
+        already went over: where D3 would require you to write <code
           >d3.select("body").append("svg")</code
         >, <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "a framework"}
@@ -486,7 +630,7 @@ svg
         <code>&lt;svg /&gt;</code>.)
       </p>
       <p>
-        So, it&rsquo;s worth getting familiar with [SVG] (scalable vector
+        So, it&rsquo;s worth getting familiar with SVG (scalable vector
         graphics), which is usually the main markup language used to design data
         visualizations.
       </p>
@@ -532,11 +676,12 @@ svg
       <p>
         Now that you understand SVG, which will be your final output, write it
         directly in
-        <ToggleableFramework bind:userSelectedFramework>
-          {userSelectedFramework || "some JavaScript framework"}
-        </ToggleableFramework>. Having learned the fundamentals of the web, you
-        should have a good handle on debugging separate parts of your
-        application, and having learned the ins and outs of your
+        <ToggleableFramework bind:userSelectedFramework
+          >{userSelectedFramework ||
+            "some JavaScript framework"}</ToggleableFramework
+        >. Having learned the fundamentals of the web, you should have a good
+        handle on debugging separate parts of your application, and having
+        learned the ins and outs of your
         <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "your JavaScript framework"}
         </ToggleableFramework>, you should know how to embed data inline within
@@ -550,6 +695,7 @@ svg
   main {
     width: 100%;
     margin: auto;
+    z-index: 102;
   }
 
   .scrollover-container {

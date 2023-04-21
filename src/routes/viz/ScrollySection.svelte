@@ -279,8 +279,10 @@ svg
 <style>
   section {
     position: relative;
-    left: calc(-48vw + 50%);
-    width: 96vw;
+    /* left: calc(-48vw + 50%);
+    width: 96vw; */
+    width: 100vw;
+    left: calc(-50vw + 50%);
     max-width: none;
     /* display: flex;
     flex-direction: row; */
@@ -411,18 +413,38 @@ svg
     left: 50.5%;
   }
 
+  @media screen and (max-width: 868px) {
+    :global(.asdjfdsfansdjksd .input.d3) {
+      left: 0;
+      width: 100%;
+      height: 49.5%;
+    }
+    :global(.asdjfdsfansdjksd .input.svelte) {
+      left: 0;
+      height: 49.5%;
+      top: 50.5%;
+      width: 100%;
+    }
+    .step {
+      width: 97.5%;
+    }
+    :global(.asdjfdsfansdjksd .step p) {
+      font-size: 1rem;
+    }
+  }
+
   :global(.step-content pre[class*="language-"]:last-child) {
     margin-bottom: 0 !important;
   }
 
   /* Overwrite pre styles from global CSS */
-  :global(.asdjfdsfansdjksd pre.has-filename) {
+  :global(.viz-article-body pre.has-filename) {
     max-width: unset;
     min-width: unset;
     padding-top: 40px !important;
   }
 
-  :global(.asdjfdsfansdjksd .filename-container) {
+  :global(.viz-article-body .filename-container) {
     text-align: left;
     width: 100%;
     height: 30px;
@@ -437,18 +459,19 @@ svg
     right: 0;
   }
 
-  :global(.asdjfdsfansdjksd .filename-container.d3-file) {
+  :global(.viz-article-body .filename-container.d3-file) {
     background: #004e82;
   }
 
-  :global(.asdjfdsfansdjksd .filename-container.svelte-file) {
+  :global(.viz-article-body .filename-container.svelte-file) {
     background: #ff3e00;
   }
 
-  :global(.asdjfdsfansdjksd .filename) {
+  :global(.viz-article-body .filename) {
     color: white;
     padding: 0.5rem;
     font-weight: 400;
+    font-family: var(--font-mono);
   }
 
   .label {
@@ -545,5 +568,11 @@ svg
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+  }
+  @media screen and (max-width: 868px) {
+    .sticky-boi {
+      top: var(--nav-height);
+      height: calc(97.5vh - var(--nav-height));
+    }
   }
 </style>
