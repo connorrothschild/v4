@@ -52,7 +52,7 @@
     </div>
     <div class="posts-grid width-container">
       {#each finalPosts as post, index}
-      <div>
+      <div style="height: 100%; width: 100%;">
         <BlogSection
           post={post.metadata}
           slug={post.path

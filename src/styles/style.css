@@ -89,8 +89,8 @@ body {
 @supports (text-shadow: 0px 0px 2px var(--accent-color)) {
   ::selection {
     background: none;
-    color: var(--pure-background-color);
-    text-shadow: 0px 0px 2px var(--accent-color);
+    text-shadow: 0px 0px 2px var(--pure-background-color);
+    color: var(--accent-color);
   }
 }
 
@@ -212,6 +212,11 @@ pre {
   font-size: 0.9rem !important;
   margin-bottom: 1rem !important;
   border-radius: 3px;
+
+  border: 1px solid rgba(var(--accent-color-rgb), 0.65);
+  /* box-shadow: 0 0 25px rgba(var(--accent-color-rgb), 0.235); */
+
+  /* border-radius: 0.5rem; */
 }
 
 code:not(pre > code) {
@@ -428,6 +433,8 @@ blockquote {
 
 blockquote p {
   font-size: 1.2rem !important;
+  background: rgba(var(--accent-color-rgb), 0.2);
+  backdrop-filter: blur(10px);
 }
 
 blockquote p:last-of-type {
@@ -506,11 +513,11 @@ blockquote p:last-of-type {
   margin-bottom: 4rem;
 }
 
-.main-content :not(h1, h2, h3)::selection {
+/* .main-content :not(h1, h2, h3)::selection {
   color: var(--pure-background-color);
   background: var(--pure-text-color);
   text-shadow: none;
-}
+} */
 
 /* SMALL DESKTOP BREAKPOINT */
 /* TABLET BREAKPOINT */
