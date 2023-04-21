@@ -1,27 +1,44 @@
 <script>
+  import { spring } from "svelte/motion";
   import Phrases from "./Phrases.svelte";
   let shadowX = 0;
   let shadowY = 0;
+
+  let translateX = spring(0, {
+    stiffness: 0.2,
+    damping: 0.95,
+  });
+  let translateY = spring(0, {
+    stiffness: 0.2,
+    damping: 0.95,
+  });
 
   let maxX = 50;
   let maxY = 50;
   const handleMousemove = function (e) {
     shadowX = (e.clientX / maxX) * -1;
     shadowY = (e.clientY / maxY) * -1;
+
+    $translateX = e.clientX / maxX;
+    $translateY = e.clientY / maxY;
   };
 </script>
 
 <div class="container" on:mousemove={handleMousemove}>
   <div class="bg" />
-  <h1>
-    <slot />
+  <div class="card">
+    <h1 style:transform={`translate(${$translateX}px, ${$translateY}px`}>
+      <!-- <slot />
     <span class="shadow" style:top={`${shadowY}px`} style:left={`${shadowX}px`}
       ><slot /></span
-    >
-  </h1>
-  <h2>By Connor Rothschild</h2>
-  <!-- <Phrases /> -->
-  <h3>The complete roadmap for interactive data visualization</h3>
+    > -->
+      <span class="how-to">How To</span>
+      <span class="learn-d3">&#8220;Learn D3&#8221;</span>
+      <span class="in-2023">In 2023</span>
+    </h1>
+  </div>
+  <!-- <h2>By Connor Rothschild</h2>
+  <h3>The complete roadmap for interactive data visualization</h3> -->
 </div>
 
 <style>
@@ -36,6 +53,11 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+
+    /* Scroll over effect */
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   .bg {
@@ -62,10 +84,49 @@
     font-weight: 900;
     text-align: left;
     text-transform: uppercase;
-    text-indent: -100px;
-    margin-left: 100px;
     pointer-events: none;
     line-height: 0.9;
+  }
+
+  .card {
+    background: black;
+    background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.5) -50%,
+      rgba(0, 0, 0, 1) 150%
+    );
+    max-width: 1220px;
+    margin-right: auto;
+    margin-left: 2.5vw;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: right;
+  }
+
+  .how-to {
+    font-size: 21vw;
+  }
+
+  .learn-d3 {
+    font-size: 15vw;
+  }
+
+  .in-2023 {
+    font-size: 22.5vw;
+  }
+
+  @media screen and (min-width: 1220px) {
+    .how-to {
+      font-size: 270px;
+    }
+
+    .learn-d3 {
+      font-size: 190px;
+    }
+
+    .in-2023 {
+      font-size: 290px;
+    }
   }
 
   .shadow {

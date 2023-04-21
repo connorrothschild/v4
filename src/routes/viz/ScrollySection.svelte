@@ -31,175 +31,248 @@
   $: value, value === MAX_VALUE ? (hasFinished = true) : null;
 
   let scrollyElementWidth;
+
+  // Keep track of scroll progress via scrollLeft and element width
+  // import sticky from "../../actions/stickyDetector";
+
+  // export let stickToTop = true;
+
+  // let isStuck = false;
+  // $: console.log(isStuck);
+
+  // function handleStuck(e) {
+  //   isStuck = e.detail.isStuck;
+  // }
+
+  // const handleScroll = (e) => {
+  //   const section = document.getElementById("steps-container");
+  //   if (!section) return;
+
+  //   // Do not proceed if the section is not at the top of the screen
+  //   console.log(section.offsetTop);
+
+  //   // Prevent default scroll behavior unless we're at the end
+  //   const sectionWidth = section.scrollWidth;
+  //   const scrolledPx = Math.round(section.scrollLeft + section.clientWidth);
+  //   const isScrollingUp = e.deltaY < 0;
+  //   // Increment scrollLeft equal to the scroll delta
+  //   if (sectionWidth !== scrolledPx || isScrollingUp) {
+  //     if (isScrollingUp && section.scrollLeft === 0) return;
+  //     section.scrollLeft += e.deltaY;
+  //     e.preventDefault();
+  //   }
+  // };
+
+  $: translateX = 0;
+
+  let objectRef;
+  let sectionRef;
+  let windowWidth;
+  $: dynamicHeight = sectionRef ? handleDynamicHeight(sectionRef) : null;
+  $: windowWidth,
+    (dynamicHeight = sectionRef ? handleDynamicHeight(sectionRef) : null);
+
+  $: calcDynamicHeight = (objectWidth) => {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    return objectWidth - vw + vh + 150;
+  };
+
+  $: handleDynamicHeight = () => {
+    const objectWidth = objectRef.scrollWidth;
+    const dynamicHeight = calcDynamicHeight(objectWidth);
+    return dynamicHeight;
+  };
+
+  const handleScroll = () => {
+    // window.addEventListener("scroll", () => {
+    const offsetTop = -sectionRef.offsetTop;
+    translateX = offsetTop;
+    // });
+  };
 </script>
 
-<section class="asdjfdsfansdjksd">
-  <div class="steps-container" style="--stepWidth: {scrollyElementWidth}px">
-    <ScrollHelper bind:value bind:elementWidth={scrollyElementWidth}>
-      <div class="step" class:active={value === 0} id="step-0">
-        <div class="step-content">
-          <p>
-            Our chart begins with an SVG element. Creating a container SVG
-            element is a prerequisite for any SVG chart. How would we create our
-            SVG element in <span class="label d3">D3</span>?
-          </p>
-          <Code language="js">
-            {`
+<svelte:window on:resize={() => (windowWidth = window.innerWidth)} />
+<!-- <section class="asdjfdsfansdjksd" on:mousewheel={handleScroll}> -->
+<section
+  class="asdjfdsfansdjksd"
+  on:wheel={handleScroll}
+  style:height={`${dynamicHeight}px`}
+>
+  <div class="sticky-boi" bind:this={sectionRef}>
+    <div class="steps-outer">
+      <ScrollHelper
+        bind:value
+        bind:elementWidth={scrollyElementWidth}
+        bind:container={objectRef}
+        {translateX}
+      >
+        <div class="step" class:active={value === 0} id="step-0">
+          <div class="step-content">
+            <p>
+              Our chart begins with an SVG element. Creating a container SVG
+              element is a prerequisite for any SVG chart. How would we create
+              our SVG element in <span class="label d3">D3</span>?
+            </p>
+            <Code language="js">
+              {`
                 const svg = d3.select('body')
     .append('svg')
                 `}
-          </Code>
-          <p>
-            Let's compare that with creating an SVG element in <span
-              class="label svelte">Svelte</span
-            >.
-          </p>
-          <Code language="svelte">
-            {`
+            </Code>
+            <p>
+              Let's compare that with creating an SVG element in <span
+                class="label svelte">Svelte</span
+              >.
+            </p>
+            <Code language="svelte">
+              {`
                 <svg></svg>
                 `}
-          </Code>
+            </Code>
+          </div>
         </div>
-      </div>
-      <div class="step" class:active={value === 1} id="step-1">
-        <div class="step-content">
-          <p>
-            Next, we need to assign the SVG element a <code>width</code> and
-            <code>height</code>.
-          </p>
-          <p>
-            In <span class="label d3">D3</span>, we assign those attributes in
-            the existing selection chain, in <code>.attr()</code> methods.
-          </p>
-          <Code language="js">
-            {`
+        <div class="step" class:active={value === 1} id="step-1">
+          <div class="step-content">
+            <p>
+              Next, we need to assign the SVG element a <code>width</code> and
+              <code>height</code>.
+            </p>
+            <p>
+              In <span class="label d3">D3</span>, we assign those attributes in
+              the existing selection chain, in <code>.attr()</code> methods.
+            </p>
+            <Code language="js">
+              {`
 .attr('width', 300)
 .attr('height', 300)
                 `}
-          </Code>
-          <p>
-            In <span class="label svelte">Svelte</span>, we write those
-            attributes directly.
-          </p>
-          <Code language="svelte">
-            {`
+            </Code>
+            <p>
+              In <span class="label svelte">Svelte</span>, we write those
+              attributes directly.
+            </p>
+            <Code language="svelte">
+              {`
                 <svg width="300" height="300"></svg>
                 `}
-          </Code>
+            </Code>
+          </div>
         </div>
-      </div>
-      <div class="step" class:active={value === 2} id="step-2">
-        <div class="step-content">
-          <p>
-            Once our SVG element is created, we'll want to render some circles.
-            In <span class="label d3">D3</span>, we'll use three methods—<code
-              >selectAll()</code
-            >,
-            <code>data()</code>, and <code>join()</code>—to bind data to our
-            selection.
-          </p>
-          <Code language="js">
-            {`
+        <div class="step" class:active={value === 2} id="step-2">
+          <div class="step-content">
+            <p>
+              Once our SVG element is created, we'll want to render some
+              circles. In <span class="label d3">D3</span>, we'll use three
+              methods—<code>selectAll()</code>,
+              <code>data()</code>, and <code>join()</code>—to bind data to our
+              selection.
+            </p>
+            <Code language="js">
+              {`
 svg
   .selectAll("circle")
   .data(data)
   .join("circle")
   `}
-          </Code>
-          <p>
-            In <span class="label svelte">Svelte</span>, we can use the
-            <code>each</code>
-            directive to bind data to our selection. Within the
-            <code>each</code> block, we write the element we want to render.
-          </p>
-          <Code language="svelte">
-            {`
+            </Code>
+            <p>
+              In <span class="label svelte">Svelte</span>, we can use the
+              <code>each</code>
+              directive to bind data to our selection. Within the
+              <code>each</code> block, we write the element we want to render.
+            </p>
+            <Code language="svelte">
+              {`
 <svg width="300" height="300">
     {#each data as d}
         <circle />
     {/each}
 </svg>
                 `}
-          </Code>
+            </Code>
+          </div>
         </div>
-      </div>
-      <div class="step" class:active={value === 3} id="step-3">
-        <div class="step-content">
-          <p>
-            Now that we have circles, we want to <strong
-              >bind data to their attributes</strong
-            >. In <span class="label d3">D3</span>, we use the
-            <code>attr()</code> method to bind data to attributes.
-          </p>
-          <Code language="js">
-            {`
+        <div class="step" class:active={value === 3} id="step-3">
+          <div class="step-content">
+            <p>
+              Now that we have circles, we want to <strong
+                >bind data to their attributes</strong
+              >. In <span class="label d3">D3</span>, we use the
+              <code>attr()</code> method to bind data to attributes.
+            </p>
+            <Code language="js">
+              {`
 .attr("cx", d => xScale(d.x))
 .attr("cy", d => yScale(d.y))
 .attr("r", d => d.r)
                     `}
-          </Code>
-          <p>
-            While in <span class="label svelte">Svelte</span>, we just write the
-            attributes directly, and wrap them in curly braces (<code
-              >{`{}`}</code
-            >) to bind data.
-          </p>
-          <Code language="svelte">
-            {`
+            </Code>
+            <p>
+              While in <span class="label svelte">Svelte</span>, we just write
+              the attributes directly, and wrap them in curly braces (<code
+                >{`{}`}</code
+              >) to bind data.
+            </p>
+            <Code language="svelte">
+              {`
 <circle 
     cx={xScale(d.x)}
     cy={yScale(d.y)} 
     r={d.r} 
 />
                         `}
-          </Code>
-        </div>
-      </div>
-      <div class="step" class:active={value === 4} id="step-4">
-        <div class="step-content">
-          <p>
-            And so the differences between <span class="label d3">D3</span> and
-            <span class="label svelte">Svelte</span>
-            are equivalent to the differences between <em>instructions</em> and
-            <em>authoring</em>. In <span class="label d3">D3</span>, we write
-            instructions to tell JavaScript what to render; in
-            <span class="label svelte">Svelte</span>, we write our output
-            directly.
-          </p>
-        </div>
-      </div>
-    </ScrollHelper>
-  </div>
-
-  <div class="sticky right">
-    <div class="inputs">
-      <div class="fixed-corner">
-        {#if !hasFinished}
-          <p class="scroll-helper" on:click={handleScrollClick}>
-            Scroll &rarr;
-          </p>
-        {:else}
-          <div in:fly={{ x: 50, delay: 250 }} class="steps-buttons">
-            <p>Step</p>
-            {#each [0, 1, 2, 3, 4] as step}
-              <p
-                class="step-button"
-                class:active={value === step}
-                on:click={() => scrollTo(step)}
-              >
-                {step + 1}
-              </p>
-            {/each}
+            </Code>
           </div>
-        {/if}
-      </div>
-
-      <D3Input {value} {MAX_VALUE} />
-      <SvelteInput {value} {MAX_VALUE} />
+        </div>
+        <div class="step" class:active={value === 4} id="step-4">
+          <div class="step-content">
+            <p>
+              And so the differences between <span class="label d3">D3</span>
+              and
+              <span class="label svelte">Svelte</span>
+              are equivalent to the differences between <em>instructions</em>
+              and
+              <em>authoring</em>. In <span class="label d3">D3</span>, we write
+              instructions to tell JavaScript what to render; in
+              <span class="label svelte">Svelte</span>, we write our output
+              directly.
+            </p>
+          </div>
+        </div>
+      </ScrollHelper>
     </div>
 
-    <!-- BEGIN OUTPUT -->
-    <Output {value} {MAX_VALUE} />
+    <div class="sticky right">
+      <div class="inputs">
+        <div class="fixed-corner">
+          {#if !hasFinished}
+            <p class="scroll-helper" on:click={handleScrollClick}>
+              Scroll &rarr;
+            </p>
+          {:else}
+            <div in:fly={{ x: 50, delay: 250 }} class="steps-buttons">
+              <p>Step</p>
+              {#each [0, 1, 2, 3, 4] as step}
+                <p
+                  class="step-button"
+                  class:active={value === step}
+                  on:click={() => scrollTo(step)}
+                >
+                  {step + 1}
+                </p>
+              {/each}
+            </div>
+          {/if}
+        </div>
+
+        <D3Input {value} {MAX_VALUE} />
+        <SvelteInput {value} {MAX_VALUE} />
+      </div>
+
+      <!-- BEGIN OUTPUT -->
+      <Output {value} {MAX_VALUE} />
+    </div>
   </div>
 </section>
 
@@ -209,23 +282,21 @@ svg
     left: calc(-48vw + 50%);
     width: 96vw;
     max-width: none;
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     margin: 1rem 0;
     /* overflow-x: hidden; */
     height: 95vh;
   }
 
   .sticky {
-    position: sticky;
-    top: 0;
     height: 100vh;
   }
 
   section {
     text-align: center;
     transition: background 100ms;
-    display: flex;
+    /* display: flex; */
     z-index: 250;
     margin-bottom: 100px;
   }
@@ -279,15 +350,15 @@ svg
     margin-bottom: 0.75rem;
   }
 
-  .steps-container {
+  .steps-outer {
     z-index: 100;
     position: absolute;
     /* top: 50%;
     transform: translateY(-50%); */
-    bottom: 0;
+    bottom: 1rem;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
 
   /* Comment out the following line to always make it 'text-on-top' */
@@ -295,10 +366,10 @@ svg
   section {
     flex-direction: column-reverse;
   }
-  .sticky {
+  /* .sticky {
     width: 100%;
     margin: auto;
-  }
+  } */
 
   .token {
     transition: color 300ms ease;
@@ -457,5 +528,22 @@ svg
   .step:last-of-type {
     margin-right: 0;
     padding-right: 2rem;
+  }
+
+  /* .steps-outer {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  } */
+
+  .sticky-boi {
+    position: sticky;
+    top: 0;
+    height: 97.5vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 </style>

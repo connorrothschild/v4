@@ -21,8 +21,9 @@
   export let increments = 100;
   export let value = undefined;
   export let elementWidth;
-  
-  let container;
+  export let translateX;
+
+  export let container;
 
   const steps = [];
   const threshold = [];
@@ -82,24 +83,30 @@
   });
 </script>
 
-<div bind:this={container} id="steps-container" bind:clientWidth={elementWidth}>
+<div
+  bind:this={container}
+  id="steps-container"
+  bind:clientWidth={elementWidth}
+  style:transform={`translateX(${translateX}px)`}
+>
   <slot />
 </div>
 
 <style>
-    /* Horizontal scrollytelling */
-    div {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        /* overflow-x: auto; */
-        overflow-y: hidden;
-        place-items: flex-end;
-        height: 100%;
-        padding: 1rem 2rem;
-    }
+  /* Horizontal scrollytelling */
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    will-change: transform;
+    align-items: flex-end;
+    /* overflow-y: hidden;
+    place-items: flex-end;
+    height: 100%;
+    padding: 1rem 2rem; */
+  }
 
-    div::-webkit-scrollbar {
-        display: none;
-    }
+  div::-webkit-scrollbar {
+    display: none;
+  }
 </style>
