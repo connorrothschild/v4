@@ -516,11 +516,18 @@ svg
         your workflow will be.
       </p>
 
+      <!-- FIXME: Add interactive section showcasing all D3 modules and 1) their purpose, 2) how often to use in a dataviz project -->
+
       <SectionTitle number="5">The actual roadmap</SectionTitle>
       <p>
-        Enough about theory. If I haven&rsquo;t convinced you, [reach out]. If I
-        have convinced you, here&rsquo;s how to actually get started making
-        interactive data visualizations in 2023.
+        Enough about theory. If I haven&rsquo;t convinced you, <a
+          href="https://twitter.com/CL_Rothschild"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          reach out</a
+        >. If I have convinced you, here&rsquo;s how to actually get started
+        making interactive data visualizations in 2023.
       </p>
       <h3 id="1-learn-the-fundamentals-of-the-web">
         1. Learn the fundamentals of the web
