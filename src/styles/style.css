@@ -428,13 +428,13 @@ blockquote {
   border-left: 10px solid var(--accent-color);
   padding: 1rem;
   margin-left: 0.5rem;
-  background: rgba(var(--accent-color-rgb), 0.1);
+  /* background: rgba(var(--accent-color-rgb), 0.1); */
+  background: rgba(var(--accent-color-rgb), 0.15);
+  backdrop-filter: blur(10px);
 }
 
 blockquote p {
   font-size: 1.2rem !important;
-  background: rgba(var(--accent-color-rgb), 0.2);
-  backdrop-filter: blur(10px);
 }
 
 blockquote p:last-of-type {

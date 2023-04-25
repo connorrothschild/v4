@@ -24,12 +24,17 @@
       </p>
       <blockquote>
         <p>
-          This is an extended version of a previous blog post, &quot;Making
-          Visualizations Literally with Svelte &amp; D3.&quot; Since that blog
-          post&rsquo;s release, I&rsquo;ve dove deeper into Svelte + D3, by 1)
-          publishing new projects, 2) releasing an online course, and 3) hosting
-          multiple workshops. This blog post consolidates all of my thoughts
-          into one place.
+          This is an extended version of a previous blog post, &ldquo;<a
+            href="/post/svelte-and-d3"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: black;"
+          >
+            Making Visualizations Literally with Svelte &amp; D3.</a
+          >&rdquo; Since that blog post&rsquo;s release, I&rsquo;ve dove deeper
+          into Svelte + D3, by 1) publishing new projects, 2) releasing an
+          online course, and 3) hosting multiple workshops. This blog post
+          consolidates all of my thoughts into one place.
         </p>
       </blockquote>
 
@@ -38,10 +43,9 @@
         Let&rsquo;s clarify one important concept up front. When most people say
         they &quot;want to learn D3&quot;, they actually mean they <strong
           >want to learn interactive data visualization</strong
-        >, and they think D3 is the tool they need to use for that (change
-        language?). Few beginners actually want to &quot;learn D3,&quot; they
-        just want to learn how to make those beautiful and complex
-        &quot;D3&quot; projects.
+        >, and they think D3 is the tool to do that. Few beginners actually want
+        to &quot;learn D3,&quot; they just want to learn how to make those
+        beautiful and complex &quot;D3&quot; projects.
       </p>
       <!-- <p>
       With that in mind, the roadmap for learning data
@@ -54,8 +58,9 @@
 
       <p>
         But D3 is far too expansive to be the only tool beginners use, and far
-        too complex to be the first tool beginners start with. D3 is a
-        collection of modules that vary widely in their purposes, ranging from
+        too complex to be the first tool beginners start with. <strong
+          >D3 is a collection of modules that vary widely in their purposes</strong
+        >, ranging from
         <abbr data-title="Document Object Model">DOM</abbr> manipulation, to
         array manipulation, to
         <abbr data-title="Scalable Vector Graphics">SVG</abbr> path construction.
@@ -132,7 +137,23 @@
           target="_blank"
           rel="noopener noreferrer">D3 is not a Data Visualization Library</a
         >
-        in 2018. Despite his prescience, it wasn't until a few years later that the
+        in 2018. In that post, he wrote:
+      </p>
+
+      <blockquote>
+        <p>
+          D3.js is an incredibly successful library yet there’s a disconnect
+          between what people think D3 does and what it actually does. As a
+          result, learning D3 is intimidating and confusing. By better
+          understanding its structure and separating it into more manageable
+          pieces, it can be easier to choose which parts of the library to learn
+          and which parts to avoid — key lessons not only for D3 novices but for
+          expert users like myself that might want to reexamine how they use D3.
+        </p>
+      </blockquote>
+
+      <p>
+        Despite his prescience, it wasn't until a few years later that the
         conversation hit the mainstream, as folks like
         <a
           href="https://wattenberger.com/blog/react-and-d3"
@@ -401,12 +422,13 @@ svg
       <ScrollySection />
 
       <p>
-        The Svelte code above is what I call "literal programming": you're
-        literally authoring the DOM. Rather than writing code that says, "select
-        this element, and then append this other element to it," You're writing
-        those elements directly. And rather than writing code that says, "select
-        this element, and then set this attribute on it," you're setting those
-        attributes directly.
+        <strong
+          >The Svelte code above is what I call &ldquo;literal
+          programming&rdquo;: you're literally authoring the DOM.</strong
+        > Rather than writing code that says, &ldquo;select this element, and then
+        append this other element to it,&rdquo; You're writing those elements directly.
+        And rather than writing code that says, &ldquo;select this element, and then
+        set this attribute on it,&rdquo; you're setting those attributes directly.
       </p>
 
       <p>
@@ -441,8 +463,7 @@ svg
         and
         {userSelectedFramework || "a framework"} would be better suited (for example,
         using {userSelectedFramework || "Svelte"} to write your markup directly,
-        rather than using a D3 selection method), we use different tools for what
-        they&rsquo;re best suited for. (Bad sentence -&gt; revise.)
+        rather than using a D3 selection method), select the right tool for the job.
       </p>
       <p>
         And so in some ways, this new framework-first approach forces us to use
@@ -456,10 +477,10 @@ svg
       </h3>
       <p>
         The greatest relief a framework-first approach offers is its ability to
-        manage the DOM in a more intuitive way. (When I say, "manage the DOM", I
-        mean, "control what exactly appears, disappears, and moves on the
-        screen.") Rather than using long chains of D3 selection methods, we can
-        write our markup directly.
+        manage the DOM in a more intuitive way. (When I say, &ldquo;manage the
+        DOM&rdquo;, I mean, &ldquo;control what exactly appears, disappears, and
+        moves on the screen.&rdquo;) Rather than using long chains of D3
+        selection methods, we can write our markup directly.
       </p>
       <p>
         But there are obviously other steps in the data visualization process,
@@ -490,9 +511,9 @@ svg
         Occasionally, your project also might require other specialized D3
         modules to help generate SVG paths. For example, you would reach for
         <code>d3-geo</code> or <code>d3-shape</code> to generate paths for a map
-        or an area chart, respectively. But the more cleanly you can "hand off" from
-        D3 for the data, to frameworks for the DOM, the smoother your workflow will
-        be.
+        or an area chart, respectively. But the more cleanly you can separate concerns
+        in your workflow—using D3 for data and a framework for the DOM—the smoother
+        your workflow will be.
       </p>
 
       <SectionTitle number="5">The actual roadmap</SectionTitle>
@@ -687,6 +708,15 @@ svg
         </ToggleableFramework>, you should know how to embed data inline within
         your markup. From there, it&rsquo;s easy.
       </p>
+      <div>
+        <p
+          class="note"
+          style="font-size: 1rem; margin-top: 3rem; font-style:italic; font-family: 'GT'; text-align: right; line-height: 1.4; max-width: 518px; margin-left: auto; margin-right: 0;"
+        >
+          Thanks to Javier García Fernández, Amit Grinson, and Sebastian Lammers
+          for reviewing and giving feedback on this article.
+        </p>
+      </div>
     </div>
   </div>
 </main>
@@ -695,12 +725,12 @@ svg
   main {
     width: 100%;
     margin: auto;
-    z-index: 102;
+    z-index: 105;
   }
 
   .scrollover-container {
     background: var(--primary-color);
-    z-index: 2;
+    z-index: 105;
     position: relative;
     border-radius: 1rem;
     box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.5);
@@ -766,8 +796,7 @@ svg
     backdrop-filter: blur(10px);
   }
 
-  p:not(:last-child),
-  blockquote:not(:last-child) {
+  p:not(:last-child) {
     margin-bottom: 1rem;
   }
 
@@ -871,7 +900,7 @@ svg
     max-width: 300px;
     background: black;
     color: white;
-    z-index: 2;
+    z-index: 104;
   }
 
   abbr:hover::after {
@@ -879,6 +908,11 @@ svg
   }
 
   blockquote {
-    margin-top: 1rem;
+    margin: 2rem 0;
+  }
+
+  blockquote p {
+    font-family: Satoshi;
+    font-weight: 300;
   }
 </style>

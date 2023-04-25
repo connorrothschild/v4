@@ -403,6 +403,7 @@ svg
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
+    border: none;
   }
 
   :global(.asdjfdsfansdjksd .input.d3) {

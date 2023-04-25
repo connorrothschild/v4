@@ -376,6 +376,7 @@
     margin-bottom: 1rem !important;
     margin-right: auto;
     box-shadow: 1px 1px 25px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
   }
 
   .token {
