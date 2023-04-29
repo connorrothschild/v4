@@ -1,0 +1,137 @@
+[
+  {
+    "name": "fetch",
+    "function": "Grabbing data",
+    "use": "Sometimes"
+  },
+  {
+    "name": "dsv",
+    "function": "Grabbing data",
+    "use": "Rarely"
+  },
+  {
+    "name": "array",
+    "function": "Manipulating data",
+    "use": "Often"
+  },
+  {
+    "name": "random",
+    "function": "Manipulating data",
+    "use": "Rarely"
+  },
+  {
+    "name": "selection",
+    "function": "Manipulating the DOM",
+    "use": "Never"
+  },
+  {
+    "name": "axis",
+    "function": "Manipulating the DOM",
+    "use": "Never"
+  },
+  {
+    "name": "scale",
+    "function": "Scaling data to positions on the chart",
+    "use": "Often"
+  },
+  {
+    "name": "shape",
+    "function": "Drawing SVG shapes",
+    "use": "Often"
+  },
+  {
+    "name": "path",
+    "function": "Drawing SVG shapes",
+    "use": "Rarely"
+  },
+  {
+    "name": "polygon",
+    "function": "Drawing SVG shapes",
+    "use": "Rarely"
+  },
+  {
+    "name": "color",
+    "function": "Manipulating color",
+    "use": "Rarely"
+  },
+  {
+    "name": "scale-chromatic",
+    "function": "Manipulating color",
+    "use": "Rarely"
+  },
+  {
+    "name": "time",
+    "function": "Manipulating time",
+    "use": "Sometimes"
+  },
+  {
+    "name": "time-format",
+    "function": "Manipulating time",
+    "use": "Sometimes"
+  },
+  {
+    "name": "transition",
+    "function": "Animations",
+    "use": "Never"
+  },
+  {
+    "name": "ease",
+    "function": "Animations",
+    "use": "Never"
+  },
+  {
+    "name": "interpolate",
+    "function": "Animations",
+    "use": "Never"
+  },
+  {
+    "name": "timer",
+    "function": "Animations",
+    "use": "Rarely"
+  },
+  {
+    "name": "geo",
+    "function": "Geographic projections",
+    "use": "Often"
+  },
+  {
+    "name": "geo-projection",
+    "function": "Geographic projections",
+    "use": "Sometimes"
+  },
+  {
+    "name": "drag",
+    "function": "User interaction",
+    "use": "Rarely"
+  },
+  {
+    "name": "zoom",
+    "function": "User interaction",
+    "use": "Rarely"
+  },
+  {
+    "name": "brush",
+    "function": "User interaction",
+    "use": "Rarely"
+  },
+  {
+    "name": "force",
+    "function": "Specific visualizations",
+    "use": "Sometimes"
+  },
+  {
+    "name": "chord",
+    "function": "Specific visualizations",
+    "use": "Rarely"
+  },
+  {
+    "name": "hierarchy",
+    "function": "Specific visualizations",
+    "use": "Rarely"
+  },
+  {
+    "name": "contour",
+    "function": "Specific visualizations",
+    "use": "Rarely"
+  }
+]

@@ -7,6 +7,7 @@
   import Code from "$lib/Global/Code.svelte";
   import Info from "$lib/Global/Info.svelte";
   import ScrollySection from "./ScrollySection.svelte";
+  import InteractiveModuleOverview from "./InteractiveModuleOverview.svelte";
 
   let userSelectedFramework; // = "Svelte";
 </script>
@@ -89,8 +90,8 @@
 
       <p>
         This new approach will reframe D3 from an all-expansive data
-        visualization library to a tool that best handles specific components of
-        a project, like scaling data and manipulating arrays. Meanwhile, a
+        visualization library to a toolkit that best handles specific components
+        of a project, like scaling data and manipulating arrays. Meanwhile, a
         JavaScript framework can take on the heavy work of DOM manipulation. I
         call this the <strong
           >framework-first approach to data visualization</strong
@@ -98,7 +99,9 @@
       </p>
 
       <Info color="rgb(45, 45, 45)">
-        <p style="color: white;">
+        <p
+          style="color: white; font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
+        >
           Some JavaScript frameworks you might have heard of inlude React, Vue,
           Angular, or Svelte.
         </p>
@@ -235,7 +238,8 @@
         Instead of overusing D3, we should adopt a framework-first approach.
         Rather than using D3 for all parts of visualization on the web, we use
         it for what it's best suited for (data manipulation, SVG path
-        construction, etc.) and use the web's native tools for everything else.
+        construction, etc.) and use the web's native tools for everything else
+        (authoring and manipulating the document).
       </p>
 
       <p>
@@ -248,8 +252,8 @@
       <p>
         So, would <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "Svelte, React, et al."}
-        </ToggleableFramework> make things that much better? The answer is yes, not
-        because <ToggleableFramework bind:userSelectedFramework>
+        </ToggleableFramework> make interactive dataviz easier to learn? The answer
+        is yes, not because <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "a framework"}
         </ToggleableFramework> makes things
         <em>easy</em>
@@ -271,7 +275,7 @@
       </p>
 
       <div class="examples baadsfhjsdbfdhs">
-        <div class="example">
+        <div class="example d3">
           <div class="filename-container d3-file">
             <span class="filename">D3 input</span>
           </div>
@@ -322,8 +326,9 @@ svg
   .attr("stroke", "black");
     `}
           </Code>
+          <div class="scrim" />
         </div>
-        <div class="example">
+        <div class="example svelte">
           <div class="filename-container svelte-file">
             <span class="filename">Svelte input</span>
           </div>
@@ -373,6 +378,7 @@ svg
       `}
           </Code>
         </div>
+        <div class="scrim" />
       </div>
 
       <p>
@@ -398,7 +404,9 @@ svg
       </div>
 
       <Info color="rgb(45, 45, 45)">
-        <p style="color: white;">
+        <p
+          style="color: white; font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
+        >
           This an important lesson many beginners forget: whether you're using
           D3 or some framework, your output will usually be SVG. (Unless you're
           using <code>canvas</code> or something else.) The question is just how
@@ -423,8 +431,9 @@ svg
 
       <p>
         <strong
-          >The Svelte code above is what I call &ldquo;literal
-          programming&rdquo;: you're literally authoring the DOM.</strong
+          >The Svelte code above is &ldquo;declarative programming&rdquo;:
+          you're declaratively authoring the DOM, rather than imperatively
+          giving commands as you would in D3.</strong
         > Rather than writing code that says, &ldquo;select this element, and then
         append this other element to it,&rdquo; You're writing those elements directly.
         And rather than writing code that says, &ldquo;select this element, and then
@@ -498,14 +507,40 @@ svg
       <ol style="margin-bottom: 1rem;">
         <li>
           Import and transform data. (
-          <code>d3-array</code>)
+          <code>d3-array</code> from
+          <pre
+            class="label d3"
+            style="display: inline; border: none; font-size: 100% !important;">D3</pre>
+          )
         </li>
         <li>
-          Scale data to positions on the chart. (<code>d3-scale</code>)
+          Scale data to positions on the chart. (<code>d3-scale</code> from
+          <pre
+            class="label d3"
+            style="display: inline; border: none; font-size: 100% !important;">D3</pre>
+          )
         </li>
-        <li>Write markup directly. (A framework)</li>
-        <li>Bind data to DOM elements. (A framework)</li>
-        <li>Add interactivity. (A framework)</li>
+        <li>
+          Write markup directly. (A framework like
+          <pre
+            class="label svelte"
+            style="display: inline; border: none; font-size: 100% !important;">Svelte</pre>
+          )
+        </li>
+        <li>
+          Bind data to DOM elements. (A framework like
+          <pre
+            class="label svelte"
+            style="display: inline; border: none; font-size: 100% !important;">Svelte</pre>
+          )
+        </li>
+        <li>
+          Add interactivity. (A framework like
+          <pre
+            class="label svelte"
+            style="display: inline; border: none; font-size: 100% !important;">Svelte</pre>
+          )
+        </li>
       </ol>
       <p>
         Occasionally, your project also might require other specialized D3
@@ -514,6 +549,37 @@ svg
         or an area chart, respectively. But the more cleanly you can separate concerns
         in your workflow—using D3 for data and a framework for the DOM—the smoother
         your workflow will be.
+      </p>
+
+      <p>
+        Matthias Stahl has put it this way (he has a better way with words than
+        myself):
+        <strong
+          >use D3 for the math and the paths. And a framework for the rest.
+        </strong>
+      </p>
+
+      <p>
+        To bring it home, here's an overview of each of the modules currently
+        present in D3, organized by their usefulness in a framework-first
+        workflow:
+      </p>
+
+      <InteractiveModuleOverview />
+
+      <p
+        class="note"
+        style="font-size: 1rem; font-style:italic; font-family: 'GT'; text-align: right; line-height: 1.4; max-width: 768px; margin-left: auto; margin-right: 0;"
+      >
+        The categorization of functions is borrowed, with permission, from
+        Amelia Wattenberger's great
+        <a
+          href="https://wattenberger.com/blog/d3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          blog post.
+        </a>
       </p>
 
       <!-- FIXME: Add interactive section showcasing all D3 modules and 1) their purpose, 2) how often to use in a dataviz project -->
@@ -609,7 +675,7 @@ svg
         promising.
       </p>
       <!-- <p>Avoid Angular.</p> -->
-      <hr />
+      <hr style="margin: 1.5rem auto;" />
       <p>
         If you do choose Svelte, I have a few existing resources, including
         <a
@@ -625,9 +691,15 @@ svg
           target="_blank"
           rel="noopener noreferrer"
         >
-          this blog post
-        </a>. Matthias Stahl has also put together some great resources for
-        learning Svelte, including
+          this blog post</a
+        >. You can also access my online course with Newline
+        <a
+          href="https://www.newline.co/courses/better-data-visualizations-with-svelte"
+        >
+          here.
+        </a>
+        Matthias Stahl has also put together some great resources for learning Svelte,
+        including
         <a
           href="https://youtu.be/5focjEPJUJs"
           target="_blank"
@@ -843,7 +915,7 @@ svg
     max-width: none;
   }
 
-  .example {
+  .baadsfhjsdbfdhs .example {
     width: 49%;
     position: relative;
 
@@ -921,5 +993,33 @@ svg
   blockquote p {
     font-family: Satoshi;
     font-weight: 300;
+  }
+
+  @media screen and (max-width: 868px) {
+    :global(.baadsfhjsdbfdhs .example) {
+      width: 100% !important;
+      max-height: 45vh;
+      overflow: auto;
+    }
+
+    .examples {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .scrim {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-top: -30px;
+      height: 30px;
+    }
+
+    :global(.baadsfhjsdbfdhs pre) {
+      margin: 0 !important;
+    }
   }
 </style>

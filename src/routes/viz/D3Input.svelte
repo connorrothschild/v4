@@ -1,12 +1,16 @@
 <script>
   export let value;
-  export let MAX_VALUE;
+  export let onTop;
 
   import { fade } from "svelte/transition";
 </script>
 
-<pre class="input d3 language-js has-filename" data-line="" tabindex="0"><div
-    class="filename-container d3-file"><span class="filename">D3 input</span
+<pre
+  style:z-index={onTop ? 1 : 0}
+  class="input d3 language-js has-filename"
+  data-line=""
+  tabindex="0"><div class="filename-container d3-file"><span class="filename"
+      >D3 input</span
     ></div><code class="s-FmIZz_qVofT0 language-js"
     >{#if value >= 0}<span in:fade={{ delay: 1000 }} out:fade
         ><span class="token keyword">const</span> <span class="token">svg</span

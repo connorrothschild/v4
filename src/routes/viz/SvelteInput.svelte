@@ -1,11 +1,12 @@
 <script>
   export let value;
-  export let MAX_VALUE;
+  export let onTop;
 
   import { fade } from "svelte/transition";
 </script>
 
 <pre
+  style:z-index={onTop ? 1 : 0}
   class="input svelte language-html has-filename"
   data-line=""
   tabindex="0"><div class="filename-container svelte-file"><span

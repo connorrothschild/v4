@@ -9,6 +9,7 @@
   let value;
 
   import { fade, fly } from "svelte/transition";
+  import { onMount } from "svelte";
 
   $: scrollTo = (value) => {
     document.getElementById("steps-container").scrollTo({
@@ -84,16 +85,36 @@
     return dynamicHeight;
   };
 
-  const handleScroll = () => {
+  const handleScroll = (e) => {
     // window.addEventListener("scroll", () => {
-    const offsetTop = -sectionRef.offsetTop;
-    translateX = offsetTop;
+    //   const offsetTop = -sectionRef.offsetTop;
+    //   translateX = offsetTop;
     // });
   };
+
+  onMount(() => {
+    window.addEventListener("scroll", () => {
+      if (!sectionRef) return;
+      const offsetTop = -sectionRef.offsetTop;
+      translateX = offsetTop;
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        const offsetTop = -sectionRef.offsetTop;
+        translateX = offsetTop;
+      });
+    };
+  });
+
+  let currentInput = "svelte";
 </script>
 
 <svelte:window on:resize={() => (windowWidth = window.innerWidth)} />
 <!-- <section class="asdjfdsfansdjksd" on:mousewheel={handleScroll}> -->
+<!-- on:touchmove={handleTouchmove}
+  on:touchstart={handleTouchmove}
+  on:touchend={handleTouchmove} -->
 <section
   class="asdjfdsfansdjksd"
   on:wheel={handleScroll}
@@ -266,8 +287,16 @@ svg
           {/if}
         </div>
 
-        <D3Input {value} {MAX_VALUE} />
-        <SvelteInput {value} {MAX_VALUE} />
+        <D3Input {value} onTop={currentInput === "d3"} />
+        <SvelteInput {value} onTop={currentInput === "svelte"} />
+
+        <button
+          class="switch-on-top"
+          on:click={() => {
+            currentInput = currentInput === "d3" ? "svelte" : "d3";
+          }}
+          >{currentInput === "d3" ? "Switch to Svelte" : "Switch to D3"}</button
+        >
       </div>
 
       <!-- BEGIN OUTPUT -->
@@ -418,20 +447,26 @@ svg
     :global(.asdjfdsfansdjksd .input.d3) {
       left: 0;
       width: 100%;
-      height: 49.5%;
+      height: 100%;
     }
+
     :global(.asdjfdsfansdjksd .input.svelte) {
       left: 0;
-      height: 49.5%;
-      top: 50.5%;
       width: 100%;
+      height: 100%;
     }
+
     .step {
       width: 97.5%;
     }
     :global(.asdjfdsfansdjksd .step p) {
       font-size: 1rem;
     }
+
+    /* :global(.asdjfdsfansdjksd .input code) {
+      font-size: 0.6rem;
+      line-height: 1 !important;
+    } */
   }
 
   :global(.step-content pre[class*="language-"]:last-child) {
@@ -569,11 +604,35 @@ svg
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    z-index: 99;
   }
-  @media screen and (max-width: 868px) {
+  /* @media screen and (min-width: 868px) {
     .sticky-boi {
       top: var(--nav-height);
       height: calc(97.5vh - var(--nav-height));
+    }
+  } */
+
+  .switch-on-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    z-index: 100;
+  }
+
+  @media screen and (min-width: 868px) {
+    .switch-on-top {
+      display: none;
     }
   }
 </style>
