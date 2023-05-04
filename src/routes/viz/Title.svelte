@@ -13,6 +13,8 @@
     damping: 0.95,
   });
 
+  let yOffsetFromMouse = 0;
+
   let maxX = 50;
   let maxY = 50;
   const handleMousemove = function (e) {
@@ -21,13 +23,35 @@
 
     $translateX = e.clientX / maxX;
     $translateY = e.clientY / maxY;
+    // yOffsetFromMouse = e.clientY / maxY;
   };
+
+  let sectionHeight;
+  let scrollPos;
+
+  // $: percentOfTotalScrolled = scrollPos / sectionHeight;
+  // $: yOffsetFromScroll = percentOfTotalScrolled * -100;
+
+  // $: yOffsetFromScroll,
+  //   yOffsetFromMouse,
+  //   ($translateY =
+  //     Math.abs(yOffsetFromScroll) > 0 ? yOffsetFromScroll : yOffsetFromMouse);
 </script>
 
-<div class="container" on:mousemove={handleMousemove}>
+<svelte:window bind:scrollY={scrollPos} />
+<div
+  class="container"
+  on:mousemove={handleMousemove}
+  bind:clientHeight={sectionHeight}
+>
   <div class="bg" />
-  <div class="card">
-    <h1 style:transform={`translate(${$translateX}px, ${$translateY}px`}>
+  <div
+    class="card"
+    style:transform={`translate(${$translateX}px, ${$translateY}px`}
+  >
+    <h1
+      style:transform={`translate(${$translateX / 3}px, ${$translateY / 3}px`}
+    >
       <!-- <slot />
     <span class="shadow" style:top={`${shadowY}px`} style:left={`${shadowX}px`}
       ><slot /></span
@@ -66,11 +90,18 @@
     left: 0;
     width: 100%;
     height: 100%;
+    background: var(--primary-color);
+    /* background: linear-gradient(
+      90deg,
+      rgba(var(--accent-color-rgb), 0.2) -50%,
+      rgba(var(--primary-color-rgb), 1)
+    ); */
+    /* background: rgba(var(--accent-color-rgb), 0.2); 
     background: linear-gradient(
       45deg,
       rgba(var(--accent-color-rgb), 0.2),
       rgba(var(--accent-color-rgb), 0.1)
-    );
+    ); */
     z-index: 1;
   }
 
@@ -82,25 +113,36 @@
     font-family: Satoshi;
     font-size: 13vw;
     font-weight: 900;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
     pointer-events: none;
     line-height: 0.9;
+    color: var(--primary-color) !important;
   }
 
   .card {
-    background: black;
+    /* background: black;
     background: linear-gradient(
       to bottom right,
       rgba(0, 0, 0, 0.5) -50%,
       rgba(0, 0, 0, 1) 150%
+    ); */
+    background: var(--text-color);
+    background: linear-gradient(
+      to bottom right,
+      rgba(var(--text-color-rgb), 1) -50%,
+      rgba(var(--primary-color-rgb), 1) 150%
     );
+    backdrop-filter: blur(1px);
+
     max-width: 1220px;
-    margin-right: auto;
-    margin-left: 2.5vw;
+    width: 95%;
+    margin: auto;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
     text-align: right;
+
+    z-index: 2;
   }
 
   .how-to {

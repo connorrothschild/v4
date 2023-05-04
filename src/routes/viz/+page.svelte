@@ -10,18 +10,31 @@
   import InteractiveModuleOverview from "./InteractiveModuleOverview.svelte";
 
   let userSelectedFramework; // = "Svelte";
+
+  // FIXME: On page load, remove .jukebox and .circle-to-top
+  import { onMount } from "svelte";
+  onMount(() => {
+    if (!document) return;
+    // setTimeout so that the fade in transitions can finish before selecting
+    setTimeout(() => {
+      const jukebox = document.querySelector(".jukebox");
+      const circleToTop = document.querySelector(".circle-to-top");
+      if (jukebox) jukebox.remove();
+      if (circleToTop) circleToTop.remove();
+    }, 100);
+  });
 </script>
 
-<Nav />
 <main>
   <Title>How to &quot;learn D3&quot; in 2023</Title>
   <div class="scrollover-container">
     <div class="viz-article-body">
       <p>
         This is my extended answer to a question I get asked all the time: <em
-          >how do I learn D3?</em
-        > After writing summarized variations of this blog post over and over again,
-        I figured it best belongs in one standalone resource.
+          style="margin-right: 6px;"
+          >how do I learn D3?
+        </em>I've written many responses, so I figured they best belong in one
+        standalone resource.
       </p>
       <blockquote>
         <p>
@@ -100,7 +113,7 @@
 
       <Info color="rgb(45, 45, 45)">
         <p
-          style="color: white; font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
+          style="color: var(--text-color); font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
         >
           Some JavaScript frameworks you might have heard of inlude React, Vue,
           Angular, or Svelte.
@@ -135,12 +148,11 @@
     </blockquote> -->
 
       <p>
-        This conversation started when Elijah Meeks wrote <a
+        This conversation isn't new; it started in 2018 with Elijah Meeks' <a
           href="https://medium.com/@Elijah_Meeks/d3-is-not-a-data-visualization-library-67ba549e8520"
           target="_blank"
           rel="noopener noreferrer">D3 is not a Data Visualization Library</a
-        >
-        in 2018. In that post, he wrote:
+        >:
       </p>
 
       <blockquote>
@@ -187,16 +199,17 @@
       </p>
 
       <p>
-        This blog post is my contribution to the conversation, with the ultimate
-        goal of reframing the conversation around learning interactive data
-        visualization.
+        And despite the framework-first approach becoming increasingly
+        prevalent, there aren't a lot of resources to learn about what it
+        exactly is, and how to get started. This post hopes to add to and
+        reframe the conversation around learning interactive data visualization.
       </p>
 
       <SectionTitle number="2">Why is D3 hard to learn?</SectionTitle>
       <p>
         We can begin with the perennial question: why is D3 so hard to learn? I
         think people who &quot;try to learn D3&quot; usually run into problems
-        because they think that D3 is the single tool they need to learn; in
+        because they think that D3 is the single tool they need to master; in
         reality, &quot;learning D3&quot; is learning <strong
           >an entire toolkit</strong
         > of tools on the web, including (but not limited to) HTML, CSS, JavaScript,
@@ -237,9 +250,9 @@
       <p>
         Instead of overusing D3, we should adopt a framework-first approach.
         Rather than using D3 for all parts of visualization on the web, we use
-        it for what it's best suited for (data manipulation, SVG path
-        construction, etc.) and use the web's native tools for everything else
-        (authoring and manipulating the document).
+        it for what it's best suited for (data manipulation, scaling data, SVG
+        path construction, etc.) and use the web's native tools for everything
+        else (authoring and manipulating the document).
       </p>
 
       <p>
@@ -405,7 +418,7 @@ svg
 
       <Info color="rgb(45, 45, 45)">
         <p
-          style="color: white; font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
+          style="color: var(--text-color); font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
         >
           This an important lesson many beginners forget: whether you're using
           D3 or some framework, your output will usually be SVG. (Unless you're
@@ -415,10 +428,11 @@ svg
       </Info>
 
       <p>
-        You might notice that steps 1 through 3 are identical between the two
-        apps. That's because, in both instances, the basic setup is the same: we
-        create some data, get the dimensions of our chart, and then use D3 (in
-        particular, <code>d3-scale</code> to map raw data to our dimensions.
+        You might notice that, in both examples, steps 1 through 3 are
+        identical. That's because the basic setup is the same: we create some
+        data, get the dimensions of our chart, and then use D3 (in particular, <code
+          >d3-scale</code
+        >) to map raw data to our dimensions.
       </p>
       <p>
         The examples diverge in steps 4 and 5, which are our DOM manipulation
@@ -430,20 +444,21 @@ svg
       <ScrollySection />
 
       <p>
+        The Svelte code above is &ldquo;declarative programming&rdquo;:
         <strong
-          >The Svelte code above is &ldquo;declarative programming&rdquo;:
-          you're declaratively authoring the DOM, rather than imperatively
+          >you're declaratively authoring the DOM, rather than imperatively
           giving commands as you would in D3.</strong
-        > Rather than writing code that says, &ldquo;select this element, and then
+        >
+        Rather than writing code that says, &ldquo;select this element, and then
         append this other element to it,&rdquo; You're writing those elements directly.
-        And rather than writing code that says, &ldquo;select this element, and then
-        set this attribute on it,&rdquo; you're setting those attributes directly.
+        <!-- And rather than writing code that says, &ldquo;select this element, and then
+        set this attribute on it,&rdquo; you're setting those attributes directly. -->
       </p>
 
       <p>
         In a <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "framework-first"}
-        </ToggleableFramework> application, a student will be able to tell if a bug
+        </ToggleableFramework> application, beginners will be able to tell if a bug
         lies in their markup by
         <strong>directly changing their markup</strong>, whereas a developer
         working in a pure-D3 application might not know (without doing some
@@ -467,20 +482,14 @@ svg
             ? `${userSelectedFramework}-first`
             : "framework-first"}
         </ToggleableFramework> approach, we still make great use of D3, because D3
-        is great. D3 provides convenient functions for array manipulation, scaling
+        is great! D3 provides convenient functions for array manipulation, scaling
         of data, and shape and path manipulation. But when D3 isn&rsquo;t needed
         and
         {userSelectedFramework || "a framework"} would be better suited (for example,
         using {userSelectedFramework || "Svelte"} to write your markup directly,
         rather than using a D3 selection method), select the right tool for the job.
       </p>
-      <p>
-        And so in some ways, this new framework-first approach forces us to use
-        D3 more intentionally. Rather than acting as a hammer searching for
-        nails <em>(how can I solve this problem using D3?)</em>, we only reach
-        for the hammer when we need it
-        <em>(would D3 be best-suited to solve this problem, and how so?)</em>.
-      </p>
+
       <h3 id="d3-for-the-data-frameworks-for-the-dom">
         D3 for the data, frameworks for the DOM
       </h3>
@@ -552,24 +561,17 @@ svg
       </p>
 
       <p>
-        Matthias Stahl has put it this way (he has a better way with words than
-        myself):
-        <strong
-          >use D3 for the math and the paths. And a framework for the rest.
-        </strong>
-      </p>
-
-      <p>
-        To bring it home, here's an overview of each of the modules currently
-        present in D3, organized by their usefulness in a framework-first
-        workflow:
+        And so in this new approach, not all D3 modules are created equal.
+        Here's an overview of each of the modules currently present in D3,
+        organized by their function and usefulness in a framework-first workflow
+        (in my opinion):
       </p>
 
       <InteractiveModuleOverview />
 
       <p
         class="note"
-        style="font-size: 1rem; font-style:italic; font-family: 'GT'; text-align: right; line-height: 1.4; max-width: 768px; margin-left: auto; margin-right: 0;"
+        style="font-size: 1rem; font-style:italic; font-family: 'GT'; text-align: right; line-height: 1.4; max-width: 738px; margin-left: auto; margin-right: 0; margin-bottom: 2rem;"
       >
         The categorization of functions is borrowed, with permission, from
         Amelia Wattenberger's great
@@ -580,6 +582,30 @@ svg
         >
           blog post.
         </a>
+        You can contribute to our collective understanding of D3 by filling out
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd6CW443ipTltqEKSZflZwtbQdnmu5YK2Guh00W7_ruMSdC0Q/viewform?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          this survey from Sebastian Lammers.</a
+        >
+      </p>
+
+      <p>
+        One simple phrase that encapsulates the above, from Matthias Stahl (who
+        has a better way with words than myself):
+        <strong
+          >use D3 for the math and the paths. And a framework for the rest.
+        </strong>
+      </p>
+
+      <p>
+        This new framework-first approach forces us to use D3 more
+        intentionally. Rather than acting as a hammer searching for nails <em
+          >(how can I solve this problem using D3?)</em
+        >, we only reach for the hammer when we need it
+        <em>(would D3 be best-suited to solve this problem, and how so?)</em>.
       </p>
 
       <!-- FIXME: Add interactive section showcasing all D3 modules and 1) their purpose, 2) how often to use in a dataviz project -->
@@ -592,7 +618,8 @@ svg
           rel="noopener noreferrer"
         >
           reach out</a
-        >. If I have convinced you, here&rsquo;s how to actually get started
+        >. Otherwise, here&rsquo;s how to actually get started
+        <s>learning D3</s>
         making interactive data visualizations in 2023.
       </p>
       <h3 id="1-learn-the-fundamentals-of-the-web">
@@ -633,12 +660,11 @@ svg
         </li>
       </ul>
       <p>
-        But don&rsquo;t commit too heavily to these tutorials and <em
-          >mastering</em
-        > these tools. In step 2, you&rsquo;ll find a JavaScript framework which
-        makes authoring complex applications more simple. It&rsquo;s important you
-        understand the main concepts of HTML, CSS, and JavaScript, but you&rsquo;ll
-        continue to learn them as you dive into a framework.
+        But don&rsquo;t commit too heavily to these tutorials or mastering these
+        tools. In step 2, you&rsquo;ll find a JavaScript framework which makes
+        authoring complex applications more simple. It&rsquo;s important you
+        understand the main concepts of HTML, CSS, and JavaScript, but
+        you&rsquo;ll continue to learn them as you dive into a framework.
       </p>
       <h3 id="2-choose-a-javascript-framework-and-learn-it">
         2. Choose a JavaScript framework, and learn it
@@ -804,7 +830,7 @@ svg
   main {
     width: 100%;
     margin: auto;
-    z-index: 105;
+    z-index: 100;
   }
 
   .scrollover-container {
@@ -926,6 +952,20 @@ svg
     margin-top: 0 !important;
   }
 
+  :global(.viz-article-body .info) {
+    background: var(--primary-color) !important;
+    border: 2px solid whitesmoke;
+    padding: 2rem 1rem;
+    position: relative;
+    width: min(90vw, 1168px);
+    left: calc(50% - min(45vw, 584px));
+    justify-content: center;
+  }
+
+  :global(.viz-article-body .info p) {
+    font-size: 1.5rem !important;
+  }
+
   .filename-container {
     text-align: left;
     width: 100%;
@@ -977,7 +1017,8 @@ svg
     font-size: 1rem;
     width: max-content;
     max-width: 300px;
-    background: black;
+    background: rgba(0, 0, 0, 0.785);
+    backdrop-filter: blur(6px);
     color: white;
     z-index: 104;
   }
