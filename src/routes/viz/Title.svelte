@@ -40,7 +40,7 @@
 
 <svelte:window bind:scrollY={scrollPos} />
 <div
-  class="container"
+  class="title-container"
   on:mousemove={handleMousemove}
   bind:clientHeight={sectionHeight}
 >
@@ -66,7 +66,7 @@
 </div>
 
 <style>
-  .container {
+  .title-container {
     cursor: crosshair;
     position: relative;
     left: calc(-50vw + 50%);
@@ -81,7 +81,7 @@
     /* Scroll over effect */
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 104;
   }
 
   .bg {

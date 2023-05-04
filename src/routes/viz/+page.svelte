@@ -830,7 +830,7 @@ svg
   main {
     width: 100%;
     margin: auto;
-    z-index: 100;
+    z-index: 103;
   }
 
   .scrollover-container {
