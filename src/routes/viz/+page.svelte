@@ -34,7 +34,11 @@
           style="margin-right: 6px;"
           >how do I learn D3?
         </em>I've written many responses, so I figured they best belong in one
-        standalone resource.
+        standalone resource. The answer is simple yet complicated, because most
+        people are asking the wrong question.
+        <!-- What we're actually interested in
+        is <strong>how to learn interactive data visualization</strong>, which is
+        what this blog post will cover. -->
       </p>
       <blockquote>
         <p>
@@ -421,7 +425,7 @@ svg
           style="color: var(--text-color); font-family: Satoshi; font-weight: 300; font-size: 1.3rem; line-height: 1.3;"
         >
           This an important lesson many beginners forget: whether you're using
-          D3 or some framework, your output will usually be SVG. (Unless you're
+          D3 or some framework, your output will just be SVG. (Unless you're
           using <code>canvas</code> or something else.) The question is just how
           you get there.
         </p>
@@ -466,7 +470,7 @@ svg
         chaining, in their SVG syntax, or in some JavaScript function. Of
         course, advanced practitioners will know how to solve these sorts of
         problems. But for those <strong>learning</strong> interactive data visualization,
-        D3 confuses more than it elucidates.
+        D3 confuses more than it clears up.
       </p>
       <p>
         If interactive data visualizations live on the web, they should leverage
@@ -502,12 +506,11 @@ svg
       </p>
       <p>
         But there are obviously other steps in the data visualization process,
-        that occur before we even get to the DOM. For example, we need to 1) <em
-          >import</em
-        >
-        and <em>transform</em> our data, and 2) <em>scale</em> our data to positions
-        on the chart. These steps are still best suited for D3, because D3 is great
-        at array manipulation and scaling.
+        that occur before we even get to the DOM. For example, we need to 1)
+        <em>transform</em>
+        our data and 2) <em>scale</em> that data to positions on the chart. These
+        steps are still best suited for D3, because D3 is great at array manipulation
+        and scaling.
       </p>
       <p>
         A common workflow for a modern interactive visualization might follow
@@ -734,22 +737,15 @@ svg
           this conference talk.</a
         >
       </p>
-      <!-- <ul>
-        <li><a href="">Connor Rothschild (lol)</a></li>
-        <li><a href="">Matthias Stahl</a></li>
-        <li>?</li>
-        <li>?</li>
-      </ul> -->
-      <!-- {/if}
-      </p> -->
       <h3 id="3-learn-svg">3. Learn SVG</h3>
       <p>
-        In every D3 project, you're giving JavaScript instructions to write SVG
-        (or whatever your output is) to the DOM. And in your framework-first
-        approach, you will write the DOM directly. (The difference, as we've
-        already went over: where D3 would require you to write <code
-          >d3.select("body").append("svg")</code
-        >, <ToggleableFramework bind:userSelectedFramework>
+        In every &ldquo;D3&rdquo; project, you're giving JavaScript instructions
+        to write SVG (or whatever your output is) to the DOM. And in your
+        framework-first approach, you will write to the DOM directly. (The
+        difference, as we've already went over: where D3 would require you to
+        write <code>d3.select("body").append("svg")</code>, <ToggleableFramework
+          bind:userSelectedFramework
+        >
           {userSelectedFramework || "a framework"}
         </ToggleableFramework> enables you to write
         <code>&lt;svg /&gt;</code>; both will create the output,
@@ -807,19 +803,38 @@ svg
             "some JavaScript framework"}</ToggleableFramework
         >. Having learned the fundamentals of the web, you should have a good
         handle on debugging separate parts of your application, and having
-        learned the ins and outs of your
+        learned the ins and outs of
         <ToggleableFramework bind:userSelectedFramework>
           {userSelectedFramework || "your JavaScript framework"}
         </ToggleableFramework>, you should know how to embed data inline within
-        your markup. From there, it&rsquo;s easy.
+        your markup.
+      </p>
+      <h3 id="5-learn-d3-in-a-limited-capacity">
+        5. Learn D3 when you need to
+      </h3>
+      <p>
+        In your journey, you'll notice there are a few problems that can't be
+        solved by your framework of choice. This may be the case if you are
+        creating a complex and specific type of visualization, like a force
+        diagram, chord diagram, or sankey diagram (all of which have D3
+        plugins). Or, you may need to use D3 for routine tasks, like scaling
+        data or manipulating arrays. We've already reviewed above which modules
+        would be best to learn first.
+      </p>
+
+      <p>
+        And so in this new paradigm, we reverse the order of our learning
+        roadmap: rather than learning D3 and then tackling a complex project, we
+        become familiar with the web, then our output language (SVG), and when
+        needed, we reach into the D3 toolbox.
       </p>
       <div>
         <p
           class="note"
           style="font-size: 1rem; margin-top: 3rem; font-style:italic; font-family: 'GT'; text-align: right; line-height: 1.4; max-width: 518px; margin-left: auto; margin-right: 0;"
         >
-          Thanks to Javier García Fernández, Amit Grinson, and Sebastian Lammers
-          for reviewing and giving feedback on this article.
+          Thanks to Javier García Fernández, Amit Grinson, Matthias Stahl, and
+          Sebastian Lammers for reviewing and giving feedback on this article.
         </p>
       </div>
     </div>
@@ -871,12 +886,7 @@ svg
     font-size: 1.35rem;
   }
 
-  h1,
-  h2,
   h3,
-  h4,
-  h5,
-  h6,
   p,
   blockquote,
   ul,
@@ -890,15 +900,6 @@ svg
   strong {
     font-weight: 600;
     color: black;
-  }
-
-  .title-container {
-    position: relative;
-    left: calc(-50vw + 50%);
-    width: 100vw;
-    padding: 2rem 0;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
   }
 
   p:not(:last-child) {
@@ -1034,6 +1035,19 @@ svg
   blockquote p {
     font-family: Satoshi;
     font-weight: 300;
+  }
+
+  :global(.baadsfhjsdbfdhs pre) {
+    border-radius: 0 0 6px 6px !important;
+    border-top: none !important;
+  }
+
+  :global(.baadsfhjsdbfdhs pre.language-js) {
+    border: 1px solid #004e82;
+  }
+
+  :global(.baadsfhjsdbfdhs pre.language-svelte) {
+    border: 1px solid #ff3e00;
   }
 
   @media screen and (max-width: 868px) {

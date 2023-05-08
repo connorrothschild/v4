@@ -1,6 +1,7 @@
 <script>
   export let value;
   export let onTop;
+  export let MAX_VALUE;
 
   import { fade } from "svelte/transition";
 </script>
@@ -12,7 +13,10 @@
   tabindex="0"><div class="filename-container d3-file"><span class="filename"
       >D3 input</span
     ></div><code class="s-FmIZz_qVofT0 language-js"
-    >{#if value >= 0}<span in:fade={{ delay: 1000 }} out:fade
+    >{#if value >= 0}<span
+        in:fade={{ delay: 1000 }}
+        out:fade
+        class:inactive={value !== MAX_VALUE && value !== 0}
         ><span class="token keyword">const</span> <span class="token">svg</span
         > <span class="token operator">=</span> <span class="token">d3</span
         ><span class="token punctuation">.</span><span class="token function"
@@ -25,7 +29,10 @@
         ><span class="token punctuation">(</span><span class="token string"
           >'svg'</span
         ><span class="token punctuation">)</span></span
-      >{/if}{#if value >= 1}<span in:fade={{ delay: 1000 }} out:fade>   
+      >{/if}{#if value >= 1}<span
+        in:fade={{ delay: 1000 }}
+        out:fade
+        class:inactive={value !== MAX_VALUE && value !== 1}>   
     <span class="token punctuation">.</span><span class="token function"
           >attr</span
         ><span class="token punctuation">(</span><span class="token string"
@@ -43,7 +50,10 @@
           >;</span
         >
             </span>{/if}
-{#if value >= 2}<span in:fade={{ delay: 1000 }} out:fade
+{#if value >= 2}<span
+        in:fade={{ delay: 1000 }}
+        out:fade
+        class:inactive={value !== MAX_VALUE && value !== 2}
         >svg
   <span class="token punctuation">.</span><span class="token function"
           >selectAll</span
@@ -61,7 +71,10 @@
           >"circle"</span
         ><span class="token punctuation">)</span></span
       >{/if}
-  {#if value >= 3}<span in:fade={{ delay: 1000 }} out:fade
+  {#if value >= 3}<span
+        in:fade={{ delay: 1000 }}
+        out:fade
+        class:inactive={value !== MAX_VALUE && value !== 3}
         ><span class="token punctuation">.</span><span class="token function"
           >attr</span
         ><span class="token punctuation">(</span><span class="token string"
@@ -99,3 +112,13 @@
         >r<span class="token punctuation">)</span></span
       >{/if}
 </code></pre>
+
+<style>
+  .input span.inactive {
+    opacity: 0.4;
+  }
+
+  .input span {
+    transition: opacity 250ms;
+  }
+</style>

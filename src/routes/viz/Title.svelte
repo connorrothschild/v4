@@ -107,9 +107,6 @@
 
   h1 {
     position: relative;
-  }
-
-  h1 {
     font-family: Satoshi;
     font-size: 13vw;
     font-weight: 900;
@@ -169,30 +166,5 @@
     .in-2023 {
       font-size: 290px;
     }
-  }
-
-  .shadow {
-    position: absolute;
-    z-index: 100;
-    mix-blend-mode: color-burn;
-    pointer-events: none;
-  }
-
-  h2 {
-    padding-right: 1rem;
-    font-weight: 200;
-    text-align: right;
-    margin-top: 2rem;
-    font-size: 4rem;
-  }
-
-  h3 {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    font-size: 2rem;
-    color: white;
   }
 </style>

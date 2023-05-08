@@ -7,7 +7,7 @@
   import { slide } from "svelte/transition";
 </script>
 
-<span><slot /></span>
+<span style="display: inline-block;"><slot /></span>
 
 <!-- <div>
   <span

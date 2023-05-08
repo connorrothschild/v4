@@ -184,7 +184,7 @@
           <div class="step-content">
             <p>
               Once our SVG element is created, we'll want to render some
-              circles. In <span class="label d3">D3</span>, we'll use three
+              circles. In <span class="label d3">D3</span>, we'd use three
               methods—<code>selectAll()</code>,
               <code>data()</code>, and <code>join()</code>—to bind data to our
               selection.
@@ -287,8 +287,8 @@ svg
           {/if}
         </div>
 
-        <D3Input {value} onTop={currentInput === "d3"} />
-        <SvelteInput {value} onTop={currentInput === "svelte"} />
+        <D3Input {value} onTop={currentInput === "d3"} {MAX_VALUE} />
+        <SvelteInput {value} onTop={currentInput === "svelte"} {MAX_VALUE} />
 
         <button
           class="switch-on-top"
@@ -430,7 +430,7 @@ svg
     position: absolute;
     top: 0;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(10px);
     border: none;
   }
