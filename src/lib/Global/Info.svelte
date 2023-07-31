@@ -1,7 +1,8 @@
 <script>
+  export let color = '';
 </script>
 
-<div class="info">
+<div class="info" style="background: {color}">
   <div class="text">
     <p>
       <slot />

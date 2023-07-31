@@ -244,10 +244,10 @@ By using Svelte's [reactive declarations](https://svelte.dev/tutorial/reactive-d
 
 ```
 <script>
-import  windowWidth from "../../stores/store.js";
-import  scaleLinear from 'd3-scale';
+import { windowWidth } from "$stores/store.js";
+import { scaleLinear } from 'd3-scale';
 
-$: xScale = scaleLinear
+$: xScale = scaleLinear()
             .domain(data.map(d => d.value))
             .range([0, $windowWidth])
 </script>

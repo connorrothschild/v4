@@ -15,7 +15,7 @@
   <div
     aria-hidden="true"
     transition:fly={{ y: 50 }}
-    class="circle {$menuExpanded ? 'invisible' : ''}"
+    class="circle {$menuExpanded ? 'invisible' : ''} circle-to-top"
     sveltekit:prefetch
     on:click={() => {
       window.scrollTo(0, 0);
