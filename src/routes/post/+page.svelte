@@ -44,19 +44,35 @@
     classes="page-overline transition-content centered"
   />
   <h1 class="page-title transition-title overflow-hidden">Writing</h1>
+  <!-- Viz article at top -->
+  <div style:margin-bottom="8px">
+    <BlogSection
+      post={{
+        title: "How To Learn D3 in 2023",
+        description:
+          "The complete roadmap for interactive data visualization in 2023.",
+        date: "2023-08-01",
+        tags: ["D3", "Svelte"],
+        featured: true,
+      }}
+      slug={"/viz"}
+      bind:anyHovered
+      big={true}
+    />
+  </div>
   <div class="transition-content posts-grid">
     {#each filteredPosts as post, index}
-    <div>
-      <BlogSection
-        post={post.metadata}
-        slug={post.path
-          .replace(/\.[^/.]+$/, "")
-          .replace("./", "/")
-          .replace("+page", "")}
-        {index}
-        bind:anyHovered
-      />
-        </div>
+      <div>
+        <BlogSection
+          post={post.metadata}
+          slug={post.path
+            .replace(/\.[^/.]+$/, "")
+            .replace("./", "/")
+            .replace("+page", "")}
+          {index}
+          bind:anyHovered
+        />
+      </div>
     {/each}
   </div>
   <div>

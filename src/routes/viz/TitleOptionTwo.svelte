@@ -36,6 +36,12 @@
   //   yOffsetFromMouse,
   //   ($translateY =
   //     Math.abs(yOffsetFromScroll) > 0 ? yOffsetFromScroll : yOffsetFromMouse);
+
+  import { onMount } from "svelte";
+  let hasMounted = false;
+  onMount(() => {
+    hasMounted = true;
+  });
 </script>
 
 <svelte:window bind:scrollY={scrollPos} />
@@ -51,7 +57,8 @@
     style:opacity={1 - scrollPos / sectionHeight}
   >
     <h1
-      style:transform={`translate(${$translateX / 3}px, ${$translateY / 3}px`}
+      style:transform={`translate(${$translateX / 2.5}px, ${$translateY / 3}px`}
+      style:opacity={hasMounted ? 1 : 0}
     >
       <!-- <slot />
     <span class="shadow" style:top={`${shadowY}px`} style:left={`${shadowX}px`}
@@ -115,7 +122,9 @@
     text-transform: uppercase;
     pointer-events: none;
     line-height: 0.9;
-    color: var(--primary-color) !important;
+    opacity: 0;
+    transition: opacity 1000ms ease 300ms;
+    /* color: var(--primary-color) !important; */
   }
 
   .card {
@@ -125,12 +134,12 @@
       rgba(0, 0, 0, 0.5) -50%,
       rgba(0, 0, 0, 1) 150%
     ); */
-    background: var(--text-color);
+    /* background: var(--text-color);
     background: linear-gradient(
       to bottom right,
       rgba(var(--text-color-rgb), 1) -50%,
       rgba(var(--primary-color-rgb), 1) 150%
-    );
+    ); */
     backdrop-filter: blur(1px);
 
     max-width: 1220px;
@@ -149,6 +158,7 @@
 
   .learn-d3 {
     font-size: 15vw;
+    color: var(--accent-color);
   }
 
   .in-2023 {
