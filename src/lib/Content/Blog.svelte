@@ -3,6 +3,7 @@
   export let slug;
   export let anyHovered;
   export let index;
+  export let big = false;
 
   import { scaleLinear } from "d3-scale";
   import { onMount } from "svelte";
@@ -92,6 +93,7 @@
 <TransitionInView>
   <a
     class="perspective-container no-underline"
+    class:big
     style="perspective: {cardWidth}px"
     on:mouseover={() => {
       anyHovered = true;
@@ -289,5 +291,21 @@
     .post-tag {
       font-size: 0.75rem;
     }
+  }
+
+  .big,
+  .big .post-tags {
+    text-align: center;
+  }
+
+  .big .post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .big .post-description {
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
   }
 </style>

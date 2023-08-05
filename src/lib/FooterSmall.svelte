@@ -16,7 +16,7 @@
       <!-- <h2 class="thanks">Thanks for visiting the personal site of</h2> -->
       <h1 class="name">Thanks for visiting <span class="wave">👋</span></h1>
       <h2 class="copyright">
-        © Connor Rothschild / 2022 / All rights reserved
+        © Connor Rothschild / 2023 / All rights reserved
       </h2>
     </div>
     <div class="right">
