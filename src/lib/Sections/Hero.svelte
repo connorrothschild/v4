@@ -65,13 +65,13 @@
     <h1 class="overline begin-invisible" class:transitioned>Hi, I'm</h1>
     <div class="title">
       <h1 class="connor begin-invisible gradient-accented" class:transitioned>
-        Connor
+        Jacob
       </h1>
       <h1
         class="rothschild begin-invisible gradient-accented"
         class:transitioned
       >
-        Rothschild
+        Werbin
       </h1>
     </div>
     <h2 class="subtitle begin-invisible" class:transitioned>
