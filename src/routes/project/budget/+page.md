@@ -1,6 +1,7 @@
 ---
 layout: project
 title: The Houston Budget Tool
+archived: true
 # description: A visual, virtual tour of every piece in The Joy of Painting.
 # date: "2021-03-22"
 # audience: "The world!"
