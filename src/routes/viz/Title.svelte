@@ -144,15 +144,15 @@
   }
 
   .how-to {
-    font-size: 21vw;
+    font-size: 20vw;
   }
 
   .learn-d3 {
-    font-size: 15vw;
+    font-size: 14.5vw;
   }
 
   .in-2023 {
-    font-size: 22.5vw;
+    font-size: 21vw;
   }
 
   @media screen and (min-width: 1220px) {
