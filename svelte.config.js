@@ -11,11 +11,12 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
   kit: {
     adapter: adapter({
-      // pages: "build/",
-      fallback: true,
+      fallback: "404.html",
+      pages: "build/",
+      // fallback: true,
     }),
     paths: {
-      base: process.env.NODE_ENV === "production" ? "/v4" : "",
+      base: process.env.NODE_ENV === "production" ? "/v4" : "/v4",
     },
   },
 };
