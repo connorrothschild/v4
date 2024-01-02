@@ -19,7 +19,9 @@
   let videos = [];
 
   function preload(i) {
-    let videoUrl = $isHEVC ? `./v4/videos/${i}.mov` : `./v4/videos/${i}.webm`;
+    let videoUrl = $isHEVC
+      ? `https://connorrothschild.github.io/v4/videos/${i}.mov`
+      : `https://connorrothschild.github.io/v4/videos/${i}.webm`;
     let req = fetch(videoUrl).then((response) => response.blob());
 
     req.then((blob) => {
