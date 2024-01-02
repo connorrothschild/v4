@@ -382,7 +382,7 @@ We could extend upon our chart in a few ways. The logic that we used to tween x 
 
 And in visuals other than scatterplots, we could use scroll-driven interaction to tell a more dynamic story, such as linking an interactive map's viewport to the user's scroll position, as we see in this [article](https://www.ons.gov.uk/visualisations/dvc1371/#/E07000223) from the UK's Office of National Statistics:
 
-<Image src="/images/post/svelte-scrollytelling/map.gif" alt="A map that zooms out on scroll to show new datapoints" />
+<Image src="/v4/images/post/svelte-scrollytelling/map.gif" alt="A map that zooms out on scroll to show new datapoints" />
 
 ## A final, polished example
 

@@ -57,7 +57,7 @@ The table below presents cumulative university-affiliated COVID cases,
 broken down by college (from the [New York
 Times](https://github.com/nytimes/covid-19-data/tree/master/colleges)):
 
-<TableHandler src="/images/post/covid-on-campus/table1.png" alt="A table showcasing universities that have the greatest number of COVID-19 cases. University of Georgia leads the pack at 3888 cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
+<TableHandler src="/v4/images/post/covid-on-campus/table1.png" alt="A table showcasing universities that have the greatest number of COVID-19 cases. University of Georgia leads the pack at 3888 cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
 
 In addition to the criticism leveled against university administrators
 for jeopardizing the health and safety of their _students_, to what
@@ -78,7 +78,7 @@ problems much larger than students throwing fraternity parties.
 Below, you can explore your county’s case count relative to its
 university-affiliated case counts.
 
-<TableHandler src="/images/post/covid-on-campus/table2.png" alt="A table showcasing counties that have the greatest number of COVID-19 cases attributable to colleges. Pickens, South Carolina is expanded, showcasing two universities which account for 105% of the county's total cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
+<TableHandler src="/v4/images/post/covid-on-campus/table2.png" alt="A table showcasing counties that have the greatest number of COVID-19 cases attributable to colleges. Pickens, South Carolina is expanded, showcasing two universities which account for 105% of the county's total cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
 
 In two counties, Otsego County (New York) and Pickens County (South
 Carolina), university-affiliated COVID-19 case counts actually _outpace_
@@ -106,13 +106,13 @@ share of cases in the state overall.
 Geographically, the data looks like this (note the x-axis runs from 0 to
 10%):
 
-<Image src="/images/post/covid-on-campus/geofacet_processed.png" alt="A geofaceted map that shows percent of COVID cases attributable to colleges, by US state. Each state ranges between 0 and 10% of total cases attributable to colleges."></Image>
+<Image src="/v4/images/post/covid-on-campus/geofacet_processed.png" alt="A geofaceted map that shows percent of COVID cases attributable to colleges, by US state. Each state ranges between 0 and 10% of total cases attributable to colleges."></Image>
 
 In the table below, you can search for your state and drill down on
 which counties within your state make up the greatest share of COVID-19
 cases.
 
-<TableHandler src="/images/post/covid-on-campus/table3.png" alt="A table showcasing states that have the greatest number of COVID-19 cases attributable to colleges. Wyoming (number 1) is expanded, showcasing three universities which account for 7% of the state's total cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
+<TableHandler src="/v4/images/post/covid-on-campus/table3.png" alt="A table showcasing states that have the greatest number of COVID-19 cases attributable to colleges. Wyoming (number 1) is expanded, showcasing three universities which account for 7% of the state's total cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/" width="80%"></TableHandler>
 
 Thanks for reading. You can find the code that creates the tables and
 graphics for this post [on

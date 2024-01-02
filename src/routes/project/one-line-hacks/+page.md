@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/one-line-hacks/"
   import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/one-line-hacks/" src="/images/project/one-line-hacks/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/one-line-hacks/" src="/v4/images/project/one-line-hacks/header.png" alt="Header"></Image>
 
 
 
@@ -28,5 +28,5 @@ This small site was built with Vue and Tailwind. I use Nuxt and Nuxt Content for
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/one-line-hacks/mac-1.png" alt="Project image for the project 'One Line Hacks'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/one-line-hacks/phone-1.png" alt="Project image for the project 'One Line Hacks'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/one-line-hacks/mac-1.png" alt="Project image for the project 'One Line Hacks'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/one-line-hacks/phone-1.png" alt="Project image for the project 'One Line Hacks'" width="22%"></Image>

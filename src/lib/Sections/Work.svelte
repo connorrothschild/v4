@@ -4,6 +4,7 @@
 
   import JobSection from "$lib/Content/Job.svelte";
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
+  import { base } from "$app/paths";
 
   export let jobs;
 
@@ -23,13 +24,13 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="/experience">See all work experience &#8599;</a
+        href="{base}/experience">See all work experience &#8599;</a
       >
     </div>
     <SectionTitle {intersecting} element="#work-title">
       <h1 id="work-title" class="section-title overflow-hidden">
         Places I’ve
-        <span class="gradient-accented bolded ">worked</span>
+        <span class="gradient-accented bolded">worked</span>
       </h1>
     </SectionTitle>
     <div class="flex">
@@ -56,7 +57,7 @@
               <img
                 loading="lazy"
                 class="job-image"
-                src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
+                src="{base}/images/jobs/{hoveredData.metadata.imageUrl}.svg"
                 alt="Logo for {hoveredData.metadata.name}"
               />
             </h1>

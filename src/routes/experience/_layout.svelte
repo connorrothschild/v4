@@ -10,6 +10,7 @@
   let image = `https://og-image-eight-eta.vercel.app/Connor Rothschild | ${name}.png?subtitle=Some details about my work experience at ${name}.&theme=light&md=true&hasImage=true`;
 
   import IntersectionObserver from "svelte-intersection-observer";
+  import { base } from "$app/paths";
   let element, intersecting;
 </script>
 
@@ -19,12 +20,12 @@
   <IntersectionObserver {element} bind:intersecting>
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="/experience"
+        href="{base}/experience"
         text="Experience"
         classes="page-overline transition-content"
       />
 
-      <h1 class="content-title uppercase transition-title ">
+      <h1 class="content-title uppercase transition-title">
         {name}
         <img
           loading="lazy"
@@ -38,7 +39,11 @@
   <div class="main-content transition-content">
     <div class="content">
       <slot />
-      <BackTo href="/experience" text="Back to all jobs" classes="border-top" />
+      <BackTo
+        href="{base}/experience"
+        text="Back to all jobs"
+        classes="border-top"
+      />
     </div>
   </div>
 </main>

@@ -6,13 +6,14 @@
   let showMore = false;
 
   import { slide } from "svelte/transition";
+  import { base } from "$app/paths";
 </script>
 
 <Transition />
 <Seo title={`About | Connor Rothschild`} />
 <main class="main">
   <BackTo
-    href="/"
+    href={base}
     text="Home"
     classes="page-overline transition-content centered"
   />

@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/state-police-spending/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/state-police-spending/" src="/images/project/state-police-spending/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/state-police-spending/" src="/v4/images/project/state-police-spending/header.png" alt="Header"></Image>
 
 
 
@@ -28,5 +28,5 @@ I used [D3.js](https://d3js.org/) for the minor visualization that accompanies t
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></Image>

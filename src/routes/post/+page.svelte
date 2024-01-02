@@ -26,6 +26,7 @@
     .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date));
 
   import Seo from "$lib/Seo.svelte";
+  import { base } from "$app/paths";
 
   let title = "Blog | Connor Rothschild";
   let description = "Some of my writing.";
@@ -39,7 +40,7 @@
 <Seo {title} {description} {image} />
 <main class="main">
   <BackTo
-    href="/"
+    href={base}
     text="Home"
     classes="page-overline transition-content centered"
   />

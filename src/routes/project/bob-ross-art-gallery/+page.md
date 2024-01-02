@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/bob-ross-art-gallery/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/bob-ross-art-gallery/"  src="/images/project/bob-ross-art-gallery/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/bob-ross-art-gallery/"  src="/v4/images/project/bob-ross-art-gallery/header.png" alt="Header"></Image>
 
 
 
@@ -32,18 +32,18 @@ For the scroll-based interactions, I used Russell Goldenberg's [Scrollama](https
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/iphone-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/v4/images/project/bob-ross-art-gallery/mac-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/iphone-2.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-2.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-2.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/mac-2.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/iphone-3.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="18%"></Image>
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-3.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="58%"></Image>
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/iphone-4.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="18%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-3.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="18%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/mac-3.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="58%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-4.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="18%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-4.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/images/project/bob-ross-art-gallery/mac-5.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/mac-4.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/mac-5.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="48%"></Image>
 
 <!-- # Overview (in my own words!)
 

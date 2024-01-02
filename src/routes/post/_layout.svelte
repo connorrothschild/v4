@@ -15,6 +15,7 @@
   import Seo from "$lib/Seo.svelte";
 
   import IntersectionObserver from "svelte-intersection-observer";
+  import { base } from "$app/paths";
   let element, intersecting;
 </script>
 
@@ -25,7 +26,7 @@
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="/post"
+        href="{base}/post"
         text="Blog"
         classes="page-overline transition-content"
       />
@@ -52,7 +53,11 @@
   <div class="main-content transition-content">
     <div class="content">
       <slot />
-      <BackTo href="/post" text="Back to all posts" classes="border-top" />
+      <BackTo
+        href="{base}/post"
+        text="Back to all posts"
+        classes="border-top"
+      />
     </div>
   </div>
 </main>

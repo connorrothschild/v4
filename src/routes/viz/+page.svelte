@@ -1,4 +1,6 @@
 <script>
+  import { base } from "$app/paths";
+
   import Nav from "$lib/Nav/Nav.svelte";
   import Title from "./Title.svelte";
   import SectionTitle from "./SectionTitle.svelte";
@@ -43,7 +45,7 @@
     <blockquote>
       <p>
         This is an extended version of a previous blog post, &ldquo;<a
-          href="/post/svelte-and-d3"
+          href="{base}/post/svelte-and-d3"
           target="_blank"
           rel="noopener noreferrer"
           style="color: black;"
@@ -91,7 +93,7 @@
     >
       <img
         style:width="100%"
-        src="/images/post/viz/wattenberger.png"
+        src="{base}/images/post/viz/wattenberger.png"
         alt="A circle pack diagram visualizing all D3 modules, by Amelia Wattenberger"
       />
       <a

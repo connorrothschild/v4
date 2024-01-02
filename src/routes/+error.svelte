@@ -1,6 +1,7 @@
 <script>
   import { page } from "$app/stores";
   let showTech = false;
+  console.log($page);
 </script>
 
 <div class="error">

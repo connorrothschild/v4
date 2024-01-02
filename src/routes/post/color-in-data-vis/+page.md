@@ -16,15 +16,15 @@ If our use of color in visualizations follows the [Five Ws (and one H)](https://
 
 For one example, look at this "Color Emotion Guide" from marketing site [TapClicks](https://www.tapclicks.com/resources/post/the-influence-of-color-in-data-visualization/) (one of the top results when you Google "color in data visualization" 🧐).
 
-<Image alt="Color guide that doesn’t make any sense. Random emotions are assigned to different brand colors, with no apparent pattern." src="/images/post/color-in-data-vis/color-emotion-guide-lol.jpg"></Image>
+<Image alt="Color guide that doesn’t make any sense. Random emotions are assigned to different brand colors, with no apparent pattern." src="/v4/images/post/color-in-data-vis/color-emotion-guide-lol.jpg"></Image>
 
 The implicit suggestion here is that we should use color—whenever and however we can—to capture some form of emotion. Not only is this specific categorization rather odd (Monster energy drinks are peaceful, Virgin Mobile embodies "bold excitement", and Harley Davidson motorcycles just scream "cheerful friendliness" 🤩), it leads novice practitioners to believe that color should be used just for the sake of using color.
 
 Examples of gratuitous color use abound.
 
-<Image alt="A pie chart with far too many colors." src="/images/post/color-in-data-vis/bad-color-use-1.jpg" width="29.2%"></Image>
+<Image alt="A pie chart with far too many colors." src="/v4/images/post/color-in-data-vis/bad-color-use-1.jpg" width="29.2%"></Image>
 
-<Image alt="Multiple pie charts, all with poor color usage." src="/images/post/color-in-data-vis/bad-color-use-2.jpg" width="69%"></Image>
+<Image alt="Multiple pie charts, all with poor color usage." src="/v4/images/post/color-in-data-vis/bad-color-use-2.jpg" width="69%"></Image>
 
 These examples illustrate my thesis: **Too often, we ask _how_ we can use color in our visualizations when we should be asking _why_ we are using it.**
 
@@ -36,7 +36,7 @@ Often times, those creating visualizations will argue that they _must_ include a
 
 The reality is, however, that if you need more than a handful of colors in your chart, you can probably present your data in a different way. Take [this example](https://blog.datawrapper.de/colors/) from Datawrapper:
 
-<Image alt="An example of a poor and better visualization. One has many colors sequentially, while the other breaks up each color into its own bar for clarity's sake." src="/images/post/color-in-data-vis/bad-and-better.jpg"></Image>
+<Image alt="An example of a poor and better visualization. One has many colors sequentially, while the other breaks up each color into its own bar for clarity's sake." src="/v4/images/post/color-in-data-vis/bad-and-better.jpg"></Image>
 
 The takeaway? When you emphasize _everything_, you end up emphasizing _nothing_. That's why its important that we stop uncritically asking _how_ we can use color in our charts.
 
@@ -58,31 +58,31 @@ As practitioner Andy Kirk [puts it](https://www.visualisingdata.com/2015/01/make
 
 Here's a quick [example](https://github.com/connorrothschild/bbdata) I made in R a while back:
 
-<Image alt="A barplot showcasing vaccination by county in Texas. All bars are grey except the lowest bar, representing Terry County (78% vaccinated), which is highlighted in a royal blue." src="/images/post/color-in-data-vis/color-emphasized.png"></Image>
+<Image alt="A barplot showcasing vaccination by county in Texas. All bars are grey except the lowest bar, representing Terry County (78% vaccinated), which is highlighted in a royal blue." src="/v4/images/post/color-in-data-vis/color-emphasized.png"></Image>
 
 The point of the visualization is not to show our audience the kindergarten vaccination rate of _every county_ in Texas. It is instead to highlight the lowest rate—Terry County. This visualization leverages the grey fill of every other bar to immediately draw the audiences' eyes to Terry County. Because we used only two colors, we can also highlight text in the subtitle to make the connection even clearer for our audience. Color—if used prudently—makes our visualizations more digestible and more informative.
 
 Now, imagine if I visualized that same data in the following way:
 
-<Image alt="A barplot showcasing vaccination by county in Texas. All bars are grey." src="/images/post/color-in-data-vis/all-grey.jpg"></Image>
+<Image alt="A barplot showcasing vaccination by county in Texas. All bars are grey." src="/v4/images/post/color-in-data-vis/all-grey.jpg"></Image>
 
 Or, even worse:
 
-<Image alt="A barplot showcasing vaccination by county in Texas. All bars are separate colors, with no pattern present." src="/images/post/color-in-data-vis/all-color.jpg"></Image>
+<Image alt="A barplot showcasing vaccination by county in Texas. All bars are separate colors, with no pattern present." src="/v4/images/post/color-in-data-vis/all-color.jpg"></Image>
 
 After seeing those eyesores, aren't you thankful that we used color sparingly in the initial plot?
 
 Perhaps you're interested in a county-by-county overview of 2016 election results. Although you might be tempted to code all counties according to their Trump/Clinton split, that's prettier than it is insightful. What if, instead, we focused on those notable counties which flipped from one party to another between 2012 and 2016? From Kieran Healy's book [Data Visualization](https://socviz.co/refineplots.html#use-color-to-your-advantage):
 
-<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue." src="/images/post/color-in-data-vis/flipping-points-color.jpg" width="80%" centered="true"></Image>
+<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue." src="/v4/images/post/color-in-data-vis/flipping-points-color.jpg" width="80%" centered="true"></Image>
 
 As we can see here, more counties flipped from majority-Democratic in 2012 to majority-Republican in 2016 than vice-versa. Because we're focusing on only a fraction of all of the data points, we can also observe trends: The majority of counties that flipped had a small black population. No county that had over a ~53% black population flipped in either direction (annotation my own):
 
-<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation above 53% black to show that no counties with such a population flipped in either direction." src="/images/post/color-in-data-vis/flipping-points-color-annotate1.jpg" width="80%" centered="true"></Image>
+<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation above 53% black to show that no counties with such a population flipped in either direction." src="/v4/images/post/color-in-data-vis/flipping-points-color-annotate1.jpg" width="80%" centered="true"></Image>
 
 We also notice that flipping direction might be correlated with population size: nearly all of the flipping counties with a log population under 100,000 flipped to Republicans, while a greater proportion of all switching counties flipped toward the Democratic Party if their log population was greater than 100,000.
 
-<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation past population 100,000 to show that more populous counties were more likely to flip Democratic." src="/images/post/color-in-data-vis/flipping-points-color-annotate2.jpg" width="80%" centered="true"></Image>
+<Image alt="A scatterplot where each point represents a county's voting between 2016 and 2020. Highlighted counties 'flipped' between 2016 and 2020, with Republicans highlighted in red and Democrats in blue. There is an annotation past population 100,000 to show that more populous counties were more likely to flip Democratic." src="/v4/images/post/color-in-data-vis/flipping-points-color-annotate2.jpg" width="80%" centered="true"></Image>
 
 Color can, and should, be used to focus on the key parts of your visualization that you want your audience to see. By using color strategically, we can reduce the cognitive load required to understand _what_ a visualization is depicting. [Kalyuga et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183884#pone.0183884.ref008) found that color-coding "ameliorated split-attention effects, resulting in lower perceived difficulty." [Other researchers](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183884#pone.0183884.ref024) have reported reductions in cognitive load when experiment participants were provided color-coding.
 
@@ -92,11 +92,11 @@ The overuse of colors can have the opposite effect. In one [2019 paper](https://
 
 Color does not have to be used in contrast to plain old grey. It can also be used as a tool to showcase a variety of data points all mapped to different colors. The important note is that this usage should be sparing. Given our prior examples, we definitely don't want a plot like this one (from [Chapter 19 of Claus Wilke's _Fundamentals of Data Visualization_](https://serialmentor.com/dataviz/color-pitfalls.html)):
 
-<Image alt="A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded to a separate color, with no pattern." src="/images/post/color-in-data-vis/bad-chart.jpg" width="50%" centered="true"></Image>
+<Image alt="A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded to a separate color, with no pattern." src="/v4/images/post/color-in-data-vis/bad-chart.jpg" width="50%" centered="true"></Image>
 
 A more appropriate alternative may look something like this:
 
-<Image alt="A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded according to its region." src="/images/post/color-in-data-vis/betterchart-1.jpg" width="70%" centered="true"></Image>
+<Image alt="A scatterplot where each point represents a state, and the x and y axis position showcase population vs population growth. Each state is shaded according to its region." src="/v4/images/post/color-in-data-vis/betterchart-1.jpg" width="70%" centered="true"></Image>
 
 This way, the audience can still see general patterns in the data, but they don't have to treat the fill legend like a lookup table! Most ideally, this chart would have some interactivity, so that a user could hover over a point to see its respective data.
 
@@ -106,13 +106,13 @@ Another common use of color for exploratory purposes is showing data progression
 
 These examples are most commonly found in [choropleth maps](https://en.wikipedia.org/wiki/Choropleth_map), where the shade of color in a given state (or county, or region) corresponds to a value of interest. As an example, here's a [choropleth map](https://connorrothschild.github.io/D3.js/map-overdoses/) I created using D3.js, which visualizes opioid-involved overdose deaths in the United States:
 
-<Image alt="A choropleth chart wherein each state is shaded according to its opioid overdose rate." src="/images/post/color-in-data-vis/choropleth-ex.jpg" width="70%" centered="true"></Image>
+<Image alt="A choropleth chart wherein each state is shaded according to its opioid overdose rate." src="/v4/images/post/color-in-data-vis/choropleth-ex.jpg" width="70%" centered="true"></Image>
 
 As we can see from the map, "rust belt" states are suffering from the opioid crisis to a much greater degree than those in western states. Choropleth maps utilize color to show regional variation and illustrate the power of color _shading_ to represent the severity or extent of a given variable.
 
 However, color in this context can also be misused. Data may be mapped according to a categorical color scale, or a rainbow scale which makes it difficult to see progression. This chart from [Claus O. Wilke](https://serialmentor.com/dataviz/color-pitfalls.html) is a good (bad) example:
 
-<Image alt="A map of Texas where each county is shaded according to its proportional white population. The color scale is rainbow, making it difficult to detect relative differences." src="/images/post/color-in-data-vis/map-Texas-rainbow-1.jpg" width="70%" centered="true"></Image>
+<Image alt="A map of Texas where each county is shaded according to its proportional white population. The color scale is rainbow, making it difficult to detect relative differences." src="/v4/images/post/color-in-data-vis/map-Texas-rainbow-1.jpg" width="70%" centered="true"></Image>
 
 This chart is pretty! When rainbow scales are used in the media or elsewhere, it may be because their creator asked "How can I use color to make a pretty picture?" But this use of a non-monotonic color scale means that the relative size of differences between data points are difficult to detect. As an illustration, see how long it takes you to answer this question: using the legend above, what is the percent difference between <span style = "color:#FF6701;">this color </span>and <span style = "color:#3736FF;">this color</span>? (The answer is ~70%.)
 

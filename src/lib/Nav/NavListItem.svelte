@@ -1,4 +1,6 @@
 <script>
+  import { base } from "$app/paths";
+
   export let code;
   export let title;
   export let index;
@@ -45,16 +47,16 @@
         $page.url.pathname.replace(/^\/([^\/]*).*$/, "$1") == `${code}`;
     }}
     sveltekit:prefetch
-    href="/{code}"
-    class="transition-title overflow-hidden no-underline 
+    href="{base}/{code}"
+    class="transition-title overflow-hidden no-underline
     link link-{index} 
     {anyHovered
       ? hovered == title
         ? 'active'
         : 'inactive'
       : $page.url.pathname.replace(/^\/([^\/]*).*$/, '$1') == `${code}`
-      ? 'current-page'
-      : 'not-current-page'}"
+        ? 'current-page'
+        : 'not-current-page'}"
   >
     {title}
   </a>

@@ -17,7 +17,7 @@ url: "https://connorrothschild.github.io/compas/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/compas/" style="box-shadow: none;" src="/images/project/compas/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/compas/" style="box-shadow: none;" src="/v4/images/project/compas/header.png" alt="Header"></Image>
 
 
 
@@ -31,8 +31,8 @@ This project was built using vanilla JavaScript, and styling was done with assis
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/compas/phone-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
-<Image style="box-shadow: none;" src="/images/project/compas/mac-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/compas/phone-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/compas/mac-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></Image>

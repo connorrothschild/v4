@@ -19,7 +19,7 @@ In this example, I'm using weightlifting data from the International Powerliftin
 
 We'll be creating this GIF:
 
-<Image src="/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."></Image>
+<Image src="/v4/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."></Image>
 
 ## Environment setup
 
@@ -145,7 +145,7 @@ max_lifts_final %>%
             color="grey20", size=4, vjust=-3)
 ```
 
-<Image src="/images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png" alt="A static dumbbell plot which represents male and female ‘top lifts' in 2019."></Image>
+<Image src="/v4/images/post/tidy-tuesday-powerlifting/unnamed-chunk-8-1.png" alt="A static dumbbell plot which represents male and female ‘top lifts' in 2019."></Image>
 
 Finally, we animate, using Thomas Pedersen’s wonderful [gganimate
 package](https://github.com/thomasp85/gganimate). This is a relatively easy step, because `gganimate` only requires two extra lines of code: `transition_states` and `ease_aes`. Then, we pass it into the `animate` function!
@@ -180,7 +180,7 @@ a_gif <- animate(animation,
 a_gif
 ```
 
-<Image src="/images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif" alt="An animated dumbbell plot which represents male and female ‘top lifts' over time. Each tick of the animation represents a new year."></Image>
+<Image src="/v4/images/post/tidy-tuesday-powerlifting/unnamed-chunk-9-1.gif" alt="An animated dumbbell plot which represents male and female ‘top lifts' over time. Each tick of the animation represents a new year."></Image>
 
 But in our case, we'd like to include another GIF: a line chart of differences over time.
 
@@ -212,7 +212,7 @@ b_gif <- animate(animation2,
 b_gif
 ```
 
-<Image src="/images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif" alt="An animated line chart that shows, year by year, the difference in male and female top lifts on the Y axis. Each tick of the chart shows a new year."></Image>
+<Image src="/v4/images/post/tidy-tuesday-powerlifting/unnamed-chunk-10-1.gif" alt="An animated line chart that shows, year by year, the difference in male and female top lifts on the Y axis. Each tick of the chart shows a new year."></Image>
 
 Finally, we'll combine them using `magick` (thanks to [this
 post](https://github.com/thomasp85/gganimate/wiki/Animation-Composition)):
@@ -239,6 +239,6 @@ Here, we specify `stack = TRUE` so that one plot is **above** the other. If you'
 
 In combination, the process results in our final output:
 
-<Image src="/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."></Image>
+<Image src="/v4/images/post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."></Image>
 
 In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), _and_ we can see how these differences change over time (bottom chart). The power of an animated, combined chart!

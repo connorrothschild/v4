@@ -1,4 +1,6 @@
 <script>
+  import { base } from "$app/paths";
+
   export let award;
   export let slug;
   export let anyHovered = false;
@@ -13,10 +15,10 @@
     class="container no-underline {anyHovered && !active
       ? 'inactive'
       : active
-      ? 'active'
-      : ''}
+        ? 'active'
+        : ''}
       {award.place_code}"
-    href={slug}
+    href="{base}/{slug}"
     sveltekit:prefetch
     on:mouseover={() => {
       active = true;
@@ -85,7 +87,8 @@
   }
 
   .container > * {
-    transition: opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
+    transition:
+      opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }

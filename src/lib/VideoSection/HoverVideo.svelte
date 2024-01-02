@@ -39,6 +39,7 @@
 
   import { isTouchscreen } from "../../stores/device.js";
   import { goto } from "$app/navigation";
+  import { base } from "$app/paths";
 
   // Require double click on mobile
   // Use navigating to prevent slug duplication on quick double click
@@ -71,11 +72,14 @@
       {#each projects as project, i}
         <div
           on:click={navigate(
-            project.path.replace(/\.[^/.]+$/, "").replace("+page", ""),
+            `${project.path
+              .replace(/\.[^/.]+$/, "")
+              .replace("+page", "")
+              .replace("../", `${base}/`)}`,
             i
           )}
           sveltekit:prefetch
-          class="project-card no-underline 
+          class="project-card no-underline
         {value === i ? 'active' : 'inactive'} {typeof literallyHovered ==
           'number'
             ? literallyHovered === i
@@ -160,7 +164,8 @@
     font-size: 3rem;
     text-transform: uppercase;
     font-weight: 200;
-    transition: opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
+    transition:
+      opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }

@@ -16,7 +16,7 @@ url: "https://observablehq.com/@connorrothschild/bar-chart-race"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://observablehq.com/@connorrothschild/bar-chart-race/" src="/images/project/media-mentions/header.png" alt="Header"></Image>
+<Image href="https://observablehq.com/@connorrothschild/bar-chart-race/" src="/v4/images/project/media-mentions/header.png" alt="Header"></Image>
 
 
 
@@ -28,5 +28,5 @@ This project was built with [Observable](https://observablehq.com/). It was my f
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/media-mentions/mac.png" alt="Project image for 'The Race for Media Attention'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/media-mentions/phone.png" alt="Project image for 'The Race for Media Attention'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/media-mentions/mac.png" alt="Project image for 'The Race for Media Attention'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/media-mentions/phone.png" alt="Project image for 'The Race for Media Attention'" width="22%"></Image>

@@ -16,7 +16,7 @@ url: "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"  src="/images/project/covid-masking/header.png" alt="Header"></Image>
+<Image href="https://observablehq.com/@connorrothschild/mask-wearing-in-your-county"  src="/v4/images/project/covid-masking/header.png" alt="Header"></Image>
 
 
 
@@ -28,14 +28,14 @@ This project was exclusively built with [Observable](https://observablehq.com/).
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/covid-masking/mac-1.png" alt="Project image for 'Mask Wearing in Your County'" width="100%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/mac-1.png" alt="Project image for 'Mask Wearing in Your County'" width="100%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/covid-masking/mac-2.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/images/project/covid-masking/mac-3.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/images/project/covid-masking/mac-4.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/mac-2.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/mac-3.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/mac-4.png" alt="Project image for 'Mask Wearing in Your County'" width="32%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/covid-masking/phone-1.png" alt="Project image for 'Mask Wearing in Your County'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/images/project/covid-masking/phone-2.png" alt="Project image for 'Mask Wearing in Your County'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/phone-1.png" alt="Project image for 'Mask Wearing in Your County'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/phone-2.png" alt="Project image for 'Mask Wearing in Your County'" width="48%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/covid-masking/mac-5.png" alt="Project image for 'Mask Wearing in Your County'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/covid-masking/phone-3.png" alt="Project image for 'Mask Wearing in Your County'" width="24%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/mac-5.png" alt="Project image for 'Mask Wearing in Your County'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/covid-masking/phone-3.png" alt="Project image for 'Mask Wearing in Your County'" width="24%"></Image>

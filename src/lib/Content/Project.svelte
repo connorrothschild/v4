@@ -9,12 +9,13 @@
   // Show titles by default on touch devices
   import { isTouchscreen } from "../../stores/device.js";
   import TransitionInView from "$lib/TransitionInView.svelte";
+  import { base } from "$app/paths";
 </script>
 
 <TransitionInView>
   <a
     class="project-card no-underline"
-    href={slug}
+    href="{base}/{slug}"
     sveltekit:prefetch
     on:mouseover={() => {
       if ($isTouchscreen) return;
@@ -33,7 +34,7 @@
     {/if}
     <img
       loading="lazy"
-      src="/images/project/{project.image}"
+      src="{base}/images/project/{project.image}"
       alt="Project image for {project.title}"
       class="project-image"
       class:hovered

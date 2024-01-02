@@ -86,6 +86,7 @@
   let hovered = false;
 
   import TransitionInView from "$lib/TransitionInView.svelte";
+  import { base } from "$app/paths";
 </script>
 
 <svelte:window bind:scrollX={scrollXPosition} bind:scrollY={scrollYPosition} />
@@ -108,7 +109,7 @@
     bind:this={card}
     bind:offsetWidth={cardWidth}
     bind:offsetHeight={cardHeight}
-    href={slug}
+    href="{base}/{slug}"
     sveltekit:prefetch
   >
     <div
@@ -161,7 +162,9 @@
     margin: 6px; /* Need this for perspective container overflow */
     overflow: hidden;
     border: 1px solid transparent;
-    transition: all 100ms linear, border 300ms ease;
+    transition:
+      all 100ms linear,
+      border 300ms ease;
     cursor: pointer;
   }
 
@@ -269,7 +272,8 @@
   .post-description,
   .post-tag,
   .featured-star {
-    transition: opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
+    transition:
+      opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }

@@ -12,6 +12,7 @@
   let hovered = false;
 
   import TransitionInView from "$lib/TransitionInView.svelte";
+  import { base } from "$app/paths";
 </script>
 
 <TransitionInView>
@@ -19,7 +20,7 @@
     class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     sveltekit:prefetch
-    href={slug}
+    href="{base}/{slug}"
     on:mouseover={() => {
       anyHovered = true;
       hovered = true;
@@ -75,7 +76,9 @@
     height: 100%;
     padding: 1rem 1rem 2rem 1rem;
     overflow: hidden;
-    transition: all 100ms linear, border 300ms ease;
+    transition:
+      all 100ms linear,
+      border 300ms ease;
     cursor: pointer;
     border-bottom: 1px solid rgba(var(--text-color-rgb), 0.2);
     position: relative;
@@ -195,7 +198,8 @@
   .post-description,
   .post-tag,
   .featured-star {
-    transition: opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
+    transition:
+      opacity 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       color 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99),
       text-shadow 600ms cubic-bezier(0.37, 0.35, 0.01, 0.99);
   }

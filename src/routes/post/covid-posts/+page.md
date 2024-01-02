@@ -45,7 +45,7 @@ blog post, but rather an overview of the data _that we have found_.
 As the pandemic has progressed, fewer bloggers have engaged with
 COVID-related data, as we notice that blog posts peaked in March of 2020.
 
-<Image alt="COVID-19 blog posts by week. There is a peak in mid March (40 posts)." src="/images/post/covid-posts/weekly-1.png"></Image>
+<Image alt="COVID-19 blog posts by week. There is a peak in mid March (40 posts)." src="/v4/images/post/covid-posts/weekly-1.png"></Image>
 
 Some bloggers have been prolific; many more have been one and done. The
 plot below shows the names and posts of the 23 bloggers who have so far
@@ -59,7 +59,7 @@ professors and academic researchers predominate in this group of
 bloggers. If you include the postgraduate students, universities writ
 large account for nearly all of the prolific bloggers.
 
-<Image alt="A dumbbell chart showcasing the timing of posts among 'prolific authors' (4 or more total posts). It shows temporally when these individuals post. " src="/images/post/covid-posts/prolificVer2-1.png"></Image>
+<Image alt="A dumbbell chart showcasing the timing of posts among 'prolific authors' (4 or more total posts). It shows temporally when these individuals post. " src="/v4/images/post/covid-posts/prolificVer2-1.png"></Image>
 
 ### Roles of authors
 
@@ -74,7 +74,7 @@ fall into one of five categories: _university_, _corporate_,
 _professional_, _government_, and _nonprofit_. Those broader categories
 are represented as columns in the following chart.
 
-<Image alt="A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140)." src="/images/post/covid-posts/authorVer2-1.png"></Image>
+<Image alt="A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140)." src="/v4/images/post/covid-posts/authorVer2-1.png"></Image>
 
 ### Data sources
 
@@ -92,7 +92,7 @@ By far the most prevalent data source is Johns Hopkins University, who
 early, comprehensively and consistently has set the standard for
 COVID-19 data collection and dissemination to the public.
 
-<Image alt="A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51." src="/images/post/covid-posts/dataTable-1.png"></Image>
+<Image alt="A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51." src="/v4/images/post/covid-posts/dataTable-1.png"></Image>
 
 Below, you can look at _all_ data sources and how often they were
 referenced in COVID-19 blog posts.
@@ -132,7 +132,7 @@ Epidemiology leads the way, as might be expected, but quite a few posts
 seem to use COVID data to showcase something else, or apply R in novel
 ways.
 
-<Image alt="A balloon plot shows the number of posts by topic and employment category. The most common is university/epidemiology (107 posts)." src="/images/post/covid-posts/topicsVer2-1.png"></Image>
+<Image alt="A balloon plot shows the number of posts by topic and employment category. The most common is university/epidemiology (107 posts)." src="/v4/images/post/covid-posts/topicsVer2-1.png"></Image>
 
 ## Concluding thoughts
 

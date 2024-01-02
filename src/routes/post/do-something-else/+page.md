@@ -29,7 +29,7 @@ I graduated college last week. I’ve been thinking about what it means for a ne
 1. Big tech (FAANG, etc.)
 3. Something else (startup, civic tech, etc.)
 
-Is it reductive to categorize *all jobs* into these four categories? Check my LinkedIn feed, and you'll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, [~40% of Harvard grads](https://medium.com/s/story/a-culture-of-prestige-98c8671ceade) and [~29% of Yale grads](https://yaledailynews.com/../images/post/2019/11/01/mckinsey-and-the-fig-tree/) go into finance or consulting after college.)
+Is it reductive to categorize *all jobs* into these four categories? Check my LinkedIn feed, and you'll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, [~40% of Harvard grads](https://medium.com/s/story/a-culture-of-prestige-98c8671ceade) and [~29% of Yale grads](https://yaledailynews.com/../v4/images/post/2019/11/01/mckinsey-and-the-fig-tree/) go into finance or consulting after college.)
 
 Of course, these sets of options mirror one another. Most students who aren't set on a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, "big" option after graduating, or something else. 
 
@@ -54,7 +54,7 @@ Please note that I'm not dunking on my friends who take these impressive jobs, b
 
 In 2019, [AngelList](https://angel.co/) and [Blind](https://www.teamblind.com/) surveyed 11,000 employees across FAANG and various startups, asking about job satisfaction and the factors that influence it. Their findings? **Employees at startups were much happier than their FAANG counterparts.**
 
-<Image src='../images/post/do-something-else/startup-faang-satisfaction.png' alt="A bar graph showing higher rates of job satisfaction among startup employees compared to FAANG employees."></Image>
+<Image src='../v4/images/post/do-something-else/startup-faang-satisfaction.png' alt="A bar graph showing higher rates of job satisfaction among startup employees compared to FAANG employees."></Image>
 
 Data on early-career consultants in non-technical fields is harder to come by, but generally employees are [relatively satisfied despite the long hours](https://poetsandquants.com/2017/09/10/job-satisfaction-rates-at-top-consulting-firms/3/). Many consultants, however, do quit their job and pursue [independent consulting](https://hbr.org/2019/07/why-consultants-quit-their-jobs-to-go-independent), where they tend to be [happier](https://www.consultancy.uk/news/12795/independent-management-consultants-are-happier-and-half-earn-more).
 

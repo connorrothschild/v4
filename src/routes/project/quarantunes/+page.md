@@ -16,7 +16,7 @@ url: "https://quarantune.netlify.app"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://quarantune.netlify.app" src="/images/project/quarantunes/header.png" alt="Header"></Image>
+<Image href="https://quarantune.netlify.app" src="/v4/images/project/quarantunes/header.png" alt="Header"></Image>
 
 
 
@@ -34,5 +34,5 @@ I also had some fun developing the more novel contributions of this project, suc
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></Image>
-<Image style="box-shadow: none;" src="/images/project/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></Image>

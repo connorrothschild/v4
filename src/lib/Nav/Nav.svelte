@@ -61,12 +61,13 @@
 
   import { page } from "$app/stores";
   import { isTouchscreen } from "../../stores/device.js";
+  import { base } from "$app/paths";
 </script>
 
 <div id="nav" style={styles} class:hasBackground>
   <a
     class="home-button no-underline"
-    href="/"
+    href={base}
     on:click={() => {
       expanded = false;
       // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.

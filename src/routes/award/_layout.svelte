@@ -14,6 +14,7 @@
   import { dateFormat } from "../../scripts/utils.js";
 
   import IntersectionObserver from "svelte-intersection-observer";
+  import { base } from "$app/paths";
   let element, intersecting;
 </script>
 
@@ -28,7 +29,7 @@
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="/award"
+        href="{base}/award"
         text="Awards"
         classes="page-overline transition-content"
       />
@@ -40,7 +41,7 @@
         {@html title}
       </h1>
       <h2 class="content-description overflow-hidden flex">
-        <div class="misc transition-subtitle ">
+        <div class="misc transition-subtitle">
           <span style="display: block; font-weight: 600; margin-bottom: .25rem;"
             >{organization}</span
           >
@@ -60,7 +61,11 @@
   </IntersectionObserver>
   <div class="content main-content transition-content">
     <slot />
-    <BackTo href="/award" text="Back to all awards" classes="border-top" />
+    <BackTo
+      href="{base}/award"
+      text="Back to all awards"
+      classes="border-top"
+    />
   </div>
 </main>
 

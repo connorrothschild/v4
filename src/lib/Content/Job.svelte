@@ -1,4 +1,6 @@
 <script>
+  import { base } from "$app/paths";
+
   export let job;
   export let slug;
   export let preview = false;
@@ -16,7 +18,7 @@
       : ''}"
     class:preview
     sveltekit:prefetch
-    href={slug}
+    href="{base}/{slug}"
     on:mouseover={() => {
       if (preview) {
         hoveredFromChild = job.name;
@@ -42,12 +44,14 @@
       <h2>{job.name}</h2>
       <img
         loading="lazy"
-        src="/images/jobs/{job.imageUrl}.svg"
+        src="{base}/images/jobs/{job.imageUrl}.svg"
         class="job-image {hovered ? 'hovered' : ''}"
         alt="logo"
       />
     </div>
-    {#if !preview} <h3>&#8594;</h3> {/if}
+    {#if !preview}
+      <h3>&#8594;</h3>
+    {/if}
   </a>
 </TransitionInView>
 

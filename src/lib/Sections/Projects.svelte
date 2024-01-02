@@ -14,6 +14,7 @@
   let filteredProjects = projects.filter((d) => d.metadata.featured == true);
 
   import { isHEVC, isPre1015 } from "../../stores/device.js";
+  import { base } from "$app/paths";
 
   let videos = [];
 
@@ -46,7 +47,7 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="/project"
+        href="{base}/project"
       >
         See all projects &#8599;
       </a>
@@ -60,15 +61,15 @@
     {#if $isPre1015}
       <div class="projects-container">
         {#each filteredProjects as project}
-        <div>
-          <ProjectSection
-            project={project.metadata}
-            slug={project.path
-              .replace(/\.[^/.]+$/, "")
-              .replace("./", "/")
-              .replace("+page", "")}
-          />
-        </div>
+          <div>
+            <ProjectSection
+              project={project.metadata}
+              slug={project.path
+                .replace(/\.[^/.]+$/, "")
+                .replace("./", "/")
+                .replace("+page", "")}
+            />
+          </div>
         {/each}
       </div>
     {:else}

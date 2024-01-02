@@ -16,7 +16,7 @@ url: "https://mappingpoliceviolence.org/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/police-killings/" src="/images/project/police-killings/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/police-killings/" src="/v4/images/project/police-killings/header.png" alt="Header"></Image>
 
 
 
@@ -32,8 +32,8 @@ This was actually the second iteration of this visualization. [Version 1 can be 
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/images/project/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/images/project/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
 
-<Image style="box-shadow: none;" src="/images/project/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
-<Image style="box-shadow: none;" src="/images/project/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></Image>

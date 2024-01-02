@@ -8,6 +8,7 @@
   import BlogSection from "$lib/Content/BlogText.svelte";
   import Transition from "$lib/Transition.svelte";
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
+  import { base } from "$app/paths";
 
   let anyHovered = false;
 
@@ -40,7 +41,7 @@
         <a
           class="page-overline padding-bottom see-all"
           sveltekit:prefetch
-          href="/post">See all posts &#8599;</a
+          href="{base}/post">See all posts &#8599;</a
         >
       </div>
       <SectionTitle {intersecting} element="#posts-title">
@@ -52,17 +53,17 @@
     </div>
     <div class="posts-grid width-container">
       {#each finalPosts as post, index}
-      <div style="height: 100%; width: 100%;">
-        <BlogSection
-          post={post.metadata}
-          slug={post.path
-            .replace(/\.[^/.]+$/, "")
-            .replace("./", "/")
-            .replace("+page", "")}
-          {index}
-          bind:anyHovered
-        />
-      </div>
+        <div style="height: 100%; width: 100%;">
+          <BlogSection
+            post={post.metadata}
+            slug={post.path
+              .replace(/\.[^/.]+$/, "")
+              .replace("./", "/")
+              .replace("+page", "")}
+            {index}
+            bind:anyHovered
+          />
+        </div>
       {/each}
     </div>
   </section>

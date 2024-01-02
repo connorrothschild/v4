@@ -21,6 +21,7 @@
   let anyHovered;
 
   import Seo from "$lib/Seo.svelte";
+  import { base } from "$app/paths";
   let title = "Awards | Connor Rothschild";
   let description = "Some of my awards.";
   let image = `https://og-image-eight-eta.vercel.app/${title}.png?subtitle=${description}&theme=light&md=true&hasImage=true`;
@@ -30,7 +31,7 @@
 <Seo {title} {description} {image} />
 <main class="main">
   <BackTo
-    href="/"
+    href={base}
     text="Home"
     classes="page-overline transition-content centered"
   />

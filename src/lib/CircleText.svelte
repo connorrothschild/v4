@@ -2,6 +2,7 @@
   import { fade, fly } from "svelte/transition";
 
   import { windowWidth, menuExpanded } from "../stores/global.js";
+  import { base } from "$app/paths";
 
   let hovered = false;
   let imageIndex = 1;
@@ -32,7 +33,11 @@
     }}
   >
     {#if hovered}
-      <img transition:fade|local src="/images/me/{imageIndex}.png" alt="" />
+      <img
+        transition:fade|local
+        src="{base}/images/me/{imageIndex}.png"
+        alt=""
+      />
     {/if}
     <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
       <path

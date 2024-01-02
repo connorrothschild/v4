@@ -7,6 +7,7 @@
 
   import AwardSection from "$lib/Content/Award.svelte";
   import SectionTitle from "$lib/Text/SectionTitle.svelte";
+  import { base } from "$app/paths";
 
   let element;
   let intersecting;
@@ -36,28 +37,28 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="/award">See all awards &#8599;</a
+        href="{base}/award">See all awards &#8599;</a
       >
     </div>
     <SectionTitle {intersecting} element="#awards-title">
       <h1 id="awards-title" class="section-title overflow-hidden">
         Awards I’ve
-        <span class="gradient-accented bolded ">won</span>
+        <span class="gradient-accented bolded">won</span>
       </h1>
     </SectionTitle>
 
     <div class="awards-grid">
       {#each filteredAwards as award}
-      <div>
-        <AwardSection
-          award={award.metadata}
-          slug={award.path
-            .replace(/\.[^/.]+$/, "")
-            .replace("./", "/")
-            .replace("+page", "")}
-          bind:anyHovered
-        />
-      </div>
+        <div>
+          <AwardSection
+            award={award.metadata}
+            slug={award.path
+              .replace(/\.[^/.]+$/, "")
+              .replace("./", "/")
+              .replace("+page", "")}
+            bind:anyHovered
+          />
+        </div>
       {/each}
     </div>
   </section>

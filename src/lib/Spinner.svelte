@@ -1,4 +1,6 @@
 <script>
+  import { base } from "$app/paths";
+
   export let options;
   let index = 0;
 
@@ -25,7 +27,7 @@
   on:focus={() => (hovered = true)}
 >
   {currJob}
-  <img src="/images/icons/shuffle.svg" alt="Shuffle icon" />
+  <img src="{base}/images/icons/shuffle.svg" alt="Shuffle icon" />
 </div>
 
 <style>
