@@ -19,7 +19,7 @@
   let videos = [];
 
   function preload(i) {
-    let videoUrl = $isHEVC ? `./videos/${i}.mov` : `./videos/${i}.webm`;
+    let videoUrl = $isHEVC ? `./v4/videos/${i}.mov` : `./v4/videos/${i}.webm`;
     let req = fetch(videoUrl).then((response) => response.blob());
 
     req.then((blob) => {
