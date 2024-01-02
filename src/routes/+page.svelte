@@ -9,6 +9,8 @@
 
   let pageWidth;
   $: isMobile = pageWidth < 768;
+
+  export const prerender = true;
 </script>
 
 <svelte:window bind:innerWidth={pageWidth} />

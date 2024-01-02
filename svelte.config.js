@@ -12,11 +12,12 @@ const config = {
   kit: {
     adapter: adapter({
       fallback: "404.html",
-      pages: "build/",
+      pages: "build",
       // fallback: true,
     }),
     paths: {
       base: "/v4",
+      // relative: false,
     },
   },
 };

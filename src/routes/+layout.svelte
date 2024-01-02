@@ -18,6 +18,7 @@
   import "../styles/style.css";
 
   let mounted = false;
+  export const prerender = true;
 
   onMount(() => {
     mounted = true;
