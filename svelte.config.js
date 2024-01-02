@@ -1,21 +1,22 @@
 import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
-import adapter from '@sveltejs/adapter-netlify';
-import { sveltekit } from '@sveltejs/kit/vite';
-
-const dev = process.env.NODE_ENV === 'development';
+import vitePreprocess from "svelte-preprocess";
+import { sveltekit } from "@sveltejs/kit/vite";
+import adapter from "@sveltejs/adapter-static";
 
 /** @type {import('vite').UserConfig} */
 const config = {
-    plugins: [sveltekit()],
-    extensions: [".svelte", ...mdsvexConfig.extensions],
-    preprocess: [
-        mdsvex(mdsvexConfig),
-    ],
-    kit: {
-        // target: "#svelte",
-        adapter: adapter(),
-    }
+  plugins: [sveltekit()],
+  extensions: [".svelte", ...mdsvexConfig.extensions],
+  preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
+  kit: {
+    adapter: adapter({
+      fallback: "404.html",
+    }),
+    paths: {
+      base: process.env.NODE_ENV === "production" ? "/.com" : "",
+    },
+  },
 };
 
 export default config;
