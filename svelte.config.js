@@ -8,7 +8,7 @@ import adapter from "@sveltejs/adapter-static";
 const config = {
   plugins: [sveltekit()],
   extensions: [".svelte", ...mdsvexConfig.extensions],
-  preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
+  preprocess: [mdsvex(mdsvexConfig)],
   kit: {
     adapter: adapter({
       fallback: "404.html",
