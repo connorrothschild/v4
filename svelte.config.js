@@ -11,7 +11,8 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
   kit: {
     adapter: adapter({
-      pages: "build/",
+      // pages: "build/",
+      fallback: true,
     }),
     paths: {
       base: process.env.NODE_ENV === "production" ? "/v4" : "",
