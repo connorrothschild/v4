@@ -16,7 +16,7 @@ const config = {
       // fallback: true,
     }),
     paths: {
-      base: process.env.NODE_ENV === "production" ? "/v4" : "/v4",
+      base: "/v4",
     },
   },
 };
