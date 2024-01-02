@@ -56,7 +56,7 @@
         tags: ["D3", "Svelte"],
         featured: true,
       }}
-      slug={"/viz"}
+      slug={"viz"}
       bind:anyHovered
       big={true}
     />
