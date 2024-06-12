@@ -32,7 +32,7 @@ For the scroll-based interactions, I used Russell Goldenberg's [Scrollama](https
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/v4/v4/images/project/bob-ross-art-gallery/mac-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/mac-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="74%"></Image>
 <Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-1.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
 
 <Image style="box-shadow: none;" src="/v4/images/project/bob-ross-art-gallery/iphone-2.png" alt="Project image for 'The Bob Ross Virtual Art Gallery'" width="22%"></Image>
