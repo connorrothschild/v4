@@ -20,7 +20,7 @@
   <IntersectionObserver {element} bind:intersecting>
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="{base}/experience"
+        href="/experience"
         text="Experience"
         classes="page-overline transition-content"
       />
@@ -39,11 +39,7 @@
   <div class="main-content transition-content">
     <div class="content">
       <slot />
-      <BackTo
-        href="{base}/experience"
-        text="Back to all jobs"
-        classes="border-top"
-      />
+      <BackTo href="/experience" text="Back to all jobs" classes="border-top" />
     </div>
   </div>
 </main>

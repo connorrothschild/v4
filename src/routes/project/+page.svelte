@@ -30,7 +30,7 @@
 <Seo {title} {description} {image} />
 <main class="main">
   <BackTo
-    href={base}
+    href="/"
     text="Home"
     classes="page-overline transition-content centered"
   />

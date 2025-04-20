@@ -29,7 +29,7 @@
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="{base}/award"
+        href="/award"
         text="Awards"
         classes="page-overline transition-content"
       />
@@ -61,11 +61,7 @@
   </IntersectionObserver>
   <div class="content main-content transition-content">
     <slot />
-    <BackTo
-      href="{base}/award"
-      text="Back to all awards"
-      classes="border-top"
-    />
+    <BackTo href="/award" text="Back to all awards" classes="border-top" />
   </div>
 </main>
 

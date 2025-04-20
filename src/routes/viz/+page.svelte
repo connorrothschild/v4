@@ -45,7 +45,7 @@
     <blockquote>
       <p>
         This is an extended version of a previous blog post, &ldquo;<a
-          href="{base}/post/svelte-and-d3"
+          href="/post/svelte-and-d3"
           target="_blank"
           rel="noopener noreferrer"
           style="color: black;"
@@ -93,7 +93,7 @@
     >
       <img
         style:width="100%"
-        src="{base}/images/post/viz/wattenberger.png"
+        src="/images/post/viz/wattenberger.png"
         alt="A circle pack diagram visualizing all D3 modules, by Amelia Wattenberger"
       />
       <a

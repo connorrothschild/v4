@@ -41,7 +41,7 @@
         <a
           class="page-overline padding-bottom see-all"
           sveltekit:prefetch
-          href="{base}/post">See all posts &#8599;</a
+          href="/post">See all posts &#8599;</a
         >
       </div>
       <SectionTitle {intersecting} element="#posts-title">

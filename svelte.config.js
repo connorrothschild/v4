@@ -15,10 +15,10 @@ const config = {
       pages: "build",
       // fallback: true,
     }),
-    paths: {
-      base: "",
-      // relative: false,
-    },
+    // paths: {
+    //   base: "",
+    //   // relative: true,
+    // },
   },
 };
 

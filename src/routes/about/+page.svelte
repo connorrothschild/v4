@@ -13,7 +13,7 @@
 <Seo title={`About | Connor Rothschild`} />
 <main class="main">
   <BackTo
-    href={base}
+    href="/"
     text="Home"
     classes="page-overline transition-content centered"
   />

@@ -26,7 +26,7 @@
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" bind:this={element}>
       <BackTo
-        href="{base}/post"
+        href="/post"
         text="Blog"
         classes="page-overline transition-content"
       />
@@ -53,11 +53,7 @@
   <div class="main-content transition-content">
     <div class="content">
       <slot />
-      <BackTo
-        href="{base}/post"
-        text="Back to all posts"
-        classes="border-top"
-      />
+      <BackTo href="/post" text="Back to all posts" classes="border-top" />
     </div>
   </div>
 </main>

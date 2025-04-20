@@ -15,7 +15,7 @@
 <TransitionInView>
   <a
     class="project-card no-underline"
-    href="{base}/{slug}"
+    href="/{slug}"
     sveltekit:prefetch
     on:mouseover={() => {
       if ($isTouchscreen) return;
@@ -34,7 +34,7 @@
     {/if}
     <img
       loading="lazy"
-      src="{base}/images/project/{project.image}"
+      src="/images/project/{project.image}"
       alt="Project image for {project.title}"
       class="project-image"
       class:hovered

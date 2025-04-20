@@ -27,7 +27,7 @@
   on:focus={() => (hovered = true)}
 >
   {currJob}
-  <img src="{base}/images/icons/shuffle.svg" alt="Shuffle icon" />
+  <img src="/images/icons/shuffle.svg" alt="Shuffle icon" />
 </div>
 
 <style>

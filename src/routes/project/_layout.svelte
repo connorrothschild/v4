@@ -26,7 +26,7 @@
   <IntersectionObserver {element} bind:intersecting rootMargin="-60px">
     <div class="top-level" style="max-width: none;" bind:this={element}>
       <BackTo
-        href="{base}/project"
+        href="/project"
         text="Projects"
         classes="page-overline transition-content"
       />
@@ -59,11 +59,7 @@
   </IntersectionObserver>
   <div class="project main-content transition-content">
     <slot />
-    <BackTo
-      href="{base}/project"
-      text="Back to all projects"
-      classes="border-top"
-    />
+    <BackTo href="/project" text="Back to all projects" classes="border-top" />
   </div>
 </main>
 

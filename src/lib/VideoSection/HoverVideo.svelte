@@ -75,7 +75,7 @@
             `${project.path
               .replace(/\.[^/.]+$/, "")
               .replace("+page", "")
-              .replace("../", `${base}/`)}`,
+              .replace("../", `$/`)}`,
             i
           )}
           sveltekit:prefetch

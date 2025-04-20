@@ -49,7 +49,7 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="{base}/project"
+        href="/project"
       >
         See all projects &#8599;
       </a>

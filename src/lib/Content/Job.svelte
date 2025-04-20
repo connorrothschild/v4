@@ -18,7 +18,7 @@
       : ''}"
     class:preview
     sveltekit:prefetch
-    href="{base}/{slug}"
+    href="/{slug}"
     on:mouseover={() => {
       if (preview) {
         hoveredFromChild = job.name;
@@ -44,7 +44,7 @@
       <h2>{job.name}</h2>
       <img
         loading="lazy"
-        src="{base}/images/jobs/{job.imageUrl}.svg"
+        src="/images/jobs/{job.imageUrl}.svg"
         class="job-image {hovered ? 'hovered' : ''}"
         alt="logo"
       />

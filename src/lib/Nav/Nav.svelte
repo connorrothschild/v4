@@ -67,7 +67,7 @@
 <div id="nav" style={styles} class:hasBackground>
   <a
     class="home-button no-underline"
-    href={base}
+    href="/"
     on:click={() => {
       expanded = false;
       // If the user is already on the current page, clicking on the same URL as current should trigger the slide up, not the abrupt page reload.

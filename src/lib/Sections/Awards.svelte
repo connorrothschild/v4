@@ -37,7 +37,7 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="{base}/award">See all awards &#8599;</a
+        href="/award">See all awards &#8599;</a
       >
     </div>
     <SectionTitle {intersecting} element="#awards-title">

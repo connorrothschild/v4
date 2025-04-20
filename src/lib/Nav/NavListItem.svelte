@@ -47,7 +47,7 @@
         $page.url.pathname.replace(/^\/([^\/]*).*$/, "$1") == `${code}`;
     }}
     sveltekit:prefetch
-    href="{base}/{code}"
+    href="/{code}"
     class="transition-title overflow-hidden no-underline
     link link-{index} 
     {anyHovered

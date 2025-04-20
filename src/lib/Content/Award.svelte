@@ -18,7 +18,7 @@
         ? 'active'
         : ''}
       {award.place_code}"
-    href="{base}/{slug}"
+    href="/{slug}"
     sveltekit:prefetch
     on:mouseover={() => {
       active = true;

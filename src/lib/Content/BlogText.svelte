@@ -20,7 +20,7 @@
     class="post-container no-underline {post.featured ? 'featured' : ''} 
            {anyHovered ? (hovered ? 'hovered' : 'unhovered') : ''}"
     sveltekit:prefetch
-    href="{base}/{slug}"
+    href="/{slug}"
     on:mouseover={() => {
       anyHovered = true;
       hovered = true;

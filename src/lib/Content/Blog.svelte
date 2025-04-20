@@ -109,7 +109,7 @@
     bind:this={card}
     bind:offsetWidth={cardWidth}
     bind:offsetHeight={cardHeight}
-    href="{base}/{slug}"
+    href="/{slug}"
     sveltekit:prefetch
   >
     <div

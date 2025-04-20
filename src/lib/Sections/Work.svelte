@@ -24,7 +24,7 @@
       <a
         class="page-overline padding-bottom see-all"
         sveltekit:prefetch
-        href="{base}/experience">See all work experience &#8599;</a
+        href="/experience">See all work experience &#8599;</a
       >
     </div>
     <SectionTitle {intersecting} element="#work-title">
@@ -57,7 +57,7 @@
               <img
                 loading="lazy"
                 class="job-image"
-                src="{base}/images/jobs/{hoveredData.metadata.imageUrl}.svg"
+                src="/images/jobs/{hoveredData.metadata.imageUrl}.svg"
                 alt="Logo for {hoveredData.metadata.name}"
               />
             </h1>
