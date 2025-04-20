@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/cudi-hums/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/cudi-hums/" src="/v4/images/project/cudi-hums/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/cudi-hums/" src="/images/project/cudi-hums/header.png" alt="Header"></Image>
 
 [**How Much Does Kid Cudi Hum?**](https://connorrothschild.github.io/cudi-hums/) is a visual storytelling piece centered around analyzing music's most famous hum. It was recognized as a winner of the [2020 Pudding Cup](https://pudding.cool/process/pudding-cup-2020/) out of 130+ entries.
 
@@ -26,16 +26,16 @@ I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things v
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/albums-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/tracks-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/lyrics-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/albums-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/tracks-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/lyrics-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/albums-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/tracks-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/lyrics-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/albums-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/tracks-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/lyrics-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/intro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/cudi-hums/outro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/intro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/cudi-hums/outro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></Image>
 
 <!-- # Overview (in my own words!)
 

@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/how-many-people"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/how-many-people" src="/v4/images/project/how-many-people/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/how-many-people" src="/images/project/how-many-people/header.png" alt="Header"></Image>
 
 
 
@@ -28,8 +28,8 @@ This application was built with [Vue](https://vuejs.org/). The minimal styling w
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/v4/images/project/how-many-people/mac-1.png" alt="Project image for 'How Many People Have COVID-19??'"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/how-many-people/mac-2.png" alt="Project image for 'How Many People Have COVID-19??'"></Image>
+<Image style="box-shadow: none;" src="/images/project/how-many-people/mac-1.png" alt="Project image for 'How Many People Have COVID-19??'"></Image>
+<Image style="box-shadow: none;" src="/images/project/how-many-people/mac-2.png" alt="Project image for 'How Many People Have COVID-19??'"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/how-many-people/phone-1.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/how-many-people/phone-2.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/how-many-people/phone-1.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/how-many-people/phone-2.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></Image>

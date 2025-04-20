@@ -16,7 +16,7 @@ url: "https://connorrothschild.github.io/datathon-2020/source"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/datathon-2020/source/" src="/v4/images/project/map-houston-homicides/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/datathon-2020/source/" src="/images/project/map-houston-homicides/header.png" alt="Header"></Image>
 
 
 
@@ -32,12 +32,12 @@ To trigger scroll events, We used the Mapbox storytelling template. This was a s
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/mac-1.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/mac-2.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-1.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-2.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/mac-3.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/mac-4.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-3.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/mac-4.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/phone-1.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/phone-2.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/map-houston-homicides/phone-3.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/phone-1.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/phone-2.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>
+<Image style="box-shadow: none;" src="/images/project/map-houston-homicides/phone-3.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></Image>

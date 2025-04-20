@@ -191,7 +191,7 @@ map_bw <- plot_bw +
 map_bw
 ```
 
-<Image alt="A black and white map of Springfield, Missouri." src="/v4/images/post/map-springfield/bw_map_springfield.png" width="50%" centered={true}></Image>
+<Image alt="A black and white map of Springfield, Missouri." src="/images/post/map-springfield/bw_map_springfield.png" width="50%" centered={true}></Image>
 
 And if we replicate that code with different colors, the possibilities are endless:
 
@@ -303,4 +303,4 @@ map_gold <- plot_gold +
 map_gold
 ```
 
-<Image alt="A gold map of Springfield, Missouri." src="/v4/images/post/map-springfield/gold_map_springfield.png" width="50%" centered={true}></Image>
+<Image alt="A gold map of Springfield, Missouri." src="/images/post/map-springfield/gold_map_springfield.png" width="50%" centered={true}></Image>

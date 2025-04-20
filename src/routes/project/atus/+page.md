@@ -17,7 +17,7 @@ url: "https://connorrothschild.github.io/what-are-you-doing/"
 import Image from "$lib/Global/Image.svelte"
 </script>
 
-<Image href="https://connorrothschild.github.io/what-are-you-doing/"  src="/v4/images/project/atus/header.png" alt="Header"></Image>
+<Image href="https://connorrothschild.github.io/what-are-you-doing/"  src="/images/project/atus/header.png" alt="Header"></Image>
 
 
 
@@ -31,8 +31,8 @@ Methodologically, for each demographic profile (a combination of race, age, mari
 
 # At a glance
 
-<Image style="box-shadow: none;" src="/v4/images/project/atus/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/atus/phone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/phone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
 
-<Image style="box-shadow: none;" src="/v4/images/project/atus/phone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
-<Image style="box-shadow: none;" src="/v4/images/project/atus/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/phone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></Image>
+<Image style="box-shadow: none;" src="/images/project/atus/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></Image>

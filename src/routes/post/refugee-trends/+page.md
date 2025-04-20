@@ -13,7 +13,7 @@ tags: ['analysis', 'r']
   import Info from "../../../lib/Global/Info.svelte"
 </script>
 
-<Image alt="A small multiples map of refugee acceptance over time, across states" src="/v4/images/post/refugee-trends/featured.png"></Image>
+<Image alt="A small multiples map of refugee acceptance over time, across states" src="/images/post/refugee-trends/featured.png"></Image>
 
 In [previous projects](https://connorrothschild.github.io/map-missing-migrants/), I’ve explored how migration has unfolded across _places_: where migrants travel, where they go missing, and where their journeys come to a fatal end.
 
@@ -23,11 +23,11 @@ An effective way to present both of these trends is with a map of [small multipl
 
 There are examples of these types of small multiple maps across the internet. The Washington Post's [overview of the electoral college](https://www.washingtonpost.com/graphics/politics/how-fair-is-the-electoral-college/) was visualized in the following way:
 
-<Image alt="Washington Post small multiples map of electoral college data" src="/v4/images/post/refugee-trends/wapo.png"></Image>
+<Image alt="Washington Post small multiples map of electoral college data" src="/images/post/refugee-trends/wapo.png"></Image>
 
 You can also find an overview of _why_ they work, and some additional examples, on the [PolicyViz](https://policyviz.com/2016/05/19/small-multiple-tile-grid-map/) blog:
 
-<Image alt="Policy Viz's small multiples of overall voting results over time" src="/v4/images/post/refugee-trends/policyviz.jpg"></Image>
+<Image alt="Policy Viz's small multiples of overall voting results over time" src="/images/post/refugee-trends/policyviz.jpg"></Image>
 
 ## Making it in R
 
@@ -51,7 +51,7 @@ data %>%
   scale_x_continuous(breaks = c(2002, 2019))
 ```
 
-<Image alt="A small multiples map of refugee acceptance over time, across states" src="/v4/images/post/refugee-trends/macro.jpg"></Image>
+<Image alt="A small multiples map of refugee acceptance over time, across states" src="/images/post/refugee-trends/macro.jpg"></Image>
 
 Now we have the answer to our first question: **how has refugee acceptance changed over time?** The answer: pretty drastically. The US accepted nearly 100,000 refugees in 2016; 2 years later, that number was barely over 20,000.
 
@@ -67,7 +67,7 @@ facet_geo(~ state)
 
 This makes a plot that looks like this:
 
-<Image alt="first try" src="/v4/images/post/refugee-trends/firsttry.jpg"></Image>
+<Image alt="first try" src="/images/post/refugee-trends/firsttry.jpg"></Image>
 
 It's alright, but not perfect! There are a few improvements we can definitely make.
 
@@ -123,7 +123,7 @@ data %>%
   )
 ```
 
-<Image alt="secondtry" src="/v4/images/post/refugee-trends/secondtry.jpg"></Image>
+<Image alt="secondtry" src="/images/post/refugee-trends/secondtry.jpg"></Image>
 
 Pretty good! Much better. But we can add some elements to take our visualization to the next level.
 
@@ -166,11 +166,11 @@ data %>%
   )
 ```
 
-<Image alt="r version" src="/v4/images/post/refugee-trends/ref.png"></Image>
+<Image alt="r version" src="/images/post/refugee-trends/ref.png"></Image>
 
 I brought that plot to Illustrator and made it a lot prettier. Here's the final version:
 
-<Image alt="A small multiples map of refugee acceptance over time, across states" src="/v4/images/post/refugee-trends/featured.png"></Image>
+<Image alt="A small multiples map of refugee acceptance over time, across states" src="/images/post/refugee-trends/featured.png"></Image>
 
 What do we notice? A few key states (Texas, California, Florida, and Michigan) make up the vast majority of refugee acceptance, while other accept almost _no_ _refugees_. Nearly every state has reduced their refugee acceptance since 2017, but the bulk of this decline has come from these larger states.
 

@@ -29,7 +29,7 @@ My new site, which is my fourth personal website, is built with Sveltekit and ta
 
 I spent far too long on this iteration of my personal site (see [the commits](https://github.com/connorrothschild/.com/commits/master)). 
 
-<Image src="/v4/images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
+<Image src="/images/post/this-site/commits.png" alt="Four commits to my GitHub repository for this site. Each commit shows escalating confusion and frustration with my code." />
 
 In this brief post, I'll detail some of the highlights, headaches, and give some practical tips for creating a personal website.
 
@@ -41,12 +41,12 @@ connorrothschild.com is meant to be a highly creative, but still content-focused
 
 You can find plenty of examples of creative websites by perusing the collection of [awwwards Site of the Day](https://www.awwwards.com/websites/sites_of_the_day/) winners. This collection is mostly comprised of 'creative coders' who build highly creative, design-focused sites, usually for brands of for their own portfolio. A great example of an incredibly creative personal website is [Niccolo Miranda's](https://niccolomiranda.com/):
 
-<!-- <Image src="/v4/images/post/this-site/niccolo-tweet-1.png" alt="A Tweet from Niccolo Miranda reading: Proud to finally release my new 'Paper Portfolio.' Many thanks to @clementroche_ & @michael_dlb for the dev support." href="https://twitter.com/niccolomiranda/status/1452636062866710531" width="66%" centered="true"/> -->
+<!-- <Image src="/images/post/this-site/niccolo-tweet-1.png" alt="A Tweet from Niccolo Miranda reading: Proud to finally release my new 'Paper Portfolio.' Many thanks to @clementroche_ & @michael_dlb for the dev support." href="https://twitter.com/niccolomiranda/status/1452636062866710531" width="66%" centered="true"/> -->
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud to finally release my new &quot;Paper Portfolio&quot;.<br><br>Live site ↳ <a href="https://t.co/zr4BTo31kP">https://t.co/zr4BTo31kP</a> <br><br>Many thanks to <a href="https://twitter.com/clementroche_?ref_src=twsrc%5Etfw">@clementroche_</a> &amp; <a href="https://twitter.com/michael_dlb?ref_src=twsrc%5Etfw">@michael_dlb</a> for the dev support. <a href="https://t.co/n1gDHnYkbl">pic.twitter.com/n1gDHnYkbl</a></p>&mdash; Niccolò Miranda (@niccolomiranda) <a href="https://twitter.com/niccolomiranda/status/1452636062866710531?ref_src=twsrc%5Etfw">October 25, 2021</a></blockquote> 
 
 What makes the site great—beyond its general aesthetic—is its unified theme of a 'paper portfolio.' The site is meant to resemble a newspaper, and is chock-full of animations and design decisions that support that association. You can read more about those decisions in his thread below:
 
-<!-- <Image src="/v4/images/post/this-site/niccolo-tweet-2.png" alt="A Tweet from Niccolo Miranda reading: Big news! My new portfolio has been awarded #SOTD and #DEVAWARD on @AWWWARDS. To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. Read below 🚧" href="https://twitter.com/niccolomiranda/status/1461291594477449220" width="66%" centered="true"/> -->
+<!-- <Image src="/images/post/this-site/niccolo-tweet-2.png" alt="A Tweet from Niccolo Miranda reading: Big news! My new portfolio has been awarded #SOTD and #DEVAWARD on @AWWWARDS. To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. Read below 🚧" href="https://twitter.com/niccolomiranda/status/1461291594477449220" width="66%" centered="true"/> -->
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Big news! My new portfolio has been awarded <a href="https://twitter.com/hashtag/SOTD?src=hash&amp;ref_src=twsrc%5Etfw">#SOTD</a> and <a href="https://twitter.com/hashtag/DEVAWARD?src=hash&amp;ref_src=twsrc%5Etfw">#DEVAWARD</a> on <a href="https://twitter.com/awwwards?ref_src=twsrc%5Etfw">@AWWWARDS</a>. <br><br>⤷ <a href="https://t.co/4DvfkZi53r">https://t.co/4DvfkZi53r</a><br><br>To celebrate, I thought to stack in 12 mini-threads the creative process I followed up to build it. <br><br>Read below 🚧👇 <a href="https://t.co/05t9LPJJAD">pic.twitter.com/05t9LPJJAD</a></p>&mdash; Niccolò Miranda (@niccolomiranda) <a href="https://twitter.com/niccolomiranda/status/1461291594477449220?ref_src=twsrc%5Etfw">November 18, 2021</a></blockquote> 
 
 ### Content
@@ -55,7 +55,7 @@ On the other hand, many sites are designed with *content* in mind. These sites t
 
 Perhaps the most extreme example of a content-focused personal website is [Paul Graham's](http://paulgraham.com/articles.html):
 
-<Image src="/v4/images/post/this-site/paul-graham.png" alt="Paul Graham's personal website, featuring a collection of essays" />
+<Image src="/images/post/this-site/paul-graham.png" alt="Paul Graham's personal website, featuring a collection of essays" />
 
 The site is not meant to be pretty, but it gets you the content you need *immediately*. 
 
@@ -71,15 +71,15 @@ In designing connorrothschild.com, I aimed to make a site that had just enough w
 
 Practically, that meant introducing creativity whenever possible while ensuring that visitors had a consistent experience across content-specific pages. For example, each of my project, blog, and award pages have a consistent 'blog-post' style layout:
 
-<Image src="/v4/images/post/this-site/project-example.png" alt="An example of my personal website's project page" width="48%"/>
-<Image src="/v4/images/post/this-site/blog-example.png" alt="An example of my personal website's blog page" width="48%"/>
-<Image src="/v4/images/post/this-site/award-example.png" alt="An example of my personal website's award page" width="70%" centered="true" />
+<Image src="/images/post/this-site/project-example.png" alt="An example of my personal website's project page" width="48%"/>
+<Image src="/images/post/this-site/blog-example.png" alt="An example of my personal website's blog page" width="48%"/>
+<Image src="/images/post/this-site/award-example.png" alt="An example of my personal website's award page" width="70%" centered="true" />
 
 When a user visits any of these content-based pages, they see a title, subtitle, and the main content with a `max-width: 768px` applied. There is consistency *within* categories (awards, blog, projects), and *across* them.
 
 Alternatively, I could have designed each of these sections with their own quirks, (e.g. full width images and grid based layouts introducing constituent parts of the content), as you see in sites like Félix Péault's:
 
-<Image src="/v4/images/post/this-site/flayks-project.png" alt="An example of Flayks personal website's project page" />
+<Image src="/images/post/this-site/flayks-project.png" alt="An example of Flayks personal website's project page" />
 
 I chose not to do that, for two reasons.
 
@@ -110,7 +110,7 @@ The site's main text elements (e.g. section titles) are animated using a combina
 
 The projects section on my site's homepage is one of its more creative elements. As you can see in the video below, it layers transparent videos with overlaying text elements, to give the appearance of the videos 'popping out' in an almost-3D fashion.
 
-<video controls muted preload="metadata" src="/v4/images/post/this-site/projects.mp4" alt="A video showcasing my projects section. Each time you hover over a different project, a new mockup video of that project appears."></video>
+<video controls muted preload="metadata" src="/images/post/this-site/projects.mp4" alt="A video showcasing my projects section. Each time you hover over a different project, a new mockup video of that project appears."></video>
 
 Here's how it's done. (Continue reading to nerd out, or [skip to the next section](#noise)) The first step was to create mockup videos for each project, which I was able to do via [Rotato](https://www.rotato.app/). 
 
@@ -168,11 +168,11 @@ You can create your own noise texture on a site [like this one](https://www.nois
 
 I had a blast integrating a mixture of subtle and not-so-subtle animations into my site. For example, when you first visit the site, you're greeted with my name flying into view ([code](https://github.com/connorrothschild/.com/blob/master/src/scripts/transitions/rotate.js)):
 
-<video controls muted preload="metadata" src="/v4/images/post/this-site/hero.mp4" alt="A video showcasing my 'hero' section, where the words 'Connor Rothschild' fly into view."></video>
+<video controls muted preload="metadata" src="/images/post/this-site/hero.mp4" alt="A video showcasing my 'hero' section, where the words 'Connor Rothschild' fly into view."></video>
 
 When you scroll throughout the site, content more subtly fades into view ([code](https://github.com/connorrothschild/.com/blob/master/src/lib/TransitionInView.svelte)):
 
-<video controls muted preload="metadata" src="/v4/images/post/this-site/inview.mp4" alt="A video showcasing awards progressively showing as the user scrolls down."></video>
+<video controls muted preload="metadata" src="/images/post/this-site/inview.mp4" alt="A video showcasing awards progressively showing as the user scrolls down."></video>
 
 Both of these animations (and all others on the site) respect the [user's `prefers-reduced-motion` setting](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion). Practically, this looks like applying animation functions and transitions **only when the user has no motion preference**. In CSS, that looks like this:
 

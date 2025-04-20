@@ -16,7 +16,7 @@ const config = {
       // fallback: true,
     }),
     paths: {
-      base: "/v4",
+      base: "",
       // relative: false,
     },
   },
