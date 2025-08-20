@@ -19,7 +19,7 @@
   <meta name="keywords" content={keywords} />
   <meta name="topic" content={keywords} />
   <meta name="language" content="EN" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="abstract" content={description} />
   <meta name="summary" content={description} />
   <meta name="author" content="Connor Rothschild" />
